@@ -104,15 +104,10 @@
 <body>
     @include('elements.layouts.header')
     <main>
-        @include('elements.home.block1')
-        @include('elements.home.block2')
-        @include('elements.home.block3')
-        @include('elements.home.block4')
-        @include('elements.home.block5')
-        @include('elements.home.block6')
+      
 
+        @yield('content')
     </main>
-
     @include('elements.layouts.footer')
 
     {{-- <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div> --}}
@@ -127,7 +122,7 @@
 
     <!-- Template Functions -->
     <script src="assets/user/js/functions.js"></script>
-
+   
 </body>
 
 <!-- Mirrored from eduport.webestica.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:18:37 GMT -->
