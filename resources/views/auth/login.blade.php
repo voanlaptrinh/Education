@@ -90,7 +90,7 @@
                                         <label class="form-check-label" for="exampleCheck1">Remember me</label>
                                     </div>
                                     <div class="text-primary-hover">
-                                        <a href="forgot-password.html" class="text-secondary">
+                                        <a href="{{ route('password.request') }}" class="text-secondary">
                                             <u>Forgot password?</u>
                                         </a>
                                     </div>

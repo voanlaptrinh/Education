@@ -35,6 +35,11 @@ class AuthController extends Controller
     
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+            if(($user->status)== 0){
+                $this->logout();
+                session()->flash('warning', 'Tài khoản của bạn đã bị tạm khóa.');
+                return redirect()->route('login');
+            }
     
             if (!is_null($user->email_verified_at)) {
                 // Người dùng đã xác nhận email và đăng nhập thành công
@@ -49,7 +54,7 @@ class AuthController extends Controller
         }
     
         // Người dùng không đăng nhập thành công
-        return redirect('/')->withErrors(['email' => 'Thông tin đăng nhập không đúng.']);
+        return redirect('/login')->withErrors(['email' => 'Thông tin đăng nhập không đúng.']);
     }
     
     public function register(Request $request)
@@ -61,18 +66,18 @@ class AuthController extends Controller
     {
 
         $request->validate([
-            // 'name' => 'required|string|max:255',
-            // 'username' => 'required|string|unique:users',
-            // 'email' => 'required|string|email|unique:users',
-            // 'phone' => 'nullable|string',
-            // 'password' => 'required|string|min:8|confirmed',
-            // 'gender' => 'nullable|string',
-            // 'birthday' => 'nullable|string',
-            // 'address' => 'nullable|string',
-            // 'money' => 'nullable|string',
-            // 'user_type' => 'nullable|integer',
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|unique:users',
+            'email' => 'required|string|email|unique:users',
+            'phone' => 'nullable|string',
+            'password' => 'required|string|min:8|confirmed',
+            'gender' => 'nullable|string',
+            'birthday' => 'nullable|string',
+            'address' => 'nullable|string',
+            'money' => 'nullable|string',
+            'user_type' => 'nullable|integer',
         ]);
-
+       
         $user = new User();
         $user->name = $request->input('name');
         $user->username = $request->input('username');
@@ -83,7 +88,10 @@ class AuthController extends Controller
         $user->birthday =  $request->input('birthday');
         $user->address =  $request->input('address');
         $user->user_type =   $request->input('user_type');
+        $user->status =  1;
         $user->verification_token = Str::random(40);
+       
+    
         $user->save();
         $verificationLink = route('verify.email', ['token' => $user->verification_token]);
 
