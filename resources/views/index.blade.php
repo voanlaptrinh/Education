@@ -110,7 +110,6 @@
         @include('elements.home.block4')
         @include('elements.home.block5')
         @include('elements.home.block6')
-
     </main>
 
     @include('elements.layouts.footer')
