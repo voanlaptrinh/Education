@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Eduport - LMS, Education and Course Theme</title>
 
@@ -104,22 +105,13 @@
 <body>
     @include('elements.layouts.header')
     <main>
-        @include('elements.home.block1')
-        @include('elements.home.block2')
-        @include('elements.home.block3')
-        @include('elements.home.block4')
-        @include('elements.home.block5')
-        @include('elements.home.block6')
+        @yield('content')
     </main>
-
     @include('elements.layouts.footer')
 
-    {{-- <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div> --}}
 
-    <!-- Bootstrap JS -->
     <script src="assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Vendors -->
     <script src="assets/user/vendor/tiny-slider/tiny-slider.js"></script>
     <script src="assets/user/vendor/glightbox/js/glightbox.js"></script>
     <script src="assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>

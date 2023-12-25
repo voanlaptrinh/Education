@@ -1,0 +1,9 @@
+@extends('index')
+@section('content')
+    @include('elements.home.block1')
+    @include('elements.home.block2')
+    @include('elements.home.block3')
+    @include('elements.home.block4')
+    @include('elements.home.block5')
+    @include('elements.home.block6')
+@endsection

@@ -596,8 +596,15 @@
 								<img class="avatar-img rounded-circle shadow" src="assets/user/images/avatar/01.jpg" alt="avatar">
 							</div>
 							<div>
-								<a class="h6" href="#">Lori Ferguson</a>
-								<p class="small m-0">example@gmail.com</p>
+								
+								@if (!empty(Auth::user()) )
+								<a class="h6" href="#">{{ Auth::user()->name }}</a>
+								<p class="small m-0">{{ Auth::user()->email }}</p>
+								@else
+								<a class="h6" href="#">Lê duy khánh('null account')</a>
+								<p class="small m-0">ssss</p>
+								@endif
+								
 							</div>
 						</div>
 					</li>
@@ -606,7 +613,7 @@
 					<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
 					<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
 					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-					<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
+					<li><a class="dropdown-item bg-danger-soft-hover" href="{{route('logout')}}"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
 					<li> <hr class="dropdown-divider"></li>
 					<!-- Dark mode options START -->
 					<li>
