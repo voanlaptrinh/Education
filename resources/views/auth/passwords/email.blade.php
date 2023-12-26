@@ -1,12 +1,15 @@
 <!-- resources/views/auth/passwords/email.blade.php -->
-
-<form method="POST" action="{{ route('password.request') }}">
+<form method="POST" action="{{ route('password.email') }}">
     @csrf
-    <div class="mb-4">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" name="email" id="email" class="form-control" required>
+
+    <div>
+        <label for="email">{{ __('Email') }}</label>
+        <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus />
     </div>
-    <div class="d-grid">
-        <button type="submit" class="btn btn-primary">Send Password Reset Link</button>
+
+    <div>
+        <button type="submit">
+            {{ __('Send Password Reset Link') }}
+        </button>
     </div>
 </form>

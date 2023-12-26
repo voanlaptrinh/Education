@@ -110,4 +110,9 @@ class AuthController extends Controller
         // Nếu bạn muốn chuyển hướng sau khi đăng xuất, bạn có thể sử dụng hàm redirect
         return redirect('/')->with('success', 'Đã đăng xuất thành công.');
     }
+
+    public function comment(){
+        return View('blog.detail');
+
+    }
 }

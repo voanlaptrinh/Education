@@ -105,7 +105,7 @@
                             <!-- Form END -->
 
                             <!-- Social buttons and divider -->
-                            <div class="row">
+                            {{-- <div class="row">
                                 <!-- Divider with text -->
                                 <div class="position-relative my-4">
                                     <hr>
@@ -122,7 +122,7 @@
                                     <a href="#" class="btn bg-facebook mb-0"><i
                                             class="fab fa-fw fa-facebook-f me-2"></i>Login with Facebook</a>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!-- Sign up link -->
                             <div class="mt-4 text-center">
