@@ -44,7 +44,7 @@ Route::middleware(['auth', 'check.user.type:1,2'])->group(function () {
 
 // Các route không yêu cầu xác thực
 Route::get('/', function () {
-    return view('pricing.index');
+    return view('pages.index');
 });
 
 // Trong file routes/web.php
