@@ -55,7 +55,7 @@
                                             <span
                                                 class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-person-fill-add"></i></span>
                                             <input type="text" name="name" required
-                                                class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail"
+                                                class="form-control border-0 bg-light rounded-end ps-1" placeholder="Họ"
                                                 id="exampleInputEmail1">
                                                 @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -68,8 +68,11 @@
                                             <span
                                                 class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i class="bi bi-person-fill-add"></i></span>
                                             <input type="text" name="username" required
-                                                class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail"
+                                                class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên "
                                                 id="exampleInputEmail1">
+                                                @error('username')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -82,6 +85,9 @@
                                         <input type="email" name="email" required
                                             class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail"
                                             id="exampleInputEmail1">
+                                            @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
 
