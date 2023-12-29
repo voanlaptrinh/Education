@@ -44,4 +44,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function getPasswordResetToken()
+    {
+        return $this->password_reset_token;
+    }
+
+    /**
+     * Set the password reset token and expiration time.
+     */
+    public function setPasswordResetToken($token, $expires_at)
+    {
+        $this->password_reset_token = $token;
+        $this->password_reset_expires_at = $expires_at;
+        $this->save();
+    }
 }

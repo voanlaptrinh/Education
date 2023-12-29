@@ -1,26 +1,33 @@
-<!-- resources/views/auth/passwords/reset.blade.php -->
-<form method="POST" action="{{ route('password.update') }}">
-    @csrf
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+</head>
+<body>
+    <form method="POST" action="{{ route('password.update') }}">
+        @csrf
 
-    <input type="hidden" name="token" value="{{ $token }}">
-    <div>
-        <label for="email">{{ __('Email') }}</label>
-        <input id="email" type="email" name="email" value="{{ $email ?? old('email') }}" required autofocus />
-    </div>
+        <input type="hidden" name="token" value="{{ $token }}">
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ $email }}" required>
 
-    <div>
-        <label for="password">{{ __('Password') }}</label>
-        <input id="password" type="password" name="password" required />
-    </div>
+        @error('email')
+            <div>{{ $message }}</div>
+        @enderror
 
-    <div>
-        <label for="password-confirm">{{ __('Confirm Password') }}</label>
-        <input id="password-confirm" type="password" name="password_confirmation" required />
-    </div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
 
-    <div>
-        <button type="submit">
-            {{ __('Reset Password') }}
-        </button>
-    </div>
-</form>
+        @error('password')
+            <div>{{ $message }}</div>
+        @enderror
+
+        <label for="password_confirmation">Confirm Password:</label>
+        <input type="password" name="password_confirmation" required>
+
+        <button type="submit">Reset Password</button>
+    </form>
+</body>
+</html>
