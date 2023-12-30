@@ -54,7 +54,7 @@ class AuthController extends Controller
         }
     
         // Người dùng không đăng nhập thành công
-        return redirect('/login')->withErrors(['email' => 'Thông tin đăng nhập không đúng.']);
+        return redirect('/login')->withErrors(['login_error' => 'Thông tin đăng nhập không đúng.']);
     }
     
     public function register(Request $request)
@@ -71,11 +71,23 @@ class AuthController extends Controller
             'email' => 'required|string|email|unique:users',
             'phone' => 'nullable|string',
             'password' => 'required|string|min:8|confirmed',
-            'gender' => 'nullable|string',
+            'gender' => 'required|in:0,1',
             'birthday' => 'nullable|string',
             'address' => 'nullable|string',
             'money' => 'nullable|string',
-            'user_type' => 'nullable|integer',
+            'user_type' => 'required|in:1,2',
+        ],[
+            'name.required' => 'Vui lòng nhập tên của bạn',
+            'username.required' => 'Vui lòng nhập tên người dùng',
+            'email.required' => 'Vui lòng nhập email của bạn',
+            'password.required' => 'Vui lòng nhập mật khẩu của bạn',
+            'password.min' => 'Vui lòng nhập mật khẩu tối thiểu 8 kí tự',
+            'password.confirmed' => 'Xác nhận mật khẩu không khớp.',
+            'gender.required' => 'Vui lòng chọn giới tính',
+            'gender.in' => 'Giới tính không hợp lệ.',
+            'user_type.required' => 'Vui lòng chọn quyền',
+            'user_type.in' => 'Quyền không hợp lệ.',
+            'birthday.required' => 'Vui lòng nhập ngày sinh của bạn',
         ]);
        
         $user = new User();
@@ -111,8 +123,5 @@ class AuthController extends Controller
         return redirect('/')->with('success', 'Đã đăng xuất thành công.');
     }
 
-    public function comment(){
-        return View('blog.detail');
-
-    }
+   
 }

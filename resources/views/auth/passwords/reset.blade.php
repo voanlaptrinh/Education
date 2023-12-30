@@ -11,7 +11,7 @@
 
         <input type="hidden" name="token" value="{{ $token }}">
         <label for="email">Email:</label>
-        <input type="email" name="email" value="{{ $email }}" required>
+        <input type="email" name="email" value="{{ $email }}" readonly required>
 
         @error('email')
             <div>{{ $message }}</div>

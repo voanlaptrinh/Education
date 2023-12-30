@@ -20,8 +20,10 @@ class CheckUserType
 
         // Kiểm tra xem người dùng có quyền truy cập không
         if (in_array($request->user()->user_type, $allowedUserTypes)) {
+          
             return $next($request);
         }
+       
        
         abort(403, 'Bạn không có quyền truy cập.');
     }

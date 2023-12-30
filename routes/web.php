@@ -58,22 +58,9 @@ Route::post('/register', [AuthController::class, 'postRegister']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
-Route::get('/comment', [AuthController::class, 'comment'])->name('comment');
 
 
 
-
-
-// Route::get('/forgot-password', [PasswordController::class, 'showLinkRequestForm'])->name('password.request');
-
-// // Route for handling the forgot password form submission
-// Route::post('/forgot-password', [PasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-
-// // Route for showing the reset password form
-// Route::get('/reset-password/{token}', [ResetController::class, 'showResetForm'])->name('password.reset');
-
-// // Route for handling the reset password form submission
-// Route::post('/reset-password', [ResetController::class, 'reset'])->name('password.update');
 
 
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
