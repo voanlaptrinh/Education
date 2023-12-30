@@ -30,17 +30,20 @@ class AuthController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
-    
+
         $credentials = $request->only('email', 'password');
-    
+
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            if(($user->status)== 0){
+            if (($user->status) == 0) {
                 $this->logout();
                 session()->flash('warning', 'Tài khoản của bạn đã bị tạm khóa.');
                 return redirect()->route('login');
             }
-    
+            if (($user->user_type) == 0) {
+                //khi Người dụng là admin sẽ route tiwois trang admin
+                return redirect()->route('admin.index');
+            }
             if (!is_null($user->email_verified_at)) {
                 // Người dùng đã xác nhận email và đăng nhập thành công
                 return redirect()->intended('/');
@@ -52,11 +55,11 @@ class AuthController extends Controller
                 return redirect()->route('login')->with('success', 'Đã trở về trang chủ!');
             }
         }
-    
+
         // Người dùng không đăng nhập thành công
         return redirect('/login')->withErrors(['login_error' => 'Thông tin đăng nhập không đúng.']);
     }
-    
+
     public function register(Request $request)
     {
 
@@ -76,7 +79,7 @@ class AuthController extends Controller
             'address' => 'nullable|string',
             'money' => 'nullable|string',
             'user_type' => 'required|in:1,2',
-        ],[
+        ], [
             'name.required' => 'Vui lòng nhập tên của bạn',
             'username.required' => 'Vui lòng nhập tên người dùng',
             'email.required' => 'Vui lòng nhập email của bạn',
@@ -89,7 +92,7 @@ class AuthController extends Controller
             'user_type.in' => 'Quyền không hợp lệ.',
             'birthday.required' => 'Vui lòng nhập ngày sinh của bạn',
         ]);
-       
+
         $user = new User();
         $user->name = $request->input('name');
         $user->username = $request->input('username');
@@ -102,8 +105,8 @@ class AuthController extends Controller
         $user->user_type =   $request->input('user_type');
         $user->status =  1;
         $user->verification_token = Str::random(40);
-       
-    
+
+
         $user->save();
         $verificationLink = route('verify.email', ['token' => $user->verification_token]);
 
@@ -122,6 +125,4 @@ class AuthController extends Controller
         // Nếu bạn muốn chuyển hướng sau khi đăng xuất, bạn có thể sử dụng hàm redirect
         return redirect('/')->with('success', 'Đã đăng xuất thành công.');
     }
-
-   
 }
