@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
@@ -22,11 +23,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(['prefix' => 'laravel-filemanager', 'middleware'=> ['auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 Route::middleware(['auth', 'check.user.type:0'])->group(function () {
     ///admin
     Route::prefix('admin')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+        Route::get('/news', [NewsAdminController::class, 'index'])->name('newsAdmin.index');
+
     });
 });
 
@@ -45,7 +51,7 @@ Route::middleware(['auth', 'check.user.type:1,2'])->group(function () {
 
 // Các route không yêu cầu xác thực
 Route::get('/', function () {
-    return view('admin.admin-course-detail');
+    return view('pages.index');
 });
 
 // Trong file routes/web.php
