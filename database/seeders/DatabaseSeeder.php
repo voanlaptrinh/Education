@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         DB::table("users")->truncate();
+      
         DB::table("users")->insert([
             'name' => 'admin',
             'username' => 'admin',
@@ -31,5 +32,15 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'status'=> 1
         ]);
+        DB::table('quiz_groups')->insert(
+            ['name' => 'Câu hỏi 1'],
+        );
+        DB::table('quiz_groups')->insert(
+            ['name' => 'Câu hỏi 2'],
+        );
+        DB::table('quiz_groups')->insert(
+            ['name' => 'Câu hỏi 3'],
+        );
+       
     }
 }

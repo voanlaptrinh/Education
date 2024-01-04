@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('money')->nullable();
             $table->integer('user_type')->nullable(); //phân quyền
             $table->integer('status')->nullable(); //Trạng thái tài khoản
+            $table->string('score')->nullable(); //Trạng thái tài khoản
             $table->timestamp('email_verified_at')->nullable();
             $table->string('verification_token')->nullable(); //xác nhận xem tài khoản đã xác nhận chưa
             $table->string('password');

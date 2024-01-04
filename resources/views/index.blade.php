@@ -70,7 +70,7 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/user/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/user/images/favicon.ico">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -79,13 +79,13 @@
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/user/vendor/font-awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/user/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="assets/user/vendor/tiny-slider/tiny-slider.css">
-    <link rel="stylesheet" type="text/css" href="assets/user/vendor/glightbox/css/glightbox.css">
+    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/font-awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/tiny-slider/tiny-slider.css">
+    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/glightbox/css/glightbox.css">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/user/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/user/css/style.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7N7LGGGWT1"></script>
@@ -110,14 +110,14 @@
     @include('elements.layouts.footer')
 
 
-    <script src="assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/user/vendor/tiny-slider/tiny-slider.js"></script>
-    <script src="assets/user/vendor/glightbox/js/glightbox.js"></script>
-    <script src="assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <script src="/assets/user/vendor/tiny-slider/tiny-slider.js"></script>
+    <script src="/assets/user/vendor/glightbox/js/glightbox.js"></script>
+    <script src="/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
 
     <!-- Template Functions -->
-    <script src="assets/user/js/functions.js"></script>
+    <script src="/assets/user/js/functions.js"></script>
 
 </body>
 

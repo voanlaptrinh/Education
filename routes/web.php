@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CustomPasswordResetController;
 use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuizGroupController;
 use App\Http\Controllers\VerificationController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
@@ -36,18 +38,18 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
     });
 });
 
-Route::middleware(['auth', 'check.user.type:1'])->group(function () {
-    Route::get('/giaovien', function () {
-        return view('giaovien');
-    });
-});
+// Route::middleware(['auth', 'check.user.type:1'])->group(function () {
+//     Route::get('/giaovien', function () {
+//         return view('giaovien');
+//     });
+// });
 
 
-Route::middleware(['auth', 'check.user.type:1,2'])->group(function () {
-    Route::get('/hocsinh', function () {
-        return view('hocsinh');
-    });
-});
+// Route::middleware(['auth', 'check.user.type:1,2'])->group(function () {
+//     Route::get('/hocsinh', function () {
+//         return view('hocsinh');
+//     });
+// });
 
 // Các route không yêu cầu xác thực
 Route::get('/', function () {
@@ -75,3 +77,21 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink
 
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
+Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.index');
+Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
+Route::post('/quiz/store', [QuizController::class, 'store'])->name('quiz.store');
+
+// routes/web.php
+Route::get('/quiz/take', [QuizController::class, 'take'])->name('quiz.take');
+Route::post('/quiz/submit', [QuizController::class, 'submit'])->name('quiz.submit');
+
+
+// routes/web.php
+Route::get('/quiz/groups/{groupId}', [QuizController::class, 'showGroup'])->name('quiz.showGroup');
+// Thêm các route khác cho cập nhật và xóa nhóm
+
+
+
+Route::get('/quiz/quizGroup', [QuizGroupController::class, 'index'])->name('quizGroup.index');
