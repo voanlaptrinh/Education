@@ -29,8 +29,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('verification_token')->nullable(); //xác nhận xem tài khoản đã xác nhận chưa
             $table->string('password');
-            // $table->string('password_reset_token')->nullable();
-            // $table->timestamp('password_reset_expires_at')->nullable();
+        
             $table->integer('sort_order')->nullable();
             $table->integer('create_by')->default(1)->nullable();
             $table->rememberToken();

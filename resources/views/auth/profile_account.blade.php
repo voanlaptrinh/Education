@@ -17,13 +17,13 @@
                             <div class="col-auto mt-4 mt-md-0">
                                 <div class="avatar avatar-xxl mt-n3">
                                     <img class="avatar-img rounded-circle border border-white border-3 shadow"
-                                        src="assets/images/avatar/01.jpg" alt="">
+                                        src="{{ asset($user->image ? 'storage/' . $user->image : 'assets/images/default-avatar.jpg') }}" alt="">
                                 </div>
                             </div>
                             <!-- Profile info -->
                             <div class="col d-md-flex justify-content-between align-items-center mt-4">
                                 <div>
-                                    <h1 class="my-1 fs-4">Lori Stevens <i
+                                    <h1 class="my-1 fs-4">{{ $user->name}} <i
                                             class="bi bi-patch-check-fill text-info small"></i></h1>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i
@@ -34,10 +34,7 @@
                                                 class="fas fa-book text-purple me-2"></i>25 Courses</li>
                                     </ul>
                                 </div>
-                                <!-- Button -->
-                                <div class="d-flex align-items-center mt-2 mt-md-0">
-                                    <a href="instructor-create-course.html" class="btn btn-success mb-0">Create a course</a>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>
@@ -102,9 +99,8 @@
                                             class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
                                     <a class="list-group-item" href="instructor-setting.html"><i
                                             class="bi bi-gear fa-fw me-2"></i>Settings</a>
-                                    <a class="list-group-item" href="instructor-delete-account.html"><i
-                                            class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
-                                    <a class="list-group-item text-danger bg-danger-soft-hover" href="sign-in.html"><i
+                                  
+                                    <a class="list-group-item text-danger bg-danger-soft-hover" href="{{route('logout')}}"><i
                                             class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
                                 </div>
                             </div>
@@ -125,27 +121,28 @@
                         <!-- Card body START -->
                         <div class="card-body">
                             <!-- Form -->
-                            <form class="row g-4" action="{{ route('update-profile') }}" method="post">
+                            <form class="row g-4" action="{{ route('update-profile' , ['user'=>Auth::user()->id]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                               
                                 <!-- Profile picture -->
                                 <div class="col-12 justify-content-center align-items-center">
                                     <label class="form-label">Profile picture</label>
                                     <div class="d-flex align-items-center">
-                                        <label class="position-relative me-4" for="uploadfile-1"
+                                        <label class="position-relative me-4" for="profile_picture"
                                             title="Replace this pic">
                                             <!-- Avatar place holder -->
                                             <span class="avatar avatar-xl">
                                                 <img id="uploadfile-1-preview"
                                                     class="avatar-img rounded-circle border border-white border-3 shadow"
-                                                    src="assets/images/avatar/07.jpg" alt="">
+                                                    src="{{ asset($user->image ? 'storage/' . $user->image : '/assets/user/images/default-avatar.jpg') }}" alt="">
                                             </span>
                                             <!-- Remove btn -->
                                             <button type="button" class="uploadremove"><i
                                                     class="bi bi-x text-white"></i></button>
                                         </label>
                                         <!-- Upload button -->
-                                        <label class="btn btn-primary-soft mb-0" for="uploadfile-1">Change</label>
-                                        <input id="uploadfile-1" class="form-control d-none" type="file">
+                                        <label class="btn btn-primary-soft mb-0" for="profile_picture">Change</label>
+                                        <input id="profile_picture" name="profile_picture" class="form-control d-none" type="file">
                                     </div>
                                 </div>
 
@@ -153,7 +150,7 @@
                                 <div class="col-12">
                                     <label class="form-label">Full name</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" value="{{ $user->name }}"
+                                        <input type="text" class="form-control" name="name" value="{{ $user->name }}"
                                             placeholder="First name">
 
                                     </div>
@@ -164,7 +161,7 @@
                                     <label class="form-label">Username</label>
                                     <div class="input-group">
 
-                                        <input type="text" class="form-control" value="{{ $user->username }}">
+                                        <input type="text" class="form-control" name="username" value="{{ $user->username }}">
                                     </div>
                                 </div>
 
@@ -172,20 +169,20 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Email id</label>
                                     <input id="encryptedEmail" class="form-control" type="email"
-                                        value="{{ $user->email }}" placeholder="Email" disabled>
+                                        value="{{ $user->email }}" name="email" placeholder="Email" disabled>
                                 </div>
 
                                 <!-- Phone number -->
                                 <div class="col-md-6">
                                     <label class="form-label">Phone number</label>
-                                    <input type="text" class="form-control" value="{{ $user->phone }}"
+                                    <input type="text" class="form-control" name="phone" value="{{ $user->phone }}"
                                         placeholder="Phone number">
                                 </div>
 
                                 <!-- Location -->
                                 <div class="col-md-6">
                                     <label class="form-label">Location</label>
-                                    <input class="form-control" type="text" value="{{ $user->address }}">
+                                    <input class="form-control" name="address" type="text" value="{{ $user->address }}">
                                 </div>
 
 
@@ -200,7 +197,7 @@
                                 <!-- Location -->
                                 <div class="col-md-6">
                                     <label class="form-label">Ngày sinh</label>
-                                    <input class="form-control" type="date" value="{{ $user->birthday }}">
+                                    <input class="form-control" name="birthday" type="date" value="{{ $user->birthday }}">
                                 </div>
 
 
@@ -218,150 +215,11 @@
                     <!-- Edit profile END -->
 
                     <div class="row g-4 mt-3">
-                        <!-- Linked account START -->
-                        <div class="col-lg-6">
-                            <div class="card bg-transparent border rounded-3">
-                                <!-- Card header -->
-                                <div class="card-header bg-transparent border-bottom">
-                                    <h5 class="card-header-title mb-0">Linked account</h5>
-                                </div>
-                                <!-- Card body START -->
-                                <div class="card-body pb-0">
-                                    <!-- Google -->
-                                    <div
-                                        class="position-relative mb-4 d-sm-flex bg-success bg-opacity-10 border border-success p-3 rounded">
-                                        <!-- Title and content -->
-                                        <h2 class="fs-1 mb-0 me-3"><i class="fab fa-google text-google-icon"></i></h2>
-                                        <div>
-                                            <div
-                                                class="position-absolute top-0 start-100 translate-middle bg-white rounded-circle lh-1 h-20px">
-                                                <i class="bi bi-check-circle-fill text-success fs-5"></i>
-                                            </div>
-                                            <h6 class="mb-1">Google</h6>
-                                            <p class="mb-1 small">You are successfully connected to your Google account</p>
-                                            <!-- Button -->
-                                            <button type="button" class="btn btn-sm btn-danger mb-0">Invoke</button>
-                                            <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Linkedin -->
-                                    <div class="mb-4 d-sm-flex border p-3 rounded">
-                                        <!-- Title and content -->
-                                        <h2 class="fs-1 mb-0 me-3"><i class="fab fa-linkedin-in text-linkedin"></i></h2>
-                                        <div>
-                                            <h6 class="mb-1">Linkedin</h6>
-                                            <p class="mb-1 small">Connect with Linkedin account for a personalized
-                                                experience
-                                            </p>
-                                            <!-- Button -->
-                                            <button type="button" class="btn btn-sm btn-primary mb-0">Connect
-                                                Linkedin</button>
-                                            <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Facebook -->
-                                    <div class="mb-4 d-sm-flex border p-3 rounded">
-                                        <!-- Title and content -->
-                                        <h2 class="fs-1 mb-0 me-3"><i class="fab fa-facebook text-facebook"></i></h2>
-                                        <div>
-                                            <h6 class="mb-1">Facebook</h6>
-                                            <p class="mb-1 small">Connect with Facebook account for a personalized
-                                                experience
-                                            </p>
-                                            <!-- Button -->
-                                            <button type="button" class="btn btn-sm btn-primary mb-0">Connect
-                                                Facebook</button>
-                                            <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card body END -->
-                            </div>
-                        </div>
-                        <!-- Linked account end -->
-
-                        <!-- Social media profile START -->
-                        <div class="col-lg-6">
-                            <div class="card bg-transparent border rounded-3">
-                                <!-- Card header -->
-                                <div class="card-header bg-transparent border-bottom">
-                                    <h5 class="card-header-title mb-0">Social media profile</h5>
-                                </div>
-                                <!-- Card body START -->
-                                <div class="card-body">
-                                    <!-- Facebook username -->
-                                    <div class="mb-3">
-                                        <label class="form-label"><i class="fab fa-facebook text-facebook me-2"></i>Enter
-                                            facebook username</label>
-                                        <input class="form-control" type="text" value="loristev"
-                                            placeholder="Enter username">
-                                    </div>
-
-                                    <!-- Twitter username -->
-                                    <div class="mb-3">
-                                        <label class="form-label"><i class="bi bi-twitter text-twitter me-2"></i>Enter
-                                            twitter
-                                            username</label>
-                                        <input class="form-control" type="text" value="loristev"
-                                            placeholder="Enter username">
-                                    </div>
-
-                                    <!-- Instagram username -->
-                                    <div class="mb-3">
-                                        <label class="form-label"><i
-                                                class="fab fa-instagram text-instagram-gradient me-2"></i>Enter instagram
-                                            username</label>
-                                        <input class="form-control" type="text" value="loristev"
-                                            placeholder="Enter username">
-                                    </div>
-
-                                    <!-- Youtube -->
-                                    <div class="mb-3">
-                                        <label class="form-label"><i class="fab fa-youtube text-youtube me-2"></i>Add your
-                                            youtube profile URL</label>
-                                        <input class="form-control" type="text"
-                                            value="https://www.youtube.com/in/Eduport-05620abc"
-                                            placeholder="Enter username">
-                                    </div>
-
-                                    <!-- Button -->
-                                    <div class="d-flex justify-content-end mt-4">
-                                        <button type="button" class="btn btn-primary mb-0">Save changes</button>
-                                    </div>
-                                </div>
-                                <!-- Card body END -->
-                            </div>
-                        </div>
-                        <!-- Social media profile END -->
-
-                        <!-- EMail change START -->
-                        <div class="col-lg-6">
-                            <div class="card bg-transparent border rounded-3">
-                                <!-- Card header -->
-                                <div class="card-header bg-transparent border-bottom">
-                                    <h5 class="card-header-title mb-0">Update email</h5>
-                                </div>
-                                <!-- Card body -->
-                                <div class="card-body">
-                                    <p>Your current email address is <span class="text-primary">example@gmail.com</span>
-                                    </p>
-                                    <!-- Email -->
-                                    <form>
-                                        <label class="form-label">Enter your new email id</label>
-                                        <input class="form-control" type="email" placeholder="Enter new email">
-                                        <div class="d-flex justify-content-end mt-4">
-                                            <button type="button" class="btn btn-primary mb-0">Update email</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- EMail change end -->
+                       
+                       
 
                         <!-- Password change START -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="card border bg-transparent rounded-3">
                                 <!-- Card header -->
                                 <div class="card-header bg-transparent border-bottom">
@@ -369,16 +227,23 @@
                                 </div>
                                 <!-- Card body START -->
                                 <div class="card-body">
+                                    <form action="{{ route('change-password') }}" method="post">
+                                        @csrf
+                                        @if (session('error'))
+                                        <div class="alert alert-error">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
                                     <!-- Current password -->
                                     <div class="mb-3">
                                         <label class="form-label">Current password</label>
-                                        <input class="form-control" type="password" placeholder="Enter current password">
+                                        <input class="form-control" name="old_password" type="password" placeholder="Enter current password">
                                     </div>
                                     <!-- New password -->
                                     <div class="mb-3">
                                         <label class="form-label"> Enter new password</label>
                                         <div class="input-group">
-                                            <input class="form-control" type="password" placeholder="Enter new password">
+                                            <input class="form-control" name="new_password" type="password" placeholder="Enter new password">
                                             <span class="input-group-text p-0 bg-transparent">
                                                 <i class="far fa-eye cursor-pointer p-2 w-40px"></i>
                                             </span>
@@ -388,12 +253,13 @@
                                     <!-- Confirm password -->
                                     <div>
                                         <label class="form-label">Confirm new password</label>
-                                        <input class="form-control" type="password" placeholder="Enter new password">
+                                        <input class="form-control" name="new_password_confirmation"  type="password" placeholder="Enter new password">
                                     </div>
                                     <!-- Button -->
                                     <div class="d-flex justify-content-end mt-4">
-                                        <button type="button" class="btn btn-primary mb-0">Change password</button>
+                                        <button type="submit" class="btn btn-primary mb-0">Change password</button>
                                     </div>
+                                    </form>
                                 </div>
                                 <!-- Card body END -->
                             </div>

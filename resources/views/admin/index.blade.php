@@ -80,32 +80,32 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
 
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/user/vendor/font-awesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/user/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="assets/user/vendor/choices/css/choices.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/user/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/user/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/user/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="/assets/user/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/user/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
 
 	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/user/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/user/css/style.css">
 
 </head>
 
 <body>
-    @include('admin.headeradmin')
-    <main>
+	<main>
+		@include('admin.headeradmin')
         @yield('contentadmin')
     </main>
 
 
 <!-- Bootstrap JS -->
-<script src="assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Vendors -->
-<script src="assets/user/vendor/choices/js/choices.min.js"></script>
-<script src="assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+<script src="/assets/user/vendor/choices/js/choices.min.js"></script>
+<script src="/assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
 
 <!-- Template Functions -->
-<script src="assets/user/js/functions.js"></script>
+<script src="/assets/user/js/functions.js"></script>
 
 </body>
 

@@ -25,7 +25,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::group(['prefix' => 'laravel-filemanager', 'middleware'=> ['auth']], function () {
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
@@ -33,8 +34,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
     ///admin
     Route::prefix('admin')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
-        Route::get('/news', [NewsAdminController::class, 'index'])->name('newsAdmin.index');
-
+        Route::prefix('news')->group(function () {
+            Route::get('/', [NewsAdminController::class, 'index'])->name('newsAdmin.index');
+            Route::get('/create', [NewsAdminController::class, 'create'])->name('newsAdmin.index');
+        });
     });
 });
 
@@ -63,10 +66,11 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'postLogin']);
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'postRegister']);
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'profilelogout'])->name('logout');
 //profile
-Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
-Route::post('/update-profile', [AuthController::class, 'update'])->name('update-profile');
+Route::get('/profile/{user}', [AuthController::class, 'profile'])->name('profile');
+Route::post('/update-profile/{user}', [AuthController::class, 'update'])->name('update-profile');
+Route::post('/change-password', [AuthController::class, 'changePassword'])->name('change-password');
 
 
 

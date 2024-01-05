@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 use function Laravel\Prompts\alert;
 
@@ -79,7 +80,7 @@ class AuthController extends Controller
             'birthday' => 'nullable|string',
             'address' => 'nullable|string',
             'money' => 'nullable|string',
-            
+
         ], [
             'name.required' => 'Vui lòng nhập tên của bạn',
             'username.required' => 'Vui lòng nhập tên người dùng',
@@ -123,37 +124,79 @@ class AuthController extends Controller
         return redirect('/')->with('success', 'Đã đăng xuất thành công.');
     }
 
-    public function profile(Request $request)
+    public function profile(Request $request, User $user)
     {
-        $user = Auth::user();
-      
-        if ($user) {
-            
-            return view('auth.profile_account', compact('user'));
-        }else{
+
+        if (!$user) {
             return redirect()->route('login');
         }
+        return view('auth.profile_account', compact('user'));
     }
     public function update(Request $request)
     {
-        $user = Auth::user();
-    dd($user);
-        // Validate dữ liệu
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:255',
-            'address' => 'nullable|string|max:255',
-            'gender' => 'required|in:0,1',
-            'birthday' => 'nullable|date',
-            // Thêm các trường khác nếu cần
-        ]);
-        dd($validatedData);
-    
-        // Cập nhật thông tin người dùng
-        $user->update($validatedData);
-    
-        return false;
+        try {
+            // Validate data, including file validation if needed
+            $validatedData = $request->validate([
+                'name' => 'required|string|max:255',
+                'username' => 'required|string|max:255',
+                'phone' => 'nullable|string|max:255',
+                'address' => 'nullable|string|max:255',
+                'gender' => 'required|in:0,1',
+                'birthday' => 'nullable|date',
+                'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            // Update text fields
+            $user = Auth::user();
+            $user->update([
+                'name' => $validatedData['name'],
+                'username' => $validatedData['username'],
+                'phone' => $validatedData['phone'],
+                'address' => $validatedData['address'],
+                'gender' => $validatedData['gender'],
+                'birthday' => $validatedData['birthday'],
+            ]);
+
+            // Handle profile picture update
+            if ($request->hasFile('profile_picture')) {
+                // Delete the old profile picture if it exists
+                if ($user->image) {
+                    Storage::delete($user->image);
+                }
+
+                // Store the new profile picture and update the database column
+                $path = $request->file('profile_picture')->storeAs('public/profile_pictures', $user->id . '.' . $request->file('profile_picture')->extension());
+                $user->update(['image' => 'profile_pictures/' . $user->id . '.' . $request->file('profile_picture')->extension()]);
+            }
+
+            return redirect()->route('profile', compact('user'))->with('success', 'Profile updated successfully.');
+        } catch (\Exception $e) {
+            \Log::error('Update profile error: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'An error occurred while updating the profile.');
+        }
     }
-    
+    public function changePassword(Request $request)
+    {
+        try {
+            $user = Auth::user();
+
+            $validatedData = $request->validate([
+                'old_password' => 'required|string',
+                'new_password' => 'required|string|min:8|confirmed',
+            ]);
+ dd(Hash::check($validatedData['old_password']));
+            // Check if the old password matches the user's current password
+            if (!Hash::check($validatedData['old_password'], $user->password)) {
+                return redirect()->back()->with('error', 'Mật khẩu không đúng');
+            }
+
+            // Update the user's password
+            $user->update(['password' => Hash::make($validatedData['new_password'])]);
+
+            return redirect()->route('profile')->with('success', 'Password changed successfully.');
+        } catch (\Exception $e) {
+            \Log::error('Change password error: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'An error occurred while changing the password.');
+        }
+    }
 }
