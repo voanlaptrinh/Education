@@ -15,11 +15,12 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->string('username')->unique();
+           
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->string('image')->nullable();
             $table->integer('gender')->nullable();
-            $table->string('birthday')->nullable();
+            $table->date('birthday')->nullable();
             $table->string('address')->nullable();
             $table->string('money')->nullable();
             $table->integer('user_type')->nullable(); //phân quyền

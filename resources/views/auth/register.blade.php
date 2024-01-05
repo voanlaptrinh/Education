@@ -62,18 +62,7 @@
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
                 </div>
-                <div class="col-lg-6">
-                    <label for="exampleInputEmail1" class="form-label">Quyền *</label>
-
-                    <select class="form-select" name="user_type" aria-label="Default select example">
-                        <option selected>Quyền</option>
-                        <option value="1">Giáo viên</option>
-                        <option value="2">Học sinh</option>
-                    </select>
-                    @error('user_type')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-                </div>
+               
             </div>
             <!-- Password -->
 

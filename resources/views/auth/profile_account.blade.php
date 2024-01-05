@@ -3,7 +3,8 @@
     <section class="pt-0">
         <!-- Main banner background image -->
         <div class="container-fluid px-0">
-            <div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+            <div class="bg-blue h-100px h-md-200px rounded-0"
+                style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
             </div>
         </div>
         <div class="container mt-n4">
@@ -15,17 +16,22 @@
                             <!-- Avatar -->
                             <div class="col-auto mt-4 mt-md-0">
                                 <div class="avatar avatar-xxl mt-n3">
-                                    <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt="">
+                                    <img class="avatar-img rounded-circle border border-white border-3 shadow"
+                                        src="assets/images/avatar/01.jpg" alt="">
                                 </div>
                             </div>
                             <!-- Profile info -->
                             <div class="col d-md-flex justify-content-between align-items-center mt-4">
                                 <div>
-                                    <h1 class="my-1 fs-4">Lori Stevens <i class="bi bi-patch-check-fill text-info small"></i></h1>
+                                    <h1 class="my-1 fs-4">Lori Stevens <i
+                                            class="bi bi-patch-check-fill text-info small"></i></h1>
                                     <ul class="list-inline mb-0">
-                                        <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
-                                        <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled Students</li>
-                                        <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
+                                        <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i
+                                                class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
+                                        <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i
+                                                class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled Students</li>
+                                        <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i
+                                                class="fas fa-book text-purple me-2"></i>25 Courses</li>
                                     </ul>
                                 </div>
                                 <!-- Button -->
@@ -42,7 +48,8 @@
                     <hr class="d-xl-none">
                     <div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
                         <a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
-                        <button class="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                        <button class="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
                             <i class="fas fa-sliders-h"></i>
                         </button>
                     </div>
@@ -52,10 +59,10 @@
         </div>
     </section>
     <!-- =======================
-    Page Banner END -->
+            Page Banner END -->
 
     <!-- =======================
-    Page content START -->
+            Page content START -->
     <section class="pt-0">
         <div class="container">
             <div class="row">
@@ -67,25 +74,38 @@
                         <!-- Offcanvas header -->
                         <div class="offcanvas-header bg-light">
                             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">My profile</h5>
-                            <button  type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
                         </div>
                         <!-- Offcanvas body -->
                         <div class="offcanvas-body p-3 p-xl-0">
                             <div class="bg-dark border rounded-3 pb-0 p-3 w-100">
                                 <!-- Dashboard menu -->
                                 <div class="list-group list-group-dark list-group-borderless">
-                                    <a class="list-group-item" href="instructor-dashboard.html"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-                                    <a class="list-group-item" href="instructor-manage-course.html"><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
-                                    <a class="list-group-item" href="instructor-quiz.html"><i class="bi bi-question-diamond fa-fw me-2"></i>Quiz</a>
-                                    <a class="list-group-item" href="instructor-earning.html"><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-                                    <a class="list-group-item" href="instructor-studentlist.html"><i class="bi bi-people fa-fw me-2"></i>Students</a>
-                                    <a class="list-group-item" href="instructor-order.html"><i class="bi bi-folder-check fa-fw me-2"></i>Orders</a>
-                                    <a class="list-group-item" href="instructor-review.html"><i class="bi bi-star fa-fw me-2"></i>Reviews</a>
-                                    <a class="list-group-item active" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</a>
-                                    <a class="list-group-item" href="instructor-payout.html"><i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
-                                    <a class="list-group-item" href="instructor-setting.html"><i class="bi bi-gear fa-fw me-2"></i>Settings</a>
-                                    <a class="list-group-item" href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
-                                    <a class="list-group-item text-danger bg-danger-soft-hover" href="sign-in.html"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
+                                    <a class="list-group-item" href="instructor-dashboard.html"><i
+                                            class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
+                                    <a class="list-group-item" href="instructor-manage-course.html"><i
+                                            class="bi bi-basket fa-fw me-2"></i>My Courses</a>
+                                    <a class="list-group-item" href="instructor-quiz.html"><i
+                                            class="bi bi-question-diamond fa-fw me-2"></i>Quiz</a>
+                                    <a class="list-group-item" href="instructor-earning.html"><i
+                                            class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
+                                    <a class="list-group-item" href="instructor-studentlist.html"><i
+                                            class="bi bi-people fa-fw me-2"></i>Students</a>
+                                    <a class="list-group-item" href="instructor-order.html"><i
+                                            class="bi bi-folder-check fa-fw me-2"></i>Orders</a>
+                                    <a class="list-group-item" href="instructor-review.html"><i
+                                            class="bi bi-star fa-fw me-2"></i>Reviews</a>
+                                    <a class="list-group-item active" href="instructor-edit-profile.html"><i
+                                            class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</a>
+                                    <a class="list-group-item" href="instructor-payout.html"><i
+                                            class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
+                                    <a class="list-group-item" href="instructor-setting.html"><i
+                                            class="bi bi-gear fa-fw me-2"></i>Settings</a>
+                                    <a class="list-group-item" href="instructor-delete-account.html"><i
+                                            class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+                                    <a class="list-group-item text-danger bg-danger-soft-hover" href="sign-in.html"><i
+                                            class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
                                 </div>
                             </div>
                         </div>
@@ -105,19 +125,23 @@
                         <!-- Card body START -->
                         <div class="card-body">
                             <!-- Form -->
-                            <form class="row g-4">
-
+                            <form class="row g-4" action="{{ route('update-profile') }}" method="post">
+                                @csrf
                                 <!-- Profile picture -->
                                 <div class="col-12 justify-content-center align-items-center">
                                     <label class="form-label">Profile picture</label>
                                     <div class="d-flex align-items-center">
-                                        <label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
+                                        <label class="position-relative me-4" for="uploadfile-1"
+                                            title="Replace this pic">
                                             <!-- Avatar place holder -->
                                             <span class="avatar avatar-xl">
-                                                <img id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/07.jpg" alt="">
+                                                <img id="uploadfile-1-preview"
+                                                    class="avatar-img rounded-circle border border-white border-3 shadow"
+                                                    src="assets/images/avatar/07.jpg" alt="">
                                             </span>
                                             <!-- Remove btn -->
-                                            <button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
+                                            <button type="button" class="uploadremove"><i
+                                                    class="bi bi-x text-white"></i></button>
                                         </label>
                                         <!-- Upload button -->
                                         <label class="btn btn-primary-soft mb-0" for="uploadfile-1">Change</label>
@@ -129,8 +153,9 @@
                                 <div class="col-12">
                                     <label class="form-label">Full name</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" value="Lori" placeholder="First name">
-                                        <input type="text" class="form-control" value="Stevens" placeholder="Last name">
+                                        <input type="text" class="form-control" value="{{ $user->name }}"
+                                            placeholder="First name">
+
                                     </div>
                                 </div>
 
@@ -138,47 +163,53 @@
                                 <div class="col-md-6">
                                     <label class="form-label">Username</label>
                                     <div class="input-group">
-                                        <span class="input-group-text">Eduport.com</span>
-                                        <input type="text" class="form-control" value="loristev">
+
+                                        <input type="text" class="form-control" value="{{ $user->username }}">
                                     </div>
                                 </div>
 
                                 <!-- Email id -->
                                 <div class="col-md-6">
                                     <label class="form-label">Email id</label>
-                                    <input class="form-control" type="email" value="example@gmail.com"  placeholder="Email">
+                                    <input id="encryptedEmail" class="form-control" type="email"
+                                        value="{{ $user->email }}" placeholder="Email" disabled>
                                 </div>
 
                                 <!-- Phone number -->
                                 <div class="col-md-6">
                                     <label class="form-label">Phone number</label>
-                                    <input type="text" class="form-control" value="1234567890" placeholder="Phone number">
+                                    <input type="text" class="form-control" value="{{ $user->phone }}"
+                                        placeholder="Phone number">
                                 </div>
 
                                 <!-- Location -->
                                 <div class="col-md-6">
                                     <label class="form-label">Location</label>
-                                    <input class="form-control" type="text" value="California">
+                                    <input class="form-control" type="text" value="{{ $user->address }}">
                                 </div>
 
-                                <!-- About me -->
-                                <div class="col-12">
-                                    <label class="form-label">About me</label>
-                                    <textarea class="form-control" rows="3">I’ve found a way to get paid for my favorite hobby, and do so while following my dream of traveling the world.</textarea>
-                                    <div class="form-text">Brief description for your profile.</div>
+
+                                <div class="col-lg-6">
+                                    <label for="exampleInputEmail1" class="form-label">Giới tính *</label>
+                                    <select class="form-select" name="gender" aria-label="Default select example">
+                                        <option selected="">Giới tính</option>
+                                        <option value="0" {{ $user->gender === 0 ? 'selected' : '' }}>Nam</option>
+                                        <option value="1" {{ $user->gender === 1 ? 'selected' : '' }}>Nữ</option>
+                                    </select>
                                 </div>
+                                <!-- Location -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Ngày sinh</label>
+                                    <input class="form-control" type="date" value="{{ $user->birthday }}">
+                                </div>
+
 
                                 <!-- Education -->
-                                <div class="col-12">
-                                    <label class="form-label">Education</label>
-                                    <input class="form-control mb-2" type="text" value="Bachelor in Computer Graphics">
-                                    <input class="form-control mb-2" type="text" value="Masters in Computer Graphics">
-                                    <button class="btn btn-sm btn-light mb-0"><i class="bi bi-plus me-1"></i>Add more</button>
-                                </div>
+
 
                                 <!-- Save button -->
                                 <div class="d-sm-flex justify-content-end">
-                                    <button type="button" class="btn btn-primary mb-0">Save changes</button>
+                                    <button type="submit" class="btn btn-primary mb-0">Save changes</button>
                                 </div>
                             </form>
                         </div>
@@ -197,18 +228,20 @@
                                 <!-- Card body START -->
                                 <div class="card-body pb-0">
                                     <!-- Google -->
-                                    <div class="position-relative mb-4 d-sm-flex bg-success bg-opacity-10 border border-success p-3 rounded">
+                                    <div
+                                        class="position-relative mb-4 d-sm-flex bg-success bg-opacity-10 border border-success p-3 rounded">
                                         <!-- Title and content -->
                                         <h2 class="fs-1 mb-0 me-3"><i class="fab fa-google text-google-icon"></i></h2>
                                         <div>
-                                            <div class="position-absolute top-0 start-100 translate-middle bg-white rounded-circle lh-1 h-20px">
+                                            <div
+                                                class="position-absolute top-0 start-100 translate-middle bg-white rounded-circle lh-1 h-20px">
                                                 <i class="bi bi-check-circle-fill text-success fs-5"></i>
                                             </div>
-                                                <h6 class="mb-1">Google</h6>
-                                                <p class="mb-1 small">You are successfully connected to your Google account</p>
-                                                <!-- Button -->
-                                                <button type="button" class="btn btn-sm btn-danger mb-0">Invoke</button>
-                                                <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
+                                            <h6 class="mb-1">Google</h6>
+                                            <p class="mb-1 small">You are successfully connected to your Google account</p>
+                                            <!-- Button -->
+                                            <button type="button" class="btn btn-sm btn-danger mb-0">Invoke</button>
+                                            <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
                                         </div>
                                     </div>
 
@@ -218,9 +251,12 @@
                                         <h2 class="fs-1 mb-0 me-3"><i class="fab fa-linkedin-in text-linkedin"></i></h2>
                                         <div>
                                             <h6 class="mb-1">Linkedin</h6>
-                                            <p class="mb-1 small">Connect with Linkedin account for a personalized experience</p>
+                                            <p class="mb-1 small">Connect with Linkedin account for a personalized
+                                                experience
+                                            </p>
                                             <!-- Button -->
-                                            <button type="button" class="btn btn-sm btn-primary mb-0">Connect Linkedin</button>
+                                            <button type="button" class="btn btn-sm btn-primary mb-0">Connect
+                                                Linkedin</button>
                                             <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
                                         </div>
                                     </div>
@@ -231,9 +267,12 @@
                                         <h2 class="fs-1 mb-0 me-3"><i class="fab fa-facebook text-facebook"></i></h2>
                                         <div>
                                             <h6 class="mb-1">Facebook</h6>
-                                            <p class="mb-1 small">Connect with Facebook account for a personalized experience</p>
+                                            <p class="mb-1 small">Connect with Facebook account for a personalized
+                                                experience
+                                            </p>
                                             <!-- Button -->
-                                            <button type="button" class="btn btn-sm btn-primary mb-0">Connect Facebook</button>
+                                            <button type="button" class="btn btn-sm btn-primary mb-0">Connect
+                                                Facebook</button>
                                             <a href="#" class="btn btn-sm btn-link text-body mb-0">Learn more</a>
                                         </div>
                                     </div>
@@ -254,26 +293,37 @@
                                 <div class="card-body">
                                     <!-- Facebook username -->
                                     <div class="mb-3">
-                                        <label class="form-label"><i class="fab fa-facebook text-facebook me-2"></i>Enter facebook username</label>
-                                        <input class="form-control" type="text" value="loristev" placeholder="Enter username">
+                                        <label class="form-label"><i class="fab fa-facebook text-facebook me-2"></i>Enter
+                                            facebook username</label>
+                                        <input class="form-control" type="text" value="loristev"
+                                            placeholder="Enter username">
                                     </div>
 
                                     <!-- Twitter username -->
                                     <div class="mb-3">
-                                        <label class="form-label"><i class="bi bi-twitter text-twitter me-2"></i>Enter twitter username</label>
-                                        <input class="form-control" type="text" value="loristev" placeholder="Enter username">
+                                        <label class="form-label"><i class="bi bi-twitter text-twitter me-2"></i>Enter
+                                            twitter
+                                            username</label>
+                                        <input class="form-control" type="text" value="loristev"
+                                            placeholder="Enter username">
                                     </div>
 
                                     <!-- Instagram username -->
                                     <div class="mb-3">
-                                        <label class="form-label"><i class="fab fa-instagram text-instagram-gradient me-2"></i>Enter instagram username</label>
-                                        <input class="form-control" type="text" value="loristev" placeholder="Enter username">
+                                        <label class="form-label"><i
+                                                class="fab fa-instagram text-instagram-gradient me-2"></i>Enter instagram
+                                            username</label>
+                                        <input class="form-control" type="text" value="loristev"
+                                            placeholder="Enter username">
                                     </div>
 
                                     <!-- Youtube -->
                                     <div class="mb-3">
-                                        <label class="form-label"><i class="fab fa-youtube text-youtube me-2"></i>Add your youtube profile URL</label>
-                                        <input class="form-control" type="text" value="https://www.youtube.com/in/Eduport-05620abc" placeholder="Enter username">
+                                        <label class="form-label"><i class="fab fa-youtube text-youtube me-2"></i>Add your
+                                            youtube profile URL</label>
+                                        <input class="form-control" type="text"
+                                            value="https://www.youtube.com/in/Eduport-05620abc"
+                                            placeholder="Enter username">
                                     </div>
 
                                     <!-- Button -->
@@ -295,7 +345,8 @@
                                 </div>
                                 <!-- Card body -->
                                 <div class="card-body">
-                                    <p>Your current email address is <span class="text-primary">example@gmail.com</span></p>
+                                    <p>Your current email address is <span class="text-primary">example@gmail.com</span>
+                                    </p>
                                     <!-- Email -->
                                     <form>
                                         <label class="form-label">Enter your new email id</label>
@@ -354,4 +405,13 @@
             </div><!-- Row END -->
         </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var encryptedEmailInput = document.getElementById('encryptedEmail');
+            encryptedEmailInput.addEventListener('input', function(event) {
+                event.preventDefault();
+                alert('Không thể chỉnh sửa trường này.');
+            });
+        });
+    </script>
 @endsection

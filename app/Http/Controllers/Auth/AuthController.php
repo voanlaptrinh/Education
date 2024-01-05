@@ -10,6 +10,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -78,7 +79,7 @@ class AuthController extends Controller
             'birthday' => 'nullable|string',
             'address' => 'nullable|string',
             'money' => 'nullable|string',
-            'user_type' => 'required|in:1,2',
+            
         ], [
             'name.required' => 'Vui lòng nhập tên của bạn',
             'username.required' => 'Vui lòng nhập tên người dùng',
@@ -88,8 +89,6 @@ class AuthController extends Controller
             'password.confirmed' => 'Xác nhận mật khẩu không khớp.',
             'gender.required' => 'Vui lòng chọn giới tính',
             'gender.in' => 'Giới tính không hợp lệ.',
-            'user_type.required' => 'Vui lòng chọn quyền',
-            'user_type.in' => 'Quyền không hợp lệ.',
             'birthday.required' => 'Vui lòng nhập ngày sinh của bạn',
         ]);
 
@@ -102,8 +101,8 @@ class AuthController extends Controller
         $user->gender =  $request->input('gender');
         $user->birthday =  $request->input('birthday');
         $user->address =  $request->input('address');
-        $user->user_type =   $request->input('user_type');
         $user->status =  1;
+        $user->user_type =  1;
         $user->verification_token = Str::random(40);
 
 
@@ -118,11 +117,43 @@ class AuthController extends Controller
         return redirect('/login')->with('success', 'Đăng ký thành công!');
     }
 
-    public function logout()
+    public function profilelogout()
     {
         Auth::logout();
-
-        // Nếu bạn muốn chuyển hướng sau khi đăng xuất, bạn có thể sử dụng hàm redirect
         return redirect('/')->with('success', 'Đã đăng xuất thành công.');
     }
+
+    public function profile(Request $request)
+    {
+        $user = Auth::user();
+      
+        if ($user) {
+            
+            return view('auth.profile_account', compact('user'));
+        }else{
+            return redirect()->route('login');
+        }
+    }
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+    dd($user);
+        // Validate dữ liệu
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
+            'phone' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:255',
+            'gender' => 'required|in:0,1',
+            'birthday' => 'nullable|date',
+            // Thêm các trường khác nếu cần
+        ]);
+        dd($validatedData);
+    
+        // Cập nhật thông tin người dùng
+        $user->update($validatedData);
+    
+        return false;
+    }
+    
 }

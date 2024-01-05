@@ -64,6 +64,9 @@ Route::post('login', [AuthController::class, 'postLogin']);
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'postRegister']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+//profile
+Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+Route::post('/update-profile', [AuthController::class, 'update'])->name('update-profile');
 
 
 
