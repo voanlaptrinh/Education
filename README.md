@@ -14,3 +14,13 @@ HHH
     MAIL_FROM_ADDRESS=thanbatbai3092002@gmail.com
     MAIL_FROM_NAME="khánh"
 <!--  -->
+
+
+<!-- migratae -->
+php artisan make:migration create_flights_table
+<!--  -->
+
+<!-- Model -->
+php artisan make:model Flight
+<!--  -->
+

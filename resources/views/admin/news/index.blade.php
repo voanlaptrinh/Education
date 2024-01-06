@@ -1,8 +1,6 @@
 @extends('admin.index')
 @section('contentadmin')
-    {{-- <form method="post">
-    <textarea id="my-editor">Hello, World!</textarea>
-</form> --}}
+   
 <div class="page-content">
 	
 	<!-- Top bar START -->

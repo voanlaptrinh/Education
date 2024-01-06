@@ -35,8 +35,9 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
         Route::prefix('news')->group(function () {
-            Route::get('/', [NewsAdminController::class, 'index'])->name('newsAdmin.index');
+            Route::get('/', [NewsAdminController::class, 'index'])->name('indexNews');
             Route::get('/create', [NewsAdminController::class, 'create'])->name('newsAdmin.index');
+            Route::post('/store', [NewsAdminController::class, 'store'])->name('news.store');
         });
     });
 });
