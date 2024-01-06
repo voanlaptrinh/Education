@@ -1,673 +1,151 @@
 @extends('admin.index')
 @section('contentadmin')
-   
-<div class="page-content">
-	
-	<!-- Top bar START -->
-	<nav class="navbar top-bar navbar-light border-bottom py-0 py-xl-3">
-		<div class="container-fluid p-0">
-			<div class="d-flex align-items-center w-100">
+    <!-- Page main content START -->
+    <div class="page-content-wrapper border">
 
-				<!-- Logo START -->
-				<div class="d-flex align-items-center d-xl-none">
-					<a class="navbar-brand" href="index.html">
-						<img class="light-mode-item navbar-brand-item h-30px" src="assets/images/logo-mobile.svg" alt="">
-						<img class="dark-mode-item navbar-brand-item h-30px" src="assets/images/logo-mobile-light.svg" alt="">
-					</a>
-				</div>
-				<!-- Logo END -->
+        <!-- Title -->
+        <div class="row mb-3">
+            <div class="col-12 d-sm-flex justify-content-between align-items-center">
+                <h1 class="h3 mb-2 mb-sm-0">Tin tức<span
+                        class="badge bg-orange bg-opacity-10 text-orange">{{ $totalNews }}</span></h1>
+                <a href="{{ route('newsAdmin.index') }}" class="btn btn-sm btn-primary mb-0">Create a Course</a>
+            </div>
+        </div>
 
-				<!-- Toggler for sidebar START -->
-				<div class="navbar-expand-xl sidebar-offcanvas-menu">
-					<button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-expanded="false" aria-label="Toggle navigation" data-bs-auto-close="outside">
-						<i class="bi bi-text-right fa-fw h2 lh-0 mb-0 rtl-flip" data-bs-target="#offcanvasMenu"> </i>
-					</button>
-				</div>
-				<!-- Toggler for sidebar END -->
-				
-				<!-- Top bar left -->
-				<div class="navbar-expand-lg ms-auto ms-xl-0">
-					
-					<!-- Toggler for menubar START -->
-					<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopContent" aria-controls="navbarTopContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-animation">
-							<span></span>
-							<span></span>
-							<span></span>
-						</span>
-					</button>
-					<!-- Toggler for menubar END -->
+        <!-- Card START -->
+        <div class="card bg-transparent border">
 
-					<!-- Topbar menu START -->
-					<div class="collapse navbar-collapse w-100" id="navbarTopContent">
-						<!-- Top search START -->
-						<div class="nav my-3 my-xl-0 flex-nowrap align-items-center">
-							<div class="nav-item w-100">
-								<form class="position-relative">
-									<input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search" placeholder="Search" aria-label="Search">
-									<button class="bg-transparent px-2 py-0 border-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 text-primary"></i></button>
-								</form>
-							</div>
-						</div>
-						<!-- Top search END -->
-					</div>
-					<!-- Topbar menu END -->
-				</div>
-				<!-- Top bar left END -->
-				
-				<!-- Top bar right START -->
-				<div class="ms-xl-auto">
-					<ul class="navbar-nav flex-row align-items-center">
+            <!-- Card header START -->
+            <div class="card-header bg-light border-bottom">
+                <!-- Search and select START -->
+                <div class="row g-3 align-items-center justify-content-between">
 
-						<!-- Notification dropdown START -->
-						<li class="nav-item ms-2 ms-md-3 dropdown">
-							<!-- Notification button -->
-							<a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-								<i class="bi bi-bell fa-fw"></i>
-							</a>
-							<!-- Notification dote -->
-							<span class="notif-badge animation-blink"></span>
+                    <!-- Search bar -->
+                    <div class="col-md-12">
+                        <form class="rounded position-relative" action="{{ route('news.search') }}" method="GET">
+                            <input name="search" class="form-control bg-body" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button
+                                class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                                type="submit">
+                                <i class="fas fa-search fs-6 "></i>
+                            </button>
+                        </form>
+                    </div>
 
-							<!-- Notification dropdown menu START -->
-							<div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
-								<div class="card bg-transparent">
-									<div class="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
-										<h6 class="m-0">Notifications <span class="badge bg-danger bg-opacity-10 text-danger ms-2">2 new</span></h6>
-										<a class="small" href="#">Clear all</a>
-									</div>
-									<div class="card-body p-0">
-										<ul class="list-group list-unstyled list-group-flush">
-											<!-- Notif item -->
-											<li>
-												<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
-													<div class="me-3">
-														<div class="avatar avatar-md">
-															<img class="avatar-img rounded-circle" src="assets/images/avatar/08.jpg" alt="avatar">
-														</div>
-													</div>
-													<div>
-														<p class="text-body small m-0">Congratulate <b>Joan Wallace</b> for graduating from <b>Microverse university</b></p>
-														<u class="small">Say congrats</u>
-													</div>
-												</a>
-											</li>
 
-											<!-- Notif item -->
-											<li>
-												<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
-													<div class="me-3">
-														<div class="avatar avatar-md">
-															<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
-														</div>
-													</div>
-													<div>
-														<h6 class="mb-1">Larry Lawson Added a new course</h6>
-														<p class="small text-body m-0">What's new! Find out about new features</p>
-														<u class="small">View detail</u>
-													</div>
-												</a>
-											</li>
 
-											<!-- Notif item -->
-											<li>
-												<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
-													<div class="me-3">
-														<div class="avatar avatar-md">
-															<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
-														</div>
-													</div>
-													<div>
-														<h6 class="mb-1">New request to apply for Instructor</h6>
-														<u class="small">View detail</u>
-													</div>
-												</a>
-											</li>
+                </div>
+                <!-- Search and select END -->
+            </div>
+            <!-- Card header END -->
 
-											<!-- Notif item -->
-											<li>
-												<a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
-													<div class="me-3">
-														<div class="avatar avatar-md">
-															<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
-														</div>
-													</div>
-													<div>
-														<h6 class="mb-1">Update v2.3 completed successfully</h6>
-														<p class="small text-body m-0">What's new! Find out about new features</p>
-														<small class="text-body">5 min ago</small>
-													</div>
-												</a>
-											</li>
-										</ul>
-									</div>
-									<!-- Button -->
-									<div class="card-footer bg-transparent border-0 py-3 text-center position-relative">
-										<a href="#" class="stretched-link">See all incoming activity</a>
-									</div>
-								</div>
-							</div>
-							<!-- Notification dropdown menu END -->
-						</li>
-						<!-- Notification dropdown END -->
+            <!-- Card body START -->
+            <div class="card-body">
+                <!-- Course table START -->
+                <div class="table-responsive border-0 rounded-3">
+                    <!-- Table START -->
+                    <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                        <!-- Table head -->
+                        <thead>
+                            <tr>
+                                <th scope="col" class="border-0 rounded-start">Ảnh tin tức</th>
+                                <th scope="col" class="border-0 ">Tiêu đề </th>
 
-						<!-- Profile dropdown START -->
-						<li class="nav-item ms-2 ms-md-3 dropdown">
-							<!-- Avatar -->
-							<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-								<img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
-							</a>
+                                <th scope="col" class="border-0">Lượt xem</th>
+                                <th scope="col" class="border-0 rounded-end">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <style>
+                            nav .hidden {
+                                display: none;
+                            }
+                        </style>
+                        <!-- Table body START -->
+                        <tbody>
 
-							<!-- Profile dropdown START -->
-							<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-								<!-- Profile info -->
-								<li class="px-3">
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar me-3 mb-3">
-											<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
-										</div>
-										<div>
-											<a class="h6 mt-2 mt-sm-0" href="#">Lori Ferguson</a>
-											<p class="small m-0">example@gmail.com</p>
-										</div>
-									</div>
-								</li>
-                <li> <hr class="dropdown-divider"></li>
-								<!-- Links -->
-								<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
-								<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
-								<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-								<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-								<li> <hr class="dropdown-divider"></li>
+                            @foreach ($news as $newS)
+                                <!-- Table row -->
+                                <tr>
+                                    <td>
+                                        <div class="w-60px">
+                                            <img src="{{ asset('images/news/' . $newS->image) }}" class="rounded"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <!-- Table data -->
+                                    <td>
+                                        <div class="d-flex align-items-center position-relative">
+                                            <!-- Image -->
 
-								<!-- Dark mode options START -->
-								<li>
-									<div class="bg-light dark-mode-switch theme-icon-active d-flex align-items-center p-1 rounded mt-2">
-										<!-- <span>Mode:</span> -->
-										<button type="button" class="btn btn-sm mb-0 active" data-bs-theme-value="light">
-											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun fa-fw mode-switch" viewBox="0 0 16 16">
-												<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
-												<use href="#"></use>
-											</svg> Light
-										</button>
-										<button type="button" class="btn btn-sm mb-0" data-bs-theme-value="dark">
-											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars fa-fw mode-switch" viewBox="0 0 16 16">
-												<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"></path>
-												<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
-												<use href="#"></use>
-											</svg> Dark
-										</button>
-										<button type="button" class="btn btn-sm mb-0" data-bs-theme-value="auto">
-											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch" viewBox="0 0 16 16">
-												<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
-												<use href="#"></use>
-											</svg> Auto
-										</button>
-									</div>
-								</li> 
-								<!-- Dark mode options END-->
-							</ul>
-							<!-- Profile dropdown END -->
-						</li>
-						<!-- Profile dropdown END -->
-					</ul>
-				</div>
-				<!-- Top bar right END -->
-			</div>
-		</div>
-	</nav>
-	<!-- Top bar END -->
+                                            <!-- Title -->
+                                            <h6 class="table-responsive-title mb-0 ms-2">
+                                                <a href="#" class="stretched-link">{{ $newS->name }}</a>
+                                            </h6>
+                                        </div>
+                                    </td>
 
-	<!-- Page main content START -->
-	<div class="page-content-wrapper border">
 
-		<!-- Title -->
-		<div class="row mb-3">
-			<div class="col-12 d-sm-flex justify-content-between align-items-center">
-				<h1 class="h3 mb-2 mb-sm-0">Web design <span class="badge bg-orange bg-opacity-10 text-orange">245</span></h1>
-				<a href="instructor-create-course.html" class="btn btn-sm btn-primary mb-0">Create a Course</a>
-			</div>
-		</div>
 
-		<!-- Card START -->
-		<div class="card bg-transparent border">
 
-			<!-- Card header START -->
-			<div class="card-header bg-light border-bottom">
-				<!-- Search and select START -->
-				<div class="row g-3 align-items-center justify-content-between">
 
-					<!-- Search bar -->
-					<div class="col-md-8">
-						<form class="rounded position-relative">
-							<input class="form-control bg-body" type="search" placeholder="Search" aria-label="Search">
-							<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
-								<i class="fas fa-search fs-6 "></i>
-							</button>
-						</form>
-					</div>
+                                    <!-- Table data -->
+                                    <td>{{ $newS->is_views }}</td>
 
-					<!-- Select option -->
-					<div class="col-md-3">
-						<!-- Short by filter -->
-						<form>
-							<div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false"><div class="choices__inner"><select class="form-select js-choice border-0 z-index-9 choices__input" aria-label=".form-select-sm" hidden="" tabindex="-1" data-choice="active"><option value="" data-custom-properties="[object Object]">Sort by</option></select><div class="choices__list choices__list--single"><div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">Sort by</div></div></div><div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" name="search_terms" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="Sort by" placeholder=""><div class="choices__list" role="listbox"><div id="choices--8ys9-item-choice-5" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="5" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">Sort by</div><div id="choices--8ys9-item-choice-1" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="1" data-value="Accepted" data-select-text="Press to select" data-choice-selectable="">Accepted</div><div id="choices--8ys9-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="Newest" data-select-text="Press to select" data-choice-selectable="">Newest</div><div id="choices--8ys9-item-choice-3" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="3" data-value="Oldest" data-select-text="Press to select" data-choice-selectable="">Oldest</div><div id="choices--8ys9-item-choice-4" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="4" data-value="Rejected" data-select-text="Press to select" data-choice-selectable="">Rejected</div></div></div></div>
-						</form>
-					</div>
-				</div>
-				<!-- Search and select END -->
-			</div>
-			<!-- Card header END -->
+                                    <!-- Table data -->
+                                    <td>
+                                        <a href="{{ route('edit-news', ['id' => $newS->id]) }}"
+                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
+                                        <div class="btn btn-sm btn-danger mb-0">
+                                            <form action="{{ route('news.destroy', $newS->id) }}" method="post">
+                                                @csrf
+                                                <a type="submit"
+                                                    onclick="return confirm('Bạn chắc chắn muốn xóa tin tức này?')">Delete</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
 
-			<!-- Card body START -->
-			<div class="card-body">
-				<!-- Course table START -->
-				<div class="table-responsive border-0 rounded-3">
-					<!-- Table START -->
-					<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
-						<!-- Table head -->
-						<thead>
-							<tr>
-								<th scope="col" class="border-0 rounded-start">Course Name</th>
-								<th scope="col" class="border-0">Instructor</th>
-								<th scope="col" class="border-0">Rating</th>
-								<th scope="col" class="border-0">Enrolled</th>
-								<th scope="col" class="border-0 rounded-end">Action</th>
-							</tr>
-						</thead>
 
-						<!-- Table body START -->
-						<tbody>
-							
-							<!-- Table row -->
-							<tr>
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center position-relative">
-										<!-- Image -->
-										<div class="w-60px">
-											<img src="assets/images/courses/4by3/08.jpg" class="rounded" alt="">
-										</div>
-										<!-- Title -->
-										<h6 class="table-responsive-title mb-0 ms-2">	
-											<a href="#" class="stretched-link">Building Scalable APIs with GraphQL</a>
-										</h6>
-									</div>
-								</td>
 
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar avatar-xs flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-2">
-											<h6 class="mb-0 fw-light">Lori Stevens</h6>
-										</div>
-									</div>
-								</td>
 
-								<!-- Table data -->
-								<td>
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
-									</ul>
-								</td>
 
-								<!-- Table data -->
-								<td> 15,567</td>
+                        </tbody>
+                        <!-- Table body END -->
+                    </table>
+                    <!-- Table END -->
+                </div>
+                <!-- Course table END -->
+            </div>
+            <!-- Card body END -->
 
-								<!-- Table data -->
-								<td>
-									<a href="#" class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-									<button class="btn btn-sm btn-danger mb-0">Delete</button>
-								</td>
-							</tr>
+            <style>
+                /* Trong resources/css/styles.css hoặc bất kỳ file CSS của bạn */
 
-							<!-- Table row -->
-							<tr>
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center position-relative">
-										<!-- Image -->
-										<div class="w-60px">
-											<img src="assets/images/courses/4by3/10.jpg" class="rounded" alt="">
-										</div>
-										<!-- Title -->
-										<h6 class="table-responsive-title mb-0 ms-2">	
-											<a href="#" class="stretched-link">Bootstrap 5 From Scratch</a>
-										</h6>
-									</div>
-								</td>
+                nav.hidden {
+                    display: none;
+                }
+            </style>
+            <!-- Card footer START -->
+            <div class="card-footer bg-transparent pt-0">
+                <!-- Pagination START -->
+                <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                    <!-- Content -->
+                    <p class="mb-0 text-center text-sm-start"></p>
+                    <!-- Pagination -->
+                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                            {{ $news->links() }}
+                        </ul>
+                    </nav>
 
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar avatar-xs flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-2">
-											<h6 class="mb-0 fw-light">Billy Vasquez</h6>
-										</div>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
-									</ul>
-								</td>
-
-								<!-- Table data -->
-								<td>16,584</td>
-
-								<!-- Table data -->
-								<td>
-									<a href="#" class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-									<button class="btn btn-sm btn-danger mb-0">Delete</button>
-								</td>
-							</tr>
-
-							<!-- Table row -->
-							<tr>
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center position-relative">
-										<!-- Image -->
-										<div class="w-60px">
-											<img src="assets/images/courses/4by3/02.jpg" class="rounded" alt="">
-										</div>
-										<!-- Title -->
-										<h6 class="table-responsive-title mb-0 ms-2">	
-											<a href="#" class="stretched-link">Graphic Design Masterclass</a>
-										</h6>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar avatar-xs flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-2">
-											<h6 class="mb-0 fw-light">Carolyn Ortiz</h6>
-										</div>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
-									</ul>
-								</td>
-
-								<!-- Table data -->
-								<td>6,458</td>
-
-								<!-- Table data -->
-								<td>
-									<a href="#" class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-									<button class="btn btn-sm btn-danger mb-0">Delete</button>
-								</td>
-							</tr>
-
-							<!-- Table row -->
-							<tr>
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center position-relative">
-										<!-- Image -->
-										<div class="w-60px">
-											<img src="assets/images/courses/4by3/04.jpg" class="rounded" alt="">
-										</div>
-										<!-- Title -->
-										<h6 class="table-responsive-title mb-0 ms-2">	
-											<a href="#" class="stretched-link">Learn Invision</a>
-										</h6>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar avatar-xs flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-2">
-											<h6 class="mb-0 fw-light">Frances Guerrero</h6>
-										</div>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-									</ul>
-								</td>
-
-								<!-- Table data -->
-								<td>20,158</td>
-
-								<!-- Table data -->
-								<td>
-									<a href="#" class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-									<button class="btn btn-sm btn-danger mb-0">Delete</button>
-								</td>
-							</tr>
-
-							<!-- Table row -->
-							<tr>
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center position-relative">
-										<!-- Image -->
-										<div class="w-60px">
-											<img src="assets/images/courses/4by3/09.jpg" class="rounded" alt="">
-										</div>
-										<!-- Title -->
-										<h6 class="table-responsive-title mb-0 ms-2">	
-											<a href="#" class="stretched-link">JavaScript: Full Understanding</a>
-										</h6>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar avatar-xs flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/08.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-2">
-											<h6 class="mb-0 fw-light">Samuel Bishop</h6>
-										</div>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</td>
-
-								<!-- Table data -->
-								<td>5,325</td>
-
-								<!-- Table data -->
-								<td>
-									<a href="#" class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-									<button class="btn btn-sm btn-danger mb-0">Delete</button>
-								</td>
-							</tr>
-
-							<!-- Table row -->
-							<tr>
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center position-relative">
-										<!-- Image -->
-										<div class="w-60px">
-											<img src="assets/images/courses/4by3/11.jpg" class="rounded" alt="">
-										</div>
-										<!-- Title -->
-										<h6 class="table-responsive-title mb-0 ms-2">	
-											<a href="#" class="stretched-link">Build Responsive Websites with HTML</a>
-										</h6>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar avatar-xs flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-2">
-											<h6 class="mb-0 fw-light">Dennis Barrett</h6>
-										</div>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
-									</ul>
-								</td>
-
-								<!-- Table data -->
-								<td>8,258</td>
-
-								<!-- Table data -->
-								<td>
-									<a href="#" class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-									<button class="btn btn-sm btn-danger mb-0">Delete</button>
-								</td>
-							</tr>
-
-							<!-- Table row -->
-							<tr>
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center position-relative">
-										<!-- Image -->
-										<div class="w-60px">
-											<img src="assets/images/courses/4by3/12.jpg" class="rounded" alt="">
-										</div>
-										<!-- Title -->
-										<h6 class="table-responsive-title mb-0 ms-2">	
-											<a href="#" class="stretched-link">Build Websites with CSS</a>
-										</h6>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<div class="d-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar avatar-xs flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-2">
-											<h6 class="mb-0 fw-light">Joan Wallace</h6>
-										</div>
-									</div>
-								</td>
-
-								<!-- Table data -->
-								<td>
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-									</ul>
-								</td>
-
-								<!-- Table data -->
-								<td>17,654</td>
-
-								<!-- Table data -->
-								<td>
-									<a href="#" class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-									<button class="btn btn-sm btn-danger mb-0">Delete</button>
-								</td>
-							</tr>
-
-						</tbody>
-						<!-- Table body END -->
-					</table>
-					<!-- Table END -->
-				</div>
-				<!-- Course table END -->
-			</div>
-			<!-- Card body END -->
-
-			<!-- Card footer START -->
-			<div class="card-footer bg-transparent pt-0">
-				<!-- Pagination START -->
-				<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-					<!-- Content -->
-					<p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-					<!-- Pagination -->
-					<nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-						<ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-							<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
-							<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-							<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-							<li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
-							<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
-						</ul>
-					</nav>
-				</div>
-				<!-- Pagination END -->
-			</div>
-			<!-- Card footer END -->
-		</div>
-		<!-- Card END -->
-	</div>
-	<!-- Page main content END -->
-</div>
+                </div>
+                <!-- Pagination END -->
+            </div>
+            <!-- Card footer END -->
+        </div>
+        <!-- Card END -->
+    </div>
+    <!-- Page main content END -->
 @endsection

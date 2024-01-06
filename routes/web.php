@@ -38,6 +38,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/', [NewsAdminController::class, 'index'])->name('indexNews');
             Route::get('/create', [NewsAdminController::class, 'create'])->name('newsAdmin.index');
             Route::post('/store', [NewsAdminController::class, 'store'])->name('news.store');
+            Route::get('/edit/{id}', [NewsAdminController::class, 'edit'])->name('edit-news');
+            Route::post('/news/update/{id}', [NewsAdminController::class, 'update'])->name('news.update');
+            Route::post('/news/delete/{id}', [NewsAdminController::class, 'destroy'])->name('news.destroy');
+            Route::get('/search', [NewsAdminController::class, 'search'])->name('news.search');
         });
     });
 });

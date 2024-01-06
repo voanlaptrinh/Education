@@ -24,3 +24,10 @@ php artisan make:migration create_flights_table
 php artisan make:model Flight
 <!--  -->
 
+## xóa cache
+
+php artisan config:cache
+
+## Clear
+
+php artisan optimize:clear
