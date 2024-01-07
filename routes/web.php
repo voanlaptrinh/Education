@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsAdminController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\NewsController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\ResetPasswordController;
@@ -42,6 +44,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/news/update/{id}', [NewsAdminController::class, 'update'])->name('news.update');
             Route::post('/news/delete/{id}', [NewsAdminController::class, 'destroy'])->name('news.destroy');
             Route::get('/search', [NewsAdminController::class, 'search'])->name('news.search');
+        });
+        Route::prefix('student')->group(function () {
+            Route::get('/', [StudentController::class, 'index'])->name('student.index');
+            Route::post('/{id}/toggle-status', [StudentController::class, 'toggleStatus'])->name('user.toggleStatus');
         });
     });
 });
@@ -103,7 +109,8 @@ Route::post('/quiz/submit', [QuizController::class, 'submit'])->name('quiz.submi
 // routes/web.php
 Route::get('/quiz/groups/{groupId}', [QuizController::class, 'showGroup'])->name('quiz.showGroup');
 // Thêm các route khác cho cập nhật và xóa nhóm
-
-
-
 Route::get('/quiz/quizGroup', [QuizGroupController::class, 'index'])->name('quizGroup.index');
+
+
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/detail/{id}', [NewsController::class, 'detail'])->name('news.detail');

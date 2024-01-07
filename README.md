@@ -1,5 +1,5 @@
 HHH
-<!-- Nếu không up được ảnh  -->
+<!-- Nếu không hiện ảnh khi được ảnh  -->
     php artisan storage:link
 <!--  -->
 
