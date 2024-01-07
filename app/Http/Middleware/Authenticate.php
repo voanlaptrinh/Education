@@ -13,7 +13,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
-        if ($request->user()->email_verified_at === null) {
+        if (!empty($request->user()) && $request->user()->email_verified_at === null) {
             Auth::logout();
         }
     

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\ContactController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\NewsController;
 use App\Http\Controllers\Auth\PasswordController;
@@ -114,3 +115,6 @@ Route::get('/quiz/quizGroup', [QuizGroupController::class, 'index'])->name('quiz
 
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/detail/{id}', [NewsController::class, 'detail'])->name('news.detail');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');

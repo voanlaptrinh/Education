@@ -23,8 +23,6 @@ class CheckUserType
           
             return $next($request);
         }
-       
-       
         abort(403, 'Bạn không có quyền truy cập.');
     }
 }
