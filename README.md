@@ -31,3 +31,6 @@ php artisan config:cache
 ## Clear
 
 php artisan optimize:clear
+
+
+php artisan make:controller UserController

@@ -9,19 +9,15 @@ class Question extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['content', 'quiz_group_id'];
+    protected $fillable = ['course_id', 'text'];
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 
     public function answers()
     {
         return $this->hasMany(Answer::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-    public function quizGroup()
-    {
-        return $this->belongsTo(QuizGroup::class, 'quiz_group_id');
     }
 }

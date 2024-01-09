@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Subject;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -41,20 +42,14 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'status' => 1
         ]);
-        DB::table('quiz_groups')->insert(
-            ['name' => 'Câu hỏi 1'],
-        );
-        DB::table('quiz_groups')->insert(
-            ['name' => 'Câu hỏi 2'],
-        );
-        DB::table('quiz_groups')->insert(
-            ['name' => 'Câu hỏi 3'],
-        );
+      
         DB::table('news')->truncate();
         for ($i = 0; $i < 5; $i++) {
             DB::table('news')->insert([
                 ['name' => 'Sample News' . $i, 'image' => 'sample_image_1.jpg', 'is_views' => 0, 'description' => 'Description of Sample News 1', 'content' => 'Content of Sample News 1', 'created_at' => now(), 'updated_at' => now()],
             ]);
         }
+        Subject::create(['name' => 'Mathematics']);
+        Subject::create(['name' => 'Physics']);
     }
 }

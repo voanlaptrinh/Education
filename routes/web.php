@@ -10,10 +10,13 @@ use App\Http\Controllers\Auth\NewsController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CustomPasswordResetController;
 use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\VerificationController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
@@ -118,3 +121,17 @@ Route::get('/news/detail/{id}', [NewsController::class, 'detail'])->name('news.d
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
+
+Route::get('/subjects', [SubjectController::class, 'index']);
+Route::get('/subjects/create', [SubjectController::class, 'create']);
+Route::post('/subjects/store', [SubjectController::class, 'store']);
+
+// Routes for Courses
+Route::get('/subjects/{subject}/courses', [CourseController::class, 'index'])->name('courses.index');
+Route::get('/subjects/{subject}/courses/create', [CourseController::class, 'create'])->name('courses.create');
+Route::post('/subjects/{subject}/courses/store', [CourseController::class, 'store'])->name('courses.store');
+Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
+// Routes for Questions
+Route::get('/courses/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
+Route::post('/courses/{course}/questions/store', [QuestionController::class, 'store'])->name('questions.store');

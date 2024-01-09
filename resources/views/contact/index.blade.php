@@ -131,7 +131,7 @@
                         @csrf 
                         <!-- Name -->
                         <div class="mb-4 bg-light-input">
-                            <label for="yourName" class="form-label">Your name *</label>
+                            <label for="yourName" class="form-label">Tên của bạn *</label>
                             <input type="text" name="yourName" class="form-control form-control-lg" id="yourName">
                             @error('yourName')
                             <span class="text-danger">{{ $message }}</span>
@@ -139,14 +139,14 @@
                         </div>
                         <!-- Email -->
                         <div class="mb-4 bg-light-input">
-                            <label for="emailInput" class="form-label">Email address *</label>
+                            <label for="emailInput" class="form-label">Email *</label>
                             <input type="email" name="email" class="form-control form-control-lg" id="emailInput">
                             @error('email')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                         </div>
                         <div class="mb-4 bg-light-input">
-                            <label for="emailInput" class="form-label">Phone *</label>
+                            <label for="emailInput" class="form-label">PĐiện thoại *</label>
                             <input type="text" name="phone" class="form-control form-control-lg" id="phone">
                             @error('phone')
                             <span class="text-danger">{{ $message }}</span>
@@ -154,7 +154,7 @@
                         </div>
                         <!-- Message -->
                         <div class="mb-4 bg-light-input">
-                            <label for="textareaBox" class="form-label">Message *</label>
+                            <label for="textareaBox" class="form-label">Nội dung *</label>
                             <textarea class="form-control" name="content" id="textareaBox" rows="4"></textarea>
                             @error('content')
                             <span class="text-danger">{{ $message }}</span>
@@ -162,7 +162,7 @@
                         </div>
                         <!-- Button -->
                         <div class="d-grid">
-                            <button class="btn btn-lg btn-primary mb-0" type="submit">Send Message</button>
+                            <button class="btn btn-lg btn-primary mb-0" type="submit">Gửi liên hệ</button>
                         </div>
                     </form>
                 </div>
