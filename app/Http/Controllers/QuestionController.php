@@ -35,4 +35,34 @@ class QuestionController extends Controller
 
         return redirect(route('courses.show', $course))->with('success', 'Question added successfully!');
     }
+
+    public function show(Course $course)
+    {
+        $questions = $course->questions;
+        return view('test.questions.show', compact('course', 'questions'));
+    }
+
+    public function submitAnswers(Request $request, Course $course)
+    {
+        $questions = $course->questions;
+        $userAnswers = $request->input('answers');
+
+        $totalQuestions = count($questions);
+        $correctAnswers = 0;
+
+        foreach ($questions as $question) {
+            $correctAnswerId = $question->correctAnswer()->id;
+            $userAnswerId = $userAnswers[$question->id] ?? null;
+
+            if ($userAnswerId == $correctAnswerId) {
+                $correctAnswers++;
+            }
+        }
+
+        $percentage = ($correctAnswers / $totalQuestions) * 100;
+
+        // Thực hiện lưu điểm vào cơ sở dữ liệu hoặc thực hiện các xử lý khác tùy thuộc vào yêu cầu của bạn.
+
+        return view('test.questions.result', compact('course', 'totalQuestions', 'correctAnswers', 'percentage'));
+    }
 }

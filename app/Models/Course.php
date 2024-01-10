@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
-    protected $fillable = ['subject_id', 'name'];
+    protected $fillable = ['subject_id', 'name','time_limit'];
 
     public function subject()
     {

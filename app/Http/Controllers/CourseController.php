@@ -24,10 +24,13 @@ class CourseController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
+            'time_limit' => 'nullable|integer|min:1',
         ]);
 
         $subject->courses()->create([
             'name' => $request->name,
+            'time_limit' => $request->time_limit * 60,
+            
         ]);
 
         return redirect(route('courses.index', $subject))->with('success', 'Course created successfully!');
