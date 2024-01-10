@@ -71,12 +71,11 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 
 // Các route không yêu cầu xác thực
 Route::get('/', function () {
-    return view('pages.index');
+    return view('quiz.index');
 });
 
 // Trong file routes/web.php
 Route::get('/verify-email/{token}', [VerificationController::class, 'verify'])->name('verify.email');
-
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'postLogin']);
 Route::get('/register', [AuthController::class, 'register'])->name('register');
@@ -95,7 +94,6 @@ Route::post('/change-password', [AuthController::class, 'changePassword'])->name
 
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-
 
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');

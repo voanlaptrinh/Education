@@ -13,14 +13,14 @@ class QuizController extends Controller
     public function index()
     {
         $questions = Question::with('answers')->get();
-        return view('quiz.index', compact('questions'));
+        return view('student.quiz.index', compact('questions'));
     }
 
     public function create()
     {
         $question = new Question();
         $quizGroups = QuizGroup::all();
-        return view('quiz.create', compact('quizGroups','question'));
+        return view('student.quiz.create', compact('quizGroups','question'));
     }
 
    // app/Http/Controllers/QuizController.php
@@ -35,17 +35,17 @@ class QuizController extends Controller
            'answers.*.question_ids' => 'required|exists:questions,id',
            'correct_answers' => 'required|array',
        ]);
-   
+
        foreach ($request->input('questions') as $key => $questionContent) {
            $question = Question::create([
                'content' => $questionContent,
                'quiz_group_id' => $request->input('quiz_group_id'),
            ]);
-   
+
            if (isset($request->input('answers')[$key]) && isset($request->input('correct_answers')[$key])) {
                foreach ($request->input('answers')[$key]['content'] as $answerIndex => $answerContent) {
                    $isCorrect = $answerIndex == $request->input('correct_answers')[$key];
-   
+
                    $question->answers()->create([
                        'content' => $answerContent,
                        'question_id' => $request->input('answers')[$key]['question_ids'][$answerIndex],
@@ -54,17 +54,17 @@ class QuizController extends Controller
                }
            }
        }
-   
-       return redirect()->route('quiz.create')->with('success', 'Câu hỏi đã được thêm thành công.');
-   }
-   
 
-   
+       return redirect()->route('student.quiz.create')->with('success', 'Câu hỏi đã được thêm thành công.');
+   }
+
+
+
 public function take()
 {
     $questions = Question::all(); // Lấy tất cả câu hỏi
 
-    return view('quiz.take', compact('questions'));
+    return view('student.quiz.take', compact('questions'));
 }
 
 public function submit(Request $request)
@@ -87,14 +87,15 @@ public function submit(Request $request)
     $user->score = $score;
     $user->save();
 
-    return redirect()->route('quiz.take')->with('success', 'Bài kiểm tra đã được nộp và bạn đạt được điểm: ' . $score);
+    return redirect()->route('student.
+    quiz.take')->with('success', 'Bài kiểm tra đã được nộp và bạn đạt được điểm: ' . $score);
 }
 public function showGroup($groupId)
 {
     $group = QuizGroup::findOrFail($groupId);
     $questions = Question::where('quiz_group_id', $groupId)->get();
 
-    return view('quiz.take', compact('group', 'questions'));
+    return view('student.quiz.take', compact('group', 'questions'));
 }
 
 
