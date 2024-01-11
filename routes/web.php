@@ -16,7 +16,7 @@ use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
-use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\VerificationController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +52,12 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('student')->group(function () {
             Route::get('/', [StudentController::class, 'index'])->name('student.index');
             Route::post('/{id}/toggle-status', [StudentController::class, 'toggleStatus'])->name('user.toggleStatus');
+        });
+        //Môn học
+        Route::prefix('/subjects')->group(function () {
+        Route::get('/', [SubjectController::class, 'index']);
+        Route::get('/create', [SubjectController::class, 'create']);
+        Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
         });
     });
 });
@@ -122,10 +128,7 @@ Route::get('/news/detail/{id}', [NewsController::class, 'detail'])->name('news.d
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
 
-//Môn học
-Route::get('/subjects', [SubjectController::class, 'index']);
-Route::get('/subjects/create', [SubjectController::class, 'create']);
-Route::post('/subjects/store', [SubjectController::class, 'store'])->name('subjects.store');
+
 
 // Routes for Courses
 Route::get('/subjects/{subject}/courses', [CourseController::class, 'index'])->name('courses.index');
