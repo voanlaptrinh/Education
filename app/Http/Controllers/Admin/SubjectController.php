@@ -11,24 +11,21 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects = Subject::all();
-        return view('test.subjects.index', compact('subjects'));
+        return view('admin.subjects.index', compact('subjects'));
     }
-
-    public function create()
-    {
-        return view('test.subjects.create');
-    }
-
+ 
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string',
+            'status' => 'required',
         ]);
 
         Subject::create([
             'name' => $request->name,
+            'status' => $request->status,
         ]);
 
-        return redirect('/subjects')->with('success', 'Subject created successfully!');
+        return redirect('/admin/subjects')->with('success', 'Thêm mới khóa học thành công!');
     }
 }

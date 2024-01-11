@@ -36,6 +36,7 @@
                 <!-- Menu item 3 -->
                 <li class="nav-item"> <a class="nav-link" href="{{route('indexNews')}}"><i class="fas fa-newspaper fa-fw me-2"></i>Tin tức</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('student.index')}}"><i class="fas fa-user-graduate fa-fw me-2"></i>Students</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('subjects.index')}}"><i class="fas fa-user-graduate fa-fw me-2"></i>Lớp học</a></li>
 
                 <!-- Menu item 4 -->
                 <li class="nav-item">

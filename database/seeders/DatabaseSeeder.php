@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
                 ['name' => 'Sample News' . $i, 'image' => 'sample_image_1.jpg', 'is_views' => 0, 'description' => 'Description of Sample News 1', 'content' => 'Content of Sample News 1', 'created_at' => now(), 'updated_at' => now()],
             ]);
         }
-        Subject::create(['name' => 'Mathematics']);
-        Subject::create(['name' => 'Physics']);
+        Subject::create(['name' => 'Mathematics','status' => 1]);
+        Subject::create(['name' => 'Physics','status' => 1]);
     }
 }

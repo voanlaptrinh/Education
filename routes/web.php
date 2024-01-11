@@ -55,8 +55,8 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
         //Môn học
         Route::prefix('/subjects')->group(function () {
-        Route::get('/', [SubjectController::class, 'index']);
-        Route::get('/create', [SubjectController::class, 'create']);
+        Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
+     
         Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
         });
     });
