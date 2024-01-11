@@ -10,6 +10,6 @@ class QuizGroupController extends Controller
     public function index()
     {
         $groups = QuizGroup::all();
-        return view('quiz.groups.index', compact('groups'));
+        return view('student.quiz.groups.index', compact('groups'));
     }
 }

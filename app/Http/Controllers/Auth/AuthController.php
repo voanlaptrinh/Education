@@ -37,6 +37,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+            //sử lí tình trạng khi bị khóa
             if (($user->status) == 0) {
                 $this->logout();
                 session()->flash('warning', 'Tài khoản của bạn đã bị tạm khóa.');
@@ -72,9 +73,9 @@ class AuthController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'username' => 'required|string|unique:users',
+            'username' => 'required|string|unique:users', // chỉ áp dụng trong bang users
             'email' => 'required|string|email|unique:users',
-            'phone' => 'nullable|string',
+            'phone' => 'nullable|string', //cho phép để trống
             'password' => 'required|string|min:8|confirmed',
             'gender' => 'required|in:0,1',
             'birthday' => 'nullable|string',
@@ -89,12 +90,13 @@ class AuthController extends Controller
             'password.min' => 'Vui lòng nhập mật khẩu tối thiểu 8 kí tự',
             'password.confirmed' => 'Xác nhận mật khẩu không khớp.',
             'gender.required' => 'Vui lòng chọn giới tính',
-            'gender.in' => 'Giới tính không hợp lệ.',
+            'gender.in' => 'Giới tính không hợp lệ.',//Nếu giá trị của trường "gender" không thuộc danh sách giá trị hợp lệ,
+            // hiển thị thông báo lỗi "Giới tính không hợp lệ".
             'birthday.required' => 'Vui lòng nhập ngày sinh của bạn',
         ]);
 
-        $user = new User();
-        $user->name = $request->input('name');
+        $user = new User(); // tạo users mới
+        $user->name = $request->input('name'); // lấy từ ô input trg đó có name
         $user->username = $request->input('username');
         $user->email = $request->input('email');
         $user->phone =  $request->input('phone');
@@ -104,10 +106,11 @@ class AuthController extends Controller
         $user->address =  $request->input('address');
         $user->status =  1;
         $user->user_type =  1;
-        $user->verification_token = Str::random(40);
+        $user->verification_token = Str::random(40);// Gán một chuỗi ngẫu nhiên có độ dài 40 ký tự cho thuộc tính "verification_token"
+        //. Thường được sử dụng để xác nhận email hoặc các quá trình xác minh khác.
 
 
-        $user->save();
+        $user->save(); // lưu bản ghi mới vào db
         $verificationLink = route('verify.email', ['token' => $user->verification_token]);
 
         // Create an instance of VerifyEmail class
@@ -178,7 +181,7 @@ class AuthController extends Controller
     public function changePassword(Request $request)
     {
         try {
-            $user = Auth::user();
+            $user = Auth::user(); //à phương thức được sử dụng để trả về đối tượng đại diện cho người dùng đang đăng nhập (hoặc null nếu không có người dùng nào đang đăng nhập).
 
             $validatedData = $request->validate([
                 'old_password' => 'required|string',
