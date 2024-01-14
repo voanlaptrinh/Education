@@ -6,7 +6,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Thêm Lớp học của bạn</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Thêm Môn học của bạn</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form method="post" action="{{ route('subjects.store') }}">
@@ -25,10 +25,17 @@
                                 <option value="0">Tạm khóa</option>
                             </select>
                         </div>
-
+                        <div class="form-group pt-3">
+                            <label for="class_id">Chọn lớp học:</label>
+                            <select name="class_id" class="form-control">
+                                @foreach ($classes as $class)
+                                    <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn b tn-secondary" data-bs-dismiss="modal">Đóng</button>
                         <button type="submit" class="btn btn-primary">Thêm môn học</button>
                     </div>
                 </form>
@@ -44,7 +51,7 @@
                 <h1 class="h3 mb-2 mb-sm-0">Lớp học</h1>
                 <button type="button" class="btn btn-sm btn-primary mb-0" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">
-                   Thêm lớp hoc
+                    Thêm lớp hoc
                 </button>
             </div>
         </div>
@@ -54,24 +61,24 @@
             <!-- Course item -->
             <div class="col-sm-6 col-lg-4">
                 <div class="text-center p-4 bg-primary bg-opacity-10 border border-primary rounded-3">
-                    <h6>Total Courses</h6>
-                    <h2 class="mb-0 fs-1 text-primary">1200</h2>
+                    <h6>Tổng môn học</h6>
+                    <h2 class="mb-0 fs-1 text-primary">{{ $totalSubjects }}</h2>
                 </div>
             </div>
 
             <!-- Course item -->
             <div class="col-sm-6 col-lg-4">
                 <div class="text-center p-4 bg-success bg-opacity-10 border border-success rounded-3">
-                    <h6>Activated Courses</h6>
-                    <h2 class="mb-0 fs-1 text-success">996</h2>
+                    <h6>Môn học hoạt động</h6>
+                    <h2 class="mb-0 fs-1 text-success">{{ $activeSubjects }}</h2>
                 </div>
             </div>
 
             <!-- Course item -->
             <div class="col-sm-6 col-lg-4">
                 <div class="text-center p-4  bg-warning bg-opacity-15 border border-warning rounded-3">
-                    <h6>Pending Courses</h6>
-                    <h2 class="mb-0 fs-1 text-warning">200</h2>
+                    <h6>Môn học tạm ngừng</h6>
+                    <h2 class="mb-0 fs-1 text-warning">{{ $unactiveSubjects }}</h2>
                 </div>
             </div>
         </div>
@@ -86,8 +93,9 @@
                 <div class="row g-3 align-items-center justify-content-between">
                     <!-- Search bar -->
                     <div class="col-md-8">
-                        <form class="rounded position-relative">
-                            <input class="form-control bg-body" type="search" placeholder="Search" aria-label="Search">
+                        <form class="rounded position-relative" action="{{ route('subjects.index') }}" method="get">
+                            <input name="query" value="{{ $searchQuery }}" class="form-control bg-body" type="search"
+                                placeholder="Search" aria-label="Search">
                             <button
                                 class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
                                 type="submit">
@@ -162,6 +170,7 @@
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>
+                                <th scope="col" class="border-0">Lớp học</th>
                                 <th scope="col" class="border-0 rounded-end">Thao tác</th>
                             </tr>
                         </thead>
@@ -201,11 +210,15 @@
 
 
                                     </td>
+                                    <td>
+                                            {{ $subject->class->name }}
+                                       
 
+                                    </td>
                                     <!-- Table data -->
                                     <td>
-                                        <a href="{{ route('courses.index', $subject) }}"
-                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm khóa học</a>
+                                        {{-- <a href="{{ route('courses.index', $subject) }}"
+                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm khóa học</a> --}}
                                         <button class="btn btn-sm btn-secondary-soft mb-0">Reject</button>
                                         <button class="btn btn-sm btn-secondary-soft mb-0">Reject</button>
                                     </td>

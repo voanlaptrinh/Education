@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\StudentController;
@@ -58,6 +59,15 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
      
         Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
+        });
+
+        Route::prefix('/classes')->group(function () {
+            Route::get('/', [ClassesController::class, 'index'])->name('classes.index');
+            Route::post('/store', [ClassesController::class, 'store'])->name('classes.store');
+            Route::post('/update/{id}', [ClassesController::class, 'update'])->name('classes.update');
+            Route::post('/{id}/toggle-status', [ClassesController::class, 'toggleStatus'])->name('classes.toggleStatus');
+            Route::delete('/delete/{class}', [ClassesController::class, 'destroy'])->name('classes.destroy');
+            Route::get('/{id}', [ClassesController::class, 'show'])->name('classes.show');
         });
     });
 });

@@ -64,42 +64,47 @@
                         <tbody>
 
                             @foreach ($student as $studentS)
-                            @if ($studentS->user_type !=0)
-                                
-                            <!-- Table row -->
-                            <tr>
-                                <td>
-                                    <div class="w-60px">
-                                        <img src="{{ asset('storage/' . $studentS->image) }}" class="rounded"
-                                            alt="">
-                                    </div>
-                                </td>
-                                <!-- Table data -->
-                                <td>
-                                    <div class="d-flex align-items-center position-relative">
-                                        <!-- Image -->
+                                @if ($studentS->user_type != 0)
+                                    <!-- Table row -->
+                                    <tr>
+                                        <td>
+                                            <div class="w-60px">
+                                                <img src="{{ asset('storage/' . $studentS->image) }}" class="rounded"
+                                                    alt="">
+                                            </div>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex align-items-center position-relative">
+                                                <!-- Image -->
 
-                                        <!-- Title -->
-                                        <h6 class="table-responsive-title mb-0 ms-2">
-                                            <a href="#" class="stretched-link">{{ $studentS->name }}</a>
-                                        </h6>
-                                    </div>
-                                </td>
-
+                                                <!-- Title -->
+                                                <h6 class="table-responsive-title mb-0 ms-2">
+                                                    <a href="#" class="stretched-link">{{ $studentS->name }}</a>
+                                                </h6>
+                                            </div>
+                                        </td>
 
 
 
 
-                                <!-- Table data -->
-                                <td>{{ $studentS->phone }}</td>
-                                <td><form action="{{ route('user.toggleStatus', ['id' => $studentS->id]) }}" method="post">
-                                    @csrf
-                                    <button class="btn">{{ $studentS->status == 1 ? 'Hoạt động' : 'Khóa' }}</button>
-                                </form>
-                            </td>
 
-                                <!-- Table data -->
-                                {{-- <td>
+                                        <!-- Table data -->
+                                        <td>{{ $studentS->phone }}</td>
+                                        <td>
+                                            <form action="{{ route('user.toggleStatus', ['id' => $studentS->id]) }}"
+                                                method="post">
+                                                @csrf
+                                                @if ($studentS->status == 1)
+                                                    <button class="btn btn-success">Hoạt động</button>
+                                                @else
+                                                    <button class="btn btn-warning">Tạm khóa</button>
+                                                @endif
+                                            </form>
+                                        </td>
+
+                                        <!-- Table data -->
+                                        {{-- <td>
                                     <a href="{{ route('edit-news', ['id' => $newS->id]) }}"
                                         class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
                                     <div class="btn btn-sm btn-danger mb-0">
@@ -110,8 +115,8 @@
                                         </form>
                                     </div>
                                 </td> --}}
-                            </tr>
-                            @endif
+                                    </tr>
+                                @endif
                             @endforeach
 
 
@@ -143,7 +148,7 @@
                     <!-- Pagination -->
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                            {{ $student ->links() }}
+                            {{ $student->links() }}
                         </ul>
                     </nav>
 
