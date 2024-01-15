@@ -15,28 +15,29 @@
                         <!-- resources/views/subjects/create.blade.php -->
 
                         <label for="name">Subject Name:</label>
-                        <input class="form-control bg-body" type="text" name="name" placeholder="Tên lớp học"
+                        <input class="form-control bg-body" type="text" name="name" id="name" placeholder="Tên lớp học"
                             required>
                         <div class="col-lg-12 pt-3">
                             <label for="exampleInputEmail1" class="form-label">Trạng thái: *</label>
 
-                            <select class="form-select" name="status" required>
+                            <select class="form-select" name="status" id="status" required>
                                 <option value="1">Hoạt dộng</option>
                                 <option value="0">Tạm khóa</option>
                             </select>
                         </div>
                         <div class="form-group pt-3">
                             <label for="class_id">Chọn lớp học:</label>
-                            <select name="class_id" class="form-control">
+                            <select name="class_id" id="class_id" class="form-control">
                                 @foreach ($classes as $class)
                                     <option value="{{ $class->id }}">{{ $class->name }}</option>
                                 @endforeach
                             </select>
                         </div>
+                        <input type="hidden" id="subjectId" name="subject_id" value="">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn b tn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="submit" class="btn btn-primary">Thêm môn học</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Thêm môn học</button>
                     </div>
                 </form>
             </div>
@@ -48,10 +49,11 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Lớp học</h1>
+                <h1 class="h3 mb-2 mb-sm-0">Môn học</h1>
                 <button type="button" class="btn btn-sm btn-primary mb-0" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
-                    Thêm lớp hoc
+                    data-bs-target="#staticBackdrop"
+                    data-action="add" data-class-id="">
+                    Thêm môn học
                 </button>
             </div>
         </div>
@@ -104,7 +106,7 @@
                         </form>
                     </div>
 
-                    <!-- Select option -->
+                    {{-- <!-- Select option -->
                     <div class="col-md-3">
                         <!-- Short by filter -->
                         <form>
@@ -151,7 +153,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- Search and select END -->
             </div>
@@ -171,6 +173,7 @@
 
                                 <th scope="col" class="border-0">Trạng thái </th>
                                 <th scope="col" class="border-0">Lớp học</th>
+                                <th scope="col" class="border-0">Đề bài</th>
                                 <th scope="col" class="border-0 rounded-end">Thao tác</th>
                             </tr>
                         </thead>
@@ -202,25 +205,44 @@
 
                                     <!-- Table data -->
                                     <td>
-                                        @if ($subject->status == 0)
-                                            <span class="badge bg-warning bg-opacity-15 text-warning">Tạm khóa</span>
-                                        @else
-                                            <span class="badge bg-success bg-opacity-15 text-warning">Hoạt động</span>
-                                        @endif
+                                        <form action="{{ route('subjects.toggleStatus', ['id' => $subject->id]) }}"
+                                            method="post">
+                                            @csrf
+                                            @if ($subject->status == 1)
+                                                <button class="btn btn-success">Hoạt động</button>
+                                            @else
+                                                <button class="btn btn-warning">Tạm khóa</button>
+                                            @endif
+                                        </form>
 
 
                                     </td>
                                     <td>
-                                            {{ $subject->class->name }}
-                                       
+                                        {{ $subject->class->name }}
+
 
                                     </td>
                                     <!-- Table data -->
                                     <td>
-                                        {{-- <a href="{{ route('courses.index', $subject) }}"
-                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm khóa học</a> --}}
-                                        <button class="btn btn-sm btn-secondary-soft mb-0">Reject</button>
-                                        <button class="btn btn-sm btn-secondary-soft mb-0">Reject</button>
+                                        <a href="{{ route('courses.index', $subject) }}"
+                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm đề bài</a>
+                                    </td>
+                                    <td>
+                                        
+
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop" data-action="edit"
+                                            data-class-id="{{ $subject->id }}">
+                                            Sửa môn học
+                                        </button>
+
+                                        <form action="{{ route('subjects.destroy', $subject) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0"
+                                                onclick="return confirm('Bạn chắc chắn muốn xóa môn học này? Lưu ý các câu hỏi liên quan đến môn học cũng bị xóa!')">Xóa
+                                                môn học</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -241,4 +263,39 @@
         </div>
         <!-- Card END -->
     </div>
+    <script>
+        $('#staticBackdrop').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var action = button.data('action');
+            var classId = button.data('class-id');
+            var modal = $(this);
+            var form = modal.find('form');
+            var submitBtn = modal.find('#submitBtn');
+
+            if (action === 'add') {
+                form.trigger('reset');
+                modal.find('.modal-title').text('Thêm môn Học');
+                form.attr('action', `{{ route('subjects.store') }}`);
+                submitBtn.text('Thêm môn Học');
+            } else if (action === 'edit') {
+                modal.find('.modal-title').text('Sửa Lớp Học');
+                form.attr('action', `{{ route('subjects.update', ':id') }}`.replace(':id', classId));
+                submitBtn.text('Cập Nhật môn Học');
+
+                $.ajax({
+                    url: `{{ route('subjects.show', ':id') }}`.replace(':id', classId),
+                    method: 'GET',
+                    success: function(response) {
+                        modal.find('#name').val(response.name || '');
+                        modal.find('#status').val(response.status);
+                        modal.find('#class_id').val(response.class_id);
+                        modal.find('#subjectId').val(response.id);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

@@ -57,8 +57,11 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         //Môn học
         Route::prefix('/subjects')->group(function () {
         Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
-     
+        Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
         Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
+        Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
+        Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show');
+        Route::delete('/delete/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
         });
 
         Route::prefix('/classes')->group(function () {

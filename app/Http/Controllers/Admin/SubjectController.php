@@ -37,7 +37,45 @@ class SubjectController extends Controller
             'class_id' => $request->class_id,
         ]);
 
-        return redirect('/admin/subjects')->with('success', 'Thêm mới khóa học thành công!');
+        return redirect('/admin/subjects')->with('success', 'Thêm mới môn học thành công!');
     }
-    
+    public function toggleStatus($id)
+    {
+        $user = Subject::findOrFail($id);
+        $user->status = $user->status == 1 ? 0 : 1;
+
+        $user->save();
+
+        return redirect()->back()->with('success', 'Trạng thái môn học đã được cập nhật.');
+    }
+    public function show($id)
+    {
+        $class = Subject::findOrFail($id);
+        if (!$class) {
+            return response()->json(['error' => 'Class not found'], 404);
+        }
+        return response()->json($class);
+    }
+    public function update(Request $request, $id)
+    {
+        $class = Subject::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string',
+            'status' => 'required',
+            'class_id' => 'required',
+
+            // Thêm các quy tắc kiểm tra khác nếu cần
+        ]);
+
+        $class->update($request->all());
+
+        return redirect()->back()->with('success', 'Cập nhật thông tin môn học thành công!');
+    }
+    public function destroy(Subject $subject)
+    {
+        $subject->delete();
+
+        return redirect('/admin/subjects')->with('success', 'Xóa môn học thành công!');
+    }
 }
