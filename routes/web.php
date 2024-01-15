@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ClassesController;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\StudentController;
@@ -11,7 +12,6 @@ use App\Http\Controllers\Auth\NewsController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CustomPasswordResetController;
 use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\QuestionController;
@@ -56,12 +56,20 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
         //Môn học
         Route::prefix('/subjects')->group(function () {
-        Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
-        Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
-        Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
-        Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
-        Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show');
-        Route::delete('/delete/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
+            Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
+            Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
+            Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
+            Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
+            Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show');
+            Route::delete('/delete/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
+
+
+            // Routes for Courses
+            Route::get('/{subject}/courses', [CourseController::class, 'index'])->name('courses.index');
+            Route::get('/{subject}/courses/create', [CourseController::class, 'create'])->name('courses.create');
+            Route::post('/{subject}/courses/store', [CourseController::class, 'store'])->name('courses.store');
+            Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
         });
 
         Route::prefix('/classes')->group(function () {
@@ -141,11 +149,7 @@ Route::post('/postContact', [ContactController::class, 'store'])->name('contact.
 
 
 
-// Routes for Courses
-Route::get('/subjects/{subject}/courses', [CourseController::class, 'index'])->name('courses.index');
-Route::get('/subjects/{subject}/courses/create', [CourseController::class, 'create'])->name('courses.create');
-Route::post('/subjects/{subject}/courses/store', [CourseController::class, 'store'])->name('courses.store');
-Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+
 
 // Routes for Questions
 Route::get('/courses/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');

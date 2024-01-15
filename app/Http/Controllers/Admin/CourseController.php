@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
@@ -12,7 +12,7 @@ class CourseController extends Controller
     public function index(Subject $subject)
     {
         $courses = $subject->courses;
-        return view('test.courses.index', compact('subject', 'courses'));
+        return view('admin.courses.index', compact('subject', 'courses'));
     }
 
     public function create(Subject $subject)
@@ -39,6 +39,6 @@ class CourseController extends Controller
     public function show(Course $course)
     {
         $questions = $course->questions;
-        return view('test.courses.show', compact('course', 'questions'));
+        return view('admin.courses.show', compact('course', 'questions'));
     }
 }
