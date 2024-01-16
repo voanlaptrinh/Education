@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Question;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -39,6 +40,12 @@ class CourseController extends Controller
     public function show(Course $course)
     {
         $questions = $course->questions;
-        return view('admin.courses.show', compact('course', 'questions'));
+        return view('admin.questions.show', compact('course', 'questions'));
+    }
+    public function destroy(Question $question)
+    {
+        $question->delete();
+
+        return redirect()->back();
     }
 }

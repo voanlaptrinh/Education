@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\NewsAdminController;
+use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ContactController;
@@ -14,7 +15,6 @@ use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CustomPasswordResetController;
 use App\Http\Controllers\EmailVerificationController;
-use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
 use App\Http\Controllers\Admin\SubjectController;
@@ -62,14 +62,22 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
             Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show');
             Route::delete('/delete/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
-
-
-            // Routes for Courses
             Route::get('/{subject}/courses', [CourseController::class, 'index'])->name('courses.index');
             Route::get('/{subject}/courses/create', [CourseController::class, 'create'])->name('courses.create');
             Route::post('/{subject}/courses/store', [CourseController::class, 'store'])->name('courses.store');
-            Route::get('/courses/{course}', [CourseController::class, 'show'])->name('courses.show');
+        });
 
+        Route::prefix('/courses')->group(function () {
+            // Routes for Courses
+          
+            Route::get('/{course}', [CourseController::class, 'show'])->name('courses.show');
+            Route::delete('/delete/{question}', [CourseController::class, 'destroy'])->name('courses.destroy');
+            // Routes for Questions
+            Route::get('/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
+            Route::post('/{course}/questions/store', [QuestionController::class, 'store'])->name('questions.store');
+
+            Route::get('/{course}/questions', [QuestionController::class, 'show'])->name('questions.show');
+            Route::post('/{course}/questions/submit', [QuestionController::class, 'submitAnswers'])->name('questions.submit');
         });
 
         Route::prefix('/classes')->group(function () {
@@ -95,10 +103,11 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 //         return view('hocsinh');
 //     });
 // });
-
+Route::get('/courses/{course}/questions/{question}/edit', [QuestionController::class, 'edit'])->name('questions.edit');
+Route::put('/courses/{course}/questions/{question}', [QuestionController::class, 'update'])->name('questions.update');
 // Các route không yêu cầu xác thực
 Route::get('/', function () {
-    return view('quiz.index');
+    return view('pages.index');
 });
 
 // Trong file routes/web.php
@@ -112,11 +121,6 @@ Route::get('/logout', [AuthController::class, 'profilelogout'])->name('logout');
 Route::get('/profile/{user}', [AuthController::class, 'profile'])->name('profile');
 Route::post('/update-profile/{user}', [AuthController::class, 'update'])->name('update-profile');
 Route::post('/change-password', [AuthController::class, 'changePassword'])->name('change-password');
-
-
-
-
-
 
 
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
@@ -146,14 +150,3 @@ Route::get('/news/detail/{id}', [NewsController::class, 'detail'])->name('news.d
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
-
-
-
-
-
-// Routes for Questions
-Route::get('/courses/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
-Route::post('/courses/{course}/questions/store', [QuestionController::class, 'store'])->name('questions.store');
-
-Route::get('/courses/{course}/questions', [QuestionController::class, 'show'])->name('questions.show');
-Route::post('/courses/{course}/questions/submit', [QuestionController::class, 'submitAnswers'])->name('questions.submit');

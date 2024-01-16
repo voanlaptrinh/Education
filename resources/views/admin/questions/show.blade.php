@@ -66,14 +66,16 @@
                             <div class="col-lg-3">
                                 <div class="row pt-3">
                                     <div class="col-lg-6">
-                                        <button class="btn btn-success">
-                                            khdsfgid
-                                        </button>
+                                        <a href="{{ route('questions.edit', ['course' => $course, 'question' => $question]) }}" class="btn btn-primary">Sửa</a>
                                     </div>
                                     <div class="col-lg-6">
-                                        <button class="btn btn-success">
-                                            khdsfgid
-                                        </button>
+                                        <form action="{{ route('courses.destroy', $question) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0"
+                                                onclick="return confirm('Bạn chắc chắn muốn xóa Lớp học này? Lưu ý các khóa học liên quan đến lớp học cũng bị xóa!')">Xóa
+                                                lớp học</button>
+                                        </form>
                                     </div>
                                 </div>
                                 
