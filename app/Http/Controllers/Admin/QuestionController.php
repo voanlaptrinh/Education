@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Answer;
 use App\Models\Course;
 use App\Models\Question;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 class QuestionController extends Controller
 {
     public function create(Course $course)
@@ -66,33 +67,36 @@ class QuestionController extends Controller
 
         return view('test.questions.result', compact('course', 'totalQuestions', 'correctAnswers', 'percentage'));
     }
-    public function edit(Course $course, Question $question)
+    public function edit($course, Question $question)
     {
         return view('admin.questions.edit', compact('course', 'question'));
     }
-    public function update(Request $request, Course $course, Question $question)
+
+    public function update(Request $request, $course, Question $question)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'text' => 'required|string',
             'answers' => 'required|array',
-            'correct_answer' => 'required|in:' . implode(',', array_keys($request->answers)),
+            'correct_answer' => 'required|exists:answers,id',
         ]);
 
-        $question->update([
-            'text' => $request->text,
-        ]);
-
-        foreach ($request->answers as $answerId => $answerText) {
-            $isCorrect = $answerId == $request->correct_answer;
-            $answer = $question->answers()->find($answerId);
-            if ($answer) {
-                $answer->update([
-                    'text' => $answerText,
-                    'is_correct' => $isCorrect,
-                ]);
-            }
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        return redirect(route('courses.show', $course))->with('success', 'Question updated successfully!');
+        $question->update([
+            'text' => $request->input('text'),
+        ]);
+
+        foreach ($request->input('answers') as $answerId => $answerText) {
+            $isCorrect = $answerId == $request->input('correct_answer');
+
+            $answer = Answer::find($answerId);
+            $answer->text = $answerText;
+            $answer->is_correct = $isCorrect;
+            $answer->save();
+        }
+
+        return redirect()->route('courses.show', $course)->with('success', 'Câu hỏi đã được cập nhật thành công.');
     }
 }

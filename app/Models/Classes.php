@@ -11,6 +11,6 @@ class Classes extends Model
 
     public function subjects()
     {
-        return $this->hasMany(Subject::class);
+        return $this->hasMany(Subject::class,'class_id');
     }
 }

@@ -18,6 +18,8 @@ use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
 use App\Http\Controllers\Admin\SubjectController;
+use App\Http\Controllers\Auth\CourseAuthController;
+use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\VerificationController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
@@ -55,8 +57,8 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/{id}/toggle-status', [StudentController::class, 'toggleStatus'])->name('user.toggleStatus');
         });
         //Môn học
-        Route::prefix('/subjects')->group(function () {
-            Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
+        Route::prefix('/subjects')->group(function () { //Môn học
+            Route::get('/', [SubjectController::class, 'index'])->name('subjects.index'); 
             Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
             Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
             Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
@@ -69,7 +71,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 
         Route::prefix('/courses')->group(function () {
             // Routes for Courses
-          
+
             Route::get('/{course}', [CourseController::class, 'show'])->name('courses.show');
             Route::delete('/delete/{question}', [CourseController::class, 'destroy'])->name('courses.destroy');
             // Routes for Questions
@@ -88,6 +90,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::delete('/delete/{class}', [ClassesController::class, 'destroy'])->name('classes.destroy');
             Route::get('/{id}', [ClassesController::class, 'show'])->name('classes.show');
         });
+        Route::prefix('/questions')->group(function () { //Sửa câu hỏi
+            Route::get('/{course}/edit/{question}', [QuestionController::class, 'edit'])->name('questions.edit'); 
+            Route::put('/{course}/{question}', [QuestionController::class, 'update'])->name('questions.update');
+        });
     });
 });
 
@@ -103,12 +109,9 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 //         return view('hocsinh');
 //     });
 // });
-Route::get('/courses/{course}/questions/{question}/edit', [QuestionController::class, 'edit'])->name('questions.edit');
-Route::put('/courses/{course}/questions/{question}', [QuestionController::class, 'update'])->name('questions.update');
+
 // Các route không yêu cầu xác thực
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/',[PageController::class, 'index'])->name('home.index');
 
 // Trong file routes/web.php
 Route::get('/verify-email/{token}', [VerificationController::class, 'verify'])->name('verify.email');
@@ -130,19 +133,6 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 
-Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.index');
-Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
-Route::post('/quiz/store', [QuizController::class, 'store'])->name('quiz.store');
-
-// routes/web.php
-Route::get('/quiz/take', [QuizController::class, 'take'])->name('quiz.take');
-Route::post('/quiz/submit', [QuizController::class, 'submit'])->name('quiz.submit');
-
-
-// routes/web.php
-Route::get('/quiz/groups/{groupId}', [QuizController::class, 'showGroup'])->name('quiz.showGroup');
-// Thêm các route khác cho cập nhật và xóa nhóm
-Route::get('/quiz/quizGroup', [QuizGroupController::class, 'index'])->name('quizGroup.index');
 
 
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
@@ -150,3 +140,13 @@ Route::get('/news/detail/{id}', [NewsController::class, 'detail'])->name('news.d
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
+
+
+
+
+Route::get('/course/{subject}/courses',[CourseAuthController::class, 'index'])->name('home.course');
+
+
+
+
+

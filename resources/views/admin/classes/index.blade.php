@@ -121,7 +121,7 @@
                         <!-- Table head -->
                         <thead>
                             <tr>
-                                <th scope="col" class="border-0 rounded-start">Tên môn học</th>
+                                <th scope="col" class="border-0 rounded-start">Tên lớp học</th>
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>

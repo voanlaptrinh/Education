@@ -44,7 +44,31 @@
         </div>
     </div>
     {{--  --}}
-
+    <script>
+        $(document).ready(function () {
+            // When the form is submitted
+            $("#submitBtn").submit(function (event) {
+                // Prevent the default form submission
+                event.preventDefault();
+    
+                // Perform client-side validation
+                var name = $("#name").val();
+                var status = $("#status").val();
+                var classId = $("#class_id").val();
+    
+                if (!name || !status || !classId) {
+                    alert("Please fill out all required fields.");
+                    return;
+                }
+    
+                // If validation passes, submit the form
+                // Add any additional logic you need before submitting the form
+    
+                // Then submit the form using JavaScript
+                this.submit();
+            });
+        });
+    </script>
     <div class="page-content-wrapper border">
         <!-- Title -->
         <div class="row mb-3">

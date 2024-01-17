@@ -93,6 +93,7 @@
 </head>
 
 <body>
+    
     <main>
         @include('admin.headeradmin')
         <div class="page-content">

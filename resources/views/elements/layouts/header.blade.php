@@ -253,20 +253,24 @@
                     <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="demoMenu"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Demos</a>
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lớp học</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
-                            <li> <a class="dropdown-item active" href="index.html">Home Default</a></li>
-                            <li> <a class="dropdown-item" href="index-2.html">Home Education</a></li>
-                            <li> <a class="dropdown-item" href="index-3.html">Home Academy</a></li>
-                            <li> <a class="dropdown-item" href="index-4.html">Home Course</a></li>
-                            <li> <a class="dropdown-item" href="index-5.html">Home University</a></li>
-                            <li> <a class="dropdown-item" href="index-6.html">Home Kindergarten</a></li>
-                            <li> <a class="dropdown-item" href="index-7.html">Home Landing</a></li>
-                            <li> <a class="dropdown-item" href="index-8.html">Home Tutor</a></li>
-                            <li> <a class="dropdown-item" href="index-9.html">Home School</a>
-                            <li>
-                            <li> <a class="dropdown-item" href="index-10.html">Home Abroad</a></li>
-                            <li> <a class="dropdown-item" href="index-11.html">Home Workshop</a></li>
+
+                            @foreach ($classes as $item)
+                                <li class="dropdown-submenu dropend">
+                                    <a class="dropdown-item dropdown-toggle" href="#">{{ $item->name }}</a>
+                                    <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+                                        @foreach ($item->subjects as $subject)
+                                            
+                                        <li> <a class="dropdown-item" href="course-categories.html">{{ $subject->name }}</a>
+                                        </li>
+                                        @endforeach
+                                        
+                                    </ul>
+                                </li>
+                            @endforeach
+                     
+
                         </ul>
                     </li>
 
@@ -707,15 +711,15 @@
                     }
                 </style>
                 @if (empty(Auth::user()))
-                <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center justify-center">
+                    <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center justify-center">
 
-                    <div class="btn-group">
-                        <a href="{{ route('login') }}" class="btn btn-primary custom-btn">Đăng nhập</a>
-                        <a href="{{ route('register') }}" class="btn btn-success">Đăng ký</a>
+                        <div class="btn-group">
+                            <a href="{{ route('login') }}" class="btn btn-primary custom-btn">Đăng nhập</a>
+                            <a href="{{ route('register') }}" class="btn btn-success">Đăng ký</a>
+                        </div>
                     </div>
-                </div>
                 @endif
-                
+
                 <!-- Nav Search END -->
             </div>
             <!-- Main navbar END -->
@@ -726,7 +730,9 @@
                     <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button"
                         data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img class="avatar-img rounded-circle" src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.jpg') }}" alt="avatar">
+                        <img class="avatar-img rounded-circle"
+                            src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.jpg') }}"
+                            alt="avatar">
                     </a>
 
                     <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
@@ -736,11 +742,12 @@
                             <div class="d-flex align-items-center">
                                 <!-- Avatar -->
                                 <div class="avatar me-3">
-                                  
+
                                     <img class="avatar-img rounded-circle shadow"
-                                    src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.jpg') }}" alt="avatar">
-                                  
-                                   
+                                        src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.jpg') }}"
+                                        alt="avatar">
+
+
                                 </div>
                                 <div>
 
@@ -756,7 +763,8 @@
                             <hr class="dropdown-divider">
                         </li>
                         <!-- Links -->
-                        <li><a class="dropdown-item" href="{{ route('profile' , Auth::user()->id) }}"><i class="bi bi-person fa-fw me-2"></i>Edit
+                        <li><a class="dropdown-item" href="{{ route('profile', Auth::user()->id) }}"><i
+                                    class="bi bi-person fa-fw me-2"></i>Edit
                                 Profile</a></li>
                         <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account
                                 Settings</a></li>

@@ -35,7 +35,7 @@
                                             <label class="form-label" for="answer_{{ $key }}">{{ $key }}
                                                 :</label>
                                             <input class="form-control" type="text" placeholder="Viết câu trả lời"
-                                                name="answers[{{ $key }}]">
+                                                name="answers[{{ $key }}]" required>
                                         </div>
                                     @endforeach
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\VerifyEmail;
+use App\Models\Classes;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -21,9 +22,9 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
-
+        $classes = Classes::all();
         $message = $request->session()->all();
-        return View('auth.login', compact('message'));
+        return View('auth.login', compact('message', 'classes'));
     }
     public function postLogin(Request $request)
     {
@@ -65,8 +66,8 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-
-        return View('auth.register');
+        $classes = Classes::all();
+        return View('auth.register',compact('classes'));
     }
     public function postRegister(Request $request)
     {
