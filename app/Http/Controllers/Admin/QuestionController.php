@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Answer;
+use App\Models\Classes;
 use App\Models\Course;
 use App\Models\Question;
 use Illuminate\Http\Request;
@@ -40,8 +41,9 @@ class QuestionController extends Controller
 
     public function show(Course $course)
     {
+        $classes = Classes::all();
         $questions = $course->questions;
-        return view('test.questions.show', compact('course', 'questions'));
+        return view('test.questions.show', compact('course','classes', 'questions'));
     }
 
     public function submitAnswers(Request $request, Course $course)

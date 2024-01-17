@@ -262,7 +262,7 @@
                                     <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
                                         @foreach ($item->subjects as $subject)
                                             
-                                        <li> <a class="dropdown-item" href="course-categories.html">{{ $subject->name }}</a>
+                                        <li> <a class="dropdown-item" href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
                                         </li>
                                         @endforeach
                                         

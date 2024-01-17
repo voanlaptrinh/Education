@@ -144,7 +144,7 @@ Route::post('/postContact', [ContactController::class, 'store'])->name('contact.
 
 
 
-Route::get('/course/{subject}/courses',[CourseAuthController::class, 'index'])->name('home.course');
+Route::get('{subject}/courses',[CourseAuthController::class, 'index'])->name('home.course');
 
 
 

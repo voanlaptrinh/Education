@@ -64,13 +64,14 @@
                             @foreach ($courses as $course)
                                 <tr>
                                     <!-- Table data -->
+                                    <a href="{{ route('questions.show', $course) }}">sad</a>
                                     <td>
                                         <div class="d-flex align-items-center position-relative">
                                             <!-- Image -->
 
                                             <!-- Title -->
                                             <h6 class="table-responsive-title mb-0 ms-2">
-                                                <a href="#" class="stretched-link">{{ $course->name }}</a>
+                                                <a href="" class="stretched-link">{{ $course->name }}xx</a>
                                             </h6>
                                         </div>
                                     </td>

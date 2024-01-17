@@ -83,7 +83,10 @@
     <link rel="stylesheet" type="text/css" href="/assets/user/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="/assets/user/vendor/tiny-slider/tiny-slider.css">
     <link rel="stylesheet" type="text/css" href="/assets/user/vendor/glightbox/css/glightbox.css">
-
+    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/stepper/css/bs-stepper.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/user/css/style.css">
 
@@ -117,8 +120,59 @@
     <script src="/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
 
     <!-- Template Functions -->
+    <script src="/assets/user/vendor/stepper/js/bs-stepper.min.js"></script>
     <script src="/assets/user/js/functions.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.aa').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+               
+            });
+        });
+    </script>
+    <script>
+        // JavaScript code for countdown timer and auto-submit
+        const countdownElement = document.getElementById('countdown');
+        const timerElement = document.getElementById('timer');
+        const formElement = document.getElementById('quizForm');
+        const submitButton = document.getElementById('submitBtn');
+    
+        let timeLimit = {{ $course->time_limit }}; // Set the time limit in seconds
+        let timeRemaining = timeLimit;
+    
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            countdownElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+    
+        function submitForm() {
+            formElement.submit();
+        }
+    
+        function startTimer() {
+            updateTimerDisplay();
+            const timerInterval = setInterval(() => {
+                timeRemaining--;
+    
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    timerElement.innerText = 'Time Expired!';
+                    submitForm(); // Auto-submit when time expires
+                } else {
+                    updateTimerDisplay();
+                }
+            }, 1000);
+        }
+    
+        startTimer(); // Start the timer when the page loads
+    </script>
 </body>
 
 <!-- Mirrored from eduport.webestica.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:18:37 GMT -->

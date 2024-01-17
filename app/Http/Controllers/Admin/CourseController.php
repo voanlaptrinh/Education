@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Classes;
 use App\Models\Course;
 use App\Models\Question;
 use App\Models\Subject;
@@ -39,8 +40,9 @@ class CourseController extends Controller
 
     public function show(Course $course)
     {
+        $classes = Classes::all();
         $questions = $course->questions;
-        return view('admin.questions.show', compact('course', 'questions'));
+        return view('admin.questions.show', compact('course','classes', 'questions'));
     }
     public function destroy(Question $question)
     {
