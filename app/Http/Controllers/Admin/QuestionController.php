@@ -72,8 +72,8 @@ class QuestionController extends Controller
             $examHistory->user_id = auth()->user()->id;
             $examHistory->course_id = $course->id;
             $examHistory->score = $percentage;
-            $examHistory->started_at = now();
-            $examHistory->completed_at = now();
+            $examHistory->started_at = now()->setTimezone('UTC');
+            $examHistory->completed_at = now()->setTimezone('UTC');
             $examHistory->save();
 
             // Thực hiện lưu điểm vào cơ sở dữ liệu hoặc thực hiện các xử lý khác tùy thuộc vào yêu cầu của bạn.

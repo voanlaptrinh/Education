@@ -8,6 +8,7 @@ use App\Models\Classes;
 use App\Models\ExamHistory;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -68,7 +69,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $classes = Classes::all();
-        return View('auth.register',compact('classes'));
+        return View('auth.register', compact('classes'));
     }
     public function postRegister(Request $request)
     {
@@ -92,7 +93,7 @@ class AuthController extends Controller
             'password.min' => 'Vui lòng nhập mật khẩu tối thiểu 8 kí tự',
             'password.confirmed' => 'Xác nhận mật khẩu không khớp.',
             'gender.required' => 'Vui lòng chọn giới tính',
-            'gender.in' => 'Giới tính không hợp lệ.',//Nếu giá trị của trường "gender" không thuộc danh sách giá trị hợp lệ,
+            'gender.in' => 'Giới tính không hợp lệ.', //Nếu giá trị của trường "gender" không thuộc danh sách giá trị hợp lệ,
             // hiển thị thông báo lỗi "Giới tính không hợp lệ".
             'birthday.required' => 'Vui lòng nhập ngày sinh của bạn',
         ]);
@@ -108,7 +109,7 @@ class AuthController extends Controller
         $user->address =  $request->input('address');
         $user->status =  1;
         $user->user_type =  1;
-        $user->verification_token = Str::random(40);// Gán một chuỗi ngẫu nhiên có độ dài 40 ký tự cho thuộc tính "verification_token"
+        $user->verification_token = Str::random(40); // Gán một chuỗi ngẫu nhiên có độ dài 40 ký tự cho thuộc tính "verification_token"
         //. Thường được sử dụng để xác nhận email hoặc các quá trình xác minh khác.
 
 
@@ -189,7 +190,7 @@ class AuthController extends Controller
                 'old_password' => 'required|string',
                 'new_password' => 'required|string|min:8|confirmed',
             ]);
- dd(Hash::check($validatedData['old_password']));
+            dd(Hash::check($validatedData['old_password']));
             // Check if the old password matches the user's current password
             if (!Hash::check($validatedData['old_password'], $user->password)) {
                 return redirect()->back()->with('error', 'Mật khẩu không đúng');
@@ -206,8 +207,30 @@ class AuthController extends Controller
     }
 
     public function examHistory()
-{
-    $examHistory = ExamHistory::where('user_id', auth()->user()->id)->get();
-    return view('test.exam_history', compact('examHistory'));
-}
+    {
+        $classes = Classes::all();
+        $examHistory = ExamHistory::where('user_id', auth()->user()->id)->get();
+        // Calculate and update remaining time for each exam history record
+        foreach ($examHistory as $exam) {
+            if ($exam->completed_at === null) {
+                // If the exam is not completed yet, calculate the remaining time
+                $startedAt = Carbon::parse($exam->started_at);
+                $currentTime = Carbon::now();
+                $elapsedTimeInSeconds = $currentTime->diffInSeconds($startedAt);
+                $remainingTimeInSeconds = $exam->time_limit - $elapsedTimeInSeconds;
+
+                // Ensure remaining time is not negative
+                $exam->remaining_time = max(0, $remainingTimeInSeconds);
+                $exam->save();
+            }
+        }
+        return view('users.exam_history', compact('examHistory', 'classes'));
+    }
+    public function destroy($id)
+    {
+        $examHistory = ExamHistory::findOrFail($id);
+        $examHistory->delete();
+
+        return redirect()->back()->with('success', 'Exam history deleted successfully!');
+    }
 }

@@ -147,4 +147,7 @@ Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
     Route::get('/{course}/questions', [QuestionController::class, 'show'])->name('questions.show');
     Route::post('/{course}/questions/submit', [QuestionController::class, 'submitAnswers'])->name('questions.submit');
 });
-Route::get('/user/exam-history', [AuthController::class, 'examHistory'])->name('user.examHistory');
+Route::prefix('/user')->group(function () {
+    Route::get('/exam-history', [AuthController::class, 'examHistory'])->name('user.examHistory');
+    Route::delete('/exam-history/{id}', [AuthController::class, 'destroy'])->name('examHistory.destroy');
+});

@@ -25,7 +25,7 @@
     <main>
 
         <!-- =======================
-                                                        Page Banner START -->
+                                                            Page Banner START -->
         <section class="pt-0">
             <div class="container-fluid px-0">
                 <div class="card bg-blue h-100px h-md-200px rounded-0"
@@ -90,10 +90,10 @@
             </div>
         </section>
         <!-- =======================
-                                                        Page Banner END -->
+                                                            Page Banner END -->
 
         <!-- =======================
-                                                        Page content START -->
+                                                            Page content START -->
         <section class="pt-0">
             <div class="container">
                 <div class="row">
@@ -168,8 +168,8 @@
                                         <div class="card">
                                             <div class="row g-0">
                                                 <div class="col-md-2">
-                                                    <img src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}" class="rounded-2"
-                                                        alt="Card image">
+                                                    <img src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}"
+                                                        class="rounded-2" alt="Card image">
                                                 </div>
                                                 <div class="col-md-10">
                                                     <div class="card-body">
@@ -219,10 +219,13 @@
                                             <h6 class="text-danger text-end mb-0" id="timer"><i
                                                     class="bi bi-clock-history me-2"></i>Time Left: <span
                                                     id="countdown"></span></h6>
+                                            <input type="hidden" name="remaining_time" id="remainingTimeInput"
+                                                value="">
                                             <!-- Step content START -->
                                             <div class="bs-stepper-content">
 
-                                                <form id="quizForm"  method="post" action="{{ route('questions.submit', $course) }}">
+                                                <form id="quizForm" method="post"
+                                                    action="{{ route('questions.submit', $course) }}">
                                                     @csrf
                                                     @foreach ($questions as $key => $question)
                                                         <!-- Step 1 content START -->
@@ -296,6 +299,7 @@
             }
 
             function submitForm() {
+                document.getElementById('remainingTimeInput').value = timeRemaining;
                 formElement.submit();
             }
 
