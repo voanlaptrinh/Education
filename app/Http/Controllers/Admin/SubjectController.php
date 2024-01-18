@@ -28,12 +28,15 @@ class SubjectController extends Controller
         $request->validate([
             'name' => 'required|string',
             'status' => 'required',
+            'description' => 'required|string',
+
             'class_id' => 'required|exists:classes,id',
         ]);
 
         Subject::create([
             'name' => $request->name,
             'status' => $request->status,
+            'description' => $request->description,
             'class_id' => $request->class_id,
         ]);
 
@@ -63,6 +66,7 @@ class SubjectController extends Controller
         $request->validate([
             'name' => 'required|string',
             'status' => 'required',
+            'description' => 'required',
             'class_id' => 'required',
 
             // Thêm các quy tắc kiểm tra khác nếu cần

@@ -64,7 +64,7 @@
                             @foreach ($courses as $course)
                                 <tr>
                                     <!-- Table data -->
-                                    <a href="{{ route('questions.show', $course) }}">sad</a>
+                                   
                                     <td>
                                         <div class="d-flex align-items-center position-relative">
                                             <!-- Image -->

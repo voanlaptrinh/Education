@@ -136,43 +136,7 @@
             });
         });
     </script>
-    <script>
-        // JavaScript code for countdown timer and auto-submit
-        const countdownElement = document.getElementById('countdown');
-        const timerElement = document.getElementById('timer');
-        const formElement = document.getElementById('quizForm');
-        const submitButton = document.getElementById('submitBtn');
     
-        let timeLimit = {{ $course->time_limit }}; // Set the time limit in seconds
-        let timeRemaining = timeLimit;
-    
-        function updateTimerDisplay() {
-            const minutes = Math.floor(timeRemaining / 60);
-            const seconds = timeRemaining % 60;
-            countdownElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        }
-    
-        function submitForm() {
-            formElement.submit();
-        }
-    
-        function startTimer() {
-            updateTimerDisplay();
-            const timerInterval = setInterval(() => {
-                timeRemaining--;
-    
-                if (timeRemaining <= 0) {
-                    clearInterval(timerInterval);
-                    timerElement.innerText = 'Time Expired!';
-                    submitForm(); // Auto-submit when time expires
-                } else {
-                    updateTimerDisplay();
-                }
-            }, 1000);
-        }
-    
-        startTimer(); // Start the timer when the page loads
-    </script>
 </body>
 
 <!-- Mirrored from eduport.webestica.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:18:37 GMT -->

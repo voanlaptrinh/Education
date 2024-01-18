@@ -58,7 +58,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
         //Môn học
         Route::prefix('/subjects')->group(function () { //Môn học
-            Route::get('/', [SubjectController::class, 'index'])->name('subjects.index'); 
+            Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
             Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
             Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
             Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
@@ -77,9 +77,6 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             // Routes for Questions
             Route::get('/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
             Route::post('/{course}/questions/store', [QuestionController::class, 'store'])->name('questions.store');
-
-            Route::get('/{course}/questions', [QuestionController::class, 'show'])->name('questions.show');
-            Route::post('/{course}/questions/submit', [QuestionController::class, 'submitAnswers'])->name('questions.submit');
         });
 
         Route::prefix('/classes')->group(function () {
@@ -91,7 +88,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{id}', [ClassesController::class, 'show'])->name('classes.show');
         });
         Route::prefix('/questions')->group(function () { //Sửa câu hỏi
-            Route::get('/{course}/edit/{question}', [QuestionController::class, 'edit'])->name('questions.edit'); 
+            Route::get('/{course}/edit/{question}', [QuestionController::class, 'edit'])->name('questions.edit');
             Route::put('/{course}/{question}', [QuestionController::class, 'update'])->name('questions.update');
         });
     });
@@ -111,7 +108,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 // });
 
 // Các route không yêu cầu xác thực
-Route::get('/',[PageController::class, 'index'])->name('home.index');
+Route::get('/', [PageController::class, 'index'])->name('home.index');
 
 // Trong file routes/web.php
 Route::get('/verify-email/{token}', [VerificationController::class, 'verify'])->name('verify.email');
@@ -144,9 +141,10 @@ Route::post('/postContact', [ContactController::class, 'store'])->name('contact.
 
 
 
-Route::get('{subject}/courses',[CourseAuthController::class, 'index'])->name('home.course');
+Route::get('{subject}/courses', [CourseAuthController::class, 'index'])->name('home.course');
 
-
-
-
-
+Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
+    Route::get('/{course}/questions', [QuestionController::class, 'show'])->name('questions.show');
+    Route::post('/{course}/questions/submit', [QuestionController::class, 'submitAnswers'])->name('questions.submit');
+});
+Route::get('/user/exam-history', [AuthController::class, 'examHistory'])->name('user.examHistory');

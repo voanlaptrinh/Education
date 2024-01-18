@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Answer;
 use App\Models\Classes;
 use App\Models\Course;
+use App\Models\ExamHistory;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
 class QuestionController extends Controller
 {
     public function create(Course $course)
@@ -21,7 +23,7 @@ class QuestionController extends Controller
         $request->validate([
             'text' => 'required|string',
             'answers' => 'required|array',
-            'correct_answer' => 'required|in:'.implode(',', array_keys($request->answers)),
+            'correct_answer' => 'required|in:' . implode(',', array_keys($request->answers)),
         ]);
 
         $question = $course->questions()->create([
@@ -43,31 +45,44 @@ class QuestionController extends Controller
     {
         $classes = Classes::all();
         $questions = $course->questions;
-        return view('test.questions.show', compact('course','classes', 'questions'));
+        return view('instructor-quiz.submit', compact('course', 'classes', 'questions'));
     }
 
     public function submitAnswers(Request $request, Course $course)
     {
-        $questions = $course->questions;
-        $userAnswers = $request->input('answers');
+        if (auth()->check()) {
+            $questions = $course->questions;
+            $userAnswers = $request->input('answers');
 
-        $totalQuestions = count($questions);
-        $correctAnswers = 0;
+            $totalQuestions = count($questions);
+            $correctAnswers = 0;
 
-        foreach ($questions as $question) {
-            $correctAnswerId = $question->correctAnswer()->id;
-            $userAnswerId = $userAnswers[$question->id] ?? null;
+            foreach ($questions as $question) {
+                $correctAnswerId = $question->correctAnswer()->id;
+                $userAnswerId = $userAnswers[$question->id] ?? null;
 
-            if ($userAnswerId == $correctAnswerId) {
-                $correctAnswers++;
+                if ($userAnswerId == $correctAnswerId) {
+                    $correctAnswers++;
+                }
             }
+
+            $percentage = ($correctAnswers / $totalQuestions) * 100;
+
+            $examHistory = new ExamHistory();
+            $examHistory->user_id = auth()->user()->id;
+            $examHistory->course_id = $course->id;
+            $examHistory->score = $percentage;
+            $examHistory->started_at = now();
+            $examHistory->completed_at = now();
+            $examHistory->save();
+
+            // Thực hiện lưu điểm vào cơ sở dữ liệu hoặc thực hiện các xử lý khác tùy thuộc vào yêu cầu của bạn.
+
+            return view('test.questions.result', compact('course', 'totalQuestions', 'correctAnswers', 'percentage'));
+        } else {
+            // Người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            return redirect()->route('login')->with('warning', 'Vui lòng đăng nhập để nộp bài!');
         }
-
-        $percentage = ($correctAnswers / $totalQuestions) * 100;
-
-        // Thực hiện lưu điểm vào cơ sở dữ liệu hoặc thực hiện các xử lý khác tùy thuộc vào yêu cầu của bạn.
-
-        return view('test.questions.result', compact('course', 'totalQuestions', 'correctAnswers', 'percentage'));
     }
     public function edit($course, Question $question)
     {

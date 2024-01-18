@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('subject_id');
             $table->string('name');
             $table->integer('time_limit')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
         });

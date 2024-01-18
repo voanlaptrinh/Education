@@ -24,16 +24,19 @@ class CourseController extends Controller
 
     public function store(Request $request, Subject $subject)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'time_limit' => 'nullable|integer|min:1',
-        ]);
 
-        $subject->courses()->create([
+        $courseData = [
             'name' => $request->name,
             'time_limit' => $request->time_limit * 60,
-            
-        ]);
+        ];
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('course_images', 'public');
+            $courseData['image'] = $imagePath;
+        }
+
+        $subject->courses()->create($courseData);
 
         return redirect(route('courses.index', $subject))->with('success', 'Course created successfully!');
     }
@@ -42,7 +45,7 @@ class CourseController extends Controller
     {
         $classes = Classes::all();
         $questions = $course->questions;
-        return view('admin.questions.show', compact('course','classes', 'questions'));
+        return view('admin.questions.show', compact('course', 'classes', 'questions'));
     }
     public function destroy(Question $question)
     {

@@ -84,7 +84,7 @@
                         <!-- Table body START -->
                         <tbody>
                             @php
-                                $idx = 1;
+                                $idx = 0;
                             @endphp
                             <!-- Table row -->
                             @foreach ($courses as $course)

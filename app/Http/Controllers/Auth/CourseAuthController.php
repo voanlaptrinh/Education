@@ -13,6 +13,6 @@ class CourseAuthController extends Controller
     {
         $courses = $subject->courses;
         $classes = Classes::all();
-        return view('test.courses.aa', compact('subject','classes', 'courses'));
+        return view('instructor-quiz.quiz', compact('subject','classes', 'courses'));
     }
 }

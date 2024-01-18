@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        DB::table("users")->truncate();
+        DB::table("users")->delete();
 
         DB::table("users")->insert([
             'name' => 'admin',
@@ -53,11 +53,11 @@ class DatabaseSeeder extends Seeder
         Classes::create(['name' => 'Lớp 3','status' => 1]);
         Classes::create(['name' => 'Lớp 4','status' => 1]);
         Classes::create(['name' => 'Lớp 5','status' => 1]);
-        Subject::create(['name' => 'Mathematics','status' => 1,'class_id' => 1]);
-        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>1]);
-        Subject::create(['name' => 'lớp 4 1','status' => 1, 'class_id'=>2]);
-        Subject::create(['name' => 'lớp 4 1','status' => 1, 'class_id'=>2]);
-        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3]);
-        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3]);
+        Subject::create(['name' => 'Mathematics','status' => 1,'class_id' => 1,'description' => 'sdasd']);
+        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>1,'description' => 'sdasd']);
+        Subject::create(['name' => 'lớp 4 1','status' => 1, 'class_id'=>2,'description' => 'sdasd']);
+        Subject::create(['name' => 'lớp 4 1','status' => 1, 'class_id'=>2,'description' => 'sdasd']);
+        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3,'description' => 'sdasd']);
+        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3,'description' => 'sdasd']);
     }
 }

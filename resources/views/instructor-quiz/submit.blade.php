@@ -25,7 +25,7 @@
     <main>
 
         <!-- =======================
-                                                    Page Banner START -->
+                                                        Page Banner START -->
         <section class="pt-0">
             <div class="container-fluid px-0">
                 <div class="card bg-blue h-100px h-md-200px rounded-0"
@@ -90,10 +90,10 @@
             </div>
         </section>
         <!-- =======================
-                                                    Page Banner END -->
+                                                        Page Banner END -->
 
         <!-- =======================
-                                                    Page content START -->
+                                                        Page content START -->
         <section class="pt-0">
             <div class="container">
                 <div class="row">
@@ -168,7 +168,7 @@
                                         <div class="card">
                                             <div class="row g-0">
                                                 <div class="col-md-2">
-                                                    <img src="assets/images/courses/4by3/01.jpg" class="rounded-2"
+                                                    <img src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}" class="rounded-2"
                                                         alt="Card image">
                                                 </div>
                                                 <div class="col-md-10">
@@ -222,7 +222,8 @@
                                             <!-- Step content START -->
                                             <div class="bs-stepper-content">
 
-                                                <form id="quizForm">
+                                                <form id="quizForm"  method="post" action="{{ route('questions.submit', $course) }}">
+                                                    @csrf
                                                     @foreach ($questions as $key => $question)
                                                         <!-- Step 1 content START -->
                                                         <div id="step-{{ $key }}" role="tabpanel"
@@ -235,17 +236,17 @@
                                                             <hr> <!-- Divider -->
                                                             <div class="vstack gap-2">
                                                                 @foreach ($question->answers as $answer)
-                                                                <!-- Feed ques item -->
-                                                                <div>
-                                                                    <input type="radio" class="btn-check"
-                                                                        name="answers[{{ $question->id }}]"
-                                                                        id="answer_{{ $answer->id }}"
-                                                                        value="{{ $answer->id }}">
-                                                                    <label class="btn btn-outline-primary w-100"
-                                                                        for="answer_{{ $answer->id }}">{{ $answer->text }}</label>
-                                                                </div>
-                                                                <!-- Feed ques item -->
-                                                            @endforeach
+                                                                    <!-- Feed ques item -->
+                                                                    <div>
+                                                                        <input type="radio" class="btn-check"
+                                                                            name="answers[{{ $question->id }}]"
+                                                                            id="answer_{{ $answer->id }}"
+                                                                            value="{{ $answer->id }}">
+                                                                        <label class="btn btn-outline-primary w-100"
+                                                                            for="answer_{{ $answer->id }}">{{ $answer->text }}</label>
+                                                                    </div>
+                                                                    <!-- Feed ques item -->
+                                                                @endforeach
                                                             </div>
 
                                                             <!-- Step 1 button -->
@@ -254,7 +255,7 @@
                                                                     class="btn btn-primary next-btn mb-0">Next
                                                                     question</button>
                                                             </div>
-
+                                                            <button type="submit">submit</button>
                                                         </div>
                                                         <!-- Step 1 content END -->
                                                     @endforeach

@@ -25,6 +25,9 @@
                                 <option value="0">Tạm khóa</option>
                             </select>
                         </div>
+                        <label for="name">Subject Name:</label>
+                        <input class="form-control bg-body" type="text" name="description" id="description" placeholder="Tên lớp học"
+                            required>
                         <div class="form-group pt-3">
                             <label for="class_id">Chọn lớp học:</label>
                             <select name="class_id" id="class_id" class="form-control">
@@ -312,6 +315,7 @@
                     success: function(response) {
                         modal.find('#name').val(response.name || '');
                         modal.find('#status').val(response.status);
+                        modal.find('#description').val(response.description);
                         modal.find('#class_id').val(response.class_id);
                         modal.find('#subjectId').val(response.id);
                     },

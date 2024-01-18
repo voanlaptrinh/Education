@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Mail\VerifyEmail;
 use App\Models\Classes;
+use App\Models\ExamHistory;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -203,4 +204,10 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'An error occurred while changing the password.');
         }
     }
+
+    public function examHistory()
+{
+    $examHistory = ExamHistory::where('user_id', auth()->user()->id)->get();
+    return view('test.exam_history', compact('examHistory'));
+}
 }
