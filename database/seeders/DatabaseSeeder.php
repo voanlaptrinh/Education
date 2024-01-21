@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Classes;
 use App\Models\Subject;
+use App\Models\Web_config;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -24,6 +25,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         DB::table("users")->delete();
+        DB::table("web_configs")->delete();
 
         DB::table("users")->insert([
             'name' => 'admin',
@@ -59,5 +61,23 @@ class DatabaseSeeder extends Seeder
         Subject::create(['name' => 'lớp 4 1','status' => 1, 'class_id'=>2,'description' => 'sdasd']);
         Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3,'description' => 'sdasd']);
         Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3,'description' => 'sdasd']);
+    
+
+        Web_config::create(
+            [
+                'name' => 'edu',
+                'logo' => 'logos/BxUGTMyWa3rc4JAtpqYN113eCTAWxJDm33Lwcq2o.svg',
+                'code' => 46757867,
+                'email' => 'edu@example.com',
+                'phone' => '0987733787',
+                'address' => 'hà nội',
+                'zalo' => 1131231,
+                'facebook_id' => 'scskchsdf',
+                'pinterest' =>  'pinterest',
+                'youtube' => 'dfasdfd',
+                'tiktok' => 'tiktok',
+                'telegram' => 'telegram',
+                'instagram' =>'instagram'
+            ]);
     }
 }

@@ -14,9 +14,9 @@
                     <div class="modal-body">
                         <!-- resources/views/subjects/create.blade.php -->
 
-                        <label for="name">Subject Name:</label>
-                        <input class="form-control bg-body" type="text" name="name" id="name" placeholder="Tên lớp học"
-                            required>
+                        <label for="name">Tên môn học:</label>
+                        <input class="form-control bg-body" type="text" name="name" id="name"
+                            placeholder="Tên môn học" required>
                         <div class="col-lg-12 pt-3">
                             <label for="exampleInputEmail1" class="form-label">Trạng thái: *</label>
 
@@ -25,9 +25,11 @@
                                 <option value="0">Tạm khóa</option>
                             </select>
                         </div>
-                        <label for="name">Subject Name:</label>
-                        <input class="form-control bg-body" type="text" name="description" id="description" placeholder="Tên lớp học"
-                            required>
+                        <div class="col-lg-12 pt-3">
+                            <label for="name">Mô tả:</label>
+                            <input class="form-control bg-body" type="text" name="description" id="description"
+                                placeholder="Mô tả" required>
+                        </div>
                         <div class="form-group pt-3">
                             <label for="class_id">Chọn lớp học:</label>
                             <select name="class_id" id="class_id" class="form-control">
@@ -48,25 +50,25 @@
     </div>
     {{--  --}}
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // When the form is submitted
-            $("#submitBtn").submit(function (event) {
+            $("#submitBtn").submit(function(event) {
                 // Prevent the default form submission
                 event.preventDefault();
-    
+
                 // Perform client-side validation
                 var name = $("#name").val();
                 var status = $("#status").val();
                 var classId = $("#class_id").val();
-    
+
                 if (!name || !status || !classId) {
                     alert("Please fill out all required fields.");
                     return;
                 }
-    
+
                 // If validation passes, submit the form
                 // Add any additional logic you need before submitting the form
-    
+
                 // Then submit the form using JavaScript
                 this.submit();
             });
@@ -78,8 +80,7 @@
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
                 <h1 class="h3 mb-2 mb-sm-0">Môn học</h1>
                 <button type="button" class="btn btn-sm btn-primary mb-0" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
-                    data-action="add" data-class-id="">
+                    data-bs-target="#staticBackdrop" data-action="add" data-class-id="">
                     Thêm môn học
                 </button>
             </div>
@@ -255,7 +256,7 @@
                                             class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm đề bài</a>
                                     </td>
                                     <td>
-                                        
+
 
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop" data-action="edit"

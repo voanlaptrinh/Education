@@ -258,11 +258,12 @@
                                                                     class="btn btn-primary next-btn mb-0">Next
                                                                     question</button>
                                                             </div>
-                                                            <button type="submit">submit</button>
                                                         </div>
                                                         <!-- Step 1 content END -->
                                                     @endforeach
-
+                                                    <div class="d-flex justify-content-center mt-3 submit-btn-container" style="display: none;">
+                                                        <button type="submit" class="btn btn-primary mb-0">Submit</button>
+                                                    </div>
 
                                                 </form>
                                             </div>
@@ -288,26 +289,41 @@
             const timerElement = document.getElementById('timer');
             const formElement = document.getElementById('quizForm');
             const submitButton = document.getElementById('submitBtn');
-
-            let timeLimit = {{ $course->time_limit }}; // Set the time limit in seconds
+            const nextButton = document.getElementById('nextBtn');
+            const totalSteps = {{ count($questions) }};
+            let currentStep = 1;
+            let timeLimit = {{ $course->time_limit }};
             let timeRemaining = timeLimit;
-
+        
             function updateTimerDisplay() {
                 const minutes = Math.floor(timeRemaining / 60);
                 const seconds = timeRemaining % 60;
                 countdownElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
             }
-
-            function submitForm() {
-                document.getElementById('remainingTimeInput').value = timeRemaining;
-                formElement.submit();
+        
+            function updateButtonVisibility() {
+                if (currentStep < totalSteps) {
+                    nextButton.style.display = 'block';
+                    submitButton.style.display = 'none';
+                } else {
+                    nextButton.style.display = 'none';
+                    submitButton.style.display = 'block';
+                }
             }
-
+        
+            function submitForm() {
+                // Check if it's the last question before submitting the form
+                if (currentStep === totalSteps) {
+                    document.getElementById('remainingTimeInput').value = timeRemaining;
+                    formElement.submit();
+                }
+            }
+        
             function startTimer() {
                 updateTimerDisplay();
                 const timerInterval = setInterval(() => {
                     timeRemaining--;
-
+        
                     if (timeRemaining <= 0) {
                         clearInterval(timerInterval);
                         timerElement.innerText = 'Time Expired!';
@@ -317,8 +333,16 @@
                     }
                 }, 1000);
             }
-
+        
             startTimer(); // Start the timer when the page loads
+        
+            document.getElementById('nextBtn').addEventListener('click', function () {
+                currentStep++;
+                updateButtonVisibility();
+                submitForm(); // Check for form submission after clicking "Next question"
+            });
         </script>
+        
+        
     </main>
 @endsection

@@ -124,7 +124,7 @@
                 <div class="col-md-6">
                     <!-- Title -->
                     <h2 class="mt-4 mt-md-0">Let's talk</h2>
-                    <p>To request a quote or want to meet up for coffee, contact us directly or fill out the form and we
+                <p>To request a quote or want to meet up for coffee, contact us directly or fill out the form and we
                         will get back to you promptly</p>
 
                     <form action="{{route('contact.create')}}" method="POST">
@@ -132,7 +132,7 @@
                         <!-- Name -->
                         <div class="mb-4 bg-light-input">
                             <label for="yourName" class="form-label">Tên của bạn *</label>
-                            <input type="text" name="yourName" class="form-control form-control-lg" id="yourName">
+                            <input type="text" name="yourName" class="form-control form-control-lg" value="{{ old('yourName') }}" id="yourName">
                             @error('yourName')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -140,14 +140,14 @@
                         <!-- Email -->
                         <div class="mb-4 bg-light-input">
                             <label for="emailInput" class="form-label">Email *</label>
-                            <input type="email" name="email" class="form-control form-control-lg" id="emailInput">
+                            <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg" id="email">
                             @error('email')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                         </div>
                         <div class="mb-4 bg-light-input">
                             <label for="emailInput" class="form-label">PĐiện thoại *</label>
-                            <input type="text" name="phone" class="form-control form-control-lg" id="phone">
+                            <input type="text" name="phone" value="{{ old('phone') }}" class="form-control form-control-lg" id="phone">
                             @error('phone')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -155,7 +155,7 @@
                         <!-- Message -->
                         <div class="mb-4 bg-light-input">
                             <label for="textareaBox" class="form-label">Nội dung *</label>
-                            <textarea class="form-control" name="content" id="textareaBox" rows="4"></textarea>
+                            <textarea class="form-control" name="content" id="content" rows="4">{{ old('content') }}</textarea>
                             @error('content')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

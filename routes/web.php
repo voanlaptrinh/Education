@@ -18,6 +18,7 @@ use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
 use App\Http\Controllers\Admin\SubjectController;
+use App\Http\Controllers\Admin\WebConfigController;
 use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\VerificationController;
@@ -56,6 +57,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/', [StudentController::class, 'index'])->name('student.index');
             Route::post('/{id}/toggle-status', [StudentController::class, 'toggleStatus'])->name('user.toggleStatus');
         });
+        Route::prefix('contact')->group(function () {
+            Route::get('/', [ContactController::class, 'adminContact'])->name('contact.admin');
+            Route::get('/getContactDetails/{id}', [ContactController::class, 'getContactDetails'])->name('contact.getContactDetails');
+        });
         //Môn học
         Route::prefix('/subjects')->group(function () { //Môn học
             Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
@@ -71,7 +76,6 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 
         Route::prefix('/courses')->group(function () {
             // Routes for Courses
-
             Route::get('/{course}', [CourseController::class, 'show'])->name('courses.show');
             Route::delete('/delete/{question}', [CourseController::class, 'destroy'])->name('courses.destroy');
             // Routes for Questions
@@ -90,6 +94,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('/questions')->group(function () { //Sửa câu hỏi
             Route::get('/{course}/edit/{question}', [QuestionController::class, 'edit'])->name('questions.edit');
             Route::put('/{course}/{question}', [QuestionController::class, 'update'])->name('questions.update');
+        });
+        Route::prefix('/web_config')->group(function () {
+            Route::get('/', [WebConfigController::class, 'index'])->name('webConfig.index');
+            Route::post('/update-webConfig', [WebConfigController::class, 'update'])->name('webConfig.update');
         });
     });
 });
@@ -135,11 +143,11 @@ Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name(
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/detail/{id}', [NewsController::class, 'detail'])->name('news.detail');
 
-Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
-
-
-
+Route::prefix('/contact')->group(function () {
+    Route::get('/', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('/success', [ContactController::class, 'success'])->name('contact.success');
+    Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
+});
 
 Route::get('{subject}/courses', [CourseAuthController::class, 'index'])->name('home.course');
 
@@ -147,7 +155,11 @@ Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
     Route::get('/{course}/questions', [QuestionController::class, 'show'])->name('questions.show');
     Route::post('/{course}/questions/submit', [QuestionController::class, 'submitAnswers'])->name('questions.submit');
 });
+
 Route::prefix('/user')->group(function () {
     Route::get('/exam-history', [AuthController::class, 'examHistory'])->name('user.examHistory');
     Route::delete('/exam-history/{id}', [AuthController::class, 'destroy'])->name('examHistory.destroy');
 });
+
+
+Route::get('/default', [ContactController::class, 'default'])->name('default');
