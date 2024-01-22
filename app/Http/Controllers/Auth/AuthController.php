@@ -7,6 +7,7 @@ use App\Mail\VerifyEmail;
 use App\Models\Classes;
 use App\Models\ExamHistory;
 use App\Models\User;
+use App\Models\Web_config;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
@@ -25,8 +26,9 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $classes = Classes::all();
+        $webConfig = Web_config::find(1);
         $message = $request->session()->all();
-        return View('auth.login', compact('message', 'classes'));
+        return View('auth.login', compact('message','webConfig', 'classes'));
     }
     public function postLogin(Request $request)
     {
@@ -69,7 +71,8 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $classes = Classes::all();
-        return View('auth.register', compact('classes'));
+        $webConfig = Web_config::find(1);
+        return View('auth.register', compact('classes','webConfig'));
     }
     public function postRegister(Request $request)
     {
@@ -136,7 +139,9 @@ class AuthController extends Controller
         if (!$user) {
             return redirect()->route('login');
         }
-        return view('auth.profile_account', compact('user'));
+        $classes = Classes::all();
+        $webConfig = Web_config::find(1);
+        return view('auth.profile_account', compact('user','classes', 'webConfig'));
     }
     public function update(Request $request)
     {
@@ -209,6 +214,7 @@ class AuthController extends Controller
     public function examHistory()
     {
         $classes = Classes::all();
+        $webConfig = Web_config::find(1);
         $examHistory = ExamHistory::where('user_id', auth()->user()->id)->get();
         // Calculate and update remaining time for each exam history record
         foreach ($examHistory as $exam) {
@@ -224,7 +230,7 @@ class AuthController extends Controller
                 $exam->save();
             }
         }
-        return view('users.exam_history', compact('examHistory', 'classes'));
+        return view('users.exam_history', compact('examHistory','webConfig', 'classes'));
     }
     public function destroy($id)
     {

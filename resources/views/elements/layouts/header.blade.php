@@ -3,9 +3,9 @@
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
-            <a class="navbar-brand" href="index.html">
-                <img class="light-mode-item navbar-brand-item" src="assets/user/images/logo.svg" alt="logo">
-                <img class="dark-mode-item navbar-brand-item" src="assets/user/images/logo-light.svg" alt="logo">
+            <a class="navbar-brand" href="/">
+                <img class="light-mode-item navbar-brand-item" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
+                <img class="dark-mode-item navbar-brand-item" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
             </a>
             <!-- Logo END -->
 

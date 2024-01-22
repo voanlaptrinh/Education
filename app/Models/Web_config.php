@@ -25,6 +25,7 @@ class Web_config extends Model
         'dribbble',
         'whats_app',
         'tiktok',
+        'description',
         'telegram',
         'google',
         'twitter',

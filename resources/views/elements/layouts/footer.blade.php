@@ -7,16 +7,43 @@
 			<div class="col-lg-3">
 				<!-- logo -->
 				<a class="me-0" href="index.html">
-					<img class="light-mode-item h-40px" src="assets/user/images/logo.svg" alt="logo">
-					<img class="dark-mode-item h-40px" src="assets/user/images/logo-light.svg" alt="logo">
+					<img class="light-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
+					<img class="dark-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
 				</a>
-				<p class="my-3">Eduport education theme, built specifically for the education centers which is dedicated to teaching and involve learners.</p>
+				<p class="my-3">{{$webConfig->description}}</p>
 				<!-- Social media icon -->
 				<ul class="list-inline mb-0 mt-3">
-					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
-					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
-					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
-					<li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+					@if (!empty($webConfig->facebook_id))
+						
+					<li class="list-inline-item">
+						 <a class="btn btn-white btn-sm shadow px-2 text-facebook" href="https://www.facebook.com/{{$webConfig->facebook_id}}">
+							<i class="fab fa-fw fa-facebook-f"></i>
+						</a> 
+					</li>
+					@endif
+					@if (!empty($webConfig->instagram))
+					<li class="list-inline-item"> 
+						<a class="btn btn-white btn-sm shadow px-2 text-instagram" href="{{$webConfig->instagram}}">
+							<i class="fab fa-fw fa-instagram"></i>
+						</a> 
+					</li>
+					@endif
+					@if (!empty($webConfig->twitter))
+					<li class="list-inline-item"> 
+						<a class="btn btn-white btn-sm shadow px-2 text-twitter" href="{{$webConfig->twitter}}">
+							<i class="fab fa-fw fa-twitter"></i>
+						</a> 
+					</li>
+					@endif
+					@if (!empty($webConfig->linkedin))
+
+					<li class="list-inline-item"> 
+						<a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="{{$webConfig->linkedin}}">
+							<i class="fab fa-fw fa-linkedin-in"></i>
+						</a>
+					 </li>
+					@endif
+
 				</ul>
 			</div>
 			<!-- Widget 1 END -->
@@ -62,14 +89,13 @@
 
 			<!-- Widget 3 START -->
 			<div class="col-lg-3">
-				<h5 class="mb-2 mb-md-4">Contact</h5>
+				<h5 class="mb-2 mb-md-4">Liên hệ</h5>
 				<!-- Time -->
 				<p class="mb-2">
-					Toll free:<span class="h6 fw-light ms-2">+1234 568 963</span>
-					<span class="d-block small">(9:AM to 8:PM IST)</span>
+					Phone: <span class="h6 fw-light ms-2">{{$webConfig->phone}}</span>
 				</p>
 
-				<p class="mb-0">Email:<span class="h6 fw-light ms-2">example@gmail.com</span></p>
+				<p class="mb-0">Email:<span class="h6 fw-light ms-2">{{$webConfig->email}}</span></p>
 
 				<div class="row g-2 mt-2">
 					<!-- Google play store button -->

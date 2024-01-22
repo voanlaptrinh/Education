@@ -6,92 +6,48 @@
             <div class="row">
                 <div class="col-lg-8 col-xl-6 text-center mx-auto">
                     <!-- Title -->
-                    <h6 class="text-primary">Contact us</h6>
-                    <h1 class="mb-4">We're here to help!</h1>
+                    <h6 class="text-primary">Liên hệ</h6>
+                    <h1 class="mb-4">Chúng tôi ở đây để giúp đỡ!</h1>
                 </div>
             </div>
 
             <!-- Contact info box -->
             <div class="row g-4 g-md-5 mt-0 mt-lg-3">
                 <!-- Box item -->
-                <div class="col-lg-4 mt-lg-0">
+                <div class="col-lg-12 mt-lg-0">
                     <div class="card card-body bg-primary shadow py-5 text-center h-100">
                         <!-- Title -->
-                        <h5 class="text-white mb-3">Customer Support</h5>
+                        <h5 class="text-white mb-3">Hỗ trợ khách hàng</h5>
                         <ul class="list-inline mb-0">
                             <!-- Address -->
                             <li class="list-item mb-3">
                                 <a href="#" class="text-white"> <i
-                                        class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>Chicago HQ Estica Cop. Macomb, MI
-                                    48042 </a>
+                                        class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>{{ $webConfig->address }} </a>
                             </li>
                             <!-- Phone number -->
                             <li class="list-item mb-3">
-                                <a href="#" class="text-white"> <i class="fas fa-fw fa-phone-alt me-2"></i>(423)
-                                    733-8222 </a>
+                                <a href="#" class="text-white"> <i
+                                        class="fas fa-fw fa-phone-alt me-2"></i>{{ $webConfig->phone }} </a>
                             </li>
                             <!-- Email id -->
                             <li class="list-item mb-0">
                                 <a href="#" class="text-white"> <i
-                                        class="far fa-fw fa-envelope me-2"></i>example@email.com </a>
+                                        class="far fa-fw fa-envelope me-2"></i>{{ $webConfig->email }} </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Box item -->
-                <div class="col-lg-4 mt-lg-0">
-                    <div class="card card-body shadow py-5 text-center h-100">
-                        <!-- Title -->
-                        <h5 class="mb-3">Contact Address</h5>
-                        <ul class="list-inline mb-0">
-                            <!-- Address -->
-                            <li class="list-item mb-3 h6 fw-light">
-                                <a href="#"> <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>2492 Centennial NW,
-                                    Acworth, GA, 30102 </a>
-                            </li>
-                            <!-- Phone number -->
-                            <li class="list-item mb-3 h6 fw-light">
-                                <a href="#"> <i class="fas fa-fw fa-phone-alt me-2"></i>+896-789-546 </a>
-                            </li>
-                            <!-- Email id -->
-                            <li class="list-item mb-0 h6 fw-light">
-                                <a href="#"> <i class="far fa-fw fa-envelope me-2"></i>example@email.com </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Box item -->
-                <div class="col-lg-4 mt-lg-0">
-                    <div class="card card-body shadow py-5 text-center h-100">
-                        <!-- Title -->
-                        <h5 class="mb-3">Main Office Address</h5>
-                        <ul class="list-inline mb-0">
-                            <!-- Address -->
-                            <li class="list-item mb-3 h6 fw-light">
-                                <a href="#"> <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>2002 Horton Ford Rd,
-                                    Eidson, TN, 37731 </a>
-                            </li>
-                            <!-- Phone number -->
-                            <li class="list-item mb-3 h6 fw-light">
-                                <a href="#"> <i class="fas fa-fw fa-phone-alt me-2"></i>(678) 324-1251 </a>
-                            </li>
-                            <!-- Email id -->
-                            <li class="list-item mb-0 h6 fw-light">
-                                <a href="#"> <i class="far fa-fw fa-envelope me-2"></i>example@email.com </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     <!-- =======================
-    Page Banner END -->
+            Page Banner END -->
 
     <!-- =======================
-    Image and contact form START -->
+            Image and contact form START -->
     <section>
         <div class="container">
             <div class="row g-4 g-lg-0 align-items-center">
@@ -102,20 +58,34 @@
 
                     <!-- Social media button -->
                     <div class="d-sm-flex align-items-center justify-content-center mt-2 mt-sm-4">
-                        <h5 class="mb-0">Follow us on:</h5>
+                        <h5 class="mb-0">Theo dõi tại:</h5>
                         <ul class="list-inline mb-0 ms-sm-2">
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-facebook" href="#"><i
-                                        class="fab fa-fw fa-facebook-square"></i></a> </li>
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram" href="#"><i
-                                        class="fab fa-fw fa-instagram"></i></a> </li>
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter" href="#"><i
-                                        class="fab fa-fw fa-twitter"></i></a> </li>
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-linkedin" href="#"><i
-                                        class="fab fa-fw fa-linkedin-in"></i></a> </li>
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-dribbble" href="#"><i
-                                        class="fas fa-fw fa-basketball-ball"></i></a> </li>
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest" href="#"><i
-                                        class="fab fa-fw fa-pinterest"></i></a> </li>
+                            @if ($webConfig->facebook_id)
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-facebook"
+                                        href="https://www.facebook.com/{{ $webConfig->facebook_id }}"><i
+                                            class="fab fa-fw fa-facebook-square"></i></a> </li>
+                            @endif
+                            @if ($webConfig->instagram)
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram" href="#"><i
+                                            class="fab fa-fw fa-instagram"></i></a> </li>
+                            @endif
+                            @if ($webConfig->twitter)
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter" href="#"><i
+                                            class="fab fa-fw fa-twitter"></i></a> </li>
+                            @endif
+                            @if ($webConfig->linkedin)
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-linkedin" href="#"><i
+                                            class="fab fa-fw fa-linkedin-in"></i></a> </li>
+                            @endif
+                            @if ($webConfig->dribbble)
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-dribbble" href="#"><i
+                                            class="fas fa-fw fa-basketball-ball"></i></a> </li>
+                            @endif
+                            @if ($webConfig->pinterest)
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest" href="#"><i
+                                            class="fab fa-fw fa-pinterest"></i></a> </li>
+                            @endif
+
                         </ul>
                     </div>
                 </div>
@@ -123,42 +93,45 @@
                 <!-- Contact form START -->
                 <div class="col-md-6">
                     <!-- Title -->
-                    <h2 class="mt-4 mt-md-0">Let's talk</h2>
-                <p>To request a quote or want to meet up for coffee, contact us directly or fill out the form and we
-                        will get back to you promptly</p>
+                    <h2 class="mt-4 mt-md-0">Hãy nói chuyện</h2>
+                    <p>hãy liên hệ trực tiếp với chúng tôi hoặc điền vào biểu mẫu và chúng tôi sẽ liên hệ lại với bạn ngay
+                        lập tức</p>
 
-                    <form action="{{route('contact.create')}}" method="POST">
-                        @csrf 
+                    <form action="{{ route('contact.create') }}" method="POST">
+                        @csrf
                         <!-- Name -->
                         <div class="mb-4 bg-light-input">
                             <label for="yourName" class="form-label">Tên của bạn *</label>
-                            <input type="text" name="yourName" class="form-control form-control-lg" value="{{ old('yourName') }}" id="yourName">
+                            <input type="text" name="yourName" class="form-control form-control-lg"
+                                value="{{ old('yourName') }}" id="yourName">
                             @error('yourName')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <!-- Email -->
                         <div class="mb-4 bg-light-input">
                             <label for="emailInput" class="form-label">Email *</label>
-                            <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control-lg" id="email">
+                            <input type="email" name="email" value="{{ old('email') }}"
+                                class="form-control form-control-lg" id="email">
                             @error('email')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-4 bg-light-input">
                             <label for="emailInput" class="form-label">PĐiện thoại *</label>
-                            <input type="text" name="phone" value="{{ old('phone') }}" class="form-control form-control-lg" id="phone">
+                            <input type="text" name="phone" value="{{ old('phone') }}"
+                                class="form-control form-control-lg" id="phone">
                             @error('phone')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <!-- Message -->
                         <div class="mb-4 bg-light-input">
                             <label for="textareaBox" class="form-label">Nội dung *</label>
                             <textarea class="form-control" name="content" id="content" rows="4">{{ old('content') }}</textarea>
                             @error('content')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <!-- Button -->
                         <div class="d-grid">
@@ -174,11 +147,14 @@
     <section class="pt-0">
         <div class="container">
             <div class="row">
+                @if (!empty($webConfig->gg_map))
+                    
                 <div class="col-12">
                     <iframe class="w-100 h-400px grayscale rounded"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076684379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sin!4v1586000412513!5m2!1sen!2sin"
+                        src="{{$webConfig->gg_map}}">
                         height="500" style="border:0;" aria-hidden="false" tabindex="0"></iframe>
                 </div>
+                @endif
             </div>
         </div>
     </section>

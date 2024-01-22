@@ -51,7 +51,7 @@
             </div>
 
             <div class="row mb-4">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <label for="exampleInputEmail1" class="form-label">Giới tính *</label>
                     <select class="form-select" name="gender" aria-label="Default select example">
                         <option selected>Giới tính</option>

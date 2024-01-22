@@ -10,7 +10,7 @@ class WebConfigController extends Controller
 {
     public function index(Request $request)
     {
-        $webConfig = Web_config::all()->find(1);
+        $webConfig = Web_config::find(1);
         return view('admin.web_config.index', compact('webConfig'));
     }
     public function update(Request $request)
@@ -27,6 +27,7 @@ class WebConfigController extends Controller
             'facebook_id' => 'nullable',
             'zalo' => 'nullable',
             'pinterest' => 'nullable',
+            'description' => 'nullable',
             'youtube' => 'nullable',
             'dribbble' => 'nullable',
             'tiktok' => 'nullable',
@@ -54,6 +55,7 @@ class WebConfigController extends Controller
             'pinterest' => $request->input('pinterest'),
             'youtube' => $request->input('youtube'),
             'dribbble' => $request->input('dribbble'),
+            'description' => $request->input('description'),
             'tiktok' => $request->input('tiktok'),
             'telegram' => $request->input('telegram'),
             'twitter' => $request->input('twitter'),

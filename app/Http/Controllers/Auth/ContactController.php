@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Classes;
 use App\Models\Contact;
+use App\Models\Web_config;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -12,20 +13,23 @@ class ContactController extends Controller
     public function index()
     {
         $classes = Classes::all();
-        return view('contact.index',compact('classes'));
+        $webConfig = Web_config::find(1);
+        return view('contact.index',compact('classes','webConfig'));
     }
     public function default()
     {
         $classes = Classes::all();
-        return view('default.index',compact('classes'));
+        $webConfig = Web_config::find(1);
+        return view('default.index',compact('classes','webConfig'));
     }
     public function success()
     {
         $classes = Classes::all();
+        $webConfig = Web_config::find(1);
         if (session('success')) {
-            return view('contact.success',compact('classes'));
+            return view('contact.success',compact('classes','webConfig'));
         } else {
-            return redirect()->route('default',compact('classes'));
+            return redirect()->route('default',compact('classes','webConfig'));
         }
     }
 

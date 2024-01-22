@@ -58,7 +58,11 @@
                                         <input type="text"  value="{{$webConfig->gg_map}}" class="form-control" 
                                            id="gg_map" name="gg_map" >
                                     </div>
-
+                                    <div class="col-lg-12">
+                                        <label class="form-label">Mô tả</label>
+                                        <input type="text" class="form-control" placeholder="description"
+                                            name="description" id="description" value="{{$webConfig->description}}">
+                                    </div>
                                     <div class="card-header border-bottom">
                                         <h5 class="card-header-title">Đường dẫn mạng xã hội</h5>
                                     </div>
@@ -128,6 +132,7 @@
                                         <input type="text" class="form-control" placeholder="google"
                                             name="google" id="google" value="{{$webConfig->google}}">
                                     </div>
+                                   
 
 
                                     <!-- Save button -->

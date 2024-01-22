@@ -19,6 +19,7 @@
                                     <img class="avatar-img rounded-circle border border-white border-3 shadow"
                                         src="{{ asset($user->image ? 'storage/' . $user->image : 'assets/images/default-avatar.jpg') }}" alt="">
                                 </div>
+                               
                             </div>
                             <!-- Profile info -->
                             <div class="col d-md-flex justify-content-between align-items-center mt-4">
@@ -34,7 +35,7 @@
                                                 class="fas fa-book text-purple me-2"></i>25 Courses</li>
                                     </ul>
                                 </div>
-                              
+                               
                             </div>
                         </div>
                     </div>
@@ -144,6 +145,9 @@
                                         <label class="btn btn-primary-soft mb-0" for="profile_picture">Change</label>
                                         <input id="profile_picture" name="profile_picture" class="form-control d-none" type="file">
                                     </div>
+                                    @error('image')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                                 </div>
 
                                 <!-- Full name -->
@@ -154,6 +158,9 @@
                                             placeholder="First name">
 
                                     </div>
+                                    @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                                 </div>
 
                                 <!-- Username -->
@@ -163,6 +170,9 @@
 
                                         <input type="text" class="form-control" name="username" value="{{ $user->username }}">
                                     </div>
+                                    @error('username')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                                 </div>
 
                                 <!-- Email id -->
@@ -177,12 +187,18 @@
                                     <label class="form-label">Phone number</label>
                                     <input type="text" class="form-control" name="phone" value="{{ $user->phone }}"
                                         placeholder="Phone number">
+                                        @error('phone')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <!-- Location -->
                                 <div class="col-md-6">
-                                    <label class="form-label">Location</label>
+                                    <label class="form-label">Địa chỉ</label>
                                     <input class="form-control" name="address" type="text" value="{{ $user->address }}">
+                                    @error('address')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                                 </div>
 
 

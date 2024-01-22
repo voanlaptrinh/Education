@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->text('zalo')->nullable();
+            $table->text('description')->nullable();
             $table->text('facebook_id')->nullable();
             $table->text('pinterest')->nullable();
             $table->text('youtube')->nullable();
@@ -44,6 +45,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('web_config');
+        Schema::dropIfExists('web_configs');
     }
 };

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ResetPasswordMail;
+use App\Models\Classes;
+use App\Models\Web_config;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -15,7 +17,9 @@ class ForgotPasswordController extends Controller
  
     public function showLinkRequestForm()
     {
-        return view('auth.passwords.email');
+        $webConfig = Web_config::find(1);
+        $classes = Classes::all();
+        return view('auth.passwords.email', compact('webConfig','classes'));
     }
     public function sendResetLinkEmail(Request $request)
     {
