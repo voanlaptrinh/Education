@@ -19,4 +19,12 @@ class Subject extends Model
     {
         return $this->belongsTo(Classes::class);
     }
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class, 'subject_id');
+    }
+    public function lectures()
+    {
+        return $this->hasMany(Lecture::class, 'subject_id');
+    }
 }

@@ -35,11 +35,12 @@
 
                 <!-- Menu item 3 -->
                 <li class="nav-item"> <a class="nav-link" href="{{route('indexNews')}}"><i class="fas fa-newspaper fa-fw me-2"></i>Tin tức</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('webConfig.index')}}"><i class="fas fa-newspaper fa-fw me-2"></i>Cài đặt web</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('webConfig.index')}}"><i class="fas fa-cogs fa-fw me-2"></i>Cài đặt web</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('student.index')}}"><i class="fas fa-user-graduate fa-fw me-2"></i>Học sinh</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('classes.index')}}"><i class="fas fa-pen-fancy fa-fw me-2"></i></i>Lớp học</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('subjects.index')}}"><i class="fas fa-book fa-fw me-2"></i>Môn học</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('contact.admin')}}"><i class="fas fa-file-signature fa-fw me-2"></i>Liên hệ</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('lesson.index')}}"><i class="fas fa-graduation-cap fa-fw me-2"></i>Bài học</a></li>
 
                 <!-- Menu item 4 -->
                 <li class="nav-item">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\StudentController;
@@ -98,6 +99,14 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('/web_config')->group(function () {
             Route::get('/', [WebConfigController::class, 'index'])->name('webConfig.index');
             Route::post('/update-webConfig', [WebConfigController::class, 'update'])->name('webConfig.update');
+        });
+        Route::prefix('/lession')->group(function () {
+            Route::get('/', [LessonController::class, 'index'])->name('lesson.index');
+            Route::get('/create', [LessonController::class, 'create'])->name('lesson.create');
+            Route::post('/store', [LessonController::class, 'store'])->name('lessons.store');
+            Route::get('/{lesson}/edit', [LessonController::class, 'edit'])->name('lessons.edit');
+            Route::put('/update/{lesson}', [LessonController::class, 'update'])->name('lessons.update');
+            Route::delete('/delete/{lesson}', [LessonController::class, 'destroy'])->name('lessons.destroy');
         });
     });
 });
