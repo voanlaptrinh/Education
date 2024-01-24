@@ -31,13 +31,7 @@
         @endforeach
     </select>
 
-    <!-- Thêm trường select để chọn khóa học -->
-    <label for="course_id">Select Course:</label>
-    <select name="course_id" required>
-        @foreach($courses as $course)
-            <option value="{{ $course->id }}" {{ $course->id == $lesson->course_id ? 'selected' : '' }}>{{ $course->title }}</option>
-        @endforeach
-    </select>
+ 
 
     <!-- Thêm các trường dữ liệu khác nếu cần -->
 

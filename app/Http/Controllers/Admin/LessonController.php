@@ -82,4 +82,5 @@ class LessonController extends Controller
         return redirect()->route('lesson.index', ['subject' => $subjectId])
             ->with('success', 'Lesson deleted successfully.');
     }
+   
 }
