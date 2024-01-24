@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->string('video')->nullable();
             $table->string('image')->nullable();
-            $table->unsignedBigInteger('class_id');
-            $table->unsignedBigInteger('subject_id');
+            // $table->unsignedBigInteger('class_id');
+            // $table->unsignedBigInteger('subject_id');
             $table->timestamps();
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
         });

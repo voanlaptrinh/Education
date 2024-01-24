@@ -1,8 +1,8 @@
 <!-- resources/views/lectures/create.blade.php -->
 
-@extends('layouts.app')
+@extends('admin.index')
 
-@section('content')
+@section('contentadmin')
     <div class="container">
         <h2>Create Lecture</h2>
 

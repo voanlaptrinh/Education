@@ -103,6 +103,7 @@
                         <!-- Table body START -->
                         <tbody>
                             @foreach ($lessons as $lesson)
+                          
                                 <tr>
                                     <!-- Table data -->
                                     <td>
@@ -134,10 +135,12 @@
 
                                     <!-- Table data -->
                                     <td> {{ $lesson->views }}</td>
-                                    <td>
+                                    <td> {{$lesson->subject->name}}</td>
+                                    <td> {{ $lesson->subject->class->name }}</td>
+                                    {{-- <td>
                                         <a href="{{ route('lectures.index', ['lesson' => $lesson]) }}"
                                             class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Thêm bài giảng</a>
-                                    </td>
+                                    </td> --}}
                                     <!-- Table data -->
                                     <td>
                                         <a href="{{ route('lessons.edit', ['lesson' => $lesson]) }}"

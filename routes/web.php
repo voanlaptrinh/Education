@@ -112,8 +112,8 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 
         });
         Route::prefix('/lectures')->group(function () {
-            Route::get('/{lesson}', [LecturesController::class, 'index'])->name('lectures.index'); //in ra vi deo liên quan đến bài học
-            Route::get('/create', [LecturesController::class, 'create'])->name('lectures.create');
+            Route::get('/', [LecturesController::class, 'index'])->name('lectures.index'); //in ra vi deo liên quan đến bài học
+            Route::get('/createa', [LecturesController::class, 'create'])->name('lectures.create');
             Route::post('/store', [LecturesController::class, 'store'])->name('lectures.store');
         });
     });

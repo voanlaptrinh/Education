@@ -24,10 +24,11 @@ class LecturesController extends Controller
     }
     public function store(Request $request)
     {
+        // dd($request->file('video'));
         $request->validate([
             'title' => 'required|string',
             'content' => 'nullable|string',
-            'video' => 'required|mimes:mp4,avi,wmv|max:2048',
+            'video' => 'required|mimes:mp4,avi,wmv',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'lesson_id' => 'required|exists:lessons,id',
         ]);
@@ -38,14 +39,15 @@ class LecturesController extends Controller
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('images', 'public');
         }
-
-        Lecture::create([
+        $lecture = new Lecture([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
-            'video' => $videoPath,
             'image' => $imagePath,
+            'video' => $videoPath,
             'lesson_id' => $request->input('lesson_id'),
         ]);
+
+      $lecture->save();
 
         return redirect()->route('lectures.index')->with('success', 'Lecture created successfully.');
     }
