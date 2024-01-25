@@ -92,10 +92,12 @@
                         <!-- Table head -->
                         <thead>
                             <tr>
-                                <th scope="col" class="border-0 rounded-start">Course Name</th>
-                                <th scope="col" class="border-0">Instructor</th>
-                                <th scope="col" class="border-0">Rating</th>
-                                <th scope="col" class="border-0">Enrolled</th>
+                                <th scope="col" class="border-0 rounded-start">Tiêu đề</th>
+                                <th scope="col" class="border-0">Ảnh mô tả</th>
+                                <th scope="col" class="border-0">Mô tả ngắn</th>
+                                <th scope="col" class="border-0">Số lượt xem</th>
+                                <th scope="col" class="border-0">Môn học</th>
+                                <th scope="col" class="border-0">Lớp học</th>
                                 <th scope="col" class="border-0 rounded-end">Action</th>
                             </tr>
                         </thead>
@@ -106,6 +108,17 @@
                           
                                 <tr>
                                     <!-- Table data -->
+                                  
+
+                                    <!-- Table data -->
+                                    <td>
+                                        <div class="d-flex align-items-center">
+
+                                            <div class="ms-2">
+                                                <h6 class="mb-0 fw-light">{{ $lesson->title }}</h6>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
                                         <div class="d-flex align-items-center position-relative">
                                             <!-- Image -->
@@ -117,17 +130,6 @@
 
                                         </div>
                                     </td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center">
-
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $lesson->title }}</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-
                                     <!-- Table data -->
                                     <td>
                                         {{ $lesson->description }}

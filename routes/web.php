@@ -97,11 +97,13 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{course}/edit/{question}', [QuestionController::class, 'edit'])->name('questions.edit');
             Route::put('/{course}/{question}', [QuestionController::class, 'update'])->name('questions.update');
         });
+
         Route::prefix('/web_config')->group(function () {
             Route::get('/', [WebConfigController::class, 'index'])->name('webConfig.index');
             Route::post('/update-webConfig', [WebConfigController::class, 'update'])->name('webConfig.update');
         });
-        Route::prefix('/lession')->group(function () {
+
+        Route::prefix('/lession')->group(function () { //Bài học
             Route::get('/', [LessonController::class, 'index'])->name('lesson.index');
             Route::get('/create', [LessonController::class, 'create'])->name('lesson.create');
             Route::post('/store', [LessonController::class, 'store'])->name('lessons.store');
@@ -111,9 +113,17 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 
 
         });
+
+        Route::prefix('/curriculum')->group(function () { //chương trình học
+            Route::get('/', [LessonController::class, 'index'])->name('curriculum.index');
+        });
+
+
+
+
         Route::prefix('/lectures')->group(function () {
             Route::get('/', [LecturesController::class, 'index'])->name('lectures.index'); //in ra vi deo liên quan đến bài học
-            Route::get('/createa', [LecturesController::class, 'create'])->name('lectures.create');
+            Route::get('/create', [LecturesController::class, 'create'])->name('lectures.create');
             Route::post('/store', [LecturesController::class, 'store'])->name('lectures.store');
         });
     });

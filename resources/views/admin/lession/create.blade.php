@@ -20,8 +20,8 @@
         <!-- Thêm trường select để chọn khóa học -->
         <label for="subject_id">Select Course:</label>
         <select name="subject_id" required>
-            @foreach($subject as $course)
-                <option value="{{ $course->id }}">{{ $course->name }}</option>
+            @foreach($subject as $subject)
+                <option value="{{ $subject->id }}">{{ $subject->name }} ({{$subject->class->name }}) </option>
             @endforeach
         </select>
 

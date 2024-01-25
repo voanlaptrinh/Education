@@ -25,7 +25,7 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $classes = Classes::all();
+        $classes = Classes::orderBy('id', 'asc')->get();
         $webConfig = Web_config::find(1);
         $message = $request->session()->all();
         return View('auth.login', compact('message','webConfig', 'classes'));
