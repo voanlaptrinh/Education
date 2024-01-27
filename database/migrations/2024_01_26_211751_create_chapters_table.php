@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('chapters', function (Blueprint $table) { //chương chình giảng dạy liên kết đến bảng môn học
+        Schema::create('chapters', function (Blueprint $table) {//chương trình giảng dạy
             $table->id();
-            $table->unsignedBigInteger('lesson_id');
+            $table->bigInteger('lesson_id')->unsigned();
             $table->string('title');
+            $table->text('content')->nullable();
             $table->timestamps();
 
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
@@ -26,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('chapters', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('chapters');
     }
 };

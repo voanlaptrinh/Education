@@ -8,13 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Lecture extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'content', 'video', 'image', 'lesson_id'];
+    protected $fillable = ['chapter_id', 'title', 'content', 'video','image'];
 
-   
-    public function lesson()
+    public function chapter()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(Chapter::class);
     }
-
    
 }

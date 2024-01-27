@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lesson_id');
+            $table->bigInteger('chapter_id')->unsigned();
             $table->string('title');
             $table->text('content')->nullable();
             $table->string('video')->nullable();
@@ -21,7 +21,7 @@ return new class extends Migration
             // $table->unsignedBigInteger('class_id');
             // $table->unsignedBigInteger('subject_id');
             $table->timestamps();
-            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreign('chapter_id')->references('id')->on('chapters')->onDelete('cascade');
         });
     }
 

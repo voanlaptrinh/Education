@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ChaptersController;
 use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -110,21 +111,28 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{lesson}/edit', [LessonController::class, 'edit'])->name('lessons.edit');
             Route::put('/update/{lesson}', [LessonController::class, 'update'])->name('lessons.update');
             Route::delete('/delete/{lesson}', [LessonController::class, 'destroy'])->name('lessons.destroy');
-
-
         });
 
-        Route::prefix('/curriculum')->group(function () { //chương trình học
-            Route::get('/', [LessonController::class, 'index'])->name('curriculum.index');
+        Route::prefix('/chapter')->group(function () { //chương trình học
+            Route::get('/', [ChaptersController::class, 'index'])->name('curriculum.index');
+            Route::get('/create', [ChaptersController::class, 'create'])->name('curriculum.create');
+            Route::post('/store', [ChaptersController::class, 'store'])->name('curriculum.store');
+            Route::get('/{chapter}/edit', [ChaptersController::class, 'edit'])->name('curriculum.edit');
+            Route::put('/update/{chapter}', [ChaptersController::class, 'update'])->name('curriculum.update');
+            Route::delete('/delete/{chapter}', [ChaptersController::class, 'destroy'])->name('curriculum.destroy');
+            Route::get('/search', [ChaptersController::class, 'search'])->name('curriculum.search');
         });
 
 
 
 
         Route::prefix('/lectures')->group(function () {
-            Route::get('/', [LecturesController::class, 'index'])->name('lectures.index'); //in ra vi deo liên quan đến bài học
-            Route::get('/create', [LecturesController::class, 'create'])->name('lectures.create');
-            Route::post('/store', [LecturesController::class, 'store'])->name('lectures.store');
+            Route::get('/{chapter}', [LecturesController::class, 'index'])->name('lectures.index'); //in ra vi deo liên quan đến bài học
+            Route::get('/create/{chapter}', [LecturesController::class, 'create'])->name('lectures.create');
+            Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
+            Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');
+            Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');
+            Route::delete('delete/{lecture}', [LecturesController::class, 'destroy'])->name('lectures.destroy');
         });
     });
 });

@@ -86,7 +86,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/user/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="/assets/user/vendor/choices/css/choices.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/user/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
-
+    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/quill/css/quill.snow.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/user/css/style.css">
     <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
@@ -406,6 +406,8 @@
 
     <!-- Vendors -->
     <script src="/assets/user/vendor/choices/js/choices.min.js"></script>
+    {{-- <script src="/assets/user/vendor/glightbox/js/glightbox.js"></script> --}}
+    <script src="/assets/user/vendor/tiny-slider/tiny-slider.js"></script>
     <script src="/assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
 
     <!-- Template Functions -->
