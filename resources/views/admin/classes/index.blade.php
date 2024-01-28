@@ -125,9 +125,8 @@
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>
-                                {{-- <th scope="col" class="border-0">Lớp học</th> --}}
-                                <th scope="col" class="border-0">Thao tác (1)</th>
-                                <th scope="col" class="border-0 rounded-end">Thao tác (2)</th>
+                              
+                                <th scope="col" class="border-0 rounded-end">Thao tác</th>
                             </tr>
                         </thead>
 
@@ -170,30 +169,20 @@
 
 
                                     </td>
-                                    {{-- <td>
-                                        {{ $class->class->name }}
                                    
-
-                                </td> --}}
-                                    <!-- Table data -->
-                                    <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#classModal" data-action="edit"
+                                    <td class="d-flex">
+                                        <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0   "
+                                            data-bs-toggle="modal" data-bs-target="#classModal" data-action="edit"
                                             data-class-id="{{ $class->id }}">
-                                            Sửa lớp học
+                                            <i class="bi bi-pencil-square"></i>
                                         </button>
 
-                                    </td>
-                                    <td>
-                                        {{-- <a href="{{ route('courses.index', $class) }}"
-                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm khóa học</a> --}}
-                                        {{-- <button class="btn btn-sm btn-secondary-soft mb-0">Reject</button> --}}
                                         <form action="{{ route('classes.destroy', $class) }}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0"
-                                                onclick="return confirm('Bạn chắc chắn muốn xóa Lớp học này? Lưu ý các khóa học liên quan đến lớp học cũng bị xóa!')">Xóa
-                                                lớp học</button>
+                                            <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                                onclick="return confirm('Bạn chắc chắn muốn xóa Lớp học này? Lưu ý các khóa học liên quan đến lớp học cũng bị xóa!')"><i
+                                                    class="bi bi-trash  "></i></button>
                                         </form>
 
                                     </td>

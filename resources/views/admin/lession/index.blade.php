@@ -97,7 +97,6 @@
                                 <th scope="col" class="border-0">Mô tả ngắn</th>
                                 <th scope="col" class="border-0">Số lượt xem</th>
                                 <th scope="col" class="border-0">Môn học</th>
-                                <th scope="col" class="border-0">Lớp học</th>
                                 <th scope="col" class="border-0 rounded-end">Action</th>
                             </tr>
                         </thead>
@@ -137,22 +136,22 @@
 
                                     <!-- Table data -->
                                     <td> {{ $lesson->views }}</td>
-                                    <td> {{$lesson->subject->name}}</td>
-                                    <td> {{ $lesson->subject->class->name }}</td>
+                                    <td> {{$lesson->subject->name}} ({{ $lesson->subject->class->name }})</td>
                                     {{-- <td>
                                         <a href="{{ route('lectures.index', ['lesson' => $lesson]) }}"
                                             class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Thêm bài giảng</a>
                                     </td> --}}
                                     <!-- Table data -->
-                                    <td>
+                                    <td class="d-flex">
                                         <a href="{{ route('lessons.edit', ['lesson' => $lesson]) }}"
-                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
+                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0 "> <i class="bi bi-pencil-square"></i></a>
                                         <form action="{{ route('lessons.destroy', ['lesson' => $lesson]) }}"
                                             method="post"
                                             onsubmit="return confirm('Are you sure you want to delete this lesson?')">
                                             @csrf
                                             @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
-                                            <button class="btn btn-sm btn-danger mb-0" type="submit">Xóa</button>
+                                            <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" type="submit"><i
+                                                class="bi bi-trash  "></i></button>
                                         </form>
                                     </td>
                                 </tr>

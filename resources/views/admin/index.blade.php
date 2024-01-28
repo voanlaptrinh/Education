@@ -140,7 +140,7 @@
                             <!-- Toggler for menubar END -->
 
                             <!-- Topbar menu START -->
-                            <div class="collapse navbar-collapse w-100" id="navbarTopContent">
+                            {{-- <div class="collapse navbar-collapse w-100" id="navbarTopContent">
                                 <!-- Top search START -->
                                 <div class="nav my-3 my-xl-0 flex-nowrap align-items-center">
                                     <div class="nav-item w-100">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <!-- Top search END -->
-                            </div>
+                            </div> --}}
                             <!-- Topbar menu END -->
                         </div>
                         <!-- Top bar left END -->

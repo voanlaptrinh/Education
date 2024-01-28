@@ -28,6 +28,22 @@ class LessonController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif', 
             'subject_id' => 'required',
             
+        ], [
+            'title.required' => 'Tiêu đề là trường bắt buộc.',
+            'title.string' => 'Tiêu đề phải là một chuỗi.',
+            'title.max' => 'Tiêu đề không được vượt quá 255 ký tự.',
+            
+            'description.required' => 'Mô tả là trường bắt buộc.',
+            'description.string' => 'Mô tả phải là một chuỗi.',
+            
+            'content.required' => 'Nội dung là trường bắt buộc.',
+            'content.string' => 'Nội dung phải là một chuỗi.',
+            
+            'image.required' => 'Hình ảnh là trường bắt buộc.',
+            'image.image' => 'Hình ảnh phải là một hình ảnh.',
+            'image.mimes' => 'Hình ảnh phải có định dạng jpeg, png, jpg, hoặc gif.',
+            
+            'subject_id.required' => 'Môn học là trường bắt buộc.',
         ]);
         $imagePath = $request->file('image')->store('images', 'public');
         $lesson = new Lesson([
@@ -57,6 +73,21 @@ class LessonController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif',
             'subject_id' => 'required|exists:subjects,id',
            
+        ], [
+            'title.required' => 'Tiêu đề là trường bắt buộc.',
+            'title.string' => 'Tiêu đề phải là một chuỗi.',~
+            'title.max' => 'Tiêu đề không được vượt quá 255 ký tự.',
+            
+            'description.required' => 'Mô tả là trường bắt buộc.',
+            'description.string' => 'Mô tả phải là một chuỗi.',
+            
+            'content.required' => 'Nội dung là trường bắt buộc.',
+            'content.string' => 'Nội dung phải là một chuỗi.',
+            
+            'image.image' => 'Hình ảnh phải là một hình ảnh.',
+            'image.mimes' => 'Hình ảnh phải có định dạng jpeg, png, jpg, hoặc gif.',
+            
+            'subject_id.required' => 'Môn học là trường bắt buộc.',
         ]);
 
         if ($request->hasFile('image')) {

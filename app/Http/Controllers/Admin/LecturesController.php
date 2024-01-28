@@ -26,13 +26,15 @@ class LecturesController extends Controller
         // Validate the request
         $request->validate([
             'title' => 'required|string',
-            'content' => 'nullable|string',
+            'content' => 'required|string',
             'video' => 'required|mimes:mp4,avi,wmv',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'chapter_id' => 'required',
         ],[ 
             'title.required' => 'Tiêu đề là bắt buộc',
-            'video.required' => 'Video bài giảng là bắt buộc'
+            'content.required' => 'Nội dung là bắt buộc',
+            'video.required' => 'Video bài giảng là bắt buộc',
+            'image.required' => 'Ảnh bài giảng là bắt buộc'
         ]);
 
         // Lưu video vào thư mục 'videos' trong thư mục lưu trữ 'public'

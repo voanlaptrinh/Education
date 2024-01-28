@@ -1,6 +1,8 @@
 @extends('admin.index')
 
 @section('contentadmin')
+
+    <div class="page-content-wrapper border">
     <div class="container">
         <h2>Sửa chương trình học</h2>
         <form method="POST" action="{{ route('lectures.update', ['lecture' => $lecture->id]) }}"
@@ -13,7 +15,7 @@
                 <input type="text" name="title" class="form-control" value="{{ old('title', $lecture->title) }}" required>
             </div>
 
-            <div class="form-group">
+            <div class="form-group pt-3">
                 <label for="content">Content</label>
                 <textarea name="content" class="form-control">{{ old('content', $lecture->content) }}</textarea>
             </div>
@@ -91,5 +93,6 @@
 
             <button type="submit" class="btn btn-primary mt-3">Sửa</button>
         </form>
+    </div>
     </div>
 @endsection

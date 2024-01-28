@@ -23,10 +23,18 @@
                         </span>
                     @enderror
                 </div>
-
+                {{-- <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" class="form-control">
+                </div> --}}
                 <div class="form-group pt-3">
                     <label for="content">Nội dung</label>
                     <textarea name="content" class="form-control" rows="4"></textarea>
+                    @error('content')
+                        <span class="invalid-feedback" role="alert">
+                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                        </span>
+                    @enderror
                 </div>
                 <div class="col-12 pt-3">
                     <div class="row">
@@ -46,13 +54,14 @@
                                     </label>
                                     <p class="small mb-0 mt-2"><b style="color:red">Lưu ý:</b> Chỉ có Mp4. Hãy up video bài
                                         giảng của bạn vào đây!.</p>
+                                        @error('video')
+                                        <span class="invalid-feedback" role="alert">
+                                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
-                            @error('video')
-                                <span class="invalid-feedback" role="alert">
-                                    <label class="error" id="name_error" for="name">{{ $message }}</label>
-                                </span>
-                            @enderror
+                         
                         </div>
                         <div class="col-6">
                             <div
@@ -70,9 +79,14 @@
                                     </label>
                                     <p class="small mb-0 mt-2"><b style="color:red">Note:</b> Chỉ có JPG, JPEG and PNG. Kích
                                         thước đề xuất là (600*450).</p>
+                                        @error('image')
+                                        <span class="invalid-feedback" role="alert">
+                                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
-
+                           
                         </div>
                     </div>
 

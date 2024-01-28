@@ -5,9 +5,8 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">{{ $subject->name }}<span
-                        class="badge bg-orange bg-opacity-10 text-orange">Khóa học</span></h1>
-                <a href="{{ route('courses.create', $subject) }}" class="btn btn-sm btn-primary mb-0">Thêm mới khóa học</a>
+                <h1 class="h3 mb-2 mb-sm-0">Thêm đề bài cho môn học: <span style="color:red">({{ $subject->name }})</span> </h1>
+                <a href="{{ route('courses.create', $subject) }}" class="btn btn-sm btn-primary mb-0">Thêm mới đề bài</a>
             </div>
         </div>
 
@@ -19,19 +18,7 @@
                 <!-- Search and select START -->
                 <div class="row g-3 align-items-center justify-content-between">
 
-                    <!-- Search bar -->
-                    {{-- <div class="col-md-12">
-                    <form class="rounded position-relative" action="{{ route('news.search') }}" method="GET">
-                        <input name="search" class="form-control bg-body" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <button
-                            class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
-                            type="submit">
-                            <i class="fas fa-search fs-6 "></i>
-                        </button>
-                    </form>
-                </div> --}}
-
+                 
 
 
                 </div>
@@ -51,7 +38,8 @@
                                 <th scope="col" class="border-0 rounded-start">Tên khóa học</th>
                                 <th scope="col" class="border-0 ">Người đăng </th>
                                 <th scope="col" class="border-0">Thời gian làm bài</th>
-                                <th scope="col" class="border-0 rounded-end">Trạng thái</th>
+                                <th scope="col" class="border-0">Câu hỏi</th>
+                                <th scope="col" class="border-0 rounded-end">Thao tác</th>
                             </tr>
                         </thead>
                         <style>
@@ -107,6 +95,16 @@
                                                 môn học</button>
                                         </form> --}}
                                     </td>
+                                    <td class="d-flex"> 
+                                        <a href="{{ route('courses.edit', ['subject' => $subject, 'course' => $course]) }}" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="bi bi-pencil-square"></i></a>
+                                        <form method="POST" action="{{ route('topic.destroy', ['subject' => $subject, 'course' => $course]) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" onclick="return confirm('Bạn có chắc muốn xóa đề bài này không?')"><i
+                                                class="bi bi-trash  "></i></button>
+                                        </form>
+                                    </td>
+
                                 </tr>
                             @endforeach
                             <!-- Table row -->

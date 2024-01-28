@@ -61,7 +61,7 @@
                                                 . {{ $answer->text }}
                                             </p>
                                         @else
-                                            <p class="mb-3"><b class="text-dark">{{ numericToLetter($key) }}</b>
+                                            <p class="mb-3"><b class="text-danger">{{ numericToLetter($key) }}</b>
                                                 . {{ $answer->text }}
                                             </p>
                                         @endif

@@ -122,7 +122,7 @@
                 <!-- Search and select START -->
                 <div class="row g-3 align-items-center justify-content-between">
                     <!-- Search bar -->
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <form class="rounded position-relative" action="{{ route('subjects.index') }}" method="get">
                             <input name="query" value="{{ $searchQuery }}" class="form-control bg-body" type="search"
                                 placeholder="Search" aria-label="Search">
@@ -255,21 +255,20 @@
                                         <a href="{{ route('courses.index', $subject) }}"
                                             class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm đề bài</a>
                                     </td>
-                                    <td>
+                                    <td class="d-flex">
 
 
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="modal"
                                             data-bs-target="#staticBackdrop" data-action="edit"
                                             data-class-id="{{ $subject->id }}">
-                                            Sửa môn học
+                                            <i class="bi bi-pencil-square"></i>
                                         </button>
 
                                         <form action="{{ route('subjects.destroy', $subject) }}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" class="btn btn-sm btn-danger-soft me-1 mb-1 mb-md-0"
-                                                onclick="return confirm('Bạn chắc chắn muốn xóa môn học này? Lưu ý các câu hỏi liên quan đến môn học cũng bị xóa!')">Xóa
-                                                môn học</button>
+                                            <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                                onclick="return confirm('Bạn chắc chắn muốn xóa môn học này? Lưu ý các câu hỏi liên quan đến môn học cũng bị xóa!')"><i class="bi bi-trash  "></i></button>
                                         </form>
                                     </td>
                                 </tr>

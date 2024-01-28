@@ -4,8 +4,7 @@
     <div class="page-content-wrapper border">
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Bài giảng<span
-                        class="badge bg-orange bg-opacity-10 text-orange">245</span></h1>
+                <h1 class="h3 mb-2 mb-sm-0">Bài giảng của chương trình học <span style="color: red"> ({{ $chapter->title }})</span></h1>
                 <a href="{{ route('lectures.create', ['chapter' => $chapter]) }}" class="btn btn-sm btn-primary mb-0">Thêm bài
                     giảng</a>
             </div>
@@ -66,7 +65,7 @@
                                             <div class="">
                                                 <div class="">
                                                     <!-- Video START -->
-                                                    <div class="card shadow p-2 mb-4 z-index-9 " style="width: 50%">
+                                                    <div class="card shadow p-2 mb-4 z-index-9 ">
                                                         <div class="overflow-hidden rounded-3 ">
                                                             <img src="{{ asset('storage/' . $lecture->image) }}"
                                                                 class="card-img w-60px h-60px" alt="course image">
@@ -106,12 +105,12 @@
 
                                     <td>
                                         <a href="{{ route('lectures.edit', ['lecture' => $lecture]) }}"
-                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Sửa</a>
+                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0 w-100">Sửa</a>
                                         
                                         <form action="{{ route('lectures.destroy', ['lecture' => $lecture->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc là đồng ý xóa?')">Xóa</button>
+                                            <button type="submit" class="btn btn-danger w-100" onclick="return confirm('Bạn có chắc là đồng ý xóa?')">Xóa</button>
                                         </form>
                                     </td>
                                 </tr>

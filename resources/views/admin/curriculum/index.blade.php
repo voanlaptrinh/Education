@@ -72,7 +72,7 @@
                             <tr>
                                 <th scope="col" class="border-0 rounded-start">Tiêu đề</th>
 
-                                <th scope="col" class="border-0">Lớp học</th>
+                                <th scope="col" class="border-0">Bài học</th>
                                 <th scope="col" class="border-0">Bài giảng</th>
                                 <th scope="col" class="border-0">Ngày</th>
                                 <th scope="col" class="border-0 rounded-end">Hành động</th>
@@ -105,15 +105,16 @@
                                     </td>
 
 
-                                    <td>
+                                    <td class="d-flex"> 
                                         <a href="{{ route('curriculum.edit', ['chapter' => $chapter]) }}"
-                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Sửa</a>
+                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="bi bi-pencil-square"></i></a>
                                         <form action="{{ route('curriculum.destroy', ['chapter' => $chapter]) }}"
                                         method="post"
                                         onsubmit="return confirm('Bạn có chắc chắn xóa?')">
                                         @csrf
                                         @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
-                                        <button class="btn btn-sm btn-danger mb-0" type="submit">Xóa</button>
+                                        <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" type="submit"><i
+                                            class="bi bi-trash  "></i></button>
                                     </form>
                                     </td>
                                 </tr>

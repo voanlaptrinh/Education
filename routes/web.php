@@ -70,13 +70,19 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
             Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
             Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
-            Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show');
+            Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show'); //Câu hỏi liên quan
             Route::delete('/delete/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
-            Route::get('/{subject}/courses', [CourseController::class, 'index'])->name('courses.index');
+
+            //đề bài
+            Route::get('/{subject}/courses', [CourseController::class, 'index'])->name('courses.index'); //đề bài liên quan đến môn học
             Route::get('/{subject}/courses/create', [CourseController::class, 'create'])->name('courses.create');
             Route::post('/{subject}/courses/store', [CourseController::class, 'store'])->name('courses.store');
+            Route::get('/{subject}/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+            Route::put('/{subject}/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
+            Route::delete('subjects/{subject}/courses/{course}', [CourseController::class, 'destroyCourse'])->name('topic.destroy');
         });
 
+        //Câu hỏi liên quan đến đề bài
         Route::prefix('/courses')->group(function () {
             // Routes for Courses
             Route::get('/{course}', [CourseController::class, 'show'])->name('courses.show');
