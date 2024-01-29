@@ -41,49 +41,9 @@ class QuestionController extends Controller
         return redirect(route('courses.show', $course))->with('success', 'Question added successfully!');
     }
 
-    public function show(Course $course)
-    {
-        $classes = Classes::all();
-        $questions = $course->questions;
-        return view('instructor-quiz.submit', compact('course', 'classes', 'questions'));
-    }
+   
 
-    public function submitAnswers(Request $request, Course $course)
-    {
-        if (auth()->check()) {
-            $questions = $course->questions;
-            $userAnswers = $request->input('answers');
-
-            $totalQuestions = count($questions);
-            $correctAnswers = 0;
-
-            foreach ($questions as $question) {
-                $correctAnswerId = $question->correctAnswer()->id;
-                $userAnswerId = $userAnswers[$question->id] ?? null;
-
-                if ($userAnswerId == $correctAnswerId) {
-                    $correctAnswers++;
-                }
-            }
-
-            $percentage = ($correctAnswers / $totalQuestions) * 100;
-
-            $examHistory = new ExamHistory();
-            $examHistory->user_id = auth()->user()->id;
-            $examHistory->course_id = $course->id;
-            $examHistory->score = $percentage;
-            $examHistory->started_at = now()->setTimezone('UTC');
-            $examHistory->completed_at = now()->setTimezone('UTC');
-            $examHistory->save();
-
-            // Thực hiện lưu điểm vào cơ sở dữ liệu hoặc thực hiện các xử lý khác tùy thuộc vào yêu cầu của bạn.
-
-            return view('test.questions.result', compact('course', 'totalQuestions', 'correctAnswers', 'percentage'));
-        } else {
-            // Người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
-            return redirect()->route('login')->with('warning', 'Vui lòng đăng nhập để nộp bài!');
-        }
-    }
+   
     public function edit($course, Question $question)
     {
         return view('admin.questions.edit', compact('course', 'question'));

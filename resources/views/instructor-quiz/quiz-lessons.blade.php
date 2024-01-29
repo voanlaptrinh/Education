@@ -56,117 +56,164 @@
 
     <div class="container">
         <div class="col-lg-12 z-index-9 mt-5 mt-xl-0">
-          
-                <ul class="nav nav-pills nav-pill-soft my-4" id="course-pills-tab" role="tablist">
-                    <!-- Tab item -->
-                    <li class="nav-item me-2 me-lg-4" role="presentation">
-                        <button class="nav-link mb-2 mb-xl-0 active" id="course-pills-tab-1" data-bs-toggle="pill" data-bs-target="#course-pills-1" type="button" role="tab" aria-controls="course-pills-1" aria-selected="false" tabindex="-1">Bài học {{ $subject->name }}</button>
-                    </li>
-                    <!-- Tab item -->
-                    <li class="nav-item me-2 me-lg-4" role="presentation">
-                        <button class="nav-link mb-2 mb-xl-0 " id="course-pills-tab-2" data-bs-toggle="pill" data-bs-target="#course-pills-2" type="button" role="tab" aria-controls="course-pills-2" aria-selected="true">Câu hỏi liên quan đến {{ $subject->name }}</button>
-                    </li>
-                    <!-- Tab item -->
-                  
-                </ul>
-    
-                <!-- Tab contents START -->
-                <div class="tab-content" id="pills-tabContent">
-                    <!-- Content -->
-                    <div class="tab-pane fade active show" id="course-pills-1" role="tabpanel" aria-labelledby="course-pills-tab-1">
-                        <h6>Become an Instructor</h6>
-                        <p>As it so contrasted oh estimating instrument. Size like body someone had. Are conduct viewing boy minutes warrant the expense? Tolerably behavior may admit daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. Merits ye if Mr narrow points. Melancholy particular Devonshire alteration it favorable appearance up.</p>
-                        <p>Size like body someone had. Are conduct viewing boy minutes warrant the expense? Tolerably behavior may admit daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. Merits ye if Mr narrow points. Melancholy particular Devonshire alteration it favorable appearance up.</p>
-                        <p>Are conduct viewing boy minutes warrant the expense? Tolerably behavior may admit daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. Merits ye if Mr narrow points. Melancholy particular Devonshire alteration it favorable appearance up.</p>
-                    </div>
-    
-                    <!-- Content -->
-                    <div class="tab-pane fade" id="course-pills-2" role="tabpanel" aria-labelledby="course-pills-tab-2">
-                        <div class="card card-body bg-transparent pb-0 border mb-4">
 
-                            <!-- Table START -->
-                            <div class="table-responsive border-0">
-                                <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
-                                    <!-- Table head -->
-                                    <thead>
+            <ul class="nav nav-pills nav-pill-soft my-4" id="course-pills-tab" role="tablist">
+                <!-- Tab item -->
+                <li class="nav-item me-2 me-lg-4" role="presentation">
+                    <button class="nav-link mb-2 mb-xl-0 active" id="course-pills-tab-1" data-bs-toggle="pill"
+                        data-bs-target="#course-pills-1" type="button" role="tab" aria-controls="course-pills-1"
+                        aria-selected="false" tabindex="-1">Bài học {{ $subject->name }}</button>
+                </li>
+                <!-- Tab item -->
+                <li class="nav-item me-2 me-lg-4" role="presentation">
+                    <button class="nav-link mb-2 mb-xl-0 " id="course-pills-tab-2" data-bs-toggle="pill"
+                        data-bs-target="#course-pills-2" type="button" role="tab" aria-controls="course-pills-2"
+                        aria-selected="true">Câu hỏi liên quan đến {{ $subject->name }}</button>
+                </li>
+                <!-- Tab item -->
+
+            </ul>
+
+            <!-- Tab contents START -->
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Content -->
+                <div class="tab-pane fade active show" id="course-pills-1" role="tabpanel"
+                    aria-labelledby="course-pills-tab-1">
+                    <div class="card card-body bg-transparent pb-0 border mb-4">
+                        <div class="table-responsive border-0">
+                            <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                                <!-- Table head -->
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-0 rounded-start">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Tên bài học</font>
+                                            </font>
+                                        </th>
+                                        <th scope="col" class="border-0">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Đã đăng ký</font>
+                                            </font>
+                                        </th>
+                                        <th scope="col" class="border-0">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Trạng thái</font>
+                                            </font>
+                                        </th>
+                                        <th scope="col" class="border-0">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Giá</font>
+                                            </font>
+                                        </th>
+                                        <th scope="col" class="border-0 rounded-end">
+                                            <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">Hoạt động</font>
+                                            </font>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <!-- Table body START -->
+                                <tbody>
+                                    <!-- Table item -->
+                                    @foreach ($lessons as $lesson)
                                         <tr>
-                                            <th scope="col" class="border-0 rounded-start">#</th>
-                                            <th scope="col" class="border-0">Student Name</th>
-                                            <th scope="col" class="border-0">Course Name</th>
-                                            <th scope="col" class="border-0">Rating</th>
-                                            <th scope="col" class="border-0">Hide/Show</th>
-                                            <th scope="col" class="border-0 rounded-end">Action</th>
-                                        </tr>
-                                    </thead>
-            
-                                    <!-- Table body START -->
-                                    <tbody>
-                                        @php
-                                            $idx = 0;
-                                        @endphp
-                                        <!-- Table row -->
-                                        @foreach ($courses as $course)
-                                            <tr>
-                                                <!-- Table data -->
-                                                <td>{{ $idx++ }}</td>
-            
-                                                <!-- Table data -->
-                                                <td>
-                                                    <div class="d-flex align-items-center position-relative">
-                                                        <!-- Image -->
-                                                        <div class="avatar avatar-xs mb-2 mb-md-0">
-                                                            <img src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}"
-                                                                class="rounded-circle" alt="">
-                                                        </div>
-                                                        <div class="mb-0 ms-2">
-                                                            <!-- Title -->
-                                                            <h6 class="mb-0"><a href="{{ route('questions.show', $course) }}"
-                                                                    class="stretched-link">{{ $course->name }}</a>
-                                                            </h6>
-                                                        </div>
+                                            <!-- Course item -->
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <!-- Image -->
+                                                    <div class="w-60px">
+                                                        <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
+                                                            class="rounded" alt="">
                                                     </div>
-                                                </td>
-            
-                                                <!-- Table data -->
-                                                <td>
-                                                    <h6 class="table-responsive-title mb-0"><a href="#">{{ $subject->name }}</a>
-                                                    </h6>
-                                                </td>
-            
-                                                <!-- Table data -->
-                                                <td>
-                                                    {{ $course->questions->count() }} câu hỏi
-                                                </td>
-            
-                                                <!-- Table data -->
-                                                <td>
-            
-                                                    {{ $course->created_at->format('d/m/Y') }}
-            
-            
-                                                </td>
-            
-                                                <!-- Table data -->
-                                                <td>
-            
-            
-                                                    <a href="{{ route('questions.show', $course) }}"
-                                                        class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-            
-            
-            
-            
-                                    </tbody>
-                                    <!-- Table body END -->
-                                </table>
-                            </div>
-                            <!-- Table END -->
-            
-                            <!-- Card footer START -->
-                            <div class="card-footer bg-transparent px-0">
+                                                    <div class="mb-0 ms-2">
+                                                        <!-- Title -->
+                                                        <h6><a href="#">
+                                                                <font style="vertical-align: inherit;">
+                                                                    <font style="vertical-align: inherit;">
+                                                                        {{ $lesson->title }}</font>
+                                                                </font>
+                                                            </a></h6>
+                                                        <!-- Info -->
+
+                                                        @if ($lesson->chapters->count() > 0)
+                                                            <div class="d-sm-flex">
+                                                                <p class="h6 fw-light mb-0 small me-3">
+                                                                   
+                                                                </p>
+                                                                <ul class="list-unstyled mb-0">
+                                                                    @foreach ($lesson->chapters as $chapter)
+                                                                        <li>
+                                                                            {{ $chapter->name }} {{-- Thay 'name' bằng tên cột bạn muốn hiển thị --}}
+                                                                            <i class="fas fa-table text-orange me-2"></i>
+                                                                            <font style="vertical-align: inherit;">
+                                                                                <font style="vertical-align: inherit;"> {{ $chapter->lectures->count() }} Bài giảng</font>
+                                                                            </font>
+                                                                            {{-- Thêm các thông tin khác của chương trình giảng dạy nếu cần --}}
+                                                                        </li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @else
+                                                        <div class="d-sm-flex">
+                                                            <p class="h6 fw-light mb-0 small me-3">
+                                                                   
+                                                            </p>
+                                                            <p class="h6 fw-light mb-0 small text-muted">
+                                                                <i class="fas fa-info-circle me-2"></i>
+                                                                <font style="vertical-align: inherit;">
+                                                                    <font style="vertical-align: inherit;">Không có bài giảng nào</font>
+                                                                </font>
+                                                            </p>
+                                                        </div>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <!-- Enrolled item -->
+                                            <td class="text-center text-sm-start">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">{{ $lesson->views }}</font>
+                                                </font>
+                                            </td>
+                                            <!-- Status item -->
+                                            <td>
+                                                <div class="badge bg-success bg-opacity-10 text-success">
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Hoạt động</font>
+                                                    </font>
+                                                </div>
+                                            </td>
+                                            <!-- Price item -->
+                                            <td>
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">$250</font>
+                                                </font>
+                                            </td>
+                                            <!-- Action item -->
+                                            <td>
+                                               
+                                                <a href="{{ route('lessons.show', ['lesson' => $lesson]) }}" class="btn btn-sm btn-danger">Xem chi tiết bài học</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+
+
+
+
+
+
+
+
+                                </tbody>
+                                <!-- Table body END -->
+                            </table>
+                        </div>
+                       
+
+                        <!-- Card footer START -->
+                        {{-- <div class="card-footer bg-transparent px-0">
                                 <!-- Pagination START -->
                                 <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
                                     <!-- Content -->
@@ -186,13 +233,126 @@
                                     </nav>
                                 </div>
                                 <!-- Pagination END -->
-                            </div>
-                            <!-- Card footer END -->
-                        </div>
+                            </div> --}}
+                        <!-- Card footer END -->
                     </div>
-    
-                 
                 </div>
+
+                <!-- Content -->
+                <div class="tab-pane fade" id="course-pills-2" role="tabpanel" aria-labelledby="course-pills-tab-2">
+                    <div class="card card-body bg-transparent pb-0 border mb-4">
+
+                        <!-- Table START -->
+                        <div class="table-responsive border-0">
+                            <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                                <!-- Table head -->
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-0 rounded-start">#</th>
+                                        <th scope="col" class="border-0">Student Name</th>
+                                        <th scope="col" class="border-0">Course Name</th>
+                                        <th scope="col" class="border-0">Rating</th>
+                                        <th scope="col" class="border-0">Hide/Show</th>
+                                        <th scope="col" class="border-0 rounded-end">Action</th>
+                                    </tr>
+                                </thead>
+
+                                <!-- Table body START -->
+                                <tbody>
+                                    @php
+                                        $idx = 0;
+                                    @endphp
+                                    <!-- Table row -->
+                                    @foreach ($courses as $course)
+                                        <tr>
+                                            <!-- Table data -->
+                                            <td>{{ $idx++ }}</td>
+
+                                            <!-- Table data -->
+                                            <td>
+                                                <div class="d-flex align-items-center position-relative">
+                                                    <!-- Image -->
+                                                    <div class="w-60px">
+                                                        <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
+                                                            class="rounded" alt="">
+                                                    </div>
+                                                    <div class="mb-0 ms-2">
+                                                        <!-- Title -->
+                                                        <h6 class="mb-0"><a
+                                                                href="{{ route('questions.show', $course) }}"
+                                                                class="stretched-link">{{ $course->name }}</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <!-- Table data -->
+                                            <td>
+                                                <h6 class="table-responsive-title mb-0"><a
+                                                        href="#">{{ $subject->name }}</a>
+                                                </h6>
+                                            </td>
+
+                                            <!-- Table data -->
+                                            <td>
+                                                {{ $course->questions->count() }} câu hỏi
+                                            </td>
+
+                                            <!-- Table data -->
+                                            <td>
+
+                                                {{ $course->created_at->format('d/m/Y') }}
+
+
+                                            </td>
+
+                                            <!-- Table data -->
+                                            <td>
+
+
+                                                <a href="{{ route('questions.show', $course) }}"
+                                                    class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+
+
+
+                                </tbody>
+                                <!-- Table body END -->
+                            </table>
+                        </div>
+                        <!-- Table END -->
+
+                        <!-- Card footer START -->
+                        <div class="card-footer bg-transparent px-0">
+                            <!-- Pagination START -->
+                            <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                                <!-- Content -->
+                                <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+                                <!-- Pagination -->
+                                <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                                    <ul
+                                        class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
+                                                    class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                    class="fas fa-angle-right"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- Pagination END -->
+                        </div>
+                        <!-- Card footer END -->
+                    </div>
+                </div>
+
+
+            </div>
             <!-- Tab contents END -->
         </div>
         {{-- <div class="page-content-wrapper border">
@@ -317,5 +477,4 @@
 
         </div> --}}
     </div>
-  
 @endsection

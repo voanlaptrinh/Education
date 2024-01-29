@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\ContactController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\NewsController;
 use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\Auth\QuestionAuthController;
 use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CustomPasswordResetController;
@@ -190,12 +191,22 @@ Route::prefix('/contact')->group(function () {
     Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
 });
 
-Route::get('{subject}/courses', [CourseAuthController::class, 'index'])->name('home.course');
+Route::get('{subject}/courses/bai-hoc-cau-hoi', [CourseAuthController::class, 'index'])->name('home.course');
+Route::get('/lessons/{lesson}', [CourseAuthController::class, 'show'])->name('lessons.show');
+
+
+
+
+
 
 Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
-    Route::get('/{course}/questions', [QuestionController::class, 'show'])->name('questions.show');
-    Route::post('/{course}/questions/submit', [QuestionController::class, 'submitAnswers'])->name('questions.submit');
+    Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
+    Route::post('/{course}/questions/submit', [QuestionAuthController::class, 'submitAnswers'])->name('questions.submit');
 });
+
+
+
+
 
 Route::prefix('/user')->group(function () {
     Route::get('/exam-history', [AuthController::class, 'examHistory'])->name('user.examHistory');

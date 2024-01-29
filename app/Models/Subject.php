@@ -27,4 +27,8 @@ class Subject extends Model
     {
         return $this->hasMany(Lecture::class, 'subject_id');
     }
+    public function chapters()
+    {
+        return $this->hasMany(Chapter::class);
+    }
 }
