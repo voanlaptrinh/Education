@@ -23,7 +23,20 @@ class ForgotPasswordController extends Controller
     }
     public function sendResetLinkEmail(Request $request)
     {
-        $request->validate(['email' => 'required|email']);
+        $request->validate([
+            'email' => 'required|email|exists:users,email',
+        ], [
+            'email.required' => 'Phải nhập email',
+            'email.email' => 'Email không hợp lệ',
+            'email.exists' => 'Email này chưa được đăng ký',
+        ]);
+    
+        // Kiểm tra xem email có tồn tại trong hệ thống không
+        $user = \App\Models\User::where('email', $request->email)->first();
+    
+        if (!$user) {
+            return back()->withErrors(['email' => 'Email này chưa được đăng ký']);
+        }
 
         $response = $this->broker()->sendResetLink(
             $request->only('email')

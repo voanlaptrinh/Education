@@ -10,8 +10,8 @@
                     <div class="p-3 p-lg-5">
                         <!-- Title -->
                         <div class="text-center">
-                            <h2 class="fw-bold">Welcome to our largest community</h2>
-                            <p class="mb-0 h6 fw-light">Let's learn something new today!</p>
+                            <h2 class="fw-bold">Chào mừng đến với cộng đồng lớn nhất của chúng tôi</h2>
+                            <p class="mb-0 h6 fw-light">Hãy học điều gì đó mới ngay hôm nay!</p>
                         </div>
                         <!-- SVG Image -->
                         <img src="assets/user/images/element/02.svg" class="mt-5" alt="">
@@ -33,7 +33,7 @@
                                 </li>
                             </ul>
                             <!-- Content -->
-                            <p class="mb-0 h6 fw-light ms-0 ms-sm-3">4k+ Students joined us, now it's your turn.</p>
+                            <p class="mb-0 h6 fw-light ms-0 ms-sm-3">4k+ Sinh viên đã tham gia cùng chúng tôi, giờ đến lượt bạn</p>
                         </div>
                     </div>
                 </div>

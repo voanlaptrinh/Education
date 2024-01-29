@@ -155,6 +155,29 @@ class AuthController extends Controller
                 'gender' => 'required|in:0,1',
                 'birthday' => 'nullable|date',
                 'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ], [
+                'name.required' => 'Trường tên không được bỏ trống.',
+                'name.string' => 'Trường tên phải là chuỗi.',
+                'name.max' => 'Trường tên không được vượt quá 255 ký tự.',
+                
+                'username.required' => 'Trường tên người dùng không được bỏ trống.',
+                'username.string' => 'Trường tên người dùng phải là chuỗi.',
+                'username.max' => 'Trường tên người dùng không được vượt quá 255 ký tự.',
+                
+                'phone.string' => 'Trường số điện thoại phải là chuỗi.',
+                'phone.max' => 'Trường số điện thoại không được vượt quá 255 ký tự.',
+                
+                'address.string' => 'Trường địa chỉ phải là chuỗi.',
+                'address.max' => 'Trường địa chỉ không được vượt quá 255 ký tự.',
+                
+                'gender.required' => 'Trường giới tính không được bỏ trống.',
+                'gender.in' => 'Trường giới tính không hợp lệ.',
+                
+                'birthday.date' => 'Trường ngày sinh phải là kiểu ngày.',
+                
+                'profile_picture.image' => 'Trường hình đại diện phải là hình ảnh.',
+                'profile_picture.mimes' => 'Trường hình đại diện phải có định dạng jpeg, png, jpg, gif.',
+                'profile_picture.max' => 'Trường hình đại diện không được vượt quá 2048 KB.',
             ]);
 
             // Update text fields
@@ -195,7 +218,7 @@ class AuthController extends Controller
                 'old_password' => 'required|string',
                 'new_password' => 'required|string|min:8|confirmed',
             ]);
-            dd(Hash::check($validatedData['old_password']));
+            // dd(Hash::check($validatedData['old_password']));
             // Check if the old password matches the user's current password
             if (!Hash::check($validatedData['old_password'], $user->password)) {
                 return redirect()->back()->with('error', 'Mật khẩu không đúng');

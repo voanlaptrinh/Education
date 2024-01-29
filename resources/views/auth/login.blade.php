@@ -2,8 +2,8 @@
 @section('contentlogin')
     <!-- Title -->
     <span class="mb-0 fs-1">👋</span>
-    <h1 class="fs-2">Login into Eduport!</h1>
-    <p class="lead mb-4">Nice to see you! Please log in with your account.</p>
+    <h1 class="fs-2">Đăng nhập {{ $webConfig->name }}</h1>
+    <p class="lead mb-4">Rất vui được gặp bạn! Vui lòng đăng nhập bằng tài khoản của bạn.</p>
 
     <!-- Form START -->
     <form action="{{ route('login') }}" method="post">
@@ -23,7 +23,7 @@
             @endif
         </div>
         <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label">Email address *</label>
+            <label for="exampleInputEmail1" class="form-label">Email *</label>
             <div class="input-group input-group-lg">
                 <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                         class="bi bi-envelope-fill"></i></span>
@@ -33,7 +33,7 @@
         </div>
         <!-- Password -->
         <div class="mb-4">
-            <label for="inputPassword5" class="form-label">Password *</label>
+            <label for="inputPassword5" class="form-label">Mật khẩu *</label>
             <div class="input-group input-group-lg">
                 <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                         class="fas fa-lock"></i></span>
@@ -41,25 +41,24 @@
                     type="password" name="password" required>
             </div>
             <div id="passwordHelpBlock" class="form-text">
-                Your password must be 8 characters at least
+                Mật khẩu của bạn phải có ít nhất 8 ký tự
             </div>
         </div>
         <!-- Check box -->
         <div class="mb-4 d-flex justify-content-between mb-4">
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+             
             </div>
             <div class="text-primary-hover">
                 <a href="{{ route('password.request') }}" class="text-secondary">
-                    <u>Forgot password?</u>
+                    <u>Quên mật khẩu?</u>
                 </a>
             </div>
         </div>
         <!-- Button -->
         <div class="align-items-center mt-0">
             <div class="d-grid">
-                <button class="btn btn-primary mb-0" type="submit">Login</button>
+                <button class="btn btn-primary mb-0" type="submit">Đăng nhập</button>
             </div>
         </div>
     </form>
