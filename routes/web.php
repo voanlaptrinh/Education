@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\QuestionAuthController;
 use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\CustomPasswordResetController;
 use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\QuizController;
@@ -194,9 +195,12 @@ Route::prefix('/contact')->group(function () {
 Route::get('{subject}/courses/bai-hoc-cau-hoi', [CourseAuthController::class, 'index'])->name('home.course');
 Route::get('/lessons/{lesson}', [CourseAuthController::class, 'show'])->name('lessons.show');
 
-
-
-
+Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('subscriptions.index');
+Route::get('/subscriptions/create', [SubscriptionController::class, 'create'])->name('subscriptions.create');
+Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
+Route::get('/subscriptions/purchase/{packageId}', [SubscriptionController::class, 'purchase'])->name('subscriptions.purchase');
+// routes/web.php
+Route::get('/subscriptions/confirm-purchase/{packageId}', [SubscriptionController::class, 'confirmPurchase'])->name('subscriptions.confirmPurchase');
 
 
 Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
