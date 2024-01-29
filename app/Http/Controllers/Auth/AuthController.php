@@ -36,7 +36,12 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
-        ]);
+        ], [
+            'email.required' => 'Phải nhập email',
+            'email.email' => 'Email không hợp lệ',
+            'password.required' => 'Phải nhập mật khẩu',
+        ]
+    );
 
         $credentials = $request->only('email', 'password');
 

@@ -28,8 +28,13 @@
                 <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                         class="bi bi-envelope-fill"></i></span>
                 <input type="email" class="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail"
-                    type="email" name="email" required>
+                    type="email" name="email" >
             </div>
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+                <label class="error" id="name_error" for="name">{{ $message }}</label>
+            </span>
+        @enderror
         </div>
         <!-- Password -->
         <div class="mb-4">
@@ -38,11 +43,16 @@
                 <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                         class="fas fa-lock"></i></span>
                 <input type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="password"
-                    type="password" name="password" required>
+                    type="password" name="password" >
             </div>
             <div id="passwordHelpBlock" class="form-text">
                 Mật khẩu của bạn phải có ít nhất 8 ký tự
             </div>
+            @error('password')
+            <span class="invalid-feedback" role="alert">
+                <label class="error" id="name_error" for="name">{{ $message }}</label>
+            </span>
+        @enderror
         </div>
         <!-- Check box -->
         <div class="mb-4 d-flex justify-content-between mb-4">
@@ -65,6 +75,6 @@
 
     <!-- Sign up link -->
     <div class="mt-4 text-center">
-        <span>Don't have an account? <a href="{{ route('register') }}">Signup here</a></span>
+        <span>Không có tài khoản? <a href="{{ route('register') }}">Đăng ký ngay</a></span>
     </div>
 @endsection
