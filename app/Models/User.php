@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -10,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
@@ -18,9 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'image', 'email', 'password', 'gender', 'phone', 'address', 'birthday',
     ];
 
     /**
@@ -42,4 +41,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function getPasswordResetToken()
+    {
+        return $this->password_reset_token;
+    }
+
+    /**
+     * Set the password reset token and expiration time.
+     */
+    public function setPasswordResetToken($token, $expires_at)
+    {
+        $this->password_reset_token = $token;
+        $this->password_reset_expires_at = $expires_at;
+        $this->save();
+    }
 }
