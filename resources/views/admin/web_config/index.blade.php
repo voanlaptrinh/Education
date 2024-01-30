@@ -26,13 +26,21 @@
                                         <img src="{{ asset('storage/' . $webConfig->logo) }}" alt="">
                                         <!-- Tab END -->
                                         <input type="file" name="logo" id="logo">
+                                        @error('logo')
+                                        <span class="invalid-feedback" role="alert">
+                                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                        </span>
+                                    @enderror
                                     </div>
                                     <!-- Input item -->
                                     <div class="col-lg-4">
                                         <label class="form-label">Tên web site</label>
-                                        <input type="text" id="name" name="name" class="form-control" value="{{ $webConfig->name }}"
-                                            >
-
+                                        <input type="text" id="name" name="name" class="form-control" value="{{ $webConfig->name }}" >
+                                        @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                        </span>
+                                    @enderror
                                     </div>
 
                                     <!-- Input item -->
@@ -40,6 +48,11 @@
                                         <label class="form-label">Số điện thoại</label>
                                         <input type="text" value="{{$webConfig->phone}}" class="form-control" 
                                             id="phone" name="phone" >
+                                            @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                            </span>
+                                        @enderror
                                     </div>
 
                                     <!-- Input item -->
@@ -47,6 +60,11 @@
                                         <label class="form-label">Email</label>
                                         <input type="email"  value="{{$webConfig->email}}" class="form-control" 
                                             name="email" id="email" >
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="col-lg-4">
                                         <label class="form-label">Mã code</label>

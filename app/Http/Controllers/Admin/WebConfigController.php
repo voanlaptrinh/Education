@@ -19,11 +19,11 @@ class WebConfigController extends Controller
         // Validate the form data
         $request->validate([
             'name' => 'required|string',
-            'phone' => 'nullable|string',
-            'email' => 'nullable|email',
+            'phone' => 'required|string',
+            'email' => 'required|email',
             'code' => 'nullable|string',
             'gg_map' => 'nullable|string',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Thêm quy tắc cho trường logo
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg', // Thêm quy tắc cho trường logo
             'facebook_id' => 'nullable',
             'zalo' => 'nullable',
             'pinterest' => 'nullable',
@@ -38,6 +38,20 @@ class WebConfigController extends Controller
             'linkedin' => 'nullable',
             'google' => 'nullable',
             // Add validation for other fields
+        ], [
+            'name.required' => 'Vui lòng nhập tên.',
+            'name.string' => 'Tên phải là một chuỗi.',
+            'phone.required' => 'Vui lòng nhập số điện thoại.',
+            'phone.string' => 'Số điện thoại phải là một chuỗi.',
+            'email.required' => 'Vui lòng nhập email.',
+            'email.email' => 'Email không hợp lệ.',
+            'code.string' => 'Mã phải là một chuỗi.',
+            'gg_map.string' => 'Google Map URL phải là một chuỗi.',
+            'logo.required' => 'Vui lòng tải lên logo.',
+            'logo.image' => 'Logo phải là một hình ảnh.',
+            'logo.mimes' => 'Logo chỉ được chấp nhận với các định dạng: jpeg, png, jpg, gif, svg.',
+        
+          
         ]);
 
         // Find the existing WebConfig model based on some criteria (you might use ID or some unique identifier)
