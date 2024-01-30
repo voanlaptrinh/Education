@@ -59,7 +59,7 @@ class AuthController extends Controller
             }
             if (!is_null($user->email_verified_at)) {
                 // Người dùng đã xác nhận email và đăng nhập thành công
-                return redirect()->intended('/');
+                return redirect()->intended('/')->with('success', 'Vui lòng kiểm tra email của bạn!');
             } else {
                 // Người dùng đã đăng nhập nhưng chưa xác nhận email
                 // Lưu thông báo vào session
@@ -84,7 +84,7 @@ class AuthController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'username' => 'required|string|unique:users', // chỉ áp dụng trong bang users
+            'username' => 'required|string', // chỉ áp dụng trong bang users
             'email' => 'required|string|email|unique:users',
             'phone' => 'nullable|string', //cho phép để trống
             'password' => 'required|string|min:8|confirmed',
@@ -129,7 +129,7 @@ class AuthController extends Controller
 
         // Send the email
         Mail::to($user->email)->send($verificationEmail);
-        return redirect('/login')->with('success', 'Đăng ký thành công!');
+        return redirect('/login')->with('success', 'Vui lòng vào Email của bạn để xác nhận đăng kí!');
     }
 
     public function profilelogout()
