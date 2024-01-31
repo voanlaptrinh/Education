@@ -53,7 +53,7 @@
             </div> <!-- Row END -->
         </div>
     </section>
-
+  
     <div class="container">
         <div class="col-lg-12 z-index-9 mt-5 mt-xl-0">
 
@@ -139,7 +139,7 @@
                                                         @if ($lesson->chapters->count() > 0)
                                                             <div class="d-sm-flex">
                                                                 <p class="h6 fw-light mb-0 small me-3">
-                                                                   
+
                                                                 </p>
                                                                 <ul class="list-unstyled mb-0">
                                                                     @foreach ($lesson->chapters as $chapter)
@@ -147,7 +147,9 @@
                                                                             {{ $chapter->name }} {{-- Thay 'name' bằng tên cột bạn muốn hiển thị --}}
                                                                             <i class="fas fa-table text-orange me-2"></i>
                                                                             <font style="vertical-align: inherit;">
-                                                                                <font style="vertical-align: inherit;"> {{ $chapter->lectures->count() }} Bài giảng</font>
+                                                                                <font style="vertical-align: inherit;">
+                                                                                    {{ $chapter->lectures->count() }} Bài
+                                                                                    giảng</font>
                                                                             </font>
                                                                             {{-- Thêm các thông tin khác của chương trình giảng dạy nếu cần --}}
                                                                         </li>
@@ -155,17 +157,18 @@
                                                                 </ul>
                                                             </div>
                                                         @else
-                                                        <div class="d-sm-flex">
-                                                            <p class="h6 fw-light mb-0 small me-3">
-                                                                   
-                                                            </p>
-                                                            <p class="h6 fw-light mb-0 small text-muted">
-                                                                <i class="fas fa-info-circle me-2"></i>
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Không có bài giảng nào</font>
-                                                                </font>
-                                                            </p>
-                                                        </div>
+                                                            <div class="d-sm-flex">
+                                                                <p class="h6 fw-light mb-0 small me-3">
+
+                                                                </p>
+                                                                <p class="h6 fw-light mb-0 small text-muted">
+                                                                    <i class="fas fa-info-circle me-2"></i>
+                                                                    <font style="vertical-align: inherit;">
+                                                                        <font style="vertical-align: inherit;">Không có bài
+                                                                            giảng nào</font>
+                                                                    </font>
+                                                                </p>
+                                                            </div>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -192,8 +195,9 @@
                                             </td>
                                             <!-- Action item -->
                                             <td>
-                                               
-                                                <a href="{{ route('lessons.show', ['lesson' => $lesson]) }}" class="btn btn-sm btn-danger">Xem chi tiết bài học</a>
+
+                                                <a href="{{ route('lessons.show', ['lesson' => $lesson]) }}"
+                                                    class="btn btn-sm btn-danger">Xem chi tiết bài học</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -210,31 +214,39 @@
                                 <!-- Table body END -->
                             </table>
                         </div>
-                       
 
-                        <!-- Card footer START -->
-                        {{-- <div class="card-footer bg-transparent px-0">
-                                <!-- Pagination START -->
-                                <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-                                    <!-- Content -->
-                                    <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-                                    <!-- Pagination -->
-                                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                                        <ul
-                                            class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                            <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
-                                                        class="fas fa-angle-left"></i></a></li>
-                                            <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                                        class="fas fa-angle-right"></i></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!-- Pagination END -->
-                            </div> --}}
-                        <!-- Card footer END -->
+                        <div class="card-footer bg-transparent px-0">
+                            <!-- Pagination START -->
+                            <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                                <!-- Content -->
+                                <p class="mb-0 text-center text-sm-start"></p>
+                                <!-- Pagination -->
+                                <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                                    <ul
+                                        class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                                        @if ($lessons->currentPage() > 1)
+                                            <li class="page-item mb-0"><a class="page-link"
+                                                    href="{{ $lessons->url($lessons->currentPage() - 1) }}"
+                                                    tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                        @endif
+                                        @for ($i = 1; $i <= $lessons->lastPage(); $i++)
+                                            <li
+                                                class=" page-item mb-0 {{ $lessons->currentPage() == $i ? 'active' : '' }}">
+                                                <a class="page-link"
+                                                    href="{{ $lessons->url($i) }}">{{ $i }}</a>
+                                            </li>
+                                        @endfor
+                                        @if ($lessons->currentPage() < $lessons->lastPage())
+                                        <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                            class="fas fa-angle-right"></i></a></li> 
+
+                                        @endif
+                                   
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- Pagination END -->
+                        </div>
                     </div>
                 </div>
 
@@ -249,11 +261,11 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" class="border-0 rounded-start">#</th>
-                                        <th scope="col" class="border-0">Student Name</th>
-                                        <th scope="col" class="border-0">Course Name</th>
-                                        <th scope="col" class="border-0">Rating</th>
-                                        <th scope="col" class="border-0">Hide/Show</th>
-                                        <th scope="col" class="border-0 rounded-end">Action</th>
+                                        <th scope="col" class="border-0">Tiêu đề câu hỏi</th>
+                                        <th scope="col" class="border-0">Môn học</th>
+                                        <th scope="col" class="border-0">Số câu hỏi</th>
+                                        <th scope="col" class="border-0">Ngày đăng</th>
+                                        <th scope="col" class="border-0 rounded-end">Thao tác</th>
                                     </tr>
                                 </thead>
 
@@ -324,24 +336,35 @@
                             </table>
                         </div>
                         <!-- Table END -->
-
+                       
                         <!-- Card footer START -->
                         <div class="card-footer bg-transparent px-0">
                             <!-- Pagination START -->
                             <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
                                 <!-- Content -->
-                                <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+                                <p class="mb-0 text-center text-sm-start"></p>
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul
                                         class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
-                                                    class="fas fa-angle-left"></i></a></li>
-                                        <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
+                                        @if ($courses->currentPage() > 1)
+                                            <li class="page-item mb-0"><a class="page-link"
+                                                    href="{{ $courses->url($courses->currentPage() - 1) }}"
+                                                    tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                        @endif
+                                        @for ($i = 1; $i <= $courses->lastPage(); $i++)
+                                            <li
+                                                class=" page-item mb-0 {{ $courses->currentPage() == $i ? 'active' : '' }}">
+                                                <a class="page-link"
+                                                    href="{{ $courses->url($i) }}">{{ $i }}</a>
+                                            </li>
+                                        @endfor
+                                        @if ($courses->currentPage() < $courses->lastPage())
                                         <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                                    class="fas fa-angle-right"></i></a></li>
+                                            class="fas fa-angle-right"></i></a></li> 
+
+                                        @endif
+                                   
                                     </ul>
                                 </nav>
                             </div>
@@ -355,126 +378,29 @@
             </div>
             <!-- Tab contents END -->
         </div>
-        {{-- <div class="page-content-wrapper border">
-
-            <!-- Title -->
-            <div class="row mb-3">
-                <div class="col-12">
-                    <h1 class="h3 mb-0">Reviews</h1>
-                </div>
-            </div>
-
-            <!-- All review table START -->
-            <div class="card card-body bg-transparent pb-0 border mb-4">
-
-                <!-- Table START -->
-                <div class="table-responsive border-0">
-                    <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
-                        <!-- Table head -->
-                        <thead>
-                            <tr>
-                                <th scope="col" class="border-0 rounded-start">#</th>
-                                <th scope="col" class="border-0">Student Name</th>
-                                <th scope="col" class="border-0">Course Name</th>
-                                <th scope="col" class="border-0">Rating</th>
-                                <th scope="col" class="border-0">Hide/Show</th>
-                                <th scope="col" class="border-0 rounded-end">Action</th>
-                            </tr>
-                        </thead>
-
-                        <!-- Table body START -->
-                        <tbody>
-                            @php
-                                $idx = 0;
-                            @endphp
-                            <!-- Table row -->
-                            @foreach ($courses as $course)
-                                <tr>
-                                    <!-- Table data -->
-                                    <td>{{ $idx++ }}</td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center position-relative">
-                                            <!-- Image -->
-                                            <div class="avatar avatar-xs mb-2 mb-md-0">
-                                                <img src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}"
-                                                    class="rounded-circle" alt="">
-                                            </div>
-                                            <div class="mb-0 ms-2">
-                                                <!-- Title -->
-                                                <h6 class="mb-0"><a href="{{ route('questions.show', $course) }}"
-                                                        class="stretched-link">{{ $course->name }}</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <h6 class="table-responsive-title mb-0"><a href="#">{{ $subject->name }}</a>
-                                        </h6>
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        {{ $course->questions->count() }} câu hỏi
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-
-                                        {{ $course->created_at->format('d/m/Y') }}
-
-
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-
-
-                                        <a href="{{ route('questions.show', $course) }}"
-                                            class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
-                                    </td>
-                                </tr>
-                            @endforeach
-
-
-
-
-                        </tbody>
-                        <!-- Table body END -->
-                    </table>
-                </div>
-                <!-- Table END -->
-
-                <!-- Card footer START -->
-                <div class="card-footer bg-transparent px-0">
-                    <!-- Pagination START -->
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-                        <!-- Content -->
-                        <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-                        <!-- Pagination -->
-                        <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                            <ul
-                                class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
-                                            class="fas fa-angle-left"></i></a></li>
-                                <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                            class="fas fa-angle-right"></i></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Pagination END -->
-                </div>
-                <!-- Card footer END -->
-            </div>
-            <!-- All review table END -->
-
-
-        </div> --}}
+       
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the active tab from session storage
+            var activeTab = sessionStorage.getItem('activeTab');
+    
+            // If there is an active tab, select it
+            if (activeTab) {
+                var activeTabElement = document.querySelector(activeTab);
+                if (activeTabElement) {
+                    activeTabElement.click(); // Trigger a click event to activate the tab
+                }
+            }
+    
+            // Attach an event listener to each pagination link to store the active tab
+            var paginationLinks = document.querySelectorAll('.pagination a');
+            paginationLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    var activeTabId = document.querySelector('.nav-pills .active').getAttribute('id');
+                    sessionStorage.setItem('activeTab', '#' + activeTabId);
+                });
+            });
+        });
+    </script>
 @endsection

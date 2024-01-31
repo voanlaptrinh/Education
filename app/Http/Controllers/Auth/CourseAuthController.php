@@ -11,13 +11,14 @@ use Illuminate\Http\Request;
 
 class CourseAuthController extends Controller
 {
-    public function index(Subject $subject)
+    public function index(Subject $subject, Request $request)
     {
-        $courses = $subject->courses;
-        $lessons = $subject->lessons;
+        $courses = $subject->courses()->paginate(3);
+        $lessons = $subject->lessons()->paginate(3);
         $classes = Classes::all();
-        // $chapters = $subject->chapters; // Thêm dòng này để lấy chương trình học
         $webConfig = Web_config::find(1);
+       
+    
         return view('instructor-quiz.quiz-lessons', compact('subject', 'lessons', 'classes', 'webConfig', 'courses'));
     }
     public function show(Lesson $lesson, Subject $subject)
