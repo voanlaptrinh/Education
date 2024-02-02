@@ -15,7 +15,7 @@ class ReviewController extends Controller
     {
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
-        $reviews = Review::all();
+        $reviews = Review::paginate(5);
         return view('riviews.index', compact('classes', 'webConfig', 'reviews'));
     }
 

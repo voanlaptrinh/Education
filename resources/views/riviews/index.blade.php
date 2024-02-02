@@ -1,8 +1,8 @@
 @extends('index')
 @section('content')
-<!-- Trong file resources/views/layouts/app.blade.php -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Trong file resources/views/layouts/app.blade.php -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <section class="bg-blue align-items-center d-flex"
         style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
@@ -33,20 +33,18 @@
                 <!-- Contact form START -->
                 <div class="col-md-12">
                     <!-- Title -->
-                    <h2 class="mt-4 mt-md-0">Let's talk</h2>
-                    <p>To request a quote or want to meet up for coffee, contact us directly or fill out the form and we
-                        will get back to you promptly</p>
+                
 
-                    <form   action="{{ route('reviews.store') }}" method="POST">
+                    <form action="{{ route('reviews.store') }}" method="POST">
                         @csrf
-                            <div class="col-md-12">
-                                <label class="form-label">Tiêu đề</label>
-                                <div class="mb-4 bg-light-input">
-                                   
-                                    <input type="text" name="title" class="form-control form-control-lg"
-                                        value="" id="yourName">
-                                </div>
+                        <div class="col-md-12">
+                            <label class="form-label">Tiêu đề</label>
+                            <div class="mb-4 bg-light-input">
+
+                                <input type="text" name="title" class="form-control form-control-lg" value=""
+                                    id="yourName">
                             </div>
+                        </div>
                         <div class="col-md-12">
                             <label class="form-label">Số sao</label>
                             <select name="rating" id="rating" class="form-select">
@@ -55,9 +53,9 @@
                                 <option value="3">★★★ (3)</option>
                                 <option value="2">★★ (2)</option>
                                 <option value="1">★ (1)</option>
-                               
+
                             </select>
-                          
+
                         </div>
                         <div class="mb-4 bg-light-input pt-3">
                             <label for="textareaBox" class="form-label custom-cursor-default-hover">Nội dung *</label>
@@ -107,62 +105,75 @@
 
                             </div>
                             <!-- Review item START -->
-                            <div class="d-sm-flex">
-                                <!-- Avatar image -->
-                                <img class="avatar avatar-lg rounded-circle float-start me-3"
-                                    src="/assets/user/images/avatar/01.jpg" alt="avatar">
-                                <div>
-                                    <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
-                                        <!-- Title -->
-                                        <div>
-                                            <h5 class="m-0">Frances Guerrero</h5>
-                                            <span class="me-3 small">June 11, 2021 at 6:01 am </span>
+                            @foreach ($reviews as $review)
+                                <div class="d-sm-flex">
+                                    <!-- Avatar image -->
+                                    <img class="avatar avatar-lg rounded-circle float-start me-3" src="{{ asset('storage/' . $review->user->image) }}"
+                                        alt="avatar">
+                                    <div>
+                                        <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
+                                            <!-- Title -->
+                                            <div>
+                                                <h5 class="m-0">{{ $review->user->name }}</h5>
+                                                <ul class="list-inline mb-0">
+                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
+                                                    </li>
+                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
+                                                    </li>
+                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
+                                                    </li>
+                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
+                                                    </li>
+                                                    <li class="list-inline-item me-0"><i class="far fa-star text-warning"></i>
+                                                    </li>
+                                                </ul>
+                                                <span class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
+
+                                            </div>
+                                            <!-- Review star -->
+                                           
                                         </div>
-                                        <!-- Review star -->
-                                        <ul class="list-inline mb-0">
-                                            <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
-                                            </li>
-                                            <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
-                                            </li>
-                                            <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
-                                            </li>
-                                            <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
-                                            </li>
-                                            <li class="list-inline-item me-0"><i class="far fa-star text-warning"></i>
-                                            </li>
-                                        </ul>
+                                        <!-- Content -->
+                                        <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
+                                        </h6>
+                                        <p>{{ $review->content }} </p>
+                                        <!-- Button -->
+
                                     </div>
-                                    <!-- Content -->
-                                    <h6><span class="text-body fw-light">Review on:</span> How to implement sitemap on sass
-                                    </h6>
-                                    <p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant
-                                        private blushes removed an in equally totally if. Delivered dejection necessary
-                                        objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
-                                    <!-- Button -->
-                                    
                                 </div>
-                            </div>
+                            @endforeach
                             <!-- Divider -->
                             <hr>
-                           
+
                         </div>
                         <!-- Reviews END -->
 
-                        <div class="card-footer border-top">
+                        <div class="card-footer bg-transparent px-0">
                             <!-- Pagination START -->
                             <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
                                 <!-- Content -->
-                                <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+                                <p class="mb-0 text-center text-sm-start"></p>
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                                    <ul class="pagination pagination-sm pagination-primary-soft my-0 py-0">
-                                        <li class="page-item my-0"><a class="page-link" href="#" tabindex="-1"><i
-                                                    class="fas fa-angle-left"></i></a></li>
-                                        <li class="page-item my-0"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item my-0 active"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item my-0"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item my-0"><a class="page-link" href="#"><i
-                                                    class="fas fa-angle-right"></i></a></li>
+                                    <ul
+                                        class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                                        @if ($reviews->currentPage() > 1)
+                                            <li class="page-item mb-0"><a class="page-link"
+                                                    href="{{ $reviews->url($reviews->currentPage() - 1) }}"
+                                                    tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                        @endif
+                                        @for ($i = 1; $i <= $reviews->lastPage(); $i++)
+                                            <li
+                                                class=" page-item mb-0 {{ $reviews->currentPage() == $i ? 'active' : '' }}">
+                                                <a class="page-link"
+                                                    href="{{ $reviews->url($i) }}">{{ $i }}</a>
+                                            </li>
+                                        @endfor
+                                        @if ($reviews->currentPage() < $reviews->lastPage())
+                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                        class="fas fa-angle-right"></i></a></li>
+                                        @endif
+
                                     </ul>
                                 </nav>
                             </div>
@@ -176,12 +187,12 @@
         </div>
     </section>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Kích hoạt sự kiện kéo cho các icon sao
             $("#starRating i").draggable({
                 revert: true,
                 helper: "clone",
-                start: function (event, ui) {
+                start: function(event, ui) {
                     // Lấy giá trị số sao từ số lượng icon
                     var rating = $(this).index() + 1;
                     // Cập nhật giá trị ẩn
