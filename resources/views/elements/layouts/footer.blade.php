@@ -100,11 +100,11 @@
 				<div class="row g-2 mt-2">
 					<!-- Google play store button -->
 					<div class="col-6 col-sm-4 col-md-3 col-lg-6">
-						<a href="#"> <img src="assets/user/images/client/google-play.svg" alt=""> </a>
+						<a href="#"> <img src="{{ config('app.url') }}/assets/user/images/client/google-play.svg" alt=""> </a>
 					</div>
 					<!-- App store button -->
 					<div class="col-6 col-sm-4 col-md-3 col-lg-6">
-						<a href="#"> <img src="assets/user/images/client/app-store.svg" alt="app-store"> </a>
+						<a href="#"> <img src="{{ config('app.url') }}/assets/user/images/client/app-store.svg" alt="app-store"> </a>
 					</div>
 				</div> <!-- Row END -->
 			</div>
@@ -130,9 +130,9 @@
 										<i class="fas fa-globe me-2"></i>Language
 									</a>
 									<ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
-										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="assets/user/images/flags/uk.svg" alt="">English</a></li>
-										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="assets/user/images/flags/gr.svg" alt="">German </a></li>
-										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="assets/user/images/flags/sp.svg" alt="">French</a></li>
+										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{{ config('app.url') }}/assets/user/images/flags/uk.svg" alt="">English</a></li>
+										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{{ config('app.url') }}/assets/user/images/flags/gr.svg" alt="">German </a></li>
+										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{{ config('app.url') }}/assets/user/images/flags/sp.svg" alt="">French</a></li>
 									</ul>
 								</div>
 							</li>

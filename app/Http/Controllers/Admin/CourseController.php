@@ -14,7 +14,7 @@ class CourseController extends Controller
 {
     public function index(Subject $subject)
     {
-        $courses = $subject->courses;
+        $courses = $subject->courses()->paginate(4);
         return view('admin.courses.index', compact('subject', 'courses'));
     }
 

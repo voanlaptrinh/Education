@@ -44,22 +44,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    {{-- <td>{{ $chapter->lesson->title }}</td> --}}
-                                    {{-- <td>
-                                        <a href="{{ route('lectures.index', ['chapter' => $chapter]) }}"
-                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Xem bài giảng</a>
-                                    </td> --}}
-                                    {{-- <td>
-                                        <div class="d-flex align-items-center position-relative">
-                                            <!-- Image -->
-                                            <div class="w-60px">
-                                                <img src="{{ asset('storage/' . $lecture->image) }}" class="rounded"
-                                                    alt="">
-                                            </div>
-                                            <!-- Title -->
-
-                                        </div>
-                                    </td> --}}
+                                  
                                     <td>
                                         <div class="">
                                             <div class="">
@@ -68,7 +53,7 @@
                                                     <div class="card shadow p-2 mb-4 z-index-9 ">
                                                         <div class="overflow-hidden rounded-3 ">
                                                             <img src="{{ asset('storage/' . $lecture->image) }}"
-                                                                class="card-img w-60px h-60px" alt="course image">
+                                                                class="card-img  h-60px" alt="course image">
                                                             <!-- Overlay -->
                                                             <div class="bg-overlay bg-dark opacity-6"></div>
                                                             <div
@@ -119,6 +104,38 @@
 
                         </tbody>
                     </table>
+                </div>
+                <div class="card-footer bg-transparent px-0">
+                    <!-- Pagination START -->
+                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                        <!-- Content -->
+                        <p class="mb-0 text-center text-sm-start"></p>
+                        <!-- Pagination -->
+                        <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                            <ul
+                                class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                                @if ($lectures->currentPage() > 1)
+                                    <li class="page-item mb-0"><a class="page-link"
+                                            href="{{ $lectures->url($lectures->currentPage() - 1) }}"
+                                            tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                @endif
+                                @for ($i = 1; $i <= $lectures->lastPage(); $i++)
+                                    <li
+                                        class=" page-item mb-0 {{ $lectures->currentPage() == $i ? 'active' : '' }}">
+                                        <a class="page-link"
+                                            href="{{ $lectures->url($i) }}">{{ $i }}</a>
+                                    </li>
+                                @endfor
+                                @if ($lectures->currentPage() < $lectures->lastPage())
+                                <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                    class="fas fa-angle-right"></i></a></li> 
+
+                                @endif
+                           
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Pagination END -->
                 </div>
             </div>
         </div>

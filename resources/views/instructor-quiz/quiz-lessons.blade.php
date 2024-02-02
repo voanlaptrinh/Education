@@ -53,7 +53,7 @@
             </div> <!-- Row END -->
         </div>
     </section>
-  
+
     <div class="container">
         <div class="col-lg-12 z-index-9 mt-5 mt-xl-0">
 
@@ -135,25 +135,18 @@
                                                                 </font>
                                                             </a></h6>
                                                         <!-- Info -->
-
-                                                        @if ($lesson->chapters->count() > 0)
+                                                        @if ($lesson->chapters)
                                                             <div class="d-sm-flex">
                                                                 <p class="h6 fw-light mb-0 small me-3">
-
+                                                                    <i class="fas fa-table text-orange me-2"></i>
+                                                                    <font style="vertical-align: inherit;">
+                                                                        <font style="vertical-align: inherit;">
+                                                                            {{ $lesson->chapters->count() }}
+                                                                            Bài giảng</font>
+                                                                    </font>
                                                                 </p>
                                                                 <ul class="list-unstyled mb-0">
-                                                                    @foreach ($lesson->chapters as $chapter)
-                                                                        <li>
-                                                                            {{ $chapter->name }} {{-- Thay 'name' bằng tên cột bạn muốn hiển thị --}}
-                                                                            <i class="fas fa-table text-orange me-2"></i>
-                                                                            <font style="vertical-align: inherit;">
-                                                                                <font style="vertical-align: inherit;">
-                                                                                    {{ $chapter->lectures->count() }} Bài
-                                                                                    giảng</font>
-                                                                            </font>
-                                                                            {{-- Thêm các thông tin khác của chương trình giảng dạy nếu cần --}}
-                                                                        </li>
-                                                                    @endforeach
+                                                                    {{-- Thêm thông tin về chương trình giảng dạy nếu cần --}}
                                                                 </ul>
                                                             </div>
                                                         @else
@@ -237,11 +230,10 @@
                                             </li>
                                         @endfor
                                         @if ($lessons->currentPage() < $lessons->lastPage())
-                                        <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                            class="fas fa-angle-right"></i></a></li> 
-
+                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                        class="fas fa-angle-right"></i></a></li>
                                         @endif
-                                   
+
                                     </ul>
                                 </nav>
                             </div>
@@ -336,7 +328,7 @@
                             </table>
                         </div>
                         <!-- Table END -->
-                       
+
                         <!-- Card footer START -->
                         <div class="card-footer bg-transparent px-0">
                             <!-- Pagination START -->
@@ -360,11 +352,10 @@
                                             </li>
                                         @endfor
                                         @if ($courses->currentPage() < $courses->lastPage())
-                                        <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                            class="fas fa-angle-right"></i></a></li> 
-
+                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                        class="fas fa-angle-right"></i></a></li>
                                         @endif
-                                   
+
                                     </ul>
                                 </nav>
                             </div>
@@ -378,13 +369,13 @@
             </div>
             <!-- Tab contents END -->
         </div>
-       
+
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Get the active tab from session storage
             var activeTab = sessionStorage.getItem('activeTab');
-    
+
             // If there is an active tab, select it
             if (activeTab) {
                 var activeTabElement = document.querySelector(activeTab);
@@ -392,12 +383,13 @@
                     activeTabElement.click(); // Trigger a click event to activate the tab
                 }
             }
-    
+
             // Attach an event listener to each pagination link to store the active tab
             var paginationLinks = document.querySelectorAll('.pagination a');
-            paginationLinks.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    var activeTabId = document.querySelector('.nav-pills .active').getAttribute('id');
+            paginationLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var activeTabId = document.querySelector('.nav-pills .active').getAttribute(
+                        'id');
                     sessionStorage.setItem('activeTab', '#' + activeTabId);
                 });
             });

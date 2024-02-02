@@ -20,7 +20,7 @@
                 <div class="row g-3 align-items-center justify-content-between">
 
                     <!-- Search bar -->
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <form class="rounded position-relative" action="{{ route('curriculum.index') }}" method="get">
                             <input name="query" value="{{ $searchQuery }}" class="form-control bg-body" type="search"
                                 placeholder="Search" aria-label="Search">
@@ -33,21 +33,7 @@
                     </div>
 
                     <!-- Select option -->
-                    <div class="col-md-3">
-                        <!-- Short by filter -->
-                        <form id="lessonSearchForm" action="{{ route('curriculum.search') }}" method="GET">
-                            <select name="lesson_id" class="form-select js-choice border-0 z-index-9 bg-transparent"
-                                aria-label=".form-select-sm">
-                                <option value="">Tất cả bài học</option>
-                                @foreach ($lessons as $lesson)
-                                    <option value="{{ $lesson->id }}"
-                                        {{ $lesson->id == request('lesson_id') ? 'selected' : '' }}>{{ $lesson->title }}
-                                    </option>
-                                @endforeach
-
-                            </select>
-                        </form>
-                    </div>
+                  
                 </div>
                 <script>
                     $(document).ready(function() {

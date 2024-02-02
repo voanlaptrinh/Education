@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\LecturesController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\RiviewController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ContactController;
@@ -191,6 +193,15 @@ Route::prefix('/contact')->group(function () {
     Route::get('/success', [ContactController::class, 'success'])->name('contact.success');
     Route::post('/postContact', [ContactController::class, 'store'])->name('contact.create');
 });
+
+Route::prefix('/reviews')->group(function () {
+    Route::get('/', [ReviewController::class, 'index'])->name('reviews.index');
+    Route::post('/store', [ReviewController::class, 'store'])->name('reviews.store');
+});
+
+
+
+
 
 Route::get('{subject}/courses/bai-hoc-cau-hoi', [CourseAuthController::class, 'index'])->name('home.course');
 Route::get('/lessons/{lesson}', [CourseAuthController::class, 'show'])->name('lessons.show');

@@ -4,8 +4,8 @@
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             <a class="navbar-brand" href="/">
-                <img class="light-mode-item navbar-brand-item" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
-                <img class="dark-mode-item navbar-brand-item" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
+                <img class="light-mode-item navbar-brand-item" src=" {{ asset('storage/' . $webConfig->logo) }}" alt="logo">
+                <img class="dark-mode-item navbar-brand-item" src="  {{ asset('storage/' . $webConfig->logo) }}" alt="logo">
             </a>
             <!-- Logo END -->
 
@@ -275,134 +275,9 @@
                     </li>
 
                     <!-- Nav item 2 Pages -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu" aria-labelledby="pagesMenu">
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Course</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="course-categories.html">Course Categories</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li> <a class="dropdown-item" href="course-grid.html">Course Grid Classic</a></li>
-                                    <li> <a class="dropdown-item" href="course-grid-2.html">Course Grid Minimal</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li> <a class="dropdown-item" href="course-list.html">Course List Classic</a></li>
-                                    <li> <a class="dropdown-item" href="course-list-2.html">Course List Minimal</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li> <a class="dropdown-item" href="course-detail.html">Course Detail Classic</a>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="course-detail-min.html">Course Detail
-                                            Minimal</a></li>
-                                    <li> <a class="dropdown-item" href="course-detail-adv.html">Course Detail
-                                            Advance</a></li>
-                                    <li> <a class="dropdown-item" href="course-detail-module.html">Course Detail
-                                            Module</a></li>
-                                    <li> <a class="dropdown-item" href="course-video-player.html">Course Full Screen
-                                            Video</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">About</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="about.html">About Us</a></li>
-                                    <li> <a class="dropdown-item" href="contact-us.html">Contact Us</a></li>
-                                    <li> <a class="dropdown-item" href="blog-grid.html">Blog Grid</a></li>
-                                    <li> <a class="dropdown-item" href="blog-masonry.html">Blog Masonry</a></li>
-                                    <li> <a class="dropdown-item" href="blog-detail.html">Blog Detail</a></li>
-                                    <li> <a class="dropdown-item" href="pricing.html">Pricing</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Hero Banner</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="docs/snippet-hero-12.html">Hero Form</a></li>
-                                    <li> <a class="dropdown-item" href="docs/snippet-hero-13.html">Hero Vector</a>
-                                    </li>
-                                    <li>
-                                        <p class="dropdown-item mb-0">Coming soon....</p>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li> <a class="dropdown-item" href="instructor-list.html">Instructor List</a></li>
-                            <li> <a class="dropdown-item" href="instructor-single.html">Instructor Single</a></li>
-                            <li> <a class="dropdown-item" href="become-instructor.html">Become an Instructor</a></li>
-                            <li> <a class="dropdown-item" href="abroad-single.html">Abroad Single</a></li>
-                            <li> <a class="dropdown-item" href="workshop-detail.html">Workshop Detail</a></li>
-                            <li> <a class="dropdown-item" href="event-detail.html">Event Detail</a></li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Shop</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="shop.html">Shop grid</a></li>
-                                    <li> <a class="dropdown-item" href="shop-product-detail.html">Product detail</a>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="cart.html">Cart</a></li>
-                                    <li> <a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                    <li> <a class="dropdown-item" href="empty-cart.html">Empty Cart</a></li>
-                                    <li> <a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Help</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="help-center.html">Help Center</a></li>
-                                    <li> <a class="dropdown-item" href="help-center-detail.html">Help Center
-                                            Single</a></li>
-                                    <li> <a class="dropdown-item" href="faq.html">FAQs</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="sign-in.html">Sign In</a></li>
-                                    <li> <a class="dropdown-item" href="sign-up.html">Sign Up</a></li>
-                                    <li> <a class="dropdown-item" href="forgot-password.html">Forgot Password</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Form</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="request-demo.html">Request a demo</a></li>
-                                    <li> <a class="dropdown-item" href="book-class.html">Book a Class</a></li>
-                                    <li> <a class="dropdown-item" href="request-access.html">Free Access</a></li>
-                                    <li> <a class="dropdown-item" href="university-admission-form.html">Admission
-                                            Form</a></li>
-                                </ul>
-                            </li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Specialty</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="error-404.html">Error 404</a></li>
-                                    <li> <a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="{{route('reviews.index')}}">Đánh giá</a>
+                        
                     </li>
 
                     <!-- Nav item 3 Account -->
@@ -513,51 +388,7 @@
                     </li>
 
                     <!-- Nav item 5 link-->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end min-w-auto" data-bs-popper="none">
-                            <li>
-                                <a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
-                                    <i class="text-warning fa-fw bi bi-life-preserver me-2"></i>Support
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="docs/index.html" target="_blank">
-                                    <i class="text-danger fa-fw bi bi-card-text me-2"></i>Documentation
-                                </a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="rtl/index.html" target="_blank">
-                                    <i class="text-info fa-fw bi bi-toggle-off me-2"></i>RTL demo
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://themes.getbootstrap.com/store/webestica/"
-                                    target="_blank">
-                                    <i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>Buy Eduport!
-                                </a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="docs/alerts.html" target="_blank">
-                                    <i class="text-orange fa-fw bi bi-puzzle-fill me-2"></i>Components
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="docs/snippets.html">
-                                    <i class="text-purple fa-fw bi bi-stickies-fill me-2"></i>Snippets
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                 
                 </ul>
                 <!-- Nav Main menu END -->
 

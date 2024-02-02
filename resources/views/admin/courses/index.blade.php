@@ -117,6 +117,38 @@
                         <!-- Table body END -->
                     </table>
                     <!-- Table END -->
+                    <div class="card-footer bg-transparent px-0">
+                        <!-- Pagination START -->
+                        <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                            <!-- Content -->
+                            <p class="mb-0 text-center text-sm-start"></p>
+                            <!-- Pagination -->
+                            <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                                <ul
+                                    class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                                    @if ($courses->currentPage() > 1)
+                                        <li class="page-item mb-0"><a class="page-link"
+                                                href="{{ $courses->url($courses->currentPage() - 1) }}"
+                                                tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                    @endif
+                                    @for ($i = 1; $i <= $courses->lastPage(); $i++)
+                                        <li
+                                            class=" page-item mb-0 {{ $courses->currentPage() == $i ? 'active' : '' }}">
+                                            <a class="page-link"
+                                                href="{{ $courses->url($i) }}">{{ $i }}</a>
+                                        </li>
+                                    @endfor
+                                    @if ($courses->currentPage() < $courses->lastPage())
+                                    <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                        class="fas fa-angle-right"></i></a></li> 
+
+                                    @endif
+                               
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Pagination END -->
+                    </div>
                 </div>
                 <!-- Course table END -->
             </div>

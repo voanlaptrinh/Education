@@ -9,10 +9,15 @@ use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $lessons = Lesson::all();
-        return view('admin.lession.index', compact('lessons'));
+        // $lessons = Lesson::paginate(3);
+        $searchQuery = $request->input('query'); // Thay đổi tên biến thành $searchQuery
+
+        $lessons = Lesson::when($searchQuery, function ($query) use ($searchQuery) {
+            return $query->where('title', 'like', '%' . $searchQuery . '%');
+        })->paginate(3);
+        return view('admin.lession.index', compact('lessons','searchQuery'));
     }
     public function create()
     {

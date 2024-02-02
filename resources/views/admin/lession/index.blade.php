@@ -19,9 +19,10 @@
                 <div class="row g-3 align-items-center justify-content-between">
 
                     <!-- Search bar -->
-                    <div class="col-md-8">
-                        <form class="rounded position-relative">
-                            <input class="form-control bg-body" type="search" placeholder="Search" aria-label="Search">
+                    <div class="col-md-12">
+                        <form class="rounded position-relative" action="{{ route('lesson.index') }}" method="get">
+                            <input name="query" value="{{ $searchQuery }}" class="form-control bg-body" type="search"
+                                placeholder="Search" aria-label="Search">
                             <button
                                 class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
                                 type="submit">
@@ -30,54 +31,7 @@
                         </form>
                     </div>
 
-                    <!-- Select option -->
-                    <div class="col-md-3">
-                        <!-- Short by filter -->
-                        <form>
-                            <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                <div class="choices__inner"><select
-                                        class="form-select js-choice border-0 z-index-9 choices__input"
-                                        aria-label=".form-select-sm" hidden="" tabindex="-1" data-choice="active">
-                                        <option value="" data-custom-properties="[object Object]">Sort by</option>
-                                    </select>
-                                    <div class="choices__list choices__list--single">
-                                        <div class="choices__item choices__placeholder choices__item--selectable"
-                                            data-item="" data-id="1" data-value=""
-                                            data-custom-properties="[object Object]" aria-selected="true">Sort by</div>
-                                    </div>
-                                </div>
-                                <div class="choices__list choices__list--dropdown" aria-expanded="false"><input
-                                        type="search" name="search_terms" class="choices__input choices__input--cloned"
-                                        autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox"
-                                        aria-autocomplete="list" aria-label="Sort by" placeholder="">
-                                    <div class="choices__list" role="listbox">
-                                        <div id="choices--jk7i-item-choice-5"
-                                            class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                            role="option" data-choice="" data-id="5" data-value=""
-                                            data-select-text="Press to select" data-choice-selectable=""
-                                            aria-selected="true">Sort by</div>
-                                        <div id="choices--jk7i-item-choice-1"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="1" data-value="Accepted"
-                                            data-select-text="Press to select" data-choice-selectable="">Accepted</div>
-                                        <div id="choices--jk7i-item-choice-2"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="2" data-value="Newest"
-                                            data-select-text="Press to select" data-choice-selectable="">Newest</div>
-                                        <div id="choices--jk7i-item-choice-3"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="3" data-value="Oldest"
-                                            data-select-text="Press to select" data-choice-selectable="">Oldest</div>
-                                        <div id="choices--jk7i-item-choice-4"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="4" data-value="Rejected"
-                                            data-select-text="Press to select" data-choice-selectable="">Rejected</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                   
                 </div>
                 <!-- Search and select END -->
             </div>
@@ -166,21 +120,33 @@
                 </div>
             </div>
 
-            <div class="card-footer bg-transparent pt-0">
+            <div class="card-footer bg-transparent px-0">
                 <!-- Pagination START -->
                 <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
                     <!-- Content -->
-                    <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+                    <p class="mb-0 text-center text-sm-start"></p>
                     <!-- Pagination -->
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                            <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
-                                        class="fas fa-angle-left"></i></a></li>
-                            <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
+                        <ul
+                            class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                            @if ($lessons->currentPage() > 1)
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $lessons->url($lessons->currentPage() - 1) }}"
+                                        tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                            @endif
+                            @for ($i = 1; $i <= $lessons->lastPage(); $i++)
+                                <li
+                                    class=" page-item mb-0 {{ $lessons->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link"
+                                        href="{{ $lessons->url($i) }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+                            @if ($lessons->currentPage() < $lessons->lastPage())
                             <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                        class="fas fa-angle-right"></i></a></li>
+                                class="fas fa-angle-right"></i></a></li> 
+
+                            @endif
+                       
                         </ul>
                     </nav>
                 </div>
