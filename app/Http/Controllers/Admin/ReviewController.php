@@ -37,6 +37,14 @@ class ReviewController extends Controller
         return redirect()->back()->with('success', 'Trạng thái bình luận đã được cập nhật.');
     }
 
+    public function show($id)
+    {
+        $reviews = Review::findOrFail($id);
+        if (!$reviews) {
+            return response()->json(['error' => 'reviews not found'], 404);
+        }
+        return response()->json($reviews);
+    }
     public function store(Request $request)
     {
         $request->validate([

@@ -149,6 +149,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('/reviews')->group(function () {
             Route::get('/', [ReviewController::class, 'indexAdmin'])->name('reviews.admin');
             Route::post('/{id}/toggle-status', [ReviewController::class, 'toggleStatus'])->name('reviews.toggleStatus');
+            Route::get('/{id}', [ReviewController::class, 'show'])->name('reviews.show');
         });
     });
 });

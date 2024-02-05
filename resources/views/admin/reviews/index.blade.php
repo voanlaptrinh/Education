@@ -9,8 +9,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="reviewModalLabel{{ $review->id }}">Chi Tiết
                         Đánh Giá</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- Hiển thị nội dung chi tiết của đánh giá -->
@@ -103,7 +102,6 @@
                         <!-- Table body START -->
                         <tbody>
                             @foreach ($reviews as $review)
-                               
                                 <tr>
                                     <!-- Table data -->
                                     <td>
@@ -211,7 +209,7 @@
         </div>
         <!-- Card END -->
     </div>
-    {{-- <script>
+    <script>
         $('#classModal').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget);
             var action = button.data('action');
@@ -220,18 +218,9 @@
             var form = modal.find('form');
             var submitBtn = modal.find('#submitBtn');
 
-            if (action === 'add') {
-                form.trigger('reset');
-                modal.find('.modal-title').text('Thêm Lớp Học');
-                form.attr('action', `{{ route('classes.store') }}`);
-                submitBtn.text('Thêm Lớp Học');
-            } else if (action === 'edit') {
-                modal.find('.modal-title').text('Sửa Lớp Học');
-                form.attr('action', `{{ route('classes.update', ':id') }}`.replace(':id', classId));
-                submitBtn.text('Cập Nhật Lớp Học');
 
                 $.ajax({
-                    url: `{{ route('classes.show', ':id') }}`.replace(':id', classId),
+                    url: `{{ route('reviews.show', ':id') }}`.replace(':id', classId),
                     method: 'GET',
                     success: function(response) {
                         modal.find('#name').val(response.name || '');
@@ -242,7 +231,7 @@
                         console.log(error);
                     }
                 });
-            }
+           
         });
-    </script> --}}
+    </script>
 @endsection
