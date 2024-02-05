@@ -53,6 +53,8 @@
                             class="fas fa-graduation-cap fa-fw me-2"></i>Chương trình giảng dạy</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('contact.admin') }}"><i
                             class="fas fa-file-signature fa-fw me-2"></i>Liên hệ</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('reviews.admin') }}"><i
+                            class="fas fa-file-signature fa-fw me-2"></i>Đánh giá</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('webConfig.index') }}"><i
                             class="fas fa-cogs fa-fw me-2"></i>Cài đặt web</a></li>
 

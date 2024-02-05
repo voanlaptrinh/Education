@@ -144,6 +144,12 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');
             Route::delete('delete/{lecture}', [LecturesController::class, 'destroy'])->name('lectures.destroy');
         });
+
+
+        Route::prefix('/reviews')->group(function () {
+            Route::get('/', [ReviewController::class, 'indexAdmin'])->name('reviews.admin');
+            Route::post('/{id}/toggle-status', [ReviewController::class, 'toggleStatus'])->name('reviews.toggleStatus');
+        });
     });
 });
 
@@ -196,7 +202,9 @@ Route::prefix('/contact')->group(function () {
 
 Route::prefix('/reviews')->group(function () {
     Route::get('/', [ReviewController::class, 'index'])->name('reviews.index');
-    Route::post('/store', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::middleware('require.login')->group(function () {
+        Route::post('/store', [ReviewController::class, 'store'])->name('reviews.store');
+    });
 });
 
 

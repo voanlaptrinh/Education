@@ -45,7 +45,7 @@ class ClassesController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with('success', 'Trạng thái tài khoản đã được cập nhật.');
+        return redirect()->back()->with('success', 'Trạng thái lớp học đã được cập nhật.');
     }
     public function destroy(Classes $class)
     {

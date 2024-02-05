@@ -1,11 +1,8 @@
 @extends('index')
 @section('content')
-    <!-- Trong file resources/views/layouts/app.blade.php -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <section class="bg-blue align-items-center d-flex"
-        style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+        style="background:url(assets/user/images/pattern/04.png) no-repeat center center; background-size:cover;">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -33,17 +30,31 @@
                 <!-- Contact form START -->
                 <div class="col-md-12">
                     <!-- Title -->
-                
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
                     <form action="{{ route('reviews.store') }}" method="POST">
                         @csrf
                         <div class="col-md-12">
                             <label class="form-label">Tiêu đề</label>
                             <div class="mb-4 bg-light-input">
-
                                 <input type="text" name="title" class="form-control form-control-lg" value=""
                                     id="yourName">
                             </div>
+                            @error('title')
+                                <span class="invalid-feedback" role="alert">
+                                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                </span>
+                            @enderror
                         </div>
                         <div class="col-md-12">
                             <label class="form-label">Số sao</label>
@@ -55,15 +66,24 @@
                                 <option value="1">★ (1)</option>
 
                             </select>
-
+                            @error('rating')
+                                <span class="invalid-feedback" role="alert">
+                                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                </span>
+                            @enderror
                         </div>
                         <div class="mb-4 bg-light-input pt-3">
                             <label for="textareaBox" class="form-label custom-cursor-default-hover">Nội dung *</label>
-                            <textarea class="form-control" id="content" name="content" rows="10"></textarea>
+                            <textarea class="form-control" id="content" name="content" rows="8"></textarea>
+                            @error('content')
+                                <span class="invalid-feedback" role="alert">
+                                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                </span>
+                            @enderror
                         </div>
                         <!-- Button -->
                         <div class="d-grid">
-                            <button class="btn btn-lg btn-primary mb-0" type="submit">Gửi bình luận</button>
+                            <button class="btn btn-lg btn-primary mb-0" type="submit">Gửi Đánh Giá</button>
                         </div>
                     </form>
                 </div>
@@ -106,44 +126,45 @@
                             </div>
                             <!-- Review item START -->
                             @foreach ($reviews as $review)
-                                <div class="d-sm-flex">
-                                    <!-- Avatar image -->
-                                    <img class="avatar avatar-lg rounded-circle float-start me-3" src="{{ asset('storage/' . $review->user->image) }}"
-                                        alt="avatar">
-                                    <div>
-                                        <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
-                                            <!-- Title -->
-                                            <div>
-                                                <h5 class="m-0">{{ $review->user->name }}</h5>
-                                                <ul class="list-inline mb-0">
-                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
+                               @if ($review->status ==1)
+                               <div class="d-sm-flex">
+                                <!-- Avatar image -->
+                                <img class="avatar avatar-lg rounded-circle float-start me-3"
+                                    src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
+                                <div>
+                                    <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
+                                        <!-- Title -->
+                                        <div>
+                                            <h5 class="m-0">{{ $review->user->name }}</h5>
+                                            <ul class="list-inline mb-0">
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    <li class="list-inline-item me-0">
+                                                        @if ($i <= $review->rating)
+                                                            <i class="fas fa-star text-warning"></i>
+                                                        @else
+                                                            <i class="far fa-star text-warning"></i>
+                                                        @endif
                                                     </li>
-                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
-                                                    </li>
-                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
-                                                    </li>
-                                                    <li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i>
-                                                    </li>
-                                                    <li class="list-inline-item me-0"><i class="far fa-star text-warning"></i>
-                                                    </li>
-                                                </ul>
-                                                <span class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
+                                                @endfor
+                                            </ul>
+                                            <span class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
 
-                                            </div>
-                                            <!-- Review star -->
-                                           
                                         </div>
-                                        <!-- Content -->
-                                        <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
-                                        </h6>
-                                        <p>{{ $review->content }} </p>
-                                        <!-- Button -->
+                                        <!-- Review star -->
 
                                     </div>
+                                    <!-- Content -->
+                                    <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
+                                    </h6>
+                                    <p>{{ $review->content }} </p>
+                                    <!-- Button -->
+
                                 </div>
+                            </div>
+                            <hr>
+                               @endif
                             @endforeach
                             <!-- Divider -->
-                            <hr>
 
                         </div>
                         <!-- Reviews END -->
@@ -186,19 +207,5 @@
             </div><!-- Row END -->
         </div>
     </section>
-    <script>
-        $(document).ready(function() {
-            // Kích hoạt sự kiện kéo cho các icon sao
-            $("#starRating i").draggable({
-                revert: true,
-                helper: "clone",
-                start: function(event, ui) {
-                    // Lấy giá trị số sao từ số lượng icon
-                    var rating = $(this).index() + 1;
-                    // Cập nhật giá trị ẩn
-                    $("#rating").val(rating);
-                }
-            });
-        });
-    </script>
+ 
 @endsection

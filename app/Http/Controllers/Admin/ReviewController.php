@@ -18,14 +18,37 @@ class ReviewController extends Controller
         $reviews = Review::paginate(5);
         return view('riviews.index', compact('classes', 'webConfig', 'reviews'));
     }
+    public function indexAdmin()
+    {
+        $classes = Classes::all();
+        $webConfig = Web_config::find(1);
+        $reviews = Review::paginate(5);
+        return view('admin.reviews.index', compact('classes', 'webConfig', 'reviews'));
+    }
+    public function toggleStatus($id)
+    {
+        $reviews = Review::findOrFail($id);
 
+        // Đảo ngược trạng thái
+        $reviews->status = $reviews->status == 1 ? 0 : 1;
+
+        $reviews->save();
+
+        return redirect()->back()->with('success', 'Trạng thái bình luận đã được cập nhật.');
+    }
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'content' => 'required',
-        //     'rating' => 'required|integer|between:1,5', // Đảm bảo rating nằm trong khoảng từ 1 đến 5
-        // ]);
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'rating' => 'required', // Đảm bảo rating nằm trong khoảng từ 1 đến 5
+        ], [
+            'title.required' => 'Tiêu đề là trường bắt buộc.',
+            'content.required' => 'Nội dung là trường bắt buộc.',
+            'rating.required' => 'Đánh giá  là trường bắt buộc.',
+          
+        ]);
 
         // Thêm đánh giá mới vào cơ sở dữ liệu
         Review::create([
@@ -37,6 +60,6 @@ class ReviewController extends Controller
             'status' => 0,
         ]);
 
-        return redirect()->route('reviews.index')->with('success', 'Đánh giá đã được thêm thành công.');
+        return redirect()->route('reviews.index')->with('success', 'Đánh giá đã được gửi thành công.');
     }
 }
