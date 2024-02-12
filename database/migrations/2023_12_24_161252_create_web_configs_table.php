@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('gg_analytic')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
+            $table->string('video')->nullable();
             $table->text('zalo')->nullable();
             $table->text('description')->nullable();
             $table->text('facebook_id')->nullable();

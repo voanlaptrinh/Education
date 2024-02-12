@@ -48,7 +48,6 @@
                             <tr>
                                 <th scope="col" class="border-0 rounded-start">Tiêu đề</th>
                                 <th scope="col" class="border-0">Ảnh mô tả</th>
-                                <th scope="col" class="border-0">Mô tả ngắn</th>
                                 <th scope="col" class="border-0">Số lượt xem</th>
                                 <th scope="col" class="border-0">Môn học</th>
                                 <th scope="col" class="border-0 rounded-end">Action</th>
@@ -83,10 +82,7 @@
 
                                         </div>
                                     </td>
-                                    <!-- Table data -->
-                                    <td>
-                                        {{ $lesson->description }}
-                                    </td>
+                                 
 
                                     <!-- Table data -->
                                     <td> {{ $lesson->views }}</td>

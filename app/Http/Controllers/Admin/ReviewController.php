@@ -18,12 +18,22 @@ class ReviewController extends Controller
         $reviews = Review::paginate(5);
         return view('riviews.index', compact('classes', 'webConfig', 'reviews'));
     }
-    public function indexAdmin()
+    public function indexAdmin(Request $request)
     {
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
-        $reviews = Review::paginate(5);
-        return view('admin.reviews.index', compact('classes', 'webConfig', 'reviews'));
+        $status = $request->input('status', '');
+        $reviewsQuery = Review::query();
+        if ($status !== '') {
+            $reviewsQuery->where('status', $status);
+        }
+    
+        $reviews = $reviewsQuery->paginate(5);
+
+        $totalReview = Review::count();
+        $activeReview = Review::where('status', '1')->count();
+        $unactiveReview = Review::where('status', '0')->count();
+        return view('admin.reviews.index', compact('classes', 'webConfig', 'reviews', 'totalReview', 'activeReview', 'unactiveReview', 'status'));
     }
     public function toggleStatus($id)
     {
@@ -39,11 +49,12 @@ class ReviewController extends Controller
 
     public function show($id)
     {
-        $reviews = Review::findOrFail($id);
-        if (!$reviews) {
+        $review = Review::find($id);
+        $reviewWithUser = $review->load('user');
+        if (!$review) {
             return response()->json(['error' => 'reviews not found'], 404);
         }
-        return response()->json($reviews);
+        return response()->json($reviewWithUser);
     }
     public function store(Request $request)
     {
@@ -55,7 +66,7 @@ class ReviewController extends Controller
             'title.required' => 'Tiêu đề là trường bắt buộc.',
             'content.required' => 'Nội dung là trường bắt buộc.',
             'rating.required' => 'Đánh giá  là trường bắt buộc.',
-          
+
         ]);
 
         // Thêm đánh giá mới vào cơ sở dữ liệu
@@ -69,5 +80,11 @@ class ReviewController extends Controller
         ]);
 
         return redirect()->route('reviews.index')->with('success', 'Đánh giá đã được gửi thành công.');
+    }
+    public function destroy(Review $review)
+    {
+        $review->delete();
+
+        return redirect('/admin/reviews')->with('success', 'Xóa đánh giá thành công!');
     }
 }

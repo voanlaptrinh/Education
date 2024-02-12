@@ -133,8 +133,8 @@
 					</svg>
 				</figure>
 				<!-- Title -->
-				<h1 class="mb-0 display-6">Limitless learning at your
-					<span class="position-relative">fingertips
+				<h1 class="mb-0 display-6">Học tập không giới hạn trong 
+					<span class="position-relative">tầm tay
 						<!-- SVG START -->
 						<span class="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
 							<svg width="300px" height="62.1px" enable-background="new 0 0 366 62.1" viewBox="0 0 366 62.1" xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +146,7 @@
 				</h1>
 
 				<!-- Content -->
-				<p class="my-4 lead">Online learning and teaching marketplace with 5K+ courses & 10M students. Taught by experts to help you acquire new skills.</p>
+				<p class="my-4 lead">Thị trường giảng dạy và học tập trực tuyến với. Được giảng dạy bởi các chuyên gia để giúp bạn có được những kỹ năng mới.</p>
 
 				<!-- Info -->
 				<ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
@@ -160,7 +160,8 @@
 					<a href="#" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</a>
 					<!-- Video button -->
 					<div class="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
-						<a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7">
+						
+						<a data-glightbox data-gallery="office-tour" href="{{ asset('storage/' . $webConfig->video) }}" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7">
 							<i class="fas fa-play"></i>
 							<h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Watch video</h6>
 						</a>

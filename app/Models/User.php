@@ -55,4 +55,13 @@ class User extends Authenticatable
         $this->password_reset_expires_at = $expires_at;
         $this->save();
     }
+    public function subscription()
+    {
+        return $this->belongsTo(Subscription::class);
+    }
+
+    public function hasSubscription()
+    {
+        return $this->subscription !== null;
+    }
 }

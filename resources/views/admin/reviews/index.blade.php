@@ -2,56 +2,76 @@
 @extends('admin.index')
 @section('contentadmin')
     <!-- Modal -->
-    <div class="modal fade" id="reviewModal{{ $review->id }}" tabindex="-1"
-        aria-labelledby="reviewModalLabel{{ $review->id }}" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+    
+
+    <div class="modal fade " id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="reviewModalLabel{{ $review->id }}">Chi Tiết
-                        Đánh Giá</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- Modal header -->
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-white" id="viewReviewLabel"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="title"></font></font></h5>
+                    <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Đóng"><i class="bi bi-x-lg"></i></button>
                 </div>
+                <!-- Modal body -->
                 <div class="modal-body">
-                    <!-- Hiển thị nội dung chi tiết của đánh giá -->
-                    <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
-                    </h6>
-                    <p>{{ $review->content }}</p>
+                    <div class="d-md-flex">
+                        <!-- Avatar -->
+                        <div class="avatar avatar-md me-4 flex-shrink-0">
+                            <img class="avatar-img rounded-circle avt_review" src="" alt="hình đại diện">
+                        </div>
+                        <!-- Text -->
+                        <div>
+                            <div class="d-sm-flex mt-1 mt-md-0 align-items-center">
+                                <h5 class="me-3 mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="text-white2"></font></font></h5>
+                                <!-- Review star -->
+                                    <li class="list-inline-item me-0 d-flex">(<div id="rating"></div>)<i class="fas fa-star text-warning"></i></li>
+                                    
+                            </div>
+                            <!-- Info -->
+                            <p class="small mb-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="create_at"></font></font></p>
+                            <p class="mb-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" id="content"></font></font></p>
+                        </div>	
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đóng</font></font></button>
                 </div>
             </div>
         </div>
     </div>
 
-
+   
     {{--  --}}
     <div class="page-content-wrapper border">
 
 
         <!-- Course boxes START -->
-        {{-- <div class="row g-4 mb-4">
+        <div class="row g-4 mb-4">
             <!-- Course item -->
             <div class="col-sm-6 col-lg-4">
                 <div class="text-center p-4 bg-primary bg-opacity-10 border border-primary rounded-3">
-                    <h6>Tổng lớp học</h6>
-                    <h2 class="mb-0 fs-1 text-primary">{{ $totalClasses }}</h2>
+                    <h6>Tổng đánh giá</h6>
+                    <h2 class="mb-0 fs-1 text-primary">{{ $totalReview }}</h2>
                 </div>
             </div>
 
             <!-- Course item -->
             <div class="col-sm-6 col-lg-4">
                 <div class="text-center p-4 bg-success bg-opacity-10 border border-success rounded-3">
-                    <h6>Lớp học hoạt động</h6>
-                    <h2 class="mb-0 fs-1 text-success">{{ $activeClasses }}</h2>
+                    <h6>Đánh giá hiện</h6>
+                    <h2 class="mb-0 fs-1 text-success">{{ $activeReview }}</h2>
                 </div>
             </div>
 
             <!-- Course item -->
             <div class="col-sm-6 col-lg-4">
                 <div class="text-center p-4  bg-warning bg-opacity-15 border border-warning rounded-3">
-                    <h6>Lớp học tạm ngừng</h6>
-                    <h2 class="mb-0 fs-1 text-warning">{{ $unactiveClasses }}</h2>
+                    <h6>Đánh giá ẩn</h6>
+                    <h2 class="mb-0 fs-1 text-warning">{{ $unactiveReview }}</h2>
                 </div>
             </div>
-        </div> --}}
+        </div>
         <!-- Course boxes END -->
 
         <!-- Card START -->
@@ -90,7 +110,7 @@
                         <!-- Table head -->
                         <thead>
                             <tr>
-                                <th scope="col" class="border-0 rounded-start">Tên lớp học</th>
+                                <th scope="col" class="border-0 rounded-start">Tiêu đề</th>
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>
@@ -130,7 +150,7 @@
                                             method="post">
                                             @csrf
                                             @if ($review->status == 1)
-                                                <button class="btn btn-success">Hiện</button>
+                                                <button class="btn btn-success">Hiển thị</button>
                                             @else
                                                 <button class="btn btn-warning">Tạm ẩn</button>
                                             @endif
@@ -141,7 +161,8 @@
 
                                     <td class="d-flex">
                                         <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0 "
-                                            data-bs-toggle="modal" data-bs-target="#reviewModal{{ $review->id }}">
+                                            data-bs-toggle="modal" data-bs-target="#reviewModal"
+                                            data-class-id="{{ $review->id }}">
                                             <i class="fas fa-eye"></i>
                                         </button>
                                         {{-- <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0   "
@@ -150,11 +171,11 @@
                                             <i class="bi bi-pencil-square"></i>
                                         </button> --}}
 
-                                        <form action="{{ route('classes.destroy', $review) }}" method="post">
+                                        <form action="{{ route('reviews.destroy', $review) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
-                                                onclick="return confirm('Bạn chắc chắn muốn xóa Lớp học này? Lưu ý các khóa học liên quan đến lớp học cũng bị xóa!')"><i
+                                                onclick="return confirm('Bạn chắc chắn muốn xóa đánh giá này? Đánh giá xoá sẽ không thể khôi phục!')"><i
                                                     class="bi bi-trash  "></i></button>
                                         </form>
 
@@ -210,28 +231,36 @@
         <!-- Card END -->
     </div>
     <script>
-        $('#classModal').on('show.bs.modal', function(event) {
+        $('#reviewModal').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget);
-            var action = button.data('action');
-            var classId = button.data('class-id');
-            var modal = $(this);
-            var form = modal.find('form');
-            var submitBtn = modal.find('#submitBtn');
-
-
-                $.ajax({
-                    url: `{{ route('reviews.show', ':id') }}`.replace(':id', classId),
-                    method: 'GET',
-                    success: function(response) {
-                        modal.find('#name').val(response.name || '');
-                        modal.find('#status').val(response.status);
-                        modal.find('#classId').val(response.id);
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
+        var classId = button.data('class-id');
+        var modal = $(this);
+        $.ajax({
+            url: `{{ route('reviews.show', ':id') }}`.replace(':id', classId),
+            method: 'GET',
+            success: function(response) {
+                console.log(response.user.name);
+                modal.find('#title').text(response.title || '');
+                modal.find('#content').text(response.content);
+                modal.find('#rating').text(response.rating || '');
+                var createdAt = new Date(response.created_at);
+                var formattedDate = createdAt.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
                 });
-           
+
+                modal.find('#create_at').text(formattedDate);
+
+                // Thêm thông tin người dùng vào modal
+                modal.find('.avt_review').attr('src', `{{ asset('storage/') }}/${response.user.image}`);
+                modal.find('.text-white2').text(response.user.name);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+
         });
     </script>
 @endsection

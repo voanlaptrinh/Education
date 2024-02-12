@@ -145,7 +145,7 @@
 
 						<div class="p-3 bg-primary d-inline-block rounded-4 shadow-lg text-center" style="background:url(assets/user/images/pattern/02.png) no-repeat center center; background-size:cover;">
 							<!-- Info -->
-							<h5 class="text-white mb-0">4.5/5.0</h5>
+							<h5 class="text-white mb-0">4.9/5.0</h5>
 							<!-- Rating -->
 							<ul class="list-inline mb-2">
 								<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
@@ -154,7 +154,7 @@
 								<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
 								<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
 							</ul>
-							<p class="text-white mb-0">Based on 3265 ratings</p>
+							<p class="text-white mb-0">Trên tất cả xếp hạng</p>
 						</div>
 					</div>
 
@@ -189,9 +189,10 @@
 			</div>
 			<div class="col-xl-5 order-1 text-center text-xl-start">
 				<!-- Title -->
-				<h2 class="fs-1">Some valuable feedback from our students</h2>
+				<h2 class="fs-1"> Một số phản hồi có giá trị từ người dùng của chúng tôi
+				</h2>
 				<p>Supposing so be resolving breakfast am or perfectly. It drew a hill from me. Valley by oh twenty direct me so. Departure defective arranging rapturous did believe him all had supported. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how.</p>
-				<a href="#" class="btn btn-primary mb-0">View Reviews</a>
+				<a href="{{route('reviews.index')}}" class="btn btn-primary mb-0">Xem đánh giá</a>
 			</div>
 		</div> <!-- Row END -->
 	</div>

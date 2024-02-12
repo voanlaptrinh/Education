@@ -97,16 +97,7 @@
 
 				<p class="mb-0">Email:<span class="h6 fw-light ms-2">{{$webConfig->email}}</span></p>
 
-				<div class="row g-2 mt-2">
-					<!-- Google play store button -->
-					<div class="col-6 col-sm-4 col-md-3 col-lg-6">
-						<a href="#"> <img src="{{ config('app.url') }}/assets/user/images/client/google-play.svg" alt=""> </a>
-					</div>
-					<!-- App store button -->
-					<div class="col-6 col-sm-4 col-md-3 col-lg-6">
-						<a href="#"> <img src="{{ config('app.url') }}/assets/user/images/client/app-store.svg" alt="app-store"> </a>
-					</div>
-				</div> <!-- Row END -->
+				
 			</div>
 			<!-- Widget 3 END -->
 		</div><!-- Row END -->

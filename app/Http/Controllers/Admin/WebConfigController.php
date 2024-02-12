@@ -23,7 +23,8 @@ class WebConfigController extends Controller
             'email' => 'required|email',
             'code' => 'nullable|string',
             'gg_map' => 'nullable|string',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg', // Thêm quy tắc cho trường logo
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'video' => 'nullable|mimes:mp4,mov,ogg,qt', // Thêm quy tắc cho trường logo
             'facebook_id' => 'nullable',
             'zalo' => 'nullable',
             'pinterest' => 'nullable',
@@ -50,8 +51,9 @@ class WebConfigController extends Controller
             'logo.required' => 'Vui lòng tải lên logo.',
             'logo.image' => 'Logo phải là một hình ảnh.',
             'logo.mimes' => 'Logo chỉ được chấp nhận với các định dạng: jpeg, png, jpg, gif, svg.',
-        
-          
+            'video.mimes' => 'Logo chỉ được chấp nhận với các định dạng: mp4,mov,ogg,qt.',
+
+
         ]);
 
         // Find the existing WebConfig model based on some criteria (you might use ID or some unique identifier)
@@ -84,9 +86,16 @@ class WebConfigController extends Controller
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('logos', 'public');
             $webConfig->logo = $logoPath;
-            $webConfig->save();
         }
 
+        // Handle video upload
+        if ($request->hasFile('video')) {
+            $videoPath = $request->file('video')->store('videos', 'public');
+            $webConfig->video = $videoPath;
+        }
+
+        // Save the changes
+        $webConfig->save();
         // Redirect back or to a specific route after the update
         return redirect()->back()->with('success', 'Đã update thành công!');
     }

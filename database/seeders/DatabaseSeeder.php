@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Classes;
 use App\Models\Subject;
+use App\Models\Subscription;
 use App\Models\Web_config;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
@@ -45,23 +46,23 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'status' => 1
         ]);
-      
+
         DB::table('news')->truncate();
         for ($i = 0; $i < 5; $i++) {
             DB::table('news')->insert([
                 ['name' => 'Sample News' . $i, 'image' => 'sample_image_1.jpg', 'is_views' => 0, 'description' => 'Description of Sample News 1', 'content' => 'Content of Sample News 1', 'created_at' => now(), 'updated_at' => now()],
             ]);
         }
-        Classes::create(['name' => 'Lớp 3','status' => 1]);
-        Classes::create(['name' => 'Lớp 4','status' => 1]);
-        Classes::create(['name' => 'Lớp 5','status' => 1]);
-        Subject::create(['name' => 'Mathematics','status' => 1,'class_id' => 1,'description' => 'sdasd']);
-        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>1,'description' => 'sdasd']);
-        Subject::create(['name' => 'lớp 4 1','status' => 1, 'class_id'=>2,'description' => 'sdasd']);
-        Subject::create(['name' => 'lớp 4 1','status' => 1, 'class_id'=>2,'description' => 'sdasd']);
-        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3,'description' => 'sdasd']);
-        Subject::create(['name' => 'Physics','status' => 1, 'class_id'=>3,'description' => 'sdasd']);
-    
+        Classes::create(['name' => 'Lớp 3', 'status' => 1]);
+        Classes::create(['name' => 'Lớp 4', 'status' => 1]);
+        Classes::create(['name' => 'Lớp 5', 'status' => 1]);
+        Subject::create(['name' => 'Mathematics', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
+        Subject::create(['name' => 'lớp 4 1', 'status' => 1, 'class_id' => 2, 'description' => 'sdasd']);
+        Subject::create(['name' => 'lớp 4 1', 'status' => 1, 'class_id' => 2, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 3, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 3, 'description' => 'sdasd']);
+
 
         Web_config::create(
             [
@@ -77,7 +78,23 @@ class DatabaseSeeder extends Seeder
                 'youtube' => 'dfasdfd',
                 'tiktok' => 'tiktok',
                 'telegram' => 'telegram',
-                'instagram' =>'instagram'
-            ]);
+                'instagram' => 'instagram'
+            ]
+        );
+        Subscription::create([
+            'name' => 'gói 1',
+            'price' => 300000,
+            'expires_at' => '2024-05-01'
+        ]);
+        Subscription::create([
+            'name' => 'gói 2',
+            'price' => 300000,
+            'expires_at' => '2024-05-01'
+        ]);
+        Subscription::create([
+            'name' => 'gói 3',
+            'price' => 300000,
+            'expires_at' => '2024-05-01'
+        ]);
     }
 }

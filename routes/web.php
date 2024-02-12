@@ -150,6 +150,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/', [ReviewController::class, 'indexAdmin'])->name('reviews.admin');
             Route::post('/{id}/toggle-status', [ReviewController::class, 'toggleStatus'])->name('reviews.toggleStatus');
             Route::get('/{id}', [ReviewController::class, 'show'])->name('reviews.show');
+            Route::delete('/delete/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
         });
     });
 });
@@ -215,6 +216,7 @@ Route::prefix('/reviews')->group(function () {
 Route::get('{subject}/courses/bai-hoc-cau-hoi', [CourseAuthController::class, 'index'])->name('home.course');
 Route::get('/lessons/{lesson}', [CourseAuthController::class, 'show'])->name('lessons.show');
 
+//danh sách gói mua 
 Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('subscriptions.index');
 Route::get('/subscriptions/create', [SubscriptionController::class, 'create'])->name('subscriptions.create');
 Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
@@ -222,13 +224,13 @@ Route::get('/subscriptions/purchase/{packageId}', [SubscriptionController::class
 // routes/web.php
 Route::get('/subscriptions/confirm-purchase/{packageId}', [SubscriptionController::class, 'confirmPurchase'])->name('subscriptions.confirmPurchase');
 
-
-Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
-    Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
-    Route::post('/{course}/questions/submit', [QuestionAuthController::class, 'submitAnswers'])->name('questions.submit');
+Route::middleware(['web', 'auth'])->group(function () {
+    Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
+        Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
+    });
 });
 
-
+Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
 
 
 

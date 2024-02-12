@@ -29,7 +29,14 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('verification_token')->nullable(); //xác nhận xem tài khoản đã xác nhận chưa
             $table->string('password');
-        
+            $table->integer('remaining_exercises')->default(3); //giới hạn số lượng làm bài
+            $table->integer('remaining_videos')->default(0); //giới hạn số lượng xem bài bài giảng
+
+
+            $table->unsignedBigInteger('subscription_id')->nullable();
+            $table->foreign('subscription_id')->references('id')->on('subscriptions')->onDelete('set null');
+
+            
             $table->integer('sort_order')->nullable();
             $table->integer('create_by')->default(1)->nullable();
             $table->rememberToken();

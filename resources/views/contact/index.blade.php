@@ -66,23 +66,23 @@
                                             class="fab fa-fw fa-facebook-square"></i></a> </li>
                             @endif
                             @if ($webConfig->instagram)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram" href="#"><i
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram" href="{{$webConfig->instagram}}"><i
                                             class="fab fa-fw fa-instagram"></i></a> </li>
                             @endif
                             @if ($webConfig->twitter)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter" href="#"><i
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter" href="{{$webConfig->twitter}}"><i
                                             class="fab fa-fw fa-twitter"></i></a> </li>
                             @endif
                             @if ($webConfig->linkedin)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-linkedin" href="#"><i
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-linkedin" href="{{$webConfig->linkedin}}"><i
                                             class="fab fa-fw fa-linkedin-in"></i></a> </li>
                             @endif
                             @if ($webConfig->dribbble)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-dribbble" href="#"><i
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-dribbble" href="{{$webConfig->dribbble}}"><i
                                             class="fas fa-fw fa-basketball-ball"></i></a> </li>
                             @endif
                             @if ($webConfig->pinterest)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest" href="#"><i
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest" href="{{$webConfig->pinterest}}"><i
                                             class="fab fa-fw fa-pinterest"></i></a> </li>
                             @endif
 
@@ -94,7 +94,7 @@
                 <div class="col-md-6">
                     <!-- Title -->
                     <h2 class="mt-4 mt-md-0">Hãy nói chuyện</h2>
-                    <p>hãy liên hệ trực tiếp với chúng tôi hoặc điền vào biểu mẫu và chúng tôi sẽ liên hệ lại với bạn ngay
+                    <p>Hãy liên hệ trực tiếp với chúng tôi hoặc điền vào biểu mẫu và chúng tôi sẽ liên hệ lại với bạn ngay
                         lập tức</p>
 
                     <form action="{{ route('contact.create') }}" method="POST">
@@ -118,7 +118,7 @@
                             @enderror
                         </div>
                         <div class="mb-4 bg-light-input">
-                            <label for="emailInput" class="form-label">PĐiện thoại *</label>
+                            <label for="emailInput" class="form-label">Điện thoại *</label>
                             <input type="text" name="phone" value="{{ old('phone') }}"
                                 class="form-control form-control-lg" id="phone">
                             @error('phone')

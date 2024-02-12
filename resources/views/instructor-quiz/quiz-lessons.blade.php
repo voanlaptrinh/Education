@@ -312,10 +312,15 @@
 
                                             <!-- Table data -->
                                             <td>
+                                                @if (!empty(Auth::user()))
+                                                    <a href="{{ route('questions.show', $course) }}"
+                                                        class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                                @else
+                                                    <a href="{{ route('login') }}"
+                                                        class="btn btn-sm btn-info-soft mb-0">Đăng nhập làm bài</a>
+                                                @endif
 
 
-                                                <a href="{{ route('questions.show', $course) }}"
-                                                    class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
                                             </td>
                                         </tr>
                                     @endforeach

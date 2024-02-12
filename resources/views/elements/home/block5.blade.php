@@ -3,8 +3,8 @@
         <!-- Title -->
         <div class="row mb-4">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="fs-1">Tât cả bài học</h2>
-                <p class="mb-0">Check out most 🔥 courses in the market</p>
+                <h2 class="fs-1">Tất cả bài học</h2>
+                <p class="mb-0">Tham khảo hầu hết 🔥 khóa học trên thị trường</p>
             </div>
         </div>
 
@@ -28,14 +28,13 @@
                                     <div class="d-flex justify-content-between mb-3">
                                         <span class="hstack gap-2">
                                             <a href="#"
-                                                class="badge bg-primary bg-opacity-10 text-primary">Design</a>
-                                            <a href="#" class="badge text-bg-dark">Beginner</a>
+                                                class="badge bg-primary bg-opacity-10 text-primary">{{$item->subject->class->name}}</a>
+                                            <a href="#" class="badge text-bg-dark">{{$item->subject->name}}</a>
                                         </span>
                                         <a href="#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
                                     </div>
                                     <!-- Title -->
-                                    <h5 class="card-title"><a href="#">The complete Digital Marketing Course - 8
-                                            Course in 1</a></h5>
+                                    <h5 class="card-title"><a href="#">{{$item->title}}</a></h5>
                                     <!-- Rating -->
                                     <div class="d-flex justify-content-between mb-2">
                                         <div class="hstack gap-2">
@@ -63,12 +62,6 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <!-- Avatar -->
                                         <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm">
-                                                <img class="avatar-img rounded-1" src="assets/user/images/avatar/10.jpg"
-                                                    alt="avatar">
-                                            </div>
-                                            <p class="mb-0 ms-2"><a href="#" class="h6 fw-light mb-0">Larry
-                                                    Lawson</a></p>
                                         </div>
                                         <!-- Price -->
                                         <div>

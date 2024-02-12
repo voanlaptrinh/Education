@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->decimal('price', 8, 2);
-            $table->decimal('duration_in_days', 8, 2); // Thay đổi kiểu từ integer sang decimal
-            $table->boolean('can_do_exercises')->default(true); // Giá trị mặc định là true
-            $table->boolean('can_view_lectures')->default(true);
+            $table->integer('price');
+            $table->timestamp('expires_at')->nullable();
             $table->timestamps();
         });
     }

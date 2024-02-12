@@ -21,7 +21,7 @@ class SubscriptionController extends Controller
         $subscriptions = Subscription::all();
         $webConfig = Web_config::find(1);
         $classes = Classes::all();
-        return view('test.subscriptions.index', compact('classes','subscriptions','webConfig'));
+        return view('subscriptions.index', compact('classes','subscriptions','webConfig'));
     }
     public function create()
     {

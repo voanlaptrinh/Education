@@ -19,6 +19,7 @@ class Web_config extends Model
         'email',
         'phone',
         'zalo',
+        'video',
         'facebook_id',
         'pinterest',
         'youtube',
