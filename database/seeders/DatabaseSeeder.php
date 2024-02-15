@@ -46,6 +46,15 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'status' => 1
         ]);
+        DB::table("users")->insert([
+            'name' => 'hellobabie',
+            'username' => 'Khánh lê',
+            'email' => 'khanh309@gmail.com',
+            'password' => bcrypt('12345678'),
+            'user_type' => 1,
+            'email_verified_at' => Carbon::now(),
+            'status' => 1
+        ]);
 
         DB::table('news')->truncate();
         for ($i = 0; $i < 5; $i++) {
@@ -67,7 +76,7 @@ class DatabaseSeeder extends Seeder
         Web_config::create(
             [
                 'name' => 'edu',
-                'logo' => 'logos/BxUGTMyWa3rc4JAtpqYN113eCTAWxJDm33Lwcq2o.svg',
+                'logo' => 'logos/logo.svg',
                 'code' => 46757867,
                 'email' => 'edu@example.com',
                 'phone' => '0987733787',

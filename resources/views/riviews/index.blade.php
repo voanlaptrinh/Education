@@ -1,6 +1,5 @@
 @extends('index')
 @section('content')
-
     <section class="bg-blue align-items-center d-flex"
         style="background:url(assets/user/images/pattern/04.png) no-repeat center center; background-size:cover;">
         <div class="container">
@@ -126,80 +125,85 @@
                             </div>
                             <!-- Review item START -->
                             @foreach ($reviews as $review)
-                               @if ($review->status ==1)
-                               <div class="d-sm-flex">
-                                <!-- Avatar image -->
-                                <img class="avatar avatar-lg rounded-circle float-start me-3"
-                                    src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
-                                <div>
-                                    <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
-                                        <!-- Title -->
+                                @if ($review->status == 1)
+                                    <div class="d-sm-flex">
+                                        <!-- Avatar image -->
+                                        <img class="avatar avatar-lg rounded-circle float-start me-3"
+                                            src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
                                         <div>
-                                            <h5 class="m-0">{{ $review->user->name }}</h5>
-                                            <ul class="list-inline mb-0">
-                                                @for ($i = 1; $i <= 5; $i++)
-                                                    <li class="list-inline-item me-0">
-                                                        @if ($i <= $review->rating)
-                                                            <i class="fas fa-star text-warning"></i>
-                                                        @else
-                                                            <i class="far fa-star text-warning"></i>
-                                                        @endif
-                                                    </li>
-                                                @endfor
-                                            </ul>
-                                            <span class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
+                                            <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
+                                                <!-- Title -->
+                                                <div>
+                                                    <h5 class="m-0">{{ $review->user->name }}</h5>
+                                                    <ul class="list-inline mb-0">
+                                                        @for ($i = 1; $i <= 5; $i++)
+                                                            <li class="list-inline-item me-0">
+                                                                @if ($i <= $review->rating)
+                                                                    <i class="fas fa-star text-warning"></i>
+                                                                @else
+                                                                    <i class="far fa-star text-warning"></i>
+                                                                @endif
+                                                            </li>
+                                                        @endfor
+                                                    </ul>
+                                                    <span
+                                                        class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
+
+                                                </div>
+                                                <!-- Review star -->
+
+                                            </div>
+                                            <!-- Content -->
+                                            <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
+                                            </h6>
+                                            <p>{{ $review->content }} </p>
+                                            <!-- Button -->
 
                                         </div>
-                                        <!-- Review star -->
-
                                     </div>
-                                    <!-- Content -->
-                                    <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
-                                    </h6>
-                                    <p>{{ $review->content }} </p>
-                                    <!-- Button -->
-
-                                </div>
-                            </div>
-                            <hr>
-                               @endif
+                                    <hr>
+                                @else
+                                    <span>Chưa có đánh giá nào...</span>
+                                @endif
                             @endforeach
                             <!-- Divider -->
 
                         </div>
                         <!-- Reviews END -->
+                        @if (count($countReviews) > 0)
+                            <div class="card-footer bg-transparent px-0">
+                                <!-- Pagination START -->
+                                <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                                    <!-- Content -->
+                                    <p class="mb-0 text-center text-sm-start"></p>
+                                    <!-- Pagination -->
+                                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                                        <ul
+                                            class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                                            @if ($reviews->currentPage() > 1)
+                                                <li class="page-item mb-0"><a class="page-link"
+                                                        href="{{ $reviews->url($reviews->currentPage() - 1) }}"
+                                                        tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                            @endif
+                                            @for ($i = 1; $i <= $reviews->lastPage(); $i++)
+                                                <li
+                                                    class=" page-item mb-0 {{ $reviews->currentPage() == $i ? 'active' : '' }}">
+                                                    <a class="page-link"
+                                                        href="{{ $reviews->url($i) }}">{{ $i }}</a>
+                                                </li>
+                                            @endfor
+                                            @if ($reviews->currentPage() < $reviews->lastPage())
+                                                <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                            class="fas fa-angle-right"></i></a></li>
+                                            @endif
 
-                        <div class="card-footer bg-transparent px-0">
-                            <!-- Pagination START -->
-                            <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-                                <!-- Content -->
-                                <p class="mb-0 text-center text-sm-start"></p>
-                                <!-- Pagination -->
-                                <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                                    <ul
-                                        class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        @if ($reviews->currentPage() > 1)
-                                            <li class="page-item mb-0"><a class="page-link"
-                                                    href="{{ $reviews->url($reviews->currentPage() - 1) }}"
-                                                    tabindex=""><i class="fas fa-angle-left"></i></a></li>
-                                        @endif
-                                        @for ($i = 1; $i <= $reviews->lastPage(); $i++)
-                                            <li
-                                                class=" page-item mb-0 {{ $reviews->currentPage() == $i ? 'active' : '' }}">
-                                                <a class="page-link"
-                                                    href="{{ $reviews->url($i) }}">{{ $i }}</a>
-                                            </li>
-                                        @endfor
-                                        @if ($reviews->currentPage() < $reviews->lastPage())
-                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                                        class="fas fa-angle-right"></i></a></li>
-                                        @endif
-
-                                    </ul>
-                                </nav>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Pagination END -->
                             </div>
-                            <!-- Pagination END -->
-                        </div>
+                        @endif
+
                     </div>
                     <!-- Student review END -->
                 </div>
@@ -207,5 +211,4 @@
             </div><!-- Row END -->
         </div>
     </section>
- 
 @endsection

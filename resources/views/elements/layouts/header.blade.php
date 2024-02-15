@@ -3,10 +3,15 @@
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
+            @if (!empty( $webConfig->logo))
+                
             <a class="navbar-brand" href="/">
                 <img class="light-mode-item navbar-brand-item" src=" {{ asset('storage/' . $webConfig->logo) }}" alt="logo">
                 <img class="dark-mode-item navbar-brand-item" src="  {{ asset('storage/' . $webConfig->logo) }}" alt="logo">
-            </a>
+            </a> 
+          
+            @endif
+
             <!-- Logo END -->
 
             <!-- Responsive navbar toggler -->
@@ -277,6 +282,10 @@
                     <!-- Nav item 2 Pages -->
                     <li class="nav-item ">
                         <a class="nav-link " href="{{route('reviews.index')}}">Đánh giá</a>
+                        
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="{{route('subscriptions.index')}}">Bảng giá</a>
                         
                     </li>
 

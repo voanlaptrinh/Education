@@ -21,7 +21,7 @@ class SubscriptionController extends Controller
         $subscriptions = Subscription::all();
         $webConfig = Web_config::find(1);
         $classes = Classes::all();
-        return view('subscriptions.index', compact('classes','subscriptions','webConfig'));
+        return view('subscriptions.index', compact('classes', 'subscriptions', 'webConfig'));
     }
     public function create()
     {
@@ -62,19 +62,5 @@ class SubscriptionController extends Controller
             'qrCode' => $qrCode,
         ]);
     }
-    private function generateQRCodeData($url)
-    {
-        $renderer = new \BaconQrCode\Renderer\Image\Png();
-        $renderer = new ImageRenderer(
-            new RendererStyle(400),
-            new Png()
-        );
-
-        $writer = new Writer($renderer);
-
-        // Generate QR code as base64 image data
-        $imageData = $writer->writeDataUri($url);
-
-        return $imageData;
-    }
+  
 }

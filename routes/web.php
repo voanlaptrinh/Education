@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\WebConfigController;
 use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
+use App\Http\Controllers\Auth\VnpayController;
 use App\Http\Controllers\VerificationController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
@@ -221,6 +222,13 @@ Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('su
 Route::get('/subscriptions/create', [SubscriptionController::class, 'create'])->name('subscriptions.create');
 Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
 Route::get('/subscriptions/purchase/{packageId}', [SubscriptionController::class, 'purchase'])->name('subscriptions.purchase');
+
+
+//Thanh toán
+Route::post('/vnpayment', [VnpayController::class, 'vnpay_payment'])->name('vnpayment');
+Route::get('/Getvnpayment', [VnpayController::class, 'Getvnpayment'])->name('Getvnpayment');
+
+
 // routes/web.php
 Route::get('/subscriptions/confirm-purchase/{packageId}', [SubscriptionController::class, 'confirmPurchase'])->name('subscriptions.confirmPurchase');
 

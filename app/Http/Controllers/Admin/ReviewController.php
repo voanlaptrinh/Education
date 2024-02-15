@@ -16,7 +16,9 @@ class ReviewController extends Controller
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
         $reviews = Review::paginate(5);
-        return view('riviews.index', compact('classes', 'webConfig', 'reviews'));
+        $countReviews = Review::where('status' , '1')->get();
+     
+        return view('riviews.index', compact('classes', 'webConfig', 'reviews','countReviews'));
     }
     public function indexAdmin(Request $request)
     {
