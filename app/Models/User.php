@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -19,7 +20,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'image', 'email', 'password', 'gender', 'phone', 'address', 'birthday',
+        'name', 'image', 'email', 'password', 'gender', 'phone', 'address', 'birthday', 'subscription_id', 'expires_at',
     ];
 
     /**
@@ -55,13 +56,21 @@ class User extends Authenticatable
         $this->password_reset_expires_at = $expires_at;
         $this->save();
     }
-    public function subscription()
+    protected $dates = ['expires_at'];
+
+    public function subscription(): BelongsTo
     {
         return $this->belongsTo(Subscription::class);
     }
 
-    public function hasSubscription()
+    public function hasSubscription(): bool
     {
         return $this->subscription !== null;
     }
+
+    public function isSubscriptionExpired(): bool
+    {
+        return $this->expires_at !== null && now()->gt($this->expires_at);
+    }
+    
 }

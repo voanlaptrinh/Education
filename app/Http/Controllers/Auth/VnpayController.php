@@ -13,11 +13,11 @@ class VnpayController extends Controller
         $data = $request->all();
 
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "http://localhost:26/Getvnpayment";
+        $vnp_Returnurl = "http://localhost:8000/Getvnpayment";
         $vnp_TmnCode = "B74W6JJL"; //Mã website tại VNPAY 
         $vnp_HashSecret = "VAFRSXAANYQCBJDPQOYDDZPUGGTTOFPR"; //Chuỗi bí mật
 
-        $vnp_TxnRef = '33332'; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+        $vnp_TxnRef = '3qwew'; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = 'Thanh toán hoá đơn';
         $vnp_OrderType = "education";
         $vnp_Amount =  $data['total'] * 100;
@@ -32,7 +32,6 @@ class VnpayController extends Controller
             "vnp_Command" => "pay",
             "vnp_CreateDate" => date('YmdHis'),
             "vnp_CurrCode" => "VND",
-            
             "vnp_IpAddr" => $vnp_IpAddr,
             "vnp_Locale" => $vnp_Locale,
             "vnp_OrderInfo" => $vnp_OrderInfo,

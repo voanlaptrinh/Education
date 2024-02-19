@@ -97,7 +97,7 @@
                                             class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0 "> <i class="bi bi-pencil-square"></i></a>
                                         <form action="{{ route('lessons.destroy', ['lesson' => $lesson]) }}"
                                             method="post"
-                                            onsubmit="return confirm('Are you sure you want to delete this lesson?')">
+                                            onsubmit="return confirm('Bạn có chắc chắn là muốn xóa bài học?')">
                                             @csrf
                                             @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
                                             <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" type="submit"><i

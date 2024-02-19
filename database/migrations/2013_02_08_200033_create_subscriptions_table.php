@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->timestamp('expires_at')->nullable();
+            $table->integer('duration_months')->nullable();
             $table->timestamps();
         });
     }

@@ -1,14 +1,12 @@
 @extends('index')
 @section('content')
-   
-
     @if (session('success'))
         <div style="color: green;">
             {{ session('success') }}
         </div>
     @endif
 
-  
+
 
     <section class="py-5 price-wrap">
         <div class="container">
@@ -34,7 +32,7 @@
                     </figure>
                     <!-- Title -->
                     <h1>Bảng giá các gói học tập</h1>
-                    <p class="mb-4 pb-1">Nhận thức cuối cùng chắc chắn ngày ngọt ngào tại {{$webConfig->name}}</p>
+                    <p class="mb-4 pb-1">Nhận thức cuối cùng chắc chắn ngày ngọt ngào tại {{ $webConfig->name }}</p>
 
 
                     <!-- Switch END -->
@@ -75,26 +73,27 @@
                         <div class="card-body pt-0">
                             <ul class="list-unstyled mt-2 mb-0">
                                 <li class="mb-3 h6 fw-light">
-                                    <i class="bi bi-patch-check-fill text-success me-2"></i>Up to
-                                    05 users monthly
+                                    <i class="bi bi-patch-check-fill text-success me-2"></i>Tối đa 3 câu hỏi và bài giảng
                                 </li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Free 5
-                                    host &amp; domain</li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Custom
-                                    infrastructure</li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Access
-                                    to all our room</li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>24/7
-                                    dedicated Support</li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Unlimited
-                                    updates</li>
-                                <li class="h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Landing pages
-                                    &amp; Web widgets</li>
+                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>
+                                    Xem được giải thích đáp án chi tiết</li>
+                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>
+                                    Không bị giới hạn số lượng đề/câu hỏi được luyện mỗi ngày</li>
+
+                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Được ưu tiên giải đáp thắc mắc, nếu có</li>
+                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Hỗ trợ
+                                    24/7</li>
+                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Cập nhật
+                                    không giới hạn</li>
+
                             </ul>
                         </div>
                         <!-- Card Footer -->
                         <div class="card-footer text-center d-grid pb-0">
-                            <button type="button" class="btn btn-light mb-0" disabled>Mua gói</button>
+                            <button type="button" class="btn btn-light mb-0" data-container="body" data-bs-toggle="popover"
+                                data-bs-placement="top"
+                                data-bs-content="Với tài khoản Free sẽ được được làm tối thiểu 3 câu hỏi và video bài giảng">Miễn
+                                phí</button>
                         </div>
                     </div>
                 </div>
@@ -115,8 +114,8 @@
                                     <!-- Price -->
                                     <div>
                                         <h4 class="text-success mb-0 plan-price">{{ $subscription->price }}VNĐ</h4>
-                                        <p class="small mb-0">/ Thời hạn đến <span
-                                                class="text-success">({{ \Carbon\Carbon::parse($subscription->expires_at)->format('d/m/Y') }})</span>
+                                        <p class="small mb-0">/ Thời hạn <span
+                                                class="text-success">({{ ( $subscription->duration_months )}} Tháng) </span>
                                         </p>
                                     </div>
                                 </div>
@@ -132,39 +131,42 @@
                             <!-- Card Body -->
                             <div class="card-body pt-0">
                                 <ul class="list-unstyled mt-2 mb-0">
-                                    <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Up
-                                        to
-                                        05 users monthly</li>
                                     <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>Free 5
-                                        host &amp; domain</li>
+                                            class="bi bi-patch-check-fill text-success me-2"></i>Được luyện tất cả các đề
+                                        PRO trong gói</li>
                                     <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>Custom
-                                        infrastructure</li>
+                                            class="bi bi-patch-check-fill text-success me-2"></i>Được xem giải thích chi
+                                        tiết</li>
                                     <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>Access
-                                        to all our room</li>
+                                            class="bi bi-patch-check-fill text-success me-2"></i>Không bị giới hạn số lượng
+                                        đề/câu hỏi được luyện mỗi ngày </li>
                                     <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>24/7
-                                        dedicated Support</li>
-                                    <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-x-octagon-fill text-danger me-2"></i>Unlimited
-                                        updates</li>
-                                    <li class="h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Landing
-                                        pages
-                                        &amp; Web widgets</li>
+                                            class="bi bi-patch-check-fill text-success me-2"></i>Được ưu tiên giải đáp thắc
+                                        mắc, nếu có</li>
+                                    <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Hỗ
+                                        trợ
+                                        24/7</li>
+                                    <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Cập
+                                        nhật
+                                        không giới hạn</li>
                                 </ul>
                             </div>
                             <!-- Card Footer -->
+                            @if (!empty(Auth::user()))
                             <form action="{{ route('vnpayment') }}" method="post">
-
                                 @csrf
                                 <input hidden type="number" name="total" value="{{ $subscription->price }}">
                                 <div class="card-footer text-center d-grid pb-0">
                                     <button name="redirect" type="submit" class="btn btn-success mb-0">Mua gói</button>
                                 </div>
                             </form>
-                           
+                            @else
+                                <div class="card-footer text-center d-grid pb-0">
+                                    <button type="button" class="btn btn-success mb-0" data-bs-toggle="modal" data-bs-target="#viewReview">Mua gói</button>
+                                </div>
+                            @endif
+
+
                         </div>
                     </div>
                     <!-- Pricing item END -->
@@ -173,4 +175,31 @@
             <!-- Pricing END -->
         </div>
     </section>
+    <div class="modal fade" id="viewReview" tabindex="-1" aria-labelledby="viewReviewLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal header -->
+                <div class="modal-header ">
+                    <h5 class="modal-title text-dark" id="viewReviewLabel">Vui lòng đăng nhập để mua gói</h5>
+                    <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="d-md-flex">
+                        <!-- Avatar -->
+                    
+                        <!-- Text -->
+                        <div>
+                            <img src="/assets/user/images/element/02.svg" alt="">
+                            
+                            <p class="mb-2">Để có thể mua gói học tập bạn cần đăng nhập tài khoản của mình! </p>
+                        </div>	
+                    </div>
+                    <a href="{{ route('login') }}" class="btn btn-success w-100">Đăng nhập</a>
+                </div>
+                <!-- Modal footer -->
+              
+            </div>
+        </div>
+    </div>
 @endsection

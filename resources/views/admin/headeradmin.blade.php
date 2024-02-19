@@ -24,18 +24,7 @@
                 <!-- Title -->
                 <li class="nav-item ms-2 my-2">Pages</li>
 
-                <!-- menu item 2 -->
-                {{-- <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#collapsepage" role="button" aria-expanded="true" aria-controls="collapsepage">
-                        <i class="bi bi-basket fa-fw me-2"></i>Courses
-                    </a>
-                    <!-- Submenu -->
-                    <ul class="nav collapse flex-column show" id="collapsepage" data-bs-parent="#navbar-sidebar">
-                        <li class="nav-item"> <a class="nav-link" href="admin-course-list.html">All Courses</a></li>
-                        <li class="nav-item"> <a class="nav-link active" href="admin-course-category.html">Course Category</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="admin-course-detail.html">Course Detail</a></li>
-                    </ul>
-                </li> --}}
+               
 
                 <!-- Menu item 3 -->
                 <li class="nav-item"> <a class="nav-link" href="{{ route('indexNews') }}"><i

@@ -32,8 +32,8 @@ return new class extends Migration
             $table->integer('remaining_exercises')->default(3); //giới hạn số lượng làm bài
             $table->integer('remaining_videos')->default(0); //giới hạn số lượng xem bài bài giảng
 
-
             $table->unsignedBigInteger('subscription_id')->nullable();
+            $table->timestamp('expires_at')->nullable();
             $table->foreign('subscription_id')->references('id')->on('subscriptions')->onDelete('set null');
 
             

@@ -57,7 +57,8 @@
                                     <!-- Answer options -->
                                     @foreach ($question->answers as $key => $answer)
                                         @if ($answer->is_correct == 1)
-                                            <p class="mb-3"><b class="text-success">{{ numericToLetter($key) }}</b>
+                                            <p class="mb-3"><b class="text-success p-1" style="border: 2px solid rgb(7, 255, 53); border-radius: 50%">
+                                                {{ numericToLetter($key) }}</b>
                                                 . {{ $answer->text }}
                                             </p>
                                         @else

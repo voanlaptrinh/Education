@@ -116,6 +116,8 @@
                                 <!-- Table body START -->
                                 <tbody>
                                     <!-- Table item -->
+                                    @if (!empty($lessons))
+                                        
                                     @foreach ($lessons as $lesson)
                                         <tr>
                                             <!-- Course item -->
@@ -194,10 +196,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-
-
-
-
+                                    @endif
 
 
 
