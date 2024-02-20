@@ -4,20 +4,22 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class VnpayController extends Controller
 {
+    public static function generateOrderCode($length = 8)
+    {
+        return 'ORD' . Str::random($length);
+    }
     public function vnpay_payment(Request $request)
-
     {
         $data = $request->all();
-
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "http://localhost:8000/Getvnpayment";
+        $vnp_Returnurl = route('Getvnpayment');
         $vnp_TmnCode = "B74W6JJL"; //Mã website tại VNPAY 
         $vnp_HashSecret = "VAFRSXAANYQCBJDPQOYDDZPUGGTTOFPR"; //Chuỗi bí mật
 
-        $vnp_TxnRef = '3qwew'; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+        $vnp_TxnRef = $this->generateOrderCode(); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = 'Thanh toán hoá đơn';
         $vnp_OrderType = "education";
         $vnp_Amount =  $data['total'] * 100;
