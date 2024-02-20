@@ -263,7 +263,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <!-- Links -->
-                        @if (Auth::user()->user_type = 1)
+                        @if (Auth::user()->user_type = 0)
                             <li><a class="dropdown-item" href="{{ route('admin.index') }}"><i
                                         class="fas fa-user-shield fa-fw me-2"></i>Đến trang quản trị</a></li>
                         @endif
