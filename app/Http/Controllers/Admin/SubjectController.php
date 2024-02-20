@@ -15,7 +15,7 @@ class SubjectController extends Controller
 
         $subjects = Subject::when($searchQuery, function ($query) use ($searchQuery) {
             return $query->where('name', 'like', '%'.$searchQuery.'%');
-        })->get();
+        })->latest()->get();
         $classes = Classes::all();
         $totalSubjects = Subject::count();
         $activeSubjects = Subject::where('status', '1')->count();

@@ -13,7 +13,7 @@ class LecturesController extends Controller
 {
     public function index(Chapter $chapter)
     {
-        $lectures = $chapter->lectures()->paginate(4);
+        $lectures = $chapter->lectures()->latest()->paginate(4);
 
         return view('admin.lectures.index', compact('chapter', 'lectures'));
     }

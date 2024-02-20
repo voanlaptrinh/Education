@@ -117,85 +117,85 @@
                                 <tbody>
                                     <!-- Table item -->
                                     @if (!empty($lessons))
-                                        
-                                    @foreach ($lessons as $lesson)
-                                        <tr>
-                                            <!-- Course item -->
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <!-- Image -->
-                                                    <div class="w-60px">
-                                                        <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
-                                                            class="rounded" alt="">
-                                                    </div>
-                                                    <div class="mb-0 ms-2">
-                                                        <!-- Title -->
-                                                        <h6><a href="#">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        {{ $lesson->title }}</font>
-                                                                </font>
-                                                            </a></h6>
-                                                        <!-- Info -->
-                                                        @if ($lesson->chapters)
-                                                            <div class="d-sm-flex">
-                                                                <p class="h6 fw-light mb-0 small me-3">
-                                                                    <i class="fas fa-table text-orange me-2"></i>
+                                        @foreach ($lessons as $lesson)
+                                            <tr>
+                                                <!-- Course item -->
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <!-- Image -->
+                                                        <div class="w-60px">
+                                                            <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
+                                                                class="rounded" alt="">
+                                                        </div>
+                                                        <div class="mb-0 ms-2">
+                                                            <!-- Title -->
+                                                            <h6><a href="#">
                                                                     <font style="vertical-align: inherit;">
                                                                         <font style="vertical-align: inherit;">
-                                                                            {{ $lesson->chapters->count() }}
-                                                                            Bài giảng</font>
+                                                                            {{ $lesson->title }}</font>
                                                                     </font>
-                                                                </p>
-                                                                <ul class="list-unstyled mb-0">
-                                                                    {{-- Thêm thông tin về chương trình giảng dạy nếu cần --}}
-                                                                </ul>
-                                                            </div>
-                                                        @else
-                                                            <div class="d-sm-flex">
-                                                                <p class="h6 fw-light mb-0 small me-3">
+                                                                </a></h6>
+                                                            <!-- Info -->
+                                                            @if ($lesson->chapters)
+                                                                <div class="d-sm-flex">
+                                                                    <p class="h6 fw-light mb-0 small me-3">
+                                                                        <i class="fas fa-table text-orange me-2"></i>
+                                                                        <font style="vertical-align: inherit;">
+                                                                            <font style="vertical-align: inherit;">
+                                                                                {{ $lesson->chapters->count() }}
+                                                                                Bài giảng</font>
+                                                                        </font>
+                                                                    </p>
+                                                                    <ul class="list-unstyled mb-0">
+                                                                        {{-- Thêm thông tin về chương trình giảng dạy nếu cần --}}
+                                                                    </ul>
+                                                                </div>
+                                                            @else
+                                                                <div class="d-sm-flex">
+                                                                    <p class="h6 fw-light mb-0 small me-3">
 
-                                                                </p>
-                                                                <p class="h6 fw-light mb-0 small text-muted">
-                                                                    <i class="fas fa-info-circle me-2"></i>
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Không có bài
-                                                                            giảng nào</font>
-                                                                    </font>
-                                                                </p>
-                                                            </div>
-                                                        @endif
+                                                                    </p>
+                                                                    <p class="h6 fw-light mb-0 small text-muted">
+                                                                        <i class="fas fa-info-circle me-2"></i>
+                                                                        <font style="vertical-align: inherit;">
+                                                                            <font style="vertical-align: inherit;">Không có
+                                                                                bài
+                                                                                giảng nào</font>
+                                                                        </font>
+                                                                    </p>
+                                                                </div>
+                                                            @endif
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <!-- Enrolled item -->
-                                            <td class="text-center text-sm-start">
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">{{ $lesson->views }}</font>
-                                                </font>
-                                            </td>
-                                            <!-- Status item -->
-                                            <td>
-                                                <div class="badge bg-success bg-opacity-10 text-success">
+                                                </td>
+                                                <!-- Enrolled item -->
+                                                <td class="text-center text-sm-start">
                                                     <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">Hoạt động</font>
+                                                        <font style="vertical-align: inherit;">{{ $lesson->views }}</font>
                                                     </font>
-                                                </div>
-                                            </td>
-                                            <!-- Price item -->
-                                            <td>
-                                                <font style="vertical-align: inherit;">
-                                                    <font style="vertical-align: inherit;">$250</font>
-                                                </font>
-                                            </td>
-                                            <!-- Action item -->
-                                            <td>
+                                                </td>
+                                                <!-- Status item -->
+                                                <td>
+                                                    <div class="badge bg-success bg-opacity-10 text-success">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">Hoạt động</font>
+                                                        </font>
+                                                    </div>
+                                                </td>
+                                                <!-- Price item -->
+                                                <td>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">$250</font>
+                                                    </font>
+                                                </td>
+                                                <!-- Action item -->
+                                                <td>
 
-                                                <a href="{{ route('lessons.show', ['lesson' => $lesson]) }}"
-                                                    class="btn btn-sm btn-danger">Xem chi tiết bài học</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                                    <a href="{{ route('lessons.show', ['lesson' => $lesson]) }}"
+                                                        class="btn btn-sm btn-danger">Xem chi tiết bài học</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     @endif
 
 
@@ -312,8 +312,13 @@
                                             <!-- Table data -->
                                             <td>
                                                 @if (!empty(Auth::user()))
-                                                    <a href="{{ route('questions.show', $course) }}"
-                                                        class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                                    @if ($course->questions->count() > 0)
+                                                        <a href="{{ route('questions.show', $course) }}"
+                                                            class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                                    @else
+                                                        <button type="button" class="btn btn-sm btn-info-soft mb-0">Chưa
+                                                            có câu hỏi</button>
+                                                    @endif
                                                 @else
                                                     <a href="{{ route('login') }}"
                                                         class="btn btn-sm btn-info-soft mb-0">Đăng nhập làm bài</a>

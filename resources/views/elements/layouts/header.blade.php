@@ -10,14 +10,12 @@
                     <img class="dark-mode-item navbar-brand-item" src="  {{ asset('storage/' . $webConfig->logo) }}"
                         alt="logo">
                 </a>
-
             @else
-            <a class="navbar-brand" href="/">
-                <img class="light-mode-item navbar-brand-item" src="/assets/user/images/logo.svg "
-                    alt="logo">
-                <img class="dark-mode-item navbar-brand-item" src="/assets/user/images/logo-light.svg"
-                    alt="logo">
-            </a>
+                <a class="navbar-brand" href="/">
+                    <img class="light-mode-item navbar-brand-item" src="/assets/user/images/logo.svg " alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="/assets/user/images/logo-light.svg"
+                        alt="logo">
+                </a>
             @endif
 
             <!-- Logo END -->
@@ -265,10 +263,15 @@
                             <hr class="dropdown-divider">
                         </li>
                         <!-- Links -->
+                        @if (Auth::user()->user_type = 1)
+                            <li><a class="dropdown-item" href="{{ route('admin.index') }}"><i
+                                        class="fas fa-user-shield fa-fw me-2"></i>Đến trang quản trị</a></li>
+                        @endif
                         <li><a class="dropdown-item" href="{{ route('profile', Auth::user()->id) }}"><i
                                     class="bi bi-person fa-fw me-2"></i>Chỉnh sửa hồ sơ</a></li>
                         <li><a class="dropdown-item" href="{{ route('user.examHistory') }}"><i
                                     class="bi bi-gear fa-fw me-2"></i>Lịch sử làm bài</a></li>
+                        
                         <li><a class="dropdown-item" href="#"><i
                                     class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
                         <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('logout') }}"><i

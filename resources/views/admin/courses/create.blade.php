@@ -26,14 +26,23 @@
                     </span>
                 @enderror
             </div>
+          
+          
+            <div class="col-lg-12  pt-3">
+                <label class="form-label custom-cursor-default-hover">Miễn phí hoặc mất phí</label>
+                <div class="form-check form-switch form-check-lg mb-0">
+                    <input class="form-check-input mt-0 price-toggle me-2 custom-cursor-on-hover" type="checkbox" name="is_free" id="is_free" value="1" {{ old('is_free') ? 'checked' : '' }}>
+                    <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Bật lên nếu là bài làm miên phí</label>
+                </div>
+            </div>
             <div class="col-12 pt-4">
                 <div
                     class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
                     <!-- Image -->
                     <img src="/assets/user/images/element/gallery.svg" class="h-50px" alt="">
                     <div>
-                        <h6 class="my-2">Tải ảnh đề bài vào đây, hoặc<a href="#!"
-                                class="text-primary"> Browse</a></h6>
+                        <h6 class="my-2">Tải ảnh đề bài vào đây, hoặc<a href="#!" class="text-primary"> Browse</a>
+                        </h6>
                         <label style="cursor:pointer;">
                             <span>
                                 <input class="form-control stretched-link custom-cursor-on-hover" type="file"
@@ -44,10 +53,10 @@
                             thước đề xuất là (600*450).</p>
                     </div>
                     @error('image')
-                    <span class="invalid-feedback" role="alert">
-                        <label class="error" id="name_error" for="name">{{ $message }}</label>
-                    </span>
-                @enderror
+                        <span class="invalid-feedback" role="alert">
+                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                        </span>
+                    @enderror
                 </div>
 
             </div>

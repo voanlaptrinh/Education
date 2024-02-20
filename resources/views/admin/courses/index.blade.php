@@ -5,7 +5,8 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Thêm đề bài cho môn học: <span style="color:red">({{ $subject->name }})</span> </h1>
+                <h1 class="h3 mb-2 mb-sm-0">Thêm đề bài cho môn học: <span style="color:red">({{ $subject->name }})</span>
+                </h1>
                 <a href="{{ route('courses.create', $subject) }}" class="btn btn-sm btn-primary mb-0">Thêm mới đề bài</a>
             </div>
         </div>
@@ -18,7 +19,7 @@
                 <!-- Search and select START -->
                 <div class="row g-3 align-items-center justify-content-between">
 
-                 
+
 
 
                 </div>
@@ -38,6 +39,7 @@
                                 <th scope="col" class="border-0 rounded-start">Tên khóa học</th>
                                 <th scope="col" class="border-0 ">Người đăng </th>
                                 <th scope="col" class="border-0">Thời gian làm bài</th>
+                                <th scope="col" class="border-0">Miễn phí</th>
                                 <th scope="col" class="border-0">Câu hỏi</th>
                                 <th scope="col" class="border-0 rounded-end">Thao tác</th>
                             </tr>
@@ -52,7 +54,7 @@
                             @foreach ($courses as $course)
                                 <tr>
                                     <!-- Table data -->
-                                   
+
                                     <td>
                                         <div class="d-flex align-items-center position-relative">
                                             <!-- Image -->
@@ -76,16 +78,28 @@
                                     <!-- Table data -->
                                     <td>
 
-                                        {{($course->time_limit/60)}} phút
-                                       
+                                        {{ $course->time_limit / 60 }} phút
 
+
+
+                                    </td>
+                                    <td>
+
+
+
+                                        @if ($course->is_free == 1)
+                                            <button class="btn btn-success">Miễn phí</button>
+                                        @else
+                                            <button class="btn btn-warning">Mất phí</button>
+                                        @endif
 
                                     </td>
 
                                     <td>
 
 
-                                       <a class="btn btn-success" href="{{ route('courses.show', $course) }}">Thêm câu hỏi</a>
+                                        <a class="btn btn-success" href="{{ route('courses.show', $course) }}">Thêm câu
+                                            hỏi</a>
 
                                         {{-- <form action="{{ route('subjects.destroy', $subject) }}" method="post">
                                             @csrf
@@ -95,13 +109,17 @@
                                                 môn học</button>
                                         </form> --}}
                                     </td>
-                                    <td class="d-flex"> 
-                                        <a href="{{ route('courses.edit', ['subject' => $subject, 'course' => $course]) }}" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="bi bi-pencil-square"></i></a>
-                                        <form method="POST" action="{{ route('topic.destroy', ['subject' => $subject, 'course' => $course]) }}">
+                                    <td class="d-flex">
+                                        <a href="{{ route('courses.edit', ['subject' => $subject, 'course' => $course]) }}"
+                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
+                                                class="bi bi-pencil-square"></i></a>
+                                        <form method="POST"
+                                            action="{{ route('topic.destroy', ['subject' => $subject, 'course' => $course]) }}">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" onclick="return confirm('Bạn có chắc muốn xóa đề bài này không?')"><i
-                                                class="bi bi-trash  "></i></button>
+                                            <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                                onclick="return confirm('Bạn có chắc muốn xóa đề bài này không?')"><i
+                                                    class="bi bi-trash  "></i></button>
                                         </form>
                                     </td>
 
@@ -128,22 +146,19 @@
                                     class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                                     @if ($courses->currentPage() > 1)
                                         <li class="page-item mb-0"><a class="page-link"
-                                                href="{{ $courses->url($courses->currentPage() - 1) }}"
-                                                tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                                href="{{ $courses->url($courses->currentPage() - 1) }}" tabindex=""><i
+                                                    class="fas fa-angle-left"></i></a></li>
                                     @endif
                                     @for ($i = 1; $i <= $courses->lastPage(); $i++)
-                                        <li
-                                            class=" page-item mb-0 {{ $courses->currentPage() == $i ? 'active' : '' }}">
-                                            <a class="page-link"
-                                                href="{{ $courses->url($i) }}">{{ $i }}</a>
+                                        <li class=" page-item mb-0 {{ $courses->currentPage() == $i ? 'active' : '' }}">
+                                            <a class="page-link" href="{{ $courses->url($i) }}">{{ $i }}</a>
                                         </li>
                                     @endfor
                                     @if ($courses->currentPage() < $courses->lastPage())
-                                    <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                        class="fas fa-angle-right"></i></a></li> 
-
+                                        <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                    class="fas fa-angle-right"></i></a></li>
                                     @endif
-                               
+
                                 </ul>
                             </nav>
                         </div>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('time_limit')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('is_free')->default(true);
             $table->timestamps();
             $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
         });

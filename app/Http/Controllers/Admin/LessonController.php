@@ -16,7 +16,7 @@ class LessonController extends Controller
 
         $lessons = Lesson::when($searchQuery, function ($query) use ($searchQuery) {
             return $query->where('title', 'like', '%' . $searchQuery . '%');
-        })->paginate(3);
+        })->latest()->paginate(6);
         return view('admin.lession.index', compact('lessons','searchQuery'));
     }
     public function create()

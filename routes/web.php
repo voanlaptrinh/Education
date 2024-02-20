@@ -85,6 +85,8 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{subject}/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
             Route::put('/{subject}/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
             Route::delete('subjects/{subject}/courses/{course}', [CourseController::class, 'destroyCourse'])->name('topic.destroy');
+           
+            Route::post('/{id}/is_free', [CourseController::class, 'toggleStatus'])->name('courses.toggleStatus');
         });
 
         //Câu hỏi liên quan đến đề bài
@@ -235,6 +237,7 @@ Route::get('/subscriptions/confirm-purchase/{packageId}', [SubscriptionControlle
 Route::middleware(['web', 'auth'])->group(function () {
     Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
         Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
+        Route::post('/{course}/questions/submit', [QuestionAuthController::class, 'submitAnswers'])->name('questions.submit');
     });
 });
 

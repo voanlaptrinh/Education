@@ -159,13 +159,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <!-- Price and time -->
                                         <div>
-                                            <div class="d-flex align-items-center">
-                                                <h3 class="fw-bold mb-0 me-2">$150</h3>
-                                                <span class="text-decoration-line-through mb-0 me-2">$350</span>
-                                                <span class="badge text-bg-orange mb-0">60% off</span>
-                                            </div>
-                                            <p class="mb-0 text-danger"><i class="fas fa-stopwatch me-2"></i>5 days left at
-                                                this price</p>
+                                         <h5 class="mb-3 font-base text-dark  d-inline-block">{{ $lesson->title }}</h5>
                                         </div>
 
                                         <!-- Share button with dropdown -->
@@ -191,10 +185,7 @@
                                     </div>
 
                                     <!-- Buttons -->
-                                    <div class="mt-3 d-sm-flex justify-content-sm-between">
-                                        <a href="#" class="btn btn-outline-primary mb-0">Free trial</a>
-                                        <a href="#" class="btn btn-success mb-0">Buy course</a>
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <!-- Video END -->

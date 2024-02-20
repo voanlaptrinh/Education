@@ -14,7 +14,7 @@ class CourseController extends Controller
 {
     public function index(Subject $subject)
     {
-        $courses = $subject->courses()->paginate(4);
+        $courses = $subject->courses()->latest()->paginate(4);
         return view('admin.courses.index', compact('subject', 'courses'));
     }
 
@@ -29,16 +29,17 @@ class CourseController extends Controller
             'name' => 'required|string',
             'time_limit' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
-
         ], [
             'name.required' => 'Tiêu đề là bắt buộc',
             'time_limit.required' => 'Bạn cần nhập thời gian làm bài',
-            'image.required' => 'Bạn cần đưa ảnh lên'
+            'image.required' => 'Bạn cần đưa ảnh lên',
+
         ]);
 
         $courseData = [
             'name' => $request->name,
             'time_limit' => $request->time_limit * 60,
+            'is_free' => $request->has('is_free'),
         ];
 
         // Handle image upload
@@ -74,6 +75,8 @@ class CourseController extends Controller
         $courseData = [
             'name' => $request->name,
             'time_limit' => $request->time_limit * 60,
+            'is_free' => $request->has('is_free'),
+        
         ];
 
         // Xử lý tải lên hình ảnh mới nếu có
@@ -103,6 +106,8 @@ class CourseController extends Controller
         // Chuyển hướng về trang danh sách đề bài
         return redirect(route('courses.index', $subject))->with('success', 'Xóa đề bài thành công!');
     }
+
+   
     public function show(Course $course)
     {
         $classes = Classes::all();

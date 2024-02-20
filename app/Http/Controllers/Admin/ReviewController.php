@@ -30,7 +30,7 @@ class ReviewController extends Controller
             $reviewsQuery->where('status', $status);
         }
     
-        $reviews = $reviewsQuery->paginate(5);
+        $reviews = $reviewsQuery->latest()->paginate(5);
 
         $totalReview = Review::count();
         $activeReview = Review::where('status', '1')->count();

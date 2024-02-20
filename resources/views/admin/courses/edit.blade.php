@@ -20,11 +20,6 @@
                         </span>
                     @enderror
                 </div>
-                {{-- <div class="form-group">
-                    <label for="name">Course Name</label>
-                    <input type="text" name="name" class="form-control" value="{{ old('name', $course->name) }}"
-                        required>
-                </div> --}}
                 <div class="form-group pt-3">
                     <label for="title">Thời gian làm bài (phút)</label>
                     <input type="number" name="time_limit" class="form-control"
@@ -35,11 +30,15 @@
                         </span>
                     @enderror
                 </div>
-                {{-- <div class="form-group">
-                    <label for="time_limit">Time Limit (minutes)</label>
-                    <input type="number" name="time_limit" class="form-control"
-                        value="{{ old('time_limit', $course->time_limit / 60) }}" required>
-                </div> --}}
+               
+                <div class="col-lg-12  pt-3">
+                    <label class="form-label custom-cursor-default-hover">Miễn phí hoặc mất phí</label>
+                    <div class="form-check form-switch form-check-lg mb-0">
+                        <input class="form-check-input mt-0 price-toggle me-2 custom-cursor-on-hover" type="checkbox" id="is_free" name="is_free"
+                        {{ $course->is_free ? 'checked' : '' }}>
+                        <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Bật lên nếu là bài làm miễn phí</label>
+                    </div>
+                </div>
                 <div class="col-12 pt-4">
                     <div
                         class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">

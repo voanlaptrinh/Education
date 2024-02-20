@@ -13,8 +13,8 @@ class CourseAuthController extends Controller
 {
     public function index(Subject $subject, Request $request)
     {
-        $courses = $subject->courses()->paginate(3);
-        $lessons = $subject->lessons()->paginate(3);
+        $courses = $subject->courses()->latest()->paginate(3);
+        $lessons = $subject->lessons()->latest()->paginate(3);
 
         $classes = Classes::all();
         $webConfig = Web_config::find(1);

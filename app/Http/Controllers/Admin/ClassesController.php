@@ -15,7 +15,7 @@ class ClassesController extends Controller
 
         $classes = Classes::when($searchQuery, function ($query) use ($searchQuery) {
             return $query->where('name', 'like', '%' . $searchQuery . '%');
-        })->paginate(10);
+        })->latest()->paginate(10);
         $totalClasses = Classes::count();
         $activeClasses = Classes::where('status', '1')->count();
         $unactiveClasses = Classes::where('status', '0')->count();
