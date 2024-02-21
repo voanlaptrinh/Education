@@ -73,4 +73,10 @@ class User extends Authenticatable
         return $this->expires_at !== null && now()->gt($this->expires_at);
     }
     
+    public function isProValid()
+    {
+        // Kiểm tra nếu pro_expiration là null hoặc lớn hơn thời gian hiện tại
+        return $this->pro_expiration === null || $this->pro_expiration->gt(Carbon::now());
+    }
+    
 }

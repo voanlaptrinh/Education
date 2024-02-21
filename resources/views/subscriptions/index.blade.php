@@ -38,6 +38,12 @@
                     <!-- Switch END -->
                 </div>
             </div>
+            @if (session('error'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Thông báo!</strong>  {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
             <!-- Pricing START -->
             <div class="row g-4">
 
@@ -97,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Pricing item END -->
                 @foreach ($subscriptions as $subscription)
                     <!-- Pricing item START -->
@@ -155,6 +162,7 @@
                             @if (!empty(Auth::user()))
                             <form action="{{ route('vnpayment') }}" method="post">
                                 @csrf
+                                <input hidden type="number" name="subscription_id" value="{{ $subscription->id }}">
                                 <input hidden type="number" name="total" value="{{ $subscription->price }}">
                                 <div class="card-footer text-center d-grid pb-0">
                                     <button name="redirect" type="submit" class="btn btn-success mb-0">Mua gói</button>

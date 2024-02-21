@@ -16,7 +16,14 @@ class QuestionAuthController extends Controller
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
         $questions = $course->questions;
-        return view('instructor-quiz.submit', compact('course', 'classes','webConfig', 'questions'));
+        if (auth()->user()->is_pro || $course->is_free == 1) {
+            // Hiển thị trang khóa học
+            return view('instructor-quiz.submit', compact('course', 'classes','webConfig', 'questions'));
+        } else {
+            // Chuyển hướng hoặc xử lý khi tài khoản chưa mua gói Pro
+            return redirect()->route('subscriptions.index')->with('error', 'Bạn cần mua gói Pro xử dụng các dịch vụ trên.');
+        }
+       
     }
     public function submitAnswers(Request $request, Course $course) //nộp bài và tính điểm
     {

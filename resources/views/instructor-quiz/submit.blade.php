@@ -24,8 +24,6 @@
 @section('content')
     <main>
 
-        <!-- =======================
-                                                            Page Banner START -->
         <section class="pt-0">
             <div class="container-fluid px-0">
                 <div class="card bg-blue h-100px h-md-200px rounded-0"
@@ -89,11 +87,7 @@
                 </div>
             </div>
         </section>
-        <!-- =======================
-                                                            Page Banner END -->
-
-        <!-- =======================
-                                                            Page content START -->
+     
         <section class="pt-0">
             <div class="container">
                 <div class="row">

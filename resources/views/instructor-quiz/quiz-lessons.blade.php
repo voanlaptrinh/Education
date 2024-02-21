@@ -313,8 +313,17 @@
                                             <td>
                                                 @if (!empty(Auth::user()))
                                                     @if ($course->questions->count() > 0)
-                                                        <a href="{{ route('questions.show', $course) }}"
-                                                            class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                                        @if ($course->is_free == 0)
+                                                            <a href="{{ route('questions.show', $course) }}"
+                                                                class="btn btn-sm btn-info-soft mb-0"> Làm bài tập
+                                                                <i class="fas fa-crown"
+                                                                    style=" color: rgb(112, 112, 5);
+                                                        font-size: 20px;"></i>
+                                                            </a>
+                                                        @else
+                                                            <a href="{{ route('questions.show', $course) }}"
+                                                                class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                                        @endif
                                                     @else
                                                         <button type="button" class="btn btn-sm btn-info-soft mb-0">Chưa
                                                             có câu hỏi</button>

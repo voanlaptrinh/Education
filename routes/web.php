@@ -241,7 +241,7 @@ Route::middleware(['web', 'auth'])->group(function () {
     });
 });
 
-Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
+// Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
 
 
 
