@@ -23,6 +23,7 @@ return new class extends Migration
             $table->dateTime('pay_date');
             $table->string('response_code');
             $table->string('tmn_code');
+            $table->unsignedBigInteger('subscription_id')->nullable();
             $table->string('transaction_no');
             $table->string('transaction_status');
             $table->string('txn_ref');
