@@ -79,4 +79,15 @@ class User extends Authenticatable
         return $this->pro_expiration === null || $this->pro_expiration->gt(Carbon::now());
     }
     
+    // Trong mô hình User.php
+public function getNumberOfCompletedExams()
+{
+    return $this->examHistories()->count();
+}
+
+public function examHistories()
+{
+    return $this->hasMany(ExamHistory::class, 'user_id');
+}
+
 }

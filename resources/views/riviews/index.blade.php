@@ -124,48 +124,50 @@
 
                             </div>
                             <!-- Review item START -->
-                            @foreach ($reviews as $review)
-                                @if ($review->status == 1)
-                                    <div class="d-sm-flex">
-                                        <!-- Avatar image -->
-                                        <img class="avatar avatar-lg rounded-circle float-start me-3"
-                                            src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
-                                        <div>
-                                            <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
-                                                <!-- Title -->
-                                                <div>
-                                                    <h5 class="m-0">{{ $review->user->name }}</h5>
-                                                    <ul class="list-inline mb-0">
-                                                        @for ($i = 1; $i <= 5; $i++)
-                                                            <li class="list-inline-item me-0">
-                                                                @if ($i <= $review->rating)
-                                                                    <i class="fas fa-star text-warning"></i>
-                                                                @else
-                                                                    <i class="far fa-star text-warning"></i>
-                                                                @endif
-                                                            </li>
-                                                        @endfor
-                                                    </ul>
-                                                    <span
-                                                        class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
+                            @if (count($countReviews) > 0)
+                                @foreach ($reviews as $review)
+                                    @if ($review->status == 1)
+                                        <div class="d-sm-flex">
+                                            <!-- Avatar image -->
+                                            <img class="avatar avatar-lg rounded-circle float-start me-3"
+                                                src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
+                                            <div>
+                                                <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
+                                                    <!-- Title -->
+                                                    <div>
+                                                        <h5 class="m-0">{{ $review->user->name }}</h5>
+                                                        <ul class="list-inline mb-0">
+                                                            @for ($i = 1; $i <= 5; $i++)
+                                                                <li class="list-inline-item me-0">
+                                                                    @if ($i <= $review->rating)
+                                                                        <i class="fas fa-star text-warning"></i>
+                                                                    @else
+                                                                        <i class="far fa-star text-warning"></i>
+                                                                    @endif
+                                                                </li>
+                                                            @endfor
+                                                        </ul>
+                                                        <span
+                                                            class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
+
+                                                    </div>
+                                                    <!-- Review star -->
 
                                                 </div>
-                                                <!-- Review star -->
+                                                <!-- Content -->
+                                                <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
+                                                </h6>
+                                                <p>{{ $review->content }} </p>
+                                                <!-- Button -->
 
                                             </div>
-                                            <!-- Content -->
-                                            <h6><span class="text-body fw-light">Tiêu đề:</span> {{ $review->title }}
-                                            </h6>
-                                            <p>{{ $review->content }} </p>
-                                            <!-- Button -->
-
                                         </div>
-                                    </div>
-                                    <hr>
-                                @else
-                                    <span>Chưa có đánh giá nào...</span>
-                                @endif
-                            @endforeach
+                                        <hr>
+                                    @endif
+                                @endforeach
+                            @else
+                                <span>Chưa có đánh giá nào...</span>
+                            @endif
                             <!-- Divider -->
 
                         </div>

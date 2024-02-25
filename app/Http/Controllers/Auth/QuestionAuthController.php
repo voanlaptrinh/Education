@@ -15,33 +15,60 @@ class QuestionAuthController extends Controller
     {
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
+        $choicesMapping = ['A', 'B', 'C', 'D'];
+        $user = auth()->user();
+        $numberOfCompletedExams = $user->getNumberOfCompletedExams();
         $questions = $course->questions;
         if (auth()->user()->is_pro || $course->is_free == 1) {
             // Hiển thị trang khóa học
-            return view('instructor-quiz.submit', compact('course', 'classes','webConfig', 'questions'));
+            return view('instructor-quiz.submit', compact('choicesMapping','course', 'classes', 'webConfig', 'questions','numberOfCompletedExams'));
         } else {
             // Chuyển hướng hoặc xử lý khi tài khoản chưa mua gói Pro
             return redirect()->route('subscriptions.index')->with('error', 'Bạn cần mua gói Pro xử dụng các dịch vụ trên.');
         }
-       
     }
-    public function submitAnswers(Request $request, Course $course) //nộp bài và tính điểm
+    // Trong controller
+
+    public function submitAnswers(Request $request, Course $course)
     {
         if (auth()->check()) {
+            $classes = Classes::all();
             $questions = $course->questions;
             $userAnswers = $request->input('answers');
-
+            // var_dump($userAnswers);
+            $classes = Classes::all();
             $totalQuestions = count($questions);
             $correctAnswers = 0;
+            $choicesMapping = ['A', 'B', 'C', 'D'];
 
-            foreach ($questions as $question) {
-                $correctAnswerId = $question->correctAnswer()->id;
+            $questionResults = collect($questions)->map(function ($question) use ($userAnswers, $choicesMapping, &$correctAnswers) {
+                $correctAnswerId = optional($question->correctAnswer())->order;
                 $userAnswerId = $userAnswers[$question->id] ?? null;
+                // $userAnswerIdInDatabase = array_search($choicesMapping[$userAnswerId - 1], $choicesMapping) + 1;
+                // Kiểm tra xem người dùng đã trả lời câu hỏi chưa
+                $userAnswerIdInDatabase = $userAnswerId ? array_search($choicesMapping[$userAnswerId - 1], $choicesMapping) + 1 : null;
 
-                if ($userAnswerId == $correctAnswerId) {
+                $isAnswered = isset($userAnswers[$question->id]);
+
+                // Kiểm tra đáp án có đúng hay không
+                $isCorrect = $userAnswerIdInDatabase === $correctAnswerId;
+                if ($isCorrect) {
                     $correctAnswers++;
                 }
-            }
+
+                // Lấy tất cả câu trả lời của câu hỏi
+                $answers = $question->answers;
+
+                return [
+                    'question' => $question->text,
+                    'userAnswer' => $isAnswered ? ($choicesMapping[$userAnswerId - 1] ?? 'Chưa trả lời') : 'Chưa trả lời',
+                    'correctAnswer' => $isAnswered ? ($choicesMapping[$correctAnswerId - 1] ?? '') : 'Chưa trả lời',
+                    'isCorrect' => $isCorrect,
+                    'answers' => $answers, // Thêm thông tin về câu trả lời vào kết quả
+                ];
+            });
+
+
             $webConfig = Web_config::find(1);
             $percentage = ($correctAnswers / $totalQuestions) * 100;
 
@@ -53,11 +80,8 @@ class QuestionAuthController extends Controller
             $examHistory->completed_at = now()->setTimezone('UTC');
             $examHistory->save();
 
-            // Thực hiện lưu điểm vào cơ sở dữ liệu hoặc thực hiện các xử lý khác tùy thuộc vào yêu cầu của bạn.
-
-            return view('test.questions.result', compact('course','webConfig', 'totalQuestions', 'correctAnswers', 'percentage'));
+            return view('questions.result', compact('classes', 'webConfig', 'choicesMapping', 'questionResults', 'course', 'webConfig', 'totalQuestions', 'correctAnswers', 'percentage'));
         } else {
-            // Người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
             return redirect()->route('login')->with('warning', 'Vui lòng đăng nhập để nộp bài!');
         }
     }

@@ -79,7 +79,7 @@
                         <div class="card-body pt-0">
                             <ul class="list-unstyled mt-2 mb-0">
                                 <li class="mb-3 h6 fw-light">
-                                    <i class="bi bi-patch-check-fill text-success me-2"></i>Tối đa 3 câu hỏi và bài giảng
+                                    <i class="bi bi-patch-check-fill text-success me-2"></i>Được luyện các đề Free
                                 </li>
                                 <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>
                                     Xem được giải thích đáp án chi tiết</li>
@@ -120,7 +120,8 @@
                                     </div>
                                     <!-- Price -->
                                     <div>
-                                        <h4 class="text-success mb-0 plan-price">{{ $subscription->price }}VNĐ</h4>
+                                        <h4 class="text-success mb-0 plan-price">{{ number_format($subscription->price, 0, ',', ',') }}
+                                            VNĐ</h4>
                                         <p class="small mb-0">/ Thời hạn <span
                                                 class="text-success">({{ ( $subscription->duration_months )}} Tháng) </span>
                                         </p>

@@ -263,7 +263,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <!-- Links -->
-                        @if (Auth::user()->user_type = 0)
+                        @if (Auth::user()->user_type == 0)
                             <li><a class="dropdown-item" href="{{ route('admin.index') }}"><i
                                         class="fas fa-user-shield fa-fw me-2"></i>Đến trang quản trị</a></li>
                         @endif
@@ -272,8 +272,8 @@
                         <li><a class="dropdown-item" href="{{ route('user.examHistory') }}"><i
                                     class="bi bi-gear fa-fw me-2"></i>Lịch sử làm bài</a></li>
                         
-                        <li><a class="dropdown-item" href="#"><i
-                                    class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
+                        <li><a class="dropdown-item" href="{{route('contact.index')}}"><i
+                                    class="bi bi-info-circle fa-fw me-2"></i>Trợ giúp</a></li>
                         <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('logout') }}"><i
                                     class="bi bi-power fa-fw me-2"></i>Đăng xuất</a></li>
                         <li>

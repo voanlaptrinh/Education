@@ -101,15 +101,15 @@
             <!-- Sidebar footer START -->
             <div class="px-3 mt-auto pt-3">
                 <div class="d-flex align-items-center justify-content-between text-primary-hover">
-                    <a class="h5 mb-0 text-body" href="admin-setting.html" data-bs-toggle="tooltip"
+                    <a class="h5 mb-0 text-body" href="#" data-bs-toggle="tooltip"
                         data-bs-placement="top" title="Settings">
                         <i class="bi bi-gear-fill"></i>
                     </a>
-                    <a class="h5 mb-0 text-body" href="index.html" data-bs-toggle="tooltip" data-bs-placement="top"
+                    <a class="h5 mb-0 text-body" href="{{route('home.index')}}" data-bs-toggle="tooltip" data-bs-placement="top"
                         title="Home">
                         <i class="bi bi-globe"></i>
                     </a>
-                    <a class="h5 mb-0 text-body" href="sign-in.html" data-bs-toggle="tooltip" data-bs-placement="top"
+                    <a class="h5 mb-0 text-body" href="{{route('logout')}}" data-bs-toggle="tooltip" data-bs-placement="top"
                         title="Sign out">
                         <i class="bi bi-power"></i>
                     </a>

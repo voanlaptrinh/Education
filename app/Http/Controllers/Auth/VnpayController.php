@@ -34,7 +34,6 @@ class VnpayController extends Controller
         $vnp_OrderType = "education";
         $vnp_Amount =  $data['total'] * 100;
         $vnp_Locale = 'VN';
-        $a = 'd';
         $vnp_BankCode = 'NCB';
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
         $inputData = array(
@@ -50,7 +49,6 @@ class VnpayController extends Controller
             "vnp_OrderType" => $vnp_OrderType,
             "vnp_ReturnUrl" => $vnp_Returnurl,
             "vnp_TxnRef" => $vnp_TxnRef,
-            "a" => $a
 
         );
 
