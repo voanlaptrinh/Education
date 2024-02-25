@@ -243,7 +243,12 @@ class AuthController extends Controller
     {
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
-        $examHistory = ExamHistory::where('user_id', auth()->user()->id)->get();
+       
+        
+        if(!empty( auth()->user())){
+
+            $examHistory = ExamHistory::where('user_id', auth()->user()->id)->get();
+        
         // Calculate and update remaining time for each exam history record
         foreach ($examHistory as $exam) {
             if ($exam->completed_at === null) {
@@ -259,6 +264,9 @@ class AuthController extends Controller
             }
         }
         return view('users.exam_history', compact('examHistory','webConfig', 'classes'));
+    }else {
+        return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để xem thông tin tài khoản');
+    }
     }
     public function destroy($id)
     {
