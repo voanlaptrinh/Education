@@ -6,7 +6,7 @@
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
                 <h1 class="h3 mb-2 mb-sm-0">Chương trình học <span
-                        class="badge bg-orange bg-opacity-10 text-orange">245</span></h1>
+                        class="badge bg-orange bg-opacity-10 text-orange"></span></h1>
                 <a href="{{ route('curriculum.create') }}" class="btn btn-sm btn-primary mb-0">Thêm mới chương trình học</a>
             </div>
         </div>
@@ -82,6 +82,10 @@
                                         </div>
                                     </td>
                                     <td>{{ $chapter->lesson->title }}</td>
+                                    <td>
+                                        <a href="{{ route('lectures.index', ['chapter' => $chapter]) }}"
+                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Xem bài giảng</a>
+                                    </td>
                                     <td>
                                         <a href="{{ route('lectures.index', ['chapter' => $chapter]) }}"
                                             class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Xem bài giảng</a>

@@ -68,7 +68,6 @@ class QuestionAuthController extends Controller
                 ];
             });
 
-
             $webConfig = Web_config::find(1);
             $percentage = ($correctAnswers / $totalQuestions) * 100;
 

@@ -14,6 +14,7 @@ class ExamHistory extends Model
         'score',
         'started_at',
         'completed_at',
+        'remaining_time'
         // Thêm các trường khác nếu cần
     ];
 

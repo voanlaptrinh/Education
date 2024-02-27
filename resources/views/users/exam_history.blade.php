@@ -1,10 +1,10 @@
 @extends('indexUser')
 @section('contentUsers')
-    <div class="col-xl-9">
+    <div class="col-xl-12">
         <div class="card bg-transparent border rounded-3">
             <!-- Card header START -->
             <div class="card-header bg-transparent border-bottom">
-                <h3 class="mb-0">My Courses List</h3>
+                <h3 class="mb-0">Lịch sử làm bài</h3>
             </div>
             <!-- Card header END -->
 
@@ -12,22 +12,7 @@
             <div class="card-body">
 
                 <!-- Search and select START -->
-                <div class="row g-3 align-items-center justify-content-between mb-4">
-                    <!-- Content -->
-                    <div class="col-md-8">
-                        <form class="rounded position-relative">
-                            <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <button
-                                class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
-                                type="submit" fdprocessedid="81vjzt">
-                                <i class="fas fa-search fs-6 "></i>
-                            </button>
-                        </form>
-                    </div>
-
-
-                </div>
+               
                 <!-- Search and select END -->
 
                 <!-- Course list table START -->
@@ -36,9 +21,9 @@
                         <!-- Table head -->
                         <thead>
                             <tr>
-                                <th scope="col" class="border-0 rounded-start">Course Title</th>
-                                <th scope="col" class="border-0">Total Lectures</th>
-                                <th scope="col" class="border-0">Completed Lecture</th>
+                                <th scope="col" class="border-0 rounded-start">Đề bài</th>
+                                <th scope="col" class="border-0">Số điểm đạt được</th>
+                                <th scope="col" class="border-0">Ngày làm</th>
                                 <th scope="col" class="border-0 rounded-end">Action</th>
                             </tr>
                         </thead>
@@ -65,9 +50,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
-                                        {{ $item->remaining_time ?? 'N/A' }}
-                                    </td>
+                                   
                                     <td>
                                         <div class="overflow-hidden">
                                             <h6 class="mb-0 text-center">{{ $item->score }}%</h6>
@@ -83,7 +66,7 @@
                                     </td>
 
                                     <!-- Table data -->
-                                    <td>{{$item->created_at}}</td>
+                                    <td>{{$item->created_at->format('d/m/Y')}}</td>
 
                                     <!-- Table data -->
                                     <td>
@@ -91,7 +74,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger me-1 mb-1 mb-md-0">
-                                                <i class="bi bi-trash me-1"></i>Delete
+                                                <i class="bi bi-trash me-1"></i>Xóa
                                             </button>
                                         </form>
                                     </td>
@@ -107,18 +90,26 @@
                 <!-- Pagination START -->
                 <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
                     <!-- Content -->
-                    <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+                    <p class="mb-0 text-center text-sm-start"></p>
                     <!-- Pagination -->
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                            <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
-                                        class="fas fa-angle-left"></i></a></li>
-                            <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item mb-0 active"><a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                        class="fas fa-angle-right"></i></a></li>
+                            @if ($examHistory->currentPage() > 1)
+                                            <li class="page-item mb-0"><a class="page-link"
+                                                    href="{{ $examHistory->url($examHistory->currentPage() - 1) }}"
+                                                    tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                        @endif
+                                        @for ($i = 1; $i <= $examHistory->lastPage(); $i++)
+                                            <li
+                                                class=" page-item mb-0 {{ $examHistory->currentPage() == $i ? 'active' : '' }}">
+                                                <a class="page-link"
+                                                    href="{{ $examHistory->url($i) }}">{{ $i }}</a>
+                                            </li>
+                                        @endfor
+                                        @if ($examHistory->currentPage() < $examHistory->lastPage())
+                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                        class="fas fa-angle-right"></i></a></li>
+                                        @endif
                         </ul>
                     </nav>
                 </div>

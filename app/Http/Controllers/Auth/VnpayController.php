@@ -23,7 +23,11 @@ class VnpayController extends Controller
     public function vnpay_payment(Request $request)
     {
         $data = $request->all();
-      
+        $subscriptionId = $request->input('subscription_id');
+
+        // Save subscription_id to session
+        $request->session()->put('subscription_id', $subscriptionId);
+
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl = route('Getvnpayment');
         $vnp_TmnCode = "B74W6JJL"; //Mã website tại VNPAY 
@@ -84,8 +88,7 @@ class VnpayController extends Controller
             'code' => '00', 'message' => 'success', 'data' => $vnp_Url, 'subscription_id' => $data['subscription_id']
         );
         if (isset($_POST['redirect'])) {
-            header('Location: ' . $vnp_Url);
-            die();
+            return redirect()->away($vnp_Url);
         } else {
             echo json_encode($returnData);
         }
@@ -94,6 +97,7 @@ class VnpayController extends Controller
 
     public function Getvnpayment(Request $request, Subscription $subscription)
     {
+        dd($request->session()->get('subscription_id'));
         // $data =  $request->except("_token");
         try {
             $user = auth()->user();

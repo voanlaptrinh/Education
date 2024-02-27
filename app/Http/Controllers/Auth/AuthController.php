@@ -247,7 +247,10 @@ class AuthController extends Controller
         
         if(!empty( auth()->user())){
 
-            $examHistory = ExamHistory::where('user_id', auth()->user()->id)->get();
+            $examHistory = ExamHistory::where('user_id', auth()->user()->id)
+            ->orderBy('created_at', 'desc') // Assuming you want to order by creation date
+            ->paginate(3); // Adjust the number based on your requirements
+       
         
         // Calculate and update remaining time for each exam history record
         foreach ($examHistory as $exam) {

@@ -29,7 +29,7 @@
                         <div class="col-md-4 mb-3 mb-md-0">
                             <div class="text-center">
                                 <!-- Info -->
-                                <h2 class="mb-0">{{ $percentage }}% </h2>
+                                <h2 class="mb-0">{{ number_format($percentage, 2) }}% </h2>
                                 <!-- Star -->
                                 <div class="progress progress-sm bg-warning bg-opacity-15">
                                     <div class="progress-bar bg-warning" role="progressbar"
@@ -110,32 +110,7 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                {{-- @foreach ($questionResults as $result)
-                                    <p>Câu hỏi: {{ $result['question'] }}</p>
-                                    <p>Câu trả lời của người dùng: {{ $result['userAnswer'] }}</p>
-                                    <p>Câu trả lời đúng: {{ $result['correctAnswer'] }}</p>
-                                    <p>Kết quả: {{ $result['isCorrect'] ? 'Đúng' : 'Sai' }}</p>
-
-                                    <p>Tất cả câu trả lời:</p>
-                                    <ul>
-                                        @foreach ($result['answers'] as $key => $answer)
-                                            <li>
-                                                {{ $choicesMapping[$key] }}. {{ $answer->text }}
-                                                @if ($answer->id == $result['correctAnswer'])
-                                                    <strong>(Đúng)</strong>
-                                                @endif
-                                            </li>
-                                        @endforeach
-                                    </ul>
-
-                                    <hr>
-                                @endforeach --}}
-
-
-
-
-
-
+    
 
 
                             </div>

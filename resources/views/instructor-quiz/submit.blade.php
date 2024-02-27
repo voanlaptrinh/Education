@@ -39,7 +39,8 @@
                                 <div class="col-auto">
                                     <div class="avatar avatar-xxl position-relative mt-n3">
                                         <img class="avatar-img rounded-circle border border-white border-3 shadow"
-                                            src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}" alt="">
+                                            src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"
+                                            alt="">
                                         <span
                                             class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
                                     </div>
@@ -50,7 +51,7 @@
                                         <h1 class="my-1 fs-4">{{ Auth::user()->name }}</h1>
                                         <ul class="list-inline mb-0">
                                             <li class="list-inline-item me-3 mb-1 mb-sm-0">
-                                                <span class="h6">{{$numberOfCompletedExams}}</span>
+                                                <span class="h6">{{ $numberOfCompletedExams }}</span>
                                                 <span class="text-body fw-light">bài tập đã làm</span>
                                             </li>
                                             <li class="list-inline-item me-3 mb-1 mb-sm-0">
@@ -137,7 +138,7 @@
                                                     class="bi bi-clock-history me-2"></i>Time Left: <span
                                                     id="countdown"></span></h6>
                                             <input type="hidden" name="remaining_time" id="remainingTimeInput"
-                                                value="">
+                                                value="{{ $course->time_limit }}">
                                             <!-- Step content START -->
                                             <div class="bs-stepper-content">
 
@@ -170,7 +171,7 @@
                                                                                         value="{{ $index + 1 }}">
                                                                                     <label
                                                                                         class="btn btn-outline-primary w-100"
-                                                                                        for="answer_{{ $question2->id }}_{{ $index }}">{{$choicesMapping[$index]}}.{{ $answer->text }}</label>
+                                                                                        for="answer_{{ $question2->id }}_{{ $index }}">{{ $choicesMapping[$index] }}.{{ $answer->text }}</label>
                                                                                 </div>
                                                                                 <!-- Feed ques item -->
                                                                             @endforeach
@@ -211,57 +212,53 @@
             const countdownElement = document.getElementById('countdown');
             const timerElement = document.getElementById('timer');
             const formElement = document.getElementById('quizForm');
-            const submitButton = document.getElementById('submitBtn');
             const nextButton = document.getElementById('nextBtn');
             const totalSteps = {{ count($questions) }};
             let currentStep = 1;
             let timeLimit = {{ $course->time_limit }};
             let timeRemaining = timeLimit;
-
+        
             function updateTimerDisplay() {
                 const minutes = Math.floor(timeRemaining / 60);
                 const seconds = timeRemaining % 60;
                 countdownElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
             }
-
+        
             function updateButtonVisibility() {
                 if (currentStep < totalSteps) {
                     nextButton.style.display = 'block';
-                    submitButton.style.display = 'none';
                 } else {
                     nextButton.style.display = 'none';
-                    submitButton.style.display = 'block';
                 }
             }
-
-            function submitForm() {
-                // Check if it's the last question before submitting the form
-                if (currentStep === totalSteps) {
-                    document.getElementById('remainingTimeInput').value = timeRemaining;
-                    formElement.submit();
-                }
-            }
-
+        
             function startTimer() {
                 updateTimerDisplay();
                 const timerInterval = setInterval(() => {
                     timeRemaining--;
-
+        
                     if (timeRemaining <= 0) {
                         clearInterval(timerInterval);
                         timerElement.innerText = 'Time Expired!';
-                        var form = document.getElementById("quizForm");
-                        if (form) {
-                            form.submit();
-                        } // Auto-submit when time expires
+                        submitForm(); // Call submitForm when time expires
                     } else {
                         updateTimerDisplay();
                     }
                 }, 1000);
             }
-
+        
+            function submitForm() {
+                // Update the remaining time input before submitting the form
+                document.getElementById('remainingTimeInput').value = timeRemaining;
+        
+                // Submit the form
+                formElement.submit();
+            }
+        
             startTimer(); // Start the timer when the page loads
         </script>
+        
+        
 
 
     </main>

@@ -46,6 +46,7 @@
                                     </td>
                                   
                                     <td>
+                                        
                                         <div class="">
                                             <div class="">
                                                 <div class="">
@@ -56,12 +57,14 @@
                                                                 class="card-img  h-60px" alt="course image">
                                                             <!-- Overlay -->
                                                             <div class="bg-overlay bg-dark opacity-6"></div>
+
+                                                          
                                                             <div
                                                                 class="card-img-overlay d-flex align-items-start flex-column p-3">
                                                                 <!-- Video button and link -->
                                                                 <div class="m-auto">
                                                                     <a href="{{ asset('storage/' . $lecture->video) }}"
-                                                                        style="    height: 30px;
+                                                                        style="height: 30px;
                                                                         width: 30px;
                                                                         line-height: 30px;"
                                                                         class="btn btn-lg text-danger btn-round btn-white-shadow mb-0"
