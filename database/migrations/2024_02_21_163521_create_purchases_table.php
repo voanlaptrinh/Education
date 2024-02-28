@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('transaction_status');
             $table->string('txn_ref');
             $table->string('secure_hash');
+            $table->timestamp('expired_at')->nullable();
             $table->timestamps();
         });
     }

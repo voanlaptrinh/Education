@@ -123,7 +123,7 @@
                                         <h4 class="text-success mb-0 plan-price">{{ number_format($subscription->price, 0, ',', ',') }}
                                             VNĐ</h4>
                                         <p class="small mb-0">/ Thời hạn <span
-                                                class="text-success">({{ ( $subscription->duration_months )}} Tháng) </span>
+                                                class="text-success">({{ ( $subscription->duration_months / 30 )}} Tháng) </span>
                                         </p>
                                     </div>
                                 </div>

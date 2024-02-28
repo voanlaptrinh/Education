@@ -10,6 +10,7 @@ use App\Models\Purchase;
 use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Web_config;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -83,7 +84,7 @@ class VnpayController extends Controller
             $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret); //  
             $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
         }
-       
+
         $returnData = array(
             'code' => '00', 'message' => 'success', 'data' => $vnp_Url, 'subscription_id' => $data['subscription_id']
         );
@@ -97,50 +98,45 @@ class VnpayController extends Controller
 
     public function Getvnpayment(Request $request, Subscription $subscription)
     {
-        dd($request->session()->get('subscription_id'));
         // $data =  $request->except("_token");
         try {
             $user = auth()->user();
-            $this->upgradeToPro($user);
-
-            $this->savePurchase($request, $user);
             $classes = Classes::all();
-            $totalLessons= Lesson::count();
-            $totalLectures= Lecture::count();
-          
+            $totalLessons = Lesson::count();
+            $totalLectures = Lecture::count();
             $bai_hoc = Lesson::all();
             $webConfig = Web_config::find(1);
-            return view('pages.index',compact('user', 'classes', 'totalLessons', 'totalLectures','bai_hoc','webConfig'));
+            $purchase = new Purchase();
+            $purchase->user_id = $user->id;
+            $purchase->package_name = $request->vnp_OrderInfo;
+            $purchase->amount = $request->vnp_Amount;
+            $purchase->bank_code = $request->vnp_BankCode;
+            $purchase->bank_tran_no = $request->vnp_BankTranNo;
+            $purchase->card_type = $request->vnp_CardType;
+            $purchase->order_info = $request->vnp_OrderInfo;
+            $purchase->pay_date = \Carbon\Carbon::createFromFormat('YmdHis', $request->vnp_PayDate);
+            $purchase->response_code = $request->vnp_ResponseCode;
+            $purchase->tmn_code = $request->vnp_TmnCode;
+            $purchase->transaction_no = $request->vnp_TransactionNo;
+            $purchase->transaction_status = $request->vnp_TransactionStatus;
+            $purchase->txn_ref = $request->vnp_TxnRef;
+            $purchase->secure_hash = $request->vnp_SecureHash;
+            $purchase->subscription_id = $request->session()->get('subscription_id');
+            $userSubscription = Subscription::find($request->session()->get('subscription_id'));
+            if ($userSubscription) {
+                $currentDateTime = Carbon::now();
+                $expirationDate = $currentDateTime->addDays($userSubscription->duration_months);
+                $user->subscription_expiration_date = $expirationDate;
+                $user->is_pro = true;
+                $user->save();
+            }
+        
+            $purchase->save();
+
+            return view('pages.index', compact('user', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'));
         } catch (\Exception $e) {
             // Xử lý ngoại lệ và trả về thông báo lỗi nếu cần
             return view('subscriptions.error')->with('error', $e->getMessage());
         }
-    }
-    protected function upgradeToPro(User $user)
-    {
-        if (!$user->is_pro) {
-            $user->update(['is_pro' => true]);
-        }
-    }
-
-    protected function savePurchase(Request $request, User $user)
-    {
-        dd($request->all());
-        $purchase = new Purchase();
-        $purchase->user_id = $user->id;
-        $purchase->package_name = $request->vnp_OrderInfo;
-        $purchase->amount = $request->vnp_Amount;
-        $purchase->bank_code = $request->vnp_BankCode;
-        $purchase->bank_tran_no = $request->vnp_BankTranNo;
-        $purchase->card_type = $request->vnp_CardType;
-        $purchase->order_info = $request->vnp_OrderInfo;
-        $purchase->pay_date = \Carbon\Carbon::createFromFormat('YmdHis', $request->vnp_PayDate);
-        $purchase->response_code = $request->vnp_ResponseCode;
-        $purchase->tmn_code = $request->vnp_TmnCode;
-        $purchase->transaction_no = $request->vnp_TransactionNo;
-        $purchase->transaction_status = $request->vnp_TransactionStatus;
-        $purchase->txn_ref = $request->vnp_TxnRef;
-        $purchase->secure_hash = $request->vnp_SecureHash;
-        $purchase->save();
     }
 }

@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('verification_token')->nullable(); //xác nhận xem tài khoản đã xác nhận chưa
             $table->string('password');
         
-
+            $table->timestamp('subscription_expiration_date')->nullable();
             $table->unsignedBigInteger('subscription_id')->nullable();
             $table->timestamp('expires_at')->nullable();
             $table->foreign('subscription_id')->references('id')->on('subscriptions')->onDelete('set null');

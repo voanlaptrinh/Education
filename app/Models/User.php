@@ -72,7 +72,16 @@ class User extends Authenticatable
     {
         return $this->expires_at !== null && now()->gt($this->expires_at);
     }
-    
+    public function checkSubscriptionStatus()
+    {
+        $expirationDate = $this->subscription_expiration_date;
+
+        if ($expirationDate && now()->gt($expirationDate)) {
+            // Subscription has expired, update the user's account status to regular
+            $this->is_pro = false;
+            $this->save();
+        }
+    }
     public function isProValid()
     {
         // Kiểm tra nếu pro_expiration là null hoặc lớn hơn thời gian hiện tại

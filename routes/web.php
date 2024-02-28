@@ -247,6 +247,7 @@ Route::middleware(['web', 'auth'])->group(function () {
 
 Route::prefix('/user')->group(function () {
     Route::get('/exam-history', [AuthController::class, 'examHistory'])->name('user.examHistory');
+    Route::get('/subscriptions-history', [AuthController::class, 'subscriptionHistory'])->name('user.subscriptionHistory');
     Route::delete('/exam-history/{id}', [AuthController::class, 'destroy'])->name('examHistory.destroy');
 });
 

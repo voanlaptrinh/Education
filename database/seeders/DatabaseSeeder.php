@@ -95,17 +95,17 @@ class DatabaseSeeder extends Seeder
         Subscription::create([
             'name' => 'gói 1',
             'price' => 300000,
-            'duration_months' => '6'
+            'duration_months' => 6 * 30
         ]);
         Subscription::create([
             'name' => 'gói 2',
             'price' => 300000,
-            'duration_months' => '7'
+            'duration_months' => 7 * 30
         ]);
         Subscription::create([
             'name' => 'gói 3',
             'price' => 300000,
-            'duration_months' => '8'
+            'duration_months' => 8 * 30
         ]);
         for ($i = 0; $i < 8; $i++) {
             Lesson::create([

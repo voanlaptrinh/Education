@@ -17,6 +17,7 @@ class QuestionAuthController extends Controller
         $webConfig = Web_config::find(1);
         $choicesMapping = ['A', 'B', 'C', 'D'];
         $user = auth()->user();
+        $user->checkSubscriptionStatus();
         $numberOfCompletedExams = $user->getNumberOfCompletedExams();
         $questions = $course->questions;
         if (auth()->user()->is_pro || $course->is_free == 1) {

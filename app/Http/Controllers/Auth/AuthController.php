@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Mail\VerifyEmail;
 use App\Models\Classes;
 use App\Models\ExamHistory;
+use App\Models\Purchase;
+use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Web_config;
 use App\Providers\RouteServiceProvider;
@@ -28,25 +30,29 @@ class AuthController extends Controller
         $classes = Classes::orderBy('id', 'asc')->get();
         $webConfig = Web_config::find(1);
         $message = $request->session()->all();
-        return View('auth.login', compact('message','webConfig', 'classes'));
+
+        return View('auth.login', compact('message', 'webConfig', 'classes'));
     }
     public function postLogin(Request $request)
     {
         // Kiểm tra và xác nhận dữ liệu đầu vào
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ], [
-            'email.required' => 'Phải nhập email',
-            'email.email' => 'Email không hợp lệ',
-            'password.required' => 'Phải nhập mật khẩu',
-        ]
-    );
+        $request->validate(
+            [
+                'email' => 'required|string|email',
+                'password' => 'required|string',
+            ],
+            [
+                'email.required' => 'Phải nhập email',
+                'email.email' => 'Email không hợp lệ',
+                'password.required' => 'Phải nhập mật khẩu',
+            ]
+        );
 
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+            $user->checkSubscriptionStatus();
             //sử lí tình trạng khi bị khóa
             if (($user->status) == 0) {
                 $this->logout();
@@ -69,7 +75,6 @@ class AuthController extends Controller
             }
         }
 
-        // Người dùng không đăng nhập thành công
         return redirect('/login')->withErrors(['login_error' => 'Thông tin đăng nhập không đúng.']);
     }
 
@@ -77,7 +82,7 @@ class AuthController extends Controller
     {
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
-        return View('auth.register', compact('classes','webConfig'));
+        return View('auth.register', compact('classes', 'webConfig'));
     }
     public function postRegister(Request $request)
     {
@@ -146,7 +151,7 @@ class AuthController extends Controller
         }
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
-        return view('auth.profile_account', compact('user','classes', 'webConfig'));
+        return view('auth.profile_account', compact('user', 'classes', 'webConfig'));
     }
     public function update(Request $request)
     {
@@ -164,22 +169,22 @@ class AuthController extends Controller
                 'name.required' => 'Trường tên không được bỏ trống.',
                 'name.string' => 'Trường tên phải là chuỗi.',
                 'name.max' => 'Trường tên không được vượt quá 255 ký tự.',
-                
+
                 'username.required' => 'Trường tên người dùng không được bỏ trống.',
                 'username.string' => 'Trường tên người dùng phải là chuỗi.',
                 'username.max' => 'Trường tên người dùng không được vượt quá 255 ký tự.',
-                
+
                 'phone.string' => 'Trường số điện thoại phải là chuỗi.',
                 'phone.max' => 'Trường số điện thoại không được vượt quá 255 ký tự.',
-                
+
                 'address.string' => 'Trường địa chỉ phải là chuỗi.',
                 'address.max' => 'Trường địa chỉ không được vượt quá 255 ký tự.',
-                
+
                 'gender.required' => 'Trường giới tính không được bỏ trống.',
                 'gender.in' => 'Trường giới tính không hợp lệ.',
-                
+
                 'birthday.date' => 'Trường ngày sinh phải là kiểu ngày.',
-                
+
                 'profile_picture.image' => 'Trường hình đại diện phải là hình ảnh.',
                 'profile_picture.mimes' => 'Trường hình đại diện phải có định dạng jpeg, png, jpg, gif.',
                 'profile_picture.max' => 'Trường hình đại diện không được vượt quá 2048 KB.',
@@ -223,8 +228,7 @@ class AuthController extends Controller
                 'old_password' => 'required|string',
                 'new_password' => 'required|string|min:8|confirmed',
             ]);
-            // dd(Hash::check($validatedData['old_password']));
-            // Check if the old password matches the user's current password
+
             if (!Hash::check($validatedData['old_password'], $user->password)) {
                 return redirect()->back()->with('error', 'Mật khẩu không đúng');
             }
@@ -243,33 +247,49 @@ class AuthController extends Controller
     {
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
-       
-        
-        if(!empty( auth()->user())){
+
+
+        if (!empty(auth()->user())) {
 
             $examHistory = ExamHistory::where('user_id', auth()->user()->id)
-            ->orderBy('created_at', 'desc') // Assuming you want to order by creation date
-            ->paginate(3); // Adjust the number based on your requirements
-       
-        
-        // Calculate and update remaining time for each exam history record
-        foreach ($examHistory as $exam) {
-            if ($exam->completed_at === null) {
-                // If the exam is not completed yet, calculate the remaining time
-                $startedAt = Carbon::parse($exam->started_at);
-                $currentTime = Carbon::now();
-                $elapsedTimeInSeconds = $currentTime->diffInSeconds($startedAt);
-                $remainingTimeInSeconds = $exam->time_limit - $elapsedTimeInSeconds;
+                ->orderBy('created_at', 'desc') // Assuming you want to order by creation date
+                ->paginate(3); // Adjust the number based on your requirements
 
-                // Ensure remaining time is not negative
-                $exam->remaining_time = max(0, $remainingTimeInSeconds);
-                $exam->save();
+
+            // Calculate and update remaining time for each exam history record
+            foreach ($examHistory as $exam) {
+                if ($exam->completed_at === null) {
+                    // If the exam is not completed yet, calculate the remaining time
+                    $startedAt = Carbon::parse($exam->started_at);
+                    $currentTime = Carbon::now();
+                    $elapsedTimeInSeconds = $currentTime->diffInSeconds($startedAt);
+                    $remainingTimeInSeconds = $exam->time_limit - $elapsedTimeInSeconds;
+                    // Ensure remaining time is not negative
+                    $exam->remaining_time = max(0, $remainingTimeInSeconds);
+                    $exam->save();
+                }
             }
+            return view('users.exam_history', compact('examHistory', 'webConfig', 'classes'));
+        } else {
+            return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để xem thông tin tài khoản');
         }
-        return view('users.exam_history', compact('examHistory','webConfig', 'classes'));
-    }else {
-        return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để xem thông tin tài khoản');
     }
+    public function subscriptionHistory()
+    {
+        $classes = Classes::all();
+        $webConfig = Web_config::find(1);
+        if (!empty(auth()->user())) {
+
+            $subscriptionHistory = Purchase::where('user_id', auth()->user()->id)
+                ->orderBy('created_at', 'desc')
+                ->paginate(3);
+
+
+
+            return view('users.subscription_history', compact('subscriptionHistory', 'webConfig', 'classes'));
+        } else {
+            return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để xem thông tin tài khoản');
+        }
     }
     public function destroy($id)
     {

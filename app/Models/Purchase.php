@@ -23,6 +23,7 @@ class Purchase extends Model
         'transaction_status',
         'txn_ref',
         'secure_hash',
+        'expired_at'
     ];
 
     protected $dates = ['pay_date'];
@@ -30,6 +31,10 @@ class Purchase extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function subscription()
+    {
+        return $this->belongsTo(Subscription::class);
     }
     public function course()
     {

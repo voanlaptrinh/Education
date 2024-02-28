@@ -8,6 +8,7 @@ use App\Models\Lesson;
 use App\Models\Subject;
 use App\Models\Web_config;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseAuthController extends Controller
 {
@@ -18,7 +19,8 @@ class CourseAuthController extends Controller
 
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
-
+        $user = Auth::user();
+        $user->checkSubscriptionStatus();
 
         return view('instructor-quiz.quiz-lessons', compact('subject', 'lessons', 'classes', 'webConfig', 'courses'));
     }
