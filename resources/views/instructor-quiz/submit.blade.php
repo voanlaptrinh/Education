@@ -1,25 +1,4 @@
-<!-- resources/views/questions/show.blade.php -->
-{{-- <h1>{{ $course->name }} - Questions</h1>
-<form id="quizForm" method="post" action="{{ route('questions.submit', $course) }}">
-    @csrf
-    <ul>
-        @foreach ($questions as $question)
-            <li>
-                {{ $question->text }}
-                <ul>
-                    @foreach ($question->answers as $answer)
-                        <li>
-                            <input type="radio" name="answers[{{ $question->id }}]" value="{{ $answer->id }}">
-                            {{ $answer->text }}
-                        </li>
-                    @endforeach
-                </ul>
-            </li>
-        @endforeach
-    </ul>
-    <p id="timer">Time Remaining: <span id="countdown"></span></p>
-    <button type="submit" id="submitBtn">Submit Answers</button>
-</form> --}}
+
 @extends('index')
 @section('content')
     <main>
@@ -41,8 +20,14 @@
                                         <img class="avatar-img rounded-circle border border-white border-3 shadow"
                                             src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"
                                             alt="">
-                                        <span
+                                            @if (Auth::user()->is_pro == 1 )
+                                            <span
                                             class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
+                                            @else
+                                            <span
+                                            class="badge text-bg-info rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Free</span>
+                                            @endif
+                                       
                                     </div>
                                 </div>
                                 <!-- Profile info -->
