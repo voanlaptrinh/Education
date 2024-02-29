@@ -4,7 +4,8 @@
     <div class="page-content-wrapper border">
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Bài giảng của chương trình học <span style="color: red"> ({{ $chapter->title }})</span></h1>
+                <h1 class="h3 mb-2 mb-sm-0">Bài giảng của chương trình học <span style="color: red">
+                        ({{ $chapter->title }})</span></h1>
                 <a href="{{ route('lectures.create', ['chapter' => $chapter]) }}" class="btn btn-sm btn-primary mb-0">Thêm bài
                     giảng</a>
             </div>
@@ -24,6 +25,7 @@
                                 <th scope="col" class="border-0">Video bài giảng</th>
                                 <th scope="col" class="border-0">Chương trình học</th>
                                 <th scope="col" class="border-0">Ngày</th>
+                                <th scope="col" class="border-0">Gói</th>
                                 <th scope="col" class="border-0 rounded-end">Hành động</th>
                             </tr>
                         </thead>
@@ -44,38 +46,17 @@
                                             </div>
                                         </div>
                                     </td>
-                                  
+
                                     <td>
-                                        
+
                                         <div class="">
                                             <div class="">
                                                 <div class="">
                                                     <!-- Video START -->
-                                                    <div class="card shadow p-2 mb-4 z-index-9 ">
-                                                        <div class="overflow-hidden rounded-3 ">
-                                                            <img src="{{ asset('storage/' . $lecture->image) }}"
-                                                                class="card-img  h-60px" alt="course image">
-                                                            <!-- Overlay -->
-                                                            <div class="bg-overlay bg-dark opacity-6"></div>
+                                                    <div class="">
+                                                       
 
-                                                          
-                                                            <div
-                                                                class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                                                <!-- Video button and link -->
-                                                                <div class="m-auto">
-                                                                    <a href="{{ asset('storage/' . $lecture->video) }}"
-                                                                        style="height: 30px;
-                                                                        width: 30px;
-                                                                        line-height: 30px;"
-                                                                        class="btn btn-lg text-danger btn-round btn-white-shadow mb-0"
-                                                                        data-glightbox="" data-gallery="course-video">
-                                                                        <i class="fas fa-play "></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
+                                                        <a class="btn btn-round btn-primary-shadow justify-content-center" data-glightbox="" data-gallery="course-video" href="{{ asset('storage/' . $lecture->video) }}"><i class="fas fa-play"></i></a>
                                                     </div>
 
                                                 </div>
@@ -90,15 +71,22 @@
                                         {{ $lecture->updated_at->format('d/m/Y') }}
                                     </td>
 
-
-                                    <td>
+                                   <td> @if ($lecture->is_free == 1)
+                                    <button class="btn btn-success">Miễn phí</button>
+                                @else
+                                    <button class="btn btn-warning">Mất phí</button>
+                                @endif</td>
+                                   
+                                    <td class="d-flex h-100">
                                         <a href="{{ route('lectures.edit', ['lecture' => $lecture]) }}"
-                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0 w-100">Sửa</a>
-                                        
-                                        <form action="{{ route('lectures.destroy', ['lecture' => $lecture->id]) }}" method="POST">
+                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
+                                                class="bi bi-pencil-square"></i></a>
+                                        <form action="{{ route('lectures.destroy', ['lecture' => $lecture->id]) }}"
+                                            method="post">
                                             @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger w-100" onclick="return confirm('Bạn có chắc là đồng ý xóa?')">Xóa</button>
+                                            @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
+                                            <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" onclick="return confirm('Bạn có chắc là đồng ý xóa?')"
+                                                type="submit"><i class="bi bi-trash  "></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -119,22 +107,19 @@
                                 class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                                 @if ($lectures->currentPage() > 1)
                                     <li class="page-item mb-0"><a class="page-link"
-                                            href="{{ $lectures->url($lectures->currentPage() - 1) }}"
-                                            tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                                            href="{{ $lectures->url($lectures->currentPage() - 1) }}" tabindex=""><i
+                                                class="fas fa-angle-left"></i></a></li>
                                 @endif
                                 @for ($i = 1; $i <= $lectures->lastPage(); $i++)
-                                    <li
-                                        class=" page-item mb-0 {{ $lectures->currentPage() == $i ? 'active' : '' }}">
-                                        <a class="page-link"
-                                            href="{{ $lectures->url($i) }}">{{ $i }}</a>
+                                    <li class=" page-item mb-0 {{ $lectures->currentPage() == $i ? 'active' : '' }}">
+                                        <a class="page-link" href="{{ $lectures->url($i) }}">{{ $i }}</a>
                                     </li>
                                 @endfor
                                 @if ($lectures->currentPage() < $lectures->lastPage())
-                                <li class="page-item mb-0"><a class="page-link" href="#"><i
-                                    class="fas fa-angle-right"></i></a></li> 
-
+                                    <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                class="fas fa-angle-right"></i></a></li>
                                 @endif
-                           
+
                             </ul>
                         </nav>
                     </div>

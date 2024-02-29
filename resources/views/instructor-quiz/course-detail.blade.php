@@ -107,7 +107,26 @@
 																	<span
 																		class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">{{ $item->title }}</span>
 																</div>
-																<p class="mb-0"></p>
+																<p class="mb-0">
+                                                                    @if (!empty(Auth::user()))
+                                                                  
+                                                                        @if ($item->is_free == 0)
+                                                                            <a href=""
+                                                                                class="btn btn-sm btn-info-soft mb-0"> Xem bài giảng
+                                                                                <i class="fas fa-crown"
+                                                                                    style=" color: rgb(112, 112, 5);
+                                                                        font-size: 20px;"></i>
+                                                                            </a>
+                                                                        @else
+                                                                            <a href=""
+                                                                                class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                                                        @endif
+                                                                 
+                                                                @else
+                                                                    <a href="{{ route('login') }}"
+                                                                        class="btn btn-sm btn-info-soft mb-0">Đăng nhập làm bài</a>
+                                                                @endif
+                                                                </p>
 															</div>
 															<hr> <!-- Divider -->
 														@endforeach

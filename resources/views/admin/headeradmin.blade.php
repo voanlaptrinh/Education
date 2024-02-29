@@ -24,28 +24,42 @@
                 <!-- Title -->
                 <li class="nav-item ms-2 my-2">Pages</li>
 
-               
+
 
                 <!-- Menu item 3 -->
-                <li class="nav-item"> <a class="nav-link" href="{{ route('indexNews') }}"><i
-                            class="fas fa-newspaper fa-fw me-2"></i>Tin tức</a></li>
+                {{-- <li class="nav-item"> <a class="nav-link" href="{{ route('indexNews') }}"><i
+                            class="fas fa-newspaper fa-fw me-2"></i>Tin tức</a></li> --}}
                 <li class="nav-item"> <a class="nav-link" href="{{ route('student.index') }}"><i
-                            class="fas fa-user-graduate fa-fw me-2"></i>Học sinh</a></li>
+                            class="fas fa-user-graduate fa-fw me-2"></i>Quản lý Học sinh</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('classes.index') }}"><i
                             class="fas fa-pen-fancy fa-fw me-2"></i></i>Lớp học</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('subjects.index') }}"><i
-                            class="fas fa-book fa-fw me-2"></i>Môn học</a></li>
+                            class="fas fa-book fa-fw me-2"></i>Môn học & (Đề bài)</a></li>
 
                 <li class="nav-item"> <a class="nav-link" href="{{ route('lesson.index') }}"><i
                             class="fas fa-graduation-cap fa-fw me-2"></i>Bài học</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('curriculum.index') }}"><i
                             class="fas fa-graduation-cap fa-fw me-2"></i>Chương trình giảng dạy</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('contact.admin') }}"><i
-                            class="fas fa-file-signature fa-fw me-2"></i>Liên hệ</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('reviews.admin') }}"><i
-                            class="far fa-comment-dots fa-fw me-2"></i>Đánh giá</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('webConfig.index') }}"><i
-                            class="fas fa-cogs fa-fw me-2"></i>Cài đặt web</a></li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#collapseauthentication"
+                        role="button" aria-expanded="false" aria-controls="collapseauthentication">
+                        <i class="bi bi-lock fa-fw me-2"></i>Cài đặt
+                    </a>
+                    <!-- Submenu -->
+                    <ul class="nav flex-column collapse" id="collapseauthentication" data-bs-parent="#navbar-sidebar"
+                        style="">
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('webConfig.index') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>Cài đặt web</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('contact.admin') }}"><i
+                                    class="fas fa-file-signature fa-fw me-2"></i>Liên hệ</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('reviews.admin') }}"><i
+                                    class="far fa-comment-dots fa-fw me-2"></i>Đánh giá</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="admin-error-404.html">Error 404</a></li>
+                    </ul>
+                </li>
+
 
                 <!-- Menu item 4 -->
                 {{-- <li class="nav-item">
@@ -101,16 +115,16 @@
             <!-- Sidebar footer START -->
             <div class="px-3 mt-auto pt-3">
                 <div class="d-flex align-items-center justify-content-between text-primary-hover">
-                    <a class="h5 mb-0 text-body" href="#" data-bs-toggle="tooltip"
-                        data-bs-placement="top" title="Settings">
+                    <a class="h5 mb-0 text-body" href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Settings">
                         <i class="bi bi-gear-fill"></i>
                     </a>
-                    <a class="h5 mb-0 text-body" href="{{route('home.index')}}" data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Home">
+                    <a class="h5 mb-0 text-body" href="{{ route('home.index') }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Home">
                         <i class="bi bi-globe"></i>
                     </a>
-                    <a class="h5 mb-0 text-body" href="{{route('logout')}}" data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Sign out">
+                    <a class="h5 mb-0 text-body" href="{{ route('logout') }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Sign out">
                         <i class="bi bi-power"></i>
                     </a>
                 </div>

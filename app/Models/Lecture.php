@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Lecture extends Model
 {
     use HasFactory;
-    protected $fillable = ['chapter_id', 'title', 'content', 'video','image'];
+    protected $fillable = ['chapter_id', 'title', 'content', 'video','image', 'is_free'];
 
     public function chapter()
     {

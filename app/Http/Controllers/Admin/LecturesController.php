@@ -54,6 +54,7 @@ class LecturesController extends Controller
             'image' => $imagePath,
             'video' => $videoPath,
             'chapter_id' => $request->input('chapter_id'),
+            'is_free' => $request->has('is_free'),
         ]);
 
         // Lưu bản ghi vào cơ sở dữ liệu
@@ -99,6 +100,7 @@ class LecturesController extends Controller
         $lecture->title = $request->input('title');
         $lecture->content = $request->input('content');
         $lecture->chapter_id = $request->input('chapter_id');
+        $lecture->is_free = $request->has('is_free');
 
         // Lưu bản ghi vào cơ sở dữ liệu
         $lecture->save();

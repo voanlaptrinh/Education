@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->string('video')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('is_free')->default(true);
             // $table->unsignedBigInteger('class_id');
             // $table->unsignedBigInteger('subject_id');
             $table->timestamps();

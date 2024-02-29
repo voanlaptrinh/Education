@@ -23,10 +23,13 @@
                         </span>
                     @enderror
                 </div>
-                {{-- <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control">
-                </div> --}}
+                <div class="col-lg-12  pt-3">
+                    <label class="form-label custom-cursor-default-hover">Miễn phí hoặc mất phí</label>
+                    <div class="form-check form-switch form-check-lg mb-0">
+                        <input class="form-check-input mt-0 price-toggle me-2 custom-cursor-on-hover" type="checkbox" name="is_free" id="is_free" value="1" {{ old('is_free') ? 'checked' : '' }}>
+                        <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Bật lên nếu là bài làm miên phí</label>
+                    </div>
+                </div>
                 <div class="form-group pt-3">
                     <label for="content">Nội dung</label>
                     <textarea name="content" class="form-control" rows="4"></textarea>
@@ -90,7 +93,7 @@
                         </div>
                     </div>
 
-
+                    
                 </div>
 
 

@@ -138,11 +138,11 @@
 
                                                             {{-- {{ $result['userAnswer'] }} --}}
                                                             <div class="accordion-item mb-3">
-                                                                <h6 class="accordion-header" id="headingOne">
+                                                                <h6 class="accordion-header shadow" id="headingOne">
                                                                     <button class="accordion-button rounded">
                                                                         <span
                                                                             class="text-secondary fw-bold me-3">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
-                                                                        <span class="fw-bold">{{ $question2->text }}?</span>
+                                                                        <span class="fw-bold ">{{ $question2->text }}?</span>
                                                                     </button>
                                                                 </h6>
                                                                 <div class="">
@@ -203,7 +203,7 @@
             const totalSteps = {{ count($questions) }};
             let currentStep = 1;
             let timeLimit = {{ $course->time_limit }};
-            let timeRemaining = timeLimit;
+            let timeRemaining = getTimeRemainingFromStorage() || timeLimit;
         
             function updateTimerDisplay() {
                 const minutes = Math.floor(timeRemaining / 60);
@@ -238,12 +238,27 @@
                 // Update the remaining time input before submitting the form
                 document.getElementById('remainingTimeInput').value = timeRemaining;
         
+                // Clear the time remaining value from Local Storage
+                localStorage.removeItem('timeRemaining');
+        
                 // Submit the form
                 formElement.submit();
             }
         
+            function getTimeRemainingFromStorage() {
+                // Get the time remaining value from Local Storage
+                const storedTimeRemaining = localStorage.getItem('timeRemaining');
+                return storedTimeRemaining ? parseInt(storedTimeRemaining) : null;
+            }
+        
+            // Save timeRemaining to Local Storage every second
+            setInterval(() => {
+                localStorage.setItem('timeRemaining', timeRemaining.toString());
+            }, 1000);
+        
             startTimer(); // Start the timer when the page loads
         </script>
+        
         
         
 
