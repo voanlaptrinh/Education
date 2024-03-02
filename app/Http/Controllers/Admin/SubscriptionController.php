@@ -23,9 +23,15 @@ class SubscriptionController extends Controller
         $classes = Classes::all();
         return view('subscriptions.index', compact('classes', 'subscriptions', 'webConfig'));
     }
+    public function indexAdmin()
+    {
+        $subscriptions = Subscription::orderBy('id', 'asc')->get();
+
+        return view('admin.subscription.index', compact( 'subscriptions'));
+    }
     public function create()
     {
-        return view('test.subscriptions.create');
+        return view('admin.subscription.create');
     }
 
     public function store(Request $request)
@@ -33,22 +39,56 @@ class SubscriptionController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'duration_in_days' => 'required|numeric',
-            'can_do_exercises' => 'required|boolean',
-            'can_view_lectures' => 'required|boolean',
+            'duration_months' => 'required|numeric',
+           
         ]);
 
         $subscriptionData = [
             'name' => $request->input('name'),
-            'price' => $request->input('price'),
-            'duration_in_days' => $request->input('duration_in_days'),
-            'can_do_exercises' => $request->input('can_do_exercises'),
-            'can_view_lectures' => $request->input('can_view_lectures'),
+            'price' => $request->input('price') ,
+            'duration_months' => $request->input('duration_months') *30,
+            
         ];
 
         Subscription::create($subscriptionData);
 
-        return redirect()->route('subscriptions.index')->with('success', 'Subscription added successfully!');
+        return redirect()->route('subscriptions.indexAdmin')->with('success', 'Thêm mới thành công!');
+    }
+    public function destroy(Subscription $subscription)
+    {
+        $subscription->delete();
+        return redirect()->route('subscriptions.indexAdmin')->with('success', 'Xóa gói thành công!');
+    }
+    public function update(Request $request, $id)
+    {
+        // Validate the request
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'duration_months' => 'required|numeric',
+           
+        ]);
+
+        $lecture = Subscription::findOrFail($id);
+
+        
+        // Cập nhật các trường khác
+        $lecture->name = $request->input('name');
+        $lecture->price = $request->input('price');
+        $lecture->duration_months = $request->input('duration_months') *30;
+
+
+        // Lưu bản ghi vào cơ sở dữ liệu
+        $lecture->save();
+
+        // Chuyển hướng về trang index của lectures với thông báo thành công
+        return redirect()->route('subscriptions.indexAdmin', )
+            ->with('success', 'Sửa gói thành công');
+    }
+
+    public function edit(Subscription $subscription)
+    {
+        return view('admin.subscription.edit', compact('subscription'));
     }
     public function purchase($packageId)
     {

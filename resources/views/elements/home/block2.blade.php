@@ -14,16 +14,22 @@
 					</div>
 				</div>
 			</div>
+			@php
+
+			$totalUser = \App\Models\User::where('user_type', 1)->count();
+			$totalReviews = \App\Models\User::where('status', 1)->count();
+		   
+		@endphp
 			<!-- Counter item -->
 			<div class="col-sm-6 col-xl-3">
 				<div class="d-flex justify-content-center align-items-center p-4 bg-blue bg-opacity-10 rounded-3">
 					<span class="display-6 lh-1 text-blue mb-0"><i class="fas fa-user-tie"></i></span>
 					<div class="ms-4 h6 fw-normal mb-0">
 						<div class="d-flex">
-							<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="200" data-purecounter-delay="200">0</h5>
+							<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$totalUser}}" data-purecounter-delay="200">0</h5>
 							<span class="mb-0 h5">+</span>
 						</div>
-						<p class="mb-0">Expert Tutors</p>
+						<p class="mb-0">Tài khoản đăng ký</p>
 					</div>
 				</div>
 			</div>
@@ -46,10 +52,10 @@
 					<span class="display-6 lh-1 text-info mb-0"><i class="bi bi-patch-check-fill"></i></span>
 					<div class="ms-4 h6 fw-normal mb-0">
 						<div class="d-flex">
-							<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="6" data-purecounter-delay="300">0</h5>
-							<span class="mb-0 h5">K+</span>
+							<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$totalReviews}}" data-purecounter-delay="300">0</h5>
+							<span class="mb-0 h5">+</span>
 						</div>
-						<p class="mb-0">Certified Courses</p>
+						<p class="mb-0">Lượt đánh giá</p>
 					</div>
 				</div>
 			</div>

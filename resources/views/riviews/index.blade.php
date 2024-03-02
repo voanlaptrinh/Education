@@ -129,8 +129,13 @@
                                     @if ($review->status == 1)
                                         <div class="d-sm-flex">
                                             <!-- Avatar image -->
-                                            <img class="avatar avatar-lg rounded-circle float-start me-3"
-                                                src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
+                                            @if (!empty($review->user->image))
+                                                <img class="avatar avatar-lg rounded-circle float-start me-3"
+                                                    src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
+                                            @else
+                                                <img class="avatar avatar-lg rounded-circle float-start me-3"
+                                                    src="/assets/user/images/default-avatar.png" alt="avatar">
+                                            @endif
                                             <div>
                                                 <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
                                                     <!-- Title -->

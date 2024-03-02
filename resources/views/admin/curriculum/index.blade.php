@@ -87,11 +87,7 @@
                                             class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Xem bài giảng</a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('lectures.index', ['chapter' => $chapter]) }}"
-                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Xem bài giảng</a>
-                                    </td>
-                                    <td>
-                                        {{ $chapter->created_at }}
+                                        {{ $chapter->created_at->format('d/m/Y') }}
                                     </td>
 
 

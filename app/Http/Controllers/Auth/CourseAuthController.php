@@ -20,7 +20,7 @@ class CourseAuthController extends Controller
         $classes = Classes::all();
         $webConfig = Web_config::find(1);
         $user = Auth::user();
-        $user->checkSubscriptionStatus();
+        // Auth::user()->checkSubscriptionStatus();
 
         return view('instructor-quiz.quiz-lessons', compact('subject', 'lessons', 'classes', 'webConfig', 'courses'));
     }
@@ -33,6 +33,11 @@ class CourseAuthController extends Controller
 
         $classes = Classes::all();
         // TODO: Xử lý để hiển thị chi tiết về bài học $lesson
+        
         return view('instructor-quiz.course-detail', compact('lesson', 'webConfig', 'classes', 'lessons'));
+   
+        
+   
+   
     }
 }

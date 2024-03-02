@@ -44,8 +44,8 @@
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
                                     <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill"
                                         data-bs-target="#course-pills-2" type="button" role="tab"
-                                        aria-controls="course-pills-2" aria-selected="false"
-                                        tabindex="-1">Chương trình giảng dạy</button>
+                                        aria-controls="course-pills-2" aria-selected="false" tabindex="-1">Chương trình
+                                        giảng dạy</button>
                                 </li>
                                 <!-- Tab item -->
 
@@ -65,82 +65,111 @@
 
                                 </div>
                                 <!-- Content END -->
+                                <!-- Modal -->
+                                <!-- Modal -->
+
+
 
                                 <!-- Content START -->
                                 <div class="tab-pane fade" id="course-pills-2" role="tabpanel"
                                     aria-labelledby="course-pills-tab-2">
                                     <!-- Course accordion START -->
                                     <div class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
-										@php
-										$firstChapter = true;
-									@endphp
-									
-									@foreach ($lesson->chapters as $key => $chapter)
-										<div class="accordion-item mb-3">
-											<h6 class="accordion-header font-base" id="heading-{{ $key }}">
-												<button
-													class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed"
-													type="button" data-bs-toggle="collapse"
-													data-bs-target="#collapse-{{ $key }}" aria-expanded="{{ $firstChapter ? 'true' : 'false' }}"
-													aria-controls="collapse-{{ $key }}">
-													{{ $chapter->title }}
-													<span class="small ms-0 ms-sm-2">({{ $chapter->lectures->count() }}
-														Video)</span>
-												</button>
-											</h6>
-											<div id="collapse-{{ $key }}"
-												class="accordion-collapse collapse {{ $firstChapter ? 'show' : '' }}"
-												aria-labelledby="heading-{{ $key }}"
-												data-bs-parent="#accordionExample2">
-												<div class="accordion-body mt-3">
-													<!-- Course lecture -->
-													@if (count($chapter->lectures) > 0)
-														@foreach ($chapter->lectures as $item)
-															<div
-																class="d-flex justify-content-between align-items-center">
-																<div
-																	class="position-relative d-flex align-items-center">
-																	<a href="#"
-																		class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
-																		<i class="fas fa-play me-0"></i>
-																	</a>
-																	<span
-																		class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">{{ $item->title }}</span>
-																</div>
-																<p class="mb-0">
-                                                                    @if (!empty(Auth::user()))
-                                                                  
-                                                                        @if ($item->is_free == 0)
-                                                                            <a href=""
-                                                                                class="btn btn-sm btn-info-soft mb-0"> Xem bài giảng
-                                                                                <i class="fas fa-crown"
-                                                                                    style=" color: rgb(112, 112, 5);
-                                                                        font-size: 20px;"></i>
-                                                                            </a>
+                                        @php
+                                            $firstChapter = true;
+                                        @endphp
+
+                                        @foreach ($lesson->chapters as $key => $chapter)
+                                            <div class="accordion-item mb-3">
+                                                <h6 class="accordion-header font-base" id="heading-{{ $key }}">
+                                                    <button
+                                                        class="accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed"
+                                                        type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapse-{{ $key }}"
+                                                        aria-expanded="{{ $firstChapter ? 'true' : 'false' }}"
+                                                        aria-controls="collapse-{{ $key }}">
+                                                        {{ $chapter->title }}
+                                                        <span class="small ms-0 ms-sm-2">({{ $chapter->lectures->count() }}
+                                                            Video)</span>
+                                                    </button>
+                                                </h6>
+                                                <div id="collapse-{{ $key }}"
+                                                    class="accordion-collapse collapse {{ $firstChapter ? 'show' : '' }}"
+                                                    aria-labelledby="heading-{{ $key }}"
+                                                    data-bs-parent="#accordionExample2">
+                                                    <div class="accordion-body mt-3">
+                                                        <!-- Course lecture -->
+                                                        @if (count($chapter->lectures) > 0)
+                                                            @foreach ($chapter->lectures as $item)
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center">
+                                                                    <div
+                                                                        class="position-relative d-flex align-items-center">
+                                                                        <a href="#"
+                                                                            class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                                            <i class="fas fa-play me-0"></i>
+                                                                        </a>
+                                                                        <div class="row g-sm-0 align-items-center">
+                                                                            <div class="col-sm-6">
+                                                                                <span
+                                                                                    class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-md-400px">{{ $item->title }}</span>
+                                                                            </div>
+                                                                            @if ($item->is_free == 1)
+                                                                                
+                                                                            <div class="col-sm-6">
+                                                                                <span
+                                                                                    class="badge text-bg-orange ms-2 ms-md-0"><i
+                                                                                        class="fas fa-lock fa-fw me-1"></i>Pro</span>
+                                                                            </div>
+                                                                            @endif
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="mb-0">
+                                                                        @if (!empty(Auth::user()))
+                                                                            @if ($item->is_free == 0)
+                                                                                <a href=""
+                                                                                    onclick="showVideo('{{ asset('storage/' . $item->video) }}')"
+                                                                                    class="btn btn-sm btn-info-soft mb-0">Xem
+                                                                                    bài giảng</a>
+                                                                            @else
+                                                                                @if (Auth::user()->is_pro == 0)
+                                                                                    <a href="{{ route('subscriptions.index') }}"
+                                                                                        class="btn btn-sm btn-info-soft mb-0">Xem
+                                                                                        bài giảng
+
+                                                                                    </a>
+                                                                                @else
+                                                                                    <a href="#"
+                                                                                        class="btn btn-sm btn-info-soft mb-0"
+                                                                                        onclick="showVideo('{{ asset('storage/' . $item->video) }}')">Xem
+                                                                                        bài giảng
+
+                                                                                    </a>
+                                                                                @endif
+                                                                            @endif
                                                                         @else
-                                                                            <a href=""
-                                                                                class="btn btn-sm btn-info-soft mb-0">Làm bài</a>
+                                                                            <a href="{{ route('login') }}"
+                                                                                class="btn btn-sm btn-info-soft mb-0">Đăng
+                                                                                nhập làm bài</a>
                                                                         @endif
-                                                                 
-                                                                @else
-                                                                    <a href="{{ route('login') }}"
-                                                                        class="btn btn-sm btn-info-soft mb-0">Đăng nhập làm bài</a>
-                                                                @endif
-                                                                </p>
-															</div>
-															<hr> <!-- Divider -->
-														@endforeach
-													@else
-														Không có video bài giảng nào ...
-													@endif
-												</div>
-											</div>
-										</div>
-										@php
-											$firstChapter = false;
-										@endphp
-									@endforeach
-									
+                                                                    </p>
+
+
+
+                                                                </div>
+                                                                <hr> <!-- Divider -->
+                                                            @endforeach
+                                                        @else
+                                                            Không có video bài giảng nào ...
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @php
+                                                $firstChapter = false;
+                                            @endphp
+                                        @endforeach
+
                                         <!-- Item -->
 
 
@@ -178,7 +207,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <!-- Price and time -->
                                         <div>
-                                         <h5 class="mb-3 font-base text-dark  d-inline-block">{{ $lesson->title }}</h5>
+                                            <h5 class="mb-3 font-base text-dark  d-inline-block">{{ $lesson->title }}</h5>
                                         </div>
 
                                         <!-- Share button with dropdown -->
@@ -204,7 +233,7 @@
                                     </div>
 
                                     <!-- Buttons -->
-                                   
+
                                 </div>
                             </div>
                             <!-- Video END -->
@@ -248,4 +277,83 @@
             </div><!-- Row END -->
         </div>
     </section>
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            height: 100%;
+        }
+    </style>
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="video-container">
+                        <video controls width="100%" height="100%" id="videoPlayerModal">
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showVideo(videoUrl) {
+            // Set the video source based on the clicked lecture
+            var videoPlayerModal = document.getElementById('videoPlayerModal');
+            videoPlayerModal.src = videoUrl;
+
+            // Open the modal
+            var myModal = new bootstrap.Modal(document.getElementById('videoModal'));
+            myModal.show();
+
+            // Assign a function directly to the onhide property
+            myModal._element.onhide = function() {
+                // Pause the video when the modal is hidden
+                videoPlayerModal.pause();
+                // Reset the video to the beginning
+                videoPlayerModal.currentTime = 0;
+            };
+            // Get the close button inside the modal
+            var closeButton = document.querySelector('#videoModal .btn-close');
+
+            // Assign a function directly to the onclick property
+            closeButton.onclick = function() {
+                // Pause the video when the modal is closed
+                videoPlayerModal.pause();
+                // Reset the video to the beginning
+                videoPlayerModal.currentTime = 0;
+            };
+
+            // // Get the modal element
+            // var modalElement = document.getElementById('videoModal');
+
+            // // Add a function to be executed when the modal is closed
+            // modalElement.onmouseleave = function() {
+            //     // Pause the video when the modal is closed
+            //     videoPlayerModal.pause();
+            //     // Reset the video to the beginning
+            //     videoPlayerModal.currentTime = 0;
+            // };
+
+            // Add a function to be executed when the modal is opened
+            modalElement.onmouseenter = function() {
+                // Play the video when the modal is opened
+                videoPlayerModal.play();
+            };
+        }
+    </script>
 @endsection

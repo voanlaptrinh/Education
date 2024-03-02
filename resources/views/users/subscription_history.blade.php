@@ -36,7 +36,7 @@
                                     <!-- Table data -->
                                  <td>{{ $item->user->name }}</td>
                                  <td>{{ $item->subscription->name }}</td>
-                                 <td>{{ $item->subscription->duration_months }} Tháng</td>
+                                 <td>{{ $item->subscription->duration_months /30}} Tháng</td>
                                  <td>{{ number_format($item->subscription->price, 0, ',', ',') }} VNĐ</td>
 
                                     <!-- Table data -->

@@ -406,7 +406,9 @@
 
     <!-- Vendors -->
     <script src="/assets/user/vendor/choices/js/choices.min.js"></script>
-    {{-- <script src="/assets/user/vendor/glightbox/js/glightbox.js"></script> --}}
+    <script src="/assets/user/vendor/apexcharts/js/apexcharts.min.js"></script>
+    <script src="/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+
     <script src="/assets/user/vendor/tiny-slider/tiny-slider.js"></script>
     <script src="/assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
 

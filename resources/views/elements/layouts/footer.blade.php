@@ -6,10 +6,17 @@
 			<!-- Widget 1 START -->
 			<div class="col-lg-3">
 				<!-- logo -->
-				<a class="me-0" href="index.html">
+				@if (!empty($webConfig->logo))
+				<a class="me-0" href="">
 					<img class="light-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
 					<img class="dark-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}" alt="logo">
 				</a>
+				@else
+				<a class="me-0" href="">
+					<img class="light-mode-item h-40px" src="/assets/user/images/logo.svg" alt="logo">
+					<img class="dark-mode-item h-40px" src="/assets/user/images/logo-light.svg" alt="logo">
+				</a>
+				@endif
 				<p class="my-3">{{$webConfig->description}}</p>
 				<!-- Social media icon -->
 				<ul class="list-inline mb-0 mt-3">

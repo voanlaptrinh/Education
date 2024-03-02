@@ -1,6 +1,6 @@
-@extends('index')
-@section('content')
-    <section class="pt-0">
+@extends('indexUser')
+@section('contentUsers')
+    {{-- <section class="pt-0">
         <!-- Main banner background image -->
         <div class="container-fluid px-0">
             <div class="bg-blue h-100px h-md-200px rounded-0"
@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- =======================
                     Page Banner END -->
 
@@ -199,7 +199,7 @@
 
                                 <!-- Save button -->
                                 <div class="d-sm-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary mb-0">Save changes</button>
+                                    <button type="submit" class="btn btn-primary mb-0">Lưu thay đổi</button>
                                 </div>
                             </form>
                         </div>
@@ -231,13 +231,13 @@
                                         @endif
                                         <!-- Current password -->
                                         <div class="mb-3">
-                                            <label class="form-label">Current password</label>
+                                            <label class="form-label">Mật khẩu hiện tại</label>
                                             <input class="form-control" name="old_password" type="password"
                                                 placeholder="Enter current password">
                                         </div>
                                         <!-- New password -->
                                         <div class="mb-3">
-                                            <label class="form-label"> Enter new password</label>
+                                            <label class="form-label"> Mật khẩu mới</label>
                                             <div class="input-group">
                                                 <input class="form-control" name="new_password" type="password"
                                                     placeholder="Enter new password">
@@ -249,13 +249,13 @@
                                         </div>
                                         <!-- Confirm password -->
                                         <div>
-                                            <label class="form-label">Confirm new password</label>
+                                            <label class="form-label">Nhập lại mật khẩu</label>
                                             <input class="form-control" name="new_password_confirmation" type="password"
                                                 placeholder="Enter new password">
                                         </div>
                                         <!-- Button -->
                                         <div class="d-flex justify-content-end mt-4">
-                                            <button type="submit" class="btn btn-primary mb-0">Change password</button>
+                                            <button type="submit" class="btn btn-primary mb-0">Đổi mật khẩu</button>
                                         </div>
                                     </form>
                                 </div>

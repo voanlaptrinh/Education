@@ -78,105 +78,7 @@
                     </li>
 
                     <!-- Nav item 3 Account -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Accounts</a>
-                        <ul class="dropdown-menu" aria-labelledby="accounntMenu">
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#"><i
-                                        class="fas fa-user-tie fa-fw me-1"></i>Instructor</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="instructor-dashboard.html"><i
-                                                class="bi bi-grid-fill fa-fw me-1"></i>Dashboard</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-manage-course.html"><i
-                                                class="bi bi-basket-fill fa-fw me-1"></i>Courses</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-create-course.html"><i
-                                                class="bi bi-file-earmark-plus-fill fa-fw me-1"></i>Create Course</a>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="course-added.html"><i
-                                                class="bi bi-file-check-fill fa-fw me-1"></i>Course Added</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-quiz.html"><i
-                                                class="bi bi-question-diamond fa-fw me-1"></i>Quiz</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-earning.html"><i
-                                                class="fas fa-chart-line fa-fw me-1"></i>Earnings</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-studentlist.html"><i
-                                                class="fas fa-user-graduate fa-fw me-1"></i>Students</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-order.html"><i
-                                                class="bi bi-cart-check-fill fa-fw me-1"></i>Orders</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-review.html"><i
-                                                class="bi bi-star-fill fa-fw me-1"></i>Reviews</a> </li>
-                                    <li> <a class="dropdown-item" href="instructor-payout.html"><i
-                                                class="fas fa-wallet fa-fw me-1"></i>Payout</a> </li>
-                                </ul>
-                            </li>
-
-                            <!-- Dropdown submenu -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#"><i
-                                        class="fas fa-user-graduate fa-fw me-1"></i>Student</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                    <li> <a class="dropdown-item" href="student-dashboard.html"><i
-                                                class="bi bi-grid-fill fa-fw me-1"></i>Dashboard</a> </li>
-                                    <li> <a class="dropdown-item" href="student-subscription.html"><i
-                                                class="bi bi-card-checklist fa-fw me-1"></i>My Subscriptions</a> </li>
-                                    <li> <a class="dropdown-item" href="student-course-list.html"><i
-                                                class="bi bi-basket-fill fa-fw me-1"></i>Courses</a> </li>
-                                    <li> <a class="dropdown-item" href="student-course-resume.html"><i
-                                                class="far fa-fw fa-file-alt me-1"></i>Course Resume</a> </li>
-                                    <li> <a class="dropdown-item" href="student-quiz.html"><i
-                                                class="bi bi-question-diamond fa-fw me-1"></i>Quiz </a> </li>
-                                    <li> <a class="dropdown-item" href="student-payment-info.html"><i
-                                                class="bi bi-credit-card-2-front-fill fa-fw me-1"></i>Payment Info</a>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="student-bookmark.html"><i
-                                                class="fas bi-cart-check-fill fa-fw me-1"></i>Wishlist</a> </li>
-                                </ul>
-                            </li>
-
-                            <li> <a class="dropdown-item" href="admin-dashboard.html"><i
-                                        class="fas fa-user-cog fa-fw me-1"></i>Admin</a> </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li> <a class="dropdown-item" href="instructor-edit-profile.html"><i
-                                        class="fas fa-fw fa-edit me-1"></i>Edit Profile</a> </li>
-                            <li> <a class="dropdown-item" href="instructor-setting.html"><i
-                                        class="fas fa-fw fa-cog me-1"></i>Settings</a> </li>
-                            <li> <a class="dropdown-item" href="instructor-delete-account.html"><i
-                                        class="fas fa-fw fa-trash-alt me-1"></i>Delete Profile</a> </li>
-
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <!-- Dropdown Level -->
-                            <li class="dropdown-submenu dropend">
-                                <a class="dropdown-item dropdown-toggle" href="#">Dropdown levels</a>
-                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-
-                                    <!-- dropdown submenu open right -->
-                                    <li class="dropdown-submenu dropend">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Dropdown (end)</a>
-                                        <ul class="dropdown-menu" data-bs-popper="none">
-                                            <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                            <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                        </ul>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-
-                                    <!-- dropdown submenu open left -->
-                                    <li class="dropdown-submenu dropstart">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Dropdown (start)</a>
-                                        <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-                                            <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                            <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                        </ul>
-                                    </li>
-                                    <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                 
 
                     <!-- Nav item 4 Megamenu-->
                     <li class="nav-item ">
@@ -291,7 +193,7 @@
                                         <path
                                             d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
                                         <use href="#"></use>
-                                    </svg> Light
+                                    </svg> Sáng
                                 </button>
                                 <button type="button" class="btn btn-sm mb-0" data-bs-theme-value="dark">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -302,7 +204,7 @@
                                         <path
                                             d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
                                         <use href="#"></use>
-                                    </svg> Dark
+                                    </svg> Tối
                                 </button>
                                 <button type="button" class="btn btn-sm mb-0 active" data-bs-theme-value="auto">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -310,7 +212,7 @@
                                         viewBox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
                                         <use href="#"></use>
-                                    </svg> Auto
+                                    </svg> Tự động
                                 </button>
                             </div>
                         </li>

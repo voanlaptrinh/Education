@@ -7,7 +7,7 @@
                     <!-- Badge -->
                     <h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">Kết quả</h6>
                     <!-- Title -->
-                    <h1>{{ $course->name }}</h1>
+                    <h1 style="text-shadow: 2px 2px rgb(173, 238, 222);">{{ $course->name }}</h1>
                     <!-- Content -->
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>Thời

@@ -153,54 +153,52 @@ class AuthController extends Controller
         $webConfig = Web_config::find(1);
         return view('auth.profile_account', compact('user', 'classes', 'webConfig'));
     }
-    public function update(Request $request)
+    public function update(Request $request, User $user)
+
     {
+        // dd($user);
+        // dd($request->all());
         try {
-            // Validate data, including file validation if needed
-            $validatedData = $request->validate([
-                'name' => 'required|string|max:255',
-                'username' => 'required|string|max:255',
-                'phone' => 'nullable|string|max:255',
-                'address' => 'nullable|string|max:255',
-                'gender' => 'required|in:0,1',
-                'birthday' => 'nullable|date',
-                'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            ], [
-                'name.required' => 'Trường tên không được bỏ trống.',
-                'name.string' => 'Trường tên phải là chuỗi.',
-                'name.max' => 'Trường tên không được vượt quá 255 ký tự.',
+            // $request->validate([
+            //     'name' => 'required|string|max:255',
+            //     'username' => 'required|string|max:255',
+            //     'phone' => 'nullable|string|max:255',
+            //     'address' => 'nullable|string|max:255',
+            //     'gender' => 'required|in:0,1',
+            //     'birthday' => 'nullable|date',
+            //     'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            // ], [
+            //     'name.required' => 'Trường tên không được bỏ trống.',
+            //     'name.string' => 'Trường tên phải là chuỗi.',
+            //     'name.max' => 'Trường tên không được vượt quá 255 ký tự.',
 
-                'username.required' => 'Trường tên người dùng không được bỏ trống.',
-                'username.string' => 'Trường tên người dùng phải là chuỗi.',
-                'username.max' => 'Trường tên người dùng không được vượt quá 255 ký tự.',
+            //     'username.required' => 'Trường tên người dùng không được bỏ trống.',
+            //     'username.string' => 'Trường tên người dùng phải là chuỗi.',
+            //     'username.max' => 'Trường tên người dùng không được vượt quá 255 ký tự.',
 
-                'phone.string' => 'Trường số điện thoại phải là chuỗi.',
-                'phone.max' => 'Trường số điện thoại không được vượt quá 255 ký tự.',
+            //     'phone.string' => 'Trường số điện thoại phải là chuỗi.',
+            //     'phone.max' => 'Trường số điện thoại không được vượt quá 255 ký tự.',
 
-                'address.string' => 'Trường địa chỉ phải là chuỗi.',
-                'address.max' => 'Trường địa chỉ không được vượt quá 255 ký tự.',
+            //     'address.string' => 'Trường địa chỉ phải là chuỗi.',
+            //     'address.max' => 'Trường địa chỉ không được vượt quá 255 ký tự.',
 
-                'gender.required' => 'Trường giới tính không được bỏ trống.',
-                'gender.in' => 'Trường giới tính không hợp lệ.',
+            //     'gender.required' => 'Trường giới tính không được bỏ trống.',
+            //     'gender.in' => 'Trường giới tính không hợp lệ.',
 
-                'birthday.date' => 'Trường ngày sinh phải là kiểu ngày.',
+            //     'birthday.date' => 'Trường ngày sinh phải là kiểu ngày.',
 
-                'profile_picture.image' => 'Trường hình đại diện phải là hình ảnh.',
-                'profile_picture.mimes' => 'Trường hình đại diện phải có định dạng jpeg, png, jpg, gif.',
-                'profile_picture.max' => 'Trường hình đại diện không được vượt quá 2048 KB.',
-            ]);
-
-            // Update text fields
-            $user = Auth::user();
-            $user->update([
-                'name' => $validatedData['name'],
-                'username' => $validatedData['username'],
-                'phone' => $validatedData['phone'],
-                'address' => $validatedData['address'],
-                'gender' => $validatedData['gender'],
-                'birthday' => $validatedData['birthday'],
-            ]);
-
+            //     'profile_picture.image' => 'Trường hình đại diện phải là hình ảnh.',
+            //     'profile_picture.mimes' => 'Trường hình đại diện phải có định dạng jpeg, png, jpg, gif.',
+            //     'profile_picture.max' => 'Trường hình đại diện không được vượt quá 2048 KB.',
+            // ]);
+           
+            $user->name = $request->input('name');
+            $user->username = $request->input('username');
+            $user->phone = $request->input('phone');
+            $user->address = $request->input('address');
+            $user->gender = $request->input('gender');
+            $user->birthday = $request->input('birthday');
+            // dd($request->input('phone'));
             // Handle profile picture update
             if ($request->hasFile('profile_picture')) {
                 // Delete the old profile picture if it exists
@@ -212,7 +210,16 @@ class AuthController extends Controller
                 $path = $request->file('profile_picture')->storeAs('public/profile_pictures', $user->id . '.' . $request->file('profile_picture')->extension());
                 $user->update(['image' => 'profile_pictures/' . $user->id . '.' . $request->file('profile_picture')->extension()]);
             }
-
+            // $user->update([
+            //     'name' => $validatedData['name'],
+            //     'username' => $validatedData['username'],
+            //     'phone' => $validatedData['phone'],
+            //     'address' => $validatedData['address'],
+            //     'gender' => $validatedData['gender'],
+            //     'birthday' => $validatedData['birthday'],
+            // ]);
+           
+            $user->save();
             return redirect()->route('profile', compact('user'))->with('success', 'Profile updated successfully.');
         } catch (\Exception $e) {
             \Log::error('Update profile error: ' . $e->getMessage());

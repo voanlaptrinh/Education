@@ -100,7 +100,7 @@ class LecturesController extends Controller
         $lecture->title = $request->input('title');
         $lecture->content = $request->input('content');
         $lecture->chapter_id = $request->input('chapter_id');
-        $lecture->is_free = $request->has('is_free');
+        $lecture->is_free = $request->has('is_free') ? true : false;
 
         // Lưu bản ghi vào cơ sở dữ liệu
         $lecture->save();
@@ -116,7 +116,6 @@ class LecturesController extends Controller
 
         // Xóa hình ảnh và video từ thư mục lưu trữ (nếu cần)
         Storage::disk('public')->delete($lecture->video);
-        Storage::disk('public')->delete($lecture->image);
 
         // Xóa bản ghi từ cơ sở dữ liệu
         $lecture->delete();

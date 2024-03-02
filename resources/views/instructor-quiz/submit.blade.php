@@ -39,20 +39,12 @@
                                                 <span class="h6">{{ $numberOfCompletedExams }}</span>
                                                 <span class="text-body fw-light">bài tập đã làm</span>
                                             </li>
-                                            <li class="list-inline-item me-3 mb-1 mb-sm-0">
-                                                <span class="h6">7</span>
-                                                <span class="text-body fw-light">Completed courses</span>
-                                            </li>
-                                            <li class="list-inline-item me-3 mb-1 mb-sm-0">
-                                                <span class="h6">52</span>
-                                                <span class="text-body fw-light">Completed lessons</span>
-                                            </li>
+                                          
                                         </ul>
                                     </div>
                                     <!-- Button -->
                                     <div class="mt-2 mt-sm-0">
-                                        <a href="student-course-list.html" class="btn btn-outline-primary mb-0">View my
-                                            courses</a>
+                                        <a  href="{{ route('profile', Auth::user()->id) }}" class="btn btn-outline-primary mb-0">Thông tin tài khoản</a>
                                     </div>
                                 </div>
                             </div>

@@ -26,8 +26,16 @@
                                     <div class="avatar avatar-xxl position-relative mt-n3">
                                         <img class="avatar-img rounded-circle border border-white border-3 shadow"
                                             src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}" alt="">
-                                        <span
-                                            class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
+                                       
+                                       
+                                       @if (Auth::user()->is_pro ==1)
+                                           
+                                       <span
+                                       class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
+                                      @else
+                                      <span
+                                      class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Free</span>
+                                       @endif
                                     </div>
                                 </div>
                                 <!-- Profile info -->
@@ -36,23 +44,15 @@
                                         <h1 class="my-1 fs-4">{{ Auth::user()->name }}</h1>
                                         <ul class="list-inline mb-0">
                                             <li class="list-inline-item me-3 mb-1 mb-sm-0">
-                                                <span class="h6">{{ $countExamHistory }}</span>
-                                                <span class="text-body fw-light">Bài làm</span>
+                                                <span class="h6"><i class="fas fa-book"></i> {{ $countExamHistory }}</span>
+                                                <span class="text-body fw-light">Bài tập đã làm</span>
                                             </li>
-                                            <li class="list-inline-item me-3 mb-1 mb-sm-0">
-                                                <span class="h6">7</span>
-                                                <span class="text-body fw-light">Completed courses</span>
-                                            </li>
-                                            <li class="list-inline-item me-3 mb-1 mb-sm-0">
-                                                <span class="h6">52</span>
-                                                <span class="text-body fw-light">Completed lessons</span>
-                                            </li>
+                                           
                                         </ul>
                                     </div>
                                     <!-- Button -->
                                     <div class="mt-2 mt-sm-0">
-                                        <a href="student-course-list.html" class="btn btn-outline-primary mb-0">View my
-                                            courses</a>
+                                        <a href="{{ route('profile', Auth::user()->id) }}" class="btn btn-outline-primary mb-0">Thông tin tài khoản</a>
                                     </div>
                                 </div>
                             </div>

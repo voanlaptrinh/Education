@@ -92,17 +92,12 @@
                                         </th>
                                         <th scope="col" class="border-0">
                                             <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Đã đăng ký</font>
+                                                <font style="vertical-align: inherit;">Số lượt xem</font>
                                             </font>
                                         </th>
                                         <th scope="col" class="border-0">
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Trạng thái</font>
-                                            </font>
-                                        </th>
-                                        <th scope="col" class="border-0">
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Giá</font>
                                             </font>
                                         </th>
                                         <th scope="col" class="border-0 rounded-end">
@@ -171,7 +166,7 @@
                                                 <!-- Enrolled item -->
                                                 <td class="text-center text-sm-start">
                                                     <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">{{ $lesson->views }}</font>
+                                                        <font style="vertical-align: inherit;">{{ $lesson->views }} <i class="fas fa-eye"></i> </font>
                                                     </font>
                                                 </td>
                                                 <!-- Status item -->
@@ -183,11 +178,7 @@
                                                     </div>
                                                 </td>
                                                 <!-- Price item -->
-                                                <td>
-                                                    <font style="vertical-align: inherit;">
-                                                        <font style="vertical-align: inherit;">$250</font>
-                                                    </font>
-                                                </td>
+                                              
                                                 <!-- Action item -->
                                                 <td>
 
@@ -315,7 +306,7 @@
                                                     @if ($course->questions->count() > 0)
                                                         @if ($course->is_free == 0)
                                                             <a href="{{ route('questions.show', $course) }}"
-                                                                class="btn btn-sm btn-info-soft mb-0"> Làm bài tập
+                                                                class="btn btn-sm btn-info-soft mb-0"> Làm bài 
                                                                 <i class="fas fa-crown"
                                                                     style=" color: rgb(112, 112, 5);
                                                         font-size: 20px;"></i>

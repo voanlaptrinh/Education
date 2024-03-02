@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LecturesController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\NewsAdminController;
+use App\Http\Controllers\Admin\PdfController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\RiviewController;
@@ -136,7 +137,15 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/search', [ChaptersController::class, 'search'])->name('curriculum.search');
         });
 
-
+        Route::prefix('/subcsription')->group(function () {
+            Route::get('/', [SubscriptionController::class, 'indexAdmin'])->name('subscriptions.indexAdmin');
+            Route::get('/subscriptions/create', [SubscriptionController::class, 'create'])->name('subscriptions.create');
+            Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
+            Route::get('/edit/{subscription}', [SubscriptionController::class, 'edit'])->name('subscriptions.edit');
+            Route::put('/update/{subscription}', [SubscriptionController::class, 'update'])->name('subscriptions.update');
+            Route::delete('delete/{subscription}', [SubscriptionController::class, 'destroy'])->name('subscriptions.destroy');
+        
+        });
 
 
         Route::prefix('/lectures')->group(function () {
@@ -154,6 +163,15 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/{id}/toggle-status', [ReviewController::class, 'toggleStatus'])->name('reviews.toggleStatus');
             Route::get('/{id}', [ReviewController::class, 'show'])->name('reviews.show');
             Route::delete('/delete/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+        });
+      
+        Route::prefix('/pdf')->group(function () {
+            Route::get('/{chapter}', [PdfController::class, 'index'])->name('pdf.index'); //in ra vi deo liên quan đến bài học
+            // Route::get('/create/{chapter}', [LecturesController::class, 'create'])->name('lectures.create');
+            // Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
+            // Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');
+            // Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');
+            // Route::delete('delete/{lecture}', [LecturesController::class, 'destroy'])->name('lectures.destroy');
         });
     });
 });
@@ -221,8 +239,7 @@ Route::get('/lessons/{lesson}', [CourseAuthController::class, 'show'])->name('le
 
 //danh sách gói mua 
 Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('subscriptions.index');
-Route::get('/subscriptions/create', [SubscriptionController::class, 'create'])->name('subscriptions.create');
-Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
+
 Route::get('/subscriptions/purchase/{packageId}', [SubscriptionController::class, 'purchase'])->name('subscriptions.purchase');
 
 

@@ -18,11 +18,11 @@
             <ul class="navbar-nav flex-column" id="navbar-sidebar">
 
                 <!-- Menu item 1 -->
-                <li class="nav-item"><a href="admin-dashboard.html" class="nav-link"><i
-                            class="bi bi-house fa-fw me-2"></i>Dashboard</a></li>
+                <li class="nav-item"><a href="{{route('admin.index')}}" class="nav-link"><i
+                            class="bi bi-house fa-fw me-2"></i>Trang chủ</a></li>
 
                 <!-- Title -->
-                <li class="nav-item ms-2 my-2">Pages</li>
+                <li class="nav-item ms-2 my-2">Trang</li>
 
 
 
@@ -40,6 +40,8 @@
                             class="fas fa-graduation-cap fa-fw me-2"></i>Bài học</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('curriculum.index') }}"><i
                             class="fas fa-graduation-cap fa-fw me-2"></i>Chương trình giảng dạy</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('subscriptions.indexAdmin') }}"><i
+                            class="fas fa-cubes fa-fw me-2"></i>Gói khóa học</a></li>
 
 
                 <li class="nav-item">
