@@ -98,7 +98,7 @@
                         <div class="card-footer text-center d-grid pb-0">
                             <button type="button" class="btn btn-light mb-0" data-container="body" data-bs-toggle="popover"
                                 data-bs-placement="top"
-                                data-bs-content="Với tài khoản Free sẽ được được làm tối thiểu 3 câu hỏi và video bài giảng">Miễn
+                                data-bs-content="Với tài khoản Free sẽ được được làm và xem những bài tập và khóa học miễn phí">Miễn
                                 phí</button>
                         </div>
                     </div>

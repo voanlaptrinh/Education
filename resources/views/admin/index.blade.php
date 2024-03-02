@@ -2,15 +2,26 @@
 <html lang="en">
 
 <!-- Mirrored from eduport.webestica.com/admin-course-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:26:16 GMT -->
-
+@php
+$logo = \App\Models\Web_config::find(1);
+@endphp
 <head>
-    <title>Eduport- LMS, Education and Course Theme</title>
+    <title>{{$logo->name}}</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Webestica.com">
-    <meta name="description" content="Eduport- LMS, Education and Course Theme">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="{{ $logo->name }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $logo->logo) }}">
+    <meta name="description" content="{{ $logo->name }}">
+    <meta property="og:title" content="{{ $logo->name }}">
+    <meta property="og:description" content="{{ $logo->description }}">
+    <meta property="og:image" content="{{ asset('storage/' . $logo->logo) }}">
+    <meta property="og:url" content="{{Request::url()}}">
+    <meta name="twitter:title" content="{{ $logo->name }}">
+    <meta name="twitter:description" content="{{ $logo->description }}">
+    <meta name="twitter:image" content="{{ asset('storage/' . $logo->logo) }}">
 
     <!-- Dark mode -->
     <script>

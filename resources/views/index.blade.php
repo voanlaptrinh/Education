@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+@php
+    $logo = \App\Models\Web_config::find(1);
+@endphp
 
 <head>
-    <title>Eduport - LMS, Education and Course Theme</title>
+    <title>{{ $logo->name }}</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Webestica.com">
-    <meta name="description" content="Eduport- LMS, Education and Course Theme">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="{{ $logo->name }}">
+    <meta name="description" content="{{ $logo->name }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:title" content="{{ $logo->name }}">
+    <meta property="og:description" content="{{ $logo->description }}">
+    <meta property="og:image" content="{{ asset('storage/' . $logo->logo) }}">
+    <meta property="og:url" content="{{Request::url()}}">
+    <meta name="twitter:title" content="{{ $logo->name }}">
+    <meta name="twitter:description" content="{{ $logo->description }}">
+    <meta name="twitter:image" content="{{ asset('storage/' . $logo->logo) }}">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $logo->logo) }}">
+
     <!-- Dark mode -->
     <script>
         const storedTheme = localStorage.getItem('theme')
@@ -70,7 +84,8 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/user/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('storage/' . $logo->logo) }}">
+ 
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -106,6 +121,7 @@
 </head>
 
 <body>
+
     @include('elements.layouts.header')
     <main>
         @yield('content')

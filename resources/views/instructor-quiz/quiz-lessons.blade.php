@@ -43,7 +43,7 @@
                                     </div>
                                     <!-- Content and input -->
                                     <div class="col-lg-5 text-lg-end">
-                                        <a href="#" class="btn btn-outline-warning mb-0">Start Teaching Today</a>
+                                        <a href="#" class="btn btn-outline-warning mb-0">Bắt đầu giảng dạy</a>
                                     </div>
                                 </div>
                             </div>

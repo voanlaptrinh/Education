@@ -113,33 +113,6 @@
 		<hr class="mt-4 mb-0">
 
 		<!-- Bottom footer -->
-		<div class="py-3">
-			<div class="container px-0">
-				<div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
-					<!-- copyright text -->
-					<div class="text-body text-primary-hover"> Copyrights ©2023 Eduport. Build by <a href="https://www.webestica.com/" target="_blank" class="text-body">Webestica</a></div>
-					<!-- copyright links-->
-					<div class="justify-content-center mt-3 mt-lg-0">
-						<ul class="nav list-inline justify-content-center mb-0">
-							<li class="list-inline-item">
-								<!-- Language selector -->
-								<div class="dropup mt-0 text-center text-sm-end">
-									<a class="dropdown-toggle nav-link" href="#" role="button" id="languageSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
-										<i class="fas fa-globe me-2"></i>Language
-									</a>
-									<ul class="dropdown-menu min-w-auto" aria-labelledby="languageSwitcher">
-										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{{ config('app.url') }}/assets/user/images/flags/uk.svg" alt="">English</a></li>
-										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{{ config('app.url') }}/assets/user/images/flags/gr.svg" alt="">German </a></li>
-										<li><a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{{ config('app.url') }}/assets/user/images/flags/sp.svg" alt="">French</a></li>
-									</ul>
-								</div>
-							</li>
-							<li class="list-inline-item"><a class="nav-link" href="#">Terms of use</a></li>
-							<li class="list-inline-item"><a class="nav-link pe-0" href="#">Privacy policy</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 </footer>
