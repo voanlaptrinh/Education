@@ -4,7 +4,22 @@
         <div class="card bg-transparent border rounded-3">
             <!-- Card header START -->
             <div class="card-header bg-transparent border-bottom">
-                <h3 class="mb-0">Các gói mà bạn đã mua</h3>
+
+                <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
+                    <!-- Title -->
+                    <div>
+                        <h3 class="m-0 pt-3">Các gói bạn đã mua</h3>
+                        <span class="me-3 small"> </span>
+                    </div>
+                    <!-- Review star -->
+                    <ul class="list-inline mb-0">
+                        @if (!empty(Auth::user()->subscription_expiration_date))
+                            <span class="me-3 small">{{ Auth::user()->subscription_expiration_date }} </span>
+                        @else
+                            <span class="me-3 small">Bạn chưa mua gói </span>
+                        @endif
+                    </ul>
+                </div>
             </div>
             <!-- Card header END -->
 
@@ -12,7 +27,7 @@
             <div class="card-body">
 
                 <!-- Search and select START -->
-               
+
                 <!-- Search and select END -->
 
                 <!-- Course list table START -->
@@ -30,19 +45,27 @@
 
                         <!-- Table body START -->
                         <tbody>
-                            {{-- @dd($examHistory) --}}
+
+                            @if(count($subscriptionHistory) > 0)
                             @foreach ($subscriptionHistory as $item)
                                 <tr>
                                     <!-- Table data -->
-                                 <td>{{ $item->user->name }}</td>
-                                 <td>{{ $item->subscription->name }}</td>
-                                 <td>{{ $item->subscription->duration_months /30}} Tháng</td>
-                                 <td>{{ number_format($item->subscription->price, 0, ',', ',') }} VNĐ</td>
-
+                                    <td>{{ $item->user->name }}</td>
+                                    <td>{{ $item->subscription->name }}</td>
+                                    <td>{{ $item->subscription->duration_months / 30 }} Tháng</td>
+                                    <td>{{ number_format($item->subscription->price, 0, ',', ',') }} VNĐ</td>
                                     <!-- Table data -->
-                                   
                                 </tr>
                             @endforeach
+                        @else
+                            <tr>
+                                <td colspan="4">Bạn chưa mua gói nào...</td>
+                            </tr>
+                        @endif
+                        
+
+                            {{-- @dd($examHistory) --}}
+
 
                         </tbody>
                         <!-- Table body END -->
@@ -51,7 +74,7 @@
                 <!-- Course list table END -->
 
                 <!-- Pagination START -->
-               
+
                 <!-- Pagination END -->
             </div>
             <!-- Card body START -->

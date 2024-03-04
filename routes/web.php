@@ -172,7 +172,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/create', [AdminDocumentController::class, 'create'])->name('document.create');
             Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');
             Route::delete('/delete/{document}', [AdminDocumentController::class, 'destroy'])->name('document.destroy');
-            // Route::get('/create/{chapter}', [LecturesController::class, 'create'])->name('lectures.create');
+            Route::get('/{document}/edit', [AdminDocumentController::class, 'edit'])->name('document.edit');
             // Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
             // Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');
             // Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');

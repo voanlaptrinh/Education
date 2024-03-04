@@ -107,8 +107,8 @@
                                     </td>
 
                                     <td class="d-flex">
-                                        {{-- <a href="{{ route('curriculum.edit', ['chapter' => $chapter]) }}"
-                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="bi bi-pencil-square"></i></a> --}}
+                                        <a href="{{ route('document.edit', ['document' => $document]) }}"
+                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="bi bi-pencil-square"></i></a>
                                         <form action="{{ route('document.destroy', ['document' => $document]) }}"
                                             method="post" onsubmit="return confirm('Bạn có chắc chắn xóa?')">
                                             @csrf

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Classes;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
@@ -28,7 +29,7 @@ class DocumentController extends Controller
             'classes_id' => 'required|exists:classes,id',
             'name' => 'required',
             'description' => 'required',
-            'file' => 'required|mimes:pdf|max:10240', // Giới hạn kích thước tệp PDF (đơn vị KB)
+            'file' => 'required|mimes:pdf', // Giới hạn kích thước tệp PDF (đơn vị KB)
         ],[
             'name.required' =>'Bắt buộc nhập tiêu đề',
             'classes_id.required' =>'Bắt buộc nhập tiêu đề',
@@ -51,6 +52,44 @@ class DocumentController extends Controller
 
         return redirect()->route('document.admin')->with('success', 'Tài liệu được thêm thành công');
     }
+    public function edit($id)
+    {
+        $document = Document::findOrFail($id);
+        return view('admin.document.edit', compact('document'));
+    }
+    public function update(Request $request, Document $document)
+{
+    $request->validate([
+        'classes_id' => 'required|exists:classes,id',
+        'name' => 'required',
+        'description' => 'required',
+        'file' => 'nullable|mimes:pdf', // Nếu bạn muốn cho phép không cập nhật file
+    ]);
+
+    $classes = Classes::findOrFail($request->input('classes_id'));
+
+    // Cập nhật các trường thông tin của tài liệu
+    $document->update([
+        'classes_id' => $request->input('classes_id'),
+        'name' => $request->input('name'),
+        'description' => $request->input('description'),
+    ]);
+
+    // Kiểm tra xem có file mới được tải lên không
+    if ($request->hasFile('file')) {
+        // Xóa file cũ
+        Storage::disk('public')->delete($document->file_path);
+
+        // Tải lên file mới
+        $file = $request->file('file');
+        $filePath = $file->store('documents', 'public');
+        
+        // Cập nhật đường dẫn của file mới
+        $document->update(['file_path' => $filePath]);
+    }
+
+    return redirect()->route('document.admin')->with('success', 'Tài liệu được cập nhật thành công');
+}
     public function destroy(Document $document)
     {
        
