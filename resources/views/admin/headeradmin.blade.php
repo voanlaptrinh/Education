@@ -33,6 +33,8 @@
                             class="fas fa-user-graduate fa-fw me-2"></i>Quản lý Học sinh</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('classes.index') }}"><i
                             class="fas fa-pen-fancy fa-fw me-2"></i></i>Lớp học</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('document.admin') }}"><i
+                            class="fas fa-folder-open fa-fw me-2"></i></i>Tài liệu</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('subjects.index') }}"><i
                             class="fas fa-book fa-fw me-2"></i>Môn học & (Đề bài)</a></li>
 
@@ -58,7 +60,6 @@
                                     class="fas fa-file-signature fa-fw me-2"></i>Liên hệ</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('reviews.admin') }}"><i
                                     class="far fa-comment-dots fa-fw me-2"></i>Đánh giá</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="admin-error-404.html">Error 404</a></li>
                     </ul>
                 </li>
 

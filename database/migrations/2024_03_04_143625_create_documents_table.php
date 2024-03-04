@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pdfs', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
+            $table->text('description')->nullable();
             $table->string('file_path');
+            $table->unsignedBigInteger('classes_id');
+            $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pdfs');
+        Schema::dropIfExists('documents');
     }
 };

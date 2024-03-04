@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ChaptersController;
 use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DocumentController as AdminDocumentController;
 use App\Http\Controllers\Admin\LecturesController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\NewsAdminController;
@@ -30,6 +31,7 @@ use App\Http\Controllers\Admin\WebConfigController;
 use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\Auth\VnpayController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\VerificationController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
@@ -165,8 +167,11 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::delete('/delete/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
         });
       
-        Route::prefix('/pdf')->group(function () {
-            Route::get('/{chapter}', [PdfController::class, 'index'])->name('pdf.index'); //in ra vi deo liên quan đến bài học
+        Route::prefix('/document')->group(function () {
+            Route::get('/index', [AdminDocumentController::class, 'index'])->name('document.admin'); 
+            Route::get('/create', [AdminDocumentController::class, 'create'])->name('document.create');
+            Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');
+            Route::delete('/delete/{document}', [AdminDocumentController::class, 'destroy'])->name('document.destroy');
             // Route::get('/create/{chapter}', [LecturesController::class, 'create'])->name('lectures.create');
             // Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
             // Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');

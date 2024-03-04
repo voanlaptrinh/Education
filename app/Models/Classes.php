@@ -13,4 +13,8 @@ class Classes extends Model
     {
         return $this->hasMany(Subject::class,'class_id');
     }
+    public function documents()
+    {
+        return $this->hasMany(Document::class);
+    }
 }

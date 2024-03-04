@@ -17,7 +17,7 @@
 			@php
 
 			$totalUser = \App\Models\User::where('user_type', 1)->count();
-			$totalReviews = \App\Models\User::where('status', 1)->count();
+			$totalReviews = \App\Models\Review::where('status', 1)->count();
 		   
 		@endphp
 			<!-- Counter item -->
