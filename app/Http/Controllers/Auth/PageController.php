@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Classes;
 use App\Models\Lecture;
 use App\Models\Lesson;
@@ -22,6 +23,8 @@ class PageController extends Controller
         $totalUser = User::Where('user_type', 1)->count();
         $bai_hoc = Lesson::all();
         $webConfig = Web_config::find(1);
-        return View('pages.index', compact('totalReviews','totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+        $banner = Banner::find(1);
+        return View('pages.index', compact('totalReviews', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
+   
 }

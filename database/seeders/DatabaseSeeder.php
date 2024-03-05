@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Banner;
 use App\Models\Classes;
 use App\Models\Course;
 use App\Models\Lesson;
@@ -74,7 +75,13 @@ class DatabaseSeeder extends Seeder
         Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 3, 'description' => 'sdasd']);
         Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 3, 'description' => 'sdasd']);
 
-
+Banner::create([
+    'name' => 'Học tập không giới hạn trong tầm tay',
+    'description' => 'Thị trường giảng dạy và học tập trực tuyến với. Được giảng dạy bởi các chuyên gia để giúp bạn có được những kỹ năng mới.',
+    'link_video' => '#',
+    'link_button' => '#',
+    'image_path' => ''
+]);
         Web_config::create(
             [
                 'name' => 'edu',
@@ -216,4 +223,5 @@ class DatabaseSeeder extends Seeder
             ]);
         }
     }
+
 }

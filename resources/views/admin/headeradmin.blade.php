@@ -54,6 +54,8 @@
                     <!-- Submenu -->
                     <ul class="nav flex-column collapse" id="collapseauthentication" data-bs-parent="#navbar-sidebar"
                         style="">
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('banners.index') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>Banner</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('webConfig.index') }}"><i
                                     class="fas fa-cogs fa-fw me-2"></i>Cài đặt web</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('contact.admin') }}"><i

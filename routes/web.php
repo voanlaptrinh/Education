@@ -54,7 +54,11 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth']], func
 Route::middleware(['auth', 'check.user.type:0'])->group(function () {
     ///admin
     Route::prefix('admin')->group(function () {
+       
         Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+Route::get('/banners', [DashboardController::class,'banner'])->name('banners.index');
+Route::put('/banners/{id}', [DashboardController::class,'update'])->name('banners.update');
+        
         Route::prefix('news')->group(function () {
             Route::get('/', [NewsAdminController::class, 'index'])->name('indexNews');
             Route::get('/create', [NewsAdminController::class, 'create'])->name('newsAdmin.index');

@@ -133,8 +133,8 @@
 					</svg>
 				</figure>
 				<!-- Title -->
-				<h1 class="mb-0 display-6">Học tập không giới hạn trong 
-					<span class="position-relative">tầm tay
+				<h1 class="mb-0 display-6">{{$banner->name }}
+					<span class="position-relative">
 						<!-- SVG START -->
 						<span class="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
 							<svg width="300px" height="62.1px" enable-background="new 0 0 366 62.1" viewBox="0 0 366 62.1" xmlns="http://www.w3.org/2000/svg">
@@ -146,26 +146,29 @@
 				</h1>
 
 				<!-- Content -->
-				<p class="my-4 lead">Thị trường giảng dạy và học tập trực tuyến với. Được giảng dạy bởi các chuyên gia để giúp bạn có được những kỹ năng mới.</p>
+				<p class="my-4 lead">{{$banner->description}}</p>
 
 				<!-- Info -->
 				<ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
-					<li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Learn with experts</li>
-					<li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get certificate</li>
-					<li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get membership</li>
+					
 				</ul>
 
 				<div class="d-sm-flex align-items-center justify-content-center justify-content-lg-start">
 					<!-- Button -->
-					<a href="#" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</a>
-					<!-- Video button -->
-					<div class="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
+					@if (!empty($banner->link_button))
+					<a href="{{$banner->link_button}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</a>
 						
-						<a data-glightbox data-gallery="office-tour" href="{{ asset('storage/' . $webConfig->video) }}" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7">
+					@endif
+					<!-- Video button -->
+					@if (!empty($banner->link_video))
+						
+					<div class="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
+						<a data-glightbox data-gallery="office-tour" href="{{$banner->link_video}}" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7">
 							<i class="fas fa-play"></i>
 							<h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Watch video</h6>
 						</a>
 					</div>
+					@endif
 				</div>
 			</div>
 			<!-- Left content END -->
@@ -232,32 +235,19 @@
 
 				<!-- Active student -->
 				<div class="p-3 bg-success d-inline-block rounded-4 shadow-lg position-absolute top-50 end-0 translate-middle-y mt-n7 z-index-1 d-none d-md-block" style="background:url(assets/user/images/pattern/01.png) no-repeat center center; background-size:cover;">
-					<p class="text-white">Our daily new students</p>
-					<!-- Avatar group -->
-					<ul class="avatar-group mb-0">
-						<li class="avatar avatar-sm">
-							<img class="avatar-img rounded-circle border-white" src="assets/user/images/avatar/01.jpg" alt="avatar">
-						</li>
-						<li class="avatar avatar-sm">
-							<img class="avatar-img rounded-circle border-white" src="assets/user/images/avatar/02.jpg" alt="avatar">
-						</li>
-						<li class="avatar avatar-sm">
-							<img class="avatar-img rounded-circle border-white" src="assets/user/images/avatar/03.jpg" alt="avatar">
-						</li>
-						<li class="avatar avatar-sm">
-							<img class="avatar-img rounded-circle border-white" src="assets/user/images/avatar/04.jpg" alt="avatar">
-						</li>
-						<li class="avatar avatar-sm">
-							<div class="avatar-img rounded-circle border-white bg-primary">
-								<span class="text-white position-absolute top-50 start-50 translate-middle small">1K+</span>
-							</div>
-						</li>
-					</ul>
+					
 				</div>
 				<!-- Image -->
+				@if (!empty($banner->image_path))
+				<div class="position-relative">
+					<img src="{{ asset('storage/' . $banner->image_path) }}" alt="">
+				</div>
+				@else
 				<div class="position-relative">
 					<img src="assets/user/images/element/07.png" alt="">
 				</div>
+				@endif
+				
 			</div>
 			<!-- Right content END -->
 		</div>
