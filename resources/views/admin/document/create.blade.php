@@ -48,6 +48,15 @@
                 </div>
 
             </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image (Optional)</label>
+                <input type="file" name="image" id="image" class="form-control" accept="image/*">
+                @error('image')
+                <span class="invalid-feedback" role="alert">
+                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                </span>
+            @enderror
+            </div>
             <div class="form-group pb-3">
                 <label for="content">Mô tả</label>
                 <textarea name="description" class="form-control" rows="4"></textarea>

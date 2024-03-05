@@ -139,7 +139,7 @@ $logo = \App\Models\Web_config::find(1);
                         <div class="navbar-expand-lg ms-auto ms-xl-0">
 
                             <!-- Toggler for menubar START -->
-                            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                            {{-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarTopContent" aria-controls="navbarTopContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-animation">
@@ -147,7 +147,7 @@ $logo = \App\Models\Web_config::find(1);
                                     <span></span>
                                     <span></span>
                                 </span>
-                            </button>
+                            </button> --}}
                             <!-- Toggler for menubar END -->
 
                             <!-- Topbar menu START -->
@@ -174,120 +174,7 @@ $logo = \App\Models\Web_config::find(1);
                         <div class="ms-xl-auto">
                             <ul class="navbar-nav flex-row align-items-center">
 
-                                <!-- Notification dropdown START -->
-                                <li class="nav-item ms-2 ms-md-3 dropdown">
-                                    <!-- Notification button -->
-                                    <a class="btn btn-light btn-round mb-0" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                                        <i class="bi bi-bell fa-fw"></i>
-                                    </a>
-                                    <!-- Notification dote -->
-                                    <span class="notif-badge animation-blink"></span>
-
-                                    <!-- Notification dropdown menu START -->
-                                    <div
-                                        class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
-                                        <div class="card bg-transparent">
-                                            <div
-                                                class="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
-                                                <h6 class="m-0">Notifications <span
-                                                        class="badge bg-danger bg-opacity-10 text-danger ms-2">2
-                                                        new</span></h6>
-                                                <a class="small" href="#">Clear all</a>
-                                            </div>
-                                            <div class="card-body p-0">
-                                                <ul class="list-group list-unstyled list-group-flush">
-                                                    <!-- Notif item -->
-                                                    <li>
-                                                        <a href="#"
-                                                            class="list-group-item-action border-0 border-bottom d-flex p-3">
-                                                            <div class="me-3">
-                                                                <div class="avatar avatar-md">
-                                                                    <img class="avatar-img rounded-circle"
-                                                                        src="assets/images/avatar/08.jpg"
-                                                                        alt="avatar">
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <p class="text-body small m-0">Congratulate <b>Joan
-                                                                        Wallace</b> for graduating from <b>Microverse
-                                                                        university</b></p>
-                                                                <u class="small">Say congrats</u>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-
-                                                    <!-- Notif item -->
-                                                    <li>
-                                                        <a href="#"
-                                                            class="list-group-item-action border-0 border-bottom d-flex p-3">
-                                                            <div class="me-3">
-                                                                <div class="avatar avatar-md">
-                                                                    <img class="avatar-img rounded-circle"
-                                                                        src="assets/images/avatar/02.jpg"
-                                                                        alt="avatar">
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <h6 class="mb-1">Larry Lawson Added a new course</h6>
-                                                                <p class="small text-body m-0">What's new! Find out
-                                                                    about new features</p>
-                                                                <u class="small">View detail</u>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-
-                                                    <!-- Notif item -->
-                                                    <li>
-                                                        <a href="#"
-                                                            class="list-group-item-action border-0 border-bottom d-flex p-3">
-                                                            <div class="me-3">
-                                                                <div class="avatar avatar-md">
-                                                                    <img class="avatar-img rounded-circle"
-                                                                        src="assets/images/avatar/05.jpg"
-                                                                        alt="avatar">
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <h6 class="mb-1">New request to apply for Instructor
-                                                                </h6>
-                                                                <u class="small">View detail</u>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-
-                                                    <!-- Notif item -->
-                                                    <li>
-                                                        <a href="#"
-                                                            class="list-group-item-action border-0 border-bottom d-flex p-3">
-                                                            <div class="me-3">
-                                                                <div class="avatar avatar-md">
-                                                                    <img class="avatar-img rounded-circle"
-                                                                        src="assets/images/avatar/03.jpg"
-                                                                        alt="avatar">
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <h6 class="mb-1">Update v2.3 completed successfully
-                                                                </h6>
-                                                                <p class="small text-body m-0">What's new! Find out
-                                                                    about new features</p>
-                                                                <small class="text-body">5 min ago</small>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- Button -->
-                                            <div
-                                                class="card-footer bg-transparent border-0 py-3 text-center position-relative">
-                                                <a href="#" class="stretched-link">See all incoming activity</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Notification dropdown menu END -->
-                                </li>
-                                <!-- Notification dropdown END -->
+                              
 
                                 <!-- Profile dropdown START -->
                                 <li class="nav-item ms-2 ms-md-3 dropdown">
@@ -295,7 +182,7 @@ $logo = \App\Models\Web_config::find(1);
                                     <a class="avatar avatar-sm p-0" href="#" id="profileDropdown"
                                         role="button" data-bs-auto-close="outside" data-bs-display="static"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg"
+                                        <img class="avatar-img rounded-circle" src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"
                                             alt="avatar">
                                     </a>
 
@@ -308,11 +195,11 @@ $logo = \App\Models\Web_config::find(1);
                                                 <!-- Avatar -->
                                                 <div class="avatar me-3 mb-3">
                                                     <img class="avatar-img rounded-circle shadow"
-                                                        src="assets/images/avatar/01.jpg" alt="avatar">
+                                                        src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}" alt="avatar">
                                                 </div>
                                                 <div>
-                                                    <a class="h6 mt-2 mt-sm-0" href="#">Lori Ferguson</a>
-                                                    <p class="small m-0">example@gmail.com</p>
+                                                    <a class="h6 mt-2 mt-sm-0" href="#">{{ Auth::user()->name }}</a>
+                                                    <p class="small m-0">{{ Auth::user()->email }}</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -320,14 +207,9 @@ $logo = \App\Models\Web_config::find(1);
                                             <hr class="dropdown-divider">
                                         </li>
                                         <!-- Links -->
-                                        <li><a class="dropdown-item" href="#"><i
-                                                    class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
-                                        <li><a class="dropdown-item" href="#"><i
-                                                    class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
-                                        <li><a class="dropdown-item" href="#"><i
-                                                    class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-                                        <li><a class="dropdown-item bg-danger-soft-hover" href="#"><i
-                                                    class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
+                                       
+                                        <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('logout') }}"><i
+                                                    class="bi bi-power fa-fw me-2"></i>Đăng xuất</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
@@ -346,7 +228,7 @@ $logo = \App\Models\Web_config::find(1);
                                                             d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
                                                         </path>
                                                         <use href="#"></use>
-                                                    </svg> Light
+                                                    </svg> Sáng
                                                 </button>
                                                 <button type="button" class="btn btn-sm mb-0"
                                                     data-bs-theme-value="dark">
@@ -361,7 +243,7 @@ $logo = \App\Models\Web_config::find(1);
                                                             d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
                                                         </path>
                                                         <use href="#"></use>
-                                                    </svg> Dark
+                                                    </svg> Tối
                                                 </button>
                                                 <button type="button" class="btn btn-sm mb-0"
                                                     data-bs-theme-value="auto">
@@ -373,7 +255,7 @@ $logo = \App\Models\Web_config::find(1);
                                                             d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z">
                                                         </path>
                                                         <use href="#"></use>
-                                                    </svg> Auto
+                                                    </svg> Tự động
                                                 </button>
                                             </div>
                                         </li>

@@ -31,7 +31,7 @@ use App\Http\Controllers\Admin\WebConfigController;
 use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\Auth\VnpayController;
-use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\Auth\DocumentController as AuthDocumentController;
 use App\Http\Controllers\VerificationController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
@@ -88,7 +88,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{subject}/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
             Route::put('/{subject}/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
             Route::delete('subjects/{subject}/courses/{course}', [CourseController::class, 'destroyCourse'])->name('topic.destroy');
-           
+
             Route::post('/{id}/is_free', [CourseController::class, 'toggleStatus'])->name('courses.toggleStatus');
         });
 
@@ -146,7 +146,6 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/edit/{subscription}', [SubscriptionController::class, 'edit'])->name('subscriptions.edit');
             Route::put('/update/{subscription}', [SubscriptionController::class, 'update'])->name('subscriptions.update');
             Route::delete('delete/{subscription}', [SubscriptionController::class, 'destroy'])->name('subscriptions.destroy');
-        
         });
 
 
@@ -166,13 +165,14 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{id}', [ReviewController::class, 'show'])->name('reviews.show');
             Route::delete('/delete/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
         });
-      
+
         Route::prefix('/document')->group(function () {
-            Route::get('/index', [AdminDocumentController::class, 'index'])->name('document.admin'); 
+            Route::get('/index', [AdminDocumentController::class, 'index'])->name('document.admin');
             Route::get('/create', [AdminDocumentController::class, 'create'])->name('document.create');
             Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');
             Route::delete('/delete/{document}', [AdminDocumentController::class, 'destroy'])->name('document.destroy');
             Route::get('/{document}/edit', [AdminDocumentController::class, 'edit'])->name('document.edit');
+            Route::put('update/{document}', [AdminDocumentController::class, 'update'])->name('document.update');
             // Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
             // Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');
             // Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');
@@ -235,7 +235,9 @@ Route::prefix('/reviews')->group(function () {
     });
 });
 
-
+Route::prefix('/documents')->group(function () {
+    Route::get('/{class}', [AuthDocumentController::class, 'index'])->name('document.index');
+});
 
 
 

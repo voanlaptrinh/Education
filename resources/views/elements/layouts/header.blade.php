@@ -66,7 +66,20 @@
 
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="demoMenu"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài liệu</a>
+                        <ul class="dropdown-menu" aria-labelledby="demoMenu">
 
+                            @foreach ($classes as $item)
+                                <li class="dropdown-submenu dropend">
+                                    <a class="dropdown-item " href="{{ route('document.index', $item) }}">{{ $item->name }}</a>
+                                </li>
+                            @endforeach
+
+
+                        </ul>
+                    </li>
                     <!-- Nav item 2 Pages -->
                     <li class="nav-item ">
                         <a class="nav-link " href="{{ route('reviews.index') }}">Đánh giá</a>

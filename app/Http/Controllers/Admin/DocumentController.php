@@ -30,6 +30,7 @@ class DocumentController extends Controller
             'name' => 'required',
             'description' => 'required',
             'file' => 'required|mimes:pdf', // Giới hạn kích thước tệp PDF (đơn vị KB)
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ],[
             'name.required' =>'Bắt buộc nhập tiêu đề',
             'classes_id.required' =>'Bắt buộc nhập tiêu đề',
@@ -37,16 +38,24 @@ class DocumentController extends Controller
             'description.required' =>'Bắt buộc nhập mô tả',
             'file.required' =>'Bắt buộc upload file PDF',
             'file.mimes' =>'Filde up lên phải là dạnh PDF',
+            'image.image' => 'File phải là hình ảnh',
+        'image.mimes' => 'File ảnh phải có định dạng jpeg, png, jpg hoặc gif',
         ]);
 
         $classes = Classes::findOrFail($request->input('classes_id'));
 
         $file = $request->file('file');
         $filePath = $file->store('documents', 'public');
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->store('images', 'public');
+        }
         $document = new Document([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'file_path' => $filePath,
+            'image_path' => $imagePath,
         ]);
         $classes->documents()->save($document);
 
@@ -55,7 +64,9 @@ class DocumentController extends Controller
     public function edit($id)
     {
         $document = Document::findOrFail($id);
-        return view('admin.document.edit', compact('document'));
+        $classes = Classes::all();
+        
+        return view('admin.document.edit', compact('document','classes'));
     }
     public function update(Request $request, Document $document)
 {

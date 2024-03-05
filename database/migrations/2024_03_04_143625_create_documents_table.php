@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('file_path');
+            $table->string('image_path'); // Thêm trường image (đường dẫn ảnh)
             $table->unsignedBigInteger('classes_id');
             $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');
             $table->timestamps();
