@@ -1,6 +1,5 @@
 @extends('admin.index')
 @section('contentadmin')
-  
     <div class="page-content-wrapper border">
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
@@ -39,12 +38,12 @@
                 </div>
                 <div class="col-lg-6">
                     <label for="exampleInputEmail1" class="form-label">File PDF *</label>
-                   <input type="file" class="form-control" name="file">
-                   @error('file')
-                   <span class="invalid-feedback" role="alert">
-                       <label class="error" id="name_error" for="name">{{ $message }}</label>
-                   </span>
-               @enderror
+                    <input type="file" class="form-control" name="file">
+                    @error('file')
+                        <span class="invalid-feedback" role="alert">
+                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                        </span>
+                    @enderror
                 </div>
 
             </div>
@@ -52,10 +51,10 @@
                 <label for="image" class="form-label">Image (Optional)</label>
                 <input type="file" name="image" id="image" class="form-control" accept="image/*">
                 @error('image')
-                <span class="invalid-feedback" role="alert">
-                    <label class="error" id="name_error" for="name">{{ $message }}</label>
-                </span>
-            @enderror
+                    <span class="invalid-feedback" role="alert">
+                        <label class="error" id="name_error" for="name">{{ $message }}</label>
+                    </span>
+                @enderror
             </div>
             <div class="form-group pb-3">
                 <label for="content">Mô tả</label>
@@ -66,8 +65,36 @@
                     </span>
                 @enderror
             </div>
-
+            <div class="form-group">
+                <label for="access_level">Access Level:</label>
+                <select name="access_level" id="access_level" class="form-control">
+                    <option value="free">Free</option>
+                    <option value="paid">Paid</option>
+                    <option value="pro">Pro</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="priceField" style="display: none;">
+                <label for="price">Price:</label>
+                <input type="number" name="price" step="0.01" class="form-control">
+            </div>
             <button type="submit" class="btn btn-primary pt-2">Thêm mới</button>
         </form>
     </div>
+    <!-- resources/views/pdf/create.blade.php -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var accessLevelSelect = document.getElementById('access_level');
+        var priceField = document.getElementById('priceField');
+
+        accessLevelSelect.addEventListener('change', function () {
+            if (accessLevelSelect.value === 'paid') {
+                priceField.style.display = 'block';
+            } else {
+                priceField.style.display = 'none';
+            }
+        });
+    });
+</script>
+
 @endsection

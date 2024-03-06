@@ -21,7 +21,7 @@ class DocumentController extends Controller
     public function create()
     {
         $classes = Classes::all();
-        return view('admin.document.create',compact('classes'));
+        return view('admin.document.create', compact('classes'));
     }
     public function store(Request $request)
     {
@@ -31,17 +31,21 @@ class DocumentController extends Controller
             'description' => 'required',
             'file' => 'required|mimes:pdf', // Giới hạn kích thước tệp PDF (đơn vị KB)
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-        ],[
-            'name.required' =>'Bắt buộc nhập tiêu đề',
-            'classes_id.required' =>'Bắt buộc nhập tiêu đề',
-            'classes_id.exists' =>'ID phải tồn tại ở lớp học',
-            'description.required' =>'Bắt buộc nhập mô tả',
-            'file.required' =>'Bắt buộc upload file PDF',
-            'file.mimes' =>'Filde up lên phải là dạnh PDF',
+            'access_level' => 'required',
+            'price' => 'required_if:access_level,paid',
+        ], [
+            'name.required' => 'Bắt buộc nhập tiêu đề',
+            'classes_id.required' => 'Bắt buộc nhập tiêu đề',
+            'classes_id.exists' => 'ID phải tồn tại ở lớp học',
+            'description.required' => 'Bắt buộc nhập mô tả',
+            'file.required' => 'Bắt buộc upload file PDF',
+            'file.mimes' => 'Filde up lên phải là dạnh PDF',
             'image.image' => 'File phải là hình ảnh',
-        'image.mimes' => 'File ảnh phải có định dạng jpeg, png, jpg hoặc gif',
+            'image.mimes' => 'File ảnh phải có định dạng jpeg, png, jpg hoặc gif',
         ]);
-
+        if ($request->access_level == 'paid' && empty($request->price)) {
+            return redirect()->back()->with('error', 'Giá là bắt buộc khi chọn tùy chọn "Paid"');
+        }
         $classes = Classes::findOrFail($request->input('classes_id'));
 
         $file = $request->file('file');
@@ -56,6 +60,8 @@ class DocumentController extends Controller
             'description' => $request->input('description'),
             'file_path' => $filePath,
             'image_path' => $imagePath,
+            'access_level' => $request->input('access_level'),
+            'price' => $request->input('price'),
         ]);
         $classes->documents()->save($document);
 
@@ -65,45 +71,45 @@ class DocumentController extends Controller
     {
         $document = Document::findOrFail($id);
         $classes = Classes::all();
-        
-        return view('admin.document.edit', compact('document','classes'));
+
+        return view('admin.document.edit', compact('document', 'classes'));
     }
     public function update(Request $request, Document $document)
-{
-    $request->validate([
-        'classes_id' => 'required|exists:classes,id',
-        'name' => 'required',
-        'description' => 'required',
-        'file' => 'nullable|mimes:pdf', // Nếu bạn muốn cho phép không cập nhật file
-    ]);
+    {
+        $request->validate([
+            'classes_id' => 'required|exists:classes,id',
+            'name' => 'required',
+            'description' => 'required',
+            'file' => 'nullable|mimes:pdf', // Nếu bạn muốn cho phép không cập nhật file
+        ]);
 
-    $classes = Classes::findOrFail($request->input('classes_id'));
+        $classes = Classes::findOrFail($request->input('classes_id'));
 
-    // Cập nhật các trường thông tin của tài liệu
-    $document->update([
-        'classes_id' => $request->input('classes_id'),
-        'name' => $request->input('name'),
-        'description' => $request->input('description'),
-    ]);
+        // Cập nhật các trường thông tin của tài liệu
+        $document->update([
+            'classes_id' => $request->input('classes_id'),
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+        ]);
 
-    // Kiểm tra xem có file mới được tải lên không
-    if ($request->hasFile('file')) {
-        // Xóa file cũ
-        Storage::disk('public')->delete($document->file_path);
+        // Kiểm tra xem có file mới được tải lên không
+        if ($request->hasFile('file')) {
+            // Xóa file cũ
+            Storage::disk('public')->delete($document->file_path);
 
-        // Tải lên file mới
-        $file = $request->file('file');
-        $filePath = $file->store('documents', 'public');
-        
-        // Cập nhật đường dẫn của file mới
-        $document->update(['file_path' => $filePath]);
+            // Tải lên file mới
+            $file = $request->file('file');
+            $filePath = $file->store('documents', 'public');
+
+            // Cập nhật đường dẫn của file mới
+            $document->update(['file_path' => $filePath]);
+        }
+
+        return redirect()->route('document.admin')->with('success', 'Tài liệu được cập nhật thành công');
     }
-
-    return redirect()->route('document.admin')->with('success', 'Tài liệu được cập nhật thành công');
-}
     public function destroy(Document $document)
     {
-       
+
         $document->delete();
 
         return redirect()->route('document.admin')

@@ -10,6 +10,7 @@ use App\Models\Purchase;
 use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Web_config;
+use App\Models\Banner;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +32,8 @@ class VnpayController extends Controller
 
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl = route('Getvnpayment');
-        $vnp_TmnCode = "B74W6JJL"; //Mã website tại VNPAY 
-        $vnp_HashSecret = "VAFRSXAANYQCBJDPQOYDDZPUGGTTOFPR"; //Chuỗi bí mật
+        $vnp_TmnCode = env('VNP_TMNCODE'); //Mã website tại VNPAY 
+        $vnp_HashSecret = env('VNP_HASHSECRET'); //Chuỗi bí mật
 
         $vnp_TxnRef = $this->generateOrderCode(); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = 'Thanh toán hoá đơn';
@@ -101,6 +102,7 @@ class VnpayController extends Controller
         // $data =  $request->except("_token");
         try {
             $user = auth()->user();
+            $banner = Banner::find(1);
             $classes = Classes::all();
             $totalLessons = Lesson::count();
             $totalLectures = Lecture::count();
@@ -133,7 +135,7 @@ class VnpayController extends Controller
         
             $purchase->save();
 
-            return view('pages.index', compact('user', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'));
+            return view('pages.index', compact('user','banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'));
         } catch (\Exception $e) {
             // Xử lý ngoại lệ và trả về thông báo lỗi nếu cần
             return view('subscriptions.error')->with('error', $e->getMessage());
