@@ -290,6 +290,13 @@ $logo = \App\Models\Web_config::find(1);
                 'Verdana/Verdana, Geneva, sans-serif',
             fontSize_sizes: '12/12px;14/14px;16/16px;18/18px;24/24px;36/36px'
         };
+        setTimeout(function(){
+            var successAlerts = document.getElementsByClassName('alert-success');
+            for (var i = 0; i < successAlerts.length; i++) {
+                successAlerts[i].style.display = 'none';
+            }
+        }, 2000);
+        
     </script>
     <script>
         CKEDITOR.replace('my-editor', options);
