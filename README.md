@@ -15,6 +15,8 @@ HHH
     MAIL_FROM_NAME="khánh"
 <!--  -->
 
+VNP_TMNCODE = 'B74W6JJL'
+VNP_HASHSECRET = 'VAFRSXAANYQCBJDPQOYDDZPUGGTTOFPR'
 
 <!-- migratae -->
 php artisan make:migration create_flights_table
