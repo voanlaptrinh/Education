@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classes;
+use App\Models\Document;
 use App\Models\Web_config;
 use Illuminate\Http\Request;
 
@@ -35,6 +36,14 @@ class DocumentController extends Controller
         $webConfig = Web_config::find(1);
     
         return view('document.index', compact('class', 'classes', 'clss', 'webConfig', 'documents', 'searchQuery'));
+    }
+    public function detail($id)
+    {
+        $document = Document::findOrFail($id);
+        $classes = Classes::all();
+        $webConfig = Web_config::find(1);
+        // $news->increment('is_views'); // Tăng giá trị is_views
+        return view('document.detail', compact('document','classes','webConfig'));  //Trả về view có tên 'blog.detail' và truyền biến $news, $fullUrl, và $otherNews vào view.
     }
     
 }

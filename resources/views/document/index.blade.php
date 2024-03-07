@@ -56,7 +56,8 @@
                                 <div class="row g-0">
                                     <!-- Image -->
                                     <div class="col-md-4">
-                                        <img src="{{ asset('storage/' . $item->image_path) }}" class="rounded-3" alt="...">
+                                        <a href="{{ route('document.detail',[$item->id]) }}"><img src="{{ asset('storage/' . $item->image_path) }}" class="rounded-3" alt="..."></a>
+
                                     </div>
 
                                     <!-- Card body -->
@@ -71,13 +72,15 @@
                                                 <span class="h6 fw-light">4.3<i
                                                         class="fas fa-star text-warning ms-1"></i></span>
                                             </div>
+
+
+                                            
                                             <!-- Content -->
                                             <p class="text-truncate-2 mb-3">{{ $item->description }}</p>
                                             <!-- Info -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <!-- Title -->
                                                 <h6 class="text-orange mb-0">{{ $item->classes->name }}</h6>
-
                                                 <!-- Social button -->
                                                 <ul class="list-inline mb-0 mt-3 mt-sm-0">
                                                     <li class="list-inline-item">
@@ -105,10 +108,6 @@
                         </div>
                         <!-- Card item END -->
                     @endforeach
-
-
-
-
                 </div>
                 <!-- Instructor list END -->
 

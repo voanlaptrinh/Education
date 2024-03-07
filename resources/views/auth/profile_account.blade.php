@@ -1,4 +1,4 @@
-@extends('indexUser')
+*+@extends('indexUser')
 @section('contentUsers')
     {{-- <section class="pt-0">
         <!-- Main banner background image -->
@@ -176,9 +176,8 @@
                                 <div class="col-lg-6">
                                     <label for="exampleInputEmail1" class="form-label">Giới tính *</label>
                                     <select class="form-select" name="gender" aria-label="Default select example">
-                                        <option selected="">Giới tính</option>
-                                        <option value="0" {{ $user->gender === 0 ? 'selected' : '' }}>Nam</option>
-                                        <option value="1" {{ $user->gender === 1 ? 'selected' : '' }}>Nữ</option>
+                                        <option value="0" {{ old('gender', $user->gender) == 0 ? 'selected' : '' }}>Nam</option>
+                                        <option value="1" {{ old('gender', $user->gender) == 1 ? 'selected' : '' }}>Nữ</option>
                                     </select>
                                 </div>
                                 <!-- Location -->

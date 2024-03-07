@@ -241,6 +241,7 @@ Route::prefix('/reviews')->group(function () {
 
 Route::prefix('/documents')->group(function () {
     Route::get('/{class}', [AuthDocumentController::class, 'index'])->name('document.index');
+    Route::get('/detail/{id}', [AuthDocumentController::class, 'detail'])->name('document.detail');
 });
 
 

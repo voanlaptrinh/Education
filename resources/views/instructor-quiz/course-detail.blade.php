@@ -127,10 +127,10 @@
                                                                     <p class="mb-0">
                                                                         @if (!empty(Auth::user()))
                                                                             @if ($item->is_free == 0)
-                                                                                <a href=""
+                                                                                <button
                                                                                     onclick="showVideo('{{ asset('storage/' . $item->video) }}')"
                                                                                     class="btn btn-sm btn-info-soft mb-0">Xem
-                                                                                    bài giảng</a>
+                                                                                    bài giảng</button>
                                                                             @else
                                                                                 @if (Auth::user()->is_pro == 0)
                                                                                     <a href="{{ route('subscriptions.index') }}"
@@ -325,7 +325,6 @@
                 // Pause the video when the modal is hidden
                 videoPlayerModal.pause();
                 // Reset the video to the beginning
-                videoPlayerModal.currentTime = 0;
             };
             // Get the close button inside the modal
             var closeButton = document.querySelector('#videoModal .btn-close');
