@@ -1,37 +1,155 @@
 @extends('index')
 @section('content')
-<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-
-<section class="pt-4">
-    <div class="container">
-        <canvas id="pdf-canvas"></canvas>
-
-    </div>
+<section class="bg-light py-0 py-sm-5">
+	<div class="container">
+		<div class="row py-5">
+			<div class="col-lg-8">
+				
+				<h1>{{ $document->name }}</h1>
+				<p>{{ $document->description }}</p>
+				
+			</div>
+		</div>
+	</div>
 </section>
-<script>
-    // Đường dẫn đến PDF
-    const pdfUrl = "http://localhost:27{{ Storage::url($document->file_path) }}";
+<section class="pb-0 py-lg-5">
+	<div class="container">
+		<div class="row">
+			<!-- Main content START -->
+			<div class="col-lg-9">
+				<div class="card shadow rounded-2 p-0">
+					<!-- Tabs START -->
+					
+					<!-- Tabs END -->
 
-    // Lấy đối tượng canvas
-    const canvas = document.getElementById('pdf-canvas');
-    const context = canvas.getContext('2d');
+					<!-- Tab contents START -->
+					<div class="card-body p-4">
+						<div class="tab-content pt-2" id="course-pills-tabContent">
+							<!-- Content START -->
+							<div class="" id="course-pills-1">
+								<!-- Course detail START -->
+								<div id="pdf-viewer"></div>
 
-    // Tải PDF
-    pdfjsLib.getDocument(pdfUrl).then(pdf => {
-        // Lấy trang đầu tiên
-        pdf.getPage(1).then(page => {
-            // Thiết lập kích thước canvas theo kích thước trang PDF
-            const viewport = page.getViewport({ scale: 1.5 });
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
+							</div>
+							<!-- Content END -->
+						</div>
+					</div>
+					<!-- Tab contents END -->
+				</div>
+			</div>
+			<!-- Main content END -->
+            <div class="col-lg-3 pt-5 pt-lg-0">
+				<div class="row mb-5 mb-lg-0">
+					<div class="col-md-6 col-lg-12">
+						<!-- Video START -->
+						<div class="card shadow p-2 mb-4 z-index-9">
+							<div class="overflow-hidden rounded-3">
+								<img src="{{ asset('storage/' . $document->image_path) }}" class="card-img" alt="course image">
+								<!-- Overlay -->
+								
+							</div>
+		
+							<div class="card-body px-3">
+								<!-- Info -->
+								<div class="d-flex justify-content-between align-items-center">
+									<!-- Price and time -->
+									<div>
+										<div class="d-flex align-items-center">
+											<h6 class="fw-bold mb-0 me-2">{{ $document->name }}</h6>
+											
+										</div>
+									</div>
 
-            // Vẽ nội dung PDF lên canvas
-            page.render({
-                canvasContext: context,
-                viewport: viewport
-            });
+									<!-- Share button with dropdown -->
+									<div class="dropdown">
+										<!-- Share button -->
+										<a href="#" class="btn btn-sm btn-light rounded small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="fas fa-fw fa-share-alt"></i>
+										</a>
+										<!-- dropdown button -->
+										<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+											<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+											<li><a class="dropdown-item" href="#"><i class="fas fa-copy me-2"></i>Copy link</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Buttons -->
+								<div class="mt-3 d-sm-flex justify-content-sm-between">
+									<a href="#" class="btn btn-success mb-0">Buy course</a>
+								</div>
+							</div>
+						</div>
+						<!-- Video END -->
+
+					
+					</div>
+
+					
+				</div><!-- Row End -->
+			</div>
+			
+
+		</div><!-- Row END -->
+	</div>
+</section>
+  
+
+
+    <style>
+       canvas{
+        height: 1160px;
+       }
+        #pdf-viewer {
+            width: 100%;
+            height: 800px;
+            overflow: auto;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+        // PDF.js
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+        // Đường dẫn đến file PDF
+        const pdfUrl = '{{ asset("storage/" . $document->file_path) }}';
+
+        // Đối tượng viewer
+        const pdfViewer = document.getElementById('pdf-viewer');
+
+        // Đọc file PDF
+        pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+            // Lấy số lượng trang
+            const numPages = pdfDoc.numPages;
+
+            // Mỗi trang
+            for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                // Tải trang
+                pdfDoc.getPage(pageNum).then(page => {
+                    const canvas = document.createElement('canvas');
+                    pdfViewer.appendChild(canvas);
+
+                    // Kích thước trang A4
+                    const viewport = page.getViewport({
+                        scale: 1.5
+                    });
+
+                    // Canvas context
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    // Vẽ trang lên canvas
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+
+                    page.render(renderContext);
+                });
+            }
         });
-    });
-</script>
-
+    </script>
 @endsection

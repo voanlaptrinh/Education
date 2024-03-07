@@ -69,7 +69,7 @@
                                                     <h5 class="card-title mb-0"><a href="#">{{ $item->name }}</a>
                                                     </h5>
                                                 </div>
-                                                <span class="h6 fw-light">4.3<i
+                                                <span class="h6 fw-light" style="text-transform: uppercase;">{{ $item->access_level }}<i
                                                         class="fas fa-star text-warning ms-1"></i></span>
                                             </div>
 
