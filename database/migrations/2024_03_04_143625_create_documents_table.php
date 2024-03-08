@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('file_path');
             $table->string('image_path');
             $table->string('access_level')->nullable();
-             // Thêm trường image (đường dẫn ảnh)
-             $table->decimal('price', 8, 2)->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->unsignedBigInteger('classes_id');
             $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');
             $table->timestamps();

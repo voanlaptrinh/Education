@@ -76,7 +76,7 @@
             
             <div class="form-group" id="priceField" style="display: none;">
                 <label for="price">Price:</label>
-                <input type="number" name="price" step="0.01" class="form-control">
+                <input type="number" name="price" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary pt-2">Thêm mới</button>
         </form>

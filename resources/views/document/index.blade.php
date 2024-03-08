@@ -69,7 +69,11 @@
                                                     <h5 class="card-title mb-0"><a href="#">{{ $item->name }}</a>
                                                     </h5>
                                                 </div>
-                                                <span class="h6 fw-light" style="text-transform: uppercase;">{{ $item->access_level }}<i
+                                                <span class="h6 fw-light" style="text-transform: uppercase;">@if ( ($item->access_level)== 'paid' )
+                                                    {{ rtrim(rtrim(number_format($item->price, 2), '0'), '.') }} VNĐ
+                                                    @else
+                                                    {{ $item->access_level }}
+                                                @endif<i
                                                         class="fas fa-star text-warning ms-1"></i></span>
                                             </div>
 
