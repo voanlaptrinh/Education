@@ -54,11 +54,11 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth']], func
 Route::middleware(['auth', 'check.user.type:0'])->group(function () {
     ///admin
     Route::prefix('admin')->group(function () {
-       
+
         Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
-Route::get('/banners', [DashboardController::class,'banner'])->name('banners.index');
-Route::put('/banners/{id}', [DashboardController::class,'update'])->name('banners.update');
-        
+        Route::get('/banners', [DashboardController::class, 'banner'])->name('banners.index');
+        Route::put('/banners/{id}', [DashboardController::class, 'update'])->name('banners.update');
+
         Route::prefix('news')->group(function () {
             Route::get('/', [NewsAdminController::class, 'index'])->name('indexNews');
             Route::get('/create', [NewsAdminController::class, 'create'])->name('newsAdmin.index');
@@ -242,6 +242,10 @@ Route::prefix('/reviews')->group(function () {
 Route::prefix('/documents')->group(function () {
     Route::get('/{class}', [AuthDocumentController::class, 'index'])->name('document.index');
     Route::get('/detail/{id}', [AuthDocumentController::class, 'detail'])->name('document.detail');
+    Route::get('/download/{documentId}', [AuthDocumentController::class, 'download'])->name('document.download');
+
+
+
 });
 
 
@@ -258,8 +262,8 @@ Route::get('/subscriptions/purchase/{packageId}', [SubscriptionController::class
 //Thanh toán
 Route::post('/vnpayment', [VnpayController::class, 'vnpay_payment'])->name('vnpayment');
 Route::get('/Getvnpayment', [VnpayController::class, 'Getvnpayment'])->name('Getvnpayment');
-
-
+Route::post('/vnpaydocument', [VnpayController::class, 'Vnpay_Document'])->name('vnpayDocument');
+Route::get('/GetvnpayDocument', [VnpayController::class, 'GetvnpayDocument'])->name('GetvnpayDocument');
 // routes/web.php
 Route::get('/subscriptions/confirm-purchase/{packageId}', [SubscriptionController::class, 'confirmPurchase'])->name('subscriptions.confirmPurchase');
 

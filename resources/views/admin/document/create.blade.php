@@ -78,7 +78,7 @@
                 <label for="price">Price:</label>
                 <input type="number" name="price" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary pt-2">Thêm mới</button>
+            <button type="submit" class="btn btn-primary mt-2">Thêm mới</button>
         </form>
     </div>
     <!-- resources/views/pdf/create.blade.php -->

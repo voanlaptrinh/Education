@@ -61,24 +61,13 @@
 									</div>
 
 									<!-- Share button with dropdown -->
-									<div class="dropdown">
+									<div >
 										<!-- Share button -->
-										<a href="#" class="btn btn-sm btn-light rounded small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
-											<i class="fas fa-fw fa-share-alt"></i>
+										<a href="{{ route('document.download', [$document->id]) }}" class="btn btn-sm btn-light rounded small" >
+											<i class="fas fa-download"></i>
 										</a>
-										<!-- dropdown button -->
-										<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
-											<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
-											<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
-											<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
-											<li><a class="dropdown-item" href="#"><i class="fas fa-copy me-2"></i>Copy link</a></li>
-										</ul>
+										
 									</div>
-								</div>
-
-								<!-- Buttons -->
-								<div class="mt-3 d-sm-flex justify-content-sm-between">
-									<a href="#" class="btn btn-success mb-0">Buy course</a>
 								</div>
 							</div>
 						</div>
