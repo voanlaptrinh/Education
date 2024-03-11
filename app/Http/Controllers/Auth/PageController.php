@@ -26,5 +26,15 @@ class PageController extends Controller
         $banner = Banner::find(1);
         return View('pages.index', compact('totalReviews', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
-   
+    public function search(Request $request)
+    {
+        $keyword = $request->input('search');
+        $classes = Classes::all();
+        $bai_hoc = Lesson::all();
+        $webConfig = Web_config::find(1);
+        $banner = Banner::find(1);
+        $lessons = Lesson::search($keyword)->get();
+
+        return view('search.index', compact('lessons', 'keyword','classes','bai_hoc','webConfig', 'banner'));
+    }
 }

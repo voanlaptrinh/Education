@@ -80,22 +80,42 @@ class DocumentController extends Controller
             'classes_id' => 'required|exists:classes,id',
             'name' => 'required',
             'description' => 'required',
-            'file' => 'nullable|mimes:pdf', // Nếu bạn muốn cho phép không cập nhật file
+            'file' => 'nullable|mimes:pdf|max:2048', // Giới hạn kích thước tệp PDF
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Giới hạn kích thước hình ảnh
+            'access_level' => 'required',
+            'price' => 'required_if:access_level,paid',
+        ], [
+            'name.required' => 'Bắt buộc nhập tiêu đề',
+            'classes_id.required' => 'Bắt buộc chọn lớp học',
+            'classes_id.exists' => 'ID phải tồn tại ở lớp học',
+            'description.required' => 'Bắt buộc nhập mô tả',
+            'file.mimes' => 'File upload phải là định dạng PDF',
+            'file.max' => 'Kích thước tệp PDF không được vượt quá 2MB',
+            'image.image' => 'File phải là hình ảnh',
+            'image.mimes' => 'File ảnh phải có định dạng jpeg, png, jpg hoặc gif',
+            'image.max' => 'Kích thước hình ảnh không được vượt quá 2MB',
+            'access_level.required' => 'Bắt buộc chọn cấp quyền truy cập',
+            'price.required_if' => 'Giá là bắt buộc khi chọn tùy chọn "Paid"',
         ]);
 
-        $classes = Classes::findOrFail($request->input('classes_id'));
+        // Lưu trữ đường dẫn file cũ trước khi cập nhật
+        $oldFilePath = $document->file_path;
 
         // Cập nhật các trường thông tin của tài liệu
         $document->update([
             'classes_id' => $request->input('classes_id'),
             'name' => $request->input('name'),
             'description' => $request->input('description'),
+            'access_level' => $request->input('access_level'),
+            'price' => $request->input('price'),
         ]);
 
         // Kiểm tra xem có file mới được tải lên không
         if ($request->hasFile('file')) {
             // Xóa file cũ
-            Storage::disk('public')->delete($document->file_path);
+            if ($oldFilePath) {
+                Storage::disk('public')->delete($oldFilePath);
+            }
 
             // Tải lên file mới
             $file = $request->file('file');

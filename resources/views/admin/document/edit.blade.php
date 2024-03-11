@@ -1,64 +1,82 @@
 @extends('admin.index')
 @section('contentadmin')
-    <div class="page-content-wrapper border">
-        <div class="row mb-3">
-            <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Sửa file PDF</h1>
-            </div>
+<div class="page-content-wrapper border">
+    <div class="row mb-3">
+        <div class="col-12 d-sm-flex justify-content-between align-items-center">
+            <h1 class="h3 mb-2 mb-sm-0">Sửa Tài liệu học</h1>
         </div>
-        <form method="POST" class="p-4" action="{{ route('document.update', $document->id) }}" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
+    </div>
+    <form method="POST" action="{{ route('document.update', ['document' => $document->id]) }}" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
 
-            <div class="form-group row">
-                <label for="classes_id">Lớp học</label>
-                <select name="classes_id" class="form-control" required>
-                    @foreach ($classes as $class)
-                        <option value="{{ $class->id }}" {{ $class->id == $document->classes_id ? 'selected' : '' }}>
-                            {{ $class->name }}
-                        </option>
+        <div class="form-group">
+            <label for="title">Tiêu đề </label>
+            <input type="text" name="name" class="form-control" value="{{ $document->name }}">
+            @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                </span>
+            @enderror
+        </div>
+
+        <div class="row mb-4 pt-3">
+            <div class="col-lg-6">
+                <label for="exampleInputEmail1" class="form-label">Lớp học *</label>
+                <select class="form-select" name="classes_id" aria-label="Default select example">
+                    @foreach ($classes as $classe)
+                        <option value="{{ $classe->id }}" {{ $document->classes_id == $classe->id ? 'selected' : '' }}>{{ $classe->name }}</option>
                     @endforeach
                 </select>
+                @error('classes_id')
+                    <span class="invalid-feedback" role="alert">
+                        <label class="error" id="name_error" for="name">{{ $message }}</label>
+                    </span>
+                @enderror
             </div>
-
-            <div class="form-group row pt-3">
-                <label for="name">Document Name</label>
-                <input type="text" name="name" class="form-control" value="{{ $document->name }}" required>
+            <div class="col-lg-6">
+                <label for="exampleInputEmail1" class="form-label">File PDF *</label>
+                <input type="file" class="form-control" name="file">
+                @error('file')
+                    <span class="invalid-feedback" role="alert">
+                        <label class="error" id="name_error" for="name">{{ $message }}</label>
+                    </span>
+                @enderror
             </div>
-            <div class="row pt-3">
-                <div class="form-group col-6">
-                    <label for="description">Description</label>
-                    <textarea name="description" class="form-control" cols="7" rows="9" required>{{ $document->description }}</textarea>
-                </div>
-                <div class="col-6 pt-3">
-                    <div
-                        class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
-                        <!-- Image -->
-                        <a src="{{ asset('storage/' . $document->file_path) }}" class="h-50px" target="_blank"> View
-                            PDF</a>
-                        <div>
-                            <h6 class="my-2">Tải PDF vào đây, hoặc<a href="#!" class="text-primary"> Browse</a>
-                            </h6>
-                            <label style="cursor:pointer;">
-                                <span>
-                                    <input class="form-control stretched-link custom-cursor-on-hover"
-                                        value="{{ asset('storage/' . $document->file_path) }}" type="file" name="file"
-                                        id="file">
-                                </span>
-                            </label>
-                            <p class="small mb-0 mt-2"><b style="color:red">Note:</b> Chỉ có PDF.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image (Optional)</label>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*">
+            @error('image')
+                <span class="invalid-feedback" role="alert">
+                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                </span>
+            @enderror
+        </div>
+        <div class="form-group pb-3">
+            <label for="content">Mô tả</label>
+            <textarea name="description" class="form-control" rows="4">{{ $document->description }}</textarea>
+            @error('description')
+                <span class="invalid-feedback" role="alert">
+                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                </span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="access_level">Access Level:</label>
+            <select name="access_level" id="access_level" class="form-control">
+                <option value="free" {{ $document->access_level == 'free' ? 'selected' : '' }}>Free</option>
+                <option value="paid" {{ $document->access_level == 'paid' ? 'selected' : '' }}>Paid</option>
+                <option value="pro" {{ $document->access_level == 'pro' ? 'selected' : '' }}>Pro</option>
+            </select>
+        </div>
 
+        <div class="form-group" id="priceField" style="{{ $document->access_level == 'paid' ? 'display: block;' : 'display: none;' }}">
+            <label for="price">Price:</label>
+            <input type="number" name="price" class="form-control" value="{{ $document->price }}">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Cập nhật</button>
+    </form>
+</div>
 
-
-
-
-            <div class="form-group pt-3">
-                <button type="submit" class="btn btn-primary">Update Document</button>
-            </div>
-        </form>
-    </div>
 @endsection

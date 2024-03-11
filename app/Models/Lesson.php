@@ -14,6 +14,11 @@ class Lesson extends Model
     // {
     //     return $this->belongsTo(Course::class);
     // }
+    public function scopeSearch($query, $keyword)
+    {
+        return $query->where('title', 'like', '%' . $keyword . '%')
+                     ->orWhere('content', 'like', '%' . $keyword . '%');
+    }
     public function lectures()
     {
         return $this->hasMany(Lecture::class);

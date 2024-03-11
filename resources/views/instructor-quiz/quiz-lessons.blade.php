@@ -131,7 +131,7 @@
                                                                     </font>
                                                                 </a></h6>
                                                             <!-- Info -->
-                                                            @if ($lesson->chapters)
+                                                            @if (count($lesson->chapters)>0)
                                                                 <div class="d-sm-flex">
                                                                     <p class="h6 fw-light mb-0 small me-3">
                                                                         <i class="fas fa-table text-orange me-2"></i>

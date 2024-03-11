@@ -284,5 +284,5 @@ Route::prefix('/user')->group(function () {
     Route::delete('/exam-history/{id}', [AuthController::class, 'destroy'])->name('examHistory.destroy');
 });
 
-
+Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/default', [ContactController::class, 'default'])->name('default');

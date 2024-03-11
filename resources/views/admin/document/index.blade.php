@@ -37,7 +37,8 @@
 
                             <div class="alert alert-success alert-dismissible fade show mt-2 mb-0 rounded-3" role="alert">
                                 {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
                             </div>
                         </div>
                     @endif
@@ -63,6 +64,7 @@
                                 <th scope="col" class="border-0">Lớp học</th>
                                 <th scope="col" class="border-0">PDF</th>
                                 <th scope="col" class="border-0">Ngày</th>
+                                <th scope="col" class="border-0">Gói</th>
                                 <th scope="col" class="border-0 rounded-end">Hành động</th>
                             </tr>
                         </thead>
@@ -91,7 +93,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                  
+
 
                                     <td>
                                         <a href="{{ asset('storage/' . $document->file_path) }}" target="_blank">View
@@ -105,10 +107,18 @@
                                             </div>
                                         </div>
                                     </td>
+                                    <td>
+                                        @if ($document->access_level == 'paid')
+                                        {{ number_format($document->price, 0, ',', ',') }} VNĐ
+                                        @else
+                                            {{ $document->access_level }}
+                                        @endif
+                                    </td>
 
                                     <td class="d-flex">
                                         <a href="{{ route('document.edit', ['document' => $document]) }}"
-                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="bi bi-pencil-square"></i></a>
+                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
+                                                class="bi bi-pencil-square"></i></a>
                                         <form action="{{ route('document.destroy', ['document' => $document]) }}"
                                             method="post" onsubmit="return confirm('Bạn có chắc chắn xóa?')">
                                             @csrf
