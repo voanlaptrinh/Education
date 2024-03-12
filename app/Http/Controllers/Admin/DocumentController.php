@@ -93,6 +93,7 @@ class DocumentController extends Controller
             'file.mimes' => 'File upload phải là định dạng PDF',
             'file.max' => 'Kích thước tệp PDF không được vượt quá 2MB',
             'image.image' => 'File phải là hình ảnh',
+            'image.required' => 'Bắt buộc upload ảnh',
             'image.mimes' => 'File ảnh phải có định dạng jpeg, png, jpg hoặc gif',
             'image.max' => 'Kích thước hình ảnh không được vượt quá 2MB',
             'access_level.required' => 'Bắt buộc chọn cấp quyền truy cập',
