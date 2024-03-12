@@ -30,7 +30,7 @@ class DocumentController extends Controller
             'name' => 'required',
             'description' => 'required',
             'file' => 'required|mimes:pdf', // Giới hạn kích thước tệp PDF (đơn vị KB)
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
             'access_level' => 'required',
             'price' => 'required_if:access_level,paid',
         ], [
@@ -40,6 +40,7 @@ class DocumentController extends Controller
             'description.required' => 'Bắt buộc nhập mô tả',
             'file.required' => 'Bắt buộc upload file PDF',
             'file.mimes' => 'Filde up lên phải là dạnh PDF',
+            'image.required' => 'Bắt buộc upload ảnh',
             'image.image' => 'File phải là hình ảnh',
             'image.mimes' => 'File ảnh phải có định dạng jpeg, png, jpg hoặc gif',
         ]);
