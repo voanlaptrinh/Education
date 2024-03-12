@@ -75,7 +75,7 @@
                             max-height: 200px;
                             overflow-y: auto;
                             scrollbar-width: unset;
-                            scrollbar-color: #ffffff #f8f9fa;
+                            scrollbar-color: inherit;
                         }
                         .subject-list {
                             list-style: none;
