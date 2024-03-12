@@ -19,8 +19,8 @@ class Lesson extends Model
     {
         $keyword = session('search_keyword');
         return $query->where(function ($query) use ($keyword) {
-            $query->where('title', 'like', '%' . $keyword . '%')
-                  ->orWhere('content', 'like', '%' . $keyword . '%');
+            $query->where('title', 'like', '%' . $keyword . '%');
+                 
                   
         });
     }

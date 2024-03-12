@@ -33,7 +33,8 @@ class PageController extends Controller
         $bai_hoc = Lesson::all();
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);
-        $lessons = Lesson::search($keyword)->paginate(5);
+        $lessons = Lesson::where('title', 'like', '%' . $keyword . '%')
+        ->paginate(5);
 
         return view('search.index', compact('lessons', 'keyword','classes','bai_hoc','webConfig', 'banner'));
     }
