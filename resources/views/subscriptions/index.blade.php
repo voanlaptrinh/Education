@@ -115,7 +115,7 @@
                                 <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-2">
                                     <!-- Info -->
                                     <div>
-                                        <h5 class="mb-0">{{ $subscription->name }}</h5>
+                                        <h5 class="mb-0" style="text-transform: uppercase;">{{ $subscription->name }}</h5>
                                         <div class="badge bg-grad mb-0 rounded-pill">Khuyến khích</div>
                                     </div>
                                     <!-- Price -->

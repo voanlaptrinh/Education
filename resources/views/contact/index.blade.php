@@ -26,12 +26,12 @@
                             </li>
                             <!-- Phone number -->
                             <li class="list-item mb-3">
-                                <a href="#" class="text-white"> <i
+                                <a href="tel:{{ $webConfig->phone }}" class="text-white"> <i
                                         class="fas fa-fw fa-phone-alt me-2"></i>{{ $webConfig->phone }} </a>
                             </li>
                             <!-- Email id -->
                             <li class="list-item mb-0">
-                                <a href="#" class="text-white"> <i
+                                <a href="mailto:{{ $webConfig->email }}" class="text-white"> <i
                                         class="far fa-fw fa-envelope me-2"></i>{{ $webConfig->email }} </a>
                             </li>
                         </ul>
