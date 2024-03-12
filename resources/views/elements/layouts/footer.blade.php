@@ -74,8 +74,8 @@
                         .subject-list-container {
                             max-height: 200px;
                             overflow-y: auto;
-                            scrollbar-width: thin;
-                            scrollbar-color: #6c757d #f8f9fa;
+                            scrollbar-width: unset;
+                            scrollbar-color: #ffffff #f8f9fa;
                         }
                         .subject-list {
                             list-style: none;
