@@ -68,7 +68,7 @@
                                                 <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
                                             </div>
                                             <!-- Title -->
-                                            <h5 class="card-title fw-normal"><a href="#">{{ $course->name }}</a>
+                                            <h5 class="card-title fw-normal">{{ $course->name }}
                                             </h5>
                                             <p class="mb-2 text-truncate-2">{{ $course->description }}</p>
                                             <!-- Rating star -->

@@ -189,7 +189,7 @@
             <div class="modal-content">
                 <!-- Modal header -->
                 <div class="modal-header ">
-                    <h5 class="modal-title text-dark" id="viewReviewLabel">Vui lòng đăng nhập để mua gói</h5>
+                    <h5 class="mb-0 modal-title" id="viewReviewLabel">Đăng nhập để mua gói</h5>
                     <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
                 </div>
                 <!-- Modal body -->

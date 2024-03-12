@@ -50,7 +50,7 @@
                             <div class="row align-items-center">
 
                                 <p>Tổng số câu hỏi: {{ $totalQuestions }}</p>
-                                <p>Câu hỏi trả lời dúng: {{ $correctAnswers }}</p>
+                                <p>Câu hỏi trả lời đúng: {{ $correctAnswers }}</p>
                                 <!-- Progress bar and Rating -->
 
 

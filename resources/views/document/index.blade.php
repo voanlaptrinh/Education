@@ -121,7 +121,7 @@
                 </nav>
                 <!-- Pagination END -->
             @else
-                Không có tài liệu nào....
+                Không có tài liệu nào !
             @endif
 
 
