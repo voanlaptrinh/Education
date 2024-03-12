@@ -125,6 +125,7 @@
 
     @include('elements.layouts.header')
     <main>
+
         @yield('content')
     </main>
     @include('elements.layouts.footer')

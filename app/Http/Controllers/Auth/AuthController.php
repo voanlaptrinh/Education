@@ -69,9 +69,9 @@ class AuthController extends Controller
             } else {
                 // Người dùng đã đăng nhập nhưng chưa xác nhận email
                 // Lưu thông báo vào session
-                $this->logout();
+                Auth::logout();
                 session()->flash('warning', 'Bạn vui lòng xác nhận tài khoản của mình trong email.');
-                return redirect()->route('login')->with('success', 'Đã trở về trang chủ!');
+                return redirect()->route('login');
             }
         }
 
