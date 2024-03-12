@@ -10,7 +10,7 @@
             <!-- Email -->
             <div class="row mb-4">
                 <div class="col-lg-6">
-                    <label for="exampleInputEmail1" class="form-label">Name *</label>
+                    <label for="exampleInputEmail1" class="form-label">Tên *</label>
                     <div class="input-group input-group-lg">
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <label for="exampleInputEmail1" class="form-label">Full Name *</label>
+                    <label for="exampleInputEmail1" class="form-label">Tên đầy đủ *</label>
                     <div class="input-group input-group-lg">
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="mb-4">
-                <label for="exampleInputEmail1" class="form-label">Email address *</label>
+                <label for="exampleInputEmail1" class="form-label">Email *</label>
                 <div class="input-group input-group-lg">
                     <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                             class="bi bi-envelope-fill"></i></span>
@@ -67,7 +67,7 @@
             <!-- Password -->
 
             <div class="mb-4">
-                <label for="inputPassword5" class="form-label">Password *</label>
+                <label for="inputPassword5" class="form-label">Mật khẩu *</label>
                 <div class="input-group input-group-lg">
                     <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                             class="fas fa-lock"></i></span>
@@ -81,7 +81,7 @@
             </div>
             <!-- Confirm Password -->
             <div class="mb-4">
-                <label for="inputPassword6" class="form-label">Confirm Password *</label>
+                <label for="inputPassword6" class="form-label">Nhập lại mật khẩu *</label>
                 <div class="input-group input-group-lg">
                     <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                             class="fas fa-lock"></i></span>
