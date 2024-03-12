@@ -7,14 +7,14 @@
             <div class="col-lg-3">
                 <!-- logo -->
                 @if (!empty($webConfig->logo))
-                    <a class="me-0" href="">
+                    <a class="me-0" href="{{ route('home.index') }}">
                         <img class="light-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}"
                             alt="logo">
                         <img class="dark-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}"
                             alt="logo">
                     </a>
                 @else
-                    <a class="me-0" href="">
+                    <a class="me-0" href="{{ route('home.index') }}">
                         <img class="light-mode-item h-40px" src="/assets/user/images/logo.svg" alt="logo">
                         <img class="dark-mode-item h-40px" src="/assets/user/images/logo-light.svg" alt="logo">
                     </a>
@@ -128,10 +128,10 @@
                 </a>
                 <!-- Time -->
                 <p class="mb-2">
-                    Phone: <span class="h6 fw-light ms-2">{{ $webConfig->phone }}</span>
+                    Phone: <a href="tel:{{ $webConfig->phone }}"></a><span class="h6 fw-light ms-2" >{{ $webConfig->phone }}</span>
                 </p>
 
-                <p class="mb-0">Email:<span class="h6 fw-light ms-2">{{ $webConfig->email }}</span></p>
+                <p class="mb-0">Email: <a href="mailto:{{ $webConfig->email }}"></a><span class="h6 fw-light ms-2">{{ $webConfig->email }}</span></p>
 
 
             </div>

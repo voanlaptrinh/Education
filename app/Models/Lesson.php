@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,10 +15,14 @@ class Lesson extends Model
     // {
     //     return $this->belongsTo(Course::class);
     // }
-    public function scopeSearch($query, $keyword)
+    public function scopeSearch(Builder $query, $keyword)
     {
-        return $query->where('title', 'like', '%' . $keyword . '%')
-                     ->orWhere('content', 'like', '%' . $keyword . '%');
+        $keyword = session('search_keyword');
+        return $query->where(function ($query) use ($keyword) {
+            $query->where('title', 'like', '%' . $keyword . '%')
+                  ->orWhere('content', 'like', '%' . $keyword . '%');
+                  
+        });
     }
     public function lectures()
     {
