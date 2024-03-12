@@ -70,38 +70,23 @@
 
                         </ul>
                     </div>
-                    <style>
-                        .subject-list-container {
-                            max-height: 200px;
-                            overflow-y: auto;
-                            scrollbar-width: unset;
-                            scrollbar-color: inherit;
-                        }
-                        .subject-list {
-                            list-style: none;
-                            padding: 0;
-                            margin: 0;
-                        }
-                        .subject-list-item {
-                            margin-bottom: 10px;
-                        }
-                    </style>
+                    
 					
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-4 h-50">
                         <h5 class="mb-2 mb-md-4">Môn học</h5>
-                        <div class="subject-list-container">
+                        <div class="subject-list-container overflow-auto ">
                             <ul class="nav flex-column subject-list">
                                 @foreach ($classes as $item)
                                     @foreach ($item->subjects as $subject)
                                         <li class="nav-item subject-list-item">
-                                            <a class="nav-link"
-                                                href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
+                                            <a class="nav-link" href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
                                         </li>
                                     @endforeach
                                 @endforeach
                             </ul>
                         </div>
                     </div>
+                    
 					
 
 
