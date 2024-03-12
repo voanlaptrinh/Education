@@ -72,7 +72,7 @@
                                             </h5>
                                             <p class="mb-2 text-truncate-2">{{ $course->description }}</p>
                                             <!-- Rating star -->
-                                            <ul class="list-inline mb-0">
+                                            <div class="list-inline mb-0">
                                                 @if (!empty(Auth::user()))
                                                     @if ($course->questions->count() > 0)
                                                         @if ($course->is_free == 0)
@@ -90,9 +90,9 @@
                                                             có câu hỏi</button>
                                                     @endif
                                                 @else
-                                                    <button class="btn btn-check">Đăng nhập để làm bài</button>
+                                                    <a href="{{ route('login') }}" class="btn btn-success">Đăng nhập để làm bài</a>
                                                 @endif
-                                            </ul>
+                                            </div>
                                         </div>
                                         <!-- Card footer -->
                                         <div class="card-footer pt-0 pb-3">
