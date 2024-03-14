@@ -1,4 +1,4 @@
-*+@extends('indexUser')
+@extends('indexUser')
 @section('contentUsers')
     {{-- <section class="pt-0">
         <!-- Main banner background image -->
@@ -58,10 +58,12 @@
         </div>
     </section> --}}
     <!-- =======================
-                    Page Banner END -->
+                                Page Banner END -->
 
     <!-- =======================
-                    Page content START -->
+                                Page content START -->
+   
+
     <section class="pt-0">
         <div class="container">
             <div class="row">
@@ -73,7 +75,7 @@
                     <div class="card bg-transparent border rounded-3">
                         <!-- Card header -->
                         <div class="card-header bg-transparent border-bottom">
-                            <h3 class="card-header-title mb-0">Edit Profile</h3>
+                            <h3 class="card-header-title mb-0">Chỉnh sửa hồ sơ</h3>
                         </div>
                         <!-- Card body START -->
                         <div class="card-body">
@@ -84,7 +86,7 @@
 
                                 <!-- Profile picture -->
                                 <div class="col-12 justify-content-center align-items-center">
-                                    <label class="form-label">Profile picture</label>
+                                    <label class="form-label">Ảnh đại diện</label>
                                     <div class="d-flex align-items-center">
                                         <label class="position-relative me-4" for="profile_picture"
                                             title="Replace this pic">
@@ -95,12 +97,10 @@
                                                     src="{{ asset($user->image ? 'storage/' . $user->image : '/assets/user/images/default-avatar.jpg') }}"
                                                     alt="">
                                             </span>
-                                            <!-- Remove btn -->
-                                            <button type="button" class="uploadremove"><i
-                                                    class="bi bi-x text-white"></i></button>
+
                                         </label>
                                         <!-- Upload button -->
-                                        <label class="btn btn-primary-soft mb-0" for="profile_picture">Change</label>
+                                        <label class="btn btn-primary-soft mb-0" for="profile_picture">Tải ảnh lên</label>
                                         <input id="profile_picture" name="profile_picture" class="form-control d-none"
                                             type="file">
                                     </div>
@@ -113,10 +113,10 @@
 
                                 <!-- Full name -->
                                 <div class="col-12">
-                                    <label class="form-label">Full name</label>
+                                    <label class="form-label">Tên đầy đủ</label>
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="name"
-                                            value="{{ $user->name }}" placeholder="First name">
+                                            value="{{ $user->name }}" placeholder="Tên đầy đủ">
 
                                     </div>
                                     @error('name')
@@ -128,11 +128,11 @@
 
                                 <!-- Username -->
                                 <div class="col-md-6">
-                                    <label class="form-label">Username</label>
+                                    <label class="form-label">Tên</label>
                                     <div class="input-group">
 
                                         <input type="text" class="form-control" name="username"
-                                            value="{{ $user->username }}">
+                                            value="{{ $user->username }}" placeholder="Tên">
                                     </div>
                                     @error('username')
                                         <span class="invalid-feedback" role="alert">
@@ -143,16 +143,16 @@
 
                                 <!-- Email id -->
                                 <div class="col-md-6">
-                                    <label class="form-label">Email id</label>
+                                    <label class="form-label">Email</label>
                                     <input id="encryptedEmail" class="form-control" type="email"
                                         value="{{ $user->email }}" name="email" placeholder="Email" disabled>
                                 </div>
 
                                 <!-- Phone number -->
                                 <div class="col-md-6">
-                                    <label class="form-label">Phone number</label>
-                                    <input type="text" class="form-control" name="phone"
-                                        value="{{ $user->phone }}" placeholder="Phone number">
+                                    <label class="form-label">Số điện thoại</label>
+                                    <input type="text" class="form-control" name="phone" value="{{ $user->phone }}"
+                                        placeholder="Số điện thoại">
                                     @error('phone')
                                         <span class="invalid-feedback" role="alert">
                                             <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -163,8 +163,8 @@
                                 <!-- Location -->
                                 <div class="col-md-6">
                                     <label class="form-label">Địa chỉ</label>
-                                    <input class="form-control" name="address" type="text"
-                                        value="{{ $user->address }}">
+                                    <input class="form-control" name="address" type="text" value="{{ $user->address }}"
+                                        placeholder="Địa chỉ">
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
                                             <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -176,8 +176,10 @@
                                 <div class="col-lg-6">
                                     <label for="exampleInputEmail1" class="form-label">Giới tính *</label>
                                     <select class="form-select" name="gender" aria-label="Default select example">
-                                        <option value="0" {{ old('gender', $user->gender) == 0 ? 'selected' : '' }}>Nam</option>
-                                        <option value="1" {{ old('gender', $user->gender) == 1 ? 'selected' : '' }}>Nữ</option>
+                                        <option value="0" {{ old('gender', $user->gender) == 0 ? 'selected' : '' }}>
+                                            Nam</option>
+                                        <option value="1" {{ old('gender', $user->gender) == 1 ? 'selected' : '' }}>
+                                            Nữ</option>
                                     </select>
                                 </div>
                                 <!-- Location -->
@@ -215,31 +217,32 @@
                             <div class="card border bg-transparent rounded-3">
                                 <!-- Card header -->
                                 <div class="card-header bg-transparent border-bottom">
-                                    <h5 class="card-header-title mb-0">Update password</h5>
+                                    <h5 class="card-header-title mb-0">Đổi mật khẩu</h5>
                                 </div>
                                 <!-- Card body START -->
                                 <div class="card-body">
                                     <form action="{{ route('change-password') }}" method="post">
                                         @csrf
                                         @if (session('error'))
-                                        @error('birthday')
-                                        <span class="invalid-feedback" role="alert">
-                                            <label class="error" id="name_error" for="name">{{session('error') }}</label>
-                                        </span>
-                                    @enderror
+                                            @error('birthday')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <label class="error" id="name_error"
+                                                        for="name">{{ session('error') }}</label>
+                                                </span>
+                                            @enderror
                                         @endif
                                         <!-- Current password -->
                                         <div class="mb-3">
                                             <label class="form-label">Mật khẩu hiện tại</label>
                                             <input class="form-control" name="old_password" type="password"
-                                                placeholder="Enter current password">
+                                                placeholder="Mật khẩu hiện tại">
                                         </div>
                                         <!-- New password -->
                                         <div class="mb-3">
                                             <label class="form-label"> Mật khẩu mới</label>
                                             <div class="input-group">
                                                 <input class="form-control" name="new_password" type="password"
-                                                    placeholder="Enter new password">
+                                                    placeholder="Mật khẩu mới">
                                                 <span class="input-group-text p-0 bg-transparent">
                                                     <i class="far fa-eye cursor-pointer p-2 w-40px"></i>
                                                 </span>
@@ -250,7 +253,7 @@
                                         <div>
                                             <label class="form-label">Nhập lại mật khẩu</label>
                                             <input class="form-control" name="new_password_confirmation" type="password"
-                                                placeholder="Enter new password">
+                                                placeholder="Nhập lại mật khẩu">
                                         </div>
                                         <!-- Button -->
                                         <div class="d-flex justify-content-end mt-4">

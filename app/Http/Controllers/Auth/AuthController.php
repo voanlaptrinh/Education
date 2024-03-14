@@ -238,7 +238,7 @@ class AuthController extends Controller
             // Update the user's password
             $user->update(['password' => Hash::make($validatedData['new_password'])]);
 
-            return redirect()->route('profile')->with('success', 'Password changed successfully.');
+            return redirect()->route('profile')->with('success', 'Đổi mật khẩu thành công.');
         } catch (\Exception $e) {
             \Log::error('Change password error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred while changing the password.');
