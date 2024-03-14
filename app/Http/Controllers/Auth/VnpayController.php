@@ -13,11 +13,12 @@ use App\Models\Web_config;
 use App\Models\Banner;
 use App\Models\Document;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class VnpayController extends Controller
 {
     public static function generateOrderCode($length = 8)
@@ -105,7 +106,7 @@ class VnpayController extends Controller
         try {
             $user = auth()->user();
             $banner = Banner::find(1);
-            $classes = Classes::all();
+            $classes = Classes::where('status', 1)->get();
             $totalLessons = Lesson::count();
             $totalLectures = Lecture::count();
             $bai_hoc = Lesson::all();
@@ -128,15 +129,23 @@ class VnpayController extends Controller
             $purchase->subscription_id = $request->session()->get('subscription_id');
             $userSubscription = Subscription::find($request->session()->get('subscription_id'));
             if ($userSubscription) {
+                // Nếu người dùng đã mua gói, cộng dồn thời gian mới vào thời gian hết hạn hiện tại
+                $currentExpirationDate = $user->subscription_expiration_date ? Carbon::parse($user->subscription_expiration_date) : Carbon::now();
+                $expirationDate = $currentExpirationDate->addDays($userSubscription->duration_months);                
+                $user->subscription_expiration_date = $expirationDate;
+                $user->is_pro = true;
+            } else {
+                // Nếu người dùng chưa mua gói, tính thời gian mới từ thời gian hiện tại
                 $currentDateTime = Carbon::now();
                 $expirationDate = $currentDateTime->addDays($userSubscription->duration_months);
                 $user->subscription_expiration_date = $expirationDate;
                 $user->is_pro = true;
-                $user->save();
             }
-
+    
+            // Lưu các thay đổi vào cơ sở dữ liệu
+            $user->save();
             $purchase->save();
-
+            Session::flash('success', 'Giao dịch thành công.');
             return view('pages.index', compact('user', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'));
         } catch (\Exception $e) {
             // Xử lý ngoại lệ và trả về thông báo lỗi nếu cần

@@ -17,7 +17,7 @@ class CourseAuthController extends Controller
         $courses = $subject->courses()->latest()->paginate(3);
         $lessons = $subject->lessons()->latest()->paginate(3);
 
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         $user = Auth::user();
         // Auth::user()->checkSubscriptionStatus();
@@ -31,7 +31,7 @@ class CourseAuthController extends Controller
         // Tăng số lượng lượt xem của bài học
         $lesson->increment('views');
 
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         // TODO: Xử lý để hiển thị chi tiết về bài học $lesson
         
         return view('instructor-quiz.course-detail', compact('lesson', 'webConfig', 'classes', 'lessons'));

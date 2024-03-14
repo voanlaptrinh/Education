@@ -21,7 +21,7 @@ class DocumentController extends Controller
             $documentsQuery->where('name', 'like', '%' . $searchQuery . '%');
         }
         $documents = $documentsQuery->paginate(6);
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $clss = $class->name;
         $webConfig = Web_config::find(1);
 
@@ -30,7 +30,7 @@ class DocumentController extends Controller
     public function detail($id)
     {
         $document = Document::findOrFail($id);
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         $user = Auth::user();
         if ($document->access_level == 'free' || ($document->access_level == 'pro' && $user && $user->is_pro == 1)) {

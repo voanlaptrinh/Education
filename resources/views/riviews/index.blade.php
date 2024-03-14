@@ -29,7 +29,7 @@
                 <!-- Contact form START -->
                 <div class="col-md-12">
                     <!-- Title -->
-                    @if (session('warning'))
+                    {{-- @if (session('warning'))
                         <div class="alert alert-warning">
                             {{ session('warning') }}
                         </div>
@@ -39,7 +39,7 @@
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
-                    @endif
+                    @endif --}}
 
                     <form action="{{ route('reviews.store') }}" method="POST">
                         @csrf

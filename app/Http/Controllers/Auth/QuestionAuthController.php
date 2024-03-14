@@ -13,7 +13,7 @@ class QuestionAuthController extends Controller
 {
     public function show(Course $course) //show bài làm
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         $choicesMapping = ['A', 'B', 'C', 'D'];
         $user = auth()->user();
@@ -33,11 +33,11 @@ class QuestionAuthController extends Controller
     public function submitAnswers(Request $request, Course $course)
     {
         if (auth()->check()) {
-            $classes = Classes::all();
+            $classes = Classes::where('status', 1)->get();
             $questions = $course->questions;
             $userAnswers = $request->input('answers');
             // var_dump($userAnswers);
-            $classes = Classes::all();
+            
             $totalQuestions = count($questions);
             $correctAnswers = 0;
             $choicesMapping = ['A', 'B', 'C', 'D'];

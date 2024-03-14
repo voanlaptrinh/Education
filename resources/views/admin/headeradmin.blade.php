@@ -138,3 +138,17 @@
         </div>
     </div>
 </nav>
+<style>
+    
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function(){
+    var currentUrl = window.location.href;
+    $('#navbar-sidebar a').each(function(){
+        if ($(this).attr('href') === currentUrl) {
+            $(this).addClass('active');
+        }
+    });
+});
+</script>

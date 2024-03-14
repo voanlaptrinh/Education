@@ -14,7 +14,7 @@
                     <!-- Review star -->
                     <ul class="list-inline mb-0">
                         @if (!empty(Auth::user()->subscription_expiration_date))
-                            <span class="me-3 small">{{ Auth::user()->subscription_expiration_date }} </span>
+                        Gói bạn mua sẽ hết hạn ngày: <span class="me-3 small">{{ $formattedDate}} </span>
                         @else
                             <span class="me-3 small">Bạn chưa mua gói </span>
                         @endif

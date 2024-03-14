@@ -42,10 +42,10 @@
                 <!-- Nav category menu END -->
 
                 <!-- Nav Main menu START -->
-                <ul class="navbar-nav navbar-nav-scroll me-auto">
+                <ul class="navbar-nav navbar-nav-scroll me-auto" id="header1">
                     <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="demoMenu"
+                        <a class="nav-link dropdown-toggle" href="#" id="demoMenu"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lớp học</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 
@@ -67,7 +67,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="demoMenu"
+                        <a class="nav-link dropdown-toggle s" href="#" id="demoMenu"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài liệu</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 

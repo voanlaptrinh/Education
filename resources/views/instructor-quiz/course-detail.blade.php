@@ -207,7 +207,7 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <!-- Price and time -->
                                         <div>
-                                            <h5 class="mb-3 font-base text-dark  d-inline-block">{{ $lesson->title }}</h5>
+                                            <h5 class="mb-3 font-base d-inline-block">{{ $lesson->title }}</h5>
                                         </div>
 
                                        

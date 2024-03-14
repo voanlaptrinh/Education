@@ -87,6 +87,11 @@
                                     <tr>
                                         <th scope="col" class="border-0 rounded-start">
                                             <font style="vertical-align: inherit;">
+                                                <font style="vertical-align: inherit;">STT</font>
+                                            </font>
+                                        </th>
+                                        <th scope="col" class="border-0">
+                                            <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">Tên bài học</font>
                                             </font>
                                         </th>
@@ -112,8 +117,9 @@
                                 <tbody>
                                     <!-- Table item -->
                                     @if (!empty($lessons))
-                                        @foreach ($lessons as $lesson)
+                                        @foreach ($lessons as $key=> $lesson)
                                             <tr>
+                                                <td>{{$key}}</td>
                                                 <!-- Course item -->
                                                 <td>
                                                     <div class="d-flex align-items-center">

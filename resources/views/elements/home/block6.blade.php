@@ -191,7 +191,7 @@
 				<!-- Title -->
 				<h2 class="fs-1"> Một số phản hồi có giá trị từ người dùng của chúng tôi
 				</h2>
-				<p>Supposing so be resolving breakfast am or perfectly. It drew a hill from me. Valley by oh twenty direct me so. Departure defective arranging rapturous did believe him all had supported. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how.</p>
+				<p>Chúng tôi rất vui khi nhận được những lượt đánh giá và phản hồi của các bạn về {{$webConfig->name}}. Rất mong được đồng hành cũng các bạn trên con đường học tập!</p>
 				<a href="{{route('reviews.index')}}" class="btn btn-primary mb-0">Xem đánh giá</a>
 			</div>
 		</div> <!-- Row END -->

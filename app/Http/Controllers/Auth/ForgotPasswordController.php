@@ -18,7 +18,7 @@ class ForgotPasswordController extends Controller
     public function showLinkRequestForm()
     {
         $webConfig = Web_config::find(1);
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         return view('auth.passwords.email', compact('webConfig','classes'));
     }
     public function sendResetLinkEmail(Request $request)

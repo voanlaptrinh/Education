@@ -16,7 +16,7 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $totalLessons = Lesson::count();
         $totalLectures = Lecture::count();
         $totalReviews = Review::Where('status', 1)->count();
@@ -29,7 +29,7 @@ class PageController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('search');
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $bai_hoc = Lesson::all();
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);

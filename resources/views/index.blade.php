@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 @php
     $logo = \App\Models\Web_config::find(1);
 @endphp
@@ -17,13 +17,12 @@
     <meta property="og:title" content="{{ $logo->name }}">
     <meta property="og:description" content="{{ $logo->description }}">
     <meta property="og:image" content="{{ asset('storage/' . $logo->logo) }}">
-    <meta property="og:url" content="{{Request::url()}}">
+    <meta property="og:url" content="{{ Request::url() }}">
     <meta name="twitter:title" content="{{ $logo->name }}">
     <meta name="twitter:description" content="{{ $logo->description }}">
     <meta name="twitter:image" content="{{ asset('storage/' . $logo->logo) }}">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $logo->logo) }}">
-
     <!-- Dark mode -->
     <script>
         const storedTheme = localStorage.getItem('theme')
@@ -81,12 +80,11 @@
 
             }
         })
-        
     </script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('storage/' . $logo->logo) }}">
- 
+
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -119,6 +117,7 @@
         gtag('config', 'G-7N7LGGGWT1');
     </script>
 
+
 </head>
 
 <body>
@@ -141,6 +140,46 @@
     <script src="/assets/user/vendor/stepper/js/bs-stepper.min.js"></script>
     <script src="/assets/user/js/functions.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var currentUrl = window.location.href;
+            $('#header1 li a').each(function() {
+                if (currentUrl.includes($(this).attr('href'))) {
+                    $(this).addClass('active');
+                    // Kích hoạt cả mục cha
+                    $(this).parents('.nav-item').addClass('active');
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thành công',
+                    text: '{{ session('success') }}',
+                });
+            @endif
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Thất bại',
+                    text: '{{ session('error') }}',
+                });
+            @endif
+            @if (session('warning'))
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Cảnh báo',
+                    text: '{{ session('warning') }}',
+                });
+            @endif
+        });
+    </script>
+
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         $(document).ready(function() {

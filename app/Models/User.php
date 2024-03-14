@@ -38,6 +38,7 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
+   
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
@@ -56,7 +57,7 @@ class User extends Authenticatable
         $this->password_reset_expires_at = $expires_at;
         $this->save();
     }
-    protected $dates = ['expires_at'];
+    protected $dates = ['subscription_expiration_date','expires_at'];
 
     public function subscription(): BelongsTo
     {

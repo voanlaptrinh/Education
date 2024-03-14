@@ -11,23 +11,25 @@ use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Web_config;
 use App\Providers\RouteServiceProvider;
+use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 
-use function Laravel\Prompts\alert;
 
 class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $classes = Classes::orderBy('id', 'asc')->get();
+        $classes = Classes::where('status', 1)->orderBy('id', 'asc')->get();
         $webConfig = Web_config::find(1);
         $message = $request->session()->all();
 
@@ -55,32 +57,29 @@ class AuthController extends Controller
             $user->checkSubscriptionStatus();
             //sử lí tình trạng khi bị khóa
             if (($user->status) == 0) {
-                $this->logout();
-                session()->flash('warning', 'Tài khoản của bạn đã bị tạm khóa.');
-                return redirect()->route('login');
+                Auth::logout();
+                return redirect()->route('login')->with('warning', 'Tài khoản của bạn đã bị tạm khóa.');
             }
             if (($user->user_type) == 0) {
                 //khi Người dụng là admin sẽ route tiwois trang admin
                 return redirect()->route('admin.index');
             }
             if (!is_null($user->email_verified_at)) {
-                // Người dùng đã xác nhận email và đăng nhập thành công
                 return redirect()->intended('/')->with('success', 'Vui lòng kiểm tra email của bạn!');
             } else {
                 // Người dùng đã đăng nhập nhưng chưa xác nhận email
                 // Lưu thông báo vào session
                 Auth::logout();
-                session()->flash('warning', 'Bạn vui lòng xác nhận tài khoản của mình trong email.');
-                return redirect()->route('login');
+                return redirect()->route('login')->with('warning', 'Bạn vui lòng xác nhận tài khoản của mình trong email.');
             }
         }
 
-        return redirect('/login')->withErrors(['login_error' => 'Thông tin đăng nhập không đúng.']);
+        return redirect('/login')->with('error', 'Thông tin đăng nhập không đúng.');
     }
 
     public function register(Request $request)
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         return View('auth.register', compact('classes', 'webConfig'));
     }
@@ -149,7 +148,7 @@ class AuthController extends Controller
         if (!$user) {
             return redirect()->route('login');
         }
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         return view('auth.profile_account', compact('user', 'classes', 'webConfig'));
     }
@@ -219,7 +218,7 @@ class AuthController extends Controller
         // ]);
 
         $user->save();
-        return redirect()->route('profile', compact('user'))->with('success', 'Profile updated successfully.');
+        return redirect()->route('profile', compact('user'))->with('success', 'Sửa thông tin tài khoản thành công.');
     }
     public function changePassword(Request $request)
     {
@@ -237,17 +236,16 @@ class AuthController extends Controller
 
             // Update the user's password
             $user->update(['password' => Hash::make($validatedData['new_password'])]);
-
-            return redirect()->route('profile')->with('success', 'Đổi mật khẩu thành công.');
+            return redirect()->route('profile', ['user' => $user->id])->with('success', 'Đổi mật khẩu thành công.');
         } catch (\Exception $e) {
             \Log::error('Change password error: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'An error occurred while changing the password.');
+            return redirect()->back()->with('error', 'Đã xảy ra lỗi khi đổi mật khẩu.');
         }
     }
 
     public function examHistory()
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
 
 
@@ -278,17 +276,17 @@ class AuthController extends Controller
     }
     public function subscriptionHistory()
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         if (!empty(auth()->user())) {
 
             $subscriptionHistory = Purchase::where('user_id', auth()->user()->id)
                 ->orderBy('created_at', 'desc')
                 ->paginate(3);
-
-
-
-            return view('users.subscription_history', compact('subscriptionHistory', 'webConfig', 'classes'));
+                $user = Auth::user();
+                $expirationDate = Carbon::parse($user->subscription_expiration_date);
+                $formattedDate = $expirationDate->format('d-m-Y');
+            return view('users.subscription_history', compact('subscriptionHistory','formattedDate', 'webConfig', 'classes'));
         } else {
             return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để xem thông tin tài khoản');
         }
@@ -298,6 +296,6 @@ class AuthController extends Controller
         $examHistory = ExamHistory::findOrFail($id);
         $examHistory->delete();
 
-        return redirect()->back()->with('success', 'Exam history deleted successfully!');
+        return redirect()->back()->with('success', 'Đăng xuất thành công!');
     }
 }

@@ -12,7 +12,7 @@ class ClassesAuthController extends Controller
     public function show(Classes $class)
     {
         $webConfig = Web_config::find(1);
-
-        return view('classes.show', compact('class','webConfig'));
+        $classes = Classes::where('status', 1)->get();
+        return view('classes.show', compact('class','classes','webConfig'));
     }
 }

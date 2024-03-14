@@ -12,19 +12,19 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         return view('contact.index',compact('classes','webConfig'));
     }
     public function default()
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         return view('default.index',compact('classes','webConfig'));
     }
     public function success()
     {
-        $classes = Classes::all();
+        $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         if (session('success')) {
             return view('contact.success',compact('classes','webConfig'));

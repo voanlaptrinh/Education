@@ -13,7 +13,7 @@ class Purchase extends Model
         'package_name',
         'amount',
         'bank_code',
-        'bank_tran_no',
+        // 'bank_tran_no',
         'card_type',
         'order_info',
         'pay_date',

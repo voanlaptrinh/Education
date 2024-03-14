@@ -117,9 +117,9 @@ $logo = \App\Models\Web_config::find(1);
                         <div class="d-flex align-items-center d-xl-none">
                             <a class="navbar-brand" href="index.html">
                                 <img class="light-mode-item navbar-brand-item h-30px"
-                                    src="assets/images/logo-mobile.svg" alt="">
+                                    src="/assets/user/images/logo-mobile.svg" alt="">
                                 <img class="dark-mode-item navbar-brand-item h-30px"
-                                    src="assets/images/logo-mobile-light.svg" alt="">
+                                    src="/assets/user/images/logo-mobile-light.svg" alt="">
                             </a>
                         </div>
                         <!-- Logo END -->

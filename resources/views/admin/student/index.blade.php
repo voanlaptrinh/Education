@@ -6,12 +6,37 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Student<span
-                        class="badge bg-orange bg-opacity-10 text-orange">{{ $totalStudent }}</span></h1>
+                <h1 class="h3 mb-2 mb-sm-0">Tài khoản học sinh</h1>
                 {{-- <a href="{{ route('newsAdmin.index') }}" class="btn btn-sm btn-primary mb-0">Create a Course</a> --}}
             </div>
         </div>
+ <!-- Course boxes START -->
+ <div class="row g-4 mb-4">
+    <!-- Course item -->
+    <div class="col-sm-6 col-lg-4">
+        <div class="text-center p-4 bg-primary bg-opacity-10 border border-primary rounded-3">
+            <h6>Tổng học sinh</h6>
+            <h2 class="mb-0 fs-1 text-primary">{{ $totalStudent }}</h2>
+        </div>
+    </div>
 
+    <!-- Course item -->
+    <div class="col-sm-6 col-lg-4">
+        <div class="text-center p-4 bg-success bg-opacity-10 border border-success rounded-3">
+            <h6>Tài khoản hoạt động</h6>
+            <h2 class="mb-0 fs-1 text-success">{{ $totalStudent_1}}</h2>
+        </div>
+    </div>
+
+    <!-- Course item -->
+    <div class="col-sm-6 col-lg-4">
+        <div class="text-center p-4  bg-warning bg-opacity-15 border border-warning rounded-3">
+            <h6>Tài khoản bị khóa</h6>
+            <h2 class="mb-0 fs-1 text-warning">{{$totalStudent_2}}</h2>
+        </div>
+    </div>
+</div>
+<!-- Course boxes END -->
         <!-- Card START -->
         <div class="card bg-transparent border">
 
@@ -50,7 +75,7 @@
                         <tbody>
 
                             @foreach ($student as $studentS)
-                                @if ($studentS->user_type != 0)
+                                
                                     <!-- Table row -->
                                     <tr>
                                         <td>
@@ -102,7 +127,6 @@
                                     </div>
                                 </td> --}}
                                     </tr>
-                                @endif
                             @endforeach
 
 

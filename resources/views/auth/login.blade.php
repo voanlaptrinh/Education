@@ -11,7 +11,7 @@
         <!-- Email -->
         <div class="mb-4">
 
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
                 </div>
@@ -25,7 +25,7 @@
                 <div class="alert alert-danger">
                     {{ $errors->first('login_error') }}
                 </div>
-            @endif
+            @endif --}}
         </div>
         <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label">Email *</label>
