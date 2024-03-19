@@ -75,13 +75,13 @@ class DatabaseSeeder extends Seeder
         Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 3, 'description' => 'sdasd']);
         Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 3, 'description' => 'sdasd']);
 
-Banner::create([
-    'name' => 'Học tập không giới hạn trong tầm tay',
-    'description' => 'Thị trường giảng dạy và học tập trực tuyến với. Được giảng dạy bởi các chuyên gia để giúp bạn có được những kỹ năng mới.',
-    'link_video' => '#',
-    'link_button' => '#',
-    'image_path' => ''
-]);
+        Banner::create([
+            'name' => 'Học tập không giới hạn trong tầm tay',
+            'description' => 'Thị trường giảng dạy và học tập trực tuyến với. Được giảng dạy bởi các chuyên gia để giúp bạn có được những kỹ năng mới.',
+            'link_video' => '#',
+            'link_button' => '#',
+            'image_path' => ''
+        ]);
         Web_config::create(
             [
                 'name' => 'edu',
@@ -174,54 +174,53 @@ Banner::create([
                 'views' => '999',
             ]);
         }
-        for ($i=0; $i <5 ; $i++) { 
+        for ($i = 0; $i < 5; $i++) {
             Course::create([
                 'subject_id' => 1,
-                'name' => 'Đề bài Mathematics ' .$i,
+                'name' => 'Đề bài Mathematics ' . $i,
                 'time_limit' => 1320,
                 'image' => 'course_images/bbb.jpg',
             ]);
         }
-        for ($i=0; $i <5 ; $i++) { 
+        for ($i = 0; $i < 5; $i++) {
             Course::create([
                 'subject_id' => 2,
-                'name' => 'Đề bài Physics ' .$i,
+                'name' => 'Đề bài Physics ' . $i,
                 'time_limit' => 1320,
                 'image' => 'course_images/bbb.jpg',
             ]);
         }
-        for ($i=0; $i <5 ; $i++) { 
+        for ($i = 0; $i < 5; $i++) {
             Course::create([
                 'subject_id' => 3,
-                'name' => 'lớp 4 1 ' .$i,
+                'name' => 'lớp 4 1 ' . $i,
                 'time_limit' => 1320,
                 'image' => 'course_images/bbb.jpg',
             ]);
         }
-        for ($i=0; $i <5 ; $i++) { 
+        for ($i = 0; $i < 5; $i++) {
             Course::create([
                 'subject_id' => 4,
-                'name' => 'lớp 4 1 ' .$i,
+                'name' => 'lớp 4 1 ' . $i,
                 'time_limit' => 1320,
                 'image' => 'course_images/bbb.jpg',
             ]);
         }
-        for ($i=0; $i <5 ; $i++) { 
+        for ($i = 0; $i < 5; $i++) {
             Course::create([
                 'subject_id' => 5,
-                'name' => 'Physics ' .$i,
+                'name' => 'Physics ' . $i,
                 'time_limit' => 1320,
                 'image' => 'course_images/bbb.jpg',
             ]);
         }
-        for ($i=0; $i <5 ; $i++) { 
+        for ($i = 0; $i < 5; $i++) {
             Course::create([
                 'subject_id' => 6,
-                'name' => 'Physics ' .$i,
+                'name' => 'Physics ' . $i,
                 'time_limit' => 1320,
                 'image' => 'course_images/bbb.jpg',
             ]);
         }
     }
-
 }

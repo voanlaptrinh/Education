@@ -62,10 +62,10 @@ class AuthController extends Controller
             }
             if (($user->user_type) == 0) {
                 //khi Người dụng là admin sẽ route tiwois trang admin
-                return redirect()->route('admin.index');
+                return redirect()->route('admin.index')->with('success', 'Đăng nhập quản trị thành công!');
             }
             if (!is_null($user->email_verified_at)) {
-                return redirect()->intended('/')->with('success', 'Vui lòng kiểm tra email của bạn!');
+                return redirect()->intended('/')->with('success', 'Bạn đã đăng nhập thành công!');
             } else {
                 // Người dùng đã đăng nhập nhưng chưa xác nhận email
                 // Lưu thông báo vào session

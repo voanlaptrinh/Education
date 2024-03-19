@@ -39,7 +39,7 @@ class DocumentController extends Controller
             'classes_id.exists' => 'ID phải tồn tại ở lớp học',
             'description.required' => 'Bắt buộc nhập mô tả',
             'file.required' => 'Bắt buộc upload file PDF',
-            'file.mimes' => 'Filde up lên phải là dạnh PDF',
+            'file.mimes' => 'Filde up lên phải là dạng PDF',
             'image.required' => 'Bắt buộc upload ảnh',
             'image.image' => 'File phải là hình ảnh',
             'image.mimes' => 'File ảnh phải có định dạng jpeg, png, jpg hoặc gif',
