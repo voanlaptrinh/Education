@@ -73,7 +73,10 @@
                             class="fas fa-lock"></i></span>
                     <input type="password" name="password"  class="form-control border-0 bg-light rounded-end ps-1"
                         placeholder="*********" id="inputPassword5">
-
+                        <span class="input-group-text p-0 bg-transparent">
+                            <i class="far fa-eye cursor-pointer p-2 w-40px" onclick="togglePassword('inputPassword5')">
+                            </i>
+                        </span>
                 </div>
                 @error('password')
                     <span class="text-danger">{{ $message }}</span>
@@ -87,6 +90,10 @@
                             class="fas fa-lock"></i></span>
                     <input type="password" name="password_confirmation" 
                         class="form-control border-0 bg-light rounded-end ps-1" placeholder="*********" id="inputPassword6">
+                        <span class="input-group-text p-0 bg-transparent">
+                            <i class="far fa-eye cursor-pointer p-2 w-40px" onclick="togglePassword('inputPassword6')">
+                            </i>
+                        </span>
                 </div>
             </div>
             <!-- Check box -->

@@ -161,7 +161,8 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:255',
+            'phone' => 'nullable|string|max:255|regex:/^[0-9]{10}$/',
+      
             'address' => 'nullable|string|max:255',
             'gender' => 'required|in:0,1',
             'birthday' => 'nullable|date',
@@ -177,7 +178,7 @@ class AuthController extends Controller
 
             'phone.string' => 'Trường số điện thoại phải là chuỗi.',
             'phone.max' => 'Trường số điện thoại không được vượt quá 255 ký tự.',
-
+            'phone.regex' => 'Số điện thoại phải có đúng 10 chữ số.',
             'address.string' => 'Trường địa chỉ phải là chuỗi.',
             'address.max' => 'Trường địa chỉ không được vượt quá 255 ký tự.',
 

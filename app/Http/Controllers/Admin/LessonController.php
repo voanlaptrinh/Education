@@ -62,7 +62,7 @@ class LessonController extends Controller
         $lesson->save();
 
         return redirect()->route('lesson.index')
-            ->with('success', 'Lesson added successfully.');
+            ->with('success', 'Đã được thêm mới thành công.');
     }
     public function edit(Lesson $lesson)
     {
@@ -108,7 +108,7 @@ class LessonController extends Controller
         $lesson->save();
 
         return redirect()->route('lesson.index', ['lesson' => $lesson])
-            ->with('success', 'Lesson updated successfully.');
+            ->with('success', 'Cập nhật thành công.');
     }
     public function destroy(Lesson $lesson)
     {
@@ -116,7 +116,7 @@ class LessonController extends Controller
         $lesson->delete();
 
         return redirect()->route('lesson.index', ['subject' => $subjectId])
-            ->with('success', 'Lesson deleted successfully.');
+            ->with('success', 'Xoá thành công');
     }
    
 }

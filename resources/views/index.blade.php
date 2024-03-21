@@ -115,6 +115,24 @@
         gtag('js', new Date());
 
         gtag('config', 'G-7N7LGGGWT1');
+
+        function togglePassword(inputId) {
+            var input = document.getElementById(inputId);
+            if (input) {
+                var icon = document.querySelector("[onclick=\"togglePassword('" + inputId + "')\"]");
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.classList.remove("fa-eye");
+                    icon.classList.add("fa-eye-slash");
+                } else {
+                    input.type = "password";
+                    icon.classList.remove("fa-eye-slash");
+                    icon.classList.add("fa-eye");
+                }
+            } else {
+                console.log("Không tìm thấy phần tử có id " + inputId);
+            }
+        }
     </script>
 
 

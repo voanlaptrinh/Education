@@ -15,7 +15,7 @@
 
             <div class="form-group">
                 <label for="title" class="form-label">Tiêu đề chương trình học</label>
-                <input type="text" name="title" class="form-control" value="{{ $chapter->title }}" required>
+                <input type="text" name="title" class="form-control" value="{{ old('title', $chapter->title) }}">
             </div>
             <div class="row mb-4 pt-3">
                 <div class="col-lg-12">
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group pb-3">
                 <label for="content">Nội dung</label>
-                <textarea name="content" class="form-control" rows="4">{{ $chapter->content }}</textarea>
+                <textarea name="content" class="form-control" rows="4">{{ old('content', $chapter->content) }}</textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Sửa</button>

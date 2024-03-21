@@ -16,7 +16,7 @@
 
                 <div class="form-group">
                     <label for="title">Tiêu đề</label>
-                    <input type="text" name="title" class="form-control">
+                    <input type="text" name="title" class="form-control" value="{{old('title')}}">
                     @error('title')
                         <span class="invalid-feedback" role="alert">
                             <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group pt-3">
                     <label for="content">Nội dung</label>
-                    <textarea name="content" class="form-control" rows="4"></textarea>
+                    <textarea name="content" class="form-control" rows="4">{{old('content')}}</textarea>
                     @error('content')
                         <span class="invalid-feedback" role="alert">
                             <label class="error" id="name_error" for="name">{{ $message }}</label>

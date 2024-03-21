@@ -26,7 +26,10 @@ class ClassesController extends Controller
         $request->validate([
             'name' => 'required|string',
             'status' => 'required',
-        ]);
+        ],[
+            'name.required' => 'Tiêu đề là bắt buộc',
+            'status.required' => 'Trạng thái là bắt buộc',
+         ]);
 
         Classes::create([
             'name' => $request->name,
@@ -71,7 +74,10 @@ class ClassesController extends Controller
             'name' => 'required|string',
             'status' => 'required',
             // Thêm các quy tắc kiểm tra khác nếu cần
-        ]);
+        ],[
+            'name.required' => 'Tiêu đề là bắt buộc',
+            'status.required' => 'Trạng thái là bắt buộc',
+         ]);
 
         $class->update($request->all());
 

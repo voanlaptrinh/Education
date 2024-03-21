@@ -47,7 +47,7 @@ class DocumentController extends Controller
         if ($request->access_level == 'paid' && empty($request->price)) {
             return redirect()->back()->with('error', 'Giá là bắt buộc khi chọn tùy chọn "Paid"');
         }
-        $classes = Classes::findOrFail($request->input('classes_id'));
+        $classes = Classes::findOrFail($request->input('classes_id', old('classes_id')));
 
         $file = $request->file('file');
         $filePath = $file->store('documents', 'public');
@@ -57,12 +57,12 @@ class DocumentController extends Controller
             $imagePath = $image->store('images', 'public');
         }
         $document = new Document([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
+            'name' => $request->input('name', old('name')),
+            'description' => $request->input('description', old('description')),
             'file_path' => $filePath,
             'image_path' => $imagePath,
-            'access_level' => $request->input('access_level'),
-            'price' => $request->input('price'),
+            'access_level' => $request->input('access_level', old('access_level')),
+            'price' => $request->input('price', old('price')),
         ]);
         $classes->documents()->save($document);
 

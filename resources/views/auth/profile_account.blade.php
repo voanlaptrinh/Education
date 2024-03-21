@@ -58,11 +58,11 @@
         </div>
     </section> --}}
     <!-- =======================
-                                Page Banner END -->
+                                    Page Banner END -->
 
     <!-- =======================
-                                Page content START -->
-   
+                                    Page content START -->
+
 
     <section class="pt-0">
         <div class="container">
@@ -97,13 +97,26 @@
                                                     src="{{ asset($user->image ? 'storage/' . $user->image : '/assets/user/images/default-avatar.jpg') }}"
                                                     alt="">
                                             </span>
-
                                         </label>
                                         <!-- Upload button -->
                                         <label class="btn btn-primary-soft mb-0" for="profile_picture">Tải ảnh lên</label>
                                         <input id="profile_picture" name="profile_picture" class="form-control d-none"
-                                            type="file">
+                                            type="file" onchange="previewImage(this)">
                                     </div>
+
+                                    <script>
+                                        function previewImage(input) {
+                                            var preview = document.getElementById('uploadfile-1-preview');
+                                            if (input.files && input.files[0]) {
+                                                var reader = new FileReader();
+                                                reader.onload = function(e) {
+                                                    preview.src = e.target.result;
+                                                };
+                                                reader.readAsDataURL(input.files[0]);
+                                            }
+                                        }
+                                    </script>
+
                                     @error('profile_picture')
                                         <span class="invalid-feedback" role="alert">
                                             <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -241,10 +254,11 @@
                                         <div class="mb-3">
                                             <label class="form-label"> Mật khẩu mới</label>
                                             <div class="input-group">
-                                                <input class="form-control" name="new_password" type="password"
-                                                    placeholder="Mật khẩu mới">
+                                                <input class="form-control" name="new_password" id="new_password"
+                                                    type="password" placeholder="Mật khẩu mới">
                                                 <span class="input-group-text p-0 bg-transparent">
-                                                    <i class="far fa-eye cursor-pointer p-2 w-40px"></i>
+                                                    <i class="far fa-eye cursor-pointer p-2 w-40px"
+                                                        onclick="togglePassword('new_password')"> </i>
                                                 </span>
                                             </div>
                                             <div class="rounded mt-1" id="psw-strength"></div>
@@ -252,8 +266,14 @@
                                         <!-- Confirm password -->
                                         <div>
                                             <label class="form-label">Nhập lại mật khẩu</label>
-                                            <input class="form-control" name="new_password_confirmation" type="password"
+                                            <div class="input-group">
+                                            <input class="form-control" name="new_password_confirmation" id="new_password_confirmation" type="password"
                                                 placeholder="Nhập lại mật khẩu">
+                                                <span class="input-group-text p-0 bg-transparent">
+                                                    <i class="far fa-eye cursor-pointer p-2 w-40px"
+                                                        onclick="togglePassword('new_password_confirmation')"> </i>
+                                                </span>
+                                        </div>
                                         </div>
                                         <!-- Button -->
                                         <div class="d-flex justify-content-end mt-4">
@@ -267,6 +287,7 @@
                         <!-- Password change end -->
                     </div>
                 </div>
+               
                 <!-- Main content END -->
             </div><!-- Row END -->
         </div>

@@ -13,7 +13,7 @@
 
             <div class="form-group">
                 <label for="title">Tiêu đề </label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" value="{{old('name')}}">
                 @error('name')
                     <span class="invalid-feedback" role="alert">
                         <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -24,7 +24,7 @@
             <div class="row mb-4 pt-3">
                 <div class="col-lg-6">
                     <label for="exampleInputEmail1" class="form-label">Lớp học *</label>
-                    <select class="form-select" name="classes_id" aria-label="Default select example">
+                    <select class="form-select" name="classes_id"  aria-label="Default select example">
                         @foreach ($classes as $classe)
                             <option value="{{ $classe->id }}">{{ $classe->name }}</option>
                         @endforeach
@@ -48,7 +48,7 @@
 
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Image (Optional)</label>
+                <label for="image" class="form-label">Ảnh (Optional)</label>
                 <input type="file" name="image" id="image" class="form-control" accept="image/*">
                 @error('image')
                     <span class="invalid-feedback" role="alert">
@@ -58,7 +58,7 @@
             </div>
             <div class="form-group pb-3">
                 <label for="content">Mô tả</label>
-                <textarea name="description" class="form-control" rows="4"></textarea>
+                <textarea name="description" class="form-control" value=""  rows="4">{{ old('description') }}</textarea>
                 @error('description')
                     <span class="invalid-feedback" role="alert">
                         <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -66,17 +66,17 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="access_level">Access Level:</label>
-                <select name="access_level" id="access_level" class="form-control">
-                    <option value="free">Free</option>
-                    <option value="paid">Paid</option>
+                <label for="access_level">Cấp độ truy cập:</label>
+                <select name="access_level" id="access_level" value="{{ old('access_level') }}"  class="form-control">
+                    <option value="free">Miễn Phí</option>
+                    <option value="paid">Mất phí</option>
                     <option value="pro">Pro</option>
                 </select>
             </div>
             
-            <div class="form-group" id="priceField" style="display: none;">
-                <label for="price">Price:</label>
-                <input type="number" name="price" class="form-control">
+            <div class="form-group pt-2" id="priceField" style="display: none;">
+                <label for="price">Giá:</label>
+                <input type="number" name="price" value="{{ old('price') }}"  class="form-control">
             </div>
             <button type="submit" class="btn btn-primary mt-2">Thêm mới</button>
         </form>

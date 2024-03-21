@@ -27,7 +27,7 @@
                                 <div class="col-12">
                                     <label class="form-label">Câu hỏi</label>
                                     <input class="form-control" type="text" placeholder="Viết câu hỏi của bạn"
-                                        name="text" required>
+                                        name="text" value="{{old('text')}}">
                                 </div>
                                 <div class="row pt-3">
                                     @foreach (range('A', 'D') as $key)

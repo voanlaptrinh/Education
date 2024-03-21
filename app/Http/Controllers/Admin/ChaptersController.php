@@ -75,7 +75,11 @@ class ChaptersController extends Controller
         $request->validate([
             'lesson_id' => 'required',
             'title' => 'required|string',
-            'content' => 'nullable|string',
+            'content' => 'required|string',
+        ],[
+           'lesson_id.required' => 'Trường này là bắt buộc',
+           'title.required' => 'Tiêu đề là bắt buộc',
+           'content.required' => 'Mô tả là bắt buộc',
         ]);
 
         $chapter->update([

@@ -29,9 +29,13 @@ class SubjectController extends Controller
             'name' => 'required|string',
             'status' => 'required',
             'description' => 'required|string',
-
             'class_id' => 'required|exists:classes,id',
-        ]);
+        ],[
+            'name.required' => 'Tên môn học là bắt buộc',
+            'status.required' => 'Trạng thái là bắt buộc',
+            'description.required' => 'Mô tả là bắt buộc',
+            'class_id.exists' => 'ID phải tồn tại ở lớp học',
+         ]);
 
         Subject::create([
             'name' => $request->name,
@@ -67,10 +71,15 @@ class SubjectController extends Controller
             'name' => 'required|string',
             'status' => 'required',
             'description' => 'required',
-            'class_id' => 'required',
+            'class_id' => 'required|exists:classes,id',
 
             // Thêm các quy tắc kiểm tra khác nếu cần
-        ]);
+        ],[
+            'name.required' => 'Tên môn học là bắt buộc',
+            'status.required' => 'Trạng thái là bắt buộc',
+            'description.required' => 'Mô tả là bắt buộc',
+            'class_id.exists' => 'ID phải tồn tại ở lớp học',
+         ]);
 
         $class->update($request->all());
 

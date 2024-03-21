@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
         Banner::create([
             'name' => 'Học tập không giới hạn trong tầm tay',
             'description' => 'Thị trường giảng dạy và học tập trực tuyến với. Được giảng dạy bởi các chuyên gia để giúp bạn có được những kỹ năng mới.',
-            'link_video' => '#',
+            'link_video' => 'https://www.youtube.com/watch?v=PKWwDoNtCKE',
             'link_button' => '#',
             'image_path' => ''
         ]);

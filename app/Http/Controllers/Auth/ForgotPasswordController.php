@@ -48,7 +48,7 @@ class ForgotPasswordController extends Controller
 
             \Mail::to($userEmail)->send(new ResetPasswordMail($resetLink));
 
-            return back()->with(['status' => 'Reset link sent successfully']);
+            return back()->with('success', 'Email xác nhận đã được gửi vui lòng vào Email của bạn để xác nhận!');
         }
 
         return $response == Password::RESET_LINK_SENT
