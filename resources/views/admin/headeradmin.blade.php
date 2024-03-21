@@ -18,7 +18,7 @@
             <ul class="navbar-nav flex-column" id="navbar-sidebar">
 
                 <!-- Menu item 1 -->
-                <li class="nav-item"><a href="{{route('admin.index')}}" class="nav-link"><i
+                <li class="nav-item"><a href="{{ route('admin.index') }}" class="nav-link"><i
                             class="bi bi-house fa-fw me-2"></i>Trang chủ</a></li>
 
                 <!-- Title -->
@@ -139,16 +139,32 @@
     </div>
 </nav>
 <style>
-    
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-   $(document).ready(function(){
-    var currentUrl = window.location.href;
-    $('#navbar-sidebar a').each(function(){
-        if ($(this).attr('href') === currentUrl) {
-            $(this).addClass('active');
-        }
+    $(document).ready(function() {
+        var currentUrl = window.location.href;
+        $('#navbar-sidebar a').each(function() {
+            var url = $(this).attr('href');
+            // Kiểm tra xem URL khớp với URL hiện tại và phần tử cha không chứa phần tử con có class 'active'
+            if (url === currentUrl && !$(this).parent().hasClass('active')) {
+                $(this).addClass('active');
+            }
+        });
+
+
+        $('#collapseauthentication .nav-link').each(function() {
+            var url = $(this).attr('href');
+            // Kiểm tra xem URL khớp với URL hiện tại và không có phần tử cha nào có lớp 'active'
+            if (url === currentUrl && !$(this).parents().hasClass('active')) {
+                $(this).addClass('active');
+                // Kích hoạt (expand) phần tử cha
+                $(this).closest('.collapse').addClass('show');
+                $(this).closest('.nav-item').addClass('active');
+            }
+
+        });
+
     });
-});
 </script>
