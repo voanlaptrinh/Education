@@ -209,14 +209,7 @@ class AuthController extends Controller
             $path = $request->file('profile_picture')->storeAs('public/profile_pictures', $user->id . '.' . $request->file('profile_picture')->extension());
             $user->update(['image' => 'profile_pictures/' . $user->id . '.' . $request->file('profile_picture')->extension()]);
         }
-        // $user->update([
-        //     'name' => $validatedData['name'],
-        //     'username' => $validatedData['username'],
-        //     'phone' => $validatedData['phone'],
-        //     'address' => $validatedData['address'],
-        //     'gender' => $validatedData['gender'],
-        //     'birthday' => $validatedData['birthday'],
-        // ]);
+     
 
         $user->save();
         return redirect()->route('profile', compact('user'))->with('success', 'Sửa thông tin tài khoản thành công.');
