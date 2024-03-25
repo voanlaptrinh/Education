@@ -113,7 +113,7 @@
                 </a>
                 <!-- Time -->
                 <p class="mb-2">
-                    Phone: <a href="tel:{{ $webConfig->phone }}"><span class="h6 fw-light ms-2" >{{ $webConfig->phone }}</span></a>
+                    Điện thoại: <a href="tel:{{ $webConfig->phone }}"><span class="h6 fw-light ms-2" >{{ $webConfig->phone }}</span></a>
                 </p>
 
                 <p class="mb-0">Email: <a href="mailto:{{ $webConfig->email }}"><span class="h6 fw-light ms-2">{{ $webConfig->email }}</span></a></p>

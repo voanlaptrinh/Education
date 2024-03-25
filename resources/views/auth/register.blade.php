@@ -15,7 +15,7 @@
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
                         <input type="text" name="name" 
-                            class="form-control border-0 bg-light rounded-end ps-1" placeholder="Họ"
+                            class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên..."
                             id="exampleInputEmail1">
                         @error('name')
                             <span class="text-danger">{{ $message }}</span>
@@ -28,7 +28,7 @@
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
                         <input type="text" name="username" 
-                            class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên "
+                            class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên... "
                             id="exampleInputEmail1">
                         @error('username')
                             <span class="text-danger">{{ $message }}</span>
@@ -42,7 +42,7 @@
                     <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                             class="bi bi-envelope-fill"></i></span>
                     <input type="email" name="email"  class="form-control border-0 bg-light rounded-end ps-1"
-                        placeholder="E-mail" id="exampleInputEmail1">
+                        placeholder="E-mail..." id="exampleInputEmail1">
                    
                 </div>
                 @error('email')

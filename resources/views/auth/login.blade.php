@@ -33,7 +33,7 @@
             <div class="input-group input-group-lg">
                 <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                         class="fas fa-lock"></i></span>
-                <input type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Password"
+                <input type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="Mật khẩu"
                     type="password" name="password" id="pass_login">
                 <span class="input-group-text p-0 bg-transparent">
                     <i class="far fa-eye cursor-pointer p-2 w-40px" onclick="togglePassword('pass_login')">

@@ -156,7 +156,7 @@
 				<div class="d-sm-flex align-items-center justify-content-center justify-content-lg-start">
 					<!-- Button -->
 					@if (!empty($banner->link_button))
-					<a href="{{$banner->link_button}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get Started</a>
+					<a href="{{$banner->link_button}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Bắt đầu</a>
 						
 					@endif
 					<!-- Video button -->
@@ -165,7 +165,7 @@
 					<div class="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
 						<a data-glightbox data-gallery="office-tour" href="{{$banner->link_video}}" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7">
 							<i class="fas fa-play"></i>
-							<h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Watch video</h6>
+							<h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Xem video</h6>
 						</a>
 					</div>
 					@endif

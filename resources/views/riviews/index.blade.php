@@ -126,7 +126,7 @@
                             <!-- Review item START -->
                             @if (count($countReviews) > 0)
                                 @foreach ($reviews as $review)
-                                    @if ($review->status == 1)
+                                   
                                         <div class="d-sm-flex">
                                             <!-- Avatar image -->
                                             @if (!empty($review->user->image))
@@ -168,7 +168,7 @@
                                             </div>
                                         </div>
                                         <hr>
-                                    @endif
+                                    
                                 @endforeach
                             @else
                                 <span>Chưa có đánh giá nào...</span>

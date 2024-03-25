@@ -21,7 +21,7 @@
                         <ul class="list-inline mb-0">
                             <!-- Address -->
                             <li class="list-item mb-3">
-                                <a href="#" class="text-white"> <i
+                                <a href="#" class="text-white text-uppercase"> <i
                                         class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>{{ $webConfig->address }} </a>
                             </li>
                             <!-- Phone number -->
@@ -151,7 +151,7 @@
                     
                 <div class="col-12">
                     <iframe class="w-100 h-400px grayscale rounded"
-                        src="{{$webConfig->gg_map}}">
+                        src="{{$webConfig->gg_map}}"
                         height="500" style="border:0;" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 @endif
