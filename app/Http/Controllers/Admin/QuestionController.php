@@ -42,7 +42,7 @@ class QuestionController extends Controller
             ]);
         }
 
-        return redirect(route('courses.show', $course))->with('success', 'Question added successfully!');
+        return redirect(route('courses.show', $course))->with('success', 'Thêm câu hỏi thành công');
     }
 
    
