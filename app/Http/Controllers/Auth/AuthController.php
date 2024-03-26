@@ -290,6 +290,6 @@ class AuthController extends Controller
         $examHistory = ExamHistory::findOrFail($id);
         $examHistory->delete();
 
-        return redirect()->back()->with('success', 'Đăng xuất thành công!');
+        return redirect()->back()->with('success', 'Xoá thành công!');
     }
 }
