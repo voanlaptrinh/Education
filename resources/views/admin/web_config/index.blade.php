@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="col-12 pt-3">
                                         <div class="row">
-                                          X
+                                        
                                            
                                         </div>
                     
@@ -174,7 +174,7 @@
                                     <!-- Save button -->
                                     <div class="d-sm-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary mb-0"
-                                            fdprocessedid="5i8qic">Update</button>
+                                            fdprocessedid="5i8qic">Cập nhật</button>
                                     </div>
                                 </form>
                             </div>
