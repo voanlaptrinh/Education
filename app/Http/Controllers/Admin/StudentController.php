@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index(){
-        $student = User::where('user_type' ,1)->paginate(5);
+        $student = User::where('user_type' , 1)->paginate(5);
         $totalStudent = User::where('user_type', '!=', 0)->count();
         $totalStudent_1 = User::where('user_type', '!=', 0)
         ->where('status', 1)
@@ -43,5 +43,11 @@ class StudentController extends Controller
         $user->save();
 
         return redirect()->back()->with('success', 'Trạng thái tài khoản đã được cập nhật.');
+    }
+    public function show($studentS)
+    {
+        $user = User::findOrFail($studentS);
+
+        return response()->json($user);
     }
 }

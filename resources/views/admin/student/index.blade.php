@@ -10,33 +10,33 @@
                 {{-- <a href="{{ route('newsAdmin.index') }}" class="btn btn-sm btn-primary mb-0">Create a Course</a> --}}
             </div>
         </div>
- <!-- Course boxes START -->
- <div class="row g-4 mb-4">
-    <!-- Course item -->
-    <div class="col-sm-6 col-lg-4">
-        <div class="text-center p-4 bg-primary bg-opacity-10 border border-primary rounded-3">
-            <h6>Tổng học sinh</h6>
-            <h2 class="mb-0 fs-1 text-primary">{{ $totalStudent }}</h2>
-        </div>
-    </div>
+        <!-- Course boxes START -->
+        <div class="row g-4 mb-4">
+            <!-- Course item -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="text-center p-4 bg-primary bg-opacity-10 border border-primary rounded-3">
+                    <h6>Tổng học sinh</h6>
+                    <h2 class="mb-0 fs-1 text-primary">{{ $totalStudent }}</h2>
+                </div>
+            </div>
 
-    <!-- Course item -->
-    <div class="col-sm-6 col-lg-4">
-        <div class="text-center p-4 bg-success bg-opacity-10 border border-success rounded-3">
-            <h6>Tài khoản hoạt động</h6>
-            <h2 class="mb-0 fs-1 text-success">{{ $totalStudent_1}}</h2>
-        </div>
-    </div>
+            <!-- Course item -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="text-center p-4 bg-success bg-opacity-10 border border-success rounded-3">
+                    <h6>Tài khoản hoạt động</h6>
+                    <h2 class="mb-0 fs-1 text-success">{{ $totalStudent_1 }}</h2>
+                </div>
+            </div>
 
-    <!-- Course item -->
-    <div class="col-sm-6 col-lg-4">
-        <div class="text-center p-4  bg-warning bg-opacity-15 border border-warning rounded-3">
-            <h6>Tài khoản bị khóa</h6>
-            <h2 class="mb-0 fs-1 text-warning">{{$totalStudent_2}}</h2>
+            <!-- Course item -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="text-center p-4  bg-warning bg-opacity-15 border border-warning rounded-3">
+                    <h6>Tài khoản bị khóa</h6>
+                    <h2 class="mb-0 fs-1 text-warning">{{ $totalStudent_2 }}</h2>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<!-- Course boxes END -->
+        <!-- Course boxes END -->
         <!-- Card START -->
         <div class="card bg-transparent border">
 
@@ -47,7 +47,7 @@
 
 
                 </div>
-               
+
             </div>
             <!-- Card header END -->
 
@@ -75,58 +75,49 @@
                         <tbody>
 
                             @foreach ($student as $studentS)
-                                
-                                    <!-- Table row -->
-                                    <tr>
-                                        <td>
-                                            <div class="w-60px">
-                                                <img src="{{ asset('storage/' . $studentS->image) }}" class="rounded"
-                                                    alt="">
-                                            </div>
-                                        </td>
-                                        <!-- Table data -->
-                                        <td>
-                                            <div class="d-flex align-items-center position-relative">
-                                                <!-- Image -->
+                                <!-- Table row -->
+                                <tr>
+                                    <td>
+                                        <div class="w-60px">
+                                            <img src="{{ asset('storage/' . $studentS->image) }}" class="rounded"
+                                                alt="">
+                                        </div>
+                                    </td>
+                                    <!-- Table data -->
+                                    <td>
+                                        <div class="d-flex align-items-center position-relative">
+                                            <!-- Image -->
 
-                                                <!-- Title -->
-                                                <h6 class="table-responsive-title mb-0 ms-2">
-                                                    <a href="#" class="stretched-link">{{ $studentS->name }}</a>
-                                                </h6>
-                                            </div>
-                                        </td>
+                                            <!-- Title -->
+                                            <h6 class="table-responsive-title mb-0 ms-2">
+                                                <a data-bs-toggle="modal" data-target=".exampleModal_detail"
+                                                    data-class-id="{{ $studentS->id }}"
+                                                    href="{{ route('student.show', ['studentS' => $studentS]) }}"
+                                                    class="stretched-link detailsBtn">{{ $studentS->name }}</a>
+                                            </h6>
+                                        </div>
+                                    </td>
 
 
 
 
 
-                                        <!-- Table data -->
-                                        <td>{{ $studentS->phone }}</td>
-                                        <td>
-                                            <form action="{{ route('user.toggleStatus', ['id' => $studentS->id]) }}"
-                                                method="post">
-                                                @csrf
-                                                @if ($studentS->status == 1)
-                                                    <button class="btn btn-success">Hoạt động</button>
-                                                @else
-                                                    <button class="btn btn-warning">Tạm khóa</button>
-                                                @endif
-                                            </form>
-                                        </td>
-
-                                        <!-- Table data -->
-                                        {{-- <td>
-                                    <a href="{{ route('edit-news', ['id' => $newS->id]) }}"
-                                        class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Edit</a>
-                                    <div class="btn btn-sm btn-danger mb-0">
-                                        <form action="{{ route('news.destroy', $newS->id) }}" method="post">
+                                    <!-- Table data -->
+                                    <td>{{ $studentS->phone }}</td>
+                                    <td>
+                                        <form action="{{ route('user.toggleStatus', ['id' => $studentS->id]) }}"
+                                            method="post">
                                             @csrf
-                                            <a type="submit"
-                                                onclick="return confirm('Bạn chắc chắn muốn xóa tin tức này?')">Delete</button>
+                                            @if ($studentS->status == 1)
+                                                <button class="btn btn-success">Hoạt động</button>
+                                            @else
+                                                <button class="btn btn-warning">Tạm khóa</button>
+                                            @endif
                                         </form>
-                                    </div>
-                                </td> --}}
-                                    </tr>
+                                    </td>
+
+
+                                </tr>
                             @endforeach
 
 
@@ -169,5 +160,152 @@
         </div>
         <!-- Card END -->
     </div>
-    <!-- Page main content END -->
+    <div class="modal fade exampleModal_detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog" role="document" style="max-width: 1200px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="classModalLabels"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- validation form -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card" style="margin-bottom: 0px;">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <img src="" alt="" id="imge_user">
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
+                                                    <label for="validationCustom01">Tên tài khoản</label>
+                                                    <input type="text" class="form-control" id="names" name="name"
+                                                        readonly disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="validationCustom02">Số điện thoại</label>
+                                                    <input type="number" class="form-control" id="phone"
+                                                        placeholder="Số điện thoại" name="phone" readonly disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" class="form-control" id="email"
+                                                        placeholder="Email" name="email" readonly disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="birthday">Ngày sinh</label>
+                                                    <input type="date" class="form-control" id="birthday"
+                                                        placeholder="Ngày sinh" name="birthday" readonly disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+
+
+
+
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                                                        <label for="status">Trạng thái</label>
+                                                        <button class="btn form-control btn-secondary"
+                                                            id="statuss"></button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="is_pro">Tài khoản</label>
+                                                    <button class="btn form-control btn-secondary"
+                                                        id="is_pro"></button>
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
+                                                <label for="description">Địa chỉ</label>
+                                                <input type="text" class="form-control" id="address"
+                                                    placeholder="Địa chỉ" name="addres" readonly disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="modal-footer col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal"
+                                        style="color: #000; font-weight: bold;">Đóng
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end validation form -->
+                    <!-- ============================================================== -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script>
+        $('.detailsBtn').click(function() {
+            var studentS = $(this).data('class-id');
+            $.ajax({
+                url: '/admin/student/show/' + studentS,
+                type: 'GET',
+                success: function(data) {
+                    if (data && data.name) {
+                        $('#classModalLabels').text(data.name);
+                        $('#names').val(data.name);
+                        $('#phone').val(data.phone);
+                        $('#email').val(data.email);
+                        $('#address').val(data.address);
+                        $('#birthday').val(data.birthday);
+                        $('#imge_user').attr('src', '/storage/' + data.image);
+                        if (data.status === 0) {
+                            $('#is_pro').text('Miễn phí');
+                        } else {
+                            $('#is_pro').text('Mất phí');
+                        }
+
+                        if (data.status === 1) {
+                            $('#statuss').text('Hoạt động');
+                        } else {
+                            $('#statuss').text('Tạm khoá');
+                        }
+
+                        $('.exampleModal_detail').modal('show');
+                    } else {
+                        alert(
+                            'Dữ liệu trả về không hợp lệ hoặc thiếu trường "name".'
+                        );
+                    }
+                },
+                error: function() {
+                    alert('Đã xảy ra lỗi khi lấy dữ liệu chi tiết liên hệ.');
+                }
+            });
+        });
+    </script>
 @endsection
