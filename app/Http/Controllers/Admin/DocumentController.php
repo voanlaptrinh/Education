@@ -10,14 +10,29 @@ use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $class = null)
     {
-        $searchQuery = $request->input('query'); // Thay đổi tên biến thành $searchQuery
-        $documents = Document::when($searchQuery, function ($query) use ($searchQuery) {
-            return $query->where('name', 'like', '%' . $searchQuery . '%');
-        })->latest()->paginate(5);
+        $searchQuery = $request->input('query');
+    
+        // Bắt đầu với tất cả các tài liệu
+        $documents = Document::query();
+    
+        // Nếu có class được truyền, lọc theo class
+        if ($class) {
+            $documents->where('classes_id', $class);
+        }
+    
+        // Lọc theo query tìm kiếm nếu có
+        if ($searchQuery) {
+            $documents->where('name', 'like', '%' . $searchQuery . '%');
+        }
+    
+        // Sắp xếp theo thứ tự mới nhất và phân trang
+        $documents = $documents->latest()->paginate(5);
+    
         return view('admin.document.index', compact('documents', 'searchQuery'));
     }
+    
     public function create()
     {
         $classes = Classes::all();

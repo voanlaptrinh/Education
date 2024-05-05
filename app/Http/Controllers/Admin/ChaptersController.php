@@ -9,34 +9,28 @@ use Illuminate\Http\Request;
 
 class ChaptersController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $lesson = null)
     {
         $searchQuery = $request->input('query');
-        $lessonId = $request->input('lesson_id');
-
-        $itemsPerPage = 5;
-
-        // Trang hiện tại
-        $currentPage = $request->input('page', 1);
-
-        // Tính tổng số mục
-        $totalItems = Chapter::count();
-
-        // Tính tổng số trang
-        $totalPages = ceil($totalItems / $itemsPerPage);
-
-        // Lấy dữ liệu của trang hiện tại
-        $curriculum = Chapter::when($request->input('query'), function ($query) use ($request) {
-            return $query->where('title', 'like', '%' . $request->input('query') . '%');
-        })->when($request->input('lesson_id'), function ($query) use ($request) {
-            return $query->where('lesson_id', $request->input('lesson_id'));
-        })->skip(($currentPage - 1) * $itemsPerPage)
-            ->take($itemsPerPage)
-            ->get();
-        $lessons = Lesson::all();
-
-        return view('admin.curriculum.index', compact('searchQuery', 'lessonId', 'lessons', 'curriculum', 'totalPages', 'curriculum', 'currentPage'));
+        
+        $curriculum = Chapter::query();
+    
+        // Nếu có lesson_id được truyền, lọc theo lesson_id
+        if ($lesson) {
+            $curriculum->where('lesson_id', $lesson);
+        }
+    
+        // Lọc theo query tìm kiếm nếu có
+        if ($searchQuery) {
+            $curriculum->where('title', 'like', '%' . $searchQuery . '%');
+        }
+    
+        // Sắp xếp theo thứ tự mới nhất và phân trang
+        $curriculum = $curriculum->latest()->paginate(10);
+    
+        return view('admin.curriculum.index', compact('searchQuery', 'curriculum'));
     }
+    
     public function create()
     {
         $lessons = Lesson::all(); // Lấy danh sách bài học

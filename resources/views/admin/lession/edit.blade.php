@@ -99,7 +99,7 @@
 
             <!-- Thêm các trường dữ liệu khác nếu cần -->
 
-            <button type="submit">Sửa bài học</button>
+            <button type="submit" class="btn btn-success">Sửa bài học</button>
         </form>
     </div>
 @endsection

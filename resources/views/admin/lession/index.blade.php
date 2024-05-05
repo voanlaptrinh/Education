@@ -48,6 +48,7 @@
                             <tr>
                                 <th scope="col" class="border-0 rounded-start">Tiêu đề</th>
                                 <th scope="col" class="border-0">Ảnh mô tả</th>
+                                <th scope="col" class="border-0">Video bài giảng</th>
                                 <th scope="col" class="border-0">Số lượt xem</th>
                                 <th scope="col" class="border-0">Môn học</th>
                                 <th scope="col" class="border-0 rounded-end">Action</th>
@@ -83,7 +84,9 @@
                                         </div>
                                     </td>
                                  
-
+                                    <td>
+                                        <a href="{{ route('curriculum.index', ['lesson' => $lesson]) }}" class="btn btn-primary">Xem video bài giảng</a>
+                                    </td>
                                     <!-- Table data -->
                                     <td> {{ $lesson->views }}</td>
                                     <td> {{$lesson->subject->name}} ({{ $lesson->subject->class->name }})</td>

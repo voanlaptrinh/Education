@@ -20,6 +20,19 @@ class StudentController extends Controller
 
         return view('admin.student.index',compact('student','totalStudent_2','totalStudent_1','totalStudent'));
     }
+    public function index2(){
+        $student = User::where('user_type' ,1)->paginate(5);
+        $totalStudent = User::where('user_type', '!=', 0)->count();
+        $totalStudent_1 = User::where('user_type', '!=', 0)
+        ->where('status', 1)
+        ->count();
+        $totalStudent_2 = User::where('user_type', '!=', 0)
+        ->where('status', 0)
+        ->count();
+
+        return [$student, $totalStudent];
+    }
+    
     public function toggleStatus($id)
     {
         $user = User::findOrFail($id);

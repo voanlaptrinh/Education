@@ -134,13 +134,14 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
 
         Route::prefix('/chapter')->group(function () { //chương trình học
-            Route::get('/', [ChaptersController::class, 'index'])->name('curriculum.index');
             Route::get('/create', [ChaptersController::class, 'create'])->name('curriculum.create');
             Route::post('/store', [ChaptersController::class, 'store'])->name('curriculum.store');
             Route::get('/{chapter}/edit', [ChaptersController::class, 'edit'])->name('curriculum.edit');
             Route::put('/update/{chapter}', [ChaptersController::class, 'update'])->name('curriculum.update');
             Route::delete('/delete/{chapter}', [ChaptersController::class, 'destroy'])->name('curriculum.destroy');
             Route::get('/search', [ChaptersController::class, 'search'])->name('curriculum.search');
+            Route::get('/{lesson?}', [ChaptersController::class, 'index'])->name('curriculum.index');
+
         });
 
         Route::prefix('/subcsription')->group(function () {
@@ -171,12 +172,13 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
 
         Route::prefix('/document')->group(function () {
-            Route::get('/index', [AdminDocumentController::class, 'index'])->name('document.admin');
+         
             Route::get('/create', [AdminDocumentController::class, 'create'])->name('document.create');
             Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');
             Route::delete('/delete/{document}', [AdminDocumentController::class, 'destroy'])->name('document.destroy');
             Route::get('/{document}/edit', [AdminDocumentController::class, 'edit'])->name('document.edit');
             Route::put('update/{document}', [AdminDocumentController::class, 'update'])->name('document.update');
+            Route::get('/{class?}', [AdminDocumentController::class, 'index'])->name('document.admin');
             // Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
             // Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');
             // Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');

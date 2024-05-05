@@ -5,7 +5,7 @@
     <div class="page-content-wrapper border">
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Thêm chương trình học</h1>
+                <h1 class="h3 mb-2 mb-sm-0">Thêm video bài giảng</h1>
             </div>
         </div>
         <form method="POST" action="{{ route('curriculum.store') }}">

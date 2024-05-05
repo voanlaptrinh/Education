@@ -5,9 +5,9 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Chương trình học <span
+                <h1 class="h3 mb-2 mb-sm-0">Video bài giảng <span
                         class="badge bg-orange bg-opacity-10 text-orange"></span></h1>
-                <a href="{{ route('curriculum.create') }}" class="btn btn-sm btn-primary mb-0">Thêm mới chương trình học</a>
+                <a href="{{ route('curriculum.create') }}" class="btn btn-sm btn-primary mb-0">Thêm mới Video bài giảng</a>
             </div>
         </div>
 
@@ -119,15 +119,27 @@
                     <p class="mb-0 text-center text-sm-start"></p>
                     <!-- Pagination -->
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                            @for ($page = 1; $page <= $totalPages; $page++)
-                                <li class="page-item mb-0 {{ $page == $currentPage ? 'active' : '' }}"><a class="page-link"
-                                        href="?page={{ $page }}">
-                                        {{ $page }}
-                                    </a></li>
-                               
-                            @endfor
-                        </ul>
+                        <ul
+                        class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                        @if ($curriculum->currentPage() > 1)
+                            <li class="page-item mb-0"><a class="page-link"
+                                    href="{{ $curriculum->url($curriculum->currentPage() - 1) }}"
+                                    tabindex=""><i class="fas fa-angle-left"></i></a></li>
+                        @endif
+                        @for ($i = 1; $i <= $curriculum->lastPage(); $i++)
+                            <li
+                                class=" page-item mb-0 {{ $curriculum->currentPage() == $i ? 'active' : '' }}">
+                                <a class="page-link"
+                                    href="{{ $curriculum->url($i) }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+                        @if ($curriculum->currentPage() < $curriculum->lastPage())
+                        <li class="page-item mb-0"><a class="page-link" href="{{ $curriculum->url($curriculum->currentPage() + 1) }}"><i
+                            class="fas fa-angle-right"></i></a></li> 
+
+                        @endif
+                   
+                    </ul>
                       
                     </nav>
                 </div>

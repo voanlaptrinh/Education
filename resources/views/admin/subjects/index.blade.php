@@ -253,7 +253,7 @@
                                     <!-- Table data -->
                                     <td>
                                         <a href="{{ route('courses.index', $subject) }}"
-                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm đề bài</a>
+                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm bài kiểm tra</a>
                                     </td>
                                     <td class="d-flex">
 

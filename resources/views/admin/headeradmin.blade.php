@@ -5,7 +5,8 @@
     <!-- Navbar brand for xl START -->
     <div class="d-flex align-items-center">
         <a class="navbar-brand" href="index.html">
-            <img class="navbar-brand-item" src="{{ asset('storage/' . $logo->logo) }} " alt="">
+            <img class="navbar-brand-item" src="{{ $logo->logo ? asset('storage/' . $logo->logo) : asset('/assets/user/images/logo-light.svg') }}
+            " alt="">
         </a>
     </div>
     <!-- Navbar brand for xl END -->
@@ -29,21 +30,67 @@
                 <!-- Menu item 3 -->
                 {{-- <li class="nav-item"> <a class="nav-link" href="{{ route('indexNews') }}"><i
                             class="fas fa-newspaper fa-fw me-2"></i>Tin tức</a></li> --}}
-                <li class="nav-item"> <a class="nav-link" href="{{ route('student.index') }}"><i
-                            class="fas fa-user-graduate fa-fw me-2"></i>Quản lý Học sinh</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('classes.index') }}"><i
-                            class="fas fa-pen-fancy fa-fw me-2"></i></i>Lớp học</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('document.admin') }}"><i
-                            class="fas fa-folder-open fa-fw me-2"></i></i>Tài liệu</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('subjects.index') }}"><i
-                            class="fas fa-book fa-fw me-2"></i>Môn học & (Đề bài)</a></li>
+                <li class="nav-item"> <a
+                        class="nav-link {{ Request::route()->getName() == 'student.index' ? 'active' : '' }}
+                    "
+                        href="{{ route('student.index') }}"><i class="fas fa-user-graduate fa-fw me-2"></i>Quản lý Học
+                        sinh</a></li>
+                <li class="nav-item"> <a
+                        class="nav-link
+                    {{ Request::route()->getName() == 'classes.index' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'classes.update' ? 'active' : '' }}
+                    "
+                        href="{{ route('classes.index') }}"><i class="fas fa-pen-fancy fa-fw me-2"></i></i>Lớp học</a>
+                </li>
+                <li class="nav-item"> <a
+                        class="nav-link
+                    {{ Request::route()->getName() == 'subjects.index' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'courses.index' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'courses.create' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'courses.edit' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'courses.show' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'questions.create' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'questions.edit' ? 'active' : '' }}
+                    "
+                        href="{{ route('subjects.index') }}"><i class="fas fa-book fa-fw me-2"></i>Môn học & (Bài kiểm
+                        tra)</a></li>
 
-                <li class="nav-item"> <a class="nav-link" href="{{ route('lesson.index') }}"><i
-                            class="fas fa-graduation-cap fa-fw me-2"></i>Bài học</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('curriculum.index') }}"><i
-                            class="fas fa-graduation-cap fa-fw me-2"></i>Chương trình giảng dạy</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('subscriptions.indexAdmin') }}"><i
-                            class="fas fa-cubes fa-fw me-2"></i>Gói khóa học</a></li>
+                <li class="nav-item"> <a
+                        class="nav-link
+                    {{ Request::route()->getName() == 'lesson.index' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'lesson.create' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'lessons.edit' ? 'active' : '' }}
+                    "
+                        href="{{ route('lesson.index') }}"><i class="fas fa-graduation-cap fa-fw me-2"></i>Bài học</a>
+                </li>
+                <li class="nav-item"> <a
+                        class="nav-link
+                    {{ Request::route()->getName() == 'curriculum.index' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'curriculum.create' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'curriculum.edit' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'lectures.index' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'lectures.create' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'lectures.edit' ? 'active' : '' }}
+                    "
+                        href="{{ route('curriculum.index') }}"><i class="fas fa-graduation-cap fa-fw me-2"></i>Video
+                        bài giảng</a></li>
+
+                <li class="nav-item"> <a
+                        class="nav-link
+                                {{ Request::route()->getName() == 'document.admin' ? 'active' : '' }}
+                                {{ Request::route()->getName() == 'document.create' ? 'active' : '' }}
+                                {{ Request::route()->getName() == 'document.edit' ? 'active' : '' }}
+                                "
+                        href="{{ route('document.admin') }}"><i class="fas fa-folder-open fa-fw me-2"></i></i>Tài
+                        liệu</a></li>
+                <li class="nav-item"> <a
+                        class="nav-link
+                    {{ Request::route()->getName() == 'subscriptions.indexAdmin' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'subscriptions.create' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'subscriptions.edit' ? 'active' : '' }}
+                    "
+                        href="{{ route('subscriptions.indexAdmin') }}"><i class="fas fa-cubes fa-fw me-2"></i>Gói khóa
+                        học</a></li>
 
 
                 <li class="nav-item">
