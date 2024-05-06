@@ -8,8 +8,6 @@
     </div>
     <form method="POST" action="{{ route('document.update', ['document' => $document->id]) }}" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
-
         <div class="form-group">
             <label for="title">Tiêu đề </label>
             <input type="text" name="name" class="form-control" value="{{  old('name',$document->name) }}">
@@ -78,5 +76,19 @@
         <button type="submit" class="btn btn-primary mt-2">Cập nhật</button>
     </form>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var accessLevelSelect = document.getElementById('access_level');
+        var priceField = document.getElementById('priceField');
+
+        accessLevelSelect.addEventListener('change', function () {
+            if (accessLevelSelect.value === 'paid') {
+                priceField.style.display = 'block';
+            } else {
+                priceField.style.display = 'none';
+            }
+        });
+    });
+</script>
 
 @endsection

@@ -141,7 +141,6 @@ class DocumentController extends Controller
             // Cập nhật đường dẫn của file mới
             $document->update(['file_path' => $filePath]);
         }
-
         return redirect()->route('document.admin')->with('success', 'Tài liệu được cập nhật thành công');
     }
     public function destroy(Document $document)

@@ -178,7 +178,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');
             Route::delete('/delete/{document}', [AdminDocumentController::class, 'destroy'])->name('document.destroy');
             Route::get('/{document}/edit', [AdminDocumentController::class, 'edit'])->name('document.edit');
-            Route::put('update/{document}', [AdminDocumentController::class, 'update'])->name('document.update');
+            Route::post('update/{document}', [AdminDocumentController::class, 'update'])->name('document.update');
             Route::get('/{class?}', [AdminDocumentController::class, 'index'])->name('document.admin');
             // Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
             // Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');
