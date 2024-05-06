@@ -104,7 +104,7 @@ $logo = \App\Models\Web_config::find(1);
     <link rel="stylesheet" type="text/css" href="/assets/user/vendor/quill/css/quill.snow.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/user/css/style.css">
-    <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
 </head>
 
 <body>

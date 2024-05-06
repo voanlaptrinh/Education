@@ -103,7 +103,7 @@
                         readonly>
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-4">Create Lecture</button>
+                <button type="submit" class="btn btn-primary mt-4">Thêm mới</button>
             </form>
 
         </div>

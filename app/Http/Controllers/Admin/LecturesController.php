@@ -39,7 +39,9 @@ class LecturesController extends Controller
 
         // Lưu video vào thư mục 'videos' trong thư mục lưu trữ 'public'
         $videoPath = $request->file('video')->store('videos', 'public');
+ 
 
+        // dd($videoPath);
 
         // Lưu hình ảnh nếu có
         $imagePath = null;
@@ -62,7 +64,7 @@ class LecturesController extends Controller
 
         // Chuyển hướng về trang index của lectures với thông báo thành công
         return redirect()->route('lectures.index', ['chapter' => $request->input('chapter_id')])
-            ->with('success', 'Lecture created successfully.');
+            ->with('success', 'Them mới thành công.');
     }
     public function edit($id)
     {
@@ -107,7 +109,7 @@ class LecturesController extends Controller
 
         // Chuyển hướng về trang index của lectures với thông báo thành công
         return redirect()->route('lectures.index', ['chapter' => $request->input('chapter_id')])
-            ->with('success', 'Lecture updated successfully.');
+            ->with('success', 'Sửa thành công.');
     }
     public function destroy($id)
     {
@@ -121,6 +123,6 @@ class LecturesController extends Controller
         $lecture->delete();
 
         return redirect()->route('lectures.index', ['chapter' => $chapterId])
-                         ->with('success', 'Lecture deleted successfully.');
+                         ->with('success', 'Xóa thành công');
     }
 }
