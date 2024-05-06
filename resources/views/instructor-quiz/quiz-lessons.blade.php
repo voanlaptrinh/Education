@@ -117,7 +117,7 @@
                                 <tbody>
                                     <!-- Table item -->
                                     @if (!empty($lessons))
-                                        @foreach ($lessons as $key=> $lesson)
+                                        @foreach ($lessons as $key => $lesson)
                                             <tr>
                                                 <td>{{$key}}</td>
                                                 <!-- Course item -->
@@ -126,7 +126,7 @@
                                                         <!-- Image -->
                                                         <div class="w-60px">
                                                             <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
-                                                                class="rounded" alt="">
+                                                                class="rounded" alt="ssss">
                                                         </div>
                                                         <div class="mb-0 ms-2">
                                                             <!-- Title -->
@@ -272,10 +272,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center position-relative">
                                                     <!-- Image -->
-                                                    <div class="w-60px">
-                                                        <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
-                                                            class="rounded" alt="">
-                                                    </div>
+                                                  
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
                                                         <h6 class="mb-0"><a
