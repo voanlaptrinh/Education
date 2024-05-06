@@ -125,6 +125,7 @@
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>
+                                <th scope="col" class="border-0">Tài liệu </th>
                               
                                 <th scope="col" class="border-0 rounded-end">Thao tác</th>
                             </tr>
