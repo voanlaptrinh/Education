@@ -115,12 +115,11 @@
                                                                                     class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-md-400px">{{ $item->title }}</span>
                                                                             </div>
                                                                             @if ($item->is_free == 1)
-                                                                                
-                                                                            <div class="col-sm-6">
-                                                                                <span
-                                                                                    class="badge text-bg-orange ms-2 ms-md-0"><i
-                                                                                        class="fas fa-lock fa-fw me-1"></i>Pro</span>
-                                                                            </div>
+                                                                                <div class="col-sm-6">
+                                                                                    <span
+                                                                                        class="badge text-bg-orange ms-2 ms-md-0"><i
+                                                                                            class="fas fa-lock fa-fw me-1"></i>Pro</span>
+                                                                                </div>
                                                                             @endif
                                                                         </div>
                                                                     </div>
@@ -128,7 +127,7 @@
                                                                         @if (!empty(Auth::user()))
                                                                             @if ($item->is_free == 0)
                                                                                 <button
-                                                                                    onclick="showVideo('{{ asset('storage/' . $item->video) }}')"
+                                                                                    onclick="showVideo('{{ $item->video }}')"
                                                                                     class="btn btn-sm btn-info-soft mb-0">Xem
                                                                                     bài giảng</button>
                                                                             @else
@@ -141,7 +140,7 @@
                                                                                 @else
                                                                                     <a href="#"
                                                                                         class="btn btn-sm btn-info-soft mb-0"
-                                                                                        onclick="showVideo('{{ asset('storage/' . $item->video) }}')">Xem
+                                                                                        onclick="showVideo('{{ $item->video }}')">Xem
                                                                                         bài giảng
 
                                                                                     </a>
@@ -210,7 +209,7 @@
                                             <h5 class="mb-3 font-base d-inline-block">{{ $lesson->title }}</h5>
                                         </div>
 
-                                       
+
                                     </div>
 
                                     <!-- Buttons -->
@@ -259,81 +258,66 @@
         </div>
     </section>
     <style>
-        .video-container {
-            position: relative;
+        /* Thiết lập chiều rộng và chiều cao cố định cho nội dung modal */
+        .modal-body {
             width: 100%;
             height: 100%;
-            overflow: hidden;
         }
 
-        .video-container video {
-            height: 100%;
+
+        /* Thay đổi kích thước video trong modal */
+        .embed-responsive-16by9 iframe {
+            width: 100%;
+            height: 500px;
         }
     </style>
     <!-- Modal -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal fade  bd-example-modal-xl " id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
+                <!-- Modal header và button close -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="videoModalLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="videoModalLabel">Video</h5>
+                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- Nội dung modal -->
                 <div class="modal-body">
-                    
-                    <div class="video-container">
-                        <video controls width="100%" height="100%" id="videoPlayerModal">
-                            <source src="" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                    <div class=" h-100 w-100">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe id="videoPlayerModal" class="embed-responsive-item" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <script>
+        var videoModal = document.getElementById('videoModal');
+    
+        // Sự kiện hiển thị modal
+        videoModal.addEventListener('show.bs.modal', function () {
+            var videoPlayer = document.getElementById('videoPlayerModal');
+            videoPlayer.play(); // Khởi động video khi modal được mở
+        });
+    
+        // Sự kiện ẩn modal
+        videoModal.addEventListener('hide.bs.modal', function () {
+            var videoPlayer = document.getElementById('videoPlayerModal');
+            videoPlayer.pause(); // Dừng video khi modal được đóng
+            videoPlayer.currentTime = 0; // Đặt lại thời gian của video về đầu
+        });
+    
         function showVideo(videoUrl) {
-            // Set the video source based on the clicked lecture
             var videoPlayerModal = document.getElementById('videoPlayerModal');
             videoPlayerModal.src = videoUrl;
-
-            // Open the modal
-            var myModal = new bootstrap.Modal(document.getElementById('videoModal'));
+    
+            var myModal = new bootstrap.Modal(videoModal);
             myModal.show();
-
-            // Assign a function directly to the onhide property
-            myModal._element.onhide = function() {
-                // Pause the video when the modal is hidden
-                videoPlayerModal.pause();
-                // Reset the video to the beginning
-            };
-            // Get the close button inside the modal
-            var closeButton = document.querySelector('#videoModal .btn-close');
-
-            // Assign a function directly to the onclick property
-            closeButton.onclick = function() {
-                // Pause the video when the modal is closed
-                videoPlayerModal.pause();
-                // Reset the video to the beginning
-                videoPlayerModal.currentTime = 0;
-            };
-
-            // // Get the modal element
-            // var modalElement = document.getElementById('videoModal');
-
-            // // Add a function to be executed when the modal is closed
-            // modalElement.onmouseleave = function() {
-            //     // Pause the video when the modal is closed
-            //     videoPlayerModal.pause();
-            //     // Reset the video to the beginning
-            //     videoPlayerModal.currentTime = 0;
-            // };
-
-            // Add a function to be executed when the modal is opened
-            modalElement.onmouseenter = function() {
-                // Play the video when the modal is opened
-                videoPlayerModal.play();
-            };
         }
     </script>
+    
+    
 @endsection

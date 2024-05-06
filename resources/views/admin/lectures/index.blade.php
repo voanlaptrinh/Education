@@ -49,21 +49,10 @@
 
                                     <td>
 
-                                        <div class="">
-                                            <div class="">
-                                                <div class="">
-                                                    <!-- Video START -->
-                                                    <div class="">
-                                                       
-
-                                                        <a class="btn btn-round btn-primary-shadow justify-content-center" data-glightbox="" data-gallery="course-video" href="{{ asset('storage/' . $lecture->video) }}"><i class="fas fa-play"></i></a>
-                                                    </div>
-
-                                                </div>
-
-
-                                            </div><!-- Row End -->
-                                        </div>
+                                        <a data-glightbox="" data-gallery="office-tour" href="{{$lecture->video}}" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7"> 
+                                            <i class="fas fa-play"></i>
+                                            <h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Xem video</h6>
+                                        </a>
 
                                     </td>
                                     <td class="">Chương trình: ( {{ $chapter->title }} )</td>
@@ -72,9 +61,9 @@
                                     </td>
 
                                    <td> @if ($lecture->is_free == 1)
-                                    <button class="btn btn-success">Miễn phí</button>
+                                    <button class="btn btn-warning ">Mất phí</button>
                                 @else
-                                    <button class="btn btn-warning">Mất phí</button>
+                                    <button class="btn btn-success ">Miễn phí</button>
                                 @endif</td>
                                    
                                     <td class="d-flex h-100">
@@ -128,5 +117,8 @@
             </div>
         </div>
 
+    </div>
+    <div class="video-player">
+        <div id="player-vimeo" data-plyr-provider="vimeo" data-plyr-embed-id="777631140" poster="assets/images/bg/06.jpg"></div>
     </div>
 @endsection

@@ -39,9 +39,18 @@
                         </span>
                     @enderror
                 </div>
+                <div class="form-group pt-3">
+                    <label for="content">Đường dẫn video</label>
+                    <input type="text" name="video" class="form-control" value="{{old('video')}}">
+                    @error('video')
+                        <span class="invalid-feedback" role="alert">
+                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                        </span>
+                    @enderror
+                </div>
                 <div class="col-12 pt-3">
                     <div class="row">
-                        <div class="col-6">
+                        {{-- <div class="col-6">
                             <div
                                 class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
                                 <!-- Image -->
@@ -65,8 +74,8 @@
                                 </div>
                             </div>
                          
-                        </div>
-                        <div class="col-6">
+                        </div> --}}
+                        <div class="col-12">
                             <div
                                 class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
                                 <!-- Image -->
