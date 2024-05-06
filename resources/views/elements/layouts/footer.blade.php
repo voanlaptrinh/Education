@@ -61,7 +61,7 @@
             <div class="col-lg-6">
                 <div class="row g-4">
                     <!-- Link block -->
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-6">
                         <h5 class="mb-2 mb-md-4">Lớp học</h5>
                         <ul class="nav flex-column">
                             @foreach ($classes as $item)
@@ -70,29 +70,38 @@
 
                         </ul>
                     </div>
-                    
-					
-                    <div class="col-6 col-md-4 h-50">
+
+
+                    {{-- <div class="col-6 col-md-4 h-50">
                         <h5 class="mb-2 mb-md-4">Môn học</h5>
                         <div class="subject-list-container overflow-auto ">
                             <ul class="nav flex-column subject-list">
-                                @foreach ($classes as $item)
-                                    @foreach ($item->subjects as $subject)
-                                        <li class="nav-item subject-list-item">
-                                            <a class="nav-link" href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
-                                        </li>
+                             
+                                    @foreach ($classes as $item)
+                                        @foreach ($item->subjects as $subject)
+                                            <li class="nav-item subject-list-item">
+                                                <a class="nav-link"
+                                                    href="{{ route('home.course', $subject) }}">{{ $subject->name }}
+                                                    ({{ $subject->class->name }})</a>
+                                            </li>
+                                        @endforeach
                                     @endforeach
-                                @endforeach
+                                @else
+                                    <!-- Hiển thị thông báo nếu không đủ phần tử -->
+                                    <li class="nav-item">
+                                        <span class="nav-link">There are not enough subjects available.</span>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
-                    </div>
-                    
-					
+                    </div> --}}
+
+
 
 
 
                     <!-- Link block -->
-                    <div class="col-6 col-md-4">
+                    <div class="col-6 col-md-6">
                         <h5 class="mb-2 mb-md-4">Tài liệu theo lớp</h5>
                         <ul class="nav flex-column">
                             @foreach ($classes as $item)
@@ -113,10 +122,12 @@
                 </a>
                 <!-- Time -->
                 <p class="mb-2">
-                    Điện thoại: <a href="tel:{{ $webConfig->phone }}"><span class="h6 fw-light ms-2" >{{ $webConfig->phone }}</span></a>
+                    Điện thoại: <a href="tel:{{ $webConfig->phone }}"><span
+                            class="h6 fw-light ms-2">{{ $webConfig->phone }}</span></a>
                 </p>
 
-                <p class="mb-0">Email: <a href="mailto:{{ $webConfig->email }}"><span class="h6 fw-light ms-2">{{ $webConfig->email }}</span></a></p>
+                <p class="mb-0">Email: <a href="mailto:{{ $webConfig->email }}"><span
+                            class="h6 fw-light ms-2">{{ $webConfig->email }}</span></a></p>
 
 
             </div>
