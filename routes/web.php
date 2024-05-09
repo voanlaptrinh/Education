@@ -33,6 +33,7 @@ use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\Auth\VnpayController;
 use App\Http\Controllers\Auth\DocumentController as AuthDocumentController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\VideoController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
 
@@ -79,12 +80,12 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
         //Môn học
         Route::prefix('/subjects')->group(function () { //Môn học
-            Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
             Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
             Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
             Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
-            Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show'); //Câu hỏi liên quan
+            Route::get('/{id}/subject', [SubjectController::class, 'show'])->name('subjects.show'); //Câu hỏi liên quan
             Route::delete('/delete/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
+            Route::get('/{class?}', [SubjectController::class, 'index'])->name('subjects.index');
 
             //đề bài
             Route::get('/{subject}/courses', [CourseController::class, 'index'])->name('courses.index'); //đề bài liên quan đến môn học
@@ -106,7 +107,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
             Route::post('/{course}/questions/store', [QuestionController::class, 'store'])->name('questions.store');
         });
-
+      
         Route::prefix('/classes')->group(function () {
             Route::get('/', [ClassesController::class, 'index'])->name('classes.index');
             Route::post('/store', [ClassesController::class, 'store'])->name('classes.store');
@@ -126,12 +127,12 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
 
         Route::prefix('/lession')->group(function () { //Bài học
-            Route::get('/', [LessonController::class, 'index'])->name('lesson.index');
             Route::get('/create', [LessonController::class, 'create'])->name('lesson.create');
             Route::post('/store', [LessonController::class, 'store'])->name('lessons.store');
             Route::get('/{lesson}/edit', [LessonController::class, 'edit'])->name('lessons.edit');
             Route::put('/update/{lesson}', [LessonController::class, 'update'])->name('lessons.update');
             Route::delete('/delete/{lesson}', [LessonController::class, 'destroy'])->name('lessons.destroy');
+            Route::get('/{subject?}', [LessonController::class, 'index'])->name('lesson.index');
         });
 
         Route::prefix('/chapter')->group(function () { //chương trình học
@@ -289,3 +290,4 @@ Route::prefix('/user')->group(function () {
 
 Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/default', [ContactController::class, 'default'])->name('default');
+Route::get('/get-video-data', [VideoController::class, 'getVideoData']);

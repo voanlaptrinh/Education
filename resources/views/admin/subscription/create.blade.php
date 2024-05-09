@@ -24,7 +24,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="price">Giá của gói (VNĐ)</label>
-                        <input type="text" name="price" class="form-control" value="{{ number_format(old('price'), 0, ',', '.') }}">
+                        <input type="number" min="0" name="price" class="form-control" value="{{ number_format(old('price'), 0, ',', '.') }}">
                         @error('price')
                             <span class="invalid-feedback" role="alert">
                                 <label class="error" id="name_error" for="name">{{ $message }}</label>

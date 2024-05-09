@@ -200,6 +200,7 @@
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>
+                                <th scope="col" class="border-0">Bài học </th>
                                 <th scope="col" class="border-0">Lớp học</th>
                                 <th scope="col" class="border-0">Đề bài</th>
                                 <th scope="col" class="border-0 rounded-end">Thao tác</th>
@@ -244,6 +245,9 @@
                                         </form>
 
 
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('lesson.index', ['subject' => $subject]) }}" class="btn btn-primary">Bài học</a>
                                     </td>
                                     <td>
                                         {{ $subject->class->name }}

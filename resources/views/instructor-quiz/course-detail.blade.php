@@ -295,29 +295,38 @@
     </div>
 
     <script>
-        var videoModal = document.getElementById('videoModal');
-    
-        // Sự kiện hiển thị modal
-        videoModal.addEventListener('show.bs.modal', function () {
+  $(document).ready(function() {
+    $('#videoModal').on('hide.bs.modal', function() {
+        // Kiểm tra xem modal có class "show" hay không
+        if (!$(this).hasClass('show')) {
             var videoPlayer = document.getElementById('videoPlayerModal');
-            videoPlayer.play(); // Khởi động video khi modal được mở
-        });
-    
-        // Sự kiện ẩn modal
-        videoModal.addEventListener('hide.bs.modal', function () {
-            var videoPlayer = document.getElementById('videoPlayerModal');
-            videoPlayer.pause(); // Dừng video khi modal được đóng
-            videoPlayer.currentTime = 0; // Đặt lại thời gian của video về đầu
-        });
-    
-        function showVideo(videoUrl) {
-            var videoPlayerModal = document.getElementById('videoPlayerModal');
-            videoPlayerModal.src = videoUrl;
-    
-            var myModal = new bootstrap.Modal(videoModal);
-            myModal.show();
+            videoPlayer.pause(); // Dừng video
+            videoPlayer.currentTime = 0; // Đặt lại thời gian về đầu
         }
-    </script>
-    
-    
+    });
+});
+
+
+    function showVideo(videoUrl) {
+        // Gọi controller để lấy dữ liệu video
+        $.ajax({
+            url: '/get-video-data', // Thay đổi đường dẫn này thành địa chỉ của controller trong Laravel
+            type: 'GET',
+            data: { video_url: videoUrl },
+            success: function(response) {
+                // Nếu dữ liệu video được trả về thành công, hiển thị video trong modal
+                $('#videoPlayerModal').attr('src', response.video_url);
+                $('#videoModal').modal('show');
+            },
+            error: function(xhr, status, error) {
+                // Xử lý lỗi nếu có
+                console.error(error);
+            }
+        });
+    }
+</script>
+
+
+
+
 @endsection

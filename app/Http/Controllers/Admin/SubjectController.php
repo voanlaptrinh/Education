@@ -9,13 +9,29 @@ use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $class = null)
     {
         $searchQuery = $request->input('query'); // Thay đổi tên biến thành $searchQuery
 
-        $subjects = Subject::when($searchQuery, function ($query) use ($searchQuery) {
-            return $query->where('name', 'like', '%'.$searchQuery.'%');
-        })->latest()->get();
+        // $subjects = Subject::when($searchQuery, function ($query) use ($searchQuery) {
+        //     return $query->where('name', 'like', '%'.$searchQuery.'%');
+        // })->latest()->get();
+        $subjects = Subject::query();
+
+        // Nếu có class được truyền, lọc theo class
+        if ($class) {
+            $subjects->where('class_id', $class);
+        }
+  
+    
+        // Lọc theo query tìm kiếm nếu có
+        if ($searchQuery) {
+            $subjects->where('name', 'like', '%' . $searchQuery . '%');
+        }
+    
+        // Sắp xếp theo thứ tự mới nhất và phân trang
+        $subjects = $subjects->latest()->paginate(5);
+
         $classes = Classes::all();
         $totalSubjects = Subject::count();
         $activeSubjects = Subject::where('status', '1')->count();

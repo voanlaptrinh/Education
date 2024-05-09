@@ -21,6 +21,7 @@
     <meta name="twitter:title" content="{{ $logo->name }}">
     <meta name="twitter:description" content="{{ $logo->description }}">
     <meta name="twitter:image" content="{{ asset('storage/' . $logo->logo) }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $logo->logo) }}">
     <!-- Dark mode -->
@@ -157,7 +158,6 @@
     <!-- Template Functions -->
     <script src="/assets/user/vendor/stepper/js/bs-stepper.min.js"></script>
     <script src="/assets/user/js/functions.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function() {
             var currentUrl = window.location.href;

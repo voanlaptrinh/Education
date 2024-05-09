@@ -19,7 +19,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="price">Giá của gói (VNĐ)</label>
-                            <input type="text" name="price" class="form-control" id="price" value="{{ old('price', number_format($subscription->price)) }}">
+                            <input type="number" min="0" name="price" class="form-control" id="price" value="{{ old('price', $subscription->price) }}">
                             @error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -46,18 +46,6 @@
             </form>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var priceInput = document.getElementById('price');
-    
-            priceInput.addEventListener('input', function() {
-                // Xóa dấu phân cách , trong giá trị nhập vào
-                var unformattedPrice = this.value.replace(/,/g, '');
-                // Định dạng giá trị đã nhập với dấu phân cách ,
-                var formattedPrice = Number(unformattedPrice).toLocaleString('vi-VN');
-                this.value = formattedPrice;
-            });
-        });
-    </script>
+ 
     
 @endsection
