@@ -126,10 +126,15 @@
                                                                     <p class="mb-0">
                                                                         @if (!empty(Auth::user()))
                                                                             @if ($item->is_free == 0)
-                                                                                <button
+                                                                                <a href="{{ $item->video }}"
+                                                                                    class="btn btn-sm btn-info-soft mb-0"
+                                                                                    data-glightbox=""
+                                                                                    data-gallery="video-tour">Xem
+                                                                                    bài giảng</a>
+                                                                                {{-- <button
                                                                                     onclick="showVideo('{{ $item->video }}')"
                                                                                     class="btn btn-sm btn-info-soft mb-0">Xem
-                                                                                    bài giảng</button>
+                                                                                    bài giảng</button> --}}
                                                                             @else
                                                                                 @if (Auth::user()->is_pro == 0)
                                                                                     <a href="{{ route('subscriptions.index') }}"
@@ -138,12 +143,11 @@
 
                                                                                     </a>
                                                                                 @else
-                                                                                    <a href="#"
+                                                                                    <a href="{{ $item->video }}"
                                                                                         class="btn btn-sm btn-info-soft mb-0"
-                                                                                        onclick="showVideo('{{ $item->video }}')">Xem
-                                                                                        bài giảng
-
-                                                                                    </a>
+                                                                                        data-glightbox=""
+                                                                                        data-gallery="video-tour">Xem
+                                                                                        bài giảng</a>
                                                                                 @endif
                                                                             @endif
                                                                         @else
@@ -257,76 +261,39 @@
             </div><!-- Row END -->
         </div>
     </section>
-    <style>
-        /* Thiết lập chiều rộng và chiều cao cố định cho nội dung modal */
-        .modal-body {
-            width: 100%;
-            height: 100%;
-        }
 
 
-        /* Thay đổi kích thước video trong modal */
-        .embed-responsive-16by9 iframe {
-            width: 100%;
-            height: 500px;
-        }
-    </style>
-    <!-- Modal -->
-    <div class="modal fade  bd-example-modal-xl " id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <!-- Modal header và button close -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="videoModalLabel">Video</h5>
-                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <!-- Nội dung modal -->
-                <div class="modal-body">
-                    <div class=" h-100 w-100">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe id="videoPlayerModal" class="embed-responsive-item" allowfullscreen></iframe>
+
+
+
+    <!-- =======================
+        Video START -->
+    <section class="pb-0 py-sm-0 mt-n8">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-center mx-auto">
+                    <div class="card card-body shadow p-2">
+                        <div class="position-relative">
+                            <!-- Image -->
+
+                            <div class="card-img-overlay">
+                                <!-- Video link -->
+                                <div class="position-absolute top-50 start-50 translate-middle">
+                                    <a href="https://www.youtube.com/embed/tXHviS-4ygo"
+                                        class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox=""
+                                        data-gallery="video-tour">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <script>
-  $(document).ready(function() {
-    $('#videoModal').on('hide.bs.modal', function() {
-        // Kiểm tra xem modal có class "show" hay không
-        if (!$(this).hasClass('show')) {
-            var videoPlayer = document.getElementById('videoPlayerModal');
-            videoPlayer.pause(); // Dừng video
-            videoPlayer.currentTime = 0; // Đặt lại thời gian về đầu
-        }
-    });
-});
-
-
-    function showVideo(videoUrl) {
-        // Gọi controller để lấy dữ liệu video
-        $.ajax({
-            url: '/get-video-data', // Thay đổi đường dẫn này thành địa chỉ của controller trong Laravel
-            type: 'GET',
-            data: { video_url: videoUrl },
-            success: function(response) {
-                // Nếu dữ liệu video được trả về thành công, hiển thị video trong modal
-                $('#videoPlayerModal').attr('src', response.video_url);
-                $('#videoModal').modal('show');
-            },
-            error: function(xhr, status, error) {
-                // Xử lý lỗi nếu có
-                console.error(error);
-            }
-        });
-    }
-</script>
-
-
+    </section>
+    <!-- =======================
+        Video END -->
 
 
 @endsection

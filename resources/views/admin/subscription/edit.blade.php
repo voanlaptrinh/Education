@@ -17,7 +17,7 @@
               
                 <div class="row pt-3">
                     <div class="col-sm-6">
-                        <div class="form-group">
+                        <div class="form-group">    
                             <label for="price">Giá của gói (VNĐ)</label>
                             <input type="number" min="0" name="price" class="form-control" id="price" value="{{ old('price', $subscription->price) }}">
                             @error('price')

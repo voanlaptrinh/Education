@@ -915,9 +915,11 @@
     }
     .glightbox-clean .gprev {
       top: 45%;
+      display: none;
     }
     .glightbox-clean .gnext {
       top: 45%;
+      display: none;
     }
   }
   
