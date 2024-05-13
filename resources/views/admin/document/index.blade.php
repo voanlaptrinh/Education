@@ -21,7 +21,7 @@
                 <div class="row g-3 align-items-center justify-content-between">
 
                     <!-- Search bar -->
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <form class="rounded position-relative" action="{{ route('document.admin') }}" method="get">
                             <input name="query" value="{{ $searchQuery }}" class="form-control bg-body" type="search"
                                 placeholder="Search" aria-label="Search">
@@ -32,7 +32,7 @@
                             </button>
                         </form>
                     </div>
-                   
+
 
                 </div>
 
@@ -71,7 +71,11 @@
                                         <div class="d-flex align-items-center">
 
                                             <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $document->name }}</h6>
+                                                <a  data-bs-toggle="modal" data-target=".exampleModal_detail"
+                                                    data-class-id="{{ $document->id }}"
+                                                    href="{{ route('getDocumentDetails', [$document->id]) }}"
+                                                    class=" detailsBtn">{{ $document->name }}</a>
+                                                {{-- <h6 class="mb-0 fw-light">{{ $document->name }}</h6> --}}
                                             </div>
                                         </div>
                                     </td>
@@ -97,9 +101,9 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="text-uppercase">
                                         @if ($document->access_level == 'paid')
-                                        {{ number_format($document->price, 0, ',', ',') }} VNĐ
+                                            {{ number_format($document->price, 0, ',', ',') }} VNĐ
                                         @else
                                             {{ $document->access_level }}
                                         @endif
@@ -145,7 +149,8 @@
                                 </li>
                             @endfor
                             @if ($documents->currentPage() < $documents->lastPage())
-                                <li class="page-item mb-0"><a class="page-link" href="{{ $documents->url($documents->currentPage() + 1) }}"><i
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $documents->url($documents->currentPage() + 1) }}"><i
                                             class="fas fa-angle-right"></i></a></li>
                             @endif
 
@@ -158,4 +163,114 @@
         </div>
         <!-- Card END -->
     </div>
+    <div class="modal fade exampleModal_detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog" role="document" style="max-width: 1200px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="classModalLabels"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row">
+                    <!-- ============================================================== -->
+                    <!-- validation form -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card" style="margin-bottom: 0px;">
+                            <div class="card-body">
+                                <div class="row d-flex justify-content-center">
+                                   
+                                    <div class="col-xl-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
+                                                    <label for="validationCustom01">Tiêu đề</label>
+                                                    <input type="text" class="form-control" id="names" name="name"
+                                                        readonly disabled>
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
+                                                    <label for="email">Description</label>
+                                                    <textarea disabled readonly  class="form-control" name="descriptionS" id="descriptionS" cols="30" rows="10"></textarea>
+                                                  
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
+                                                    <label for="email">Access_level</label>
+                                                   <input type="text" disabled readonly  class="form-control text-uppercase" name="accesslever" id="accesslever" >
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
+                                                    <label for="email">Price</label>
+                                                   <input type="text" disabled readonly  class="form-control text-uppercase" name="price" id="price" >
+                                                  
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+
+
+                                <div class="modal-footer col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal"
+                                        style="color: #000; font-weight: bold;">Đóng
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+      
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.detailsBtn').click(function() {
+            var studentS = $(this).data('class-id');
+            $.ajax({
+                url: '/admin/document/getDocumentDetails/' + studentS,
+                type: 'GET',
+                success: function(data) {
+                    console.log(data);
+                    if (data && data.name) {
+                        $('#classModalLabels').text(data.name);
+                        $('#names').val(data.name);
+                        $('#descriptionS').val(data.description);
+                        $('#accesslever').val(data.access_level);
+                      
+                        if (data.price == null) {
+                            $('#price').val('chưa có');
+                        } else {
+                            $('#price').val(data.price);
+                        }
+
+
+                        $('.exampleModal_detail').modal('show');
+                    } else {
+                        alert(
+                            'Dữ liệu trả về không hợp lệ hoặc thiếu trường "name".'
+                        );
+                    }
+                },
+                error: function() {
+                    alert('Đã xảy ra lỗi khi lấy dữ liệu chi tiết liên hệ.');
+                }
+            });
+        });
+    </script>
 @endsection

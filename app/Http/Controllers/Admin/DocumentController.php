@@ -150,5 +150,15 @@ class DocumentController extends Controller
 
         return redirect()->route('document.admin')
             ->with('success', 'Xóa thành công.');
+    } 
+    public function getDocumentDetails($id)
+    {
+        $document = Document::find($id);
+
+        if (!$document) {
+            return response()->json(['error' => 'document not found'], 404);
+        }
+
+        return response()->json($document);
     }
 }

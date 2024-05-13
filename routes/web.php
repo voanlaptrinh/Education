@@ -174,6 +174,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
 
         Route::prefix('/document')->group(function () {
+            Route::get('/getDocumentDetails/{id}', [AdminDocumentController::class, 'getDocumentDetails'])->name('getDocumentDetails');
          
             Route::get('/create', [AdminDocumentController::class, 'create'])->name('document.create');
             Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');

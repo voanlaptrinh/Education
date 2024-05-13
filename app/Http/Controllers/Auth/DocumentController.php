@@ -58,4 +58,5 @@ class DocumentController extends Controller
         ];
         return new BinaryFileResponse($file, 200, $headers);
     }
+   
 }

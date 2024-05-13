@@ -99,7 +99,7 @@
 
                                     <!-- Input item -->
                                     <div class="col-lg-3">
-                                        <label class="form-label">facebook_id</label>
+                                        <label class="form-label">Facebook_id</label>
                                         <input type="text" class="form-control" placeholder="facebook_id"
                                             name="facebook_id" id="facebook_id" value="{{$webConfig->facebook_id}}">
                                     </div>
