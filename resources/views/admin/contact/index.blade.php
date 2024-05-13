@@ -166,12 +166,6 @@
 
                                 </tr>
                             @endforeach
-                            <!-- Table row -->
-
-
-
-
-
 
                         </tbody>
 
@@ -313,20 +307,16 @@
         $(document).ready(function() {
             $('#detailsBtn').click(function() {
                 var contactId = $(this).data('class-id');
-
-                // Gọi API hoặc thực hiện các bước để lấy thông tin chi tiết từ server
-                // Ở đây, giả sử bạn có một API endpoint '/api/contact/{contactId}' để lấy chi tiết
-
                 $.ajax({
                     url: '/admin/contact/getContactDetails/' + contactId,
                     type: 'GET',
                     success: function(data) {
-                        // Cập nhật nội dung modal với thông tin chi tiết lấy được từ server
+                        
                         $('#classModalLabel').text('Chi tiết liên hệ');
-                        $('#name').val(data.name); // Cập nhật giá trị cho trường tên lớp học
-                        $('#email').val(data.email); // Cập nhật giá trị cho trường tên lớp học
-                        $('#phone').val(data.phone); // Cập nhật giá trị cho trường tên lớp học
-                        $('#content').val(data.content); // Cập nhật giá trị cho trường tên lớp học
+                        $('#name').val(data.name); 
+                        $('#email').val(data.email); 
+                        $('#phone').val(data.phone); 
+                        $('#content').val(data.content); 
                         // $('#status').val(data.status); // Cập nhật giá trị cho trạng thái
 
                         // Hiển thị modal

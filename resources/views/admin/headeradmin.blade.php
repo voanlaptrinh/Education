@@ -4,7 +4,7 @@
     @endphp
     <!-- Navbar brand for xl START -->
     <div class="d-flex align-items-center">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/">
             <img class="navbar-brand-item" src="{{ asset('storage/' . $logo->logo) }} " alt="">
         </a>
     </div>
