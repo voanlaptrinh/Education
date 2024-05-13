@@ -125,6 +125,8 @@
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>
+                                <th scope="col" class="border-0">Môn học</th>
+                                <th scope="col" class="border-0">Tài liệu </th>
                               
                                 <th scope="col" class="border-0 rounded-end">Thao tác</th>
                             </tr>
@@ -169,7 +171,13 @@
 
 
                                     </td>
-                                   
+
+                                    <td>
+                                        <a href="{{ route('subjects.index', ['class' => $class]) }}" class="btn btn-primary">Xem môn học</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('document.admin', ['class' => $class]) }}" class="btn btn-primary">Xem tài liệu</a>
+                                    </td>
                                     <td class="d-flex">
                                         <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0   "
                                             data-bs-toggle="modal" data-bs-target="#classModal" data-action="edit"

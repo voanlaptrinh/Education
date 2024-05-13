@@ -117,7 +117,7 @@
                                 <tbody>
                                     <!-- Table item -->
                                     @if (!empty($lessons))
-                                        @foreach ($lessons as $key=> $lesson)
+                                        @foreach ($lessons as $key => $lesson)
                                             <tr>
                                                 <td>{{$key}}</td>
                                                 <!-- Course item -->
@@ -126,7 +126,7 @@
                                                         <!-- Image -->
                                                         <div class="w-60px">
                                                             <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
-                                                                class="rounded" alt="">
+                                                                class="rounded" alt="ssss">
                                                         </div>
                                                         <div class="mb-0 ms-2">
                                                             <!-- Title -->
@@ -226,7 +226,7 @@
                                             </li>
                                         @endfor
                                         @if ($lessons->currentPage() < $lessons->lastPage())
-                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                            <li class="page-item mb-0"><a class="page-link" href="{{ $lessons->url($lessons->currentPage() + 1) }}"><i
                                                         class="fas fa-angle-right"></i></a></li>
                                         @endif
 
@@ -272,10 +272,7 @@
                                             <td>
                                                 <div class="d-flex align-items-center position-relative">
                                                     <!-- Image -->
-                                                    <div class="w-60px">
-                                                        <img src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
-                                                            class="rounded" alt="">
-                                                    </div>
+                                                  
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
                                                         <h6 class="mb-0"><a
@@ -367,7 +364,7 @@
                                             </li>
                                         @endfor
                                         @if ($courses->currentPage() < $courses->lastPage())
-                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                            <li class="page-item mb-0"><a class="page-link" href="{{ $courses->url($courses->currentPage() + 1) }}"><i
                                                         class="fas fa-angle-right"></i></a></li>
                                         @endif
 

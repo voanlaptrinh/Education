@@ -45,21 +45,24 @@
                 <ul class="navbar-nav navbar-nav-scroll me-auto" id="header1">
                     <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="demoMenu"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lớp học</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="demoMenu" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Lớp học</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 
                             @foreach ($classes as $item)
                                 <li class="dropdown-submenu dropend">
                                     <a class="dropdown-item dropdown-toggle" href="#">{{ $item->name }}</a>
-                                    <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                                        @foreach ($item->subjects as $subject)
-                                            <li> <a class="dropdown-item"
-                                                    href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
-                                            </li>
-                                        @endforeach
+                                    @if (count($item->subjects) > 0)
+                                        <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+                                            @foreach ($item->subjects as $subject)
+                                                <li> <a class="dropdown-item"
+                                                        href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
+                                                </li>
+                                            @endforeach
 
-                                    </ul>
+                                        </ul>
+                                    @endif
+
                                 </li>
                             @endforeach
 
@@ -67,13 +70,14 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle s" href="#" id="demoMenu"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài liệu</a>
+                        <a class="nav-link dropdown-toggle s" href="#" id="demoMenu" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Tài liệu</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 
                             @foreach ($classes as $item)
                                 <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item " href="{{ route('document.index', $item) }}">{{ $item->name }}</a>
+                                    <a class="dropdown-item "
+                                        href="{{ route('document.index', $item) }}">{{ $item->name }}</a>
                                 </li>
                             @endforeach
 
@@ -91,7 +95,7 @@
                     </li>
 
                     <!-- Nav item 3 Account -->
-                 
+
 
                     <!-- Nav item 4 Megamenu-->
                     <li class="nav-item ">
@@ -108,8 +112,8 @@
                 <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
                     <div class="nav-item w-100">
                         <form class="position-relative" action="{{ route('search') }}" method="GET">
-                            <input class="form-control pe-5 bg-transparent" type="search" name="search" placeholder="Tìm kiếm"
-                                aria-label="Search">
+                            <input class="form-control pe-5 bg-transparent" type="search" value="{{ old('search') }}"
+                                name="search" placeholder="Tìm kiếm" aria-label="Search" autocomplete="off">
                             <button
                                 class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
                                 type="submit">
@@ -188,8 +192,8 @@
                                     class="bi bi-gear fa-fw me-2"></i>Lịch sử làm bài</a></li>
                         <li><a class="dropdown-item" href="{{ route('user.subscriptionHistory') }}"><i
                                     class="bi bi-gear fa-fw me-2"></i>Các gói bạn đã mua</a></li>
-                        
-                        <li><a class="dropdown-item" href="{{route('contact.index')}}"><i
+
+                        <li><a class="dropdown-item" href="{{ route('contact.index') }}"><i
                                     class="bi bi-info-circle fa-fw me-2"></i>Trợ giúp</a></li>
                         <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('logout') }}"><i
                                     class="bi bi-power fa-fw me-2"></i>Đăng xuất</a></li>

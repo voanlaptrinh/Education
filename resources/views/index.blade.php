@@ -21,6 +21,7 @@
     <meta name="twitter:title" content="{{ $logo->name }}">
     <meta name="twitter:description" content="{{ $logo->description }}">
     <meta name="twitter:image" content="{{ asset('storage/' . $logo->logo) }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $logo->logo) }}">
     <!-- Dark mode -->
@@ -115,6 +116,24 @@
         gtag('js', new Date());
 
         gtag('config', 'G-7N7LGGGWT1');
+
+        function togglePassword(inputId) {
+            var input = document.getElementById(inputId);
+            if (input) {
+                var icon = document.querySelector("[onclick=\"togglePassword('" + inputId + "')\"]");
+                if (input.type === "password") {
+                    input.type = "text";
+                    icon.classList.remove("fa-eye");
+                    icon.classList.add("fa-eye-slash");
+                } else {
+                    input.type = "password";
+                    icon.classList.remove("fa-eye-slash");
+                    icon.classList.add("fa-eye");
+                }
+            } else {
+                console.log("Không tìm thấy phần tử có id " + inputId);
+            }
+        }
     </script>
 
 
@@ -139,7 +158,6 @@
     <!-- Template Functions -->
     <script src="/assets/user/vendor/stepper/js/bs-stepper.min.js"></script>
     <script src="/assets/user/js/functions.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function() {
             var currentUrl = window.location.href;

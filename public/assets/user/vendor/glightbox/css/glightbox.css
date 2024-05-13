@@ -914,10 +914,12 @@ iframe.wait-autoplay {
     background-color: rgba(0, 0, 0, 0.7);
   }
   .glightbox-clean .gprev {
+    display: none !important;
     top: 45%;
   }
   .glightbox-clean .gnext {
     top: 45%;
+    display: none !important;
   }
 }
 

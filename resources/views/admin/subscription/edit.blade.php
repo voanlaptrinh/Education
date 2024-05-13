@@ -3,23 +3,23 @@
 @section('contentadmin')
     <div class="page-content-wrapper border">
         <div class="container">
-            <h2>Sửa chương trình học</h2>
+            <h2>Sửa gói khoá học</h2>
             <form method="POST" action="{{ route('subscriptions.update', ['subscription' => $subscription->id]) }}"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
                 <div class="form-group">
-                    <label for="name">name</label>
+                    <label for="name">Tên gói</label>
                     <input type="text" name="name" class="form-control" value="{{ old('name', $subscription->name) }}"
                         required>
                 </div>
               
                 <div class="row pt-3">
                     <div class="col-sm-6">
-                        <div class="form-group">
+                        <div class="form-group">    
                             <label for="price">Giá của gói (VNĐ)</label>
-                            <input type="text" name="price" class="form-control" value="{{ old('price', $subscription->price) }}">
+                            <input type="number" min="0" name="price" class="form-control" id="price" value="{{ old('price', $subscription->price) }}">
                             @error('price')
                                 <span class="invalid-feedback" role="alert">
                                     <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -46,4 +46,6 @@
             </form>
         </div>
     </div>
+ 
+    
 @endsection

@@ -48,6 +48,7 @@
                             <tr>
                                 <th scope="col" class="border-0 rounded-start">Tiêu đề</th>
                                 <th scope="col" class="border-0">Ảnh mô tả</th>
+                                <th scope="col" class="border-0">Video bài giảng</th>
                                 <th scope="col" class="border-0">Số lượt xem</th>
                                 <th scope="col" class="border-0">Môn học</th>
                                 <th scope="col" class="border-0 rounded-end">Action</th>
@@ -83,7 +84,9 @@
                                         </div>
                                     </td>
                                  
-
+                                    <td>
+                                        <a href="{{ route('curriculum.index', ['lesson' => $lesson]) }}" class="btn btn-primary">Xem video bài giảng</a>
+                                    </td>
                                     <!-- Table data -->
                                     <td> {{ $lesson->views }}</td>
                                     <td> {{$lesson->subject->name}} ({{ $lesson->subject->class->name }})</td>
@@ -138,7 +141,7 @@
                                 </li>
                             @endfor
                             @if ($lessons->currentPage() < $lessons->lastPage())
-                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                            <li class="page-item mb-0"><a class="page-link" href="{{ $lessons->url($lessons->currentPage() + 1) }}"><i
                                 class="fas fa-angle-right"></i></a></li> 
 
                             @endif

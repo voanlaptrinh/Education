@@ -13,6 +13,11 @@
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" name="title" class="form-control" value="{{ old('title', $lecture->title) }}" required>
+                @error('title')
+                <span class="invalid-feedback" role="alert">
+                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                </span>
+            @enderror
             </div>
             <div class="col-lg-12  pt-3">
                 <label class="form-label custom-cursor-default-hover">Miễn phí hoặc mất phí</label>
@@ -25,52 +30,31 @@
             <div class="form-group pt-3">
                 <label for="content">Content</label>
                 <textarea name="content" class="form-control">{{ old('content', $lecture->content) }}</textarea>
+                @error('content')
+                <span class="invalid-feedback" role="alert">
+                    <label class="error" id="name_error" for="name">{{ $message }}</label>
+                </span>
+            @enderror
             </div>
             <div class="col-12 pt-3">
                 <div class="row">
-                    <div class="col-6">
-                        <div
-                            class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
-                            <!-- Image -->
-                            <div class="card shadow p-2 mb-4 z-index-9 " style="">
-                                <div class="overflow-hidden rounded-3 ">
-                                    <img src="{{ asset('storage/' . $lecture->image) }}" class="card-img w-60px"
-                                        alt="course image">
-                                    <!-- Overlay -->
-                                    <div class="bg-overlay bg-dark opacity-6"></div>
-                                    <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                        <!-- Video button and link -->
-                                        <div class="m-auto">
-                                            <a href="{{ asset('storage/' . $lecture->video) }}"
-                                                style="    height: 30px;
-                                                width: 30px;
-                                                line-height: 30px;"
-                                                class="btn btn-lg text-danger btn-round btn-white-shadow mb-0"
-                                                data-glightbox="" data-gallery="course-video">
-                                                <i class="fas fa-play "></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-12 pb-3">
+                        <div>
+                           
+                            <label for="video">Link video</label>
+                            <input type="text" name="video" class="form-control" value="{{ old('video', $lecture->video) }}" required>
 
 
-                            </div>
-                            <div>
-                                <h6 class="my-2">Tải video bài giảng vào đây, hoặc<a href="#!" class="text-primary">
-                                        Duyệt qua</a></h6>
-                                <label style="cursor:pointer;">
-                                    <span>
-                                        <input class="form-control stretched-link custom-cursor-on-hover" type="file"
-                                            name="video" accept="video/*">
-                                    </span>
-                                </label>
-                                <p class="small mb-0 mt-2"><b style="color:red">Lưu ý:</b> Chỉ có Mp4. Hãy up video bài
-                                    giảng của bạn vào đây!.</p>
-                            </div>
+                            @error('video')
+                            <span class="invalid-feedback" role="alert">
+                                <label class="error" id="name_error" for="name">{{ $message }}</label>
+                            </span>
+                        @enderror
                         </div>
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-12">
+                        <label for="video">Hình ảnh</label>
                         <div
                             class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
                             <!-- Image -->

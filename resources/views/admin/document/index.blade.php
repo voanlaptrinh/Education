@@ -32,17 +32,7 @@
                             </button>
                         </form>
                     </div>
-                    @if (session('success'))
-                        <div class="col-sm-4">
-
-                            <div class="alert alert-success alert-dismissible fade show mt-2 mb-0 rounded-3" role="alert">
-                                {{ session('success') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                        </div>
-                    @endif
-                    <!-- Select option -->
+                   
 
                 </div>
 
@@ -155,7 +145,7 @@
                                 </li>
                             @endfor
                             @if ($documents->currentPage() < $documents->lastPage())
-                                <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                <li class="page-item mb-0"><a class="page-link" href="{{ $documents->url($documents->currentPage() + 1) }}"><i
                                             class="fas fa-angle-right"></i></a></li>
                             @endif
 

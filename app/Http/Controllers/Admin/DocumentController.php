@@ -10,14 +10,29 @@ use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $class = null)
     {
-        $searchQuery = $request->input('query'); // Thay đổi tên biến thành $searchQuery
-        $documents = Document::when($searchQuery, function ($query) use ($searchQuery) {
-            return $query->where('name', 'like', '%' . $searchQuery . '%');
-        })->latest()->paginate(5);
+        $searchQuery = $request->input('query');
+    
+        // Bắt đầu với tất cả các tài liệu
+        $documents = Document::query();
+    
+        // Nếu có class được truyền, lọc theo class
+        if ($class) {
+            $documents->where('classes_id', $class);
+        }
+    
+        // Lọc theo query tìm kiếm nếu có
+        if ($searchQuery) {
+            $documents->where('name', 'like', '%' . $searchQuery . '%');
+        }
+    
+        // Sắp xếp theo thứ tự mới nhất và phân trang
+        $documents = $documents->latest()->paginate(5);
+    
         return view('admin.document.index', compact('documents', 'searchQuery'));
     }
+    
     public function create()
     {
         $classes = Classes::all();
@@ -47,7 +62,7 @@ class DocumentController extends Controller
         if ($request->access_level == 'paid' && empty($request->price)) {
             return redirect()->back()->with('error', 'Giá là bắt buộc khi chọn tùy chọn "Paid"');
         }
-        $classes = Classes::findOrFail($request->input('classes_id'));
+        $classes = Classes::findOrFail($request->input('classes_id', old('classes_id')));
 
         $file = $request->file('file');
         $filePath = $file->store('documents', 'public');
@@ -57,12 +72,12 @@ class DocumentController extends Controller
             $imagePath = $image->store('images', 'public');
         }
         $document = new Document([
-            'name' => $request->input('name'),
-            'description' => $request->input('description'),
+            'name' => $request->input('name', old('name')),
+            'description' => $request->input('description', old('description')),
             'file_path' => $filePath,
             'image_path' => $imagePath,
-            'access_level' => $request->input('access_level'),
-            'price' => $request->input('price'),
+            'access_level' => $request->input('access_level', old('access_level')),
+            'price' => $request->input('price', old('price')),
         ]);
         $classes->documents()->save($document);
 
@@ -126,7 +141,6 @@ class DocumentController extends Controller
             // Cập nhật đường dẫn của file mới
             $document->update(['file_path' => $filePath]);
         }
-
         return redirect()->route('document.admin')->with('success', 'Tài liệu được cập nhật thành công');
     }
     public function destroy(Document $document)

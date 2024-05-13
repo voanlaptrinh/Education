@@ -26,10 +26,10 @@
                                     <h5 class="mb-4">Kết quả bài làm của bạn </h5>
 
                         <!-- Rating info -->
-                        <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="col-md-5 mb-3 mb-md-0">
                             <div class="text-center">
                                 <!-- Info -->
-                                <h2 class="mb-0">{{ number_format($percentage, 2) }}% </h2>
+                                <h2 class="mb-0">{{ rtrim(number_format($percentage,2), '0.') }} Điểm </h2>
                                 <!-- Star -->
                                 <div class="progress progress-sm bg-warning bg-opacity-15">
                                     <div class="progress-bar bg-warning" role="progressbar"
@@ -46,7 +46,7 @@
                         </div>
 
                         <!-- Progress-bar and star -->
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             <div class="row align-items-center">
 
                                 <p>Tổng số câu hỏi: {{ $totalQuestions }}</p>
@@ -92,11 +92,11 @@
                                                     @foreach ($result['answers'] as $key => $answer)
                                                         @if ($answer->is_correct == 1)
                                                             <p class="mb-3 "><b class="text-success fw-bold">
-                                                                    {{ $choicesMapping[$key] }}</b> {{ $answer->text }}
+                                                                    {{ $choicesMapping[$key] }}.</b> {{ $answer->text }}
                                                             </p>
                                                             @else
                                                             <p class="mb-3 "><b class="text-dark">
-                                                                {{ $choicesMapping[$key] }}</b> {{ $answer->text }}
+                                                                {{ $choicesMapping[$key] }}.</b> {{ $answer->text }}
                                                         </p>
                                                         @endif
                                                     @endforeach

@@ -20,7 +20,7 @@
     @enderror
         <div class="align-items-center mt-0">
             <div class="d-grid">
-                <button class="btn btn-primary mb-0" type="submit">Send Password Reset Link</button>
+                <button class="btn btn-primary mb-0" type="submit">Gửi liên kết đặt lại mật khẩu</button>
             </div>
         </div>
         

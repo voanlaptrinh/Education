@@ -11,7 +11,7 @@
 
                 <div class="form-group">
                     <label for="title">Tiêu đề </label>
-                    <input type="text" name="name" class="form-control" value="{{ $banner->name }}">
+                    <input type="text" name="name" class="form-control" value="{{  old('name', $banner->name) }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <label class="error" id="name_error" for="name">{{ $message }}</label>

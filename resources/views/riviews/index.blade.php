@@ -126,7 +126,7 @@
                             <!-- Review item START -->
                             @if (count($countReviews) > 0)
                                 @foreach ($reviews as $review)
-                                    @if ($review->status == 1)
+                                   
                                         <div class="d-sm-flex">
                                             <!-- Avatar image -->
                                             @if (!empty($review->user->image))
@@ -168,7 +168,7 @@
                                             </div>
                                         </div>
                                         <hr>
-                                    @endif
+                                    
                                 @endforeach
                             @else
                                 <span>Chưa có đánh giá nào...</span>
@@ -200,7 +200,7 @@
                                                 </li>
                                             @endfor
                                             @if ($reviews->currentPage() < $reviews->lastPage())
-                                                <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                                <li class="page-item mb-0"><a class="page-link" href="{{ $reviews->url($reviews->currentPage() + 1) }}"><i
                                                             class="fas fa-angle-right"></i></a></li>
                                             @endif
 

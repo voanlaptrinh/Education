@@ -24,7 +24,11 @@ class QuestionController extends Controller
             'text' => 'required|string',
             'answers' => 'required|array',
             'correct_answer' => 'required|in:' . implode(',', array_keys($request->answers)),
-        ]);
+        ]
+        ,[
+            'text.required' => 'Tiêu đề câu hỏi là bắt buộc',
+            'answers.required' => 'Câu trả lời là bắt buộc',
+         ]);
 
         $question = $course->questions()->create([
             'text' => $request->text,
@@ -38,7 +42,7 @@ class QuestionController extends Controller
             ]);
         }
 
-        return redirect(route('courses.show', $course))->with('success', 'Question added successfully!');
+        return redirect(route('courses.show', $course))->with('success', 'Thêm câu hỏi thành công');
     }
 
    
@@ -55,7 +59,10 @@ class QuestionController extends Controller
             'text' => 'required|string',
             'answers' => 'required|array',
             'correct_answer' => 'required|exists:answers,id',
-        ]);
+        ],[
+            'text.required' => 'Tiêu đề câu hỏi là bắt buộc',
+            'answers.required' => 'Câu trả lời là bắt buộc',
+         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();

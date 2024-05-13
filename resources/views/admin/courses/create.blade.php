@@ -10,7 +10,7 @@
             @csrf
             <div class="form-group">
                 <label for="title">Tiêu đề </label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" value="{{old('name')}}">
                 @error('name')
                     <span class="invalid-feedback" role="alert">
                         <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group pt-3">
                 <label for="title">Thời gian làm bài (phút)</label>
-                <input type="number" name="time_limit" min="1" class="form-control">
+                <input type="number" name="time_limit" min="1" class="form-control" value="{{old('time_limit')}}">
                 @error('time_limit')
                     <span class="invalid-feedback" role="alert">
                         <label class="error" id="name_error" for="name">{{ $message }}</label>

@@ -200,6 +200,7 @@
                                 <th scope="col" class="border-0">Người đăng</th>
 
                                 <th scope="col" class="border-0">Trạng thái </th>
+                                <th scope="col" class="border-0">Bài học </th>
                                 <th scope="col" class="border-0">Lớp học</th>
                                 <th scope="col" class="border-0">Đề bài</th>
                                 <th scope="col" class="border-0 rounded-end">Thao tác</th>
@@ -246,6 +247,9 @@
 
                                     </td>
                                     <td>
+                                        <a href="{{ route('lesson.index', ['subject' => $subject]) }}" class="btn btn-primary">Bài học</a>
+                                    </td>
+                                    <td>
                                         {{ $subject->class->name }}
 
 
@@ -253,7 +257,7 @@
                                     <!-- Table data -->
                                     <td>
                                         <a href="{{ route('courses.index', $subject) }}"
-                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm đề bài</a>
+                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm bài kiểm tra</a>
                                     </td>
                                     <td class="d-flex">
 

@@ -5,12 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Verification</title>
+    <title>Email xác thực</title>
 </head>
 <body>
-    <h2>Email Verification</h2>
-    <p>Hello {{ $user }},</p>
-    <p>Please click the following link to verify your email:</p>
-    <a href="{{ $verificationLink }}">Verify Email</a>
+    <h2>Email xác thực</h2>
+    <p>Xin chào {{ $user }},</p>
+    <p>Vui lòng nhấp vào liên kết sau để xác minh email của bạn:</p>
+    <a href="{{ $verificationLink }}">Xác thực Email</a>
 </body>
 </html>

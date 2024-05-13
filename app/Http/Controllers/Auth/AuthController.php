@@ -161,7 +161,8 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:255',
+            'phone' => 'nullable|string|max:255|regex:/^[0-9]{10}$/',
+      
             'address' => 'nullable|string|max:255',
             'gender' => 'required|in:0,1',
             'birthday' => 'nullable|date',
@@ -177,7 +178,7 @@ class AuthController extends Controller
 
             'phone.string' => 'Trường số điện thoại phải là chuỗi.',
             'phone.max' => 'Trường số điện thoại không được vượt quá 255 ký tự.',
-
+            'phone.regex' => 'Số điện thoại phải có đúng 10 chữ số.',
             'address.string' => 'Trường địa chỉ phải là chuỗi.',
             'address.max' => 'Trường địa chỉ không được vượt quá 255 ký tự.',
 
@@ -208,14 +209,7 @@ class AuthController extends Controller
             $path = $request->file('profile_picture')->storeAs('public/profile_pictures', $user->id . '.' . $request->file('profile_picture')->extension());
             $user->update(['image' => 'profile_pictures/' . $user->id . '.' . $request->file('profile_picture')->extension()]);
         }
-        // $user->update([
-        //     'name' => $validatedData['name'],
-        //     'username' => $validatedData['username'],
-        //     'phone' => $validatedData['phone'],
-        //     'address' => $validatedData['address'],
-        //     'gender' => $validatedData['gender'],
-        //     'birthday' => $validatedData['birthday'],
-        // ]);
+     
 
         $user->save();
         return redirect()->route('profile', compact('user'))->with('success', 'Sửa thông tin tài khoản thành công.');
@@ -296,6 +290,6 @@ class AuthController extends Controller
         $examHistory = ExamHistory::findOrFail($id);
         $examHistory->delete();
 
-        return redirect()->back()->with('success', 'Đăng xuất thành công!');
+        return redirect()->back()->with('success', 'Xoá thành công!');
     }
 }

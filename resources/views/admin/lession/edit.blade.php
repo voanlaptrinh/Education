@@ -80,7 +80,7 @@
                     <label for="exampleInputEmail1" class="form-label">Môn học tương ứng *</label>
                     <select class="form-select" name="subject_id" aria-label="Default select example" fdprocessedid="j04kyp">
                         @foreach ($subjects as $subject)
-                        <option value="{{ $subject->id }}" {{ $subject->id == $lesson->subject_id ? 'selected' : '' }} >{{ $subject->name }}</option>
+                        <option value="{{ $subject->id }}" {{ $subject->id == $lesson->subject_id ? 'selected' : '' }} >{{ $subject->name }} ({{ $subject->class->name }})</option>
                        @endforeach
                     </select>
                 </div>
@@ -99,7 +99,7 @@
 
             <!-- Thêm các trường dữ liệu khác nếu cần -->
 
-            <button type="submit">Sửa bài học</button>
+            <button type="submit" class="btn btn-success">Sửa bài học</button>
         </form>
     </div>
 @endsection

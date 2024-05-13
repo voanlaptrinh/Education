@@ -41,6 +41,12 @@ class SubscriptionController extends Controller
             'price' => 'required|numeric',
             'duration_months' => 'required|numeric',
            
+        ],[
+            'name.required' => 'Tên gói là bắt buộc',
+            'price.required' => 'Giá là bắt buộc',
+            'duration_months.required' => 'Tháng là bắt buộc',
+            'price.numeric' => 'Giá phải là số',
+            'duration_months.numeric' => 'Tháng phải là số',
         ]);
 
         $subscriptionData = [
@@ -67,6 +73,12 @@ class SubscriptionController extends Controller
             'price' => 'required|numeric',
             'duration_months' => 'required|numeric',
            
+        ],[
+            'name.required' => 'Tên gói là bắt buộc',
+            'price.required' => 'Giá là bắt buộc',
+            'duration_months.required' => 'Tháng là bắt buộc',
+            'price.numeric' => 'Giá phải là số',
+            'duration_months.numeric' => 'Tháng phải là số',
         ]);
 
         $lecture = Subscription::findOrFail($id);

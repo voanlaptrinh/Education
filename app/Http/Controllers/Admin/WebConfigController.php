@@ -19,7 +19,7 @@ class WebConfigController extends Controller
         // Validate the form data
         $request->validate([
             'name' => 'required|string',
-            'phone' => 'required|string',
+            'phone' => 'required|string|regex:/^[0-9]{10}$/',
             'email' => 'required|email',
             'code' => 'nullable|string',
             'gg_map' => 'nullable|string',
@@ -44,6 +44,7 @@ class WebConfigController extends Controller
             'name.string' => 'Tên phải là một chuỗi.',
             'phone.required' => 'Vui lòng nhập số điện thoại.',
             'phone.string' => 'Số điện thoại phải là một chuỗi.',
+            'phone.regex' => 'Số điện thoại phải có đúng 10 chữ số.',
             'email.required' => 'Vui lòng nhập email.',
             'email.email' => 'Email không hợp lệ.',
             'code.string' => 'Mã phải là một chuỗi.',

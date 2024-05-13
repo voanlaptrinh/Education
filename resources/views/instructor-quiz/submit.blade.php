@@ -93,7 +93,7 @@
                                                     <div class="card-body">
                                                         <!-- Title -->
                                                         <h3 class="card-title"><a href="#"> {{ $course->name }}<h6 class="text-danger mb-0" id="timer"><i
-                                                            class="bi bi-clock-history me-2"></i>Time Left: <span
+                                                            class="bi bi-clock-history me-2"></i>Thời gian còn lại: <span
                                                             id="countdown"></span></h6>
                                                     <input type="hidden" name="remaining_time" id="remainingTimeInput"
                                                         value="{{ $course->time_limit }}"></a>

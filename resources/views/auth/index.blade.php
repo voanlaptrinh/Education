@@ -14,22 +14,22 @@
                             <p class="mb-0 h6 fw-light">Hãy học điều gì đó mới ngay hôm nay!</p>
                         </div>
                         <!-- SVG Image -->
-                        <img src="assets/user/images/element/02.svg" class="mt-5" alt="">
+                        <img src="/assets/user/images/element/02.svg" class="mt-5" alt="">
                         <!-- Info -->
                         <div class="d-sm-flex mt-5 align-items-center justify-content-center">
                             <!-- Avatar group -->
                             <ul class="avatar-group mb-2 mb-sm-0">
                                 <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" src="assets/user/images/avatar/01.jpg" alt="avatar">
+                                    <img class="avatar-img rounded-circle" src="/assets/user/images/avatar/01.jpg" alt="avatar">
                                 </li>
                                 <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" src="assets/user/images/avatar/02.jpg" alt="avatar">
+                                    <img class="avatar-img rounded-circle" src="/assets/user/images/avatar/02.jpg" alt="avatar">
                                 </li>
                                 <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" src="assets/user/images/avatar/03.jpg" alt="avatar">
+                                    <img class="avatar-img rounded-circle" src="/assets/user/images/avatar/03.jpg" alt="avatar">
                                 </li>
                                 <li class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" src="assets/user/images/avatar/04.jpg" alt="avatar">
+                                    <img class="avatar-img rounded-circle" src="/assets/user/images/avatar/04.jpg" alt="avatar">
                                 </li>
                             </ul>
                             <!-- Content -->

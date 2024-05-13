@@ -33,6 +33,7 @@ use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\Auth\VnpayController;
 use App\Http\Controllers\Auth\DocumentController as AuthDocumentController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\VideoController;
 use App\Mail\ConfirmationMail;
 use Illuminate\Support\Facades\Route;
 
@@ -70,6 +71,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
         Route::prefix('student')->group(function () {
             Route::get('/', [StudentController::class, 'index'])->name('student.index');
+            Route::get('/show/{studentS}', [StudentController::class, 'show'])->name('student.show');
             Route::post('/{id}/toggle-status', [StudentController::class, 'toggleStatus'])->name('user.toggleStatus');
         });
         Route::prefix('contact')->group(function () {
@@ -78,12 +80,12 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
         //Môn học
         Route::prefix('/subjects')->group(function () { //Môn học
-            Route::get('/', [SubjectController::class, 'index'])->name('subjects.index');
             Route::post('/{id}/toggle-status', [SubjectController::class, 'toggleStatus'])->name('subjects.toggleStatus');
             Route::post('/store', [SubjectController::class, 'store'])->name('subjects.store');
             Route::post('/update/{id}', [SubjectController::class, 'update'])->name('subjects.update');
-            Route::get('/{id}', [SubjectController::class, 'show'])->name('subjects.show'); //Câu hỏi liên quan
+            Route::get('/{id}/subject', [SubjectController::class, 'show'])->name('subjects.show'); //Câu hỏi liên quan
             Route::delete('/delete/{subject}', [SubjectController::class, 'destroy'])->name('subjects.destroy');
+            Route::get('/{class?}', [SubjectController::class, 'index'])->name('subjects.index');
 
             //đề bài
             Route::get('/{subject}/courses', [CourseController::class, 'index'])->name('courses.index'); //đề bài liên quan đến môn học
@@ -105,7 +107,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
             Route::post('/{course}/questions/store', [QuestionController::class, 'store'])->name('questions.store');
         });
-
+      
         Route::prefix('/classes')->group(function () {
             Route::get('/', [ClassesController::class, 'index'])->name('classes.index');
             Route::post('/store', [ClassesController::class, 'store'])->name('classes.store');
@@ -125,22 +127,23 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
 
         Route::prefix('/lession')->group(function () { //Bài học
-            Route::get('/', [LessonController::class, 'index'])->name('lesson.index');
             Route::get('/create', [LessonController::class, 'create'])->name('lesson.create');
             Route::post('/store', [LessonController::class, 'store'])->name('lessons.store');
             Route::get('/{lesson}/edit', [LessonController::class, 'edit'])->name('lessons.edit');
             Route::put('/update/{lesson}', [LessonController::class, 'update'])->name('lessons.update');
             Route::delete('/delete/{lesson}', [LessonController::class, 'destroy'])->name('lessons.destroy');
+            Route::get('/{subject?}', [LessonController::class, 'index'])->name('lesson.index');
         });
 
         Route::prefix('/chapter')->group(function () { //chương trình học
-            Route::get('/', [ChaptersController::class, 'index'])->name('curriculum.index');
             Route::get('/create', [ChaptersController::class, 'create'])->name('curriculum.create');
             Route::post('/store', [ChaptersController::class, 'store'])->name('curriculum.store');
             Route::get('/{chapter}/edit', [ChaptersController::class, 'edit'])->name('curriculum.edit');
             Route::put('/update/{chapter}', [ChaptersController::class, 'update'])->name('curriculum.update');
             Route::delete('/delete/{chapter}', [ChaptersController::class, 'destroy'])->name('curriculum.destroy');
             Route::get('/search', [ChaptersController::class, 'search'])->name('curriculum.search');
+            Route::get('/{lesson?}', [ChaptersController::class, 'index'])->name('curriculum.index');
+
         });
 
         Route::prefix('/subcsription')->group(function () {
@@ -171,12 +174,13 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         });
 
         Route::prefix('/document')->group(function () {
-            Route::get('/index', [AdminDocumentController::class, 'index'])->name('document.admin');
+         
             Route::get('/create', [AdminDocumentController::class, 'create'])->name('document.create');
             Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');
             Route::delete('/delete/{document}', [AdminDocumentController::class, 'destroy'])->name('document.destroy');
             Route::get('/{document}/edit', [AdminDocumentController::class, 'edit'])->name('document.edit');
-            Route::put('update/{document}', [AdminDocumentController::class, 'update'])->name('document.update');
+            Route::post('update/{document}', [AdminDocumentController::class, 'update'])->name('document.update');
+            Route::get('/{class?}', [AdminDocumentController::class, 'index'])->name('document.admin');
             // Route::post('/store/{chapter}', [LecturesController::class, 'store'])->name('lectures.store');
             // Route::get('/{lecture}/edit', [LecturesController::class, 'edit'])->name('lectures.edit');
             // Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');
@@ -218,7 +222,7 @@ Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkReques
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+Route::post('/reset-passwords', [ResetPasswordController::class, 'ResetPassEmail'])->name('password.update');
 
 
 
@@ -286,3 +290,4 @@ Route::prefix('/user')->group(function () {
 
 Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/default', [ContactController::class, 'default'])->name('default');
+Route::get('/get-video-data', [VideoController::class, 'getVideoData']);
