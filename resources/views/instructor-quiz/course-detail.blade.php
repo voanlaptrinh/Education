@@ -266,34 +266,6 @@
 
 
 
-    <!-- =======================
-        Video START -->
-    <section class="pb-0 py-sm-0 mt-n8">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 text-center mx-auto">
-                    <div class="card card-body shadow p-2">
-                        <div class="position-relative">
-                            <!-- Image -->
-
-                            <div class="card-img-overlay">
-                                <!-- Video link -->
-                                <div class="position-absolute top-50 start-50 translate-middle">
-                                    <a href="https://www.youtube.com/embed/tXHviS-4ygo"
-                                        class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox=""
-                                        data-gallery="video-tour">
-                                        <i class="fas fa-play"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- =======================
-        Video END -->
-
+   
 
 @endsection

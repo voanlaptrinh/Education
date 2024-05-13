@@ -40,9 +40,9 @@
                                     <!-- Rating -->
                                     <div class="d-flex justify-content-between mb-2">
                                         <div class="hstack gap-2">
-                                            <p class="text-warning m-0">4.5<i class="fas fa-star text-warning ms-1"></i>
+                                            <p class="text-warning m-0">5<i class="fas fa-star text-warning ms-1"></i>
                                             </p>
-                                            <span class="small">(2000)</span>
+                                            <span class="small"></span>
                                         </div>
                                         <div class="hstack gap-2">
                                             <p class="h6 fw-light mb-0 m-0"></p>
@@ -51,8 +51,7 @@
                                     </div>
                                     <!-- Time -->
                                     <div class="hstack gap-3">
-                                        <span class="h6 fw-light mb-0"><i class="far fa-clock text-danger me-2"></i>24h
-                                            56m</span>
+                                        
                                         @if ($item->chapters)
                                             <span class="h6 fw-light mb-0"><i
                                                     class="fas fa-table text-orange me-2"></i>{{ $item->chapters->count() }}

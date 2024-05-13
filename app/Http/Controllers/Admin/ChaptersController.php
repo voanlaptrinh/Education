@@ -44,7 +44,7 @@ class ChaptersController extends Controller
             'title' => 'required|string',
             'content' => 'nullable|string',
         ], [
-            'title.required' => 'Tiêu đề hương chình học',
+            'title.required' => 'Tiêu đề chương trình học',
             'exists' => 'The selected :attribute does not exist in the lessons table.',
             'string' => 'The :attribute must be a string.',
         ]);
