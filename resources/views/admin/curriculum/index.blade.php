@@ -5,8 +5,8 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Video bài giảng <span
-                        class="badge bg-orange bg-opacity-10 text-orange"></span></h1>
+                <h1 class="h3 mb-2 mb-sm-0">Video bài giảng <span class="badge bg-orange bg-opacity-10 text-orange"></span>
+                </h1>
                 <a href="{{ route('curriculum.create') }}" class="btn btn-sm btn-primary mb-0">Thêm mới Video bài giảng</a>
             </div>
         </div>
@@ -33,7 +33,7 @@
                     </div>
 
                     <!-- Select option -->
-                  
+
                 </div>
                 <script>
                     $(document).ready(function() {
@@ -67,46 +67,55 @@
 
                         <!-- Table body START -->
                         <tbody>
-                            @foreach ($curriculum as $chapter)
-                                <tr>
-                                    <!-- Table data -->
+                            @if (count($curriculum) > 0)
+                                @foreach ($curriculum as $chapter)
+                                    <tr>
+                                        <!-- Table data -->
 
 
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center">
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex align-items-center">
 
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $chapter->title }}</h6>
+                                                <div class="ms-2">
+                                                    <h6 class="mb-0 fw-light">{{ $chapter->title }}</h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>{{ $chapter->lesson->title }}</td>
-                                    <td>
-                                        <a href="{{ route('lectures.index', ['chapter' => $chapter]) }}"
-                                            class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Xem bài giảng</a>
-                                    </td>
-                                    <td>
-                                        {{ $chapter->created_at->format('d/m/Y') }}
-                                    </td>
+                                        </td>
+                                        <td>{{ $chapter->lesson->title }}</td>
+                                        <td>
+                                            <a href="{{ route('lectures.index', ['chapter' => $chapter]) }}"
+                                                class="btn btn-sm btn-success me-1 mb-1 mb-md-0">Xem bài giảng</a>
+                                        </td>
+                                        <td>
+                                            {{ $chapter->created_at->format('d/m/Y') }}
+                                        </td>
 
 
-                                    <td class="d-flex"> 
-                                        <a href="{{ route('curriculum.edit', ['chapter' => $chapter]) }}"
-                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="bi bi-pencil-square"></i></a>
-                                        <form action="{{ route('curriculum.destroy', ['chapter' => $chapter]) }}"
-                                        method="post"
-                                        onsubmit="return confirm('Bạn có chắc chắn xóa?')">
-                                        @csrf
-                                        @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
-                                        <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" type="submit"><i
-                                            class="bi bi-trash  "></i></button>
-                                    </form>
-                                    </td>
+                                        <td class="d-flex">
+                                            <a href="{{ route('curriculum.edit', ['chapter' => $chapter]) }}"
+                                                class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
+                                                    class="bi bi-pencil-square"></i></a>
+                                            <form action="{{ route('curriculum.destroy', ['chapter' => $chapter]) }}"
+                                                method="post" onsubmit="return confirm('Bạn có chắc chắn xóa?')">
+                                                @csrf
+                                                @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
+                                                <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                                    type="submit"><i class="bi bi-trash  "></i></button>
+                                            </form>
+
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td>Không có video bài giảng nào!</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                            @endforeach
-
-
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -119,28 +128,25 @@
                     <p class="mb-0 text-center text-sm-start"></p>
                     <!-- Pagination -->
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                        <ul
-                        class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                        @if ($curriculum->currentPage() > 1)
-                            <li class="page-item mb-0"><a class="page-link"
-                                    href="{{ $curriculum->url($curriculum->currentPage() - 1) }}"
-                                    tabindex=""><i class="fas fa-angle-left"></i></a></li>
-                        @endif
-                        @for ($i = 1; $i <= $curriculum->lastPage(); $i++)
-                            <li
-                                class=" page-item mb-0 {{ $curriculum->currentPage() == $i ? 'active' : '' }}">
-                                <a class="page-link"
-                                    href="{{ $curriculum->url($i) }}">{{ $i }}</a>
-                            </li>
-                        @endfor
-                        @if ($curriculum->currentPage() < $curriculum->lastPage())
-                        <li class="page-item mb-0"><a class="page-link" href="{{ $curriculum->url($curriculum->currentPage() + 1) }}"><i
-                            class="fas fa-angle-right"></i></a></li> 
+                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                            @if ($curriculum->currentPage() > 1)
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $curriculum->url($curriculum->currentPage() - 1) }}" tabindex=""><i
+                                            class="fas fa-angle-left"></i></a></li>
+                            @endif
+                            @for ($i = 1; $i <= $curriculum->lastPage(); $i++)
+                                <li class=" page-item mb-0 {{ $curriculum->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $curriculum->url($i) }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+                            @if ($curriculum->currentPage() < $curriculum->lastPage())
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $curriculum->url($curriculum->currentPage() + 1) }}"><i
+                                            class="fas fa-angle-right"></i></a></li>
+                            @endif
 
-                        @endif
-                   
-                    </ul>
-                      
+                        </ul>
+
                     </nav>
                 </div>
                 <!-- Pagination END -->

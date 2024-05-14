@@ -20,7 +20,6 @@ class CourseAuthController extends Controller
         $classes = Classes::where('status', 1)->get();
         $webConfig = Web_config::find(1);
         $user = Auth::user();
-        // Auth::user()->checkSubscriptionStatus();
 
         return view('instructor-quiz.quiz-lessons', compact('subject', 'lessons', 'classes', 'webConfig', 'courses'));
     }

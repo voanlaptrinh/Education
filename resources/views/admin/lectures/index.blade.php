@@ -32,54 +32,66 @@
 
                         <!-- Table body START -->
                         <tbody>
-                            @foreach ($lectures as $lecture)
-                                <tr>
-                                    <!-- Table data -->
+                            @if (count($lectures) > 0)
+                                @foreach ($lectures as $lecture)
+                                    <tr>
+                                        <!-- Table data -->
 
 
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center">
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex align-items-center">
 
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $lecture->title }}</h6>
+                                                <div class="ms-2">
+                                                    <h6 class="mb-0 fw-light">{{ $lecture->title }}</h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
+                                        </td>
 
-                                    <td>
+                                        <td>
 
-                                        <a data-glightbox="" data-gallery="office-tour" href="{{$lecture->video}}" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7"> 
-                                            <i class="fas fa-play"></i>
-                                            <h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Xem video</h6>
-                                        </a>
+                                            <a data-glightbox="" data-gallery="office-tour" href="{{ $lecture->video }}"
+                                                class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7">
+                                                <i class="fas fa-play"></i>
+                                                <h6
+                                                    class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">
+                                                    Xem video</h6>
+                                            </a>
 
-                                    </td>
-                                    <td class="">Chương trình: ( {{ $chapter->title }} )</td>
-                                    <td>
-                                        {{ $lecture->updated_at->format('d/m/Y') }}
-                                    </td>
+                                        </td>
+                                        <td class="">Chương trình: ( {{ $chapter->title }} )</td>
+                                        <td>
+                                            {{ $lecture->updated_at->format('d/m/Y') }}
+                                        </td>
 
-                                   <td> @if ($lecture->is_free == 1)
-                                    <button class="btn btn-warning ">Mất phí</button>
-                                @else
-                                    <button class="btn btn-success ">Miễn phí</button>
-                                @endif</td>
-                                   
-                                    <td class="d-flex h-100">
-                                        <a href="{{ route('lectures.edit', ['lecture' => $lecture]) }}"
-                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
-                                                class="bi bi-pencil-square"></i></a>
-                                        <form action="{{ route('lectures.destroy', ['lecture' => $lecture->id]) }}"
-                                            method="post">
-                                            @csrf
-                                            @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
-                                            <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0" onclick="return confirm('Bạn có chắc là đồng ý xóa?')"
-                                                type="submit"><i class="bi bi-trash  "></i></button>
-                                        </form>
-                                    </td>
+                                        <td>
+                                            @if ($lecture->is_free == 1)
+                                                <button class="btn btn-warning ">Mất phí</button>
+                                            @else
+                                                <button class="btn btn-success ">Miễn phí</button>
+                                            @endif
+                                        </td>
+
+                                        <td class="d-flex h-100">
+                                            <a href="{{ route('lectures.edit', ['lecture' => $lecture]) }}"
+                                                class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
+                                                    class="bi bi-pencil-square"></i></a>
+                                            <form action="{{ route('lectures.destroy', ['lecture' => $lecture->id]) }}"
+                                                method="post">
+                                                @csrf
+                                                @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
+                                                <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                                    onclick="return confirm('Bạn có chắc là đồng ý xóa?')" type="submit"><i
+                                                        class="bi bi-trash  "></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td>Không có bài giảng chương trình học nào</td>
                                 </tr>
-                            @endforeach
+                            @endif
 
 
                         </tbody>
@@ -105,7 +117,8 @@
                                     </li>
                                 @endfor
                                 @if ($lectures->currentPage() < $lectures->lastPage())
-                                    <li class="page-item mb-0"><a class="page-link" href="{{ $lectures->url($lectures->currentPage() + 1) }}"><i
+                                    <li class="page-item mb-0"><a class="page-link"
+                                            href="{{ $lectures->url($lectures->currentPage() + 1) }}"><i
                                                 class="fas fa-angle-right"></i></a></li>
                                 @endif
 
@@ -119,6 +132,7 @@
 
     </div>
     <div class="video-player">
-        <div id="player-vimeo" data-plyr-provider="vimeo" data-plyr-embed-id="777631140" poster="assets/images/bg/06.jpg"></div>
+        <div id="player-vimeo" data-plyr-provider="vimeo" data-plyr-embed-id="777631140" poster="assets/images/bg/06.jpg">
+        </div>
     </div>
 @endsection
