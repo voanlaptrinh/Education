@@ -71,8 +71,8 @@
                         <!-- Digit -->
                         <div>
                             <div class="d-flex">
-                                <h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="{{$totalContact}}"
-                                    data-purecounter-delay="200">0</h2>
+                                <h2 class="purecounter mb-0 fw-bold" data-purecounter-start="0"
+                                    data-purecounter-end="{{ $totalContact }}" data-purecounter-delay="200">0</h2>
                             </div>
                             <span class="mb-0 h6 fw-light">Liên hệ</span>
                         </div>
@@ -94,14 +94,79 @@
                 <div class="card shadow h-100">
 
                     <!-- Card header -->
-                    <div class="card-header p-4 border-bottom">
-                        <h5 class="card-header-title">Earnings</h5>
+                    <div class="card-header border-bottom d-flex justify-content-between align-items-center p-4">
+                        <h5 class="card-header-title">Tài khoản</h5>
+                        <a href="{{ route('reviews.admin') }}" class="btn btn-link p-0 mb-0">Tất cả</a>
                     </div>
 
                     <!-- Card body -->
-                    <div class="card-body">
-                        <!-- Apex chart -->
-                        <div id="ChartPayout"></div>
+                    <div class="card-body p-4">
+
+                        <div class="table-responsive border-0 rounded-3">
+                            <!-- Table START -->
+                            <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                                <!-- Table head -->
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="border-0 rounded-start">Ảnh đại diện</th>
+                                        <th scope="col" class="border-0 ">Tên </th>
+                                        <th scope="col" class="border-0 rounded-end">Địa chỉ</th>
+                                        
+                                    </tr>
+                                </thead>
+                              
+                                <tbody>
+                                    @foreach ($users->take(4) as $item)
+                                        <tr>
+                                            <td>
+                                                @if (!empty($item->image))
+                                                <div class="w-60px">
+                                                    <img src="{{ asset('storage/' . $item->image) }}" class="rounded" alt="">
+                                                </div>
+                                                @else
+                                                <div class="w-60px">
+                                                    <img src="{{ asset('/assets/user/images/default-avatar.png') }}" class="rounded" alt="">
+                                                </div>
+                                                @endif
+                                               
+                                            </td>
+                                            <!-- Table data -->
+                                            <td>
+                                                <div class="d-flex align-items-center position-relative">
+                                                    <!-- Image -->
+                                                    {{ $item->name }}
+                                                 
+                                                </div>
+                                            </td>
+                                            <td>
+                                                @if (!empty($item->address))
+                                                    {{ $item->address}}
+                                                @else
+                                                    Chưa có địa chỉ
+                                                @endif
+                                            </td>
+
+
+
+
+
+                                            <!-- Table data -->
+                                            <td></td>
+
+
+
+                                        </tr>
+                                    @endforeach
+
+
+                                </tbody>
+                                <!-- Table body END -->
+                            </table>
+                            <!-- Table END -->
+                        </div>
+                       
+
+
                     </div>
                 </div>
             </div>
@@ -118,7 +183,7 @@
 
                     <!-- Card body START -->
                     <div class="card-body p-4">
-                        @foreach ($reviews->take(4) as  $item)
+                        @foreach ($reviews->take(4) as $item)
                             <!-- Ticket item START -->
                             <div class="d-flex justify-content-between position-relative">
                                 <div class="d-sm-flex">
@@ -131,7 +196,8 @@
                                     @else
                                         <div class="avatar avatar-md flex-shrink-0">
                                             <img class="avatar-img rounded-circle"
-                                                src="/assets/user/images/default-avatar.png" alt="avatar">
+                                                src="{{ asset('/assets/user/images/default-avatar.png') }}"
+                                                alt="avatar">
                                         </div>
                                     @endif
 
@@ -140,7 +206,7 @@
                                         <h6 class="mb-0"><a href="#"
                                                 class="stretched-link">{{ $item->user->name }}</a></h6>
                                         <div class="col-12"></div>
-                                        
+
                                         <ul class="list-inline mb-0">
                                             @for ($i = 1; $i <= 5; $i++)
                                                 <li class="list-inline-item me-0">
@@ -152,8 +218,8 @@
                                                 </li>
                                             @endfor
                                         </ul>
-                                      
-                                        <span class="small">{{$item->created_at->format('d/m/Y')}}</span>
+
+                                        <span class="small">{{ $item->created_at->format('d/m/Y') }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -173,7 +239,7 @@
         </div>
         <!-- Chart and Ticket END -->
 
-       
+
 
     </div>
     <!-- Page main content END -->

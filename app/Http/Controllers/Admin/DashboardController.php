@@ -24,9 +24,10 @@ class DashboardController extends Controller
         $totalLectures = Lecture::all()->count();
         $totalContact = Contact::all()->count();
         $reviews = Review::orderBy('id', 'asc')->get();
+        $users = User::where('user_type', 1)->get();
         $purchases = Purchase::where('transaction_status', 00)->get();
 
-        return view('admin.admin-dashboard', compact('webConfig','totalContact', 'purchases', 'reviews', 'totalLectures', 'totalUser', 'totalReviews'));
+        return view('admin.admin-dashboard', compact('webConfig','totalContact','users', 'purchases', 'reviews', 'totalLectures', 'totalUser', 'totalReviews'));
     }
 public function banner(){
     $banner = Banner::find(1);

@@ -209,74 +209,87 @@
 
                         <!-- Table body START -->
                         <tbody>
+                            @if (count($subjects)>0)
                             @foreach ($subjects as $subject)
+                            <tr>
+                                <!-- Table data -->
+                                <td>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <!-- Image -->
+
+                                        <!-- Title -->
+                                        <h6 class="table-responsive-title mb-0 ms-2">
+                                            <a href="#" class="stretched-link">{{ $subject->name }}</a>
+                                        </h6>
+                                    </div>
+                                </td>
+
+                                <!-- Table data -->
+                                <td>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="ms-2">
+                                            <h6 class="mb-0 fw-light">Admin</h6>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!-- Table data -->
+                                <td>
+                                    <form action="{{ route('subjects.toggleStatus', ['id' => $subject->id]) }}"
+                                        method="post">
+                                        @csrf
+                                        @if ($subject->status == 1)
+                                            <button class="btn btn-success">Hoạt động</button>
+                                        @else
+                                            <button class="btn btn-warning">Tạm khóa</button>
+                                        @endif
+                                    </form>
+
+
+                                </td>
+                                <td>
+                                    <a href="{{ route('lesson.index', ['subject' => $subject]) }}" class="btn btn-primary">Bài học</a>
+                                </td>
+                                <td>
+                                    {{ $subject->class->name }}
+
+
+                                </td>
+                                <!-- Table data -->
+                                <td>
+                                    <a href="{{ route('courses.index', $subject) }}"
+                                        class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm bài kiểm tra</a>
+                                </td>
+                                <td class="d-flex">
+
+
+                                    <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop" data-action="edit"
+                                        data-class-id="{{ $subject->id }}">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+
+                                    <form action="{{ route('subjects.destroy', $subject) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                            onclick="return confirm('Bạn chắc chắn muốn xóa môn học này? Lưu ý các câu hỏi liên quan đến môn học cũng bị xóa!')"><i class="bi bi-trash  "></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                            @else
                                 <tr>
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center position-relative">
-                                            <!-- Image -->
-
-                                            <!-- Title -->
-                                            <h6 class="table-responsive-title mb-0 ms-2">
-                                                <a href="#" class="stretched-link">{{ $subject->name }}</a>
-                                            </h6>
-                                        </div>
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">Admin</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <form action="{{ route('subjects.toggleStatus', ['id' => $subject->id]) }}"
-                                            method="post">
-                                            @csrf
-                                            @if ($subject->status == 1)
-                                                <button class="btn btn-success">Hoạt động</button>
-                                            @else
-                                                <button class="btn btn-warning">Tạm khóa</button>
-                                            @endif
-                                        </form>
-
-
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('lesson.index', ['subject' => $subject]) }}" class="btn btn-primary">Bài học</a>
-                                    </td>
-                                    <td>
-                                        {{ $subject->class->name }}
-
-
-                                    </td>
-                                    <!-- Table data -->
-                                    <td>
-                                        <a href="{{ route('courses.index', $subject) }}"
-                                            class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm bài kiểm tra</a>
-                                    </td>
-                                    <td class="d-flex">
-
-
-                                        <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="modal"
-                                            data-bs-target="#staticBackdrop" data-action="edit"
-                                            data-class-id="{{ $subject->id }}">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </button>
-
-                                        <form action="{{ route('subjects.destroy', $subject) }}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
-                                                onclick="return confirm('Bạn chắc chắn muốn xóa môn học này? Lưu ý các câu hỏi liên quan đến môn học cũng bị xóa!')"><i class="bi bi-trash  "></i></button>
-                                        </form>
-                                    </td>
+                                    <td>Không có môn học nào</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                            @endforeach
+                            @endif
+                            
                             <!-- Table row -->
 
 

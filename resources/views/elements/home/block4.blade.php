@@ -13,7 +13,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<div class="bg-info p-4 p-sm-5 rounded-3">
+				<div class=" p-4 p-sm-5 rounded-3" style="background: url('{{asset('assets/user/images/bac.jpg')}}'); height:200px; background-size: cover;">
 					<div class="row position-relative">
 						<!-- Svg decoration -->
 						<figure class="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
@@ -22,19 +22,7 @@
 							</svg>
 						</figure>
 						<!-- Action box -->
-						<div class="col-11 mx-auto position-relative">
-							<div class="row align-items-center">
-								<!-- Title -->
-								<div class="col-lg-7">
-									<h3 class="text-white">Become an Instructor!</h3>
-									<p class="text-white mb-3 mb-lg-0">Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished.</p>
-								</div>
-								<!-- Content and input -->
-								<div class="col-lg-5 text-lg-end">
-									<a href="#" class="btn btn-outline-warning mb-0">Start Teaching Today</a>
-								</div>
-							</div>
-						</div>
+						
 					</div> <!-- Row END -->
 				</div>
 			</div>

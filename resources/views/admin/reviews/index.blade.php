@@ -202,7 +202,10 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td>Chưa có bình luận nào</td>
+                                    <td>Chưa có đánh giá nào</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 
                             @endif

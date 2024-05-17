@@ -73,52 +73,61 @@
                         </style>
                         <!-- Table body START -->
                         <tbody>
+                            @if (count($student) > 0)
+                                @foreach ($student as $studentS)
+                                    <!-- Table row -->
+                                    <tr>
+                                        <td>
+                                            <div class="w-60px">
+                                                <img src="{{ asset('storage/' . $studentS->image) }}" class="rounded"
+                                                    alt="">
+                                            </div>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex align-items-center position-relative">
+                                                <!-- Image -->
 
-                            @foreach ($student as $studentS)
-                                <!-- Table row -->
+                                                <!-- Title -->
+                                                <h6 class="table-responsive-title mb-0 ms-2">
+                                                    <a data-bs-toggle="modal" data-target=".exampleModal_detail"
+                                                        data-class-id="{{ $studentS->id }}"
+                                                        href="{{ route('student.show', ['studentS' => $studentS]) }}"
+                                                        class="stretched-link detailsBtn">{{ $studentS->name }}</a>
+                                                </h6>
+                                            </div>
+                                        </td>
+
+
+
+
+
+                                        <!-- Table data -->
+                                        <td>{{ $studentS->phone }}</td>
+                                        <td>
+                                            <form action="{{ route('user.toggleStatus', ['id' => $studentS->id]) }}"
+                                                method="post">
+                                                @csrf
+                                                @if ($studentS->status == 1)
+                                                    <button class="btn btn-success">Hoạt động</button>
+                                                @else
+                                                    <button class="btn btn-warning">Tạm khóa</button>
+                                                @endif
+                                            </form>
+                                        </td>
+
+
+                                    </tr>
+                                @endforeach
+                            @else
                                 <tr>
-                                    <td>
-                                        <div class="w-60px">
-                                            <img src="{{ asset('storage/' . $studentS->image) }}" class="rounded"
-                                                alt="">
-                                        </div>
-                                    </td>
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center position-relative">
-                                            <!-- Image -->
-
-                                            <!-- Title -->
-                                            <h6 class="table-responsive-title mb-0 ms-2">
-                                                <a data-bs-toggle="modal" data-target=".exampleModal_detail"
-                                                    data-class-id="{{ $studentS->id }}"
-                                                    href="{{ route('student.show', ['studentS' => $studentS]) }}"
-                                                    class="stretched-link detailsBtn">{{ $studentS->name }}</a>
-                                            </h6>
-                                        </div>
-                                    </td>
-
-
-
-
-
-                                    <!-- Table data -->
-                                    <td>{{ $studentS->phone }}</td>
-                                    <td>
-                                        <form action="{{ route('user.toggleStatus', ['id' => $studentS->id]) }}"
-                                            method="post">
-                                            @csrf
-                                            @if ($studentS->status == 1)
-                                                <button class="btn btn-success">Hoạt động</button>
-                                            @else
-                                                <button class="btn btn-warning">Tạm khóa</button>
-                                            @endif
-                                        </form>
-                                    </td>
-
-
+                                    <td>Không có tài khoản nào</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                            @endforeach
+                            @endif
+
 
 
 
@@ -228,11 +237,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
-                                                    <label for="is_pro">Tài khoản</label>
-                                                    <button class="btn form-control btn-secondary"
-                                                        id="is_pro"></button>
-                                                </div>
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                                                        <label for="is_pro">Tài khoản</label>
+                                                        <button class="btn form-control btn-secondary"
+                                                            id="is_pro"></button>
+                                                    </div>
                                                 </div>
                                             </div>
 

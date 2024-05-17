@@ -109,63 +109,74 @@
 
                         <!-- Table body START -->
                         <tbody>
+                            @if (count($contacts) > 0)
                             @foreach ($contacts as $contact)
+                            <tr>
+                                <!-- Table data -->
+                                <td>
+                                    <div class="d-flex align-items-center position-relative">
+                                        <!-- Image -->
+
+                                        <!-- Title -->
+                                        <h6 class="table-responsive-title mb-0 ms-2">
+                                            <a href="#" class="stretched-link">{{ $contact->name }}</a>
+                                        </h6>
+                                    </div>
+                                </td>
+
+                                <!-- Table data -->
+                                <td>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="ms-2">
+                                            <h6 class="mb-0 fw-light">{{ $contact->phone }}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!-- Table data -->
+                                <td>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="ms-2">
+                                            <h6 class="mb-0 fw-light">{{ $contact->email }}</h6>
+                                        </div>
+                                    </div>
+
+
+                                </td>
+                             
+                                <td>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="ms-2">
+                                            <h6 class="mb-0 fw-light">{{ $contact->created_at->format(' H:i:s d/m/Y') }}</h6>
+                                        </div>
+                                    </div>
+
+
+                                </td>
+                                <td>
+                                    <!-- Nút để mở modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#classModal2" data-action="add" data-class-id="{{$contact->id}}"
+                                        id="detailsBtn">
+                                        Chi tiết
+                                    </button>
+
+                                    <!-- Modal -->
+
+                                </td>
+
+                            </tr>
+                        @endforeach
+                            @else
                                 <tr>
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center position-relative">
-                                            <!-- Image -->
-
-                                            <!-- Title -->
-                                            <h6 class="table-responsive-title mb-0 ms-2">
-                                                <a href="#" class="stretched-link">{{ $contact->name }}</a>
-                                            </h6>
-                                        </div>
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $contact->phone }}</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $contact->email }}</h6>
-                                            </div>
-                                        </div>
-
-
-                                    </td>
-                                 
-                                    <td>
-                                        <div class="d-flex align-items-center mb-3">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $contact->created_at->format(' H:i:s d/m/Y') }}</h6>
-                                            </div>
-                                        </div>
-
-
-                                    </td>
-                                    <td>
-                                        <!-- Nút để mở modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#classModal2" data-action="add" data-class-id="{{$contact->id}}"
-                                            id="detailsBtn">
-                                            Chi tiết
-                                        </button>
-
-                                        <!-- Modal -->
-
-                                    </td>
-
+                                    <td>Không có liên hệ nào</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                            @endforeach
+                            @endif
+                          
 
                         </tbody>
 

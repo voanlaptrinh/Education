@@ -3,10 +3,17 @@
         $logo = \App\Models\Web_config::find(1);
     @endphp
     <!-- Navbar brand for xl START -->
-    <div class="d-flex align-items-center">
+    <div class="d-flex justify-content-center">
+        @if (!empty($logo->logo))
         <a class="navbar-brand" href="/">
             <img class="navbar-brand-item" src="{{ asset('storage/' . $logo->logo) }} " alt="">
         </a>
+        @else
+        <a class="navbar-brand " href="/">
+            <img class="navbar rounded-circle" width="100px" src="{{ asset('/assets/user/images/logoedu.jpg') }} " alt="">
+        </a>
+        @endif
+     
     </div>
     <!-- Navbar brand for xl END -->
 
@@ -123,7 +130,7 @@
             <!-- Sidebar footer START -->
             <div class="px-3 mt-auto pt-3">
                 <div class="d-flex align-items-center justify-content-between text-primary-hover">
-                    <a class="h5 mb-0 text-body" href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                    <a class="h5 mb-0 text-body" href="{{route('webConfig.index')}}" data-bs-toggle="tooltip" data-bs-placement="top"
                         title="Settings">
                         <i class="bi bi-gear-fill"></i>
                     </a>

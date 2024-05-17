@@ -61,68 +61,80 @@
 
                         <!-- Table body START -->
                         <tbody>
+                            @if (count($documents) > 0)
                             @foreach ($documents as $document)
+                            <tr>
+                                <!-- Table data -->
+
+
+                                <!-- Table data -->
+                                <td>
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="ms-2">
+                                            <a  data-bs-toggle="modal" data-target=".exampleModal_detail"
+                                                data-class-id="{{ $document->id }}"
+                                                href="{{ route('getDocumentDetails', [$document->id]) }}"
+                                                class=" detailsBtn">{{ $document->name }}</a>
+                                            {{-- <h6 class="mb-0 fw-light">{{ $document->name }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="ms-2">
+                                            <h6 class="mb-0 fw-light">{{ $document->classes->name }}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                                <td>
+                                    <a href="{{ asset('storage/' . $document->file_path) }}" target="_blank">View
+                                        PDF</a>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="ms-2">
+                                            <h6 class="mb-0 fw-light">{{ $document->created_at->format('d/m/Y') }}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-uppercase">
+                                    @if ($document->access_level == 'paid')
+                                        {{ number_format($document->price, 0, ',', ',') }} VNĐ
+                                    @else
+                                        {{ $document->access_level }}
+                                    @endif
+                                </td>
+
+                                <td class="d-flex">
+                                    <a href="{{ route('document.edit', ['document' => $document]) }}"
+                                        class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
+                                            class="bi bi-pencil-square"></i></a>
+                                    <form action="{{ route('document.destroy', ['document' => $document]) }}"
+                                        method="post" onsubmit="return confirm('Bạn có chắc chắn xóa?')">
+                                        @csrf
+                                        @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
+                                        <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                            type="submit"><i class="bi bi-trash  "></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                            @else
                                 <tr>
-                                    <!-- Table data -->
-
-
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center">
-
-                                            <div class="ms-2">
-                                                <a  data-bs-toggle="modal" data-target=".exampleModal_detail"
-                                                    data-class-id="{{ $document->id }}"
-                                                    href="{{ route('getDocumentDetails', [$document->id]) }}"
-                                                    class=" detailsBtn">{{ $document->name }}</a>
-                                                {{-- <h6 class="mb-0 fw-light">{{ $document->name }}</h6> --}}
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $document->classes->name }}</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-
-
-                                    <td>
-                                        <a href="{{ asset('storage/' . $document->file_path) }}" target="_blank">View
-                                            PDF</a>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-
-                                            <div class="ms-2">
-                                                <h6 class="mb-0 fw-light">{{ $document->created_at->format('d/m/Y') }}</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-uppercase">
-                                        @if ($document->access_level == 'paid')
-                                            {{ number_format($document->price, 0, ',', ',') }} VNĐ
-                                        @else
-                                            {{ $document->access_level }}
-                                        @endif
-                                    </td>
-
-                                    <td class="d-flex">
-                                        <a href="{{ route('document.edit', ['document' => $document]) }}"
-                                            class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"><i
-                                                class="bi bi-pencil-square"></i></a>
-                                        <form action="{{ route('document.destroy', ['document' => $document]) }}"
-                                            method="post" onsubmit="return confirm('Bạn có chắc chắn xóa?')">
-                                            @csrf
-                                            @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
-                                            <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
-                                                type="submit"><i class="bi bi-trash  "></i></button>
-                                        </form>
-                                    </td>
+                                    <td>Không có tài liệu nào</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                            @endforeach
+                            @endif
+                          
 
 
                         </tbody>
