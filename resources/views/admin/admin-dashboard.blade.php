@@ -96,7 +96,7 @@
                     <!-- Card header -->
                     <div class="card-header border-bottom d-flex justify-content-between align-items-center p-4">
                         <h5 class="card-header-title">Tài khoản</h5>
-                        <a href="{{ route('reviews.admin') }}" class="btn btn-link p-0 mb-0">Tất cả</a>
+                        <a href="{{ route('student.index') }}" class="btn btn-link p-0 mb-0">Tất cả</a>
                     </div>
 
                     <!-- Card body -->
