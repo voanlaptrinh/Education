@@ -8,10 +8,9 @@
                 <!-- logo -->
                 @if (!empty($webConfig->logo))
                     <a class="me-0" href="{{ route('home.index') }}">
-                        <img class="light-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}"
+                        <img class="" src="{{ asset('storage/' . $webConfig->logo) }}"
                             alt="logo">
-                        <img class="dark-mode-item h-40px" src="{{ asset('storage/' . $webConfig->logo) }}"
-                            alt="logo">
+                       
                     </a>
                 @else
                     <a class="me-0" href="{{ route('home.index') }}">

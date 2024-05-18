@@ -4,13 +4,8 @@
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             @if (!empty($webConfig->logo))
-                <a class="navbar-brand" href="/">
-                  
-
-                            <img class="" style="width:70%" src=" {{ asset('storage/' . $webConfig->logo) }}"
-                            alt="logo">
-                        
-                  
+                <a class="d-flex justify-content-center pt-2 pb-2" href="/">
+                    <img class="" style="width:70%" src=" {{ asset('storage/' . $webConfig->logo) }}" alt="logo">
                 </a>
             @else
                 <a class="navbar-brand" href="/">
