@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="index, follow">
     <meta name="author" content="{{ $logo->name }}">
-    <meta name="description" content="{{ $logo->name }}">
+    <meta name="description" content="{{ $logo->description }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:title" content="{{ $logo->name }}">
     <meta property="og:description" content="{{ $logo->description }}">

@@ -157,13 +157,18 @@
                         <li class="px-3 mb-3">
                             <div class="d-flex align-items-center">
                                 <!-- Avatar -->
-                                <div class="avatar me-3">
+                                <div class="avatar me-3 position-relative mt-n3">
 
                                     <img class="avatar-img rounded-circle shadow"
                                         src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"
                                         alt="avatar">
-
-
+                                    @if (Auth::user()->is_pro == 1)
+                                        <span
+                                            class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-4 ms-n3 px-md-3">Pro</span>
+                                    @else
+                                        <span
+                                            class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-4 ms-n3 px-md-3">Pro</span>
+                                    @endif
                                 </div>
                                 <div>
 
