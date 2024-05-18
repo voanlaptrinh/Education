@@ -4,9 +4,21 @@
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             @if (!empty($webConfig->logo))
-                <a class="d-flex justify-content-center pt-2 pb-2" href="/">
-                    <img class="" style="width:70%" src=" {{ asset('storage/' . $webConfig->logo) }}" alt="logo">
-                </a>
+                <div class="d-flex ">
+                    <a class="" href="/" class="avatar avatar-xxxl">
+                        <img class="avatar-img " style="" src=" {{ asset('storage/' . $webConfig->logo) }}"
+                            alt="logo">
+                    </a>
+                    <div class="d-flex justify-content-center pt-4 ps-2 ">
+                        <h4 class="  d-none d-md-block">
+                            <div class="d-flex">
+                                <span class="pe-1" style="color: rgb(226, 121, 0);">HD</span>
+                                <span style="color:rgba(19, 19, 99, 0.997)">Education</span>
+                            </div>
+                        </h4>
+                    </div>
+
+                </div>
             @else
                 <a class="navbar-brand" href="/">
                     <img class="light-mode-item navbar-brand-item" src="/assets/user/images/logo.svg " alt="logo">
