@@ -222,30 +222,25 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-
-
-
-
 
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
                                                         <label for="status">Trạng thái</label>
-                                                        <button class="btn form-control btn-secondary"
+                                                        <button class="btn form-control btn-secondary" disabled
                                                             id="statuss"></button>
                                                     </div>
                                                 </div>
-                                                <div class="col-6">
+                                                <div class="col-xl-6">
                                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
                                                         <label for="is_pro">Tài khoản</label>
-                                                        <button class="btn form-control btn-secondary"
+                                                        <button class="btn form-control btn-secondary" disabled
                                                             id="is_pro"></button>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                        </div>
+
                                         <div class="row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
                                                 <label for="description">Địa chỉ</label>
