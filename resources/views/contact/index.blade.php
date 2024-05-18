@@ -62,7 +62,7 @@
                         <ul class="list-inline mb-0 ms-sm-2">
                             @if ($webConfig->facebook_id)
                                 <li class="list-inline-item"> <a class="fs-5 me-1 text-facebook"
-                                        href="https://www.facebook.com/{{ $webConfig->facebook_id }}"><i
+                                        href="{{ $webConfig->facebook_id }}"><i
                                             class="fab fa-fw fa-facebook-square"></i></a> </li>
                             @endif
                             @if ($webConfig->instagram)

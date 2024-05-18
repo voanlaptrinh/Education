@@ -25,7 +25,7 @@
                     @if (!empty($webConfig->facebook_id))
                         <li class="list-inline-item">
                             <a class="btn btn-white btn-sm shadow px-2 text-facebook"
-                                href="https://www.facebook.com/{{ $webConfig->facebook_id }}">
+                                href="{{ $webConfig->facebook_id }}">
                                 <i class="fab fa-fw fa-facebook-f"></i>
                             </a>
                         </li>

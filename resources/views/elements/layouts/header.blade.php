@@ -5,10 +5,12 @@
             <!-- Logo START -->
             @if (!empty($webConfig->logo))
                 <a class="navbar-brand" href="/">
-                    <img class="light-mode-item navbar-brand-item" src=" {{ asset('storage/' . $webConfig->logo) }}"
-                        alt="logo">
-                    <img class="dark-mode-item navbar-brand-item" src="  {{ asset('storage/' . $webConfig->logo) }}"
-                        alt="logo">
+                  
+
+                            <img class="" style="width:70%" src=" {{ asset('storage/' . $webConfig->logo) }}"
+                            alt="logo">
+                        
+                  
                 </a>
             @else
                 <a class="navbar-brand" href="/">

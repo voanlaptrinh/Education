@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-center">
         @if (!empty($logo->logo))
         <a class="navbar-brand" href="/">
-            <img class="navbar-brand-item" src="{{ asset('storage/' . $logo->logo) }} " alt="">
+            <img class="" src="{{ asset('storage/' . $logo->logo) }} " alt="">
         </a>
         @else
         <a class="navbar-brand " href="/">
@@ -136,7 +136,7 @@
                     </a>
                     <a class="h5 mb-0 text-body" href="{{ route('home.index') }}" data-bs-toggle="tooltip"
                         data-bs-placement="top" title="Home">
-                        <i class="bi bi-globe"></i>
+                        <i class="bi bi-house"></i>
                     </a>
                     <a class="h5 mb-0 text-body" href="{{ route('logout') }}" data-bs-toggle="tooltip"
                         data-bs-placement="top" title="Sign out">

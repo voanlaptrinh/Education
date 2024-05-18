@@ -14,7 +14,7 @@
 
                             <!-- Card header -->
                             <div class="card-header border-bottom">
-                                <h5 class="card-header-title">Website Settings</h5>
+                                <h5 class="card-header-title">Cài đặt website</h5>
                             </div>
 
                             <!-- Card body START -->
@@ -25,7 +25,7 @@
                                         <!-- Tab START -->
                                         <img src="{{ asset('storage/' . $webConfig->logo) }}" alt="">
                                         <!-- Tab END -->
-                                        <input type="file" name="logo" id="logo">
+                                        <input type="file" name="logo" id="logo" class="mt-2">
                                         @error('logo')
                                         <span class="invalid-feedback" role="alert">
                                             <label class="error" id="name_error" for="name">{{ $message }}</label>
@@ -34,7 +34,7 @@
                                     </div>
                                     <!-- Input item -->
                                     <div class="col-lg-4">
-                                        <label class="form-label">Tên web site</label>
+                                        <label class="form-label">Tên website</label>
                                         <input type="text" id="name" name="name" class="form-control" value="{{ $webConfig->name }}" >
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -56,7 +56,7 @@
                                     </div>
 
                                     <!-- Input item -->
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-12">
                                         <label class="form-label">Email</label>
                                         <input type="email"  value="{{$webConfig->email}}" class="form-control" 
                                             name="email" id="email" >
@@ -66,16 +66,16 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="col-lg-4">
+                                    {{-- <div class="col-lg-4">
                                         <label class="form-label">Mã code</label>
                                         <input type="text"  value="{{$webConfig->code}}" class="form-control" 
                                            name="code" id="code" > 
-                                    </div>
-                                    <div class="col-lg-4">
+                                    </div> --}}
+                                    {{-- <div class="col-lg-4">
                                         <label class="form-label">Google map</label>
                                         <input type="text"  value="{{$webConfig->gg_map}}" class="form-control" 
                                            id="gg_map" name="gg_map" >
-                                    </div>
+                                    </div> --}}
                                     <div class="col-12 pt-3">
                                         <div class="row">
                                            
@@ -99,7 +99,7 @@
 
                                     <!-- Input item -->
                                     <div class="col-lg-3">
-                                        <label class="form-label">Facebook_id</label>
+                                        <label class="form-label">Facebook</label>
                                         <input type="text" class="form-control" placeholder="facebook_id"
                                             name="facebook_id" id="facebook_id" value="{{$webConfig->facebook_id}}">
                                     </div>
