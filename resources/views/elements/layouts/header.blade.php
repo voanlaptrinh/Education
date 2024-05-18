@@ -193,7 +193,7 @@
                         <li><a class="dropdown-item" href="{{ route('user.examHistory') }}"><i
                                     class="bi bi-gear fa-fw me-2"></i>Lịch sử làm bài</a></li>
                         <li><a class="dropdown-item" href="{{ route('user.subscriptionHistory') }}"><i
-                                    class="bi bi-gear fa-fw me-2"></i>Các gói bạn đã mua</a></li>
+                                    class="fas fa-box-open me-2"></i>Các gói bạn đã mua</a></li>
 
                         <li><a class="dropdown-item" href="{{ route('contact.index') }}"><i
                                     class="bi bi-info-circle fa-fw me-2"></i>Trợ giúp</a></li>
