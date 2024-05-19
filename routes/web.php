@@ -72,6 +72,8 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('student')->group(function () {
             Route::get('/', [StudentController::class, 'index'])->name('student.index');
             Route::get('/show/{studentS}', [StudentController::class, 'show'])->name('student.show');
+            Route::get('/edit/{studentS}', [StudentController::class, 'edit'])->name('student.edit');
+            Route::post('/update-user/{user}', [StudentController::class, 'update'])->name('update-user');
             Route::post('/{id}/toggle-status', [StudentController::class, 'toggleStatus'])->name('user.toggleStatus');
         });
         Route::prefix('contact')->group(function () {
