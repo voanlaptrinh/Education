@@ -109,7 +109,7 @@
 
           
 
-            <button type="submit" class="btn btn-success">Sửa bài học</button>
+            <button type="submit" class="btn btn-success">Sửa tài khoản</button>
         </form>
     </div>
 @endsection
