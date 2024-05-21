@@ -97,12 +97,7 @@
                                                 </h6>
                                             </div>
                                         </td>
-
-
-
-
-
-                                        <!-- Table data -->
+                                        
                                         <td>{{ $studentS->phone }}</td>
                                         <td>
                                             <form action="{{ route('user.toggleStatus', ['id' => $studentS->id]) }}"
