@@ -48,6 +48,7 @@
                             class="fas fa-newspaper fa-fw me-2"></i>Tin tức</a></li> --}}
                 <li class="nav-item"> <a
                         class="nav-link {{ Request::route()->getName() == 'student.index' ? 'active' : '' }}
+                       {{ Request::route()->getName() == 'student.edit' ? 'active' : '' }}
                     "
                         href="{{ route('student.index') }}"><i class="fas fa-user-graduate fa-fw me-2"></i>Quản lý Học
                         sinh</a></li>

@@ -63,7 +63,8 @@
                                 <th scope="col" class="border-0 rounded-start">Ảnh đại diện</th>
                                 <th scope="col" class="border-0 ">Tên </th>
                                 <th scope="col" class="border-0">Điện thoại</th>
-                                <th scope="col" class="border-0 rounded-end">Trạng thái</th>
+                                <th scope="col" class="border-0">Trạng thái</th>
+                                <th scope="col" class="border-0 rounded-end">Hoạt động</th>
                             </tr>
                         </thead>
                         <style>
@@ -111,6 +112,10 @@
                                             </form>
                                         </td>
 
+                                        <td>
+                                            <a  class="btn btn-primary" href="{{ route('student.edit', ['studentS' => $studentS]) }}"
+                                            class="stretched-link">Sửa nội dung</a>
+                                        </td>
 
                                     </tr>
                                 @endforeach
