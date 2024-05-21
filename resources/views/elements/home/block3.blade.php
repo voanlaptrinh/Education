@@ -61,11 +61,11 @@
                                         <div class="card-body pb-0">
                                             <!-- Badge and favorite -->
                                             <div class="d-flex justify-content-between mb-2">
-                                                <a href="#"
+                                                <a href="{{ route('home.course', $subject) }}"
                                                     class="badge bg-success bg-opacity-10 text-success">{{ $subject->name }}</a>
-                                                <a href="#"
+                                                <a href=""
                                                     class="badge bg-success bg-opacity-10 text-success">{{ $subject->class->name }}</a>
-                                                <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                                <a href="#" class="text-danger"></a>
                                             </div>
                                             <!-- Title -->
                                             <h5 class="card-title fw-normal">{{ $course->name }}
