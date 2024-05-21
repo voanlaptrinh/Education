@@ -92,7 +92,7 @@
                                                                     class="d-flex justify-content-between align-items-center">
                                                                     <div
                                                                         class="position-relative d-flex align-items-center">
-                                                                        <a href="#"
+                                                                        <a 
                                                                             class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                             <i class="fas fa-play me-0"></i>
                                                                         </a>

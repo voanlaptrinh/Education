@@ -1,6 +1,6 @@
 <header class="navbar-light navbar-sticky header-static">
     <!-- Nav START -->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar navbar-expand-xl pb-2">
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             @if (!empty($webConfig->logo))

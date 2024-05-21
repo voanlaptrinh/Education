@@ -42,7 +42,7 @@
                 </div>
             </div>
             @if (count($documents) > 0)
-                <div class="row g-4 justify-content-center">
+                <div class="row g-4 ">
                     @foreach ($documents as $item)
                         <div class="col-lg-10 col-xl-6">
                             <div class="card shadow p-2">
@@ -97,7 +97,7 @@
                         </div>
                     @endforeach
                 </div>
-                <nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
+                <nav class="mt-4 d-flex justify-content-end" aria-label="navigation">
                     <ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                             @if ($documents->currentPage() > 1)

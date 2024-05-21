@@ -3,19 +3,12 @@
     <section class="pt-5 pb-0"
         style="background-image:url(assets/images/element/map.svg); background-position: center left; background-size: cover;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-xl-6 text-center mx-auto">
-                    <!-- Title -->
-                    <h6 class="text-primary">Liên hệ</h6>
-                    <h1 class="mb-4">Chúng tôi ở đây để giúp đỡ!</h1>
-                </div>
-            </div>
 
             <!-- Contact info box -->
             <div class="row g-4 g-md-5 mt-0 mt-lg-3">
                 <!-- Box item -->
                 <div class="col-lg-12 mt-lg-0">
-                    
+
                 </div>
 
                 <!-- Box item -->
@@ -24,10 +17,10 @@
         </div>
     </section>
     <!-- =======================
-            Page Banner END -->
+                Page Banner END -->
 
     <!-- =======================
-            Image and contact form START -->
+                Image and contact form START -->
     <section>
         <div class="container">
             <div class="row g-4 g-lg-0 align-items-center">
@@ -66,24 +59,25 @@
                                             class="fab fa-fw fa-facebook-square"></i></a> </li>
                             @endif
                             @if ($webConfig->instagram)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram" href="{{$webConfig->instagram}}"><i
-                                            class="fab fa-fw fa-instagram"></i></a> </li>
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram"
+                                        href="{{ $webConfig->instagram }}"><i class="fab fa-fw fa-instagram"></i></a> </li>
                             @endif
                             @if ($webConfig->twitter)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter" href="{{$webConfig->twitter}}"><i
-                                            class="fab fa-fw fa-twitter"></i></a> </li>
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter"
+                                        href="{{ $webConfig->twitter }}"><i class="fab fa-fw fa-twitter"></i></a> </li>
                             @endif
                             @if ($webConfig->linkedin)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-linkedin" href="{{$webConfig->linkedin}}"><i
-                                            class="fab fa-fw fa-linkedin-in"></i></a> </li>
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-linkedin"
+                                        href="{{ $webConfig->linkedin }}"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
                             @endif
                             @if ($webConfig->dribbble)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-dribbble" href="{{$webConfig->dribbble}}"><i
-                                            class="fas fa-fw fa-basketball-ball"></i></a> </li>
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-dribbble"
+                                        href="{{ $webConfig->dribbble }}"><i class="fas fa-fw fa-basketball-ball"></i></a>
+                                </li>
                             @endif
                             @if ($webConfig->pinterest)
-                                <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest" href="{{$webConfig->pinterest}}"><i
-                                            class="fab fa-fw fa-pinterest"></i></a> </li>
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest"
+                                        href="{{ $webConfig->pinterest }}"><i class="fab fa-fw fa-pinterest"></i></a> </li>
                             @endif
 
                         </ul>
@@ -93,9 +87,9 @@
                 <!-- Contact form START -->
                 <div class="col-md-6">
                     <!-- Title -->
-                    <h2 class="mt-4 mt-md-0">Hãy nói chuyện</h2>
+                    <h2 class="mt-4 mt-md-0">Liên hệ với chúng tôi</h2>
                     <p>Hãy liên hệ trực tiếp với chúng tôi hoặc điền vào biểu mẫu và chúng tôi sẽ liên hệ lại với bạn ngay
-                        lập tức</p>
+                    </p>
 
                     <form action="{{ route('contact.create') }}" method="POST">
                         @csrf
@@ -148,12 +142,10 @@
         <div class="container">
             <div class="row">
                 @if (!empty($webConfig->gg_map))
-                    
-                <div class="col-12">
-                    <iframe class="w-100 h-400px grayscale rounded"
-                        src="{{$webConfig->gg_map}}"
-                        height="500" style="border:0;" aria-hidden="false" tabindex="0"></iframe>
-                </div>
+                    <div class="col-12">
+                        <iframe class="w-100 h-400px grayscale rounded" src="{{ $webConfig->gg_map }}" height="500"
+                            style="border:0;" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
                 @endif
             </div>
         </div>

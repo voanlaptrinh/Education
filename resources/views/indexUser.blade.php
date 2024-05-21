@@ -51,9 +51,12 @@
                                         </ul>
                                     </div>
                                     <!-- Button -->
+                                    @if (! (Request::route()->getName() == 'profile'))
+                                        
                                     <div class="mt-2 mt-sm-0">
                                         <a href="{{ route('profile', Auth::user()->id) }}" class="btn btn-outline-primary mb-0">Thông tin tài khoản</a>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
