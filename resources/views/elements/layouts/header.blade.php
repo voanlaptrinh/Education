@@ -4,13 +4,13 @@
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             @if (!empty($webConfig->logo))
-                <div class="d-flex ">
+                <div class="d-flex justify-content-center">
                     <a class="" href="/" class="avatar avatar-xxxl">
-                        <img class="avatar-img " style="" src=" {{ asset('storage/' . $webConfig->logo) }}"
+                        <img class="avatar-img "  style="width: 70%;" src=" {{ asset('storage/' . $webConfig->logo) }}"
                             alt="logo">
                     </a>
-                    <div class="d-flex justify-content-center pt-4 ps-2 ">
-                        <h4 class="d-none d-md-block">
+                    <div class="pt-3">
+                        <h4 class="d-flex justify-content-center">
                            <a href="/"> <div class="d-flex">
                             <span class="pe-1" style="color: rgb(226, 121, 0);">HD</span>
                             <span style="color:rgba(19, 19, 99, 0.997)">Education</span>

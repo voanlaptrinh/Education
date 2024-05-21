@@ -52,6 +52,11 @@ class DatabaseSeeder extends Seeder
         Classes::create(['name' => 'Lớp 4', 'status' => 1]);
         Classes::create(['name' => 'Lớp 5', 'status' => 1]);
         Subject::create(['name' => 'Mathematics', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Mathematics1', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Mathematics2', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Mathematics3', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Mathematics4', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
+        Subject::create(['name' => 'Mathematics5', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
         Subject::create(['name' => 'Physics', 'status' => 1, 'class_id' => 1, 'description' => 'sdasd']);
         Subject::create(['name' => 'lớp 4 1', 'status' => 1, 'class_id' => 2, 'description' => 'sdasd']);
         Subject::create(['name' => 'lớp 4 1', 'status' => 1, 'class_id' => 2, 'description' => 'sdasd']);

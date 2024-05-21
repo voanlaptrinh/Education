@@ -104,7 +104,7 @@
 
                         <div class="table-responsive border-0 rounded-3">
                             <!-- Table START -->
-                            <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                            <table class="table table-Light align-middle p-4 mb-0 table-hover">
                                 <!-- Table head -->
                                 <thead>
                                     <tr>

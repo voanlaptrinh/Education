@@ -134,54 +134,7 @@
                         </form>
                     </div>
 
-                    {{-- <!-- Select option -->
-                    <div class="col-md-3">
-                        <!-- Short by filter -->
-                        <form>
-                            <div class="choices" data-type="select-one" tabindex="0" role="combobox"
-                                aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-                                <div class="choices__inner"><select
-                                        class="form-select js-choice border-0 z-index-9 choices__input"
-                                        aria-label=".form-select-sm" hidden="" tabindex="-1" data-choice="active">
-                                        <option value="" data-custom-properties="[object Object]">Sort by</option>
-                                    </select>
-                                    <div class="choices__list choices__list--single">
-                                        <div class="choices__item choices__placeholder choices__item--selectable"
-                                            data-item="" data-id="1" data-value=""
-                                            data-custom-properties="[object Object]" aria-selected="true">Sort by</div>
-                                    </div>
-                                </div>
-                                <div class="choices__list choices__list--dropdown" aria-expanded="false"><input
-                                        type="search" name="search_terms" class="choices__input choices__input--cloned"
-                                        autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox"
-                                        aria-autocomplete="list" aria-label="Sort by" placeholder="">
-                                    <div class="choices__list" role="listbox">
-                                        <div id="choices--iiq1-item-choice-5"
-                                            class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted"
-                                            role="option" data-choice="" data-id="5" data-value=""
-                                            data-select-text="Press to select" data-choice-selectable=""
-                                            aria-selected="true">Sort by</div>
-                                        <div id="choices--iiq1-item-choice-1"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="1" data-value="Accepted"
-                                            data-select-text="Press to select" data-choice-selectable="">Accepted</div>
-                                        <div id="choices--iiq1-item-choice-2"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="2" data-value="Newest"
-                                            data-select-text="Press to select" data-choice-selectable="">Newest</div>
-                                        <div id="choices--iiq1-item-choice-3"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="3" data-value="Oldest"
-                                            data-select-text="Press to select" data-choice-selectable="">Oldest</div>
-                                        <div id="choices--iiq1-item-choice-4"
-                                            class="choices__item choices__item--choice choices__item--selectable"
-                                            role="option" data-choice="" data-id="4" data-value="Rejected"
-                                            data-select-text="Press to select" data-choice-selectable="">Rejected</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div> --}}
+
                 </div>
                 <!-- Search and select END -->
             </div>
@@ -209,75 +162,79 @@
 
                         <!-- Table body START -->
                         <tbody>
-                            @if (count($subjects)>0)
-                            @foreach ($subjects as $subject)
-                            <tr>
-                                <!-- Table data -->
-                                <td>
-                                    <div class="d-flex align-items-center position-relative">
-                                        <!-- Image -->
+                            @if (count($subjects) > 0)
+                                @foreach ($subjects as $subject)
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex align-items-center position-relative">
+                                                <!-- Image -->
 
-                                        <!-- Title -->
-                                        <h6 class="table-responsive-title mb-0 ms-2">
-                                            <a href="#" class="stretched-link">{{ $subject->name }}</a>
-                                        </h6>
-                                    </div>
-                                </td>
+                                                <!-- Title -->
+                                                <h6 class="table-responsive-title mb-0 ms-2">
+                                                    <a href="#" class="stretched-link">{{ $subject->name }}</a>
+                                                </h6>
+                                            </div>
+                                        </td>
 
-                                <!-- Table data -->
-                                <td>
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="ms-2">
-                                            <h6 class="mb-0 fw-light">Admin</h6>
-                                        </div>
-                                    </div>
-                                </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div class="ms-2">
+                                                    <h6 class="mb-0 fw-light">Admin</h6>
+                                                </div>
+                                            </div>
+                                        </td>
 
-                                <!-- Table data -->
-                                <td>
-                                    <form action="{{ route('subjects.toggleStatus', ['id' => $subject->id]) }}"
-                                        method="post">
-                                        @csrf
-                                        @if ($subject->status == 1)
-                                            <button class="btn btn-success">Hoạt động</button>
-                                        @else
-                                            <button class="btn btn-warning">Tạm khóa</button>
-                                        @endif
-                                    </form>
-
-
-                                </td>
-                                <td>
-                                    <a href="{{ route('lesson.index', ['subject' => $subject]) }}" class="btn btn-primary">Bài học</a>
-                                </td>
-                                <td>
-                                    {{ $subject->class->name }}
+                                        <!-- Table data -->
+                                        <td>
+                                            <form action="{{ route('subjects.toggleStatus', ['id' => $subject->id]) }}"
+                                                method="post">
+                                                @csrf
+                                                @if ($subject->status == 1)
+                                                    <button class="btn btn-success">Hoạt động</button>
+                                                @else
+                                                    <button class="btn btn-warning">Tạm khóa</button>
+                                                @endif
+                                            </form>
 
 
-                                </td>
-                                <!-- Table data -->
-                                <td>
-                                    <a href="{{ route('courses.index', $subject) }}"
-                                        class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm bài kiểm tra</a>
-                                </td>
-                                <td class="d-flex">
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('lesson.index', ['subject' => $subject]) }}"
+                                                class="btn btn-primary">Bài học</a>
+                                        </td>
+                                        <td>
+                                            {{ $subject->class->name }}
 
 
-                                    <button type="button" class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop" data-action="edit"
-                                        data-class-id="{{ $subject->id }}">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
+                                        </td>
+                                        <!-- Table data -->
+                                        <td>
+                                            <a href="{{ route('courses.index', $subject) }}"
+                                                class="btn btn-sm btn-success-soft me-1 mb-1 mb-md-0">Thêm bài kiểm tra</a>
+                                        </td>
+                                        <td class="d-flex">
 
-                                    <form action="{{ route('subjects.destroy', $subject) }}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
-                                            onclick="return confirm('Bạn chắc chắn muốn xóa môn học này? Lưu ý các câu hỏi liên quan đến môn học cũng bị xóa!')"><i class="bi bi-trash  "></i></button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
+
+                                            <button type="button"
+                                                class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0"
+                                                data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                                data-action="edit" data-class-id="{{ $subject->id }}">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+
+                                            <form action="{{ route('subjects.destroy', $subject) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit"
+                                                    class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                                    onclick="return confirm('Bạn chắc chắn muốn xóa môn học này? Lưu ý các câu hỏi liên quan đến môn học cũng bị xóa!')"><i
+                                                        class="bi bi-trash  "></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             @else
                                 <tr>
                                     <td>Không có môn học nào</td>
@@ -289,10 +246,8 @@
                                     <td></td>
                                 </tr>
                             @endif
-                            
-                            <!-- Table row -->
 
-
+    
 
 
 
@@ -303,7 +258,35 @@
                 </div>
                 <!-- Course table END -->
             </div>
+            <div class="card-footer bg-transparent px-0">
+                <!-- Pagination START -->
+                <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                    <!-- Content -->
+                    <p class="mb-0 text-center text-sm-start"></p>
+                    <!-- Pagination -->
+                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                            @if ($subjects->currentPage() > 1)
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $subjects->url($subjects->currentPage() - 1) }}" tabindex=""><i
+                                            class="fas fa-angle-left"></i></a></li>
+                            @endif
+                            @for ($i = 1; $i <= $subjects->lastPage(); $i++)
+                                <li class=" page-item mb-0 {{ $subjects->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $subjects->url($i) }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+                            @if ($subjects->currentPage() < $subjects->lastPage())
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $subjects->url($subjects->currentPage() + 1) }}"><i
+                                            class="fas fa-angle-right"></i></a></li>
+                            @endif
 
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Pagination END -->
+            </div>
         </div>
         <!-- Card END -->
     </div>
