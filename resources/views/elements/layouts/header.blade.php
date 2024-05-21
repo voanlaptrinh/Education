@@ -10,11 +10,11 @@
                             alt="logo">
                     </a>
                     <div class="d-flex justify-content-center pt-4 ps-2 ">
-                        <h4 class="  d-none d-md-block">
-                            <div class="d-flex">
-                                <span class="pe-1" style="color: rgb(226, 121, 0);">HD</span>
-                                <span style="color:rgba(19, 19, 99, 0.997)">Education</span>
-                            </div>
+                        <h4 class="d-none d-md-block">
+                           <a href="/"> <div class="d-flex">
+                            <span class="pe-1" style="color: rgb(226, 121, 0);">HD</span>
+                            <span style="color:rgba(19, 19, 99, 0.997)">Education</span>
+                        </div></a>
                         </h4>
                     </div>
 
