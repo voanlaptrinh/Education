@@ -157,7 +157,9 @@
 					<!-- Button -->
 					@if (!empty($banner->link_button))
 					<a href="{{$banner->link_button}}" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Bắt đầu</a>
-						
+						@else
+					<a href="#mon_hoc_btn" class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Bắt đầu</a>
+
 					@endif
 					<!-- Video button -->
 					@if (!empty($banner->link_video))
