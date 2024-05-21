@@ -44,7 +44,7 @@
                                             <div class="mb-0 ms-2">
                                                 <!-- Title -->
                                                 <h6 class="table-responsive-title"><a
-                                                        href="#">{{ $item->course->name }}</a></h6>
+                                                        >{{ $item->course->name }}</a></h6>
                                                 <!-- Info -->
 
                                             </div>
