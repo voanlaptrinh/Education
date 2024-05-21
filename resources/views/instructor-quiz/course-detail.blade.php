@@ -2,25 +2,24 @@
 @section('content')
     <section class="bg-light py-0 py-sm-5">
         <div class="container">
-            <div class="row py-5">
+            <div class="row ">
                 <div class="col-lg-8">
                     <!-- Badge -->
-                    <h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">
-                        {{ $lesson->subject->name }}</h6>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">
+                          {{ $lesson->subject->name }}</h6></li>
+                          <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
+                                  class="fas fa-signal text-success me-2"></i>{{ $lesson->subject->class->name }}</li>
+                          <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
+                                  class="bi bi-patch-exclamation-fill text-danger me-2"></i>
+                              {{ $lesson->created_at->format('d/m/Y') }}</li>
+                          <li class="list-inline-item h6 mb-0"><i class="fas fa-globe text-info me-2"></i>Tiếng việt</li>
+                      </ul>
                     <!-- Title -->
                     <h1>{{ $lesson->title }}</h1>
                     <p>{{ $lesson->description }}</p>
                     <!-- Content -->
-                    <ul class="list-inline mb-0">
-                        {{-- <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
-					<li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled</li> --}}
-                        <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
-                                class="fas fa-signal text-success me-2"></i>{{ $lesson->subject->class->name }}</li>
-                        <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
-                                class="bi bi-patch-exclamation-fill text-danger me-2"></i>
-                            {{ $lesson->created_at->format('d/m/Y') }}</li>
-                        <li class="list-inline-item h6 mb-0"><i class="fas fa-globe text-info me-2"></i>Tiếng việt</li>
-                    </ul>
+                   
                 </div>
             </div>
         </div>
