@@ -179,16 +179,12 @@
                                             class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-4 ms-n3 px-md-3">Pro</span>
                                     @else
                                         <span
-                                            class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-4 ms-n3 px-md-3">Pro</span>
+                                            class="badge text-bg-success rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-4 ms-n3 px-md-3">Free</span>
                                     @endif
                                 </div>
                                 <div>
-
-
                                     <a class="h6" href="#">{{ Auth::user()->name }}</a>
                                     <p class="small m-0">{{ Auth::user()->email }}</p>
-
-
                                 </div>
                             </div>
                         </li>
