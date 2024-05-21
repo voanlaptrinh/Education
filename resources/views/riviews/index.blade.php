@@ -99,34 +99,34 @@
                 <!-- Main content START -->
                 <div class="col-xl-12 mt-5">
                     <!-- Student review START -->
-                    <div class="card border bg-transparent rounded-3">
-                        <!-- Header START -->
-                        <div class="card-header bg-transparent border-bottom">
-                            <div class="row justify-content-between align-middle">
-                                <!-- Title -->
-                                <div class="col-sm-6">
-                                    <h3 class="card-header-title mb-2 mb-sm-0">Đánh giá </h3>
+                    <div class=" bg-transparent rounded-3">
+                        <div class="card border">
+                            <!-- Header START -->
+                            <div class="card-header bg-transparent border-bottom">
+                                <div class="row justify-content-between align-middle">
+                                    <!-- Title -->
+                                    <div class="col-sm-6">
+                                        <h3 class="card-header-title mb-2 mb-sm-0">Đánh giá </h3>
+                                    </div>
+
+                                    <!-- Short by filter -->
+
                                 </div>
-
-                                <!-- Short by filter -->
-
                             </div>
-                        </div>
-                        <!-- Header END -->
+                            <!-- Header END -->
 
-                        <!-- Reviews START -->
-                        <div class="card-body mt-2 mt-sm-4 ">
-                            <div class="mt-2">
-
+                            <!-- Reviews START -->
+                            <div class="card-body mt-2 mt-sm-4 ">
+                                <div class="mt-2">
 
 
-                                <!-- Button -->
 
-                            </div>
-                            <!-- Review item START -->
-                            @if (count($countReviews) > 0)
-                                @foreach ($reviews as $review)
-                                   
+                                    <!-- Button -->
+
+                                </div>
+                                <!-- Review item START -->
+                                @if (count($countReviews) > 0)
+                                    @foreach ($reviews as $review)
                                         <div class="d-sm-flex">
                                             <!-- Avatar image -->
                                             @if (!empty($review->user->image))
@@ -168,13 +168,13 @@
                                             </div>
                                         </div>
                                         <hr>
-                                    
-                                @endforeach
-                            @else
-                                <span>Chưa có đánh giá nào...</span>
-                            @endif
-                            <!-- Divider -->
+                                    @endforeach
+                                @else
+                                    <span>Chưa có đánh giá nào...</span>
+                                @endif
+                                <!-- Divider -->
 
+                            </div>
                         </div>
                         <!-- Reviews END -->
                         @if (count($countReviews) > 0)
@@ -200,7 +200,8 @@
                                                 </li>
                                             @endfor
                                             @if ($reviews->currentPage() < $reviews->lastPage())
-                                                <li class="page-item mb-0"><a class="page-link" href="{{ $reviews->url($reviews->currentPage() + 1) }}"><i
+                                                <li class="page-item mb-0"><a class="page-link"
+                                                        href="{{ $reviews->url($reviews->currentPage() + 1) }}"><i
                                                             class="fas fa-angle-right"></i></a></li>
                                             @endif
 

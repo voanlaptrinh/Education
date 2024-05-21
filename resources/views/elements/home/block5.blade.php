@@ -29,9 +29,9 @@
                                         <span class="hstack gap-2">
                                             <a href="#"
                                                 class="badge bg-primary bg-opacity-10 text-primary">{{ $item->subject->class->name }}</a>
-                                            <a href="#" class="badge text-bg-dark">{{ $item->subject->name }}</a>
+                                            <a href="{{ route('home.course', $item->subject) }}" class="badge text-bg-dark">{{ $item->subject->name }}</a>
                                         </span>
-                                        <a href="#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
+                                        <a href="" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
                                     </div>
                                     <!-- Title -->
                                     <h5 class="card-title"><a

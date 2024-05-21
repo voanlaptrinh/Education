@@ -37,13 +37,13 @@
                             <div class="col-11 mx-auto position-relative">
                                 <div class="row align-items-center">
                                     <!-- Title -->
-                                    <div class="col-lg-7">
-                                        <h3 class="text-white">Chào mừng bạn đến với {{ $subject->name }}!</h3>
+                                    <div class="col-lg-8">
+                                        <h3 class="text-white">Chào mừng bạn đến với {{ $subject->name }} ({{$subject->class->name}})!</h3>
                                         <p class="text-white mb-3 mb-lg-0">{{ $subject->description }}</p>
                                     </div>
                                     <!-- Content and input -->
-                                    <div class="col-lg-5 text-lg-end">
-                                        <a href="#" class="btn btn-outline-warning mb-0">Bắt đầu giảng dạy</a>
+                                    <div class="col-lg-4 text-lg-end">
+                                       
                                     </div>
                                 </div>
                             </div>

@@ -15,27 +15,7 @@
             <div class="row g-4 g-md-5 mt-0 mt-lg-3">
                 <!-- Box item -->
                 <div class="col-lg-12 mt-lg-0">
-                    <div class="card card-body bg-primary shadow py-5 text-center h-100">
-                        <!-- Title -->
-                        <h5 class="text-white mb-3">Hỗ trợ khách hàng</h5>
-                        <ul class="list-inline mb-0">
-                            <!-- Address -->
-                            <li class="list-item mb-3">
-                                <a href="#" class="text-white text-uppercase"> <i
-                                        class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>{{ $webConfig->address }} </a>
-                            </li>
-                            <!-- Phone number -->
-                            <li class="list-item mb-3">
-                                <a href="tel:{{ $webConfig->phone }}" class="text-white"> <i
-                                        class="fas fa-fw fa-phone-alt me-2"></i>{{ $webConfig->phone }} </a>
-                            </li>
-                            <!-- Email id -->
-                            <li class="list-item mb-0">
-                                <a href="mailto:{{ $webConfig->email }}" class="text-white"> <i
-                                        class="far fa-fw fa-envelope me-2"></i>{{ $webConfig->email }} </a>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
 
                 <!-- Box item -->
@@ -55,7 +35,27 @@
                 <div class="col-md-6 align-items-center text-center">
                     <!-- Image -->
                     <img src="assets/user/images/element/contact.svg" class="h-400px" alt="">
-
+                    <div class="card card-body ">
+                        <!-- Title -->
+                        <h5 class="text-dark mb-3">Hỗ trợ khách hàng</h5>
+                        <ul class="list-inline mb-0">
+                            <!-- Address -->
+                            <li class="list-item mb-3">
+                                <a href="#" class="text-dark text-uppercase"> <i
+                                        class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>{{ $webConfig->address }} </a>
+                            </li>
+                            <!-- Phone number -->
+                            <li class="list-item mb-3">
+                                <a href="tel:{{ $webConfig->phone }}" class="text-dark"> <i
+                                        class="fas fa-fw fa-phone-alt me-2"></i>{{ $webConfig->phone }} </a>
+                            </li>
+                            <!-- Email id -->
+                            <li class="list-item mb-0">
+                                <a href="mailto:{{ $webConfig->email }}" class="text-dark"> <i
+                                        class="far fa-fw fa-envelope me-2"></i>{{ $webConfig->email }} </a>
+                            </li>
+                        </ul>
+                    </div>
                     <!-- Social media button -->
                     <div class="d-sm-flex align-items-center justify-content-center mt-2 mt-sm-4">
                         <h5 class="mb-0">Theo dõi tại:</h5>

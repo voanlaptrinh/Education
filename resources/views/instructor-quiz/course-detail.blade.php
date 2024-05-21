@@ -38,14 +38,15 @@
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
                                     <button class="nav-link mb-2 mb-md-0 active" id="course-pills-tab-1"
                                         data-bs-toggle="pill" data-bs-target="#course-pills-1" type="button" role="tab"
-                                        aria-controls="course-pills-1" aria-selected="true">Tổng quan</button>
+                                        aria-controls="course-pills-1" aria-selected="true">Chương trình
+                                        giảng dạy</button>
                                 </li>
                                 <!-- Tab item -->
                                 <li class="nav-item me-2 me-sm-4" role="presentation">
                                     <button class="nav-link mb-2 mb-md-0" id="course-pills-tab-2" data-bs-toggle="pill"
                                         data-bs-target="#course-pills-2" type="button" role="tab"
-                                        aria-controls="course-pills-2" aria-selected="false" tabindex="-1">Chương trình
-                                        giảng dạy</button>
+                                        aria-controls="course-pills-2" aria-selected="false" tabindex="-1">
+                                        Tổng quan</button>
                                 </li>
                                 <!-- Tab item -->
 
@@ -59,20 +60,6 @@
                                 <!-- Content START -->
                                 <div class="tab-pane fade show active" id="course-pills-1" role="tabpanel"
                                     aria-labelledby="course-pills-tab-1">
-                                    <!-- Course detail START -->
-                                    {{ $lesson->content }}
-                                    <!-- Course detail END -->
-
-                                </div>
-                                <!-- Content END -->
-                                <!-- Modal -->
-                                <!-- Modal -->
-
-
-
-                                <!-- Content START -->
-                                <div class="tab-pane fade" id="course-pills-2" role="tabpanel"
-                                    aria-labelledby="course-pills-tab-2">
                                     <!-- Course accordion START -->
                                     <div class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
                                         @php
@@ -179,6 +166,15 @@
 
                                     </div>
                                     <!-- Course accordion END -->
+                                  
+                                </div>
+                                
+                                <div class="tab-pane fade" id="course-pills-2" role="tabpanel"
+                                    aria-labelledby="course-pills-tab-2">
+                                      <!-- Course detail START -->
+                                      {{ $lesson->content }}
+                                      <!-- Course detail END -->
+  
                                 </div>
                                 <!-- Content END -->
 
