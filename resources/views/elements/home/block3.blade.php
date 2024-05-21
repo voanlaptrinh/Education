@@ -63,7 +63,7 @@
                                             <div class="d-flex justify-content-between mb-2">
                                                 <a href="{{ route('home.course', $subject) }}"
                                                     class="badge bg-success bg-opacity-10 text-success">{{ $subject->name }}</a>
-                                                <a href=""
+                                                <a
                                                     class="badge bg-success bg-opacity-10 text-success">{{ $subject->class->name }}</a>
                                                 <a href="#" class="text-danger"></a>
                                             </div>
