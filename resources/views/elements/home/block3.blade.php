@@ -58,7 +58,7 @@
                                                   
                                                 @endif
                                             
-                                        <div class="card-body pb-0">
+                                        <div class="card-body pb-0 bg-secondary-subtle">
                                             <!-- Badge and favorite -->
                                             <div class="d-flex justify-content-between mb-2">
                                                 <a href="{{ route('home.course', $subject) }}"
@@ -95,7 +95,7 @@
                                             </div>
                                         </div>
                                         <!-- Card footer -->
-                                        <div class="card-footer pt-0 pb-3">
+                                        <div class="card-footer pt-0 pb-3 bg-secondary-subtle">
                                             <hr>
                                             <div class="d-flex justify-content-between ">
                                                 <span class="h6 fw-light mb-0"><i
