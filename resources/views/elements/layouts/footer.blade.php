@@ -7,18 +7,30 @@
             <div class="col-lg-3">
                 <!-- logo -->
                 @if (!empty($webConfig->logo))
-                    <a class="me-0" href="{{ route('home.index') }}">
-                        <img class="" src="{{ asset('storage/' . $webConfig->logo) }}"
-                            alt="logo">
-                       
-                    </a>
+                    <div class="d-flex justify-content-center">
+                        <a class="me-0" href="{{ route('home.index') }}">
+                            <img class="" style="" src="{{ asset('storage/' . $webConfig->logo) }}"
+                                alt="logo">
+                           
+                        </a>
+                    </div>
                 @else
                     <a class="me-0" href="{{ route('home.index') }}">
                         <img class="light-mode-item h-40px" src="/assets/user/images/logo.svg" alt="logo">
                         <img class="dark-mode-item h-40px" src="/assets/user/images/logo-light.svg" alt="logo">
                     </a>
                 @endif
-                <p class="my-3">{{ $webConfig->description }}</p>
+                <div class="my-3 text-break lh-base" style=" display: block;
+                display: -webkit-box;
+                max-width: 100%;
+                height: 60px;
+                margin: 0 auto;
+                font-size: 14px;
+                line-height: 1;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;">{{ $webConfig->description }}</div>
                 <!-- Social media icon -->
                 <ul class="list-inline mb-0 mt-3">
                     @if (!empty($webConfig->facebook_id))
@@ -59,7 +71,7 @@
             <!-- Widget 2 START -->
             <div class="col-lg-6">
                 <div class="row g-4">
-                    <!-- Link block -->
+                    
                     <div class="col-6 col-md-6">
                         <h5 class="mb-2 mb-md-4">Lớp học</h5>
                         <ul class="nav flex-column">
@@ -71,7 +83,7 @@
                     </div>
 
 
-                    {{-- <div class="col-6 col-md-4 h-50">
+                    {{-- <div class="col-4 col-md-4 h-50">
                         <h5 class="mb-2 mb-md-4">Môn học</h5>
                         <div class="subject-list-container overflow-auto ">
                             <ul class="nav flex-column subject-list">

@@ -50,7 +50,7 @@ class CourseController extends Controller
 
         $subject->courses()->create($courseData);
 
-        return redirect(route('courses.index', $subject))->with('success', 'Course created successfully!');
+        return redirect(route('courses.index', $subject))->with('success', 'Thêm đề bài thành công!');
     }
     public function edit(Subject $subject, Course $course)
     {
@@ -93,7 +93,7 @@ class CourseController extends Controller
         $course->update($courseData);
 
         // Chuyển hướng người dùng về trang danh sách đề bài
-        return redirect(route('courses.index', $subject))->with('success', 'Course updated successfully!');
+        return redirect(route('courses.index', $subject))->with('success', 'Xóa đề bài thành công!');
     }
     public function destroyCourse(Subject $subject, Course $course)
     {

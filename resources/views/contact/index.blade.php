@@ -28,22 +28,22 @@
                 <div class="col-md-6 align-items-center text-center">
                     <!-- Image -->
                     <img src="assets/user/images/element/contact.svg" class="h-400px" alt="">
-                    <div class="card card-body ">
+                    <div class="card card-body align-items-center">
                         <!-- Title -->
                         <h5 class="text-dark mb-3">Hỗ trợ khách hàng</h5>
                         <ul class="list-inline mb-0">
                             <!-- Address -->
-                            <li class="list-item mb-3">
+                            <li class="list-item mb-3 text-start">
                                 <a href="#" class="text-dark text-uppercase"> <i
                                         class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>{{ $webConfig->address }} </a>
                             </li>
                             <!-- Phone number -->
-                            <li class="list-item mb-3">
+                            <li class="list-item mb-3 text-start">
                                 <a href="tel:{{ $webConfig->phone }}" class="text-dark"> <i
                                         class="fas fa-fw fa-phone-alt me-2"></i>{{ $webConfig->phone }} </a>
                             </li>
                             <!-- Email id -->
-                            <li class="list-item mb-0">
+                            <li class="list-item mb-0 text-start">
                                 <a href="mailto:{{ $webConfig->email }}" class="text-dark"> <i
                                         class="far fa-fw fa-envelope me-2"></i>{{ $webConfig->email }} </a>
                             </li>
@@ -79,7 +79,14 @@
                                 <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest"
                                         href="{{ $webConfig->pinterest }}"><i class="fab fa-fw fa-pinterest"></i></a> </li>
                             @endif
-
+                            @if ($webConfig->youtube)
+                            <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest"
+                                href="{{$webConfig->youtube}}"><i class="fab fa-fw fa-youtube"></i></a>
+                                @endif
+                                @if ($webConfig->tiktok)
+                            <li class="list-inline-item"> <a class="fs-5 me-1 text-tiktok"
+                                href="{{$webConfig->tiktok}}"><i class="fab fa-fw fa-tiktok"></i></a>
+                                @endif
                         </ul>
                     </div>
                 </div>

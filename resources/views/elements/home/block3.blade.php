@@ -9,7 +9,7 @@
         </div>
 
         <!-- Tabs START -->
-        <ul class="aa1 nav nav-pills nav-pills-bg-soft justify-content-sm-center mb-4 px-3" id="course-pills-tab"
+        <ul class="aa1 nav nav-pills nav-pills-bg-soft justify-content-sm-center mb-4 px-3 " id="course-pills-tab"
             role="tablist">
             <!-- Tab item -->
             @foreach ($classes as $classIndex => $class)

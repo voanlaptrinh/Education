@@ -23874,8 +23874,27 @@ html[dir=rtl] .choices__input {
     display: none !important;
 }
 
+.slick-prev {
+    left: -15px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000 !important;
+    font-size: 26px;
+}
+
+.slick-next {
+    right: -15px;
+}
+
+.text-tiktok {
+    color: #000;
+}
+
 
 /*User CSS*/
 
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map *{
+/*# sourceMappingURL=style.css.map *{
