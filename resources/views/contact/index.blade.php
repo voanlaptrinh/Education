@@ -17,10 +17,10 @@
         </div>
     </section>
     <!-- =======================
-                Page Banner END -->
+                        Page Banner END -->
 
     <!-- =======================
-                Image and contact form START -->
+                        Image and contact form START -->
     <section>
         <div class="container">
             <div class="row g-4 g-lg-0 align-items-center">
@@ -80,13 +80,13 @@
                                         href="{{ $webConfig->pinterest }}"><i class="fab fa-fw fa-pinterest"></i></a> </li>
                             @endif
                             @if ($webConfig->youtube)
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest"
-                                href="{{$webConfig->youtube}}"><i class="fab fa-fw fa-youtube"></i></a>
-                                @endif
-                                @if ($webConfig->tiktok)
-                            <li class="list-inline-item"> <a class="fs-5 me-1 text-tiktok"
-                                href="{{$webConfig->tiktok}}"><i class="fab fa-fw fa-tiktok"></i></a>
-                                @endif
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-pinterest"
+                                        href="{{ $webConfig->youtube }}"><i class="fab fa-fw fa-youtube"></i></a></li>
+                            @endif
+                            @if ($webConfig->tiktok)
+                                <li class="list-inline-item"> <a class="fs-5 me-1 text-tiktok"
+                                        href="{{ $webConfig->tiktok }}"><i class="fab fa-fw fa-tiktok"></i></a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                 <div class="col-md-6">
                     <!-- Title -->
                     <h2 class="mt-4 mt-md-0">Liên hệ với chúng tôi</h2>
-                    <p>Hãy liên hệ trực tiếp với chúng tôi hoặc điền vào biểu mẫu và chúng tôi sẽ liên hệ lại với bạn ngay
+                    <p>Hãy liên hệ trực tiếp với chúng tôi hoặc điền vào biểu mẫu và chúng tôi sẽ liên hệ lại với bạn !
                     </p>
 
                     <form action="{{ route('contact.create') }}" method="POST">

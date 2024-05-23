@@ -9,9 +9,9 @@
                 @if (!empty($webConfig->logo))
                     <div class="d-flex justify-content-center">
                         <a class="me-0" href="{{ route('home.index') }}">
-                            <img class="" style="" src="{{ asset('storage/' . $webConfig->logo) }}"
+                            <img class="" style="width:80%" src="{{ asset('storage/' . $webConfig->logo) }}"
                                 alt="logo">
-                           
+
                         </a>
                     </div>
                 @else
@@ -20,7 +20,8 @@
                         <img class="dark-mode-item h-40px" src="/assets/user/images/logo-light.svg" alt="logo">
                     </a>
                 @endif
-                <div class="my-3 text-break lh-base" style=" display: block;
+                <div class="my-3 text-break lh-base"
+                    style=" display: block;
                 display: -webkit-box;
                 max-width: 100%;
                 height: 60px;
@@ -30,7 +31,8 @@
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
-                text-overflow: ellipsis;">{{ $webConfig->description }}</div>
+                text-overflow: ellipsis;">
+                    {{ $webConfig->description }}</div>
                 <!-- Social media icon -->
                 <ul class="list-inline mb-0 mt-3">
                     @if (!empty($webConfig->facebook_id))
@@ -63,7 +65,23 @@
                             </a>
                         </li>
                     @endif
-
+                    @if ($webConfig->dribbble)
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-dribbble"
+                                href="{{ $webConfig->dribbble }}"><i class="fas fa-fw fa-basketball-ball"></i></a>
+                        </li>
+                    @endif
+                    @if ($webConfig->pinterest)
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-pinterest"
+                                href="{{ $webConfig->pinterest }}"><i class="fab fa-fw fa-pinterest"></i></a> </li>
+                    @endif
+                    @if ($webConfig->youtube)
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-pinterest"
+                                href="{{ $webConfig->youtube }}"><i class="fab fa-fw fa-youtube"></i></a></li>
+                    @endif
+                    @if ($webConfig->tiktok)
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-tiktok"
+                                href="{{ $webConfig->tiktok }}"><i class="fab fa-fw fa-tiktok"></i></a></li>
+                    @endif
                 </ul>
             </div>
             <!-- Widget 1 END -->
@@ -71,7 +89,7 @@
             <!-- Widget 2 START -->
             <div class="col-lg-6">
                 <div class="row g-4">
-                    
+
                     <div class="col-6 col-md-6">
                         <h5 class="mb-2 mb-md-4">Lớp học</h5>
                         <ul class="nav flex-column">

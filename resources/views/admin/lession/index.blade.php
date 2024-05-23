@@ -76,7 +76,7 @@
                                             <div class="d-flex align-items-center position-relative">
                                                 <!-- Image -->
                                                 <div class="w-60px">
-                                                    <img src="{{ asset('storage/' . $lesson->image) }}" class="rounded"
+                                                    <img style="height: 34px" src="{{ asset('storage/' . $lesson->image) }}" class="rounded"
                                                         alt="">
                                                 </div>
                                                 <!-- Title -->

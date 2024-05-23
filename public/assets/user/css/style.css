@@ -21790,9 +21790,9 @@ small,
     position: absolute;
     top: 15px;
     left: 0;
-    background: var(--bs-white);
+    background: #4180B1;
     padding: 0 10px;
-    color: #24292d;
+    color: #fff;
     -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 }
@@ -21802,8 +21802,8 @@ small,
     position: absolute;
     top: 0px;
     right: -20px;
-    border-top: 0.75em solid #fff;
-    border-bottom: 0.75em solid #fff;
+    border-top: 0.75em solid #4180B1;
+    border-bottom: 0.75em solid #4180B1;
     border-right: 20px solid transparent;
     border-left: 0px solid transparent;
 }
