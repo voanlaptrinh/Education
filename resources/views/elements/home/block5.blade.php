@@ -23,7 +23,7 @@
                                     class="card-img-top" alt="course image">
                                 {{-- <div class="ribbon mt-3"><span>Free</span></div> --}}
                                 <!-- Card body -->
-                                <hr>
+                                <hr style="margin-top: 0"> 
                                 <div class="card-body pb-0">
                                     <!-- Badge and favorite -->
                                     <div class="d-flex justify-content-between mb-3">
