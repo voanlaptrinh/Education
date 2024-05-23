@@ -9,7 +9,7 @@
                 @if (!empty($webConfig->logo))
                     <div class="d-flex justify-content-center">
                         <a class="me-0" href="{{ route('home.index') }}">
-                            <img class="" style="width:80%" src="{{ asset('storage/' . $webConfig->logo) }}"
+                            <img class="" style="width:90%" src="{{ asset('storage/' . $webConfig->logo) }}"
                                 alt="logo">
 
                         </a>
@@ -93,7 +93,7 @@
                     <div class="col-6 col-md-6">
                         <h5 class="mb-2 mb-md-4">Lớp học</h5>
                         <ul class="nav flex-column">
-                            @foreach ($classes as $item)
+                            @foreach ($classes->take(5) as $item)
                                 <li class="nav-item"><a class="nav-link" href="#">{{ $item->name }}</a></li>
                             @endforeach
 
@@ -133,7 +133,7 @@
                     <div class="col-6 col-md-6">
                         <h5 class="mb-2 mb-md-4">Tài liệu theo lớp</h5>
                         <ul class="nav flex-column">
-                            @foreach ($classes as $item)
+                            @foreach ($classes->take(5) as $item)
                                 <li class="nav-item"><a class="nav-link"
                                         href="{{ route('document.index', $item) }}">{{ $item->name }}</a></li>
                             @endforeach
