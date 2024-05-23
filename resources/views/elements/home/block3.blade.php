@@ -47,7 +47,7 @@
                                 <div class="col-sm-6 col-lg-4 col-xl-3">
                                     <div class="card shadow h-100">
                                         <!-- Image -->
-                                        <img src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}"
+                                        <img  style="height: 225px" src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}"
                                             class="card-img-top" alt="course image">
                                        
                                                 @if ($course->is_free == 1)

@@ -19,19 +19,19 @@
                             <div class="card action-trigger-hover border bg-transparent pb-3">
                                 <!-- Image -->
                                
-                                <img src="{{ $item->image ? asset('storage/' . $item->image) : 'placeholder.jpg' }}"
+                                <img style="height: 225px" src="{{ $item->image ? asset('storage/' . $item->image) : 'placeholder.jpg' }}"
                                     class="card-img-top" alt="course image">
-                                <div class="ribbon mt-3"><span>Free</span></div>
+                                {{-- <div class="ribbon mt-3"><span>Free</span></div> --}}
                                 <!-- Card body -->
                                 <div class="card-body pb-0">
                                     <!-- Badge and favorite -->
                                     <div class="d-flex justify-content-between mb-3">
                                         <span class="hstack gap-2">
-                                            <a href="#"
+                                            <a 
                                                 class="badge bg-primary bg-opacity-10 text-primary">{{ $item->subject->class->name }}</a>
-                                            <a href="#" class="badge text-bg-dark">{{ $item->subject->name }}</a>
+                                            <a  class="badge text-bg-dark">{{ $item->subject->name }}</a>
                                         </span>
-                                        <a href="#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
+                                        <a  class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
                                     </div>
                                     <!-- Title -->
                                     <h5 class="card-title"><a
