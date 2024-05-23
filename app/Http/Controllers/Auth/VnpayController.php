@@ -43,7 +43,7 @@ class VnpayController extends Controller
         $vnp_OrderType = "education";
         $vnp_Amount =  $data['total'] * 100;
         $vnp_Locale = 'VN';
-        $vnp_BankCode = 'NCB';
+        $vnp_BankCode = 'VNPAYQR';
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
         $inputData = array(
             "vnp_Version" => "2.1.0",

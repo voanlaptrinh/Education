@@ -223,97 +223,36 @@
                 </div>
                 <!-- Course table END -->
             </div>
-            {{ $classes->links() }}
-            <style>
-                /* Phân trang container */
-                nav.pagination {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 10px;
-                    background-color: #fff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 4px;
-                }
+         
+            <div class="card-footer bg-transparent px-0">
+                <!-- Pagination START -->
+                <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+                    <!-- Content -->
+                    <p class="mb-0 text-center text-sm-start"></p>
+                    <!-- Pagination -->
+                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                            @if ($classes->currentPage() > 1)
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $classes->url($classes->currentPage() - 1) }}" tabindex=""><i
+                                            class="fas fa-angle-left"></i></a></li>
+                            @endif
+                            @for ($i = 1; $i <= $classes->lastPage(); $i++)
+                                <li class=" page-item mb-0 {{ $classes->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $classes->url($i) }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+                            @if ($classes->currentPage() < $classes->lastPage())
+                                <li class="page-item mb-0"><a class="page-link"
+                                        href="{{ $classes->url($classes->currentPage() + 1) }}"><i
+                                            class="fas fa-angle-right"></i></a></li>
+                            @endif
 
-                /* Style cho các liên kết trang */
-                nav.pagination a {
-                    color: #3182ce;
-                    padding: 8px 12px;
-                    text-decoration: none;
-                    border: 1px solid #cbd5e0;
-                    border-radius: 4px;
-                    transition: background-color 0.3s, color 0.3s;
-                }
-
-                /* Style cho trang hiện tại */
-                nav.pagination a.active {
-                    background-color: #3182ce;
-                    color: #fff;
-                }
-
-                /* Hover effect cho liên kết trang */
-                nav.pagination a:hover {
-                    background-color: #e2e8f0;
-                    color: #2c5282;
-                }
-
-                /* Thông tin về số lượng kết quả */
-                nav.pagination .results-info {
-                    margin-left: 10px;
-                    color: #718096;
-                    font-size: 14px;
-                }
-
-                /* Phân trang container */
-                nav.pagination {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 10px;
-                    background-color: #fff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 4px;
-                }
-
-                /* Style cho các liên kết trang */
-                nav.pagination a {
-                    color: #3182ce;
-                    padding: 8px 12px;
-                    text-decoration: none;
-                    border: 1px solid #cbd5e0;
-                    border-radius: 4px;
-                    transition: background-color 0.3s, color 0.3s;
-                }
-
-                /* Style cho trang hiện tại */
-                nav.pagination a.active {
-                    background-color: #3182ce;
-                    color: #fff;
-                }
-
-                nav .relative span a {
-                    display: none
-                }
-
-                .justify-between svg {
-                    display: none
-                }
-
-                /* Hover effect cho liên kết trang */
-                nav.pagination a:hover {
-                    background-color: #e2e8f0;
-                    color: #2c5282;
-                }
-
-                /* Thông tin về số lượng kết quả */
-                nav.pagination .results-info {
-                    margin-left: 10px;
-                    color: #718096;
-                    font-size: 14px;
-                }
-            </style>
-
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Pagination END -->
+            </div>
         </div>
         <!-- Card END -->
     </div>
