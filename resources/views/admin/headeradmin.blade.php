@@ -119,6 +119,8 @@
                                     class="fas fa-cogs fa-fw me-2"></i>Banner</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('webConfig.index') }}"><i
                                     class="fas fa-cogs fa-fw me-2"></i>Cài đặt web</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('basis.index') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>Cơ sở</a></li>
                    
                     </ul>
                 </li>

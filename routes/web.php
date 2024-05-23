@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BasisController;
 use App\Http\Controllers\Admin\ChaptersController;
 use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Admin\CourseController;
@@ -189,6 +190,17 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             // Route::put('update/{lecture}', [LecturesController::class, 'update'])->name('lectures.update');
             // Route::delete('delete/{lecture}', [LecturesController::class, 'destroy'])->name('lectures.destroy');
         });
+        Route::prefix('/basis')->group(function () {
+            Route::get('/', [BasisController::class, 'index'])->name('basis.index');
+            Route::get('/create', [BasisController::class, 'create'])->name('basis.create');
+            Route::post('/store', [BasisController::class, 'store'])->name('basis.store');
+            Route::get('/{basi}/edit', [BasisController::class, 'edit'])->name('basis.edit');
+            Route::post('update/{basis}', [BasisController::class, 'update'])->name('basis.update');
+            Route::get('/{id}/basis', [BasisController::class, 'show'])->name('basis.show');
+            Route::delete('/delete/{basis}', [BasisController::class, 'destroy'])->name('basis.destroy');
+
+        });
+
     });
 });
 

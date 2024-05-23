@@ -6,4 +6,5 @@
     @include('elements.home.block4')
     @include('elements.home.block5')
     @include('elements.home.block6')
+    @include('elements.home.block7')
 @endsection
