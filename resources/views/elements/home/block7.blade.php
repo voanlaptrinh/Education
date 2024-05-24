@@ -11,7 +11,7 @@
            <div class="col-lg-4 me-2 ms-2 ">
             <div class="card action-trigger-hover border bg-transparent pb-3">
                 <div class="card-body pb-0">
-                    <div  class="p-2 mb-3 rounded-pill shadow text-center bg-light">
+                    <div  class="p-2 mb-3 rounded-pill shadow text-center bg-dark-subtle">
                         <h6 class="text-center pt-2"><span>{{$basis->name}}</span></h6>
                     </div>
                     <div style="font-size: 11px">
