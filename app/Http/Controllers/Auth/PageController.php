@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Basis;
 use App\Models\Classes;
 use App\Models\Lecture;
 use App\Models\Lesson;
@@ -24,7 +25,8 @@ class PageController extends Controller
         $bai_hoc = Lesson::all();
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);
-        return View('pages.index', compact('totalReviews', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+        $basis = Basis::all();
+        return View('pages.index', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
     public function search(Request $request)
     {
