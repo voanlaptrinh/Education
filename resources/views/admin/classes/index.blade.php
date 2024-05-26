@@ -233,18 +233,19 @@
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                             @if ($classes->currentPage() > 1)
+                            
                                 <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $classes->url($classes->currentPage() - 1) }}" tabindex=""><i
+                                        href="{{ url('/admin/classes?page=' . ($classes->currentPage() - 1) . '&query=' . request('query')) }}" tabindex=""><i
                                             class="fas fa-angle-left"></i></a></li>
                             @endif
                             @for ($i = 1; $i <= $classes->lastPage(); $i++)
                                 <li class=" page-item mb-0 {{ $classes->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $classes->url($i) }}">{{ $i }}</a>
+                                    <a class="page-link" href="{{ url('/admin/classes?page=' . $i . '&query=' . request('query')) }}">{{ $i }}</a>
                                 </li>
                             @endfor
                             @if ($classes->currentPage() < $classes->lastPage())
                                 <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $classes->url($classes->currentPage() + 1) }}"><i
+                                        href="{{ url('/admin/classes?page=' . ($classes->currentPage() + 1) . '&query=' . request('query')) }}"><i
                                             class="fas fa-angle-right"></i></a></li>
                             @endif
 

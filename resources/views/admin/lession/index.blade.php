@@ -85,7 +85,7 @@
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('curriculum.index', ['lesson' => $lesson]) }}"
+                                            <a href="{{ route('lessons.index', ['lesson' => $lesson]) }}"
                                                 class="btn btn-primary">Xem video bài giảng</a>
                                         </td>
                                         <!-- Table data -->
@@ -138,22 +138,22 @@
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                             @if ($lessons->currentPage() > 1)
                                 <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $lessons->url($lessons->currentPage() - 1) }}" tabindex=""><i
+                                        href="{{ $lessons->url($lessons->currentPage() - 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}" tabindex=""><i
                                             class="fas fa-angle-left"></i></a></li>
                             @endif
                             @for ($i = 1; $i <= $lessons->lastPage(); $i++)
                                 <li class=" page-item mb-0 {{ $lessons->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $lessons->url($i) }}">{{ $i }}</a>
+                                    <a class="page-link" href="{{ $lessons->url($i) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}">{{ $i }}</a>
                                 </li>
                             @endfor
                             @if ($lessons->currentPage() < $lessons->lastPage())
                                 <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $lessons->url($lessons->currentPage() + 1) }}"><i
+                                        href="{{ $lessons->url($lessons->currentPage() + 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}"><i
                                             class="fas fa-angle-right"></i></a></li>
                             @endif
-
                         </ul>
                     </nav>
+                    
                 </div>
                 <!-- Pagination END -->
             </div>

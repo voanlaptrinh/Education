@@ -104,26 +104,25 @@
                         <p class="mb-0 text-center text-sm-start"></p>
                         <!-- Pagination -->
                         <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                            <ul
-                                class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+                            <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                                 @if ($lectures->currentPage() > 1)
                                     <li class="page-item mb-0"><a class="page-link"
-                                            href="{{ $lectures->url($lectures->currentPage() - 1) }}" tabindex=""><i
+                                            href="{{ $lectures->url($lectures->currentPage() - 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}" tabindex=""><i
                                                 class="fas fa-angle-left"></i></a></li>
                                 @endif
                                 @for ($i = 1; $i <= $lectures->lastPage(); $i++)
                                     <li class=" page-item mb-0 {{ $lectures->currentPage() == $i ? 'active' : '' }}">
-                                        <a class="page-link" href="{{ $lectures->url($i) }}">{{ $i }}</a>
+                                        <a class="page-link" href="{{ $lectures->url($i) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}">{{ $i }}</a>
                                     </li>
                                 @endfor
                                 @if ($lectures->currentPage() < $lectures->lastPage())
                                     <li class="page-item mb-0"><a class="page-link"
-                                            href="{{ $lectures->url($lectures->currentPage() + 1) }}"><i
+                                            href="{{ $lectures->url($lectures->currentPage() + 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}"><i
                                                 class="fas fa-angle-right"></i></a></li>
                                 @endif
-
                             </ul>
                         </nav>
+                        
                     </div>
                     <!-- Pagination END -->
                 </div>

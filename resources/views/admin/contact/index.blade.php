@@ -195,18 +195,18 @@
                                     class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                                     @if ($contacts->currentPage() > 1)
                                         <li class="page-item mb-0"><a class="page-link"
-                                                href="{{ $contacts->url($contacts->currentPage() - 1) }}"
+                                                href="{{ url('/admin/contact?page=' . ($contacts->currentPage() - 1) . '&query=' . request('query')) }}"
                                                 tabindex=""><i class="fas fa-angle-left"></i></a></li>
                                     @endif
                                     @for ($i = 1; $i <= $contacts->lastPage(); $i++)
                                         <li
                                             class=" page-item mb-0 {{ $contacts->currentPage() == $i ? 'active' : '' }}">
                                             <a class="page-link"
-                                                href="{{ $contacts->url($i) }}">{{ $i }}</a>
+                                                href="{{ url('/admin/contact?page=' . $i . '&query=' . request('query')) }}">{{ $i }}</a>
                                         </li>
                                     @endfor
                                     @if ($contacts->currentPage() < $contacts->lastPage())
-                                    <li class="page-item mb-0"><a class="page-link" href="{{ $contacts->url($contacts->currentPage() + 1) }}"><i
+                                    <li class="page-item mb-0"><a class="page-link" href="{{ url('/admin/contact?page=' . ($contacts->currentPage() + 1) . '&query=' . request('query')) }}"><i
                                         class="fas fa-angle-right"></i></a></li> 
 
                                     @endif
