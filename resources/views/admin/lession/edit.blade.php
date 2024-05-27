@@ -75,17 +75,18 @@
                 @enderror
             </div>
 
-            <div class="row mb-4">
-                <div class="col-lg-12">
-                    <label for="exampleInputEmail1" class="form-label">Môn học tương ứng *</label>
-                    <select class="form-select" name="subject_id" aria-label="Default select example" fdprocessedid="j04kyp">
-                        @foreach ($subjects as $subject)
-                        <option value="{{ $subject->id }}" {{ $subject->id == $lesson->subject_id ? 'selected' : '' }} >{{ $subject->name }} ({{ $subject->class->name }})</option>
-                       @endforeach
-                    </select>
-                </div>
-
+            <div class="form-group pt-3 pb-3">
+                <label for="exampleInputEmail1" class="form-label">Môn học tương ứng *</label>
+                <select class="form-control classes_1" name="subject_id" aria-label="Default select example"
+                    fdprocessedid="j04kyp" data-live-search="true">
+                    @foreach ($subjects as $subject)
+                        <option data-tokens="{{ $subject->name }} {{ $subject->class->name }}"
+                            value="{{ $subject->id }}" {{ $subject->id == $lesson->subject_id ? 'selected' : '' }}>
+                            {{ $subject->name }} ({{ $subject->class->name }})</option>
+                    @endforeach
+                </select>
             </div>
+
             <!-- Thêm trường select để chọn môn học -->
             {{-- <label for="subject_id">Select Subject:</label>
             <select name="subject_id" required>

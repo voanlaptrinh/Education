@@ -26,9 +26,9 @@
             <div class="row mb-4 pt-3">
                 <div class="col-lg-12">
                     <label for="exampleInputEmail1" class="form-label">Bài học *</label>
-                    <select class="form-select" name="lesson_id" value="{{old('lesson_id')}}" aria-label="Default select example">
+                    <select class="form-control lesson_name" name="lesson_id" value="{{old('lesson_id')}}" aria-label="Default select example" data-live-search="true">
                         @foreach ($lessons as $lesson)
-                            <option value="{{ $lesson->id }}">{{ $lesson->title }}</option>
+                            <option data-tokens="{{$lesson->title}}" value="{{ $lesson->id }}">{{ $lesson->title }} ({{$lesson->subject->class->name}})</option>
                         @endforeach
 
                     </select>

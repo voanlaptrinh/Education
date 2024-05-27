@@ -85,7 +85,7 @@
                                         </td>
 
                                         <td>
-                                            <a href="{{ route('lessons.index', ['lesson' => $lesson]) }}"
+                                            <a href="{{ route('curriculum.index', ['lesson' => $lesson]) }}"
                                                 class="btn btn-primary">Xem video bài giảng</a>
                                         </td>
                                         <!-- Table data -->

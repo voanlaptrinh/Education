@@ -32,9 +32,9 @@
                         </div>
                         <div class="form-group pt-3">
                             <label for="class_id">Chọn lớp học:</label>
-                            <select name="class_id" id="class_id" class="form-control">
+                            <select name="class_id" id="class_id" class="form-control selectpicker" data-live-search="true">
                                 @foreach ($classes as $class)
-                                    <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                    <option  data-tokens="{{$class->name}}" value="{{ $class->id }}">{{ $class->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -51,6 +51,7 @@
     {{--  --}}
     <script>
         $(document).ready(function() {
+
             // When the form is submitted
             $("#submitBtn").submit(function(event) {
                 // Prevent the default form submission

@@ -24,9 +24,9 @@
             <div class="row mb-4 pt-3">
                 <div class="col-lg-6">
                     <label for="exampleInputEmail1" class="form-label">Lớp học *</label>
-                    <select class="form-select" name="classes_id"  aria-label="Default select example">
+                    <select class="form-control classes_name" name="classes_id"  aria-label="Default select example"  data-live-search="true">
                         @foreach ($classes as $classe)
-                            <option value="{{ $classe->id }}">{{ $classe->name }}</option>
+                            <option data-tokens="{{$classe->name}}" value="{{ $classe->id }}">{{ $classe->name }}</option>
                         @endforeach
 
                     </select>

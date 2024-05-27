@@ -97,15 +97,15 @@ $logo = \App\Models\Web_config::find(1);
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/font-awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/choices/css/choices.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/user/vendor/quill/css/quill.snow.css">
-    <link rel="stylesheet" type="text/css" href="/vendor/glightbox/glightbox.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/font-awesome/css/all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/bootstrap-icons/bootstrap-icons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/choices/css/choices.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/overlay-scrollbar/css/overlayscrollbars.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/quill/css/quill.snow.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/vendor/glightbox/glightbox.css')}}">
     <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/user/css/style.css">
-    <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/vendor/admin/bootstrap-select.min.css')}}">
 </head>
 
 <body>
@@ -281,6 +281,7 @@ $logo = \App\Models\Web_config::find(1);
     </main>
 
     <script>
+        
         var options = {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
             filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
@@ -303,27 +304,38 @@ $logo = \App\Models\Web_config::find(1);
         }, 2000);
         
     </script>
-    <script>
-        CKEDITOR.replace('my-editor', options);
-    </script>
+ 
     <!-- Bootstrap JS -->
-    <script src="/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Vendors -->
-    <script src="/assets/user/vendor/choices/js/choices.min.js"></script>
-    <script src="/assets/user/vendor/apexcharts/js/apexcharts.min.js"></script>
-    <script src="/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+    <script src="{{asset('/assets/user/vendor/choices/js/choices.min.js')}}"></script>
+    <script src="{{asset('/assets/user/vendor/apexcharts/js/apexcharts.min.js')}}"></script>
+    <script src="{{asset('/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js')}}"></script>
 				
-    <script src="/assets/user/vendor/glightbox/js/glightbox.js"></script>
+    <script src="{{asset('/assets/user/vendor/glightbox/js/glightbox.js')}}"></script>
 				
-    <script src="/assets/user/vendor/tiny-slider/tiny-slider.js"></script>
-    <script src="/assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+    <script src="{{asset('/assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js')}}"></script>
 
 
     <!-- Template Functions -->
-    <script src="/assets/user/vendor/stepper/js/bs-stepper.min.js"></script>
+    <script src="{{asset('/assets/user/vendor/stepper/js/bs-stepper.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+    <script src="{{asset('/vendor/admin/popper.min.js')}}"></script>
+    <script src="{{asset('/vendor/admin/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/vendor/admin/bootstrap-select.min.js')}}"></script>
+
+
     <script>
+    $(document).ready(function() {
+      $('.selectpicker').selectpicker();
+      $('.classes_1').selectpicker();
+      $('.lesson_name').selectpicker();
+      $('.classes_name').selectpicker();
+    });
         document.addEventListener('DOMContentLoaded', function() {
             @if (session('success'))
                 Swal.fire({

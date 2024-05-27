@@ -75,9 +75,9 @@
             <div class="row mb-4">
                 <div class="col-lg-12">
                     <label for="exampleInputEmail1" class="form-label">Môn học tương ứng *</label>
-                    <select class="form-select" name="subject_id" aria-label="Default select example" fdprocessedid="j04kyp">
+                    <select class="form-control classes_1" name="subject_id" aria-label="Default select example" fdprocessedid="j04kyp" data-live-search="true">
                         @foreach ($subject as $subject)
-                        <option value="{{ $subject->id }}">{{ $subject->name }} ({{ $subject->class->name }})</option>
+                        <option data-tokens="{{$subject->name}} {{ $subject->class->name }}" value="{{ $subject->id }}">{{ $subject->name }} ({{ $subject->class->name }})</option>
                        @endforeach
                     </select>
                 </div>
