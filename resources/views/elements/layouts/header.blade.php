@@ -4,12 +4,12 @@
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             @if (!empty($webConfig->logo))
-                <div class="d-flex justify-content-center">
-                    <a class="" href="/" class="avatar avatar-xxxl">
-                        <img class="avatar-img "  style="width: 70%;" src=" {{ asset('storage/' . $webConfig->logo) }}"
+                <div class="d-flex justify-content-center pt-3 pb-2">
+                    <a class="d-flex justify-content-center" href="/" class="avatar avatar-xxxl">
+                        <img class="avatar-img "  style="width: 50%;" src=" {{ asset('storage/' . $webConfig->logo) }}"
                             alt="logo">
                     </a>
-                    <div class="pt-3 d-none d-sm-block">
+                    <div class="pt-2 d-none d-sm-block">
                         <h4 class="d-flex justify-content-center">
                            <a href="/"> <div class="d-flex">
                             <span class="pe-1" style="color: rgb(226, 121, 0);">HD</span>
