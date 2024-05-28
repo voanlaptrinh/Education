@@ -9,7 +9,7 @@
                         <img class="avatar-img "  style="width: 70%;" src=" {{ asset('storage/' . $webConfig->logo) }}"
                             alt="logo">
                     </a>
-                    <div class="pt-3">
+                    <div class="pt-3 d-none d-sm-block">
                         <h4 class="d-flex justify-content-center">
                            <a href="/"> <div class="d-flex">
                             <span class="pe-1" style="color: rgb(226, 121, 0);">HD</span>
