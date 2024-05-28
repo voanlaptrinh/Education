@@ -149,7 +149,7 @@ class VnpayController extends Controller
             return view('pages.index', compact('user', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'));
         } catch (\Exception $e) {
             // Xử lý ngoại lệ và trả về thông báo lỗi nếu cần
-            return view('subscriptions.error')->with('error', $e->getMessage());
+            return view('subscriptions.index')->with('error', $e->getMessage());
         }
     }
     public function Vnpay_Document(Request $request)
