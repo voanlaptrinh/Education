@@ -102,15 +102,15 @@ class VnpayController extends Controller
 
     public function Getvnpayment(Request $request, Subscription $subscription)
     {
-        // $data =  $request->except("_token");
-        try {
-            $user = auth()->user();
+        $user = auth()->user();
             $banner = Banner::find(1);
             $classes = Classes::where('status', 1)->get();
             $totalLessons = Lesson::count();
             $totalLectures = Lecture::count();
             $bai_hoc = Lesson::all();
             $webConfig = Web_config::find(1);
+        try {
+           
             $purchase = new Purchase();
             $purchase->user_id = $user->id;
             $purchase->package_name = $request->vnp_OrderInfo;
@@ -149,7 +149,7 @@ class VnpayController extends Controller
             return view('pages.index', compact('user', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'));
         } catch (\Exception $e) {
             // Xử lý ngoại lệ và trả về thông báo lỗi nếu cần
-            return view('subscriptions.index')->with('error', $e->getMessage());
+            return view('subscriptions.index', compact('user', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'))->with('error', $e->getMessage());
         }
     }
     public function Vnpay_Document(Request $request)
