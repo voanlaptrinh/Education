@@ -11,29 +11,26 @@ class LessonController extends Controller
 {
     public function index(Request $request, $subject = null)
     {
-        // $lessons = Lesson::paginate(3);
-        $searchQuery = $request->input('query'); // Thay đổi tên biến thành $searchQuery
-        // $lessons = Lesson::when($searchQuery, function ($query) use ($searchQuery) {
-        //     return $query->where('title', 'like', '%' . $searchQuery . '%');
-        // })->latest()->paginate(6);
-
+        $searchQuery = $request->input('query'); // Capture the search query
+        $subject = $request->input('subject'); // Capture the subject ID if needed
+    
         $lessons = Lesson::query();
-
-        // Nếu có class được truyền, lọc theo class
+    
+        // Filter by subject if provided
         if ($subject) {
             $lessons->where('subject_id', $subject);
         }
-
-
-        // Lọc theo query tìm kiếm nếu có
-        // Lọc theo query tìm kiếm nếu có
+    
+        // Filter by search query if provided
         if ($searchQuery) {
             $lessons->where('title', 'like', '%' . $searchQuery . '%');
         }
-
-
-        // Sắp xếp theo thứ tự mới nhất và phân trang
+    
+        // Sort by latest and paginate with 5 items per page
         $lessons = $lessons->latest()->paginate(5);
+    
+        // Append query parameters to pagination links
+        $lessons->appends(['query' => $searchQuery, 'subject' => $subject]);
 
         return view('admin.lession.index', compact('lessons', 'searchQuery'));
     }

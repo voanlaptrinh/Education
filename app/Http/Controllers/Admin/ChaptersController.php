@@ -12,21 +12,25 @@ class ChaptersController extends Controller
     public function index(Request $request, $lesson = null)
     {
         $searchQuery = $request->input('query');
-        
-        $curriculum = Chapter::query();
-    
-        // Nếu có lesson_id được truyền, lọc theo lesson_id
-        if ($lesson) {
-            $curriculum->where('lesson_id', $lesson);
-        }
-    
-        // Lọc theo query tìm kiếm nếu có
-        if ($searchQuery) {
-            $curriculum->where('title', 'like', '%' . $searchQuery . '%');
-        }
-    
-        // Sắp xếp theo thứ tự mới nhất và phân trang
-        $curriculum = $curriculum->latest()->paginate(10);
+    $lesson = $request->input('lesson_id'); // Capture the lesson_id if needed
+
+    $curriculum = Chapter::query();
+
+    // Filter by lesson_id if provided
+    if ($lesson) {
+        $curriculum->where('lesson_id', $lesson);
+    }
+
+    // Filter by search query if provided
+    if ($searchQuery) {
+        $curriculum->where('title', 'like', '%' . $searchQuery . '%');
+    }
+
+    // Sort by latest and paginate with 10 items per page
+    $curriculum = $curriculum->latest()->paginate(10);
+
+    // Append query parameters to pagination links
+    $curriculum->appends(['query' => $searchQuery, 'lesson_id' => $lesson]);
     
         return view('admin.curriculum.index', compact('searchQuery', 'curriculum'));
     }

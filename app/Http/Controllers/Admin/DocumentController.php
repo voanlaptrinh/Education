@@ -12,23 +12,26 @@ class DocumentController extends Controller
 {
     public function index(Request $request, $class = null)
     {
-        $searchQuery = $request->input('query');
-    
-        // Bắt đầu với tất cả các tài liệu
-        $documents = Document::query();
-    
-        // Nếu có class được truyền, lọc theo class
-        if ($class) {
-            $documents->where('classes_id', $class);
-        }
-    
-        // Lọc theo query tìm kiếm nếu có
-        if ($searchQuery) {
-            $documents->where('name', 'like', '%' . $searchQuery . '%');
-        }
-    
-        // Sắp xếp theo thứ tự mới nhất và phân trang
-        $documents = $documents->latest()->paginate(5);
+        $searchQuery = $request->input('query'); // Capture the search query
+    $class = $request->input('class'); // Capture the class ID if needed
+
+    $documents = Document::query();
+
+    // Filter by class if provided
+    if ($class) {
+        $documents->where('classes_id', $class);
+    }
+
+    // Filter by search query if provided
+    if ($searchQuery) {
+        $documents->where('name', 'like', '%' . $searchQuery . '%');
+    }
+
+    // Sort by latest and paginate with 5 items per page
+    $documents = $documents->latest()->paginate(5);
+
+    // Append query parameters to pagination links
+    $documents->appends(['query' => $searchQuery, 'class' => $class]);
     
         return view('admin.document.index', compact('documents', 'searchQuery'));
     }
