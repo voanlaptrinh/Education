@@ -12,10 +12,10 @@ class SubjectController extends Controller
     public function index(Request $request, $class = null)
     {
         $searchQuery = $request->input('query'); // Capture the search query
-        $class = $request->input('class_id'); // Capture the class_id if needed
+        // $class = $request->input('class_id'); // Capture the class_id if needed
     
         $subjects = Subject::query();
-    
+    // dd($class);
         // Filter by class if provided
         if ($class) {
             $subjects->where('class_id', $class);

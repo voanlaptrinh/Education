@@ -24,6 +24,7 @@ class WebConfigController extends Controller
             'code' => 'nullable|string',
             'gg_map' => 'nullable|string',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'img_review' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'video' => 'nullable|mimes:mp4,mov,ogg,qt', // Thêm quy tắc cho trường logo
             'facebook_id' => 'nullable',
             'zalo' => 'nullable',
@@ -52,6 +53,8 @@ class WebConfigController extends Controller
             'logo.required' => 'Vui lòng tải lên logo.',
             'logo.image' => 'Logo phải là một hình ảnh.',
             'logo.mimes' => 'Logo chỉ được chấp nhận với các định dạng: jpeg, png, jpg, gif, svg.',
+            'img_review.image' => 'img_review phải là một hình ảnh.',
+            'img_review.mimes' => 'img_review chỉ được chấp nhận với các định dạng: jpeg, png, jpg, gif, svg.',
             'video.mimes' => 'Logo chỉ được chấp nhận với các định dạng: mp4,mov,ogg,qt.',
 
 
@@ -87,6 +90,10 @@ class WebConfigController extends Controller
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('logos', 'public');
             $webConfig->logo = $logoPath;
+        }
+        if ($request->hasFile('img_review')) {
+            $logoPath = $request->file('img_review')->store('logos', 'public');
+            $webConfig->img_review = $logoPath;
         }
 
         // Handle video upload

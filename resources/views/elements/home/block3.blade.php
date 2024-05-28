@@ -37,6 +37,7 @@
         <div class="tab-content" id="course-pills-tabContent">
             <!-- Content START -->
             @foreach ($classes as $classIndex => $class)
+        
                 @foreach ($class->subjects as $subjectIndex => $subject)
                     <div class="tab-pane fade{{ $classIndex === 0 && $subjectIndex === 0 ? ' show active' : '' }}"
                         id="course-pills-tabs-{{ $subject->id }}" role="tabpanel"

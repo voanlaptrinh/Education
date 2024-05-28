@@ -12,8 +12,10 @@ class LessonController extends Controller
     public function index(Request $request, $subject = null)
     {
         $searchQuery = $request->input('query'); // Capture the search query
-        $subject = $request->input('subject'); // Capture the subject ID if needed
+        // $subject = $request->input('subject'); // Capture the subject ID if needed
     
+
+      
         $lessons = Lesson::query();
     
         // Filter by subject if provided

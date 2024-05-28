@@ -12,7 +12,7 @@ class ChaptersController extends Controller
     public function index(Request $request, $lesson = null)
     {
         $searchQuery = $request->input('query');
-    $lesson = $request->input('lesson_id'); // Capture the lesson_id if needed
+    // $lesson = $request->input('lesson_id'); // Capture the lesson_id if needed
 
     $curriculum = Chapter::query();
 

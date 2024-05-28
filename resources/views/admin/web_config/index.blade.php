@@ -32,6 +32,17 @@
                                         </span>
                                     @enderror
                                     </div>
+                                    <div class="col-xl-4">
+                                        <label class="form-label">Ảnh đánh giá</label>
+                                        <img src="{{ asset('storage/' . $webConfig->img_review) }}" alt="">
+                                        <!-- Tab END -->
+                                        <input type="file" name="img_review" id="img_review" class="mt-2">
+                                        @error('img_review')
+                                        <span class="invalid-feedback" role="alert">
+                                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                        </span>
+                                    @enderror
+                                    </div>
                                     <!-- Input item -->
                                     <div class="col-lg-4">
                                         <label class="form-label">Tên website</label>

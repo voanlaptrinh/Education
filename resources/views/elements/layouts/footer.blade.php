@@ -1,4 +1,4 @@
-<footer class="pt-5">
+<footer class="pt-5 shadow">
     <div class="container">
         <!-- Row START -->
         <div class="row g-4">

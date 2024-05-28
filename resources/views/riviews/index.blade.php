@@ -22,24 +22,12 @@
     </section>
     <section>
         <div class="container">
-            <div class="row g-4 g-lg-0 align-items-center">
+            <div class="row">
 
 
 
                 <!-- Contact form START -->
-                <div class="col-md-12">
-                    <!-- Title -->
-                    {{-- @if (session('warning'))
-                        <div class="alert alert-warning">
-                            {{ session('warning') }}
-                        </div>
-                    @endif
-
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif --}}
+                <div class="col-md-6">
 
                     <form action="{{ route('reviews.store') }}" method="POST">
                         @csrf
@@ -87,20 +75,12 @@
                     </form>
                 </div>
                 <!-- Contact form END -->
-            </div>
-        </div>
-    </section>
-    <section class="pt-0">
-        <div class="container">
-
-            <div class="row">
 
 
-                <!-- Main content START -->
-                <div class="col-xl-12 mt-5">
+                <div class="col-md-6">
                     <!-- Student review START -->
                     <div class=" bg-transparent rounded-3">
-                        <div class="card border">
+                        <div class="card ">
                             <!-- Header START -->
                             <div class="card-header bg-transparent border-bottom">
                                 <div class="row justify-content-between align-middle">
@@ -109,7 +89,6 @@
                                         <h3 class="card-header-title mb-2 mb-sm-0">Đánh giá </h3>
                                     </div>
 
-                                    <!-- Short by filter -->
 
                                 </div>
                             </div>
@@ -117,30 +96,28 @@
 
                             <!-- Reviews START -->
                             <div class="card-body mt-2 mt-sm-4 ">
-                                <div class="mt-2">
 
-
-
-                                    <!-- Button -->
-
-                                </div>
                                 <!-- Review item START -->
                                 @if (count($countReviews) > 0)
                                     @foreach ($reviews as $review)
-                                        <div class="d-sm-flex">
+                                        <div class="d-sm-flex scrollspy-example bg-body-tertiary p-3 rounded-2" data-bs-spy="scroll" style="" a-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="" tabindex="0">
                                             <!-- Avatar image -->
                                             @if (!empty($review->user->image))
                                                 <img class="avatar avatar-lg rounded-circle float-start me-3"
                                                     src="{{ asset('storage/' . $review->user->image) }}" alt="avatar">
                                             @else
                                                 <img class="avatar avatar-lg rounded-circle float-start me-3"
-                                                    src="/assets/user/images/default-avatar.png" alt="avatar">
+                                                    src="{{ asset('/assets/user/images/default-avatar.png') }}"
+                                                    alt="avatar">
                                             @endif
                                             <div>
                                                 <div class="mb-3 d-sm-flex justify-content-sm-between align-items-center">
                                                     <!-- Title -->
                                                     <div>
-                                                        <h5 class="m-0">{{ $review->user->name }}</h5>
+                                                        <div class="d-flex">
+                                                            <h5 class="m-0">{{ $review->user->name }}</h5> 
+                                                            <span class="me-3 small ps-4 pt-1">{{ $review->created_at->format('d/m/Y') }}</span>
+                                                        </div>
                                                         <ul class="list-inline mb-0">
                                                             @for ($i = 1; $i <= 5; $i++)
                                                                 <li class="list-inline-item me-0">
@@ -152,8 +129,7 @@
                                                                 </li>
                                                             @endfor
                                                         </ul>
-                                                        <span
-                                                            class="me-3 small">{{ $review->created_at->format('d/m/Y') }}</span>
+
 
                                                     </div>
                                                     <!-- Review star -->
@@ -215,6 +191,17 @@
                     </div>
                     <!-- Student review END -->
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-0">
+        <div class="container">
+
+            <div class="row">
+
+
+                <!-- Main content START -->
+
                 <!-- Main content END -->
             </div><!-- Row END -->
         </div>

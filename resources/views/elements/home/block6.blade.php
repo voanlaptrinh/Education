@@ -4,11 +4,17 @@
             <div class="col-xl-7 order-2 order-xl-1 d-flex justify-content-center">
 
 
-
-                <!-- Review -->
-                <div class="col-md-10 mt-n6 mb-0 mb-md-5 pt-5">
-                    <img class="avatar-img rounded" src="{{asset('assets/user/images/reviews.jpg')}}" alt="avatar">
-                </div>
+                @if (!empty($webConfig->img_review))
+                    <div class="col-md-10 mt-n6 mb-0 mb-md-5 pt-5">
+                        <img class="avatar-img rounded" src="{{ asset('storage/' . $webConfig->img_review) }}"
+                            alt="avatar">
+                    </div>
+                @else
+                    <div class="col-md-10 mt-n6 mb-0 mb-md-5 pt-5">
+                        <img class="avatar-img rounded" src="{{ asset('assets/user/images/reviews.jpg') }}"
+                            alt="avatar">
+                    </div>
+                @endif
 
             </div>
             <div class="col-xl-5 order-1 text-center text-xl-start">

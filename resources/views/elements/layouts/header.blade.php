@@ -54,13 +54,13 @@
                 <ul class="navbar-nav navbar-nav-scroll me-auto" id="header1">
                     <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="demoMenu" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" id="demoMenu" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Lớp học</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 
                             @foreach ($classes as $item)
                                 <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">{{ $item->name }}</a>
+                                    <a class="dropdown-item dropdown-toggle">{{ $item->name }}</a>
                                     @if (count($item->subjects) > 0)
                                         <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
                                             @foreach ($item->subjects as $subject)
@@ -79,7 +79,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle s" href="#" id="demoMenu" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle s" id="demoMenu" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Tài liệu</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 
