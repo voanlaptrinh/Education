@@ -26,4 +26,8 @@ class Subscription extends Model
     {
         return $this->hasMany(User::class);
     }
+    public function detailSubscriptions()
+    {
+        return $this->hasMany(DetailDescription::class);
+    }
 }

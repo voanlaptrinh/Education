@@ -39,70 +39,15 @@
                 </div>
             </div>
             @if (session('error'))
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Thông báo!</strong>  {{ session('error') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Thông báo!</strong> {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <!-- Pricing START -->
             <div class="row g-4">
 
-                <!-- Pricing item START -->
-                <div class="col-md-6 col-xl-4">
-                    <div class="card border rounded-3 p-2 p-sm-4 h-100">
-                        <!-- Card Header -->
-                        <div class="card-header p-0">
-                            <!-- Price and Info -->
-                            <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-2">
-                                <!-- Info -->
-                                <div>
-                                    <h5 class="mb-0">Gói Miễn Phí</h5>
-                                    <div class="badge text-bg-dark mb-0 rounded-pill">Phổ biến</div>
-                                </div>
-                                <!-- Price -->
-                                <div>
-                                    <h4 class="text-success mb-0 plan-price" data-monthly-price="$20"
-                                        data-annual-price="$570">Free</h4>
-                                    <p class="small mb-0">/ Mỗi tài khoản</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Divider -->
-                        <div class="position-relative my-3 text-center">
-                            <hr>
-                            <p class="small position-absolute top-50 start-50 translate-middle bg-body px-3">Phúc lợi của
-                                gói</p>
-                        </div>
-
-                        <!-- Card Body -->
-                        <div class="card-body pt-0">
-                            <ul class="list-unstyled mt-2 mb-0">
-                                <li class="mb-3 h6 fw-light">
-                                    <i class="bi bi-patch-check-fill text-success me-2"></i>Được luyện các đề Free
-                                </li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>
-                                    Xem được giải thích đáp án chi tiết</li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>
-                                    Không bị giới hạn số lượng đề/câu hỏi được luyện mỗi ngày</li>
-
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Được ưu tiên giải đáp thắc mắc, nếu có</li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Hỗ trợ
-                                    24/7</li>
-                                <li class="mb-3 h6 fw-light"><i class="bi bi-x-octagon-fill text-danger me-2"></i>Cập nhật
-                                    không giới hạn</li>
-
-                            </ul>
-                        </div>
-                        <!-- Card Footer -->
-                        <div class="card-footer text-center d-grid pb-0">
-                            <button type="button" class="btn btn-light mb-0" data-container="body" data-bs-toggle="popover"
-                                data-bs-placement="top"
-                                data-bs-content="Với tài khoản Free sẽ được được làm và xem những bài tập và khóa học miễn phí">Miễn
-                                phí</button>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Pricing item END -->
                 @foreach ($subscriptions as $subscription)
@@ -120,10 +65,12 @@
                                     </div>
                                     <!-- Price -->
                                     <div>
-                                        <h4 class="text-success mb-0 plan-price">{{ number_format($subscription->price, 0, ',', ',') }}
+                                        <h4 class="text-success mb-0 plan-price">
+                                            {{ number_format($subscription->price, 0, ',', ',') }}
                                             VNĐ</h4>
                                         <p class="small mb-0">/ Thời hạn <span
-                                                class="text-success">({{ ( $subscription->duration_months / 30 )}} Tháng) </span>
+                                                class="text-success">({{ $subscription->duration_months / 30 }} Tháng)
+                                            </span>
                                         </p>
                                     </div>
                                 </div>
@@ -135,43 +82,57 @@
                                 <p class="small position-absolute top-50 start-50 translate-middle bg-body px-3">Phúc lợi
                                     của gói</p>
                             </div>
-
+                            <style>
+                                /* width */
+                                ::-webkit-scrollbar {
+                                  width: 10px;
+                                }
+                                
+                                /* Track */
+                                ::-webkit-scrollbar-track {
+                                  background: #f1f1f1; 
+                                }
+                                 
+                                /* Handle */
+                                ::-webkit-scrollbar-thumb {
+                                  background: #888; 
+                                }
+                                
+                                /* Handle on hover */
+                                ::-webkit-scrollbar-thumb:hover {
+                                  background: #555; 
+                                }
+                                </style>
                             <!-- Card Body -->
                             <div class="card-body pt-0">
-                                <ul class="list-unstyled mt-2 mb-0">
-                                    <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>Được luyện tất cả các đề
-                                        PRO trong gói</li>
-                                    <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>Được xem giải thích chi
-                                        tiết</li>
-                                    <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>Không bị giới hạn số lượng
-                                        đề/câu hỏi được luyện mỗi ngày </li>
-                                    <li class="mb-3 h6 fw-light"><i
-                                            class="bi bi-patch-check-fill text-success me-2"></i>Được ưu tiên giải đáp thắc
-                                        mắc, nếu có</li>
-                                    <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Hỗ
-                                        trợ
-                                        24/7</li>
-                                    <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Cập
-                                        nhật
-                                        không giới hạn</li>
+                                <ul class="list-unstyled mt-2 mb-0 overflow-auto" style="height: 240px;">
+
+                                    @foreach ($subscription->detailSubscriptions as $item)
+                                        <li class="mb-3 h6 fw-light">
+                                            {{ $item->description }}
+                                        </li>
+                                    @endforeach
+
+                                  
+
+
+
                                 </ul>
                             </div>
                             <!-- Card Footer -->
                             @if (!empty(Auth::user()))
-                            <form action="{{ route('vnpayment') }}" method="post">
-                                @csrf
-                                <input hidden type="number" name="subscription_id" value="{{ $subscription->id }}">
-                                <input hidden type="number" name="total" value="{{ $subscription->price }}">
-                                <div class="card-footer text-center d-grid pb-0">
-                                    <button name="redirect" type="submit" class="btn btn-success mb-0">Mua gói</button>
-                                </div>
-                            </form>
+                                <form action="{{ route('vnpayment') }}" method="post">
+                                    @csrf
+                                    <input hidden type="number" name="subscription_id" value="{{ $subscription->id }}">
+                                    <input hidden type="number" name="total" value="{{ $subscription->price }}">
+                                    <div class="card-footer text-center d-grid pb-0">
+                                        <button name="redirect" type="submit" class="btn btn-success mb-0">Mua gói</button>
+                                    </div>
+                                </form>
                             @else
                                 <div class="card-footer text-center d-grid pb-0">
-                                    <button type="button" class="btn btn-success mb-0" data-bs-toggle="modal" data-bs-target="#viewReview">Mua gói</button>
+                                    <button type="button" class="btn btn-success mb-0" data-bs-toggle="modal"
+                                        data-bs-target="#viewReview">Mua gói</button>
                                 </div>
                             @endif
 
@@ -184,31 +145,6 @@
             <!-- Pricing END -->
         </div>
     </section>
-    <div class="modal fade" id="viewReview" tabindex="-1" aria-labelledby="viewReviewLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <!-- Modal header -->
-                <div class="modal-header ">
-                    <h5 class="mb-0 modal-title" id="viewReviewLabel">Đăng nhập để mua gói</h5>
-                    <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
-                </div>
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <div class="d-md-flex">
-                        <!-- Avatar -->
-                    
-                        <!-- Text -->
-                        <div>
-                            <img src="/assets/user/images/element/02.svg" alt="">
-                            
-                            <p class="mb-2">Để có thể mua gói học tập bạn cần đăng nhập tài khoản của mình! </p>
-                        </div>	
-                    </div>
-                    <a href="{{ route('login') }}" class="btn btn-success w-100">Đăng nhập</a>
-                </div>
-                <!-- Modal footer -->
-              
-            </div>
-        </div>
-    </div>
+    
+  
 @endsection

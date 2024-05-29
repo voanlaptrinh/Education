@@ -266,7 +266,7 @@
                                     @foreach ($courses as $course)
                                         <tr>
                                             <!-- Table data -->
-                                            <td>{{ $idx++ }}</td>
+                                            <td>{{ $idx + 1 }}</td>
 
                                             <!-- Table data -->
                                             <td>
