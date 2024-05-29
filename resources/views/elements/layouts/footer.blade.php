@@ -90,11 +90,33 @@
             <div class="col-lg-6">
                 <div class="row g-4">
 
-                    <div class="col-6 col-md-6">
+                    <div class="col-4 col-md-4">
                         <h5 class="mb-2 mb-md-4">Lớp học</h5>
                         <ul class="nav flex-column">
                             @foreach ($classes->take(5) as $item)
                                 <li class="nav-item"><a class="nav-link" href="#">{{ $item->name }}</a></li>
+                            @endforeach
+
+                        </ul>
+                    </div>
+                    <div class="col-4 col-md-4">
+                        <h5 class="mb-2 mb-md-4">Môn học</h5>
+                        <ul class="nav flex-column">
+                            @foreach ($classes as $item)
+                                @foreach ($item->subjects->take(5) as $item)
+                                <li class="nav-item"><a class="nav-link" href="#">{{ $item->name }}</a></li>
+                                   
+                                @endforeach
+                            @endforeach
+
+                        </ul>
+                    </div>
+                    <div class="col-4 col-md-4">
+                        <h5 class="mb-2 mb-md-4"> Tài liệu theo lớp</h5>
+                        <ul class="nav flex-column">
+                            @foreach ($classes->take(5) as $item)
+                                <li class="nav-item"><a class="nav-link"
+                                    href="{{ route('document.index', $item) }}">{{ $item->name }}</a></li>
                             @endforeach
 
                         </ul>
@@ -130,16 +152,7 @@
 
 
                     <!-- Link block -->
-                    <div class="col-6 col-md-6">
-                        <h5 class="mb-2 mb-md-4">Tài liệu theo lớp</h5>
-                        <ul class="nav flex-column">
-                            @foreach ($classes->take(5) as $item)
-                                <li class="nav-item"><a class="nav-link"
-                                        href="{{ route('document.index', $item) }}">{{ $item->name }}</a></li>
-                            @endforeach
 
-                        </ul>
-                    </div>
                 </div>
             </div>
             <!-- Widget 2 END -->

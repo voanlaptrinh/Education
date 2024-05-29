@@ -8,7 +8,7 @@
             </div>
         </div>
 
-        <!-- Tabs START -->
+
         <ul class="aa1 nav nav-pills nav-pills-bg-soft justify-content-sm-center mb-4 px-3 " id="course-pills-tab"
             role="tablist">
             <!-- Tab item -->
@@ -29,96 +29,94 @@
 
         </ul>
 
-
-        <!-- Tabs END -->
-
-        <!-- Tabs content START -->
-        <!-- Tabs content START -->
         <div class="tab-content" id="course-pills-tabContent">
-            <!-- Content START -->
-            @foreach ($classes as $classIndex => $class)
-        
-                @foreach ($class->subjects as $subjectIndex => $subject)
-                    <div class="tab-pane fade{{ $classIndex === 0 && $subjectIndex === 0 ? ' show active' : '' }}"
-                        id="course-pills-tabs-{{ $subject->id }}" role="tabpanel"
-                        aria-labelledby="course-pills-tab-{{ $subject->id }}">
-                        <div class="row g-4">
-                            @foreach ($subject->courses as $courseIndex => $course)
-                                <!-- Card item START -->
-                                <div class="col-sm-6 col-lg-4 col-xl-3">
-                                    <div class="card shadow h-100">
-                                        <!-- Image -->
-                                        <img  style="height: 225px" src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}"
-                                            class="card-img-top" alt="course image">
-                                       
-                                                @if ($course->is_free == 1)
-                                                <div class="ribbon mt-3"><span>Free</span></div>
-                                                @else
-                                                <div class="ribbon mt-3"><span>Pro <i class="fas fa-crown"
-                                                    style=" color: rgb(112, 112, 5);"></i></span></div>
-                                                  
-                                                @endif
-                                            
-                                        <div class="card-body pb-0 bg-secondary-subtle">
-                                            <!-- Badge and favorite -->
-                                            <div class="d-flex justify-content-between mb-2">
-                                                <a href="{{ route('home.course', $subject) }}"
-                                                    class="badge bg-success bg-opacity-10 text-success">{{ $subject->name }}</a>
-                                                <a
-                                                    class="badge bg-success bg-opacity-10 text-success">{{ $subject->class->name }}</a>
-                                                <a href="#" class="text-danger"></a>
-                                            </div>
-                                            <!-- Title -->
-                                            <h5 class="card-title fw-normal">{{ $course->name }}
-                                            </h5>
-                                            <p class="mb-2 text-truncate-2">{{ $course->description }}</p>
-                                            <!-- Rating star -->
-                                            <div class="list-inline mb-0">
-                                                @if (!empty(Auth::user()))
-                                                    @if ($course->questions->count() > 0)
-                                                        @if ($course->is_free == 0)
-                                                            <a href="{{ route('questions.show', $course) }}"
-                                                                class="btn btn-sm btn-info-soft mb-0"> Làm bài tập
+            @if ($classes->isEmpty())
+                <div  class="tab-pane fade show active">
+                    <p class="text-muted">Sẽ cập nhật sớm</p>
+                </div>
+            @else
+                @foreach ($classes as $classIndex => $class)
+                    @foreach ($class->subjects as $subjectIndex => $subject)
+                        <div class="tab-pane fade{{ $classIndex === 0 && $subjectIndex === 0 ? ' show active' : '' }}"
+                            id="course-pills-tabs-{{ $subject->id }}" role="tabpanel"
+                            aria-labelledby="course-pills-tab-{{ $subject->id }}">
+                            <div class="row g-4">
+                                @foreach ($subject->courses as $courseIndex => $course)
+                                    <!-- Card item START -->
+                                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                                        <div class="card shadow h-100">
+                                            <!-- Image -->
+                                            <img style="height: 225px"
+                                                src="{{ $course->image ? asset('storage/' . $course->image) : 'placeholder.jpg' }}"
+                                                class="card-img-top" alt="course image">
 
-                                                            </a>
+                                            @if ($course->is_free == 1)
+                                                <div class="ribbon mt-3"><span>Free</span></div>
+                                            @else
+                                                <div class="ribbon mt-3"><span>Pro <i class="fas fa-crown"
+                                                            style=" color: rgb(112, 112, 5);"></i></span></div>
+                                            @endif
+
+                                            <div class="card-body pb-0 bg-secondary-subtle">
+                                                <!-- Badge and favorite -->
+                                                <div class="d-flex justify-content-between mb-2">
+                                                    <a href="{{ route('home.course', $subject) }}"
+                                                        class="badge bg-success bg-opacity-10 text-success">{{ $subject->name }}</a>
+                                                    <a
+                                                        class="badge bg-success bg-opacity-10 text-success">{{ $subject->class->name }}</a>
+                                                    <a href="#" class="text-danger"></a>
+                                                </div>
+                                                <!-- Title -->
+                                                <h5 class="card-title fw-normal">{{ $course->name }}
+                                                </h5>
+                                                <p class="mb-2 text-truncate-2">{{ $course->description }}</p>
+                                                <!-- Rating star -->
+                                                <div class="list-inline mb-0">
+                                                    @if (!empty(Auth::user()))
+                                                        @if ($course->questions->count() > 0)
+                                                            @if ($course->is_free == 0)
+                                                                <a href="{{ route('questions.show', $course) }}"
+                                                                    class="btn btn-sm btn-info-soft mb-0"> Làm bài tập
+
+                                                                </a>
+                                                            @else
+                                                                <a href="{{ route('questions.show', $course) }}"
+                                                                    class="btn btn-sm btn-info-soft mb-0">Làm bài
+                                                                    tập</a>
+                                                            @endif
                                                         @else
-                                                            <a href="{{ route('questions.show', $course) }}"
-                                                                class="btn btn-sm btn-info-soft mb-0">Làm bài tập</a>
+                                                            <button type="button"
+                                                                class="btn btn-sm btn-info-soft mb-0">Chưa
+                                                                có câu hỏi</button>
                                                         @endif
                                                     @else
-                                                        <button type="button"
-                                                            class="btn btn-sm btn-info-soft mb-0">Chưa
-                                                            có câu hỏi</button>
+                                                        <a href="{{ route('login') }}" class="btn btn-success">Đăng
+                                                            nhập để làm bài</a>
                                                     @endif
-                                                @else
-                                                    <a href="{{ route('login') }}" class="btn btn-success">Đăng nhập để làm bài</a>
-                                                @endif
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- Card footer -->
-                                        <div class="card-footer pt-0 pb-3 bg-secondary-subtle">
-                                            <hr>
-                                            <div class="d-flex justify-content-between ">
-                                                <span class="h6 fw-light mb-0"><i
-                                                        class="far fa-clock text-danger me-2"></i>{{ $course->time_limit / 60 }}
-                                                    phút</span>
-                                                <span class="h6 fw-light mb-0"><i
-                                                        class="fas fa-table text-orange me-2"></i>
-                                                    {{ $course->questions->count() }} Câu hỏi</span>
+                                            <!-- Card footer -->
+                                            <div class="card-footer pt-0 pb-3 bg-secondary-subtle">
+                                                <hr>
+                                                <div class="d-flex justify-content-between ">
+                                                    <span class="h6 fw-light mb-0"><i
+                                                            class="far fa-clock text-danger me-2"></i>{{ $course->time_limit / 60 }}
+                                                        phút</span>
+                                                    <span class="h6 fw-light mb-0"><i
+                                                            class="fas fa-table text-orange me-2"></i>
+                                                        {{ $course->questions->count() }} Câu hỏi</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- Card item END -->
-                            @endforeach
-                        </div> <!-- Row END -->
-                    </div>
+                                    <!-- Card item END -->
+                                @endforeach
+                            </div> <!-- Row END -->
+                        </div>
+                    @endforeach
                 @endforeach
-            @endforeach
-            <!-- Content END -->
+            @endif
         </div>
-        <!-- Tabs content END -->
 
-        <!-- Tabs content END -->
     </div>
 </section>
