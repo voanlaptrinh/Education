@@ -29,7 +29,7 @@ class LessonController extends Controller
         }
     
         // Sort by latest and paginate with 5 items per page
-        $lessons = $lessons->latest()->paginate(5);
+        $lessons = $lessons->latest()->paginate(10);
     
         // Append query parameters to pagination links
         $lessons->appends(['query' => $searchQuery, 'subject' => $subject]);

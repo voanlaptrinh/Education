@@ -28,7 +28,7 @@ class DocumentController extends Controller
     }
 
     // Sort by latest and paginate with 5 items per page
-    $documents = $documents->latest()->paginate(5);
+    $documents = $documents->latest()->paginate(10);
 
     // Append query parameters to pagination links
     $documents->appends(['query' => $searchQuery, 'class' => $class]);

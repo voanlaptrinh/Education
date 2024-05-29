@@ -119,7 +119,7 @@
                                     @if (!empty($lessons))
                                         @foreach ($lessons as $key => $lesson)
                                             <tr>
-                                                <td>{{$key}}</td>
+                                                <td>{{$key + 1}}</td>
                                                 <!-- Course item -->
                                                 <td>
                                                     <div class="d-flex align-items-center">

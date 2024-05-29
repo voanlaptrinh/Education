@@ -21,8 +21,8 @@
                 </div>
             @else
                 <a class="navbar-brand" href="/">
-                    <img class="light-mode-item navbar-brand-item" src="/assets/user/images/logo.svg " alt="logo">
-                    <img class="dark-mode-item navbar-brand-item" src="/assets/user/images/logo-light.svg"
+                    <img class="light-mode-item navbar-brand-item" src="{{asset('/assets/user/images/logo.svg')}} " alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="{{asset('/assets/user/images/logo-light.svg')}}"
                         alt="logo">
                 </a>
             @endif

@@ -27,7 +27,7 @@ class SubjectController extends Controller
         }
     
         // Sort by latest and paginate with 5 items per page
-        $subjects = $subjects->latest()->paginate(5);
+        $subjects = $subjects->latest()->paginate(10);
     
         // Append query parameters to pagination links
         $subjects->appends(['query' => $searchQuery, 'class_id' => $class]);

@@ -102,14 +102,28 @@
                     <div class="col-4 col-md-4">
                         <h5 class="mb-2 mb-md-4">Môn học</h5>
                         <ul class="nav flex-column">
-                            @foreach ($classes as $item)
-                                @foreach ($item->subjects->take(5) as $item)
-                                <li class="nav-item"><a class="nav-link" href="#">{{ $item->name }}</a></li>
-                                   
+                            @php
+                                $count = 0;
+                            @endphp
+                            @foreach ($classes as $class)
+                                @foreach ($class->subjects as $subject)
+                                    @if ($count < 5)
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
+                                        </li>
+                                        @php
+                                            $count++;
+                                        @endphp
+                                    @else
+                                        @break
+                                    @endif
                                 @endforeach
+                                @if ($count >= 5)
+                                    @break
+                                @endif
                             @endforeach
-
                         </ul>
+                        
                     </div>
                     <div class="col-4 col-md-4">
                         <h5 class="mb-2 mb-md-4"> Tài liệu theo lớp</h5>
