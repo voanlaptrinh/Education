@@ -1,6 +1,6 @@
 @extends('index')
 @section('content')
-    <section class="bg-blue align-items-center d-flex"
+    <section class="bg-bg align-items-center d-flex"
         style="background:url(assets/user/images/pattern/04.png) no-repeat center center; background-size:cover;">
         <div class="container">
             <div class="row">

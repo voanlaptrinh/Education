@@ -11457,6 +11457,11 @@ fieldset:disabled .btn {
     background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
 }
 
+.bg-bg {
+    --bs-bg-opacity: 1;
+    background-color: #EFAE53 !important;
+}
+
 .bg-warning {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;

@@ -4,12 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-dark p-4 text-center rounded-3">
+                    <div class="bg-bg p-4 text-center rounded-3">
                         <h1 class="text-white m-0">Tài liệu</h1>
                         <!-- Breadcrumb -->
                         <div class="d-flex justify-content-center">
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
+                                <ol class="breadcrumb breadcrumb-dark breadcrumb-dots mb-0 text-dark">
                                     <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">{{ $clss }}</li>
                                 </ol>

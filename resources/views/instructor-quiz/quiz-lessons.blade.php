@@ -23,7 +23,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-info p-4 p-sm-5 rounded-3">
+                    <div class="bg-bg p-4 p-sm-5 rounded-3">
                         <div class="row position-relative">
                             <!-- Svg decoration -->
                             <figure class="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
