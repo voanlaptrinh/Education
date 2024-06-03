@@ -76,8 +76,8 @@
                                             <div class="d-flex align-items-center position-relative">
                                                 <!-- Image -->
                                                 <div class="w-60px">
-                                                    <img style="height: 34px" src="{{ asset('storage/' . $lesson->image) }}" class="rounded"
-                                                        alt="">
+                                                    <img style="height: 34px" src="{{ asset('storage/' . $lesson->image) }}"
+                                                        class="rounded" alt="">
                                                 </div>
                                                 <!-- Title -->
 
@@ -91,7 +91,7 @@
                                         <!-- Table data -->
                                         <td> {{ $lesson->views }}</td>
                                         <td> {{ $lesson->subject->name }} ({{ $lesson->subject->class->name }})</td>
-                                      
+
                                         <!-- Table data -->
                                         <td class="d-flex">
                                             <a href="{{ route('lessons.edit', ['lesson' => $lesson]) }}"
@@ -107,19 +107,17 @@
                                             </form>
                                         </td>
                                     </tr>
-                                
-                            @endforeach
-
+                                @endforeach
                             @else
-                            <tr>
-                               <td>Không có bài học nào!</td>
-                               <td></td>
-                               <td></td>
-                               <td></td>
-                               <td></td>
-                               <td></td>
-                            </tr>
-                        @endif
+                                <tr>
+                                    <td>Không có bài học nào!</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            @endif
 
 
 
@@ -137,23 +135,31 @@
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                             @if ($lessons->currentPage() > 1)
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $lessons->url($lessons->currentPage() - 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}" tabindex=""><i
-                                            class="fas fa-angle-left"></i></a></li>
+                                <li class="page-item mb-0">
+                                    <a class="page-link"
+                                        href="{{ $lessons->appends(['query' => request('query'), 'subject' => request('subject')])->url($lessons->currentPage() - 1) }}"
+                                        tabindex="">
+                                        <i class="fas fa-angle-left"></i>
+                                    </a>
+                                </li>
                             @endif
                             @for ($i = 1; $i <= $lessons->lastPage(); $i++)
-                                <li class=" page-item mb-0 {{ $lessons->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $lessons->url($i) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}">{{ $i }}</a>
+                                <li class="page-item mb-0 {{ $lessons->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link"
+                                        href="{{ $lessons->appends(['query' => request('query'), 'subject' => request('subject')])->url($i) }}">{{ $i }}</a>
                                 </li>
                             @endfor
                             @if ($lessons->currentPage() < $lessons->lastPage())
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $lessons->url($lessons->currentPage() + 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}"><i
-                                            class="fas fa-angle-right"></i></a></li>
+                                <li class="page-item mb-0">
+                                    <a class="page-link"
+                                        href="{{ $lessons->appends(['query' => request('query'), 'subject' => request('subject')])->url($lessons->currentPage() + 1) }}">
+                                        <i class="fas fa-angle-right"></i>
+                                    </a>
+                                </li>
                             @endif
                         </ul>
                     </nav>
-                    
+
                 </div>
                 <!-- Pagination END -->
             </div>

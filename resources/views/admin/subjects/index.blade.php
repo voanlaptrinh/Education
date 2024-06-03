@@ -32,9 +32,11 @@
                         </div>
                         <div class="form-group pt-3">
                             <label for="class_id">Chọn lớp học:</label>
-                            <select name="class_id" id="class_id" class="form-control selectpicker" data-live-search="true">
+                            <select name="class_id" id="class_id" class="form-control selectpicker"
+                                data-live-search="true">
                                 @foreach ($classes as $class)
-                                    <option  data-tokens="{{$class->name}}" value="{{ $class->id }}">{{ $class->name }}</option>
+                                    <option data-tokens="{{ $class->name }}" value="{{ $class->id }}">
+                                        {{ $class->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -248,7 +250,7 @@
                                 </tr>
                             @endif
 
-    
+
 
 
 
@@ -268,19 +270,27 @@
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                             @if ($subjects->currentPage() > 1)
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $subjects->url($subjects->currentPage() - 1) }}" tabindex=""><i
-                                            class="fas fa-angle-left"></i></a></li>
+                                <li class="page-item mb-0">
+                                    <a class="page-link"
+                                        href="{{ $subjects->appends(['query' => request('query'), 'class_id' => request('class_id')])->url($subjects->currentPage() - 1) }}"
+                                        tabindex="">
+                                        <i class="fas fa-angle-left"></i>
+                                    </a>
+                                </li>
                             @endif
                             @for ($i = 1; $i <= $subjects->lastPage(); $i++)
-                                <li class=" page-item mb-0 {{ $subjects->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $subjects->url($i) }}">{{ $i }}</a>
+                                <li class="page-item mb-0 {{ $subjects->currentPage() == $i ? 'active' : '' }}">
+                                    <a class="page-link"
+                                        href="{{ $subjects->appends(['query' => request('query'), 'class_id' => request('class_id')])->url($i) }}">{{ $i }}</a>
                                 </li>
                             @endfor
                             @if ($subjects->currentPage() < $subjects->lastPage())
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $subjects->url($subjects->currentPage() + 1) }}"><i
-                                            class="fas fa-angle-right"></i></a></li>
+                                <li class="page-item mb-0">
+                                    <a class="page-link"
+                                        href="{{ $subjects->appends(['query' => request('query'), 'class_id' => request('class_id')])->url($subjects->currentPage() + 1) }}">
+                                        <i class="fas fa-angle-right"></i>
+                                    </a>
+                                </li>
                             @endif
 
                         </ul>

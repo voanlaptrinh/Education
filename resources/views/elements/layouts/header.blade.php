@@ -4,12 +4,12 @@
         <div class="container-fluid px-3 px-xl-5">
             <!-- Logo START -->
             @if (!empty($webConfig->logo))
-                <div class="d-flex justify-content-center">
-                    <a class="" href="/" class="avatar avatar-xxxl">
-                        <img class="avatar-img "  style="width: 70%;" src=" {{ asset('storage/' . $webConfig->logo) }}"
+                <div class="d-flex justify-content-center pt-3 pb-2">
+                    <a class="d-flex justify-content-center" href="/" class="avatar avatar-xxxl">
+                        <img class="avatar-img "  style="width: 50%;" src=" {{ asset('storage/' . $webConfig->logo) }}"
                             alt="logo">
                     </a>
-                    <div class="pt-3">
+                    <div class="pt-2 d-none d-sm-block">
                         <h4 class="d-flex justify-content-center">
                            <a href="/"> <div class="d-flex">
                             <span class="pe-1" style="color: rgb(226, 121, 0);">HD</span>
@@ -21,8 +21,8 @@
                 </div>
             @else
                 <a class="navbar-brand" href="/">
-                    <img class="light-mode-item navbar-brand-item" src="/assets/user/images/logo.svg " alt="logo">
-                    <img class="dark-mode-item navbar-brand-item" src="/assets/user/images/logo-light.svg"
+                    <img class="light-mode-item navbar-brand-item" src="{{asset('/assets/user/images/logo.svg')}} " alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="{{asset('/assets/user/images/logo-light.svg')}}"
                         alt="logo">
                 </a>
             @endif
@@ -54,13 +54,13 @@
                 <ul class="navbar-nav navbar-nav-scroll me-auto" id="header1">
                     <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="demoMenu" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" id="demoMenu" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Lớp học</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 
                             @foreach ($classes as $item)
                                 <li class="dropdown-submenu dropend">
-                                    <a class="dropdown-item dropdown-toggle" href="#">{{ $item->name }}</a>
+                                    <a class="dropdown-item dropdown-toggle">{{ $item->name }}</a>
                                     @if (count($item->subjects) > 0)
                                         <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
                                             @foreach ($item->subjects as $subject)
@@ -79,7 +79,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle s" href="#" id="demoMenu" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle s" id="demoMenu" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Tài liệu</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
 

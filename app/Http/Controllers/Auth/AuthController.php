@@ -247,7 +247,7 @@ class AuthController extends Controller
 
             $examHistory = ExamHistory::where('user_id', auth()->user()->id)
                 ->orderBy('created_at', 'desc') // Assuming you want to order by creation date
-                ->paginate(3); // Adjust the number based on your requirements
+                ->paginate(10); // Adjust the number based on your requirements
 
 
             // Calculate and update remaining time for each exam history record
@@ -276,7 +276,7 @@ class AuthController extends Controller
 
             $subscriptionHistory = Purchase::where('user_id', auth()->user()->id)
                 ->orderBy('created_at', 'desc')
-                ->paginate(3);
+                ->paginate(10);
                 $user = Auth::user();
                 $expirationDate = Carbon::parse($user->subscription_expiration_date);
                 $formattedDate = $expirationDate->format('d-m-Y');

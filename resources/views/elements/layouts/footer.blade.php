@@ -1,4 +1,4 @@
-<footer class="pt-5">
+<footer class="pt-5 shadow">
     <div class="container">
         <!-- Row START -->
         <div class="row g-4">
@@ -90,11 +90,47 @@
             <div class="col-lg-6">
                 <div class="row g-4">
 
-                    <div class="col-6 col-md-6">
+                    <div class="col-4 col-md-4">
                         <h5 class="mb-2 mb-md-4">Lớp học</h5>
                         <ul class="nav flex-column">
                             @foreach ($classes->take(5) as $item)
                                 <li class="nav-item"><a class="nav-link" href="#">{{ $item->name }}</a></li>
+                            @endforeach
+
+                        </ul>
+                    </div>
+                    <div class="col-4 col-md-4">
+                        <h5 class="mb-2 mb-md-4">Môn học</h5>
+                        <ul class="nav flex-column">
+                            @php
+                                $count = 0;
+                            @endphp
+                            @foreach ($classes as $class)
+                                @foreach ($class->subjects as $subject)
+                                    @if ($count < 5)
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('home.course', $subject) }}">{{ $subject->name }}</a>
+                                        </li>
+                                        @php
+                                            $count++;
+                                        @endphp
+                                    @else
+                                        @break
+                                    @endif
+                                @endforeach
+                                @if ($count >= 5)
+                                    @break
+                                @endif
+                            @endforeach
+                        </ul>
+                        
+                    </div>
+                    <div class="col-4 col-md-4">
+                        <h5 class="mb-2 mb-md-4"> Tài liệu theo lớp</h5>
+                        <ul class="nav flex-column">
+                            @foreach ($classes->take(5) as $item)
+                                <li class="nav-item"><a class="nav-link"
+                                    href="{{ route('document.index', $item) }}">{{ $item->name }}</a></li>
                             @endforeach
 
                         </ul>
@@ -130,16 +166,7 @@
 
 
                     <!-- Link block -->
-                    <div class="col-6 col-md-6">
-                        <h5 class="mb-2 mb-md-4">Tài liệu theo lớp</h5>
-                        <ul class="nav flex-column">
-                            @foreach ($classes->take(5) as $item)
-                                <li class="nav-item"><a class="nav-link"
-                                        href="{{ route('document.index', $item) }}">{{ $item->name }}</a></li>
-                            @endforeach
 
-                        </ul>
-                    </div>
                 </div>
             </div>
             <!-- Widget 2 END -->

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="fs-4 text-decoration-underline">HỆ THỐNG CÁC CƠ SỞ</h2>
+                <h2 class="fs-4">HỆ THỐNG CÁC CƠ SỞ</h2>
                 
             </div>
         </div>

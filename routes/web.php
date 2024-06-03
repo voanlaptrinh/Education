@@ -158,7 +158,14 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::delete('delete/{subscription}', [SubscriptionController::class, 'destroy'])->name('subscriptions.destroy');
         });
 
+        Route::prefix('/detailSub')->group(function () {
+            Route::get('/{subscription}', [SubscriptionController::class, 'detalSub'])->name('detailSub.index');
+            Route::post('/add/{subscription}', [SubscriptionController::class, 'storeDetailSub'])->name('detailSub.store');
+            Route::put('/update/{detailSubscription}', [SubscriptionController::class, 'updateDetailSub'])->name('detailSub.update');
+            Route::delete('/delete/{detailSubscription}', [SubscriptionController::class, 'destroyDetailSub'])->name('detailSub.destroy');
 
+
+        });
         Route::prefix('/lectures')->group(function () {
             Route::get('/{chapter}', [LecturesController::class, 'index'])->name('lectures.index'); //in ra vi deo liên quan đến bài học
             Route::get('/create/{chapter}', [LecturesController::class, 'create'])->name('lectures.create');

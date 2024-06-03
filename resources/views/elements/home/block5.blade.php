@@ -11,7 +11,7 @@
         <div class="row">
             <!-- Slider START -->
             <div class="tiny-slider arrow-round arrow-blur arrow-hover">
-                <div class="tiny-slider-inner pb-1" data-autoplay="true" data-arrow="true" data-edge="2"
+                <div class="tiny-slider-inner pb-1" data-arrow="true" data-edge="2"
                     data-dots="false" data-items="3" data-items-lg="2" data-items-sm="1">
                     <!-- Card item START -->
                     @foreach ($bai_hoc as $item)
@@ -19,7 +19,7 @@
                             <div class="card action-trigger-hover border bg-transparent pb-3">
                                 <!-- Image -->
                                
-                                <img style="height: 225px" src="{{ $item->image ? asset('storage/' . $item->image) : 'placeholder.jpg' }}"
+                                <img style="height: 225px;background-size: cover;" src="{{ $item->image ? asset('storage/' . $item->image) : 'placeholder.jpg' }}"
                                     class="card-img-top" alt="course image">
                                 {{-- <div class="ribbon mt-3"><span>Free</span></div> --}}
                                 <!-- Card body -->

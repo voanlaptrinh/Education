@@ -63,6 +63,9 @@
                                             <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
                                                 type="submit"><i class="bi bi-trash  "></i></button>
                                         </form>
+                                        <a class="btn btn-primary btn-round me-1 mb-1 mb-md-0" href="{{ route('detailSub.index', ['subscription' => $subscription->id]) }}">
+                                            <i class="bi bi-plus-circle"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -78,12 +81,6 @@
                 </div>
                 <!-- Course table END -->
             </div>
-            <!-- Card body END -->
-
-
-            <!-- Card footer START -->
-
-            <!-- Card footer END -->
         </div>
         <!-- Card END -->
     </div>

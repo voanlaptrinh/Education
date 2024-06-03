@@ -28,6 +28,11 @@
                                     <label class="form-label">Câu hỏi</label>
                                     <input class="form-control" type="text" placeholder="Viết câu hỏi của bạn"
                                         name="text" value="{{old('text')}}">
+                                        @error('text')
+                                        <span class="invalid-feedback" role="alert">
+                                            <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="row pt-3">
                                     @foreach (range('A', 'D') as $key)

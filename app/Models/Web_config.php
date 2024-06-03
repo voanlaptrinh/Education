@@ -11,6 +11,7 @@ class Web_config extends Model
     protected $fillable = [
         'name',
         'logo',
+        'img_review',
         'website',
         'code',
         'gg_map',

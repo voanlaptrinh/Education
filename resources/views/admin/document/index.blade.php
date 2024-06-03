@@ -151,20 +151,25 @@
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                             @if ($documents->currentPage() > 1)
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $documents->url($documents->currentPage() - 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}" tabindex=""><i
-                                            class="fas fa-angle-left"></i></a></li>
-                            @endif
-                            @for ($i = 1; $i <= $documents->lastPage(); $i++)
-                                <li class=" page-item mb-0 {{ $documents->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $documents->url($i) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}">{{ $i }}</a>
-                                </li>
-                            @endfor
-                            @if ($documents->currentPage() < $documents->lastPage())
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $documents->url($documents->currentPage() + 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}"><i
-                                            class="fas fa-angle-right"></i></a></li>
-                            @endif
+                            <li class="page-item mb-0">
+                                <a class="page-link" href="{{ $documents->appends(['query' => request('query'), 'class' => request('class')])->url($documents->currentPage() - 1) }}" tabindex="">
+                                    <i class="fas fa-angle-left"></i>
+                                </a>
+                            </li>
+                        @endif
+                        @for ($i = 1; $i <= $documents->lastPage(); $i++)
+                            <li class="page-item mb-0 {{ $documents->currentPage() == $i ? 'active' : '' }}">
+                                <a class="page-link" href="{{ $documents->appends(['query' => request('query'), 'class' => request('class')])->url($i) }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+                        @if ($documents->currentPage() < $documents->lastPage())
+                            <li class="page-item mb-0">
+                                <a class="page-link" href="{{ $documents->appends(['query' => request('query'), 'class' => request('class')])->url($documents->currentPage() + 1) }}">
+                                    <i class="fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                        @endif
+                    
                         </ul>
                     </nav>
                     

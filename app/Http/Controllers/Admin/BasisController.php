@@ -23,7 +23,7 @@ class BasisController extends Controller
             'name' => 'required|string',
             'phone' => 'required|string|regex:/^[0-9]{10}$/',
             'email' => 'required|email',
-            'gg_map' => 'nullable|string',
+            'gg_map' => 'required|string',
             'address' => 'required|string',
             'open_time' => 'required|string',
 
@@ -36,6 +36,7 @@ class BasisController extends Controller
             'email.required' => 'Vui lòng nhập email.',
             'email.email' => 'Email không hợp lệ.',
             'gg_map.string' => 'Google Map URL phải là một chuỗi.',
+            'gg_map.required' => 'Google Map URL bắt buộc',
             'address.required' => 'Vui lòng nhập địa chỉ.',
             'open_time.required' => 'Vui lòng nhập địa chỉ.',
         ]);

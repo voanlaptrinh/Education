@@ -11,26 +11,26 @@ class SubjectController extends Controller
 {
     public function index(Request $request, $class = null)
     {
-        $searchQuery = $request->input('query'); // Thay đổi tên biến thành $searchQuery
-
-        // $subjects = Subject::when($searchQuery, function ($query) use ($searchQuery) {
-        //     return $query->where('name', 'like', '%'.$searchQuery.'%');
-        // })->latest()->get();
+        $searchQuery = $request->input('query'); // Capture the search query
+        // $class = $request->input('class_id'); // Capture the class_id if needed
+    
         $subjects = Subject::query();
-
-        // Nếu có class được truyền, lọc theo class
+    // dd($class);
+        // Filter by class if provided
         if ($class) {
             $subjects->where('class_id', $class);
         }
-  
     
-        // Lọc theo query tìm kiếm nếu có
+        // Filter by search query if provided
         if ($searchQuery) {
             $subjects->where('name', 'like', '%' . $searchQuery . '%');
         }
     
-        // Sắp xếp theo thứ tự mới nhất và phân trang
-        $subjects = $subjects->latest()->paginate(5);
+        // Sort by latest and paginate with 5 items per page
+        $subjects = $subjects->latest()->paginate(10);
+    
+        // Append query parameters to pagination links
+        $subjects->appends(['query' => $searchQuery, 'class_id' => $class]);
 
         $classes = Classes::all();
         $totalSubjects = Subject::count();

@@ -23,7 +23,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-info p-4 p-sm-5 rounded-3">
+                    <div class="bg-bg p-4 p-sm-5 rounded-3">
                         <div class="row position-relative">
                             <!-- Svg decoration -->
                             <figure class="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
@@ -119,7 +119,7 @@
                                     @if (!empty($lessons))
                                         @foreach ($lessons as $key => $lesson)
                                             <tr>
-                                                <td>{{$key}}</td>
+                                                <td>{{$key + 1}}</td>
                                                 <!-- Course item -->
                                                 <td>
                                                     <div class="d-flex align-items-center">
@@ -266,7 +266,7 @@
                                     @foreach ($courses as $course)
                                         <tr>
                                             <!-- Table data -->
-                                            <td>{{ $idx++ }}</td>
+                                            <td>{{ $idx + 1 }}</td>
 
                                             <!-- Table data -->
                                             <td>

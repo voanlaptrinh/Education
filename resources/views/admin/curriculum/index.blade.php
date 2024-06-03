@@ -130,23 +130,28 @@
                     <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                         <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                             @if ($curriculum->currentPage() > 1)
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $curriculum->url($curriculum->currentPage() - 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}" tabindex=""><i
-                                            class="fas fa-angle-left"></i></a></li>
-                            @endif
-                            @for ($i = 1; $i <= $curriculum->lastPage(); $i++)
-                                <li class=" page-item mb-0 {{ $curriculum->currentPage() == $i ? 'active' : '' }}">
-                                    <a class="page-link" href="{{ $curriculum->url($i) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}">{{ $i }}</a>
-                                </li>
-                            @endfor
-                            @if ($curriculum->currentPage() < $curriculum->lastPage())
-                                <li class="page-item mb-0"><a class="page-link"
-                                        href="{{ $curriculum->url($curriculum->currentPage() + 1) }}{{ isset($searchQuery) ? '?query=' . $searchQuery : '' }}"><i
-                                            class="fas fa-angle-right"></i></a></li>
-                            @endif
+                            <li class="page-item mb-0">
+                                <a class="page-link" href="{{ $curriculum->appends(['query' => request('query'), 'lesson_id' => request('lesson_id')])->url($curriculum->currentPage() - 1) }}" tabindex="">
+                                    <i class="fas fa-angle-left"></i>
+                                </a>
+                            </li>
+                        @endif
+                        @for ($i = 1; $i <= $curriculum->lastPage(); $i++)
+                            <li class="page-item mb-0 {{ $curriculum->currentPage() == $i ? 'active' : '' }}">
+                                <a class="page-link" href="{{ $curriculum->appends(['query' => request('query'), 'lesson_id' => request('lesson_id')])->url($i) }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+                        @if ($curriculum->currentPage() < $curriculum->lastPage())
+                            <li class="page-item mb-0">
+                                <a class="page-link" href="{{ $curriculum->appends(['query' => request('query'), 'lesson_id' => request('lesson_id')])->url($curriculum->currentPage() + 1) }}">
+                                    <i class="fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                        @endif
+
                         </ul>
                     </nav>
-                    
+
                 </div>
                 <!-- Pagination END -->
             </div>

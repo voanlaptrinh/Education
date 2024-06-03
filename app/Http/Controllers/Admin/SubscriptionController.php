@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classes;
+use App\Models\DetailDescription;
 use App\Models\Subscription;
 use App\Models\Web_config;
 use BaconQrCode\Encoder\QrCode;
@@ -114,5 +115,45 @@ class SubscriptionController extends Controller
             'qrCode' => $qrCode,
         ]);
     }
-  
+
+
+    public function detalSub(Subscription $subscription){
+        $detailSubscriptions = $subscription->detailSubscriptions()->paginate(10); // Assuming you want to paginate detail subscriptions
+
+        return view('admin.detailSub.index', compact('subscription', 'detailSubscriptions'));
+    }
+    public function storeDetailSub(Request $request, Subscription $subscription)
+    {
+        $validatedData = $request->validate([
+            'description' => 'required|string|max:255',
+        ]);
+    
+        // Create the detail subscription
+        $subscription->detailSubscriptions()->create($validatedData);
+    
+        return redirect()->back()->with('success', 'Thêm mô tả thành công!');
+    }
+
+    public function updateDetailSub(Request $request, DetailDescription $detailSubscription)
+    {
+        $validatedData = $request->validate([
+            'description' => 'required|string|max:255',
+        ]);
+
+        $detailSubscription->update($validatedData);
+
+        return redirect()->back()->with('success', 'Sửa mô tả thành công');
+    }
+
+    public function destroyDetailSub($id)
+    {
+        $detailSubscription = DetailDescription::findOrFail($id);
+        $subscription = $detailSubscription->subscription_id;
+
+        // Xóa bản ghi từ cơ sở dữ liệu
+        $detailSubscription->delete();
+
+        return redirect()->route('detailSub.index', ['subscription' => $subscription])
+            ->with('success', 'Xóa thành công');
+    }
 }
