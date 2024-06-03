@@ -171,7 +171,7 @@
                             </form>
                             @else
                                 <div class="card-footer text-center d-grid pb-0">
-                                    <button type="button" class="btn btn-success mb-0" data-bs-toggle="modal" data-bs-target="#viewReview">Mua gói</button>
+                                    <a href="{{ route('login') }}" class="btn btn-success mb-0" >Đăng nhập để mua gói</a>
                                 </div>
                             @endif
 
