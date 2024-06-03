@@ -274,8 +274,7 @@ Route::prefix('/documents')->group(function () {
 
 });
 
-
-
+Route::get('instruct_vnpay', [PageController::class, 'instruct_vnpay'])->name('instruct_vnpay');
 Route::get('{subject}/courses/bai-hoc-cau-hoi', [CourseAuthController::class, 'index'])->name('home.course');
 Route::get('/lessons/{lesson}', [CourseAuthController::class, 'show'])->name('lessons.show');
 

@@ -65,6 +65,16 @@
                                             </span>
                                         @enderror
                                     </div>
+                                    <div class="col-lg-4">
+                                        <label class="form-label">Mã số thuế</label>
+                                        <input type="text" value="{{$webConfig->code}}" class="form-control" 
+                                            id="code" name="code" >
+                                            @error('code')
+                                            <span class="invalid-feedback" role="alert">
+                                                <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                            </span>
+                                        @enderror
+                                    </div>
 
                                     <!-- Input item -->
                                     <div class="col-lg-12">
