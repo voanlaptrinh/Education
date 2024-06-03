@@ -11,6 +11,7 @@ use App\Models\Subscription;
 use App\Models\User;
 use App\Models\Web_config;
 use App\Models\Banner;
+use App\Models\Basis;
 use App\Models\Document;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
@@ -43,7 +44,7 @@ class VnpayController extends Controller
         $vnp_OrderType = "education";
         $vnp_Amount =  $data['total'] * 100;
         $vnp_Locale = 'VN';
-        $vnp_BankCode = 'VNPAYQR';
+        $vnp_BankCode = 'VNBANK';
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
         $inputData = array(
             "vnp_Version" => "2.1.0",
@@ -110,6 +111,7 @@ class VnpayController extends Controller
             $bai_hoc = Lesson::all();
             $webConfig = Web_config::find(1);
             $subscriptions = Subscription::all();
+            $basis = Basis::all();
         try {
            
             $purchase = new Purchase();
@@ -147,10 +149,10 @@ class VnpayController extends Controller
             $user->save();
             $purchase->save();
             Session::flash('success', 'Giao dịch thành công.');
-            return view('pages.index', compact('user', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'));
+            return view('pages.index', compact('user', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig','basis'));
         } catch (\Exception $e) {
             // Xử lý ngoại lệ và trả về thông báo lỗi nếu cần
-            return view('subscriptions.index', compact('user','subscriptions', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig'))->with('error', $e->getMessage());
+            return view('subscriptions.index', compact('user','subscriptions', 'banner', 'classes', 'totalLessons', 'totalLectures', 'bai_hoc', 'webConfig','basis'))->with('error', $e->getMessage());
         }
     }
     public function Vnpay_Document(Request $request)
