@@ -102,7 +102,26 @@
                     <div class="col-4 col-md-4">
                         <h5 class="mb-2 mb-md-4">Chính sách</h5>
                         <ul class="nav flex-column">
-
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{route('guarantee')}}">Chính sách bảo hành</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{route('security')}}">Chính sách bảo mật</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{route('pay')}}">Chính sách thanh toán</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{route('lie')}}">Đổi trả/ Hoàn tiền</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{route('cancellation')}}">Chính sách hoàn trả</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{route('instruct_vnpay')}}">Hướng dẫn thanh toán VNPAY</a>

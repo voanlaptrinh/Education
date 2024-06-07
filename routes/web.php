@@ -274,7 +274,12 @@ Route::prefix('/documents')->group(function () {
 
 });
 
-Route::get('instruct_vnpay', [PageController::class, 'instruct_vnpay'])->name('instruct_vnpay');
+Route::get('huong-dan-thanh-toan.html', [PageController::class, 'instruct_vnpay'])->name('instruct_vnpay');
+Route::get('chinh-sach-bao-hanh.html', [PageController::class, 'guarantee'])->name('guarantee');
+Route::get('chinh-sach-bao-mat.html', [PageController::class, 'security'])->name('security');
+Route::get('chinh-sach-thanh-toan.html', [PageController::class, 'pay'])->name('pay');
+Route::get('chinh-sach-doi-tra-hoan-tien.html', [PageController::class, 'lie'])->name('lie');
+Route::get('chinh-sach-hoan-huy.html', [PageController::class, 'cancellation'])->name('cancellation');
 Route::get('{subject}/courses/bai-hoc-cau-hoi', [CourseAuthController::class, 'index'])->name('home.course');
 Route::get('/lessons/{lesson}', [CourseAuthController::class, 'show'])->name('lessons.show');
 

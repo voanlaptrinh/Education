@@ -40,6 +40,66 @@ class PageController extends Controller
         $basis = Basis::all();
         return View('elements.home.instruct_vnpay', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
+    public function guarantee(){
+        $classes = Classes::where('status', 1)->get();
+        $totalLessons = Lesson::count();
+        $totalLectures = Lecture::count();
+        $totalReviews = Review::Where('status', 1)->count();
+        $totalUser = User::Where('user_type', 1)->count();
+        $bai_hoc = Lesson::all();
+        $webConfig = Web_config::find(1);
+        $banner = Banner::find(1);
+        $basis = Basis::all();
+        return View('elements.home.guarantee', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+    }
+    public function cancellation(){
+        $classes = Classes::where('status', 1)->get();
+        $totalLessons = Lesson::count();
+        $totalLectures = Lecture::count();
+        $totalReviews = Review::Where('status', 1)->count();
+        $totalUser = User::Where('user_type', 1)->count();
+        $bai_hoc = Lesson::all();
+        $webConfig = Web_config::find(1);
+        $banner = Banner::find(1);
+        $basis = Basis::all();
+        return View('elements.home.cancellation', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+    }
+    public function security(){
+        $classes = Classes::where('status', 1)->get();
+        $totalLessons = Lesson::count();
+        $totalLectures = Lecture::count();
+        $totalReviews = Review::Where('status', 1)->count();
+        $totalUser = User::Where('user_type', 1)->count();
+        $bai_hoc = Lesson::all();
+        $webConfig = Web_config::find(1);
+        $banner = Banner::find(1);
+        $basis = Basis::all();
+        return View('elements.home.security', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+    }
+    public function pay(){
+        $classes = Classes::where('status', 1)->get();
+        $totalLessons = Lesson::count();
+        $totalLectures = Lecture::count();
+        $totalReviews = Review::Where('status', 1)->count();
+        $totalUser = User::Where('user_type', 1)->count();
+        $bai_hoc = Lesson::all();
+        $webConfig = Web_config::find(1);
+        $banner = Banner::find(1);
+        $basis = Basis::all();
+        return View('elements.home.pay', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+    }
+    public function lie(){
+        $classes = Classes::where('status', 1)->get();
+        $totalLessons = Lesson::count();
+        $totalLectures = Lecture::count();
+        $totalReviews = Review::Where('status', 1)->count();
+        $totalUser = User::Where('user_type', 1)->count();
+        $bai_hoc = Lesson::all();
+        $webConfig = Web_config::find(1);
+        $banner = Banner::find(1);
+        $basis = Basis::all();
+        return View('elements.home.lie', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+    }
     public function search(Request $request)
     {
         $keyword = $request->input('search');
