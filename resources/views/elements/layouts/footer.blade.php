@@ -94,7 +94,7 @@
                         <h5 class="mb-2 mb-md-4">Lớp học</h5>
                         <ul class="nav flex-column">
                             @foreach ($classes->take(5) as $item)
-                                <li class="nav-item"><a class="nav-link" href="#">{{ $item->name }}</a></li>
+                                <li class="nav-item"><a class="nav-link" >{{ $item->name }}</a></li>
                             @endforeach
 
                         </ul>

@@ -107,7 +107,7 @@
                                             </li>
                                         @endfor
                                         @if ($examHistory->currentPage() < $examHistory->lastPage())
-                                            <li class="page-item mb-0"><a class="page-link" href="#"><i
+                                            <li class="page-item mb-0"><a class="page-link"><i
                                                         class="fas fa-angle-right"></i></a></li>
                                         @endif
                         </ul>
