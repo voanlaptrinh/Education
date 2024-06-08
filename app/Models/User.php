@@ -38,7 +38,7 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-   
+
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
@@ -57,7 +57,7 @@ class User extends Authenticatable
         $this->password_reset_expires_at = $expires_at;
         $this->save();
     }
-    protected $dates = ['subscription_expiration_date','expires_at'];
+    protected $dates = ['subscription_expiration_date', 'expires_at'];
 
     public function subscription(): BelongsTo
     {
@@ -86,18 +86,21 @@ class User extends Authenticatable
     public function isProValid()
     {
         // Kiểm tra nếu pro_expiration là null hoặc lớn hơn thời gian hiện tại
-        return $this->pro_expiration === null || $this->pro_expiration->gt(Carbon::now());
+        return $this->pro_expiration === null || $this->pro_expiration->gt(\Carbon::now());
     }
-    
+
     // Trong mô hình User.php
-public function getNumberOfCompletedExams()
-{
-    return $this->examHistories()->count();
-}
+    public function getNumberOfCompletedExams()
+    {
+        return $this->examHistories()->count();
+    }
 
-public function examHistories()
-{
-    return $this->hasMany(ExamHistory::class, 'user_id');
-}
-
+    public function examHistories()
+    {
+        return $this->hasMany(ExamHistory::class, 'user_id');
+    }
+    public function tutors()
+    {
+        return $this->hasMany(Tutor::class);
+    }
 }

@@ -94,16 +94,17 @@
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/font-awesome/css/all.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/bootstrap-icons/bootstrap-icons.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/tiny-slider/tiny-slider.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/glightbox/css/glightbox.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/stepper/css/bs-stepper.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/slick.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/user/css/slick-theme.css')}}" />
-    
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/vendor/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('/assets/user/vendor/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/vendor/tiny-slider/tiny-slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/vendor/glightbox/css/glightbox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/vendor/stepper/css/bs-stepper.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/user/css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/user/css/slick-theme.css') }}" />
+
     <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/css/style.css') }}">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7N7LGGGWT1"></script>
@@ -149,15 +150,14 @@
     @include('elements.layouts.footer')
 
 
-    <script src="{{asset('/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
-    <script src="{{asset('/assets/user/vendor/tiny-slider/tiny-slider.js')}}"></script>
-    <script src="{{asset('/assets/user/vendor/glightbox/js/glightbox.js')}}"></script>
-    <script src="{{asset('/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js')}}"></script>
-
+    <script src="{{ asset('/assets/user/vendor/tiny-slider/tiny-slider.js') }}"></script>
+    <script src="{{ asset('/assets/user/vendor/glightbox/js/glightbox.js') }}"></script>
+    <script src="{{ asset('/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js') }}"></script>
     <!-- Template Functions -->
-    <script src="{{asset('/assets/user/vendor/stepper/js/bs-stepper.min.js')}}"></script>
-    <script src="{{asset('/assets/user/js/functions.js')}}"></script>
+    <script src="{{ asset('/assets/user/vendor/stepper/js/bs-stepper.min.js') }}"></script>
+    <script src="{{ asset('/assets/user/js/functions.js') }}"></script>
     <script>
         $(document).ready(function() {
             var currentUrl = window.location.href;
@@ -170,6 +170,8 @@
             });
         });
     </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -197,8 +199,10 @@
         });
     </script>
 
-<script src="{{asset('/assets/user/js/slick.min.js')}}"></script>
+    <script src="{{ asset('/assets/user/js/slick.min.js') }}"></script>
 
+
+  
     <script>
         $(document).ready(function() {
             $('.aa').slick({
@@ -239,7 +243,7 @@
                             slidesToScroll: 1
                         }
                     }
-                    
+
                 ]
 
             });

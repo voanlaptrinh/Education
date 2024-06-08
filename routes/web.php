@@ -28,6 +28,8 @@ use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
 use App\Http\Controllers\Admin\SubjectController;
+use App\Http\Controllers\Admin\TutorController;
+use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\WebConfigController;
 use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
@@ -52,6 +54,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('upload-image');
 
 Route::middleware(['auth', 'check.user.type:0'])->group(function () {
     ///admin
@@ -70,6 +73,13 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/news/delete/{id}', [NewsAdminController::class, 'destroy'])->name('news.destroy');
             Route::get('/search', [NewsAdminController::class, 'search'])->name('news.search');
         });
+
+        Route::prefix('tutor')->group(function () {
+            Route::get('/', [TutorController::class, 'index'])->name('tutor.index');
+            Route::get('/create', [TutorController::class, 'create'])->name('tutor.create');
+        });
+
+
         Route::prefix('student')->group(function () {
             Route::get('/', [StudentController::class, 'index'])->name('student.index');
             Route::get('/show/{studentS}', [StudentController::class, 'show'])->name('student.show');

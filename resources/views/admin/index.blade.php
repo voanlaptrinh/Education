@@ -364,7 +364,23 @@ $logo = \App\Models\Web_config::find(1);
     <script src="/assets/user/js/functions.js"></script>
 
 </body>
+<script src="{{ asset('/tinymce/js/tinymce/tinymce.min.js') }}"></script>
 
+<script type="text/javascript">
+    tinymce.init({
+        selector: '#content',
+        plugins: 'advlist autolink lists link image charmap print preview anchor table',
+        toolbar: 'undo redo | formatselect | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help | image | table',
+        content_css: "{{asset('/css/codepen.min.css')}}",
+        images_upload_url: "{{ route('upload-image') }}",
+        images_upload_credentials: true,
+        relative_urls: false,
+        document_base_url: "{{ url('/') }}",
+    });
+</script>
 <!-- Mirrored from eduport.webestica.com/admin-course-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:26:16 GMT -->
 
 </html>
