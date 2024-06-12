@@ -13,22 +13,21 @@ return new class extends Migration
     {
         Schema::create('tutors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // ID người dùng liên kết
-            $table->string('first_name'); // Tên gia sư
-            $table->string('last_name'); // HỌ gia sư
-            $table->string('email'); // Email
-            $table->string('image'); // Ảnh gia sư
-            $table->string('phone_number'); // SỐ điện thoại
+            $table->string('first_name')->nullable(); // Tên gia sư
+            $table->string('last_name')->nullable(); // HỌ gia sư
+            $table->string('email')->nullable(); // Email
+            $table->string('image')->nullable(); // Ảnh gia sư
+            $table->string('password')->nullable(); // Mật khẩu
+            $table->string('phone_number')->nullable(); // SỐ điện thoại
             $table->date('date_of_birth'); // Ngày sinh
-            $table->string('gender'); // Giới tính
-            $table->string('address'); //  Địa chỉ nơi ở của gia sư.
-            $table->string('qualification'); //  Trình độ học vấn của gia sư.
-            $table->integer('experience_years'); // Số năm kinh nghiệm giảng dạy của gia sư
-            $table->string('subjects'); // Các môn học mà gia sư có thể dạy.
-            $table->string('hourly_rate'); //Mức phí theo giờ của gia sư.
-            $table->string('bio'); // Tiểu sử hoặc mô tả ngắn về gia sư.
+            $table->string('gender')->nullable(); // Giới tính
+            $table->string('address')->nullable(); //  Địa chỉ nơi ở của gia sư.
+            $table->string('qualification')->nullable(); //  Trình độ học vấn của gia sư.
+            $table->integer('experience_years')->nullable(); // Số năm kinh nghiệm giảng dạy của gia sư
+            $table->string('subjects')->nullable(); // Các môn học mà gia sư có thể dạy.
+            $table->string('hourly_rate')->nullable(); //Mức phí theo giờ của gia sư.
+            $table->string('bio')->nullable(); // Tiểu sử hoặc mô tả ngắn về gia sư.
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

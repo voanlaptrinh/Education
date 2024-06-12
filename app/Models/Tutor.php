@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tutor extends Model
+class Tutor extends Authenticatable
 {
     use HasFactory;
     protected $table = 'tutors';
 
     protected $fillable = [
-        'user_id',
         'first_name',
         'last_name',
         'email',
         'image',
+        'password',
         'phone_number',
         'date_of_birth',
         'gender',
@@ -28,8 +29,5 @@ class Tutor extends Model
     ];
 
     // Định nghĩa mối quan hệ với mô hình User
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+   
 }

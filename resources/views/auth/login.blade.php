@@ -1,12 +1,6 @@
 @extends('auth.index')
 @section('contentlogin')
     <!-- Title -->
-
-
-
-
-
-
     <ul class="nav nav-tabs nav-justified mb-3">
         <li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab" href="#tab-2-1"> Đăng nhập tài khoản </a> </li>
         <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#tab-2-2"> Đăng nhập gia sư </a> </li>
@@ -93,7 +87,7 @@
                 <p class="lead mb-4">Rất vui được gặp bạn! Vui lòng đăng nhập bằng tài khoản của bạn.</p>
 
                 <!-- Form START -->
-                <form action="{{ route('login') }}" method="post">
+                <form method="POST" action="{{ route('tutor.login') }}">
                     @csrf
                     <!-- Email -->
                     <div class="mb-4">

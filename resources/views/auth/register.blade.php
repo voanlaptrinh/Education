@@ -14,26 +14,28 @@
                     <div class="input-group input-group-lg">
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
-                        <input type="text" name="name" 
+                        <input type="text" name="name" value="{{old('name')}}"
                             class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên..."
                             id="exampleInputEmail1">
-                        @error('name')
+                        
+                    </div>
+                    @error('name')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-                    </div>
                 </div>
                 <div class="col-lg-6">
                     <label for="exampleInputEmail1" class="form-label">Tên đầy đủ *</label>
                     <div class="input-group input-group-lg">
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
-                        <input type="text" name="username" 
+                        <input type="text" name="username"  value="{{old('username')}}"
                             class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên... "
                             id="exampleInputEmail1">
-                        @error('username')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                       
                     </div>
+                    @error('username')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
                 </div>
             </div>
             <div class="mb-4">
@@ -42,7 +44,7 @@
                     <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                             class="bi bi-envelope-fill"></i></span>
                     <input type="email" name="email"  class="form-control border-0 bg-light rounded-end ps-1"
-                        placeholder="E-mail..." id="exampleInputEmail1">
+                        placeholder="E-mail..." id="exampleInputEmail1" value="{{old('email')}}">
                    
                 </div>
                 @error('email')

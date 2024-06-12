@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -75,6 +75,38 @@ class AuthController extends Controller
         }
 
         return redirect('/login')->with('error', 'Thông tin đăng nhập không đúng.');
+    }
+    public function postLoginTutor(Request $request)
+    {
+        // Kiểm tra và xác nhận dữ liệu đầu vào
+        $request->validate(
+            [
+                'email' => 'required|string|email',
+                'password' => 'required|string',
+            ],
+            [
+                'email.required' => 'Phải nhập email',
+                'email.email' => 'Email không hợp lệ',
+                'password.required' => 'Phải nhập mật khẩu',
+            ]
+        );
+
+        if (Auth::guard('tutor')->attempt($request->only('email', 'password'))) {
+            return redirect()->route('dashboard')->with('success', 'Đăng nhập thành công.');
+        }
+
+        return back()->withErrors([
+            'email' => 'Thông tin đăng nhập không đúng.',
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('tutor')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/tutor/login');
     }
 
     public function register(Request $request)

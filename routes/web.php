@@ -35,6 +35,7 @@ use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\Auth\VnpayController;
 use App\Http\Controllers\Auth\DocumentController as AuthDocumentController;
+use App\Http\Controllers\Tutor\TutorController as TutorTutorController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\VideoController;
 use App\Mail\ConfirmationMail;
@@ -77,6 +78,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('tutor')->group(function () {
             Route::get('/', [TutorController::class, 'index'])->name('tutor.index');
             Route::get('/create', [TutorController::class, 'create'])->name('tutor.create');
+            Route::post('/store', [TutorController::class, 'store'])->name('tutor.store');
+            Route::get('/edit/{tutor}', [TutorController::class, 'edit'])->name('tutor.edit');
+            Route::put('/tutors/{id}', [TutorController::class, 'update'])->name('tutor.update');
+            Route::delete('/delete/{tutor}', [TutorController::class, 'destroy'])->name('tutor.destroy');
         });
 
 
@@ -120,7 +125,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/{course}/questions/create', [QuestionController::class, 'create'])->name('questions.create');
             Route::post('/{course}/questions/store', [QuestionController::class, 'store'])->name('questions.store');
         });
-      
+
         Route::prefix('/classes')->group(function () {
             Route::get('/', [ClassesController::class, 'index'])->name('classes.index');
             Route::post('/store', [ClassesController::class, 'store'])->name('classes.store');
@@ -156,7 +161,6 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::delete('/delete/{chapter}', [ChaptersController::class, 'destroy'])->name('curriculum.destroy');
             Route::get('/search', [ChaptersController::class, 'search'])->name('curriculum.search');
             Route::get('/{lesson?}', [ChaptersController::class, 'index'])->name('curriculum.index');
-
         });
 
         Route::prefix('/subcsription')->group(function () {
@@ -173,8 +177,6 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/add/{subscription}', [SubscriptionController::class, 'storeDetailSub'])->name('detailSub.store');
             Route::put('/update/{detailSubscription}', [SubscriptionController::class, 'updateDetailSub'])->name('detailSub.update');
             Route::delete('/delete/{detailSubscription}', [SubscriptionController::class, 'destroyDetailSub'])->name('detailSub.destroy');
-
-
         });
         Route::prefix('/lectures')->group(function () {
             Route::get('/{chapter}', [LecturesController::class, 'index'])->name('lectures.index'); //in ra vi deo liên quan đến bài học
@@ -195,7 +197,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
 
         Route::prefix('/document')->group(function () {
             Route::get('/getDocumentDetails/{id}', [AdminDocumentController::class, 'getDocumentDetails'])->name('getDocumentDetails');
-         
+
             Route::get('/create', [AdminDocumentController::class, 'create'])->name('document.create');
             Route::post('/store', [AdminDocumentController::class, 'store'])->name('document.store');
             Route::delete('/delete/{document}', [AdminDocumentController::class, 'destroy'])->name('document.destroy');
@@ -215,9 +217,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('update/{basis}', [BasisController::class, 'update'])->name('basis.update');
             Route::get('/{id}/basis', [BasisController::class, 'show'])->name('basis.show');
             Route::delete('/delete/{basis}', [BasisController::class, 'destroy'])->name('basis.destroy');
-
         });
-
     });
 });
 
@@ -241,6 +241,12 @@ Route::get('/', [PageController::class, 'index'])->name('home.index');
 Route::get('/verify-email/{token}', [VerificationController::class, 'verify'])->name('verify.email');
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'postLogin']);
+
+
+
+Route::post('tutor/login', [AuthController::class, 'postLoginTutor'])->name('tutor.login');
+
+
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'postRegister']);
 Route::get('/logout', [AuthController::class, 'profilelogout'])->name('logout');
@@ -279,9 +285,6 @@ Route::prefix('/documents')->group(function () {
     Route::get('/{class}', [AuthDocumentController::class, 'index'])->name('document.index');
     Route::get('/detail/{id}', [AuthDocumentController::class, 'detail'])->name('document.detail');
     Route::get('/download/{documentId}', [AuthDocumentController::class, 'download'])->name('document.download');
-
-
-
 });
 
 Route::get('huong-dan-thanh-toan.html', [PageController::class, 'instruct_vnpay'])->name('instruct_vnpay');
@@ -327,3 +330,8 @@ Route::prefix('/user')->group(function () {
 Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/default', [ContactController::class, 'default'])->name('default');
 Route::get('/get-video-data', [VideoController::class, 'getVideoData']);
+
+
+Route::prefix('tutor')->group(function () {
+    Route::get('/dashboard', [TutorTutorController::class, 'index'])->name('dashboard');
+});

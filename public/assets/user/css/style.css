@@ -23897,6 +23897,23 @@ html[dir=rtl] .choices__input {
     color: #000;
 }
 
+.imge_anh {
+    /* max-width: 190px; */
+    display: none;
+}
+
+.labelFile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    align-items: center;
+    text-align: center;
+    padding: 35px;
+    color: #404040;
+    cursor: pointer;
+}
+
 
 /*User CSS*/
 
