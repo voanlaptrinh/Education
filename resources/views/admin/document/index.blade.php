@@ -212,7 +212,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
-                                                    <label for="email">Description</label>
+                                                    <label for="email">Mô tả</label>
                                                     <textarea disabled readonly  class="form-control" name="descriptionS" id="descriptionS" cols="30" rows="10"></textarea>
                                                   
                                                 </div>
@@ -222,14 +222,14 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
-                                                    <label for="email">Access_level</label>
+                                                    <label for="email">Cấp độ truy cập</label>
                                                    <input type="text" disabled readonly  class="form-control text-uppercase" name="accesslever" id="accesslever" >
                                                   
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 ">
-                                                    <label for="email">Price</label>
+                                                    <label for="email">Giá</label>
                                                    <input type="text" disabled readonly  class="form-control text-uppercase" name="price" id="price" >
                                                   
                                                 </div>
