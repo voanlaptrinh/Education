@@ -64,7 +64,7 @@
                                                         class="badge bg-success bg-opacity-10 text-success">{{ $subject->name }}</a>
                                                     <a
                                                         class="badge bg-success bg-opacity-10 text-success">{{ $subject->class->name }}</a>
-                                                    <a href="#" class="text-danger"></a>
+                                                    <a class="text-danger"></a>
                                                 </div>
                                                 <!-- Title -->
                                                 <h5 class="card-title fw-normal">{{ $course->name }}

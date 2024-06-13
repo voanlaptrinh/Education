@@ -61,7 +61,7 @@
                             <div class="bg-overlay bg-dark opacity-4"></div>
                             <div class="card-img-overlay d-flex align-items-start p-3">
                                 <!-- badge -->
-                                <a href="#" class="badge text-bg-danger">{{$item->name}}</a>
+                                <a class="badge text-bg-danger">{{$item->name}}</a>
                             </div>
                         </div>
 
@@ -88,7 +88,7 @@
             <!-- Pagination START -->
             <nav class="d-flex justify-content-center mt-5" aria-label="navigation">
                 <ul class="pagination pagination-primary-soft rounded mb-0">
-                    <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
+                    <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i
                                 class="fas fa-angle-double-left"></i></a></li>
                     <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                     <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>

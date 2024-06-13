@@ -80,7 +80,7 @@
 
                                             <!-- Title -->
                                             <h6 class="table-responsive-title mb-0 ms-2">
-                                                <a href="#" class="stretched-link">{{ $newS->name }}</a>
+                                                <a class="stretched-link">{{ $newS->name }}</a>
                                             </h6>
                                         </div>
                                     </td>

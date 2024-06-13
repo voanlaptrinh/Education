@@ -354,7 +354,7 @@
                                     </div>
                                     <!-- Content and input -->
                                     <div class="col-lg-5 text-lg-end">
-                                        <a href="#" class="btn btn-warning mb-0">Contact us</a>
+                                        <a class="btn btn-warning mb-0">Contact us</a>
                                     </div>
                                 </div>
                             </div>

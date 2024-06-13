@@ -152,7 +152,7 @@
                                     <p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                                     <!-- Button -->
                                     <div class="text-end">
-                                        <a href="#" class="btn btn-sm btn-primary-soft mb-1 mb-sm-0">Direct message</a>
+                                        <a class="btn btn-sm btn-primary-soft mb-1 mb-sm-0">Direct message</a>
                                         <a class="btn btn-sm btn-light mb-0" data-bs-toggle="collapse" href="#collapseComment" role="button" aria-expanded="false" aria-controls="collapseComment">
                                             Reply
                                         </a>
@@ -195,8 +195,8 @@
                                     <p>Far advanced settling say finished raillery. Offered chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                                     <!-- Button -->
                                     <div class="text-end">
-                                        <a href="#" class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                                        <a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
+                                        <a class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
+                                        <a class="btn btn-sm btn-light mb-0">Reply</a>
                                     </div>
                                 </div>
                             </div>
@@ -229,8 +229,8 @@
                                     <p>Offered chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                                     <!-- Button -->
                                     <div class="text-end">
-                                        <a href="#" class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                                        <a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
+                                        <a class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
+                                        <a class="btn btn-sm btn-light mb-0">Reply</a>
                                     </div>
                                 </div>
                             </div>
@@ -263,8 +263,8 @@
                                     <p>Chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                                     <!-- Button -->
                                     <div class="text-end">
-                                        <a href="#" class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                                        <a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
+                                        <a class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
+                                        <a class="btn btn-sm btn-light mb-0">Reply</a>
                                     </div>
                                 </div>
                             </div>
@@ -297,8 +297,8 @@
                                     <p>Chiefly farther Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. </p>
                                     <!-- Button -->
                                     <div class="text-end">
-                                        <a href="#" class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
-                                        <a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
+                                        <a class="btn btn-sm btn-primary-soft mb-0">Direct message</a>
+                                        <a class="btn btn-sm btn-light mb-0">Reply</a>
                                     </div>
                                 </div>
                             </div>
@@ -314,7 +314,7 @@
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul class="pagination pagination-sm pagination-primary-soft my-0 py-0">
-                                        <li class="page-item my-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item my-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                         <li class="page-item my-0"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item my-0 active"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item my-0"><a class="page-link" href="#">3</a></li>

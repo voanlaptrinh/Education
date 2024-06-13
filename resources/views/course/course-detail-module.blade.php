@@ -30,7 +30,7 @@
                 <div class="col-lg-3">
                     <h6 class="text-white lead fw-light mb-3"><i class="fas fa-user-graduate text-orange me-2"></i>12,155 already enrolled</h6>
                     <!-- Button -->
-                    <a href="#" class="btn btn-warning mb-3 w-100">Enroll Course</a>
+                    <a class="btn btn-warning mb-3 w-100">Enroll Course</a>
 
                     <!-- Progress item -->
                     <div class="overflow-hidden mb-4">
@@ -110,17 +110,17 @@
 
                                                             <!-- Content -->
                                                             <div class="ms-3">
-                                                                <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> What is Digital Marketing What is Digital Marketing</a>
+                                                                <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> What is Digital Marketing What is Digital Marketing</a>
                                                                 <ul class="nav nav-divider small mb-0">
                                                                     <li class="nav-item">15m 10s</li>
                                                                     <li class="nav-item">20pts</li>
-                                                                    <li class="nav-item"><a href="#" class="text-success">Submitted</a></li>
+                                                                    <li class="nav-item"><a class="text-success">Submitted</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
 
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Completed">
+                                                        <a class="p-2 mb-0 text-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Completed">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -132,12 +132,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-signature fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 1 - Research about marketing</a>
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 1 - Research about marketing</a>
                                                                     <ul class="nav nav-divider small mb-0">
                                                                         <li class="nav-item">20pts</li>
                                                                         <li class="nav-item"><a href="#">Submit</a></li>
@@ -147,7 +147,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Completed">
+                                                        <a class="p-2 mb-0 text-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Completed">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -159,12 +159,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-alt fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
                                                                         Slide - Digital Marketing
                                                                     </a>
                                                                     <ul class="nav nav-divider small mb-0">
@@ -184,7 +184,7 @@
                                                             </a>
 
                                                             <!-- Mark button -->
-                                                            <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                            <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                                 <i class="bi bi-check-circle-fill"></i>
                                                             </a>
                                                         </div>
@@ -197,12 +197,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-question-circle fa-fw fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Quiz - Digital Marketing</a>
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Quiz - Digital Marketing</a>
                                                                     <ul class="nav nav-divider small mb-0">
                                                                         <li class="nav-item">12 April</li>
                                                                         <li class="nav-item">10 pts</li>
@@ -212,7 +212,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -238,12 +238,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-signature fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 2 - Research about customer life cycle</a>
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 2 - Research about customer life cycle</a>
                                                                     <ul class="nav nav-divider small mb-0">
                                                                         <li class="nav-item">20pts</li>
                                                                         <li class="nav-item"><a href="#">Submit</a></li>
@@ -253,7 +253,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -265,12 +265,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-signature fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 3 - SEO Optimization</a>
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 3 - SEO Optimization</a>
                                                                     <ul class="nav nav-divider small mb-0">
                                                                         <li class="nav-item">20pts</li>
                                                                         <li class="nav-item"><a href="#">Submit</a></li>
@@ -280,7 +280,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -292,12 +292,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-alt fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
                                                                         Slide - Type of Marketing
                                                                     </a>
                                                                     <ul class="nav nav-divider small mb-0">
@@ -309,7 +309,7 @@
                                                         </div>
 
                                                         <!-- Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -337,12 +337,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-signature fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 2 - Research about customer life cycle</a>
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 2 - Research about customer life cycle</a>
                                                                     <ul class="nav nav-divider small mb-0">
                                                                         <li class="nav-item">20pts</li>
                                                                         <li class="nav-item"><a href="#">Submit</a></li>
@@ -352,7 +352,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -364,12 +364,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-signature fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 3 - SEO Optimization</a>
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Assignments 3 - SEO Optimization</a>
                                                                     <ul class="nav nav-divider small mb-0">
                                                                         <li class="nav-item">20pts</li>
                                                                         <li class="nav-item"><a href="#">Submit</a></li>
@@ -379,7 +379,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -391,12 +391,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-alt fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
                                                                         Slide - Type of Marketing
                                                                     </a>
                                                                     <ul class="nav nav-divider small mb-0">
@@ -408,7 +408,7 @@
                                                         </div>
 
                                                         <!-- Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -441,7 +441,7 @@
 
                                                             <!-- Content -->
                                                             <div class="ms-3">
-                                                                <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> What is Digital Marketing What is Digital Marketing</a>
+                                                                <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> What is Digital Marketing What is Digital Marketing</a>
                                                                 <ul class="nav nav-divider small mb-0">
                                                                     <li class="nav-item">15m 10s</li>
                                                                     <li class="nav-item">20pts</li>
@@ -469,7 +469,7 @@
 
                                                             <!-- Content -->
                                                             <div class="ms-3">
-                                                                <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> Measuring SEO Effectiveness</a>
+                                                                <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> Measuring SEO Effectiveness</a>
                                                                 <ul class="nav nav-divider small mb-0">
                                                                     <li class="nav-item">30m 10s</li>
                                                                     <li class="nav-item">20pts</li>
@@ -497,7 +497,7 @@
 
                                                             <!-- Content -->
                                                             <div class="ms-3">
-                                                                <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> Keywords in Blog and Articles</a>
+                                                                <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"> Keywords in Blog and Articles</a>
                                                                 <ul class="nav nav-divider small mb-0">
                                                                     <li class="nav-item">30m 10s</li>
                                                                     <li class="nav-item">20pts</li>
@@ -519,12 +519,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-fw fa-file-alt fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px" data-bs-toggle="modal" data-bs-target="#slideModal">
                                                                         Slide - Digital Marketing
                                                                     </a>
                                                                     <ul class="nav nav-divider small mb-0">
@@ -536,7 +536,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -548,12 +548,12 @@
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <!-- Video button -->
-                                                                <a href="#" class="icon-md mb-0 position-static flex-shrink-0 text-body">
+                                                                <a class="icon-md mb-0 position-static flex-shrink-0 text-body">
                                                                     <i class="fas fa-question-circle fa-fw fs-5"></i>
                                                                 </a>
                                                                 <!-- Content -->
                                                                 <div class="ms-3">
-                                                                    <a href="#" class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Quiz - Digital Marketing</a>
+                                                                    <a class="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Quiz - Digital Marketing</a>
                                                                     <ul class="nav nav-divider small mb-0">
                                                                         <li class="nav-item">12 April</li>
                                                                         <li class="nav-item">10 pts</li>
@@ -563,7 +563,7 @@
                                                             </div>
                                                         </div>
                                                         <!-- Actions Mark button -->
-                                                        <a href="#" class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
+                                                        <a class="p-2 mb-0 text-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as Complete">
                                                             <i class="bi bi-check-circle-fill"></i>
                                                         </a>
                                                     </div>
@@ -610,9 +610,9 @@
                                                     <p>Departure defective arranging rapturous did believe him all had supported. Supposing so be resolving breakfast am or perfectly. It drew a hill from me. Valley by oh twenty direct me so. Departure defective arranging rapturous did believe him all had supported. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how.</p>
                                                     <!-- Buttons -->
                                                     <div class="hstack gap-3 flex-wrap">
-                                                        <a href="#" class="btn btn-sm btn-primary mb-0"><i class="bi bi-play-fill me-2"></i>Play</a>
-                                                        <a href="#" class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Edit</a>
-                                                        <a href="#" class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Delete</a>
+                                                        <a class="btn btn-sm btn-primary mb-0"><i class="bi bi-play-fill me-2"></i>Play</a>
+                                                        <a class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Edit</a>
+                                                        <a class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -631,9 +631,9 @@
                                                     <p>Arranging rapturous did believe him all had supported. Supposing so be resolving breakfast am or perfectly. It drew a hill from me. Valley by oh twenty direct me so. Departure defective arranging rapturous did believe him all had supported. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how. Family months lasted simple set nature vulgar him. Picture for attempt joy excited ten carried manners talking how.</p>
                                                     <!-- Buttons -->
                                                     <div class="hstack gap-3 flex-wrap">
-                                                        <a href="#" class="btn btn-sm btn-primary mb-0"><i class="bi bi-play-fill me-2"></i>Play</a>
-                                                        <a href="#" class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Edit</a>
-                                                        <a href="#" class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Delete</a>
+                                                        <a class="btn btn-sm btn-primary mb-0"><i class="bi bi-play-fill me-2"></i>Play</a>
+                                                        <a class="text-success mb-0"><i class="bi bi-pencil-square me-2"></i>Edit</a>
+                                                        <a class="text-danger mb-0"><i class="bi bi-trash me-2"></i>Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -685,7 +685,7 @@
 
                                                 <!-- Button -->
                                                 <div class="col-sm-6 col-lg-3">
-                                                    <a href="#" class="btn btn-primary-soft mb-0 w-100" data-bs-toggle="modal" data-bs-target="#modalCreatePost">Create Post</a>
+                                                    <a class="btn btn-primary-soft mb-0 w-100" data-bs-toggle="modal" data-bs-target="#modalCreatePost">Create Post</a>
                                                 </div>
                                             </form>
                                         </div>

@@ -85,7 +85,7 @@
                             <img src="assets/images/element/data-science.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Data Science</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Data Science</a></h5>
                         <h6 class="mb-0">15 Courses</h6>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                             <img src="assets/images/element/online.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">IT & Software</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">IT & Software</a></h5>
                         <h6 class="mb-0">22 Courses</h6>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                             <img src="assets/images/element/engineering.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Engineering</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Engineering</a></h5>
                         <h6 class="mb-0">53 Courses</h6>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                             <img src="assets/images/element/coding.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Web Development</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Web Development</a></h5>
                         <h6 class="mb-0">25 Courses</h6>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                             <img src="assets/images/element/profit.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Finance</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Finance</a></h5>
                         <h6 class="mb-0">20 Courses</h6>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                             <img src="assets/images/element/medical.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Medical</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Medical</a></h5>
                         <h6 class="mb-0">10 Courses</h6>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                             <img src="assets/images/element/home.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Architecture</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Architecture</a></h5>
                         <h6 class="mb-0">30 Courses</h6>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                             <img src="assets/images/element/artist.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Art &amp; Design</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Art &amp; Design</a></h5>
                         <h6 class="mb-0">35 Courses</h6>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                             <img src="assets/images/element/photography.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Photography</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Photography</a></h5>
                         <h6 class="mb-0">20 Courses</h6>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
                             <img src="assets/images/element/music.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Musics</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Musics</a></h5>
                         <h6 class="mb-0">10 Courses</h6>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                             <img src="assets/images/element/marketing.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Marketing</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Marketing</a></h5>
                         <h6 class="mb-0">30 Courses</h6>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                             <img src="assets/images/element/account.svg" alt="">
                         </div>
                         <!-- Title -->
-                        <h5 class="mb-2"><a href="#" class="stretched-link">Accounting</a></h5>
+                        <h5 class="mb-2"><a class="stretched-link">Accounting</a></h5>
                         <h6 class="mb-0">35 Courses</h6>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/fr.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>French</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>French</h5>
                     </div>
                 </div>
 
@@ -262,7 +262,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/gr.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>German</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>German</h5>
                     </div>
                 </div>
 
@@ -270,7 +270,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/sp.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>Español</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>Español</h5>
                     </div>
                 </div>
 
@@ -278,7 +278,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/uk.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>English</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>English</h5>
                     </div>
                 </div>
 
@@ -286,7 +286,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/in.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>Hindi</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>Hindi</h5>
                     </div>
                 </div>
 
@@ -294,7 +294,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/it.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>Italian</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>Italian</h5>
                     </div>
                 </div>
 
@@ -302,7 +302,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/ar.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>Arabic</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>Arabic</h5>
                     </div>
                 </div>
 
@@ -310,7 +310,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="bg-light rounded-2 p-3 d-flex align-items-center position-relative justify-content-center">
                         <img src="assets/images/flags/uk.svg" class="me-3 h-40px" alt="">
-                        <h5 class="mb-0"><a href="#" class="stretched-link text-primary-hover"></a>English</h5>
+                        <h5 class="mb-0"><a class="stretched-link text-primary-hover"></a>English</h5>
                     </div>
                 </div>
 
@@ -337,7 +337,7 @@
                             <div class="col-sm-8 position-relative">
                                 <h3 class="mb-1">Earn a Certificate</h3>
                                 <p class="mb-3 h5 fw-light lead">Get the right professional certificate program for you.</p>
-                                <a href="#" class="btn btn-primary mb-0">View Programs</a>
+                                <a class="btn btn-primary mb-0">View Programs</a>
                             </div>
                         </div>
                     </div>
@@ -355,7 +355,7 @@
                             <div class="col-sm-8 position-relative">
                                 <h3 class="mb-1">Best Rated Courses</h3>
                                 <p class="mb-3 h5 fw-light lead">Enroll now in the most popular and best rated courses.</p>
-                                <a href="#" class="btn btn-warning mb-0">View Courses</a>
+                                <a class="btn btn-warning mb-0">View Courses</a>
                             </div>
                         </div>
                     </div>

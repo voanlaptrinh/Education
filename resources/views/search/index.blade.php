@@ -40,9 +40,9 @@
                                         <div class="card-body pb-0">
                                             <!-- Badge and favorite -->
                                             <div class="d-flex justify-content-between mb-2">
-                                                <a href="#" class="badge bg-purple bg-opacity-10 text-purple">Hoạt
+                                                <a class="badge bg-purple bg-opacity-10 text-purple">Hoạt
                                                     động</a>
-                                                <a href="#" class="h6 fw-light mb-0"></a>
+                                                <a class="h6 fw-light mb-0"></a>
                                             </div>
                                             <!-- Title -->
                                             <h5 class="card-title"><a

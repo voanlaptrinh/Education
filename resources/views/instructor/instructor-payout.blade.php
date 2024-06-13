@@ -125,7 +125,7 @@
                             <div class="bg-primary bg-opacity-10 h-100 p-3 rounded-3">
                                 <h6 class="mb-0">Balance</h6>
                                 <h2 class="mb-2 mt-2">$8,485</h2>
-                                <a href="#" class="btn btn-sm btn-primary mb-0">Withdraw Earning</a>
+                                <a class="btn btn-sm btn-primary mb-0">Withdraw Earning</a>
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                                             <!-- Table data -->
                                             <td>$3,999
                                                 <!-- Drop down with id -->
-                                                <a href="#" class="h6 mb-0" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="h6 mb-0" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
@@ -242,7 +242,7 @@
                                             <!-- Table data -->
                                             <td>$4,875
                                                 <!-- Drop down with id -->
-                                                <a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
@@ -291,7 +291,7 @@
                                             <!-- Table data -->
                                             <td>$1,800
                                                 <!-- Drop down with id -->
-                                                <a href="#" class="h6 mb-0" role="button" id="dropdownShare2" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="h6 mb-0" role="button" id="dropdownShare2" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare2">
@@ -340,7 +340,7 @@
                                             <!-- Table data -->
                                             <td>$6,800
                                                 <!-- Drop down with id -->
-                                                <a href="#" class="h6 mb-0" role="button" id="dropdownShare3" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="h6 mb-0" role="button" id="dropdownShare3" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare3">
@@ -390,7 +390,7 @@
                                             <!-- Table data -->
                                             <td>$3,576
                                                 <!-- Drop down with id -->
-                                                <a href="#" class="h6 mb-0" role="button" id="dropdownShare4" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="h6 mb-0" role="button" id="dropdownShare4" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="bi bi-info-circle-fill"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare4">
@@ -441,7 +441,7 @@
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>

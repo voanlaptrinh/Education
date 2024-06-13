@@ -43,8 +43,8 @@
                         <div class="card-body pb-0">
                             <!-- Badge and favorite -->
                             <div class="d-flex justify-content-between mb-2">
-                                <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                <a class="text-danger"><i class="fas fa-heart"></i></a>
                             </div>
                             <!-- Title -->
                             <h5 class="card-title fw-normal"><a href="#">Graphic Design Masterclass</a></h5>
@@ -82,8 +82,8 @@
                         <div class="card-body pb-0">
                             <!-- Badge and favorite -->
                             <div class="d-flex justify-content-between mb-2">
-                                <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                <a class="text-danger"><i class="fas fa-heart"></i></a>
                             </div>
                             <!-- Title -->
                             <h5 class="card-title fw-normal"><a href="#">Deep Learning with React-Native </a></h5>
@@ -120,8 +120,8 @@
                         <div class="card-body pb-0">
                             <!-- Badge and favorite -->
                             <div class="d-flex justify-content-between mb-2">
-                                <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                                <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                <a class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                                <a class="text-danger"><i class="fas fa-heart"></i></a>
                             </div>
                             <!-- Title -->
                             <h5 class="card-title fw-normal"><a href="#">Learn Invision</a></h5>
@@ -158,8 +158,8 @@
                         <div class="card-body pb-0">
                             <!-- Badge and favorite -->
                             <div class="d-flex justify-content-between mb-2">
-                                <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                                <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                <a class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                                <a class="text-danger"><i class="fas fa-heart"></i></a>
                             </div>
                             <!-- Title -->
                             <h5 class="card-title fw-normal"><a href="#">Build Responsive Websites with HTML</a>

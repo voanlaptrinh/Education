@@ -174,7 +174,7 @@
                                 <div class="card-header bg-transparent border-bottom">
                                     <div class="d-sm-flex justify-content-sm-between align-items-center">
                                         <h3 class="mb-2 mb-sm-0">Most Selling Courses</h3>
-                                        <a href="#" class="btn btn-sm btn-primary-soft mb-0">View all</a>
+                                        <a class="btn btn-sm btn-primary-soft mb-0">View all</a>
                                     </div>
                                 </div>
                                 <!-- Card header END -->
@@ -222,7 +222,7 @@
                                                     </td>
                                                     <!-- Action item -->
                                                     <td>
-                                                        <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+                                                        <a class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
                                                         <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                     </td>
                                                 </tr>
@@ -252,7 +252,7 @@
                                                     </td>
                                                     <!-- Action item -->
                                                     <td>
-                                                        <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+                                                        <a class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
                                                         <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                     </td>
                                                 </tr>
@@ -282,7 +282,7 @@
                                                     </td>
                                                     <!-- Action item -->
                                                     <td>
-                                                        <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+                                                        <a class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
                                                         <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                     </td>
                                                 </tr>
@@ -312,7 +312,7 @@
                                                     </td>
                                                     <!-- Action item -->
                                                     <td>
-                                                        <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+                                                        <a class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
                                                         <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                     </td>
                                                 </tr>
@@ -342,7 +342,7 @@
                                                     </td>
                                                     <!-- Action item -->
                                                     <td>
-                                                        <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+                                                        <a class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
                                                         <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                     </td>
                                                 </tr>
@@ -359,7 +359,7 @@
                                         <!-- Pagination -->
                                         <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                             <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                                <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                                <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                                 <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                                 <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                                 <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>

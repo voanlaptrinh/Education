@@ -7,7 +7,7 @@
                 <div class="col-12 text-center">
                     <!-- Title -->
                     <h1 class="text-white">Submit a new Course</h1>
-                    <p class="text-white mb-0">Read our <a href="#" class="text-white"><u>"Before you create a course"</u></a> article before submitting!</p>
+                    <p class="text-white mb-0">Read our <a class="text-white"><u>"Before you create a course"</u></a> article before submitting!</p>
                 </div>
             </div>
         </div>
@@ -353,7 +353,7 @@
                                         <!-- Add lecture Modal button -->
                                         <div class="d-sm-flex justify-content-sm-between align-items-center mb-3">
                                             <h5 class="mb-2 mb-sm-0">Upload Lecture</h5>
-                                            <a href="#" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addLecture"><i class="bi bi-plus-circle me-2"></i>Add Lecture</a>
+                                            <a class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addLecture"><i class="bi bi-plus-circle me-2"></i>Add Lecture</a>
                                         </div>
 
                                         <!-- Edit lecture START -->
@@ -372,12 +372,12 @@
                                                         <!-- Video item START -->
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="position-relative">
-                                                                <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"><i class="fas fa-play"></i></a>
+                                                                <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"><i class="fas fa-play"></i></a>
                                                                 <span class="ms-2 mb-0 h6 fw-light">Introduction</span>
                                                             </div>
                                                             <!-- Edit and cancel button -->
                                                             <div>
-                                                                <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+                                                                <a class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
                                                                 <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                             </div>
                                                         </div>
@@ -388,12 +388,12 @@
                                                         <!-- Video item START -->
                                                         <div class="d-flex justify-content-between align-items-center">
                                                             <div class="position-relative">
-                                                                <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"><i class="fas fa-play"></i></a>
+                                                                <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"><i class="fas fa-play"></i></a>
                                                                 <span class="ms-2 mb-0 h6 fw-light">What is Digital Marketing</span>
                                                             </div>
                                                             <!-- Edit and cancel button -->
                                                             <div>
-                                                                <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+                                                                <a class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
                                                                 <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                             </div>
                                                         </div>
@@ -402,7 +402,7 @@
                                                         <!-- Video item END -->
 
                                                         <!-- Add topic -->
-                                                        <a href="#" class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic"><i class="bi bi-plus-circle me-2"></i>Add topic</a>
+                                                        <a class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic"><i class="bi bi-plus-circle me-2"></i>Add topic</a>
                                                     </div>
                                                     <!-- Topic END -->
                                                 </div>
@@ -420,7 +420,7 @@
                                                 <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionExample2">
                                                     <div class="accordion-body mt-3">
                                                         <!-- Add topic -->
-                                                        <a href="#" class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic">
+                                                        <a class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic">
                                                             <i class="bi bi-plus-circle me-2"></i>Add topic
                                                         </a>
                                                     </div>
@@ -439,7 +439,7 @@
                                                 <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionExample2">
                                                     <div class="accordion-body mt-3">
                                                         <!-- Add topic -->
-                                                        <a href="#" class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic">
+                                                        <a class="btn btn-sm btn-dark mb-0" data-bs-toggle="modal" data-bs-target="#addTopic">
                                                             <i class="bi bi-plus-circle me-2"></i>Add topic
                                                         </a>
                                                     </div>
@@ -473,7 +473,7 @@
                                             <div class="bg-light border rounded p-2 p-sm-4">
                                                 <div class="d-sm-flex justify-content-sm-between align-items-center mb-3">
                                                     <h5 class="mb-2 mb-sm-0">Upload FAQs</h5>
-                                                    <a href="#" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addQuestion"><i class="bi bi-plus-circle me-2"></i>Add Question</a>
+                                                    <a class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addQuestion"><i class="bi bi-plus-circle me-2"></i>Add Question</a>
                                                 </div>
 
                                                 <div class="row g-4">
@@ -485,7 +485,7 @@
                                                                 <h6 class="mb-0">How Digital Marketing Work?</h6>
                                                                 <!-- Button -->
                                                                 <div class="align-middle">
-                                                                    <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+                                                                    <a class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
                                                                     <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                                 </div>
                                                             </div>
@@ -502,7 +502,7 @@
                                                                 <h6 class="mb-0">How Digital Marketing Work?</h6>
                                                                 <!-- Button -->
                                                                 <div class="align-middle">
-                                                                    <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+                                                                    <a class="btn btn-sm btn-success-soft btn-round me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
                                                                     <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
                                                                 </div>
                                                             </div>

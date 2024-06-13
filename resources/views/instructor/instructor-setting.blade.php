@@ -145,7 +145,7 @@
                                         <!-- Buttons -->
                                         <div class="d-sm-flex justify-content-end">
                                             <button type="button" class="btn btn-sm btn-primary me-2 mb-0">Save changes</button>
-                                            <a href="#" class="btn btn-sm btn-outline-secondary mb-0">Cancel</a>
+                                            <a class="btn btn-sm btn-outline-secondary mb-0">Cancel</a>
                                         </div>
 
                                     </div>

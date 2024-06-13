@@ -38,7 +38,7 @@
                     <div class="alert alert-danger alert-dismissible d-flex justify-content-between align-items-center fade show py-2 pe-2" role="alert">
                         <div>
                             <i class="bi bi-exclamation-octagon-fill me-2"></i>
-                            Already have an account? <a href="#" class="text-reset btn-link mb-0 fw-bold">Log in</a></div>
+                            Already have an account? <a class="text-reset btn-link mb-0 fw-bold">Log in</a></div>
                         <button type="button" class="btn btn-link mb-0 text-primary-hover text-end" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x-lg"></i></button>
                     </div>
 
@@ -254,8 +254,8 @@
 
                                             <!-- Remove and edit button -->
                                             <div class="text-primary-hover">
-                                                <a href="#" class="text-body me-2"><i class="bi bi-trash me-1"></i>Remove</a>
-                                                <a href="#" class="text-body me-2"><i class="bi bi-pencil-square me-1"></i>Edit</a>
+                                                <a class="text-body me-2"><i class="bi bi-trash me-1"></i>Remove</a>
+                                                <a class="text-body me-2"><i class="bi bi-pencil-square me-1"></i>Edit</a>
                                             </div>
                                         </div>
                                     </div>
@@ -280,8 +280,8 @@
 
                                             <!-- Remove and edit button -->
                                             <div class="text-primary-hover">
-                                                <a href="#" class="text-body me-2"><i class="bi bi-trash me-1"></i>Remove</a>
-                                                <a href="#" class="text-body me-2"><i class="bi bi-pencil-square me-1"></i>Edit</a>
+                                                <a class="text-body me-2"><i class="bi bi-trash me-1"></i>Remove</a>
+                                                <a class="text-body me-2"><i class="bi bi-pencil-square me-1"></i>Edit</a>
                                             </div>
                                         </div>
                                     </div>
@@ -308,7 +308,7 @@
 
                                 <!-- Button -->
                                 <div class="d-grid">
-                                    <a href="#" class="btn btn-lg btn-success">Place Order</a>
+                                    <a class="btn btn-lg btn-success">Place Order</a>
                                 </div>
 
                                 <!-- Content -->
@@ -337,7 +337,7 @@
                                     <h5 class="card-title text-white mb-2">Access 25K Online courses from 120 institutions, Start today!</h5>
                                     <p class="text-white text-opacity-75">Here is the description of premium features which will allow users to get benefits and save a lot of money</p>
                                     <!-- Button -->
-                                    <a href="#" class="btn btn-sm btn-warning mb-0">Purchase Premium</a>
+                                    <a class="btn btn-sm btn-warning mb-0">Purchase Premium</a>
                                 </div>
                             </div>
                         </div>

@@ -94,11 +94,11 @@
                                             <!-- Badge and rating -->
                                             <div class="d-flex justify-content-between align-items-center mb-2">
                                                 <!-- Badge -->
-                                                <a href="#" class="badge text-bg-primary mb-2 mb-sm-0">Development</a>
+                                                <a class="badge text-bg-primary mb-2 mb-sm-0">Development</a>
                                                 <!-- Rating and wishlist -->
                                                 <div>
                                                     <span class="h6 fw-light me-3"><i class="fas fa-star text-warning me-1"></i>4.5</span>
-                                                    <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                                    <a class="text-danger"><i class="fas fa-heart"></i></a>
                                                 </div>
                                             </div>
 
@@ -120,11 +120,11 @@
                                                     <div class="avatar">
                                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
                                                     </div>
-                                                    <p class="mb-0 ms-2"><a href="#" class="h6 fw-light">Jacqueline Miller</a></p>
+                                                    <p class="mb-0 ms-2"><a class="h6 fw-light">Jacqueline Miller</a></p>
                                                 </div>
                                                 <!-- Price -->
                                                 <div class="mt-3 mt-sm-0">
-                                                    <a href="#" class="btn btn-dark">View more</a>
+                                                    <a class="btn btn-dark">View more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -146,11 +146,11 @@
                                             <!-- Badge and rating -->
                                             <div class="d-flex justify-content-between align-items-center mb-2">
                                                 <!-- Badge -->
-                                                <a href="#" class="badge text-bg-primary mb-2 mb-sm-0">Marketing</a>
+                                                <a class="badge text-bg-primary mb-2 mb-sm-0">Marketing</a>
                                                 <!-- Rating and wishlist -->
                                                 <div>
                                                     <span class="h6 fw-light me-3"><i class="fas fa-star text-warning me-1"></i>4.5</span>
-                                                    <a href="#" class="h6 fw-light"><i class="far fa-heart"></i></a>
+                                                    <a class="h6 fw-light"><i class="far fa-heart"></i></a>
                                                 </div>
                                             </div>
 
@@ -172,11 +172,11 @@
                                                     <div class="avatar">
                                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/10.jpg" alt="avatar">
                                                     </div>
-                                                    <p class="mb-0 ms-2"><a href="#" class="h6 fw-light">Larry Lawson</a></p>
+                                                    <p class="mb-0 ms-2"><a class="h6 fw-light">Larry Lawson</a></p>
                                                 </div>
                                                 <!-- Price -->
                                                 <div class="mt-3 mt-sm-0">
-                                                    <a href="#" class="btn btn-dark">View more</a>
+                                                    <a class="btn btn-dark">View more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -198,11 +198,11 @@
                                             <!-- Badge and rating -->
                                             <div class="d-flex justify-content-between align-items-center mb-2">
                                                 <!-- Badge -->
-                                                <a href="#" class="badge text-bg-primary mb-2 mb-sm-0">Development</a>
+                                                <a class="badge text-bg-primary mb-2 mb-sm-0">Development</a>
                                                 <!-- Rating and wishlist -->
                                                 <div>
                                                     <span class="h6 fw-light me-3"><i class="fas fa-star text-warning me-1"></i>4.8</span>
-                                                    <a href="#" class="h6 fw-light"><i class="far fa-heart"></i></a>
+                                                    <a class="h6 fw-light"><i class="far fa-heart"></i></a>
                                                 </div>
                                             </div>
 
@@ -224,11 +224,11 @@
                                                     <div class="avatar">
                                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
                                                     </div>
-                                                    <p class="mb-0 ms-2"><a href="#" class="h6 fw-light">Louis Crawford</a></p>
+                                                    <p class="mb-0 ms-2"><a class="h6 fw-light">Louis Crawford</a></p>
                                                 </div>
                                                 <!-- Price -->
                                                 <div class="mt-3 mt-sm-0">
-                                                    <a href="#" class="btn btn-dark">View more</a>
+                                                    <a class="btn btn-dark">View more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,11 +250,11 @@
                                             <!-- Badge and rating -->
                                             <div class="d-flex justify-content-between align-items-center mb-2">
                                                 <!-- Badge -->
-                                                <a href="#" class="badge text-bg-primary mb-2 mb-sm-0">Design</a>
+                                                <a class="badge text-bg-primary mb-2 mb-sm-0">Design</a>
                                                 <!-- Rating and wishlist -->
                                                 <div>
                                                     <span class="h6 fw-light me-3"><i class="fas fa-star text-warning me-1"></i>4.0</span>
-                                                    <a href="#" class="h6 fw-light"><i class="far fa-heart"></i></a>
+                                                    <a class="h6 fw-light"><i class="far fa-heart"></i></a>
                                                 </div>
                                             </div>
 
@@ -276,11 +276,11 @@
                                                     <div class="avatar">
                                                         <img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
                                                     </div>
-                                                    <p class="mb-0 ms-2"><a href="#" class="h6 fw-light">Frances Guerrero</a></p>
+                                                    <p class="mb-0 ms-2"><a class="h6 fw-light">Frances Guerrero</a></p>
                                                 </div>
                                                 <!-- Price -->
                                                 <div class="mt-3 mt-sm-0">
-                                                    <a href="#" class="btn btn-dark">View more</a>
+                                                    <a class="btn btn-dark">View more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -296,7 +296,7 @@
                     <div class="col-12">
                         <nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
                             <ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
+                                <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
                                 <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item mb-0"><a class="page-link" href="#">..</a></li>

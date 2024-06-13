@@ -162,7 +162,7 @@
 
                                             <!-- Table data -->
                                             <td class="text-center text-sm-start text-primary-hover">
-                                                <a href="#" class="text-body"><u>#125489</u></a>
+                                                <a class="text-body"><u>#125489</u></a>
                                             </td>
 
                                             <!-- Table data -->
@@ -183,7 +183,7 @@
                                             </td>
                                             <!-- Table data -->
                                             <td class="text-center text-sm-start text-primary-hover">
-                                                <a href="#" class="text-body"><u>#235486</u></a>
+                                                <a class="text-body"><u>#235486</u></a>
                                             </td>
 
                                             <!-- Table data -->
@@ -204,7 +204,7 @@
                                             </td>
                                             <!-- Table data -->
                                             <td class="text-center text-sm-start text-primary-hover">
-                                                <a href="#" class="text-body"><u>#0215789</u></a>
+                                                <a class="text-body"><u>#0215789</u></a>
                                             </td>
 
                                             <!-- Table data -->
@@ -225,7 +225,7 @@
                                             </td>
                                             <!-- Table data -->
                                             <td class="text-center text-sm-start text-primary-hover">
-                                                <a href="#" class="text-body"><u>#0135689</u></a>
+                                                <a class="text-body"><u>#0135689</u></a>
                                             </td>
 
                                             <!-- Table data -->
@@ -246,7 +246,7 @@
                                             </td>
                                             <!-- Table data -->
                                             <td class="text-center text-sm-start text-primary-hover">
-                                                <a href="#" class="text-body"><u>#0587623</u></a>
+                                                <a class="text-body"><u>#0587623</u></a>
                                             </td>
 
                                             <!-- Table data -->
@@ -267,7 +267,7 @@
                                             </td>
                                             <!-- Table data -->
                                             <td class="text-center text-sm-start text-primary-hover">
-                                                <a href="#" class="text-body"><u>#0215789</u></a>
+                                                <a class="text-body"><u>#0215789</u></a>
                                             </td>
 
                                             <!-- Table data -->
@@ -293,7 +293,7 @@
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>

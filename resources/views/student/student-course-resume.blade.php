@@ -134,7 +134,7 @@
                                             </ul>
 
                                             <!-- button -->
-                                            <a href="#" class="btn btn-primary-soft btn-sm mb-0">Resume course</a>
+                                            <a class="btn btn-primary-soft btn-sm mb-0">Resume course</a>
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +177,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-success btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-success btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-200px">Introduction</span>
@@ -189,7 +189,7 @@
                                                     <a class="btn btn-xs btn-warning mb-0" data-bs-toggle="collapse" href="#addnote-1" role="button" aria-expanded="false" aria-controls="addnote-1">
                                                         <i class="bi fa-fw bi-pencil-square me-2"></i>Note
                                                     </a>
-                                                    <a href="#" class="btn btn-xs btn-dark mb-0">Play again</a>
+                                                    <a class="btn btn-xs btn-dark mb-0">Play again</a>
 
                                                     <!-- Notes START -->
                                                     <div class="collapse" id="addnote-1">
@@ -204,8 +204,8 @@
                                                                 </div>
                                                                 <!-- Button -->
                                                                 <div class="d-flex">
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
                                                                 </div>
                                                             </div>
 
@@ -218,8 +218,8 @@
                                                                 </div>
                                                                 <!-- Button -->
                                                                 <div class="d-flex">
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
                                                                 </div>
                                                             </div>
 
@@ -234,7 +234,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-success btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-success btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px"> What is Digital Marketing What is Digital Marketing</span>
@@ -246,7 +246,7 @@
                                                         <a class="btn btn-xs btn-warning mb-0" data-bs-toggle="collapse" href="#addnote-2" role="button" aria-expanded="false" aria-controls="addnote-2">
                                                             <i class="bi fa-fw bi-pencil-square me-2"></i>Note
                                                         </a>
-                                                        <a href="#" class="btn btn-xs btn-dark mb-0">Play again</a>
+                                                        <a class="btn btn-xs btn-dark mb-0">Play again</a>
 
                                                         <!-- Notes START -->
                                                         <div class="collapse" id="addnote-2">
@@ -261,8 +261,8 @@
                                                                     </div>
                                                                     <!-- Button -->
                                                                     <div class="d-flex">
-                                                                        <a href="#" class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
-                                                                        <a href="#" class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
+                                                                        <a class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
+                                                                        <a class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
                                                                     </div>
                                                                 </div>
 
@@ -275,8 +275,8 @@
                                                                     </div>
                                                                     <!-- Button -->
                                                                     <div class="d-flex">
-                                                                        <a href="#" class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
-                                                                        <a href="#" class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
+                                                                        <a class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
+                                                                        <a class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
                                                                     </div>
                                                                 </div>
 
@@ -290,7 +290,7 @@
                                                 <!-- Course lecture -->
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="position-relative d-flex align-items-center">
-                                                        <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                        <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                             <i class="fas fa-play me-0"></i>
                                                         </a>
                                                         <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Type of Digital Marketing</span>
@@ -329,7 +329,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-sm-400px">Introduction</span>
@@ -343,7 +343,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px"> What is Digital Marketing What is Digital Marketing</span>
@@ -356,7 +356,7 @@
                                                 <!-- Course lecture -->
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="position-relative d-flex align-items-center">
-                                                        <a href="#" class="btn btn-light btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#coursePremium">
+                                                        <a class="btn btn-light btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#coursePremium">
                                                             <i class="bi bi-lock-fill"></i>
                                                         </a>
                                                         <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Type of Digital Marketing</span>
@@ -396,7 +396,7 @@
                                                 <li class="list-inline-item h6 fw-light"><i class="fas fa-signal text-success me-2"></i>All level</li>
                                             </ul>
                                             <!-- Button -->
-                                            <a href="#" class="btn btn-primary-soft btn-sm mb-0">Resume course</a>
+                                            <a class="btn btn-primary-soft btn-sm mb-0">Resume course</a>
                                         </div>
                                     </div>
                                 </div>
@@ -439,7 +439,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-success btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-success btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Introduction</span>
@@ -451,7 +451,7 @@
                                                     <a class="btn btn-xs btn-warning mb-0" data-bs-toggle="collapse" href="#addnote-3" role="button" aria-expanded="false" aria-controls="addnote-3">
                                                         <i class="bi fa-fw bi-pencil-square me-2"></i>Note
                                                     </a>
-                                                    <a href="#" class="btn btn-xs btn-dark mb-0">Play again</a>
+                                                    <a class="btn btn-xs btn-dark mb-0">Play again</a>
 
                                                     <!-- Notes START -->
                                                     <div class="collapse" id="addnote-3">
@@ -466,8 +466,8 @@
                                                                 </div>
                                                                 <!-- Button -->
                                                                 <div class="d-flex">
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
                                                                 </div>
                                                             </div>
 
@@ -480,8 +480,8 @@
                                                                 </div>
                                                                 <!-- Button -->
                                                                 <div class="d-flex">
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
-                                                                    <a href="#" class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round me-2 mb-0"><i class="bi fa-fw bi-play-fill"></i></a>
+                                                                    <a class="btn btn-sm btn-light btn-round mb-0"><i class="bi fa-fw bi-trash-fill"></i></a>
                                                                 </div>
                                                             </div>
 
@@ -496,7 +496,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px"> What is Digital Marketing What is Digital Marketing</span>
@@ -509,7 +509,7 @@
                                                 <!-- Course lecture -->
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="position-relative d-flex align-items-center">
-                                                        <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                        <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                             <i class="fas fa-play me-0"></i>
                                                         </a>
                                                         <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Type of Digital Marketing</span>
@@ -549,7 +549,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Video Flow</span>
@@ -563,7 +563,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Webmaster Tool</span>
@@ -577,7 +577,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Featured Contents on Channel</span>
@@ -591,7 +591,7 @@
                                                 <div>
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-light btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#coursePremium">
+                                                            <a class="btn btn-light btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#coursePremium">
                                                                 <i class="bi bi-lock-fill"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Managing Comments</span>
@@ -604,7 +604,7 @@
                                                 <!-- Course lecture -->
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="position-relative d-flex align-items-center">
-                                                        <a href="#" class="btn btn-light btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#coursePremium">
+                                                        <a class="btn btn-light btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#coursePremium">
                                                             <i class="bi bi-lock-fill"></i>
                                                         </a>
                                                         <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-150px w-sm-400px">Channel Analytics</span>

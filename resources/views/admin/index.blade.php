@@ -184,7 +184,7 @@ $logo = \App\Models\Web_config::find(1);
                                 <!-- Profile dropdown START -->
                                 <li class="nav-item ms-2 ms-md-3 dropdown">
                                     <!-- Avatar -->
-                                    <a class="avatar avatar-sm p-0" href="#" id="profileDropdown"
+                                    <a class="avatar avatar-sm p-0" id="profileDropdown"
                                         role="button" data-bs-auto-close="outside" data-bs-display="static"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <img class="avatar-img rounded-circle" src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"

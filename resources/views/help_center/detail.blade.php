@@ -189,13 +189,13 @@
                                     <h5 class="mt-4">Related Article</h5>
                                     <!-- Article link -->
                                     <ul class="list-group list-group-borderless mb-3">
-                                        <li class="list-group-item d-flex pb-0"><a href="#" class="mb-0">How do I
+                                        <li class="list-group-item d-flex pb-0"><a class="mb-0">How do I
                                                 logout on eduport</a></li>
-                                        <li class="list-group-item d-flex pb-0"><a href="#" class="mb-0">How do T
+                                        <li class="list-group-item d-flex pb-0"><a class="mb-0">How do T
                                                 permanently delete my account</a></li>
-                                        <li class="list-group-item d-flex pb-0"><a href="#" class="mb-0">What's the
+                                        <li class="list-group-item d-flex pb-0"><a class="mb-0">What's the
                                                 difference between deactivating and deleting my account</a></li>
-                                        <li class="list-group-item d-flex pb-0"><a href="#" class="mb-0">Why did my
+                                        <li class="list-group-item d-flex pb-0"><a class="mb-0">Why did my
                                                 payment in a eduport message fail?</a></li>
                                     </ul>
                                 </div>
@@ -254,11 +254,11 @@
                                     <h5 class="mt-4">Need a Help?</h5>
                                     <!-- Article link -->
                                     <ul class="list-group list-group-borderless mb-3">
-                                        <li class="list-group-item d-flex pb-0"><a href="#" class="mb-0">About
+                                        <li class="list-group-item d-flex pb-0"><a class="mb-0">About
                                                 daily budgets</a></li>
-                                        <li class="list-group-item d-flex pb-0"><a href="#" class="mb-0">About
+                                        <li class="list-group-item d-flex pb-0"><a class="mb-0">About
                                                 lifetime budgets</a></li>
-                                        <li class="list-group-item d-flex pb-0"><a href="#" class="mb-0">When you
+                                        <li class="list-group-item d-flex pb-0"><a class="mb-0">When you
                                                 pay for Eduport ads</a></li>
                                     </ul>
                                 </div>

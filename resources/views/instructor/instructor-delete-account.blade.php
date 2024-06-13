@@ -112,8 +112,8 @@
                                 <input class="form-check-input" type="checkbox" value="" id="deleteaccountCheck">
                                 <label class="form-check-label" for="deleteaccountCheck">Yes, I'd like to delete my account</label>
                             </div>
-                            <a href="#" class="btn btn-success-soft mb-2 mb-sm-0">Keep my account</a>
-                            <a href="#" class="btn btn-danger mb-0">Delete my account</a>
+                            <a class="btn btn-success-soft mb-2 mb-sm-0">Keep my account</a>
+                            <a class="btn btn-danger mb-0">Delete my account</a>
                         </div>
                     </div>
                     <!-- Title and select END -->

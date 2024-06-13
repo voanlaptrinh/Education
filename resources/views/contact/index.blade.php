@@ -34,7 +34,7 @@
                         <ul class="list-inline mb-0">
                             <!-- Address -->
                             <li class="list-item mb-3 text-start">
-                                <a href="#" class="text-dark text-uppercase"> <i
+                                <a class="text-dark text-uppercase"> <i
                                         class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>{{ $webConfig->address }} </a>
                             </li>
                             <!-- Phone number -->

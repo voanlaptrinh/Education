@@ -464,7 +464,7 @@
                     <!-- Title and button -->
                     <div class="d-sm-flex justify-content-sm-between">
                         <h2 class="mb-0">Meet Our Team</h2>
-                        <a href="#" class="btn btn-light mt-2">Join Team</a>
+                        <a class="btn btn-light mt-2">Join Team</a>
                     </div>
 
                     <!-- Slider START -->

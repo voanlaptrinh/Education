@@ -72,7 +72,7 @@
                                         </td>
                                         <!-- Action item -->
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+                                            <a class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
                                             <button class="btn btn-sm btn-danger-soft px-2 mb-0"><i class="fas fa-fw fa-times"></i></button>
                                         </td>
                                     </tr>
@@ -99,7 +99,7 @@
                                         </td>
                                         <!-- Action item -->
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
+                                            <a class="btn btn-sm btn-success-soft px-2 me-1 mb-1 mb-md-0"><i class="far fa-fw fa-edit"></i></a>
                                             <button class="btn btn-sm btn-danger-soft px-2 mb-0"><i class="fas fa-fw fa-times"></i></button>
                                         </td>
                                     </tr>

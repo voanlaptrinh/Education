@@ -162,7 +162,7 @@
                             <!-- Buttons -->
                             <div class="mt-2 mt-sm-0">
                                 <button type="button" class="btn btn-sm btn-danger-soft me-2 mb-0">Cancel plan</button>
-                                <a href="#" class="btn btn-sm btn-success mb-0">Upgrade plan</a>
+                                <a class="btn btn-sm btn-success mb-0">Upgrade plan</a>
                             </div>
                         </div>
 

@@ -50,7 +50,7 @@
                                 <div class="card-body">
                                     <p class="mb-3">Welcome to the <strong> Digital Marketing Ultimate Course Bundle - 12 Courses in 1 (Over 36 hours of content)</strong></p>
                                     <p class="mb-3">In this practical hands-on training, you’re going to learn to become a digital marketing expert with this <strong> ultimate course bundle that includes 12 digital marketing courses in 1!</strong></p>
-                                    <p class="mb-0">If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced <strong><a href="#" class="text-reset text-decoration-underline">digital marketing course</a></strong> syllabus, let’s look at the scope of digital marketing and what the future holds.</p>
+                                    <p class="mb-0">If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced <strong><a class="text-reset text-decoration-underline">digital marketing course</a></strong> syllabus, let’s look at the scope of digital marketing and what the future holds.</p>
                                     <!-- Collapse body -->
                                     <div class="collapse" id="collapseContent">
                                         <p class="my-3">We focus a great deal on the understanding of behavioral psychology and influence triggers which are crucial for becoming a well rounded Digital Marketer. We understand that theory is important to build a solid foundation, we understand that theory alone isn’t going to get the job done so that’s why this course is packed with practical hands-on examples that you can follow step by step.</p>
@@ -109,14 +109,14 @@
                                             <h5 class="mb-4">Introduction of Digital Marketing (3 lectures)</h5>
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">Introduction</h6>
                                                         <p class="mb-2 mb-sm-0 small">10m 56s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -124,14 +124,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">What is Digital Marketing</h6>
                                                         <p class="mb-2 mb-sm-0 small">18m 30s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -139,14 +139,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
+                                                    <a class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">Type of Digital Marketing</h6>
                                                         <p class="mb-2 mb-sm-0 small">22m 26s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-orange mb-0">Premium</a>
+                                                <a class="btn btn-sm btn-orange mb-0">Premium</a>
                                             </div>
                                         </div>
                                         <!-- Lecture item END -->
@@ -157,14 +157,14 @@
                                             <h5 class="mb-4">Customer Life cycle (4 lectures)</h5>
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">What is Digital Marketing</h6>
                                                         <p class="mb-2 mb-sm-0 small">10m 56s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -172,14 +172,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">15 Tips for Writing Magnetic Headlines</h6>
                                                         <p class="mb-2 mb-sm-0 small">18m 30s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -187,14 +187,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
+                                                    <a class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">How to Write Like Your Customers Talk</h6>
                                                         <p class="mb-2 mb-sm-0 small">22m 26s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-orange mb-0">Premium</a>
+                                                <a class="btn btn-sm btn-orange mb-0">Premium</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -202,14 +202,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
+                                                    <a class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">How to Flip Features Into Benefits</h6>
                                                         <p class="mb-2 mb-sm-0 small">18m 26s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-orange mb-0">Premium</a>
+                                                <a class="btn btn-sm btn-orange mb-0">Premium</a>
                                             </div>
                                         </div>
                                         <!-- Lecture item END -->
@@ -220,14 +220,14 @@
                                             <h5 class="mb-4">What is Search Engine Optimization(SEO) (5 lectures)</h5>
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">How to SEO Optimise Your Homepage</h6>
                                                         <p class="mb-2 mb-sm-0 small">18m 21s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -235,14 +235,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">How to Write Title Tags Search Engines Love</h6>
                                                         <p class="mb-2 mb-sm-0 small">7m 30s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -250,14 +250,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">SEO Keyword Planning</h6>
                                                         <p class="mb-2 mb-sm-0 small">15m 32s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -265,14 +265,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">Internal and External Links</h6>
                                                         <p class="mb-2 mb-sm-0 small">17m 30s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                             <!-- Divider -->
                                             <hr>
@@ -280,14 +280,14 @@
                                             <!-- Curriculum item -->
                                             <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                 <div class="d-flex">
-                                                    <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                    <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                     <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                         <h6 class="mb-0">Measuring SEO Effectiveness</h6>
                                                         <p class="mb-2 mb-sm-0 small">25m 30s</p>
                                                     </div>
                                                 </div>
                                                 <!-- Button -->
-                                                <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                <a class="btn btn-sm btn-success mb-0">Play</a>
                                             </div>
                                         </div>
                                         <!-- Lecture item END -->
@@ -300,14 +300,14 @@
                                                 <h5 class="mb-4">YouTube Marketing (5 lectures)</h5>
                                                 <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                     <div class="d-flex">
-                                                        <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                        <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                         <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                             <h6 class="mb-0">Video Flow</h6>
                                                             <p class="mb-2 mb-sm-0 small">25m 20s</p>
                                                         </div>
                                                     </div>
                                                     <!-- Button -->
-                                                    <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                    <a class="btn btn-sm btn-success mb-0">Play</a>
                                                 </div>
                                                 <!-- Divider -->
                                                 <hr>
@@ -315,14 +315,14 @@
                                                 <!-- Curriculum item -->
                                                 <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                     <div class="d-flex">
-                                                        <a href="#" class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
+                                                        <a class="btn btn-danger-soft btn-round mb-0 flex-shrink-0"><i class="fas fa-play"></i></a>
                                                         <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                             <h6 class="mb-0">Webmaster Tool</h6>
                                                             <p class="mb-2 mb-sm-0 small">15m 20s</p>
                                                         </div>
                                                     </div>
                                                     <!-- Button -->
-                                                    <a href="#" class="btn btn-sm btn-success mb-0">Play</a>
+                                                    <a class="btn btn-sm btn-success mb-0">Play</a>
                                                 </div>
                                                 <!-- Divider -->
                                                 <hr>
@@ -330,14 +330,14 @@
                                                 <!-- Curriculum item -->
                                                 <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                     <div class="d-flex">
-                                                        <a href="#" class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
+                                                        <a class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
                                                         <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                             <h6 class="mb-0">Featured Contents on Channel</h6>
                                                             <p class="mb-2 mb-sm-0 small">32m 26s</p>
                                                         </div>
                                                     </div>
                                                     <!-- Button -->
-                                                    <a href="#" class="btn btn-sm btn-orange mb-0">Premium</a>
+                                                    <a class="btn btn-sm btn-orange mb-0">Premium</a>
                                                 </div>
                                                 <!-- Divider -->
                                                 <hr>
@@ -345,14 +345,14 @@
                                                 <!-- Curriculum item -->
                                                 <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                     <div class="d-flex">
-                                                        <a href="#" class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
+                                                        <a class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
                                                         <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                             <h6 class="mb-0">Channel Analytics</h6>
                                                             <p class="mb-2 mb-sm-0 small">18m 20s</p>
                                                         </div>
                                                     </div>
                                                     <!-- Button -->
-                                                    <a href="#" class="btn btn-sm btn-orange mb-0">Premium</a>
+                                                    <a class="btn btn-sm btn-orange mb-0">Premium</a>
                                                 </div>
                                                 <!-- Divider -->
                                                 <hr>
@@ -360,14 +360,14 @@
                                                 <!-- Curriculum item -->
                                                 <div class="d-sm-flex justify-content-sm-between align-items-center">
                                                     <div class="d-flex">
-                                                        <a href="#" class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
+                                                        <a class="btn btn-light btn-round mb-0 flex-shrink-0"><i class="bi bi-lock-fill"></i></a>
                                                         <div class="ms-2 ms-sm-3 mt-1 mt-sm-0">
                                                             <h6 class="mb-0">Managing Comments</h6>
                                                             <p class="mb-2 mb-sm-0 small">20m 20s</p>
                                                         </div>
                                                     </div>
                                                     <!-- Button -->
-                                                    <a href="#" class="btn btn-sm btn-orange mb-0">Premium</a>
+                                                    <a class="btn btn-sm btn-orange mb-0">Premium</a>
                                                 </div>
                                             </div>
                                             <!-- Lecture item END -->
@@ -455,7 +455,7 @@
                                         <h3 class="fw-bold mb-0 me-2">$295.55</h3>
                                         <!-- Share button with dropdown -->
                                         <div class="dropdown">
-                                            <a href="#" class="btn btn-sm btn-light rounded mb-0 small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="btn btn-sm btn-light rounded mb-0 small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fas fa-fw fa-share-alt"></i>
                                             </a>
                                             <!-- dropdown button -->
@@ -470,8 +470,8 @@
 
                                     <!-- Buttons -->
                                     <div class="mt-3 d-grid">
-                                        <a href="#" class="btn btn-outline-primary">Add to cart</a>
-                                        <a href="#" class="btn btn-success">Buy now</a>
+                                        <a class="btn btn-outline-primary">Add to cart</a>
+                                        <a class="btn btn-success">Buy now</a>
                                     </div>
                                     <!-- Divider -->
                                     <hr>

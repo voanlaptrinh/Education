@@ -213,8 +213,8 @@
                                 <div class="card-body pb-0">
                                     <!-- Badge and favorite -->
                                     <div class="d-flex justify-content-between mb-2">
-                                        <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                                        <a href="#" class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
+                                        <a class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                                        <a class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
                                     </div>
                                     <!-- Title -->
                                     <h5 class="card-title fw-normal"><a href="#">Sketch from A to Z: for app designer</a></h5>
@@ -249,8 +249,8 @@
                                 <div class="card-body pb-0">
                                     <!-- Badge and favorite -->
                                     <div class="d-flex justify-content-between mb-2">
-                                        <a href="#" class="badge bg-info bg-opacity-10 text-info">Intermediate</a>
-                                        <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                        <a class="badge bg-info bg-opacity-10 text-info">Intermediate</a>
+                                        <a class="text-danger"><i class="fas fa-heart"></i></a>
                                     </div>
                                     <!-- Title -->
                                     <h5 class="card-title fw-normal"><a href="#">Graphic Design Masterclass</a></h5>
@@ -286,8 +286,8 @@
                                 <div class="card-body pb-0">
                                     <!-- Badge and favorite -->
                                     <div class="d-flex justify-content-between mb-2">
-                                        <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                        <a href="#" class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
+                                        <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                        <a class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
                                     </div>
                                     <!-- Title -->
                                     <h5 class="card-title fw-normal"><a href="#">Create a Design System in Figma</a></h5>
@@ -323,8 +323,8 @@
                                 <div class="card-body pb-0">
                                     <!-- Badge and favorite -->
                                     <div class="d-flex justify-content-between mb-2">
-                                        <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                        <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                        <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                        <a class="text-danger"><i class="fas fa-heart"></i></a>
                                     </div>
                                     <!-- Title -->
                                     <h5 class="card-title fw-normal"><a href="#">Deep Learning with React-Native </a></h5>
@@ -384,8 +384,8 @@
                             <div class="card-img-overlay d-flex flex-column p-3">
                                 <div class="w-100 mt-auto text-end">
                                     <!-- Card category -->
-                                    <a href="#" class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>25</a>
-                                    <a href="#" class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>15</a>
+                                    <a class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>25</a>
+                                    <a class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>15</a>
                                 </div>
                             </div>
                         </div>
@@ -416,8 +416,8 @@
                             <div class="card-img-overlay d-flex flex-column p-3">
                                 <div class="w-100 mt-auto text-end">
                                     <!-- Card category -->
-                                    <a href="#" class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>118</a>
-                                    <a href="#" class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>09</a>
+                                    <a class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>118</a>
+                                    <a class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>09</a>
                                 </div>
                             </div>
                         </div>
@@ -448,8 +448,8 @@
                             <div class="card-img-overlay d-flex flex-column p-3">
                                 <div class="w-100 mt-auto text-end">
                                     <!-- Card category -->
-                                    <a href="#" class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>92</a>
-                                    <a href="#" class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>38</a>
+                                    <a class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>92</a>
+                                    <a class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>38</a>
                                 </div>
                             </div>
                         </div>
@@ -480,8 +480,8 @@
                             <div class="card-img-overlay d-flex flex-column p-3">
                                 <div class="w-100 mt-auto text-end">
                                     <!-- Card category -->
-                                    <a href="#" class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>82</a>
-                                    <a href="#" class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>05</a>
+                                    <a class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>82</a>
+                                    <a class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>05</a>
                                 </div>
                             </div>
                         </div>
@@ -512,8 +512,8 @@
                             <div class="card-img-overlay d-flex flex-column p-3">
                                 <div class="w-100 mt-auto text-end">
                                     <!-- Card category -->
-                                    <a href="#" class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>50</a>
-                                    <a href="#" class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>10</a>
+                                    <a class="badge text-bg-info rounded-1"><i class="fas fa-user-graduate me-2"></i>50</a>
+                                    <a class="badge text-bg-orange rounded-1"><i class="fas fa-clipboard-list me-2"></i>10</a>
                                 </div>
                             </div>
                         </div>

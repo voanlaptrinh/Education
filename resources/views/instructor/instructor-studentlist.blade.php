@@ -161,7 +161,7 @@
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
-                                                        <h6 class="mb-0"><a href="#" class="stretched-link">Lori Stevens</a></h6>
+                                                        <h6 class="mb-0"><a class="stretched-link">Lori Stevens</a></h6>
                                                         <!-- Address -->
                                                         <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Mumbai</span>
                                                     </div>
@@ -187,7 +187,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                                 <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Block"><i class="fas fa-ban"></i></button>
                                             </td>
                                         </tr>
@@ -203,7 +203,7 @@
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
-                                                        <h6 class="mb-0"><a href="#" class="stretched-link">Dennis Barrett</a></h6>
+                                                        <h6 class="mb-0"><a class="stretched-link">Dennis Barrett</a></h6>
                                                         <!-- Address -->
                                                         <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>New york</span>
                                                     </div>
@@ -229,7 +229,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                                 <button class="btn btn-danger btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Unblock"><i class="fas fa-ban"></i></button>
                                             </td>
                                         </tr>
@@ -245,7 +245,7 @@
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
-                                                        <h6 class="mb-0"><a href="#" class="stretched-link">Billy Vasquez</a></h6>
+                                                        <h6 class="mb-0"><a class="stretched-link">Billy Vasquez</a></h6>
                                                         <!-- Address -->
                                                         <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Paris</span>
                                                     </div>
@@ -271,7 +271,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                                 <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Block"><i class="fas fa-ban"></i></button>
                                             </td>
                                         </tr>
@@ -287,7 +287,7 @@
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
-                                                        <h6 class="mb-0"><a href="#" class="stretched-link">Carolyn Ortiz</a></h6>
+                                                        <h6 class="mb-0"><a class="stretched-link">Carolyn Ortiz</a></h6>
                                                         <!-- Address -->
                                                         <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Delhi</span>
                                                     </div>
@@ -313,7 +313,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                                 <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Block"><i class="fas fa-ban"></i></button>
                                             </td>
                                         </tr>
@@ -329,7 +329,7 @@
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
-                                                        <h6 class="mb-0"><a href="#" class="stretched-link">Larry Lawson</a></h6>
+                                                        <h6 class="mb-0"><a class="stretched-link">Larry Lawson</a></h6>
                                                         <!-- Address -->
                                                         <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>London</span>
                                                     </div>
@@ -355,7 +355,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                                 <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Block"><i class="fas fa-ban"></i></button>
                                             </td>
                                         </tr>
@@ -371,7 +371,7 @@
                                                     </div>
                                                     <div class="mb-0 ms-2">
                                                         <!-- Title -->
-                                                        <h6 class="mb-0"><a href="#" class="stretched-link">Frances Guerrero</a></h6>
+                                                        <h6 class="mb-0"><a class="stretched-link">Frances Guerrero</a></h6>
                                                         <!-- Address -->
                                                         <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Pune</span>
                                                     </div>
@@ -397,7 +397,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                                 <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Block"><i class="fas fa-ban"></i></button>
                                             </td>
                                         </tr>
@@ -414,7 +414,7 @@
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>

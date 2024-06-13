@@ -178,7 +178,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Grad Opening <span>(8:00 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Lori Stevens</a> Chairman of Eduport</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Lori Stevens</a> Chairman of Eduport</p>
                                         </div>
                                     </div>
 
@@ -193,7 +193,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">The Modern Engineering Methods <span>(9:00 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Partner Startup</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Partner Startup</p>
                                         </div>
                                     </div>
 
@@ -215,7 +215,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Evolution of User Experience <span>(10:30 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Larry Lawson</a> Co-founder and <a href="#" class="fw-bold text-body text-primary-hover">Carolyn Ortiz</a> Eduport Director</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Larry Lawson</a> Co-founder and <a class="fw-bold text-body text-primary-hover">Carolyn Ortiz</a> Eduport Director</p>
                                         </div>
                                     </div>
 
@@ -230,7 +230,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Responsive Web Applications <span>(2:00 pm)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Jacqueline Miller</a> Head Engineer</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Jacqueline Miller</a> Head Engineer</p>
                                         </div>
                                     </div>
                                 </div>
@@ -257,7 +257,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Autonomous Vehicles <span>(8:00 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Chairman of wizixo</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Chairman of wizixo</p>
                                         </div>
                                     </div>
 
@@ -272,7 +272,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Global Innovations in Media <span>(9:30 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Lori Stevens</a> VP Design wizixo</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Lori Stevens</a> VP Design wizixo</p>
                                         </div>
                                     </div>
 
@@ -294,7 +294,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Value and Building Blocks <span>(10:30 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Frances Guerrero</a> Co-founder wizixo</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Frances Guerrero</a> Co-founder wizixo</p>
                                         </div>
                                     </div>
 
@@ -316,7 +316,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">The Digital Economy <span>(2:00 pm)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Louis Ferguson</a> Web Technologist</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Louis Ferguson</a> Web Technologist</p>
                                         </div>
                                     </div>
                                 </div>
@@ -344,7 +344,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Autonomous Vehicles <span>(8:00 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Chairman of wizixo</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Chairman of wizixo</p>
                                         </div>
                                     </div>
 
@@ -359,7 +359,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Global Innovations in Media <span>(9:30 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Lori Stevens</a> VP Design wizixo</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Lori Stevens</a> VP Design wizixo</p>
                                         </div>
                                     </div>
 
@@ -381,7 +381,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Value and Building Blocks <span>(10:30 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Frances Guerrero</a> Co-founder wizixo</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Frances Guerrero</a> Co-founder wizixo</p>
                                         </div>
                                     </div>
 
@@ -403,7 +403,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">The Digital Economy <span>(2:00 pm)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Louis Ferguson</a> Web Technologist</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Louis Ferguson</a> Web Technologist</p>
                                         </div>
                                     </div>
                                 </div>
@@ -431,7 +431,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Grad Opening <span>(8:00 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Lori Stevens</a> Chairman of Eduport</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Lori Stevens</a> Chairman of Eduport</p>
                                         </div>
                                     </div>
 
@@ -446,7 +446,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">The Modern Engineering Methods <span>(9:00 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Partner Startup</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Billy Vasquez</a> Partner Startup</p>
                                         </div>
                                     </div>
 
@@ -468,7 +468,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Evolution of User Experience <span>(10:30 am)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Larry Lawson</a> Co-founder and <a href="#" class="fw-bold text-body text-primary-hover">Carolyn Ortiz</a> Eduport Director</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Larry Lawson</a> Co-founder and <a class="fw-bold text-body text-primary-hover">Carolyn Ortiz</a> Eduport Director</p>
                                         </div>
                                     </div>
 
@@ -483,7 +483,7 @@
                                         <!-- Content -->
                                         <div class="ms-2">
                                             <h6 class="mb-0 fw-normal"><a href="#">Responsive Web Applications <span>(2:00 pm)</span></a></h6>
-                                            <p class="small mb-0">by <a href="#" class="fw-bold text-body text-primary-hover">Jacqueline Miller</a> Head Engineer</p>
+                                            <p class="small mb-0">by <a class="fw-bold text-body text-primary-hover">Jacqueline Miller</a> Head Engineer</p>
                                         </div>
                                     </div>
                                 </div>

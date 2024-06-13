@@ -25,7 +25,7 @@
                         <!-- Button -->
                         <div class="mt-2 mt-sm-0">
                             <p class="text-danger mb-0"><i class="bi bi-clock-history me-2"></i>Class Start in: 22 Days 15:01:30</p>
-                            <a href="#" class="btn btn-link mb-0 p-0 text-primary-hover text-decoration-underline text-reset">Notify me</a>
+                            <a class="btn btn-link mb-0 p-0 text-primary-hover text-decoration-underline text-reset">Notify me</a>
                         </div>
                     </div>
                     <p class="mb-0">We understand that theory is important to build a solid foundation, we understand that theory alone isn't going to get the job done so that's why this course is packed with practical hands-on examples that you can follow step by step.</p>
@@ -37,7 +37,7 @@
                     <div class="card card-body bg-light p-5 text-center">
                         <h5 class="fw-normal">One-Time Payment</h5>
                         <h2>$557</h2>
-                        <a href="#" class="btn btn-blue mb-2">Enroll now</a>
+                        <a class="btn btn-blue mb-2">Enroll now</a>
                         <!-- Avatar group -->
               <ul class="avatar-group mb-1 justify-content-center">
                 <li class="avatar avatar-sm">
@@ -152,7 +152,7 @@
                                 </div>
                                 <!-- Content and input -->
                                 <div class="col-lg-4 text-lg-end">
-                                    <a href="#" class="btn btn-dark mb-0">Signup now</a>
+                                    <a class="btn btn-dark mb-0">Signup now</a>
                                 </div>
                             </div>
                         </div>
@@ -269,22 +269,22 @@
                                     <p>If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced digital marketing course syllabus, let's look at the scope of <b>digital marketing</b> and what the future holds.</p>
 
                                     <!-- Course video -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-play fa-fw me-2"></i>What is Digital Marketing What is Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-play fa-fw me-2"></i>What is Digital Marketing What is Digital Marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Course assignment -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-signature fa-fw me-2"></i>Assignments 1 - Research about marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-signature fa-fw me-2"></i>Assignments 1 - Research about marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Course slide -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-alt fa-fw me-2"></i>Slide - Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-alt fa-fw me-2"></i>Slide - Digital Marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Quiz slide -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-question-circle fa-fw me-2"></i>Quiz - Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-question-circle fa-fw me-2"></i>Quiz - Digital Marketing</a>
                                 </div>
                                 <!-- Accordion body END -->
                             </div>
@@ -303,22 +303,22 @@
                                 <div class="accordion-body mt-3">
 
                                     <!-- Course video -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-play fa-fw me-2"></i>What is Digital Marketing What is Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-play fa-fw me-2"></i>What is Digital Marketing What is Digital Marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Course assignment -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-signature fa-fw me-2"></i>Assignments 1 - Research about marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-signature fa-fw me-2"></i>Assignments 1 - Research about marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Course slide -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-alt fa-fw me-2"></i>Slide - Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-alt fa-fw me-2"></i>Slide - Digital Marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Quiz slide -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-question-circle fa-fw me-2"></i>Quiz - Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-question-circle fa-fw me-2"></i>Quiz - Digital Marketing</a>
                                 </div>
                                 <!-- Accordion body END -->
                             </div>
@@ -339,17 +339,17 @@
                                     <p>If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced digital marketing course syllabus, let's look at the scope of <b>digital marketing</b> and what the future holds.</p>
 
                                     <!-- Course video -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-play fa-fw me-2"></i>What is Digital Marketing What is Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-play fa-fw me-2"></i>What is Digital Marketing What is Digital Marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Course assignment -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-signature fa-fw me-2"></i>Assignments 1 - Research about marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-signature fa-fw me-2"></i>Assignments 1 - Research about marketing</a>
 
                                     <hr> <!-- Divider -->
 
                                     <!-- Course slide -->
-                                    <a href="#" class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-alt fa-fw me-2"></i>Slide - Digital Marketing</a>
+                                    <a class="h6 fw-normal p-0 mb-0 align-items-center"> <i class="fas fa-file-alt fa-fw me-2"></i>Slide - Digital Marketing</a>
                                 </div>
                                 <!-- Accordion body END -->
                             </div>
@@ -365,8 +365,8 @@
                         <h4 class="text-white">Developed your photo editing skills</h4>
                         <small>Jun 10 - Aug 5, 2022</small>
                         <h3 class="fs-1 text-white mt-3">$557</h3>
-                        <a href="#" class="btn btn-success mb-2">Enroll Now</a>
-                        <small class="mb-0">By clicking 'Enroll Now', you agree to our <a href="#" class="text-decoration-underline"> Terms of Service and Privacy Policy.</a></small>
+                        <a class="btn btn-success mb-2">Enroll Now</a>
+                        <small class="mb-0">By clicking 'Enroll Now', you agree to our <a class="text-decoration-underline"> Terms of Service and Privacy Policy.</a></small>
                     </div>
                 </div>
             </div>

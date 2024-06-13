@@ -73,7 +73,7 @@
                                     <h5 class="mb-3">Course Description</h5>
                                     <p class="mb-3">Welcome to the <strong> Digital Marketing Ultimate Course Bundle - 12 Courses in 1 (Over 36 hours of content)</strong></p>
                                     <p class="mb-3">In this practical hands-on training, you’re going to learn to become a digital marketing expert with this <strong> ultimate course bundle that includes 12 digital marketing courses in 1!</strong></p>
-                                    <p class="mb-3">If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced <strong><a href="#" class="text-reset text-decoration-underline">digital marketing course</a></strong> syllabus, let’s look at the scope of digital marketing and what the future holds.</p>
+                                    <p class="mb-3">If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced <strong><a class="text-reset text-decoration-underline">digital marketing course</a></strong> syllabus, let’s look at the scope of digital marketing and what the future holds.</p>
                                     <p class="mb-0">We focus a great deal on the understanding of behavioral psychology and influence triggers which are crucial for becoming a well rounded Digital Marketer. We understand that theory is important to build a solid foundation, we understand that theory alone isn’t going to get the job done so that’s why this course is packed with practical hands-on examples that you can follow step by step.</p>
 
                                     <!-- List content -->
@@ -115,7 +115,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Introduction</span>
@@ -128,7 +128,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"> What is Digital Marketing What is Digital Marketing</span>
@@ -141,7 +141,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Type of Digital Marketing</span>
@@ -166,7 +166,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">What is Digital Marketing</span>
@@ -179,7 +179,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">15 Tips for Writing Magnetic Headlines</span>
@@ -192,7 +192,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">How to Write Like Your Customers Talk</span>
@@ -206,7 +206,7 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div>
-                                                                <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                                     <i class="fas fa-play me-0"></i>
                                                                 </a>
                                                             </div>
@@ -241,7 +241,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Introduction</span>
@@ -254,7 +254,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Overview of SEO</span>
@@ -267,7 +267,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">How to SEO Optimise Your Homepage</span>
@@ -280,7 +280,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">How to SEO Optimise Your Homepage</span>
@@ -293,7 +293,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">How to Write Title Tags Search Engines Love</span>
@@ -306,7 +306,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">SEO Keyword Planning</span>
@@ -319,7 +319,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">eCommerce SEO</span>
@@ -332,7 +332,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Internal and External Links</span>
@@ -345,7 +345,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Mobile SEO</span>
@@ -358,7 +358,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Off-page SEO</span>
@@ -371,7 +371,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Measuring SEO Effectiveness</span>
@@ -397,7 +397,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Introduction</span>
@@ -410,7 +410,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Creating Facebook Pages</span>
@@ -423,7 +423,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Facebook Page Custom URL</span>
@@ -449,7 +449,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Video Flow</span>
@@ -462,7 +462,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Webmaster Tool</span>
@@ -475,7 +475,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Featured Contents on Channel</span>
@@ -489,7 +489,7 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div>
-                                                                <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                                     <i class="fas fa-play me-0"></i>
                                                                 </a>
                                                             </div>
@@ -511,7 +511,7 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div>
-                                                                <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                                     <i class="fas fa-play me-0"></i>
                                                                 </a>
                                                             </div>
@@ -545,7 +545,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Understanding SEO</span>
@@ -558,7 +558,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">On-Page SEO</span>
@@ -571,7 +571,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Local SEO</span>
@@ -584,7 +584,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Measuring SEO Effectiveness</span>
@@ -598,7 +598,7 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div>
-                                                                <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                                     <i class="fas fa-play me-0"></i>
                                                                 </a>
                                                             </div>
@@ -620,7 +620,7 @@
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
                                                             <div>
-                                                                <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                                     <i class="fas fa-play me-0"></i>
                                                                 </a>
                                                             </div>
@@ -654,7 +654,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">G+ Pages Ranks Higher</span>
@@ -667,7 +667,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Adding Contact Links</span>
@@ -680,7 +680,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Google Hangouts</span>
@@ -693,7 +693,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"> Google Local Business</span>
@@ -719,7 +719,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Creating LinkedIn Account</span>
@@ -732,7 +732,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">Advance Searching</span>
@@ -745,7 +745,7 @@
                                                     <!-- Course lecture -->
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <div class="position-relative d-flex align-items-center">
-                                                            <a href="#" class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
+                                                            <a class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static">
                                                                 <i class="fas fa-play me-0"></i>
                                                             </a>
                                                             <span class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px">LinkedIn Mobile App</span>
@@ -780,19 +780,19 @@
                                                     <!-- Social button -->
                                                     <ul class="list-inline mb-3">
                                                         <li class="list-inline-item me-3">
-                                                            <a href="#" class="fs-5 text-twitter"><i class="fab fa-twitter-square"></i></a>
+                                                            <a class="fs-5 text-twitter"><i class="fab fa-twitter-square"></i></a>
                                                         </li>
                                                         <li class="list-inline-item me-3">
-                                                            <a href="#" class="fs-5 text-instagram"><i class="fab fa-instagram-square"></i></a>
+                                                            <a class="fs-5 text-instagram"><i class="fab fa-instagram-square"></i></a>
                                                         </li>
                                                         <li class="list-inline-item me-3">
-                                                            <a href="#" class="fs-5 text-facebook"><i class="fab fa-facebook-square"></i></a>
+                                                            <a class="fs-5 text-facebook"><i class="fab fa-facebook-square"></i></a>
                                                         </li>
                                                         <li class="list-inline-item me-3">
-                                                            <a href="#" class="fs-5 text-linkedin"><i class="fab fa-linkedin"></i></a>
+                                                            <a class="fs-5 text-linkedin"><i class="fab fa-linkedin"></i></a>
                                                         </li>
                                                         <li class="list-inline-item">
-                                                            <a href="#" class="fs-5 text-youtube"><i class="fab fa-youtube-square"></i></a>
+                                                            <a class="fs-5 text-youtube"><i class="fab fa-youtube-square"></i></a>
                                                         </li>
                                                     </ul>
 
@@ -836,8 +836,8 @@
                                     <!-- Email address -->
                                     <div class="col-12">
                                         <ul class="list-group list-group-borderless mb-0">
-                                            <li class="list-group-item pb-0">Mail ID:<a href="#" class="ms-2">hello@email.com</a></li>
-                                            <li class="list-group-item pb-0">Web:<a href="#" class="ms-2">https://eduport.com</a></li>
+                                            <li class="list-group-item pb-0">Mail ID:<a class="ms-2">hello@email.com</a></li>
+                                            <li class="list-group-item pb-0">Web:<a class="ms-2">https://eduport.com</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1351,7 +1351,7 @@
                                         <!-- Share button with dropdown -->
                                         <div class="dropdown">
                                             <!-- Share button -->
-                                            <a href="#" class="btn btn-sm btn-light rounded small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="btn btn-sm btn-light rounded small" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fas fa-fw fa-share-alt"></i>
                                             </a>
                                             <!-- dropdown button -->
@@ -1366,8 +1366,8 @@
 
                                     <!-- Buttons -->
                                     <div class="mt-3 d-sm-flex justify-content-sm-between">
-                                        <a href="#" class="btn btn-outline-primary mb-0">Free trial</a>
-                                        <a href="#" class="btn btn-success mb-0">Buy course</a>
+                                        <a class="btn btn-outline-primary mb-0">Free trial</a>
+                                        <a class="btn btn-success mb-0">Buy course</a>
                                     </div>
                                 </div>
                             </div>
@@ -1502,7 +1502,7 @@
                                     <!-- Hover element -->
                                     <div class="card-img-overlay">
                                         <div class="card-element-hover d-flex justify-content-end">
-                                            <a href="#" class="icon-md bg-white rounded-circle text-center">
+                                            <a class="icon-md bg-white rounded-circle text-center">
                                                 <i class="fas fa-shopping-cart text-danger"></i>
                                             </a>
                                         </div>
@@ -1535,7 +1535,7 @@
                                     <h5 class="card-title"><a href="#">The Complete Digital Marketing Course - 12 Courses in 1</a></h5>
                                     <!-- Badge and Price -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>Personal Development</a>
+                                        <a class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>Personal Development</a>
                                         <!-- Price -->
                                         <h3 class="text-success mb-0">$140</h3>
                                     </div>
@@ -1554,7 +1554,7 @@
                                     <!-- Hover element -->
                                     <div class="card-img-overlay">
                                         <div class="card-element-hover d-flex justify-content-end">
-                                            <a href="#" class="icon-md bg-white rounded-circle text-center">
+                                            <a class="icon-md bg-white rounded-circle text-center">
                                                 <i class="fas fa-shopping-cart text-danger"></i>
                                             </a>
                                         </div>
@@ -1587,7 +1587,7 @@
                                     <h5 class="card-title"><a href="#">Fundamentals of Business Analysis</a></h5>
                                     <!-- Badge and Price -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>Business Development</a>
+                                        <a class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>Business Development</a>
                                         <!-- Price -->
                                         <h3 class="text-success mb-0">$160</h3>
                                     </div>
@@ -1606,7 +1606,7 @@
                                     <!-- Hover element -->
                                     <div class="card-img-overlay">
                                         <div class="card-element-hover d-flex justify-content-end">
-                                            <a href="#" class="icon-md bg-white rounded-circle text-center">
+                                            <a class="icon-md bg-white rounded-circle text-center">
                                                 <i class="fas fa-shopping-cart text-danger"></i>
                                             </a>
                                         </div>
@@ -1639,7 +1639,7 @@
                                     <h5 class="card-title"><a href="#">Google Ads Training: Become a PPC Expert</a></h5>
                                     <!-- Badge and Price -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i> SEO</a>
+                                        <a class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i> SEO</a>
                                         <!-- Price -->
                                         <h3 class="text-success mb-0">$226</h3>
                                     </div>
@@ -1658,7 +1658,7 @@
                                     <!-- Hover element -->
                                     <div class="card-img-overlay">
                                         <div class="card-element-hover d-flex justify-content-end">
-                                            <a href="#" class="icon-md bg-white rounded-circle text-center">
+                                            <a class="icon-md bg-white rounded-circle text-center">
                                                 <i class="fas fa-shopping-cart text-danger"></i>
                                             </a>
                                         </div>
@@ -1691,7 +1691,7 @@
                                     <h5 class="card-title"><a href="#">Behavior, Psychology and Care Training</a></h5>
                                     <!-- Badge and Price -->
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="#" class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>Lifestyle</a>
+                                        <a class="badge bg-info bg-opacity-10 text-info"><i class="fas fa-circle small fw-bold me-2"></i>Lifestyle</a>
                                         <!-- Price -->
                                         <h3 class="text-success mb-0">$342</h3>
                                     </div>

@@ -170,7 +170,7 @@ Popular articles START -->
 				<!-- Card item START -->
 				<div class="card card-body border p-4 h-100">
 					<!-- Title -->
-					<h4 class="card-title mb-4"><a href="#" class="stretched-link">The installation part</a></h4>
+					<h4 class="card-title mb-4"><a class="stretched-link">The installation part</a></h4>
 
 					<!-- Avatar group and content -->
 					<div class="d-sm-flex align-items-center">
@@ -200,7 +200,7 @@ Popular articles START -->
 				<!-- Card item START -->
 				<div class="card card-body border p-4 h-100">
 					<!-- Title -->
-					<h4 class="card-title mb-4"><a href="#" class="stretched-link">Supporting Customer With Inbox</a></h4>
+					<h4 class="card-title mb-4"><a class="stretched-link">Supporting Customer With Inbox</a></h4>
 
 					<!-- Avatar group and content -->
 					<div class="d-sm-flex align-items-center">
@@ -227,7 +227,7 @@ Popular articles START -->
 				<!-- Card item START -->
 				<div class="card card-body border p-4 h-100">
 					<!-- Title -->
-					<h4 class="card-title mb-4"><a href="#" class="stretched-link">Sending Effective Emails </a></h4>
+					<h4 class="card-title mb-4"><a class="stretched-link">Sending Effective Emails </a></h4>
 
 					<!-- Avatar group and content -->
 					<div class="d-sm-flex align-items-center">
@@ -251,7 +251,7 @@ Popular articles START -->
 				<!-- Card item START -->
 				<div class="card card-body border p-4 h-100">
 					<!-- Title -->
-					<h4 class="card-title mb-4"><a href="#" class="stretched-link">Connect With Customers</a></h4>
+					<h4 class="card-title mb-4"><a class="stretched-link">Connect With Customers</a></h4>
 
 					<!-- Avatar group and content -->
 					<div class="d-sm-flex align-items-center">
@@ -291,7 +291,7 @@ Popular articles START -->
 					<h3>Contact Support?</h3>
 					<p>Delay death ask to style Me mean able conviction For every delay death ask to style</p>
 					<!-- Button -->
-					<a href="#" class="btn btn-dark mb-0">Contact Us</a>
+					<a class="btn btn-dark mb-0">Contact Us</a>
 				</div>
 			</div>
 
@@ -304,7 +304,7 @@ Popular articles START -->
 					<h3>Submit a Ticket</h3>
 					<p>Prosperous impression had conviction For every delay death ask to style Me mean able</p>
 					<!-- Button -->
-					<a href="#" class="btn btn-dark mb-0">Submit Ticket</a>
+					<a class="btn btn-dark mb-0">Submit Ticket</a>
 				</div>
 			</div>
 
@@ -317,7 +317,7 @@ Popular articles START -->
 					<h3>Request a feature</h3>
 					<p>Prosperous impression had conviction For every delay death ask to style Me mean able</p>
 					<!-- Button -->
-					<a href="#" class="btn btn-dark mb-0">Request</a>
+					<a class="btn btn-dark mb-0">Request</a>
 				</div>
 			</div>
 

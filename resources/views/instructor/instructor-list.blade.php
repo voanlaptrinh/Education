@@ -72,7 +72,7 @@
 
                 <!-- Button -->
                 <div class="col-sm-6 col-xl-2 mt-3 mt-xl-0 d-grid">
-                    <a href="#" class="btn btn-lg btn-primary mb-0">Filter Results</a>
+                    <a class="btn btn-lg btn-primary mb-0">Filter Results</a>
                 </div>
             </div>
             <!-- Search option END -->
@@ -487,7 +487,7 @@
             <!-- Pagination START -->
             <nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
                 <ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                    <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
+                    <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
                     <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                     <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                     <li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
@@ -534,7 +534,7 @@
                             </div>
                             <!-- Button -->
                             <div class="col-lg-5 text-lg-end">
-                                <a href="#" class="btn btn-dark mb-0">Start Teaching today</a>
+                                <a class="btn btn-dark mb-0">Start Teaching today</a>
                             </div>
                         </div>
                     </div>

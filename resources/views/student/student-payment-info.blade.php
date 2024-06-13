@@ -118,7 +118,7 @@
                         <!-- Card header START -->
                         <div class="card-header bg-transparent d-sm-flex justify-content-sm-between align-items-center border-bottom">
                             <h3 class="mb-2 mb-sm-0">Payment methods</h3>
-                            <a href="#" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addNewcard">Add new card</a>
+                            <a class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addNewcard">Add new card</a>
                         </div>
                         <!-- Card header END -->
 
@@ -210,7 +210,7 @@
                         <!-- Card header START -->
                         <div class="card-header bg-transparent d-sm-flex justify-content-sm-between align-items-center border-bottom">
                             <h3 class="mb-2 mb-sm-0">Billing address</h3>
-                            <a href="#" class="btn btn-sm btn-primary-soft mb-0">Add new address</a>
+                            <a class="btn btn-sm btn-primary-soft mb-0">Add new address</a>
                         </div>
                         <!-- Card header END -->
 
@@ -228,7 +228,7 @@
 
                                 <!-- Button -->
                                 <div>
-                                    <a href="#" class="btn btn-sm btn-success mb-0">Edit</a>
+                                    <a class="btn btn-sm btn-success mb-0">Edit</a>
                                     <button class="btn btn-sm btn-danger mb-0">Delete</button>
                                 </div>
 
@@ -247,7 +247,7 @@
 
                                 <!-- Button -->
                                 <div>
-                                    <a href="#" class="btn btn-sm btn-success mb-0">Edit</a>
+                                    <a class="btn btn-sm btn-success mb-0">Edit</a>
                                     <button class="btn btn-sm btn-danger mb-0">Delete</button>
                                 </div>
 
@@ -334,7 +334,7 @@
 
                                             <!-- Action item -->
                                             <td>
-                                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
+                                                <a class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
                                             </td>
                                         </tr>
 
@@ -361,7 +361,7 @@
 
                                             <!-- Action item -->
                                             <td>
-                                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
+                                                <a class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
                                             </td>
                                         </tr>
 
@@ -388,7 +388,7 @@
 
                                             <!-- Action item -->
                                             <td>
-                                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
+                                                <a class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
                                             </td>
                                         </tr>
 
@@ -415,7 +415,7 @@
 
                                             <!-- Action item -->
                                             <td>
-                                                <a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
+                                                <a class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Download"><i class="bi bi-download"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -430,7 +430,7 @@
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>

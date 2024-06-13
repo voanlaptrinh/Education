@@ -38,7 +38,7 @@
 					<!-- Category item -->
 					<div class="col-sm-6 col-md-3">
 						<div class="card card-body card-border-hover p-0">
-							<a href="#" class="p-3">
+							<a class="p-3">
 								<h2><i class="fas fa-street-view transition-base"></i></h2>
 								<h6 class="mb-0">User Guide</h6>
 							</a>
@@ -48,7 +48,7 @@
 					<!-- Category item -->
 					<div class="col-sm-6 col-md-3">
 						<div class="card card-body card-border-hover p-0">
-							<a href="#" class="p-3">
+							<a class="p-3">
 								<h2><i class="fas fa-hands-helping transition-base"></i></h2>
 								<h6 class="mb-0">Assistance</h6>
 							</a>
@@ -58,7 +58,7 @@
 					<!-- Category item -->
 					<div class="col-sm-6 col-md-3">
 						<div class="card card-body card-border-hover p-0">
-							<a href="#" class="p-3">
+							<a class="p-3">
 								<h2><i class="fas fa-exclamation-circle transition-base"></i></h2>
 								<h6 class="mb-0">General guide</h6>
 							</a>
@@ -68,7 +68,7 @@
 					<!-- Category item -->
 					<div class="col-sm-6 col-md-3">
 						<div class="card card-body card-border-hover p-0">
-							<a href="#" class="p-3">
+							<a class="p-3">
 								<h2><i class="fas fa-flag transition-base"></i></h2>
 								<h6 class="mb-0">Getting started</h6>
 							</a>
@@ -194,15 +194,15 @@
 						<div class="mb-4">
 							<div class="d-flex justify-content-between align-items-center bg-info bg-opacity-10 rounded p-2 position-relative mb-3">
 								<h6 class="m-0 text-info">Last Question</h6>
-								<a href="#" class="badge bg-info stretched-link">2D ago</a>
+								<a class="badge bg-info stretched-link">2D ago</a>
 							</div>
 							<div class="d-flex justify-content-between align-items-center bg-danger bg-opacity-10 rounded p-2 position-relative mb-3">
 								<h6 class="m-0 text-danger">Total Question</h6>
-								<a href="#" class="badge bg-danger stretched-link">15,525</a>
+								<a class="badge bg-danger stretched-link">15,525</a>
 							</div>
 							<div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 rounded p-2 position-relative mb-3">
 								<h6 class="m-0 text-success">Answer</h6>
-								<a href="#" class="badge bg-success stretched-link">12536</a>
+								<a class="badge bg-success stretched-link">12536</a>
 							</div>
 						</div>
 						<!-- Category END -->
@@ -213,57 +213,57 @@
 							<h4 class="mb-3">Related Topic</h4>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Business</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Business</a>
 								<span class="small">(21)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Development</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Development</a>
 								<span class="small">(86)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Design</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Design</a>
 								<span class="small">(92)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Marketing</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Marketing</a>
 								<span class="small">(62)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Technology</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Technology</a>
 								<span class="small">(31)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Course Taking</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Course Taking</a>
 								<span class="small">(06)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Getting Started</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Getting Started</a>
 								<span class="small">(28)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Mobile</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Mobile</a>
 								<span class="small">(18)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Payment Option</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Payment Option</a>
 								<span class="small">(32)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center mb-2">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Account & Profile</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Account & Profile</a>
 								<span class="small">(56)</span>
 							</div>
 							<!-- Item -->
 							<div class="d-flex justify-content-between align-items-center">
-								<a href="#" class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Course taking</a>
+								<a class="h6 fw-light"><i class="fas fa-caret-right text-orange me-2"></i>Course taking</a>
 								<span class="small">(45)</span>
 							</div>
 						</div>

@@ -79,8 +79,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                                    <a href="#" class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
+                                    <a class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                                    <a class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Sketch from A to Z: for app designer</a></h5>
@@ -115,8 +115,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                    <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                    <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                    <a class="text-danger"><i class="fas fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Graphic Design Masterclass</a></h5>
@@ -151,8 +151,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                    <a href="#" class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
+                                    <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                    <a class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Create a Design System in Figma</a></h5>
@@ -187,8 +187,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                    <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                    <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                    <a class="text-danger"><i class="fas fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Deep Learning with React-Native </a></h5>
@@ -223,8 +223,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All level</a>
-                                    <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                    <a class="badge bg-purple bg-opacity-10 text-purple">All level</a>
+                                    <a class="text-danger"><i class="fas fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Build Responsive Websites with HTML</a></h5>
@@ -259,8 +259,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                    <a href="#" class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
+                                    <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                    <a class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Build Websites with CSS</a></h5>
@@ -295,8 +295,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-success bg-opacity-10 text-success">Beginner</a>
-                                    <a href="#" class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
+                                    <a class="badge bg-success bg-opacity-10 text-success">Beginner</a>
+                                    <a class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">The Complete Web Development in python</a></h5>
@@ -331,8 +331,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-info bg-opacity-10 text-info">Intermediate</a>
-                                    <a href="#" class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
+                                    <a class="badge bg-info bg-opacity-10 text-info">Intermediate</a>
+                                    <a class="h6 fw-light mb-0"><i class="far fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Angular – The Complete Guider</a></h5>
@@ -367,8 +367,8 @@
                             <div class="card-body pb-0">
                                 <!-- Badge and favorite -->
                                 <div class="d-flex justify-content-between mb-2">
-                                    <a href="#" class="badge bg-info bg-opacity-10 text-info">Intermediate</a>
-                                    <a href="#" class="text-danger"><i class="fas fa-heart"></i></a>
+                                    <a class="badge bg-info bg-opacity-10 text-info">Intermediate</a>
+                                    <a class="text-danger"><i class="fas fa-heart"></i></a>
                                 </div>
                                 <!-- Title -->
                                 <h5 class="card-title"><a href="#">Bootstrap 5 From Scratch</a></h5>
@@ -402,7 +402,7 @@
                 <div class="col-12">
                     <nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
                         <ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                            <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
+                            <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
                             <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                             <li class="page-item mb-0 active" aria-current="page"><a class="page-link" href="#">2</a></li>
                             <li class="page-item mb-0"><a class="page-link" href="#">..</a></li>

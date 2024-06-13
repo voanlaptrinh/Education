@@ -153,7 +153,7 @@
 
                                                 <!-- Title -->
                                                 <h6 class="table-responsive-title mb-0 ms-2">
-                                                    <a href="#" class="stretched-link">{{ $review->title }}</a>
+                                                    <a class="stretched-link">{{ $review->title }}</a>
                                                 </h6>
                                             </div>
                                         </td>

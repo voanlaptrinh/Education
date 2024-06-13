@@ -196,7 +196,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
+                                                <a class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
                                             </td>
                                         </tr>
 
@@ -233,7 +233,7 @@
                                             <!-- Table data -->
                                             <td>
                                                 <button class="btn btn-sm btn-success me-1 mb-1 mb-x;-0 disabled"><i class="bi bi-check me-1"></i>Complete</button>
-                                                <a href="#" class="btn btn-sm btn-light me-1"><i class="bi bi-arrow-repeat me-1"></i>Restart</a>
+                                                <a class="btn btn-sm btn-light me-1"><i class="bi bi-arrow-repeat me-1"></i>Restart</a>
                                             </td>
                                         </tr>
 
@@ -269,7 +269,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
+                                                <a class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
                                             </td>
                                         </tr>
 
@@ -304,7 +304,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
+                                                <a class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
                                             </td>
                                         </tr>
 
@@ -339,7 +339,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
+                                                <a class="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0"><i class="bi bi-play-circle me-1"></i>Continue</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -355,7 +355,7 @@
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>

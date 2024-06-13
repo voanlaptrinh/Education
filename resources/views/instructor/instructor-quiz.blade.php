@@ -30,7 +30,7 @@
                                 </div>
                                 <!-- Button -->
                                 <div class="d-flex align-items-center mt-2 mt-md-0">
-                                    <a href="#" class="btn btn-sm btn-primary mb-0" data-bs-toggle="modal" data-bs-target="#addQuiz">Add New Quiz</a>
+                                    <a class="btn btn-sm btn-primary mb-0" data-bs-toggle="modal" data-bs-target="#addQuiz">Add New Quiz</a>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                                             <p class="mb-3"><b class="text-dark">D</b> Third-party vendor protection</p>
 
                                             <!-- Button -->
-                                            <a href="#" class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
+                                            <a class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
                                             <button class="btn btn-danger-soft btn-sm mb-0">Delete</button>
                                         </div>
                                     </div>
@@ -156,7 +156,7 @@
                                             <p class="mb-3"><b class="text-dark">D</b> Third-party vendor protection</p>
 
                                             <!-- Button -->
-                                            <a href="#" class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
+                                            <a class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
                                             <button class="btn btn-danger-soft btn-sm mb-0">Delete</button>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@
                                         <p class="mb-3"><b class="text-dark">D</b> Third-party vendor protection</p>
 
                                         <!-- Button -->
-                                        <a href="#" class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
+                                        <a class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
                                         <button class="btn btn-danger-soft btn-sm mb-0">Delete</button>
                                         </div>
                                     </div>
@@ -202,7 +202,7 @@
                                             <p class="mb-3"><b class="text-dark">D</b> Third-party vendor protection</p>
 
                                             <!-- Button -->
-                                            <a href="#" class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
+                                            <a class="btn btn-sm btn-success-soft mb-0" data-bs-toggle="modal" data-bs-target="#editQuestion">Edit</a>
                                             <button class="btn btn-danger-soft btn-sm mb-0">Delete</button>
                                         </div>
                                     </div>
@@ -298,7 +298,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                             </td>
                                         </tr>
 
@@ -331,7 +331,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                             </td>
                                         </tr>
 
@@ -364,7 +364,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                             </td>
                                         </tr>
 
@@ -397,7 +397,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                             </td>
                                         </tr>
 
@@ -430,7 +430,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                             </td>
                                         </tr>
 
@@ -463,7 +463,7 @@
 
                                             <!-- Table data -->
                                             <td>
-                                                <a href="#" class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+                                                <a class="btn btn-success-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -479,7 +479,7 @@
                                 <!-- Pagination -->
                                 <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
                                     <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                        <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+                                        <li class="page-item mb-0"><a class="page-link" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
                                         <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
                                         <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>

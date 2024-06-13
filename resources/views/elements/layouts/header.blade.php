@@ -155,7 +155,7 @@
             <!-- Profile START -->
             @if (!empty(Auth::user()))
                 <div class="dropdown ms-1 ms-lg-0">
-                    <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button"
+                    <a class="avatar avatar-sm p-0" id="profileDropdown" role="button"
                         data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <img class="avatar-img rounded-circle"
