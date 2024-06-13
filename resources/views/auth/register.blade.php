@@ -15,12 +15,13 @@
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
                         <input type="text" name="name" 
-                            class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên..."
+                            class="form-control border-0 bg-light rounded-end ps-1" value="{{old('name')}}" placeholder="Tên..."
                             id="exampleInputEmail1">
-                        @error('name')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                       
                     </div>
+                    @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
                 </div>
                 <div class="col-lg-6">
                     <label for="exampleInputEmail1" class="form-label">Tên đầy đủ *</label>
@@ -28,12 +29,13 @@
                         <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                                 class="bi bi-person-fill-add"></i></span>
                         <input type="text" name="username" 
-                            class="form-control border-0 bg-light rounded-end ps-1" placeholder="Tên... "
+                            class="form-control border-0 bg-light rounded-end ps-1" value="{{old('username')}}" placeholder="Tên... "
                             id="exampleInputEmail1">
-                        @error('username')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                      
                     </div>
+                    @error('username')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
                 </div>
             </div>
             <div class="mb-4">
@@ -41,7 +43,7 @@
                 <div class="input-group input-group-lg">
                     <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i
                             class="bi bi-envelope-fill"></i></span>
-                    <input type="email" name="email"  class="form-control border-0 bg-light rounded-end ps-1"
+                    <input type="email" name="email" value="{{old('email')}}"  class="form-control border-0 bg-light rounded-end ps-1"
                         placeholder="E-mail..." id="exampleInputEmail1">
                    
                 </div>
