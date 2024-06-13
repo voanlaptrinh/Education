@@ -113,7 +113,11 @@ class VnpayController extends Controller
             $subscriptions = Subscription::all();
             $basis = Basis::all();
         try {
-           
+            if ($request->input('vnp_ResponseCode') != '00') {
+                // Nếu giao dịch không thành công (ví dụ: người dùng hủy bỏ giao dịch)
+                Session::flash('error', 'Giao dịch không thành công.');
+                return redirect()->route('subscription.index');
+            }
             $purchase = new Purchase();
             $purchase->user_id = $user->id;
             $purchase->package_name = $request->vnp_OrderInfo;
