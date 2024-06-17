@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\PdfController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\RiviewController;
+use App\Http\Controllers\Admin\SecurityController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ContactController;
@@ -60,6 +61,12 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
         Route::get('/banners', [DashboardController::class, 'banner'])->name('banners.index');
         Route::put('/banners/{id}', [DashboardController::class, 'update'])->name('banners.update');
+
+
+        Route::prefix('security')->group(function () {
+            Route::get('/', [SecurityController::class, 'index'])->name('index.security');
+            Route::post('/update-security', [SecurityController::class, 'update'])->name('security.update');
+        });
 
         Route::prefix('news')->group(function () {
             Route::get('/', [NewsAdminController::class, 'index'])->name('indexNews');

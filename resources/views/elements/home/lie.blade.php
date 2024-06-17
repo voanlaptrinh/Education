@@ -7,7 +7,7 @@
             <h5 class="text-start pt-2 pb-2">1. Mục đích:
             </h5>
             <div>- Chính sách này quy định các điều kiện, quy trình và thời hạn đổi trả, hoàn tiền cho các gói khóa học
-                online được cung cấp bởi website {{ $webConfig->name }}
+                online được cung cấp bởi website {{ $webConfig->name }}.
             </div>
             <h5 class="text-start pt-2 pb-2">2. Điều kiện đổi trả:</h5>
             <div>- Bạn có thể đổi trả gói khóa học online trong các trường hợp sau:</div>
@@ -29,7 +29,7 @@
             <h5 class="text-start pt-2 pb-2">3. Quy trình đổi trả:</h5>
             <div>- Để đổi trả gói khóa học online, bạn vui lòng thực hiện theo các bước sau:</div>
             <div class="ps-3">
-                <span class="fw-bolder">Liên hệ với chúng tôi: </span> Bạn có thể liên hệ với chúng tôi qua {{ $webConfig->email}} hoặc chat
+                <span class="fw-bolder">Liên hệ với chúng tôi: </span> Bạn có thể liên hệ với chúng tôi qua <a href="mailto:{{ $webConfig->email}}">{{ $webConfig->email}}</a> hoặc chat
                 trực tuyến để thông
                 báo về việc bạn muốn đổi trả gói khóa học. <br>
                 <span class="fw-bolder">Cung cấp thông tin: </span> Bạn cần cung cấp cho chúng tôi thông tin về gói khóa học
@@ -70,7 +70,7 @@
                 <br>
             </div>
             <h5 class="text-start pt-2 pb-2">6. Bổ sung: </h5>
-            <div>- Ngoài những điều được nêu trong Chính sách này, chúng tôi còn cam kết:
+            <div>- Ngoài những điều được nêu trong chính sách này, chúng tôi còn cam kết:
             </div>
             <div class="ps-3">
                 Cung cấp cho bạn quy trình đổi trả, hoàn tiền nhanh chóng và thuận tiện.<br>
@@ -78,7 +78,6 @@
                 Mang đến cho bạn trải nghiệm học tập online chất lượng và hiệu quả.<br>
             </div>
             <div>- Chúng tôi mong muốn mang đến cho bạn trải nghiệm mua hàng và học tập online tốt nhất.
-
             </div>
         </div>
     @endsection

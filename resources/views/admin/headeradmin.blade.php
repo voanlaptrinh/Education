@@ -124,6 +124,20 @@
                    
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-toggle="collapse" href="#collapseauthentication2"
+                        role="button" aria-expanded="false" aria-controls="collapseauthentication2">
+                        <i class="bi bi-lock fa-fw me-2"></i>Chính sách
+                    </a>
+                    <!-- Submenu -->
+                    <ul class="nav flex-column collapse" id="collapseauthentication2" data-bs-parent="#navbar-sidebar"
+                        style="">
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('index.security') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>chinh-sach-bao-mat</a></li>
+                       
+                   
+                    </ul>
+                </li>
 
 
             
@@ -168,6 +182,17 @@
 
 
         $('#collapseauthentication .nav-link').each(function() {
+            var url = $(this).attr('href');
+            // Kiểm tra xem URL khớp với URL hiện tại và không có phần tử cha nào có lớp 'active'
+            if (url === currentUrl && !$(this).parents().hasClass('active')) {
+                $(this).addClass('active');
+                // Kích hoạt (expand) phần tử cha
+                $(this).closest('.collapse').addClass('show');
+                $(this).closest('.nav-item').addClass('active');
+            }
+
+        });
+        $('#collapseauthentication2 .nav-link').each(function() {
             var url = $(this).attr('href');
             // Kiểm tra xem URL khớp với URL hiện tại và không có phần tử cha nào có lớp 'active'
             if (url === currentUrl && !$(this).parents().hasClass('active')) {

@@ -21202,7 +21202,7 @@ main {
 
 header {
     position: relative;
-    z-index: 1020;
+    z-index: 2;
     background: var(--bs-body-bg);
 }
 
@@ -23901,5 +23901,5 @@ html[dir=rtl] .choices__input {
 /*User CSS*/
 
 
-/*# sourceMappingURL=style.css.map *{
-/*# sourceMappingURL=style.css.map *{
+/*# sourceMappingURL=style.css.map *
+/*# sourceMappingURL=style.css.map *

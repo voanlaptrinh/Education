@@ -3,10 +3,11 @@
 
 <!-- Mirrored from eduport.webestica.com/admin-course-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:26:16 GMT -->
 @php
-$logo = \App\Models\Web_config::find(1);
+    $logo = \App\Models\Web_config::find(1);
 @endphp
+
 <head>
-    <title>{{$logo->name}}</title>
+    <title>{{ $logo->name }}</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -18,15 +19,15 @@ $logo = \App\Models\Web_config::find(1);
     <meta property="og:title" content="{{ $logo->name }}">
     <meta property="og:description" content="{{ $logo->description }}">
     <meta property="og:image" content="{{ asset('storage/' . $logo->logo) }}">
-    <meta property="og:url" content="{{Request::url()}}">
+    <meta property="og:url" content="{{ Request::url() }}">
     <meta name="twitter:title" content="{{ $logo->name }}">
     <meta name="twitter:description" content="{{ $logo->description }}">
     <meta name="twitter:image" content="{{ asset('storage/' . $logo->logo) }}">
-<style>
-    .btn{
-        margin-bottom: 0 !important;
-    }
-</style>
+    <style>
+        .btn {
+            margin-bottom: 0 !important;
+        }
+    </style>
     <!-- Dark mode -->
     <script>
         const storedTheme = localStorage.getItem('theme')
@@ -97,19 +98,23 @@ $logo = \App\Models\Web_config::find(1);
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/font-awesome/css/all.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/bootstrap-icons/bootstrap-icons.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/choices/css/choices.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/overlay-scrollbar/css/overlayscrollbars.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/vendor/quill/css/quill.snow.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('/vendor/glightbox/glightbox.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/vendor/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('/assets/user/vendor/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/vendor/choices/css/choices.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('/assets/user/vendor/overlay-scrollbar/css/overlayscrollbars.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/vendor/quill/css/quill.snow.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/glightbox/glightbox.css') }}">
     <!-- Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('/assets/user/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('/vendor/admin/bootstrap-select.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/user/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/vendor/admin/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/user/css/toastr.css') }}">
+
 </head>
 
 <body>
-    
+
     <main>
         @include('admin.headeradmin')
         <div class="page-content">
@@ -179,15 +184,16 @@ $logo = \App\Models\Web_config::find(1);
                         <div class="ms-xl-auto">
                             <ul class="navbar-nav flex-row align-items-center">
 
-                              
+
 
                                 <!-- Profile dropdown START -->
                                 <li class="nav-item ms-2 ms-md-3 dropdown">
                                     <!-- Avatar -->
-                                    <a class="avatar avatar-sm p-0" id="profileDropdown"
-                                        role="button" data-bs-auto-close="outside" data-bs-display="static"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img class="avatar-img rounded-circle" src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"
+                                    <a class="avatar avatar-sm p-0" id="profileDropdown" role="button"
+                                        data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img class="avatar-img rounded-circle"
+                                            src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"
                                             alt="avatar">
                                     </a>
 
@@ -200,10 +206,12 @@ $logo = \App\Models\Web_config::find(1);
                                                 <!-- Avatar -->
                                                 <div class="avatar me-3 mb-3">
                                                     <img class="avatar-img rounded-circle shadow"
-                                                        src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}" alt="avatar">
+                                                        src="{{ asset(Auth::user()->image ? 'storage/' . Auth::user()->image : '/assets/user/images/default-avatar.png') }}"
+                                                        alt="avatar">
                                                 </div>
                                                 <div>
-                                                    <a class="h6 mt-2 mt-sm-0" href="#">{{ Auth::user()->name }}</a>
+                                                    <a class="h6 mt-2 mt-sm-0"
+                                                        href="#">{{ Auth::user()->name }}</a>
                                                     <p class="small m-0">{{ Auth::user()->email }}</p>
                                                 </div>
                                             </div>
@@ -212,8 +220,9 @@ $logo = \App\Models\Web_config::find(1);
                                             <hr class="dropdown-divider">
                                         </li>
                                         <!-- Links -->
-                                       
-                                        <li><a class="dropdown-item bg-danger-soft-hover" href="{{ route('logout') }}"><i
+
+                                        <li><a class="dropdown-item bg-danger-soft-hover"
+                                                href="{{ route('logout') }}"><i
                                                     class="bi bi-power fa-fw me-2"></i>Đăng xuất</a></li>
                                         <li>
                                             <hr class="dropdown-divider">
@@ -281,7 +290,6 @@ $logo = \App\Models\Web_config::find(1);
     </main>
 
     <script>
-        
         var options = {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
             filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
@@ -296,73 +304,73 @@ $logo = \App\Models\Web_config::find(1);
                 'Verdana/Verdana, Geneva, sans-serif',
             fontSize_sizes: '12/12px;14/14px;16/16px;18/18px;24/24px;36/36px'
         };
-        setTimeout(function(){
+        setTimeout(function() {
             var successAlerts = document.getElementsByClassName('alert-success');
             for (var i = 0; i < successAlerts.length; i++) {
                 successAlerts[i].style.display = 'none';
             }
         }, 2000);
-        
     </script>
- 
+
     <!-- Bootstrap JS -->
-    <script src="{{asset('/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('/assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Vendors -->
-    <script src="{{asset('/assets/user/vendor/choices/js/choices.min.js')}}"></script>
-    <script src="{{asset('/assets/user/vendor/apexcharts/js/apexcharts.min.js')}}"></script>
-    <script src="{{asset('/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js')}}"></script>
-				
-    <script src="{{asset('/assets/user/vendor/glightbox/js/glightbox.js')}}"></script>
-				
-    <script src="{{asset('/assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js')}}"></script>
+    <script src="{{ asset('/assets/user/vendor/choices/js/choices.min.js') }}"></script>
+    <script src="{{ asset('/assets/user/vendor/apexcharts/js/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('/assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js') }}"></script>
+
+    <script src="{{ asset('/assets/user/vendor/glightbox/js/glightbox.js') }}"></script>
+
+    <script src="{{ asset('/assets/user/vendor/overlay-scrollbar/js/overlayscrollbars.min.js') }}"></script>
 
 
     <!-- Template Functions -->
-    <script src="{{asset('/assets/user/vendor/stepper/js/bs-stepper.min.js')}}"></script>
+    <script src="{{ asset('/assets/user/vendor/stepper/js/bs-stepper.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 
-    <script src="{{asset('/vendor/admin/popper.min.js')}}"></script>
-    <script src="{{asset('/vendor/admin/bootstrap.min.js')}}"></script>
-    <script src="{{asset('/vendor/admin/bootstrap-select.min.js')}}"></script>
-
+    <script src="{{ asset('/vendor/admin/popper.min.js') }}"></script>
+    <script src="{{ asset('/vendor/admin/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/vendor/admin/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('/assets/user/js/toastr.js') }}"></script>
+    <script src="{{ asset('/tinymce/js/tinymce/tinymce.min.js') }}"></script>
 
     <script>
-    $(document).ready(function() {
-      $('.selectpicker').selectpicker();
-      $('.classes_1').selectpicker();
-      $('.lesson_name').selectpicker();
-      $('.classes_name').selectpicker();
-    });
-        document.addEventListener('DOMContentLoaded', function() {
-            @if (session('success'))
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Thành công',
-                    text: '{{ session('success') }}',
-                });
-            @endif
-            @if (session('error'))
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Thất bại',
-                    text: '{{ session('error') }}',
-                });
-            @endif
-            @if (session('warning'))
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Cảnh báo',
-                    text: '{{ session('warning') }}',
-                });
-            @endif
+        $(document).ready(function() {
+            $('.selectpicker').selectpicker();
+            $('.classes_1').selectpicker();
+            $('.lesson_name').selectpicker();
+            $('.classes_name').selectpicker();
         });
+     
+        
+        @if (Session::has('success'))
+            toastr.success("{{ session('success') }}");
+        @endif
+
+        @if (Session::has('error'))
+            toastr.error("{{ session('error') }}");
+        @endif
+    
     </script>
     <!-- Template Functions -->
     <script src="/assets/user/js/functions.js"></script>
-
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '#content',
+            plugins: 'advlist autolink lists link charmap print preview anchor table',
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help | table',
+            content_css: "{{asset('assets/user/css/codeopen.css')}}",
+           
+            relative_urls: false,
+            document_base_url: "{{ url('/') }}",
+        });
+    </script>
 </body>
 
 <!-- Mirrored from eduport.webestica.com/admin-course-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:26:16 GMT -->

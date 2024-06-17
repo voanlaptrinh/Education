@@ -4,7 +4,7 @@
         <div class="mt-3 mb-3 shadow p-4">
             <h3 class="text-center"> HƯỚNG DẪN THANH TOÁN VNPAY TRÊN WEBSITE</h3>
             <div>
-                Cổng thanh toán VNPAY là giải pháp thanh toán do Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY) phát
+                Cổng thanh toán VNPAY là giải pháp thanh toán do Công ty Cổ phần giải pháp Thanh toán Việt Nam (VNPAY) phát
                 triển. Khách hàng sử dụng thẻ/tài khoản ngân hàng, tính năng QR Pay/VNPAY-QR được tích hợp sẵn trên ứng dụng
                 Mobile Banking của các ngân hàng hoặc Ví điện tử liên kết để thanh toán các giao dịch và nhập mã giảm giá
                 (nếu có)

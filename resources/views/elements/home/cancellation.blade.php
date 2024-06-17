@@ -70,7 +70,7 @@
                 sử dụng website {{ $webConfig->name}}. <br>
 
             </div>
-            <h5 class="text-start pt-2 pb-2">6. Lưu ý:</h5>
+            <h5 class="text-start pt-2 pb-2">7. Lưu ý:</h5>
             <div>
                 Ngoài những điều được nêu trong Chính sách này, chúng tôi còn cam kết:
             </div>
