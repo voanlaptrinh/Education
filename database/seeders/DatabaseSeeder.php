@@ -211,15 +211,15 @@ class DatabaseSeeder extends Seeder
             ]);
         }
         DB::table("security")->insert([
-            'description' => '  <h5 class="text-start pt-2 pb-2">1. Mục đích:</h5>
-            <div>Chính sách này nhằm mục đích thông báo cho bạn về cách {{ $webConfig->name }} thu thập, sử dụng và tiết lộ
+            'description' => '<h5 class="text-start pt-2 pb-2">1. Mục đích:</h5>
+            <div>Chính sách này nhằm mục đích thông báo cho bạn về cách HDEducation thu thập, sử dụng và tiết lộ
                 thông tin cá
-                nhân của bạn khi bạn mua khóa học của chúng tôi. {{ $webConfig->name }} cam kết bảo vệ quyền riêng tư của
+                nhân của bạn khi bạn mua khóa học của chúng tôi. HDEducation cam kết bảo vệ quyền riêng tư của
                 bạn và chỉ sử
                 dụng thông tin của bạn cho các mục đích được nêu trong chính sách này.
             </div>
             <h5 class="text-start pt-2 pb-2">2. Thu thập thông tin:</h5>
-            <div>Khi bạn mua khóa học {{ $webConfig->name }}, chúng tôi thu thập một số thông tin cá nhân từ bạn, bao gồm:
+            <div>Khi bạn mua khóa học HDEducation, chúng tôi thu thập một số thông tin cá nhân từ bạn, bao gồm:
             </div>
             <div>
                 - Tên đầy đủ <br>
@@ -234,54 +234,54 @@ class DatabaseSeeder extends Seeder
             </div>
             <h5 class="text-start pt-2 pb-2">3. Sử dụng thông tin:</h5>
 
-            <div>{{ $webConfig->name }} sử dụng thông tin cá nhân của bạn cho các mục đích sau:
+            <div>HDEducation sử dụng thông tin cá nhân của bạn cho các mục đích sau:
             </div>
             <div>
                 - Cung cấp cho bạn khóa học mà bạn đã mua.<br>
                 - Liên hệ với bạn về khóa học của bạn.<br>
                 - Cải thiện các khóa học và dịch vụ của chúng tôi. <br>
-                - Gửi cho bạn thông tin tiếp thị về các khóa học và dịch vụ khác của {{ $webConfig->name }}.<br>
+                - Gửi cho bạn thông tin tiếp thị về các khóa học và dịch vụ khác của HDEducation.<br>
             </div>
             <h5 class="text-start pt-2 pb-2">4. Tiết lộ thông tin:</h5>
-            <div>{{ $webConfig->name }} có thể tiết lộ thông tin cá nhân của bạn cho các nhà cung cấp dịch vụ bên thứ ba
+            <div>HDEducation có thể tiết lộ thông tin cá nhân của bạn cho các nhà cung cấp dịch vụ bên thứ ba
                 giúp chúng tôi
                 cung cấp các khóa học và dịch vụ của mình, chẳng hạn như nhà cung cấp dịch vụ thanh toán và nhà cung cấp
-                dịch vụ lưu trữ. {{ $webConfig->name }} cũng có thể tiết lộ thông tin cá nhân của bạn theo yêu cầu của pháp
+                dịch vụ lưu trữ. HDEducation cũng có thể tiết lộ thông tin cá nhân của bạn theo yêu cầu của pháp
                 luật hoặc khi
                 chúng tôi tin rằng điều đó cần thiết để bảo vệ quyền lợi hoặc tài sản của mình hoặc quyền lợi hoặc tài sản
                 của người khác.
             </div>
             <h5 class="text-start pt-2 pb-2">5. Lựa chọn của bạn:</h5>
-            <div>Bạn có thể chọn không nhận thông tin tiếp thị từ {{ $webConfig->name }} bằng cách nhấp vào liên kết hủy
+            <div>Bạn có thể chọn không nhận thông tin tiếp thị từ HDEducation bằng cách nhấp vào liên kết hủy
                 đăng ký trong
-                bất kỳ email tiếp thị nào mà bạn nhận được. Bạn cũng có thể yêu cầu {{ $webConfig->name }} xóa thông tin cá
+                bất kỳ email tiếp thị nào mà bạn nhận được. Bạn cũng có thể yêu cầu HDEducation xóa thông tin cá
                 nhân của bạn
-                bằng cách liên hệ với chúng tôi tại <a href="mailto:{{ $webConfig->email }}">{{ $webConfig->email }}</a>.
+                bằng cách liên hệ với chúng tôi tại <a href="mailto:Huyendieuems@gmail.com">Huyendieuems@gmail.com</a>.
             </div>
             <h5 class="text-start pt-2 pb-2">6. Bảo mật:</h5>
-            <div>{{ $webConfig->name }} sử dụng các biện pháp bảo mật vật lý, kỹ thuật và hành chính để bảo vệ thông tin cá
+            <div>HDEducation sử dụng các biện pháp bảo mật vật lý, kỹ thuật và hành chính để bảo vệ thông tin cá
                 nhân của bạn
                 khỏi truy cập trái phép, sử dụng hoặc tiết lộ.
             </div>
             <h5 class="text-start pt-2 pb-2">7. Thay đổi đối với chính sách này:</h5>
-            <div>{{ $webConfig->name }} có thể thay đổi Chính sách này bất cứ lúc nào bằng cách đăng phiên bản cập nhật
+            <div>HDEducation có thể thay đổi Chính sách này bất cứ lúc nào bằng cách đăng phiên bản cập nhật
                 trên trang web
                 của chúng tôi. Bạn nên kiểm tra trang web của chúng tôi thường xuyên để cập nhật các thay đổi đối với Chính
                 sách này.
             </div>
             <h5 class="text-start pt-2 pb-2">8. Liên hệ:</h5>
             <div>Nếu bạn có bất kỳ câu hỏi nào về chính sách này, vui lòng liên hệ với chúng tôi tại
-               <a href="mailto: {{ $webConfig->email }}"> {{ $webConfig->email }}</a>
+               <a href="mailto:Huyendieuems@gmail.com">Huyendieuems@gmail.com</a>
             </div>
             <h5 class="text-start pt-2 pb-2">9. Lưu ý:</h5>
-            <div>Chính sách này chỉ áp dụng cho việc bán khóa học {{ $webConfig->name }}. <br>
-                {{ $webConfig->name }} có thể có các chính sách bảo mật riêng cho các sản phẩm và dịch vụ khác. <br>
-                Chính sách này có thể thay đổi theo thời gian. Vui lòng kiểm tra trang web của {{ $webConfig->name }} để
+            <div>Chính sách này chỉ áp dụng cho việc bán khóa học HDEducation. <br>
+                HDEducation có thể có các chính sách bảo mật riêng cho các sản phẩm và dịch vụ khác. <br>
+                Chính sách này có thể thay đổi theo thời gian. Vui lòng kiểm tra trang web của HDEducation để
                 cập nhật các
                 thay đổi.
             </div>
             <h5 class="text-start pt-2 pb-2">10. Bổ sung:</h5>
-            <div>Ngoài những điều được nêu trong chính sách này, {{ $webConfig->name }} còn cam kết:
+            <div>Ngoài những điều được nêu trong chính sách này, HDEducation còn cam kết:
             </div>
             <div class="ps-5"> - Không bao giờ bán hoặc chia sẻ thông tin cá nhân của bạn với các bên thứ ba mà không có
                 sự đồng ý của bạn.
@@ -291,9 +291,54 @@ class DatabaseSeeder extends Seeder
                 <br>
                 - Cho phép bạn hủy đăng ký khỏi các bản tin tiếp thị của chúng tôi.
             </div>
-            <div>{{ $webConfig->name }} cam kết bảo vệ quyền riêng tư của bạn và cung cấp cho bạn trải nghiệm mua hàng an
+            <div>HDEducation cam kết bảo vệ quyền riêng tư của bạn và cung cấp cho bạn trải nghiệm mua hàng an
                 toàn và bảo mật.
             </div>',
+           
+        ]);
+        DB::table("policy_pays")->insert([
+            'description' => '<h5 class="text-start pt-2 pb-2">1. Phạm vi áp dụng</h5>
+            <div>- Chính sách bảo hành các gói của chúng tôi được áp dụng cho tất cả các gói khóa học được bán bởi HDEducation.
+              </div>
+            <h5 class="text-start pt-2 pb-2">2. Thời hạn bảo hành:</h5>
+            <div>- Gói khóa học có thời hạn tương ứng với số ngày hết hạn của gói kể từ ngày mua hàng.</div>
+            <div>- Lưu ý: Thời hạn bảo hành có thể thay đổi tùy theo từng gói khóa học cụ thể.</div>
+            <h5 class="text-start pt-2 pb-2">3. Điều kiện bảo hành:</h5>
+            <div>- Khách hàng có quyền yêu cầu bảo hành trong trường hợp khóa học gặp lỗi kĩ thuật hoặc không hoạt động đúng
+                chức năng </div>
+            <div>- Khách hàng cần cung cấp bằng chứng mua hàng (Hóa đơn, phiếu mua hàng) </div>
+            <div>- Khách hàng cần mô tả rõ ràng lỗi gặp phải và cung cấp thông tin liên quan (Ví dụ: ảnh chụp màn hình,
+                video) </div>
+            <h5 class="text-start pt-2 pb-2">4. Hình thức bảo hành </h5>
+            <div>- Web Education sẽ cố gắng hết sức để giải quyết vấn đề của khách hàng trong vòng 24 giờ kể từ khi nhận
+                được yêu cầu bảo hành. Hình thức bảo hành bao gồm:</div>
+            <div>- Khách hàng cần cung cấp bằng chứng mua hàng (hóa đơn, phiếu mua hàng). </div>
+            <div>- Sửa lỗi kỹ thuật. <br>
+                - Cung cấp tài liệu hỗ trợ. <br>
+                - Hoàn tiền (Nếu không thể khắc phục lỗi). <br>
+            </div>
+            <h5 class="text-start pt-2 pb-2">5. Trường hợp không được bảo hành</h5>
+            <div>- Khách hàng sử dụng khóa học không đúng cách.
+            </div>
+            <div>- Lỗi phát sinh do tác động từ bên ngoài (Ví dụ: virus, phần mềm độc hại).</div>
+            <div>- Khách hàng đã tự ý sửa chữa hoặc thay đổi phần mềm của khóa học.</div>
+            <div>- Khách hàng mua khóa học từ nguồn không chính thức.</div>
+
+            <h5 class="text-start pt-2 pb-2">6. Quy trình bảo hành.</h5>
+            <div>- Khách hàng liên hệ với HDEducation qua email hoặc số điện thoại liên hệ.</div>
+            <div>- Cung cấp thông tin về lỗi gặp phải và bằng chứng mua hàng. </div>
+            <div>- HDEducation sẽ hỗ trợ khách hàng xử lý lỗi trong thời gian sớm nhất.</div>
+
+            <h5 class="text-start pt-2 pb-2">7. Thông tin liên lạc:</h5>
+            <div>- Email: Huyendieuems@gmail.com </div>
+            <div>- Số điện thoại: 0949489955 </div>
+            <h5 class="text-start pt-2 pb-2">8. Ghi chú:</h5>
+            <div>- Chính sách bảo hành có thể thay đổi mà không cần thông báo trước.
+            </div>
+            <div>- HDEducation có quyền từ chối bảo hành trong trường hợp khách hàng không đáp ứng các điều kiện
+                bảo hành.
+            </div>
+',
            
         ]);
     }

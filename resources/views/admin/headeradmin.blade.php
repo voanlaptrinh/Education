@@ -133,7 +133,9 @@
                     <ul class="nav flex-column collapse" id="collapseauthentication2" data-bs-parent="#navbar-sidebar"
                         style="">
                         <li class="nav-item"> <a class="nav-link" href="{{ route('index.security') }}"><i
-                                    class="fas fa-cogs fa-fw me-2"></i>chinh-sach-bao-mat</a></li>
+                                    class="fas fa-cogs fa-fw me-2"></i>Bảo mật</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('index.pay') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>Thanh toán</a></li>
                        
                    
                     </ul>

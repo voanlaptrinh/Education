@@ -8,7 +8,9 @@ use App\Models\Basis;
 use App\Models\Classes;
 use App\Models\Lecture;
 use App\Models\Lesson;
+use App\Models\policyPay;
 use App\Models\Review;
+use App\Models\security;
 use App\Models\User;
 use App\Models\Web_config;
 use Illuminate\Http\Request;
@@ -74,7 +76,8 @@ class PageController extends Controller
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);
         $basis = Basis::all();
-        return View('elements.home.security', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+        $security = security::find(1);
+        return View('elements.home.security', compact('totalReviews', 'security','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
     public function pay(){
         $classes = Classes::where('status', 1)->get();
@@ -86,7 +89,8 @@ class PageController extends Controller
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);
         $basis = Basis::all();
-        return View('elements.home.pay', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+        $pay = policyPay::find(1);
+        return View('elements.home.pay', compact('pay','totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
     public function lie(){
         $classes = Classes::where('status', 1)->get();

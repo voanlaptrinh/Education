@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\LecturesController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\PdfController;
+use App\Http\Controllers\Admin\PolicyPayController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\RiviewController;
@@ -66,6 +67,10 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('security')->group(function () {
             Route::get('/', [SecurityController::class, 'index'])->name('index.security');
             Route::post('/update-security', [SecurityController::class, 'update'])->name('security.update');
+        });
+        Route::prefix('policyPay')->group(function () {
+            Route::get('/', [PolicyPayController::class, 'index'])->name('index.pay');
+            Route::post('/update-security', [PolicyPayController::class, 'update'])->name('pay.update');
         });
 
         Route::prefix('news')->group(function () {
