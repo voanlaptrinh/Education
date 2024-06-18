@@ -8,6 +8,9 @@ use App\Models\Basis;
 use App\Models\Classes;
 use App\Models\Lecture;
 use App\Models\Lesson;
+use App\Models\PolicyCancellation;
+use App\Models\PolicyGuarantees;
+use App\Models\PolicyLies;
 use App\Models\policyPay;
 use App\Models\Review;
 use App\Models\security;
@@ -52,7 +55,8 @@ class PageController extends Controller
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);
         $basis = Basis::all();
-        return View('elements.home.guarantee', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+        $guarantee = PolicyGuarantees::find(1);
+        return View('elements.home.guarantee', compact('totalReviews','guarantee','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
     public function cancellation(){
         $classes = Classes::where('status', 1)->get();
@@ -64,7 +68,8 @@ class PageController extends Controller
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);
         $basis = Basis::all();
-        return View('elements.home.cancellation', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+        $cancellation = PolicyCancellation::find(1);
+        return View('elements.home.cancellation', compact('totalReviews', 'cancellation','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
     public function security(){
         $classes = Classes::where('status', 1)->get();
@@ -102,7 +107,8 @@ class PageController extends Controller
         $webConfig = Web_config::find(1);
         $banner = Banner::find(1);
         $basis = Basis::all();
-        return View('elements.home.lie', compact('totalReviews','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
+        $lie = PolicyLies::find(1);
+        return View('elements.home.lie', compact('totalReviews','lie','basis', 'banner', 'totalUser', 'classes', 'totalLessons', 'totalLectures', 'webConfig', 'bai_hoc'));
     }
     public function search(Request $request)
     {

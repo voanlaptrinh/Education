@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\LecturesController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\NewsAdminController;
 use App\Http\Controllers\Admin\PdfController;
+use App\Http\Controllers\Admin\policyCancellationController;
+use App\Http\Controllers\Admin\policyGuaranteeController;
+use App\Http\Controllers\Admin\policyLieController;
 use App\Http\Controllers\Admin\PolicyPayController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ReviewController;
@@ -71,6 +74,18 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::prefix('policyPay')->group(function () {
             Route::get('/', [PolicyPayController::class, 'index'])->name('index.pay');
             Route::post('/update-security', [PolicyPayController::class, 'update'])->name('pay.update');
+        });
+        Route::prefix('guarantee')->group(function () {
+            Route::get('/', [policyGuaranteeController::class, 'index'])->name('index.guarantee');
+            Route::post('/update-guarantee', [policyGuaranteeController::class, 'update'])->name('guarantee.update');
+        });
+        Route::prefix('lie')->group(function () {
+            Route::get('/', [policyLieController::class, 'index'])->name('index.lie');
+            Route::post('/update-lie', [policyLieController::class, 'update'])->name('lie.update');
+        });
+        Route::prefix('cancellation')->group(function () {
+            Route::get('/', [policyCancellationController::class, 'index'])->name('index.cancellation');
+            Route::post('/update-cancellation', [policyCancellationController::class, 'update'])->name('cancellation.update');
         });
 
         Route::prefix('news')->group(function () {

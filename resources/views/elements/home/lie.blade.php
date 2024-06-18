@@ -3,8 +3,8 @@
     <div class="container">
         <div class="mt-3 mb-3 shadow p-4">
             <h3 class="text-center">Chính sách Đổi trả Hoàn tiền</h3>
-
-            <h5 class="text-start pt-2 pb-2">1. Mục đích:
+            {!! $lie->description !!}
+            {{-- <h5 class="text-start pt-2 pb-2">1. Mục đích:
             </h5>
             <div>- Chính sách này quy định các điều kiện, quy trình và thời hạn đổi trả, hoàn tiền cho các gói khóa học
                 online được cung cấp bởi website {{ $webConfig->name }}.
@@ -78,6 +78,6 @@
                 Mang đến cho bạn trải nghiệm học tập online chất lượng và hiệu quả.<br>
             </div>
             <div>- Chúng tôi mong muốn mang đến cho bạn trải nghiệm mua hàng và học tập online tốt nhất.
-            </div>
+            </div> --}}
         </div>
     @endsection

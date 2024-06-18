@@ -3,8 +3,8 @@
     <div class="container">
         <div class="mt-3 mb-3 shadow p-4">
             <h3 class="text-center">Chính sách bảo hành</h3>
-
-            <h5 class="text-start pt-2 pb-2">1. Phạm vi áp dụng</h5>
+{!!$guarantee->description!!}
+            {{-- <h5 class="text-start pt-2 pb-2">1. Phạm vi áp dụng</h5>
             <div>- Chính sách bảo hành các gói của chúng tôi được áp dụng cho tất cả các gói khóa học được bán bởi  {{ $webConfig->name }}
                 </div>
             <h5 class="text-start pt-2 pb-2">2. Thời hạn bảo hành:</h5>
@@ -44,7 +44,7 @@
             </div>
             <div>- {{ $webConfig->name }} có quyền từ chối bảo hành trong trường hợp khách hàng không đáp ứng các điều kiện
                 bảo hành.
-            </div>
+            </div> --}}
 
 
 

@@ -136,6 +136,12 @@
                                     class="fas fa-cogs fa-fw me-2"></i>Bảo mật</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('index.pay') }}"><i
                                     class="fas fa-cogs fa-fw me-2"></i>Thanh toán</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('index.guarantee') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>Bảo hành</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('index.lie') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>Đổi trả hoàn tiền</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('index.cancellation') }}"><i
+                                    class="fas fa-cogs fa-fw me-2"></i>Hoàn hủy</a></li>
                        
                    
                     </ul>

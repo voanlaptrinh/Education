@@ -3,8 +3,8 @@
     <div class="container">
         <div class="mt-3 mb-3 shadow p-4">
             <h3 class="text-center">Chính sách hoàn hủy </h3>
-
-            <h5 class="text-start pt-2 pb-2">1. Mục đích:</h5>
+{!!$cancellation->description!!}
+            {{-- <h5 class="text-start pt-2 pb-2">1. Mục đích:</h5>
             <div>- Chính sách này quy định các điều kiện, quy trình và thời hạn hủy khóa học cho các khóa học được bán trên
                 website {{ $webConfig->name }} .</div>
             <h5 class="text-start pt-2 pb-2">2. Điều kiện hủy khóa học:</h5>
@@ -83,6 +83,6 @@
             <div>
                 Chúng tôi mong muốn mang đến cho bạn trải nghiệm mua hàng và học tập online tốt nhất.
 
-            </div>
+            </div> --}}
         </div>
     @endsection
