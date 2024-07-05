@@ -157,32 +157,11 @@
                             <div class="card-footer bg-transparent px-0">
                                 <!-- Pagination START -->
                                 <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-                                    <!-- Content -->
-                                    <p class="mb-0 text-center text-sm-start"></p>
-                                    <!-- Pagination -->
-                                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                                        <ul
-                                            class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                                            @if ($reviews->currentPage() > 1)
-                                                <li class="page-item mb-0"><a class="page-link"
-                                                        href="{{ $reviews->url($reviews->currentPage() - 1) }}"
-                                                        tabindex=""><i class="fas fa-angle-left"></i></a></li>
-                                            @endif
-                                            @for ($i = 1; $i <= $reviews->lastPage(); $i++)
-                                                <li
-                                                    class=" page-item mb-0 {{ $reviews->currentPage() == $i ? 'active' : '' }}">
-                                                    <a class="page-link"
-                                                        href="{{ $reviews->url($i) }}">{{ $i }}</a>
-                                                </li>
-                                            @endfor
-                                            @if ($reviews->currentPage() < $reviews->lastPage())
-                                                <li class="page-item mb-0"><a class="page-link"
-                                                        href="{{ $reviews->url($reviews->currentPage() + 1) }}"><i
-                                                            class="fas fa-angle-right"></i></a></li>
-                                            @endif
-
-                                        </ul>
-                                    </nav>
+                                    <div class="container">
+                                        <div class="d-flex justify-content-end">
+                                            {{ $riviews->appends(request()->query())->links('pagination::bootstrap-4') }}
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- Pagination END -->
                             </div>
