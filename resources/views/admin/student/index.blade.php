@@ -120,11 +120,9 @@
                                     </tr>
                                 @endforeach
                             @else
-                                <tr>
-                                    <td>Không có tài khoản nào</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr class="text-center">
+                                    <td colspan="5">Không có tài khoản nào</td>
+                                   
                                 </tr>
                             @endif
 
@@ -152,16 +150,10 @@
             <!-- Card footer START -->
             <div class="card-footer bg-transparent pt-0">
                 <!-- Pagination START -->
-                <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-                    <!-- Content -->
-                    <p class="mb-0 text-center text-sm-start"></p>
-                    <!-- Pagination -->
-                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                            {{ $student->links() }}
-                        </ul>
-                    </nav>
-
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        {{ $student->appends(request()->query())->links('pagination::bootstrap-4') }}
+                    </div>
                 </div>
                 <!-- Pagination END -->
             </div>

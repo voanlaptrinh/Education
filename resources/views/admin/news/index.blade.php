@@ -130,16 +130,10 @@
             <!-- Card footer START -->
             <div class="card-footer bg-transparent pt-0">
                 <!-- Pagination START -->
-                <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
-                    <!-- Content -->
-                    <p class="mb-0 text-center text-sm-start"></p>
-                    <!-- Pagination -->
-                    <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                        <ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                            {{ $news->links() }}
-                        </ul>
-                    </nav>
-
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        {{ $news->appends(request()->query())->links('pagination::bootstrap-4') }}
+                    </div>
                 </div>
                 <!-- Pagination END -->
             </div>
