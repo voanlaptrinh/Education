@@ -159,7 +159,7 @@
                                 <div class="d-sm-flex justify-content-sm-between align-items-sm-center">
                                     <div class="container">
                                         <div class="d-flex justify-content-end">
-                                            {{ $riviews->appends(request()->query())->links('pagination::bootstrap-4') }}
+                                            {{ $reviews->appends(request()->query())->links('pagination::bootstrap-4') }}
                                         </div>
                                     </div>
                                 </div>
