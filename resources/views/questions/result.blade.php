@@ -29,7 +29,7 @@
                         <div class="col-md-5 mb-3 mb-md-0">
                             <div class="text-center">
                                 <!-- Info -->
-                                <h2 class="mb-0">{{ rtrim(number_format($percentage,2), '0.') }} Điểm </h2>
+                                <h2 class="mb-0">{{ round($percentage, 2) }} Điểm </h2>
                                 <!-- Star -->
                                 <div class="progress progress-sm bg-warning bg-opacity-15">
                                     <div class="progress-bar bg-warning" role="progressbar"
