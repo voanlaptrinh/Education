@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
-    public function index(){
-        $student = User::where('user_type' , 1)->paginate(10);
+    public function index(Request $request){
+       
         $totalStudent = User::where('user_type', '!=', 0)->count();
         $totalStudent_1 = User::where('user_type', '!=', 0)
         ->where('status', 1)
@@ -19,7 +19,27 @@ class StudentController extends Controller
         ->where('status', 0)
         ->count();
 
-        return view('admin.student.index',compact('student','totalStudent_2','totalStudent_1','totalStudent'));
+
+        $searchQuery = $request->input('query');
+
+        // Initialize the query
+        $student = User::query();
+    
+        // Filter by user_type if provided
+        $student->where('user_type', 1);
+    
+        // Filter by search query if provided
+        if ($searchQuery) {
+            $student->where('name', 'like', '%' . $searchQuery . '%');
+        }
+    
+        // Sort by latest and paginate with 10 items per page
+        $student = $student->latest()->paginate(10);
+    
+        // Append query parameters to pagination links
+        $student->appends(['query' => $searchQuery]);
+        
+        return view('admin.student.index',compact('student','totalStudent_2','totalStudent_1','totalStudent','searchQuery'));
     }
     public function index2(){
         $student = User::where('user_type' ,1)->paginate(10);

@@ -45,7 +45,7 @@
                             </p>
                             <p class="mb-2">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;" id="content"></font>
+                                    <font style="vertical-align: inherit;" id="content2"></font>
                                 </font>
                             </p>
                         </div>
@@ -243,7 +243,7 @@
                 success: function(response) {
                     console.log(response.user.name);
                     modal.find('#title').text(response.title || '');
-                    modal.find('#content').text(response.content);
+                    modal.find('#content2').text(response.content);
                     modal.find('#rating').text(response.rating || '');
                     var createdAt = new Date(response.created_at);
                     var formattedDate = createdAt.toLocaleDateString('en-US', {

@@ -33,7 +33,7 @@
                                 <div class="col-sm-6 col-lg-4 col-xl-3">
                                     <div class="card shadow h-100">
                                         <!-- Image -->
-                                        <a href="{{ route('lessons.show', ['lesson' => $lesson]) }}"><img
+                                        <a href="{{ route('lessons.show', ['lesson' => $lesson]) }}"><img style="height: 348px"
                                                 src="{{ $lesson->image ? asset('storage/' . $lesson->image) : 'placeholder.jpg' }}"
                                                 class="card-img-top" alt="course image"></a>
                                         <!-- Card body -->

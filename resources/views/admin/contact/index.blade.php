@@ -27,7 +27,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="content" class="form-label">Nội dung:</label>
-                        <textarea class="form-control" id="content" name="content" placeholder="Nội dung" readonly disabled></textarea>
+                        <textarea class="form-control" id="content2" name="content" placeholder="Nội dung" readonly disabled></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -213,7 +213,7 @@
                             $('#name').val(data.name);
                             $('#email').val(data.email);
                             $('#phone').val(data.phone);
-                            $('#content').val(data.content);
+                            $('#content2').val(data.content);
                             // $('#status').val(data.status); // Cập nhật giá trị cho trạng thái
 
                             // Hiển thị modal

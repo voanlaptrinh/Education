@@ -45,9 +45,24 @@
                 <!-- Search and select START -->
                 <div class="row g-3 align-items-center justify-content-between">
 
+                    <!-- Search bar -->
+                    <div class="col-md-12">
+                        <form class="rounded position-relative" action="{{ route('student.index') }}" method="get">
+                            <input name="query" value="{{ $searchQuery }}" class="form-control bg-body" type="search"
+                                placeholder="Search" aria-label="Search">
+                            <button
+                                class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
+                                type="submit">
+                                <i class="fas fa-search fs-6 "></i>
+                            </button>
+                        </form>
+                    </div>
+
 
                 </div>
 
+
+                <!-- Search and select END -->
             </div>
             <!-- Card header END -->
 
