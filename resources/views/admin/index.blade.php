@@ -360,17 +360,20 @@
     <script type="text/javascript">
         tinymce.init({
             selector: '#content',
-            plugins: 'advlist autolink lists link charmap print preview anchor table',
+            plugins: 'advlist autolink lists link charmap print preview anchor table image imagetools',
             toolbar: 'undo redo | formatselect | ' +
                 'bold italic backcolor | alignleft aligncenter ' +
                 'alignright alignjustify | bullist numlist outdent indent | ' +
-                'removeformat | help | table',
-            content_css: "{{asset('assets/user/css/codeopen.css')}}",
-           
+                'removeformat | help | table | link image',
+            content_css: "{{ asset('assets/user/css/codeopen.css') }}",
+            images_upload_url: "/upload-image",
             relative_urls: false,
             document_base_url: "{{ url('/') }}",
+            automatic_uploads: true,
+          
         });
     </script>
+    
 </body>
 
 <!-- Mirrored from eduport.webestica.com/admin-course-category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Dec 2023 05:26:16 GMT -->

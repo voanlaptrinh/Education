@@ -44,8 +44,8 @@
 
 
                 <!-- Menu item 3 -->
-                {{-- <li class="nav-item"> <a class="nav-link" href="{{ route('indexNews') }}"><i
-                            class="fas fa-newspaper fa-fw me-2"></i>Tin tức</a></li> --}}
+                <li class="nav-item"> <a class="nav-link" href="{{ route('teams.admin') }}"><i
+                            class="fas fa-newspaper fa-fw me-2"></i>Teams</a></li>
                 <li class="nav-item"> <a
                         class="nav-link {{ Request::route()->getName() == 'student.index' ? 'active' : '' }}
                        {{ Request::route()->getName() == 'student.edit' ? 'active' : '' }}

@@ -33,11 +33,13 @@ use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
 use App\Http\Controllers\Admin\SubjectController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\WebConfigController;
 use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\Auth\VnpayController;
 use App\Http\Controllers\Auth\DocumentController as AuthDocumentController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\VideoController;
 use App\Mail\ConfirmationMail;
@@ -65,8 +67,14 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
         Route::get('/banners', [DashboardController::class, 'banner'])->name('banners.index');
         Route::put('/banners/{id}', [DashboardController::class, 'update'])->name('banners.update');
+        Route::prefix('teams')->group(function () {
+            Route::get('/', [TeamController::class, 'index'])->name('teams.admin');
+            Route::get('/create', [TeamController::class, 'create'])->name('teams.create');
+            Route::post('/store', [TeamController::class, 'store'])->name('teams.store');
+            Route::get('/edit/{id}', [TeamController::class, 'edit'])->name('teams.edit');
+            Route::put('/teams/{id}', [TeamController::class, 'update'])->name('teams.update');
 
-
+        });
         Route::prefix('security')->group(function () {
             Route::get('/', [SecurityController::class, 'index'])->name('index.security');
             Route::post('/update-security', [SecurityController::class, 'update'])->name('security.update');
@@ -340,7 +348,7 @@ Route::prefix('/user')->group(function () {
     Route::get('/subscriptions-history', [AuthController::class, 'subscriptionHistory'])->name('user.subscriptionHistory');
     Route::delete('/exam-history/{id}', [AuthController::class, 'destroy'])->name('examHistory.destroy');
 });
-
+Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('upload-image');
 Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/default', [ContactController::class, 'default'])->name('default');
 Route::get('/get-video-data', [VideoController::class, 'getVideoData']);
