@@ -109,13 +109,8 @@
                                     </tr>
                                 @endforeach
                             @else
-                                <tr>
-                                    <td>Không có bài học nào!</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr class="text-center">
+                                    <td colspan="6">Không có bài học nào!</td>
                                 </tr>
                             @endif
 

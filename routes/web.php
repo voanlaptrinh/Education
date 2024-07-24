@@ -73,7 +73,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/store', [TeamController::class, 'store'])->name('teams.store');
             Route::get('/edit/{id}', [TeamController::class, 'edit'])->name('teams.edit');
             Route::put('/teams/{id}', [TeamController::class, 'update'])->name('teams.update');
-
+            Route::delete('/delete/{id}', [TeamController::class, 'destroy'])->name('teams.destroy');
         });
         Route::prefix('security')->group(function () {
             Route::get('/', [SecurityController::class, 'index'])->name('index.security');

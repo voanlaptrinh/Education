@@ -21,8 +21,9 @@
                     <!-- Search bar -->
                     <div class="col-md-12">
                         <form class="rounded position-relative" action="{{ route('teams.admin') }}" method="GET">
-                            <input name="search" class="form-control bg-body" type="search" placeholder="Nhập tên hoặc email muốn tìm"
-                                aria-label="Search" value="{{ request('search') }}">
+                            <input name="search" class="form-control bg-body" type="search"
+                                placeholder="Nhập tên hoặc email muốn tìm" aria-label="Search"
+                                value="{{ request('search') }}">
                             <button
                                 class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
                                 type="submit">
@@ -30,7 +31,7 @@
                             </button>
                         </form>
                     </div>
-                    
+
 
 
 
@@ -59,52 +60,45 @@
 
                         <!-- Table body START -->
                         <tbody>
+                            @if (count($teams) > 0)
+                                @foreach ($teams as $team)
+                                    <!-- Table row -->
+                                    <tr>
+                                        <!-- Table data -->
+                                        <td>
+                                            <div class="d-flex align-items-center position-relative">
+                                                <!-- Image -->
 
-                            @foreach ($teams as $team)
-                                <!-- Table row -->
-                                <tr>
-                                    {{-- <td>
-                                    <div class="w-60px">
-                                        <img src="{{ asset('images/news/' . $newS->image) }}" class="rounded"
-                                            alt="">
-                                    </div>
-                                </td> --}}
-                                    <!-- Table data -->
-                                    <td>
-                                        <div class="d-flex align-items-center position-relative">
-                                            <!-- Image -->
+                                                <!-- Title -->
+                                                <h6 class="table-responsive-title mb-0 ms-2">
+                                                    <a class="stretched-link">{{ $team->name }}</a>
+                                                </h6>
+                                            </div>
+                                        </td>
+                                        <td>{{ $team->email }}</td>
+                                        <td>{{ $team->phone }}</td>
+                                        <td>{{ $team->address }}</td>
 
-                                            <!-- Title -->
-                                            <h6 class="table-responsive-title mb-0 ms-2">
-                                                <a class="stretched-link">{{ $team->name }}</a>
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td>{{ $team->email }}</td>
-                                    <td>{{ $team->phone }}</td>
-                                    <td>{{ $team->address }}</td>
-
-
-
-
-                                    <!-- Table data -->
-
-
-                                    <!-- Table data -->
-                                    <td>
-                                    <a href="{{ route('teams.edit', ['id' => $team->id]) }}"
-                                        class="btn btn-sm btn-success me-1 mb-1 mb-md-0">  <i class="bi bi-pencil-square"></i></a></a>
-                                    {{-- <div class="btn btn-sm btn-danger mb-0">
-                                        <form action="{{ route('news.destroy', $newS->id) }}" method="post">
-                                            @csrf
-                                            <a type="submit"
-                                                onclick="return confirm('Bạn chắc chắn muốn xóa tin tức này?')">Delete</button>
-                                        </form>
-                                    </div> --}}
-                                </td>
+                                        <td class="d-flex " colspan="3"> 
+                                            <a href="{{ route('teams.edit', ['id' => $team->id]) }}"
+                                                class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0 "> <i
+                                                class="bi bi-pencil-square"></i></a>
+                                           
+                                                <form action="{{ route('teams.destroy', ['id' => $team->id]) }}" method="post"  onsubmit="return confirm('Bạn có chắc chắn là muốn xóa?')">
+                                                    @csrf
+                                                    @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
+                                                <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
+                                                    type="submit"><i class="bi bi-trash  "></i></button>
+                                                </form>
+                                           
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr class="text-center">
+                                    <td colspan="5">Không có dữ liệu nào!</td>
                                 </tr>
-                            @endforeach
-
+                            @endif
 
 
 
@@ -121,14 +115,14 @@
 
             <!-- Card footer START -->
             <div class="card-footer bg-transparent pt-0">
-            <!-- Pagination START -->
-            <div class="container">
-                <div class="d-flex justify-content-center">
-                    {{ $teams->appends(request()->query())->links('pagination::bootstrap-4') }}
+                <!-- Pagination START -->
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        {{ $teams->appends(request()->query())->links('pagination::bootstrap-4') }}
+                    </div>
                 </div>
+                <!-- Pagination END -->
             </div>
-            <!-- Pagination END -->
-        </div>
             <!-- Card footer END -->
         </div>
         <!-- Card END -->

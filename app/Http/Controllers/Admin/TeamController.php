@@ -9,25 +9,26 @@ use App\Models\Web_config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+
 class TeamController extends Controller
 {
     public function index(Request $request)
     {
         $query = Teams::query();
         $search = $request->input('search');
-    
+
         if ($search) {
             $query->where('name', 'LIKE', "%{$search}%")
-                  ->orWhere('email', 'LIKE', "%{$search}%");
+                ->orWhere('email', 'LIKE', "%{$search}%");
         }
-        
+
         $teams = $query->paginate(1);
         $webConfig = Web_config::find(1);
-       
+
         return view('admin.teams.index', compact('teams', 'webConfig', 'search'));
     }
-    
-    
+
+
     public function create()
     {
         $classes = Classes::all();
@@ -105,7 +106,8 @@ class TeamController extends Controller
 
         return redirect()->route('teams.admin')->with('success', 'Team member added successfully!');
     }
-    public function edit ($id){
+    public function edit($id)
+    {
         $team = Teams::find($id);
         return view('admin.teams.edit', compact('team'));
     }
@@ -178,13 +180,13 @@ class TeamController extends Controller
             if ($team->image && Storage::exists('public/images/' . $team->image)) {
                 Storage::delete('public/images/' . $team->image);
             }
-    
+
             // Generate a new random name for the image
             $imageName = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
-            
+
             // Store the new image
             $imagePath = $request->file('image')->storeAs('images', $imageName, 'public');
-            
+
             // Update the image path
             $team->image = $imagePath;
         }
@@ -194,5 +196,21 @@ class TeamController extends Controller
 
         // Redirect or return a response
         return redirect()->route('teams.admin')->with('success', 'Team updated successfully.');
+    }
+    public function destroy($id)
+    {
+        // Find the team by ID or fail if not found
+        $team = Teams::findOrFail($id);
+
+        // Check if the team has an image and delete it if it exists
+        if ($team->image && Storage::exists('public/images/' . $team->image)) {
+            Storage::delete('public/images/' . $team->image);
+        }
+
+        // Delete the team record from the database
+        $team->delete();
+
+        // Redirect back to the teams index with a success message
+        return redirect()->route('teams.admin')->with('success', 'Team deleted successfully.');
     }
 }
