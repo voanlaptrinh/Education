@@ -91,7 +91,62 @@ class DatabaseSeeder extends Seeder
 
         Introduction::create([
             'name' => 'HdEducation',
-            'content' => 'Content',
+            'content' => 'Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+                        Perceived end knowledge certainly day sweetness why cordially. On forth doubt miles of child.
+                        Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne had
+                        new manners savings staying had. Under folly balls, death own point now men. Match way these she
+                        avoids seeing death. She who drift their fat off. Ask a quick six seven offer see among. Handsome
+                        met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors
+                        we private removed.
+',
             'Description' => 'Description',
         ]);
 

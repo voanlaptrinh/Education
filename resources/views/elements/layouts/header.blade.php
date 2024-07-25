@@ -94,7 +94,7 @@
                         </ul>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link " href="">Giới thiệu</a>
+                        <a class="nav-link " href="{{route('introduction.user')}}">Giới thiệu</a>
 
                     </li>
                     <!-- Nav item 2 Pages -->

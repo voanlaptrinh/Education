@@ -30,6 +30,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\CustomPasswordResetController;
 use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\IntroductionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizGroupController;
 use App\Http\Controllers\Admin\SubjectController;
@@ -44,6 +45,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\VideoController;
 use App\Mail\ConfirmationMail;
+use App\Models\Introduction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -344,7 +346,7 @@ Route::get('/subscriptions/confirm-purchase/{packageId}', [SubscriptionControlle
 
 
 //Giới thiệu
-Route::get('/introduction', [WebConfigController::class, 'introduction'])->name('introduction.user');
+Route::get('/introduction', [IntroductionController::class, 'introduction'])->name('introduction.user');
 
    
 
