@@ -30,7 +30,7 @@
             <div class='main'
                 style='background: #E27900; padding: 50px; border-radius: 10px; margin: 0px auto; max-width: 600px; width:100%; max-height: 700px;display: block;font-family: inherit;'>
                 <h2 style='text-align: center;color: white;font-size: 40px;'>Đặt lại mật khẩu</h2>
-                <p style='text-align: center;color: white;'>Xin chào: {{ $user }}</p>
+             
                 <hr style='color: white;'>
                 <div class='payment-info'>
                     <h4 style='text-align: center;color: white; font-size:20px'>Nhấp vào nút bên dưới để đặt lại mật khẩu của bạn:</h4>
