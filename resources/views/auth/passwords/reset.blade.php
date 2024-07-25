@@ -6,7 +6,7 @@
 
         <div>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+            <input type="email" class="form-control" id="email" name="email" value="{{ $email ?? old('email') }}" required autofocus>
         </div>
         <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label">Mật khẩu *</label>

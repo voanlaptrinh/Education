@@ -16,7 +16,7 @@
         <div class='container' style='width: 100%; margin-right: auto; margin-left: auto; color: white;'>
             <div class='' style='display:flex;min-height:100vh!important;justify-content: center;'>
                 <div class='main'
-                    style='background: #E27900; padding: 50px; border-radius: 10px; margin: 0px auto; max-width: 600px; width:100%; max-height: 700px;display: block;font-family: inherit;'>
+                    style='background: black; padding: 50px; border-radius: 10px; margin: 0px auto; max-width: 600px; width:100%; max-height: 700px;display: block;font-family: inherit;'>
                     <h2 style='text-align: center;color: white;font-size: 40px;'>Email xác thực</h2>
                     <p style='text-align: center;color: white;'>Xin chào: {{ $user }}</p>
                     <hr style='color: white;'>

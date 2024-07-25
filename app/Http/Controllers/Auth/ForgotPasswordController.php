@@ -31,29 +31,22 @@ class ForgotPasswordController extends Controller
             'email.exists' => 'Email này chưa được đăng ký',
         ]);
     
-        // Kiểm tra xem email có tồn tại trong hệ thống không
         $user = \App\Models\User::where('email', $request->email)->first();
     
         if (!$user) {
             return back()->withErrors(['email' => 'Email này chưa được đăng ký']);
         }
-
-        $response = $this->broker()->sendResetLink(
-            $request->only('email')
-        );
-
-        if ($response == Password::RESET_LINK_SENT) {
-            $userEmail = $request->email;
-            $resetLink = URL::to('/reset-password/'.$response); // sử dụng response trả về từ hàm sendResetLink
-
-            \Mail::to($userEmail)->send(new ResetPasswordMail($resetLink));
-
-            return back()->with('success', 'Email xác nhận đã được gửi vui lòng vào Email của bạn để xác nhận!');
-        }
-
-        return $response == Password::RESET_LINK_SENT
-                    ? back()->with(['status' => __($response)])
-                    : back()->withErrors(['email' => __($response)]);
+    
+        // Create a password reset token for the user
+        $token = Password::createToken($user);
+    
+        // Generate the reset link with email parameter
+        $resetLink = URL::to('/reset-password/' . $token . '?email=' . urlencode($user->email));
+    
+        // Send the reset password email
+       \Mail::to($user->email)->send(new ResetPasswordMail($resetLink));
+    
+        return back()->with('success', 'Email xác nhận đã được gửi vui lòng vào Email của bạn để xác nhận!');
     }
     
 }
