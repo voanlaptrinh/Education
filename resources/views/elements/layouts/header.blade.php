@@ -93,6 +93,10 @@
 
                         </ul>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="">Giới thiệu</a>
+
+                    </li>
                     <!-- Nav item 2 Pages -->
                     <li class="nav-item ">
                         <a class="nav-link " href="{{ route('reviews.index') }}">Đánh giá</a>
