@@ -5,15 +5,16 @@
     <!-- Navbar brand for xl START -->
     <div class="d-flex justify-content-center">
         @if (!empty($logo->logo))
-        <a class="navbar-brand" href="/">
-            <img class="" src="{{ asset('storage/' . $logo->logo) }} " alt="">
-        </a>
+            <a class="navbar-brand" href="/">
+                <img class="" src="{{ asset('storage/' . $logo->logo) }} " alt="">
+            </a>
         @else
-        <a class="navbar-brand " href="/">
-            <img class="navbar rounded-circle" width="100px" src="{{ asset('/assets/user/images/logoedu.jpg') }} " alt="">
-        </a>
+            <a class="navbar-brand " href="/">
+                <img class="navbar rounded-circle" width="100px" src="{{ asset('/assets/user/images/logoedu.jpg') }} "
+                    alt="">
+            </a>
         @endif
-     
+
     </div>
     <!-- Navbar brand for xl END -->
 
@@ -25,32 +26,37 @@
             <ul class="navbar-nav flex-column" id="navbar-sidebar">
 
                 <!-- Menu item 1 -->
-                <li class="nav-item"><a href="{{ route('admin.index') }}" class="nav-link"><i
-                            class="bi bi-house fa-fw me-2"></i>Trang chủ</a></li>
+                <li class="nav-item"><a href="{{ route('admin.index') }}" class="nav-link "><i
+                    class="bi bi-house fa-fw me-2"></i>Trang chủ</a></li>
 
 
-                            <li class="nav-item"> <a
-                                class="nav-link
+                <li class="nav-item"> <a
+                        class="nav-link
                             {{ Request::route()->getName() == 'subscriptions.indexAdmin' ? 'active' : '' }}
                             {{ Request::route()->getName() == 'subscriptions.create' ? 'active' : '' }}
                             {{ Request::route()->getName() == 'subscriptions.edit' ? 'active' : '' }}
                             "
-                                href="{{ route('subscriptions.indexAdmin') }}"><i class="fas fa-cubes fa-fw me-2"></i>Gói khóa
-                                học</a></li>
+                        href="{{ route('subscriptions.indexAdmin') }}"><i class="fas fa-cubes fa-fw me-2"></i>Gói khóa
+                        học</a></li>
 
                 <!-- Title -->
                 <li class="nav-item ms-2 my-2">Trang</li>
 
 
-
+                <li class="nav-item"> <a
+                    class="nav-link"    {{ Request::route()->getName() == 'introduction.index' ? 'active' : '' }}
+                    href="{{ route('introduction.index') }}"><i class="bi bi-cast fa-fw me-2"></i>Giới thiệu</a>
+            </li>
                 <!-- Menu item 3 -->
-                <li class="nav-item"> <a class="nav-link
+                <li class="nav-item"> <a
+                        class="nav-link
                      {{ Request::route()->getName() == 'teams.admin' ? 'active' : '' }}
                     {{ Request::route()->getName() == 'teams.create' ? 'active' : '' }}
                     {{ Request::route()->getName() == 'teams.edit' ? 'active' : '' }}
                     {{ Request::route()->getName() == 'teams.detail' ? 'active' : '' }}
-                    " href="{{ route('teams.admin') }}"><i
-                            class="bi bi-person-arms-up fa-fw me-2"></i>Đội ngũ</a></li>
+                    "
+                        href="{{ route('teams.admin') }}"><i class="bi bi-person-arms-up fa-fw me-2"></i>Đội ngũ</a>
+                </li>
                 <li class="nav-item"> <a
                         class="nav-link {{ Request::route()->getName() == 'student.index' ? 'active' : '' }}
                        {{ Request::route()->getName() == 'student.edit' ? 'active' : '' }}
@@ -94,7 +100,7 @@
                     {{ Request::route()->getName() == 'lectures.create' ? 'active' : '' }}
                     {{ Request::route()->getName() == 'lectures.edit' ? 'active' : '' }}
                     "
-                        href="{{ route('curriculum.index') }}"><i class="fas fa-graduation-cap fa-fw me-2"></i>Video
+                        href="{{ route('curriculum.index') }}"><i class="bi bi-camera-video-fill fa-fw me-2"></i>Video
                         bài giảng</a></li>
 
                 <li class="nav-item"> <a
@@ -105,13 +111,17 @@
                                 "
                         href="{{ route('document.admin') }}"><i class="fas fa-folder-open fa-fw me-2"></i></i>Tài
                         liệu</a></li>
-             
 
-                        <li class="nav-item"> <a class="nav-link  {{ Request::route()->getName() == 'contact.admin' ? 'active' : '' }}" href="{{ route('contact.admin') }}"><i
-                            class="fas fa-file-signature fa-fw me-2"></i>Liên hệ</a></li>
-                               
-                        <li class="nav-item"> <a class="nav-link   {{ Request::route()->getName() == 'reviews.admin' ? 'active' : '' }}" href="{{ route('reviews.admin') }}"><i
-                            class="far fa-comment-dots fa-fw me-2"></i>Đánh giá</a></li>
+
+                <li class="nav-item"> <a
+                        class="nav-link  {{ Request::route()->getName() == 'contact.admin' ? 'active' : '' }}"
+                        href="{{ route('contact.admin') }}"><i class="fas fa-file-signature fa-fw me-2"></i>Liên hệ</a>
+                </li>
+
+                <li class="nav-item"> <a
+                        class="nav-link   {{ Request::route()->getName() == 'reviews.admin' ? 'active' : '' }}"
+                        href="{{ route('reviews.admin') }}"><i class="far fa-comment-dots fa-fw me-2"></i>Đánh giá</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-toggle="collapse" href="#collapseauthentication"
                         role="button" aria-expanded="false" aria-controls="collapseauthentication">
@@ -126,7 +136,7 @@
                                     class="fas fa-cogs fa-fw me-2"></i>Cài đặt web</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('basis.index') }}"><i
                                     class="fas fa-cogs fa-fw me-2"></i>Cơ sở</a></li>
-                   
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -147,21 +157,21 @@
                                     class="fas fa-cogs fa-fw me-2"></i>Đổi trả hoàn tiền</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('index.cancellation') }}"><i
                                     class="fas fa-cogs fa-fw me-2"></i>Hoàn hủy</a></li>
-                       
-                   
+
+
                     </ul>
                 </li>
 
 
-            
+
             </ul>
             <!-- Sidebar menu end -->
 
             <!-- Sidebar footer START -->
             <div class="px-3 mt-auto pt-3">
                 <div class="d-flex align-items-center justify-content-between text-primary-hover">
-                    <a class="h5 mb-0 text-body" href="{{route('webConfig.index')}}" data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Settings">
+                    <a class="h5 mb-0 text-body" href="{{ route('webConfig.index') }}" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Settings">
                         <i class="bi bi-gear-fill"></i>
                     </a>
                     <a class="h5 mb-0 text-body" href="{{ route('home.index') }}" data-bs-toggle="tooltip"

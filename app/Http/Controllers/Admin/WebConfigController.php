@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Introduction;
 use App\Models\Web_config;
 use Illuminate\Http\Request;
 
@@ -107,4 +108,42 @@ class WebConfigController extends Controller
         // Redirect back or to a specific route after the update
         return redirect()->back()->with('success', 'Đã update thành công!');
     }
+
+
+    public function introduction(Request $request)
+    {
+        $webConfig = Web_config::find(1);
+        $introduction = Introduction::find(1);
+        return view('admin.introduction.index', compact('introduction','webConfig'));
+    }
+    public function introductionupdate(Request $request){
+        $request->validate([
+            'name' => 'required|string',
+            
+            'description' => 'nullable',
+           'content' => 'required|string',
+            // Add validation for other fields
+        ], [
+            'name.required' => 'Vui lòng nhập tên.',
+            'name.string' => 'Tên phải là một chuỗi.',
+            'content.required' => 'Nội dung là bắt buộc',
+
+        ]);
+
+        // Find the existing WebConfig model based on some criteria (you might use ID or some unique identifier)
+        $introduction = Introduction::find(1); // Replace 1 with the appropriate identifier
+
+        // Update other fields
+        $introduction->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'content' => $request->input('content'),
+           
+            // Add update for other fields
+        ]);
+        $introduction->save();
+        // Redirect back or to a specific route after the update
+        return redirect()->back()->with('success', 'Đã update thành công!');
+    }
+
 }

@@ -166,6 +166,14 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::post('/update-webConfig', [WebConfigController::class, 'update'])->name('webConfig.update');
         });
 
+        Route::prefix('/introduction')->group(function () {
+            Route::get('/', [WebConfigController::class, 'introduction'])->name('introduction.index');
+            Route::post('/update-introduction', [WebConfigController::class, 'introductionupdate'])->name('introduction.update');
+        });
+
+
+
+
         Route::prefix('/lession')->group(function () { //Bài học
             Route::get('/create', [LessonController::class, 'create'])->name('lesson.create');
             Route::post('/store', [LessonController::class, 'store'])->name('lessons.store');

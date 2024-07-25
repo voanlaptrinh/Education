@@ -13,22 +13,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-8 border" style="border-radius:10px">
 
-                <div class="card">
+                <div class="card ">
                     <div class="card-body pt-3">
-                        <!-- Bordered Tabs -->
-                        <ul class="nav nav-tabs nav-tabs-bordered" role="tablist">
-                            <li class="nav-item  w-50" role="presentation">
-                                <button class="nav-link  w-100 active" data-bs-toggle="tab" data-bs-target="#profile-overview"
-                                    aria-selected="true" role="tab">Mô tả ngắn</button>
+                        <ul class="nav nav-pills nav-pill-soft my-4" id="course-pills-tab" role="tablist">
+                            <!-- Tab item -->
+                            <li class="nav-item me-2 me-lg-6" role="presentation">
+                                <button class="nav-link mb-2 mb-xl-0 active" id="course-pills-tab-1" data-bs-toggle="pill" data-bs-target="#profile-overview" type="button" role="tab" aria-controls="course-pills-1" aria-selected="true">Become an Instructor</button>
                             </li>
-                            <li class="nav-item  w-50" role="presentation">
-                                <button class="nav-link  w-100" data-bs-toggle="tab" data-bs-target="#profile-edit"
-                                    aria-selected="false" tabindex="-1" role="tab">Nội dung</button>
+                            <!-- Tab item -->
+                            <li class="nav-item me-2 me-lg-6" role="presentation">
+                                <button class="nav-link mb-2 mb-xl-0" id="course-pills-tab-2" data-bs-toggle="pill" data-bs-target="#profile-edit" type="button" role="tab" aria-controls="course-pills-2" aria-selected="false" tabindex="-1">Instructor Role</button>
                             </li>
+                           
                         </ul>
-                        <div class="tab-content pt-2">
+                        
+                        <hr>
+                        <div class="tab-content pt-2 ">
                             <div class="tab-pane fade show active profile-overview" id="profile-overview" role="tabpanel">
                                 <h5 class="card-title">Mô tả ngắn</h5>
                                 <p class="small fst-italic">{{ $teamsItem->description }}</p>

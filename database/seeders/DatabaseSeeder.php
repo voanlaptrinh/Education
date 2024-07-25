@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Banner;
 use App\Models\Classes;
 use App\Models\Course;
+use App\Models\Introduction;
 use App\Models\Lesson;
 use App\Models\Subject;
 use App\Models\Subscription;
@@ -87,6 +88,16 @@ class DatabaseSeeder extends Seeder
                 'instagram' => 'instagram'
             ]
         );
+
+        Introduction::create([
+            'name' => 'HdEducation',
+            'content' => 'Content',
+            'Description' => 'Description',
+        ]);
+
+
+
+
         Subscription::create([
             'name' => 'gói 1',
             'price' => 300000,
