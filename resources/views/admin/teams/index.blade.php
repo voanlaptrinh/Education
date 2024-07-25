@@ -5,7 +5,7 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                <h1 class="h3 mb-2 mb-sm-0">Teams</h1>
+                <h1 class="h3 mb-2 mb-sm-0">Đội ngũ</h1>
                 <a href="{{ route('teams.create') }}" class="btn btn-sm btn-primary mb-0">Thêm mới</a>
             </div>
         </div>
@@ -79,18 +79,20 @@
                                         <td>{{ $team->phone }}</td>
                                         <td>{{ $team->address }}</td>
 
-                                        <td class="d-flex " colspan="3"> 
+                                        <td class="d-flex " colspan="3">
                                             <a href="{{ route('teams.edit', ['id' => $team->id]) }}"
                                                 class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0 "> <i
-                                                class="bi bi-pencil-square"></i></a>
-                                           
-                                                <form action="{{ route('teams.destroy', ['id' => $team->id]) }}" method="post"  onsubmit="return confirm('Bạn có chắc chắn là muốn xóa?')">
-                                                    @csrf
-                                                    @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
+                                                    class="bi bi-pencil-square"></i></a>
+
+                                            <form action="{{ route('teams.destroy', ['id' => $team->id]) }}" method="post"
+                                                onsubmit="return confirm('Bạn có chắc chắn là muốn xóa?')">
+                                                @csrf
+                                                @method('DELETE') <!-- Sử dụng method DELETE cho việc xóa -->
                                                 <button class="btn btn-danger-soft btn-round me-1 mb-1 mb-md-0"
-                                                    type="submit"><i class="bi bi-trash  "></i></button>
-                                                </form>
-                                           
+                                                    type="submit"><i class="bi bi-trash"></i></button>
+                                            </form>
+                                            <a href="{{ route('teams.detail', $team->id) }}"
+                                                class="btn btn-success-soft btn-round me-1 mb-1 mb-md-0 "><i class="bi bi-eye-fill"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

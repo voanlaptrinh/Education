@@ -22,7 +22,7 @@ class TeamController extends Controller
                 ->orWhere('email', 'LIKE', "%{$search}%");
         }
 
-        $teams = $query->paginate(1);
+        $teams = $query->paginate(10);
         $webConfig = Web_config::find(1);
 
         return view('admin.teams.index', compact('teams', 'webConfig', 'search'));
@@ -39,6 +39,7 @@ class TeamController extends Controller
         // Validate the request data
         $request->validate([
             'name' => 'required|string|max:255',
+            'cuisine' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
             'web' => 'nullable|string|max:255',
@@ -54,6 +55,9 @@ class TeamController extends Controller
             'name.required' => 'Tên là bắt buộc.',
             'name.string' => 'Tên phải là một chuỗi ký tự.',
             'name.max' => 'Tên không được dài quá 255 ký tự.',
+            'cuisine.required' => 'Môn giảng dạy là bắt buộc.',
+            'cuisine.string' => 'Môn giảng dạy phải là một chuỗi ký tự.',
+            'cuisine.max' => 'Môn giảng dạy không được dài quá 255 ký tự.',
             'email.required' => 'Email là bắt buộc.',
             'email.email' => 'Email phải là một địa chỉ email hợp lệ.',
             'email.max' => 'Email không được dài quá 255 ký tự.',
@@ -102,6 +106,7 @@ class TeamController extends Controller
             'linkedin' => $request->linkedin,
             'image' => $imagePath,
             'content' => $request->content,
+            'cuisine' => $request->cuisine,
         ]);
 
         return redirect()->route('teams.admin')->with('success', 'Team member added successfully!');
@@ -116,6 +121,7 @@ class TeamController extends Controller
         // Validate the form data
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'cuisine' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:15',
             'web' => 'nullable|string|max:255',
@@ -131,6 +137,9 @@ class TeamController extends Controller
             'name.required' => 'Tên là bắt buộc.',
             'name.string' => 'Tên phải là một chuỗi ký tự.',
             'name.max' => 'Tên không được dài quá 255 ký tự.',
+            'cuisine.required' => 'Môn giảng dạy là bắt buộc.',
+            'cuisine.string' => 'Môn giảng dạy phải là một chuỗi ký tự.',
+            'cuisine.max' => 'Môn giảng dạy không được dài quá 255 ký tự.',
             'email.required' => 'Email là bắt buộc.',
             'email.email' => 'Email phải là một địa chỉ email hợp lệ.',
             'email.max' => 'Email không được dài quá 255 ký tự.',
@@ -173,6 +182,7 @@ class TeamController extends Controller
         $team->twitter = $validatedData['twitter'];
         $team->linkedin = $validatedData['linkedin'];
         $team->content = $validatedData['content'];
+        $team->cuisine = $validatedData['cuisine'];
 
         // Handle the image upload
         if ($request->hasFile('image')) {
@@ -213,4 +223,11 @@ class TeamController extends Controller
         // Redirect back to the teams index with a success message
         return redirect()->route('teams.admin')->with('success', 'Team deleted successfully.');
     }
+    public function detail($id)
+    {
+        $teamsItem = Teams::findOrFail($id);
+   
+        return view('admin.teams.detail', compact('teamsItem'));
+    }
+
 }

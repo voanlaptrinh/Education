@@ -66,11 +66,21 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <label class="form-label">Địa chỉ</label>
                                         <input class="form-control" type="text" placeholder="Địa chỉ" name ="address"
                                             value="{{ $team->address }}">
                                             @error('address')
+                                            <span class="invalid-feedback" role="alert">
+                                                <label class="error" id="name_error" for="name">{{ $message }}</label>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Môn giảng dạy</label>
+                                        <input class="form-control" type="text" placeholder="Môn giảng dạy" name ="cuisine"
+                                            value="{{ $team->cuisine }}">
+                                            @error('cuisine')
                                             <span class="invalid-feedback" role="alert">
                                                 <label class="error" id="name_error" for="name">{{ $message }}</label>
                                             </span>

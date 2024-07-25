@@ -39,6 +39,7 @@ use App\Http\Controllers\Auth\CourseAuthController;
 use App\Http\Controllers\Auth\PageController;
 use App\Http\Controllers\Auth\VnpayController;
 use App\Http\Controllers\Auth\DocumentController as AuthDocumentController;
+use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\VideoController;
@@ -74,6 +75,7 @@ Route::middleware(['auth', 'check.user.type:0'])->group(function () {
             Route::get('/edit/{id}', [TeamController::class, 'edit'])->name('teams.edit');
             Route::put('/teams/{id}', [TeamController::class, 'update'])->name('teams.update');
             Route::delete('/delete/{id}', [TeamController::class, 'destroy'])->name('teams.destroy');
+            Route::get('/{id}/detail', [TeamController::class, 'detail'])->name('teams.detail');
         });
         Route::prefix('security')->group(function () {
             Route::get('/', [SecurityController::class, 'index'])->name('index.security');
@@ -352,3 +354,8 @@ Route::post('/upload-image', [UploadController::class, 'uploadImage'])->name('up
 Route::get('/search', [PageController::class, 'search'])->name('search');
 Route::get('/default', [ContactController::class, 'default'])->name('default');
 Route::get('/get-video-data', [VideoController::class, 'getVideoData']);
+
+Route::prefix('/teams')->group(function () {
+    Route::get('/', [TeamsController::class, 'index'])->name('teams.index');
+    Route::get('/{id}/detail', [TeamsController::class, 'detail'])->name('teams.subdetail');
+});

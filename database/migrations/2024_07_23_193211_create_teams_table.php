@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
+            $table->string('cuisine'); // Môn giảng dạy
             $table->string('web')->nullable();
             $table->string('address');
             $table->text('description')->nullable();
