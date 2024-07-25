@@ -19,7 +19,7 @@ class TeamsController extends Controller
                 ->orWhere('email', 'LIKE', "%{$search}%");
         }
 
-        $teams = $query->paginate(2);
+        $teams = $query->paginate(10);
         $webConfig = Web_config::find(1);
         $classes = Classes::where('status', 1)->get();
         return view('teams.index', compact('teams', 'webConfig','classes','search'));
