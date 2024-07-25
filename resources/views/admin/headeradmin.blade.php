@@ -44,7 +44,12 @@
 
 
                 <!-- Menu item 3 -->
-                <li class="nav-item"> <a class="nav-link" href="{{ route('teams.admin') }}"><i
+                <li class="nav-item"> <a class="nav-link
+                     {{ Request::route()->getName() == 'teams.admin' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'teams.create' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'teams.edit' ? 'active' : '' }}
+                    {{ Request::route()->getName() == 'teams.detail' ? 'active' : '' }}
+                    " href="{{ route('teams.admin') }}"><i
                             class="bi bi-person-arms-up fa-fw me-2"></i>Đội ngũ</a></li>
                 <li class="nav-item"> <a
                         class="nav-link {{ Request::route()->getName() == 'student.index' ? 'active' : '' }}

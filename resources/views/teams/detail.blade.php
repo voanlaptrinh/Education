@@ -93,4 +93,48 @@
             </div><!-- Row END -->
         </div>
     </section>
+
+
+
+
+    <section>
+        <div class="container">
+            <!-- Title -->
+            <div class="row mb-4">
+                <h2 class="mb-0">Giảng viên liên quan</h2>
+            </div>
+    
+            <!-- Slider START -->
+            <div class="tiny-slider arrow-round arrow-creative arrow-blur arrow-hover">
+                <div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-dots="false" data-items="4" data-items-lg="3" data-items-md="2" data-items-xs="1">
+                    @if (count($teams) > 0)
+                    @foreach ($teams as $team)
+                    <!-- Card item START -->
+                    <div class="card bg-transparent">
+                        <div class="position-relative">
+                            <!-- Image -->
+                            <img src="{{ asset('storage/' . $team->image) }}" class="card-img" alt="course image">
+                            <!-- Overlay -->
+                            
+                        </div>
+                        <!-- Card body -->
+                        <div class="card-body text-center">
+                            <!-- Title -->
+                            <h5 class="card-title"><a href="{{ route('teams.subdetail', $team->id) }}">{{ $team->name }}</a></h5>
+                                <p class="mb-2">{{ $team->cuisine }}</p>
+                                <!-- Rating -->
+                               
+                        </div>
+                    </div>
+                    <!-- Card item END -->
+    
+                    @endforeach
+                    @endif
+    
+                </div>
+            </div>
+            <!-- Slider END -->
+    
+        </div>
+    </section>
 @endsection

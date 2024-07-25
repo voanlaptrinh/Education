@@ -30,7 +30,8 @@ class TeamsController extends Controller
     {
         $teamsItem = Teams::findOrFail($id);
         $webConfig = Web_config::find(1);
+        $teams = Teams::all();
         $classes = Classes::where('status', 1)->get();
-        return view('teams.detail', compact('teamsItem','classes','webConfig'));
+        return view('teams.detail', compact('teamsItem','classes','webConfig','teams'));
     }
 }

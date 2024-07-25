@@ -226,8 +226,8 @@ class TeamController extends Controller
     public function detail($id)
     {
         $teamsItem = Teams::findOrFail($id);
-   
-        return view('admin.teams.detail', compact('teamsItem'));
+        $teams = Teams::all();
+        return view('admin.teams.detail', compact('teamsItem','teams'));
     }
 
 }
