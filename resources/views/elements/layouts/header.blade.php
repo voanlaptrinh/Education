@@ -99,7 +99,7 @@
                     </li>
                     <!-- Nav item 2 Pages -->
                     <li class="nav-item ">
-                        <a class="nav-link " href="{{ route('reviews.index') }}">Đánh giá</a>
+                        <a class="nav-link " href="{{ route('introduction.user') }}">Đánh giá</a>
 
                     </li>
                     <li class="nav-item ">

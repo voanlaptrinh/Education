@@ -342,6 +342,12 @@ Route::get('/GetvnpayDocument', [VnpayController::class, 'GetvnpayDocument'])->n
 // routes/web.php
 Route::get('/subscriptions/confirm-purchase/{packageId}', [SubscriptionController::class, 'confirmPurchase'])->name('subscriptions.confirmPurchase');
 
+
+//Giới thiệu
+Route::get('/introduction', [WebConfigController::class, 'introduction'])->name('introduction.user');
+
+   
+
 Route::middleware(['web', 'auth'])->group(function () {
     Route::prefix('/quizz')->group(function () { //Xem và làm câu hỏi
         Route::get('/{course}/questions', [QuestionAuthController::class, 'show'])->name('questions.show');
@@ -367,3 +373,4 @@ Route::prefix('/teams')->group(function () {
     Route::get('/', [TeamsController::class, 'index'])->name('teams.index');
     Route::get('/{id}/detail', [TeamsController::class, 'detail'])->name('teams.subdetail');
 });
+
