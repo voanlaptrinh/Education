@@ -24,7 +24,7 @@
                 <div class="form-check form-switch form-check-lg mb-0">
                     <input class="form-check-input mt-0 price-toggle me-2 custom-cursor-on-hover" type="checkbox" id="is_free" name="is_free"
                     {{ $lecture->is_free ? 'checked' : '' }}>
-                    <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Bật lên nếu là bài học miễn phí</label>
+                    <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Bật lên nếu là bài học mất phí</label>
                 </div>
             </div>
             <div class="form-group pt-3">

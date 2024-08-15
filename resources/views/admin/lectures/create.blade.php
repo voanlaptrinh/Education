@@ -27,7 +27,7 @@
                     <label class="form-label custom-cursor-default-hover">Miễn phí hoặc mất phí</label>
                     <div class="form-check form-switch form-check-lg mb-0">
                         <input class="form-check-input mt-0 price-toggle me-2 custom-cursor-on-hover" type="checkbox" name="is_free" id="is_free" value="1" {{ old('is_free') ? 'checked' : '' }}>
-                        <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Bật lên nếu là bài làm miên phí</label>
+                        <label class="form-check-label mt-1" for="flexSwitchCheckDefault">Bật lên nếu là bài làm mất phí</label>
                     </div>
                 </div>
                 <div class="form-group pt-3">
